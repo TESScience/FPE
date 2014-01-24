@@ -1,0 +1,40 @@
+v 20110115 2
+B 200 200 800 400 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+P 600 200 600 0 1 0 1
+{
+T 745 300 3 6 1 1 180 0 1
+pinlabel=GND
+T 625 175 5 6 0 1 270 0 1
+pinseq=4
+T 550 105 5 10 0 1 90 6 1
+pinnumber=3
+T 600 200 5 10 0 1 270 0 1
+pintype=pwr
+}
+P 600 600 600 800 1 0 1
+{
+T 575 575 3 6 1 1 0 5 1
+pinlabel=V+
+T 575 625 5 6 0 0 0 6 1
+pinseq=5
+T 600 600 5 10 0 0 0 0 1
+pinnumber=5
+T 600 600 5 10 0 0 0 0 1
+pintype=pwr
+}
+T 800 700 8 10 1 1 0 1 1
+refdes=U?
+T 200 1800 8 10 0 1 0 0 1
+device=MAX4594DCKR
+T 600 425 9 8 1 0 0 4 1
+MAX4594
+T 500 1100 8 10 0 0 0 0 1
+footprint=SC70
+T 1200 1800 8 10 0 0 0 0 1
+model-name=MAX4594
+T 1300 1500 8 10 0 0 0 0 1
+file=MAX4594.cir
+T 300 1300 8 10 0 1 0 0 1
+description=SPST analog switch
+T 200 2200 8 10 0 0 0 0 1
+spice-prototype=X? %pinseq model-name@

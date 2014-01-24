@@ -1,0 +1,69 @@
+v 20110115 2
+B 200 200 800 600 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+P 200 600 0 600 1 0 1
+{
+T 175 625 5 6 0 1 0 6 1
+pinseq=3
+T 100 500 5 10 1 1 0 4 1
+pinnumber=3
+T 200 600 5 10 0 1 0 0 1
+pintype=pwr
+T 200 600 5 6 1 1 0 1 1
+pinlabel=Vin
+}
+P 1000 600 1200 600 1 0 1
+{
+T 1025 625 5 6 0 1 0 0 1
+pinseq=4
+T 1100 500 5 10 1 1 0 4 1
+pinnumber=4
+T 1000 600 5 10 0 1 0 0 1
+pintype=pwr
+T 1000 600 5 6 1 1 0 7 1
+pinlabel=Vout
+}
+T 800 900 8 10 1 1 0 0 1
+refdes=U?
+T 200 2000 8 10 0 1 0 0 1
+device=ADR363
+T 600 425 9 6 1 0 0 4 1
+ADR363
+T 500 1300 8 10 0 0 0 0 1
+footprint=TSOT5
+P 400 200 400 0 1 0 1
+{
+T 375 225 5 6 0 0 0 6 1
+pinseq=1
+T 300 0 5 10 1 1 0 0 1
+pinnumber=1
+T 400 200 5 10 0 0 0 0 1
+pintype=nc
+T 400 200 5 6 1 1 0 3 1
+pinlabel=NC
+}
+P 800 200 800 0 1 0 1
+{
+T 775 225 5 6 0 0 0 6 1
+pinseq=2
+T 700 0 5 10 1 1 0 0 1
+pinnumber=2
+T 800 200 5 10 0 0 0 0 1
+pintype=pwr
+T 800 200 5 6 1 1 0 3 1
+pinlabel=GND
+}
+P 600 800 600 1000 1 0 1
+{
+T 625 725 5 6 0 1 0 0 1
+pinseq=5
+T 500 900 5 10 1 1 0 1 1
+pinnumber=5
+T 600 700 5 10 0 1 0 0 1
+pintype=pas
+T 700 700 5 6 1 1 0 7 1
+pinlabel=TRIM
+}
+T 500 1600 8 10 0 1 0 0 1
+description=3V Reference
+T 300 1100 8 10 0 0 0 0 1
+spice-prototype=X? #3 #4 #2 ADR363

@@ -1,0 +1,45 @@
+v 20081231 1
+P 0 1700 300 1700 1 0 0
+{
+T 200 1750 5 8 1 1 0 6 1
+pinnumber=97
+T 200 1650 5 8 0 1 0 8 1
+pinseq=97
+T 350 1700 9 8 1 1 0 0 1
+pinlabel=XIN
+T 350 1700 5 8 0 1 0 2 1
+pintype=pas
+}
+P 0 1100 300 1100 1 0 0
+{
+T 200 1150 5 8 1 1 0 6 1
+pinnumber=98
+T 200 1050 5 8 0 1 0 8 1
+pinseq=98
+T 350 1100 9 8 1 1 0 0 1
+pinlabel=XOUT
+T 350 1100 5 8 0 1 0 2 1
+pintype=pas
+}
+P 0 500 300 500 1 0 0
+{
+T 200 550 5 8 1 1 0 6 1
+pinnumber=99
+T 200 450 5 8 0 1 0 8 1
+pinseq=99
+T 350 500 9 8 1 1 0 0 1
+pinlabel=PLLRC
+T 350 500 5 8 0 1 0 2 1
+pintype=pas
+}
+B 300 300 600 1600 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 800 2000 8 10 1 1 0 0 1
+refdes=U?
+T 200 2200 5 10 0 0 0 0 1
+device=AT91SAM7X256-AU
+T 200 2400 5 10 0 0 0 0 1
+footprint=LQFP100
+T 200 2600 5 10 0 0 0 0 1
+description=AT91SAM7X clock/PLL section
+T 200 2800 5 10 0 0 0 0 1
+numslots=0

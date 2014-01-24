@@ -1,0 +1,100 @@
+v 20081231 1
+P 0 500 300 500 1 0 0
+{
+T 200 550 5 8 0 1 0 6 1
+pinnumber=2
+T 200 450 5 8 0 1 0 8 1
+pinseq=2
+T 350 500 9 8 1 1 0 0 1
+pinlabel=+3.3
+T 350 500 5 8 0 1 0 2 1
+pintype=pas
+}
+P 1200 0 1200 300 1 0 0
+{
+T 1150 200 5 8 0 1 90 6 1
+pinnumber=6
+T 1250 200 5 8 0 1 90 8 1
+pinseq=6
+T 1250 400 9 8 1 1 180 4 1
+pinlabel=-12
+T 1200 350 5 8 0 1 90 2 1
+pintype=pwr
+}
+P 1000 1400 1000 1100 1 0 0
+{
+T 950 1250 5 8 0 1 90 0 1
+pinnumber=5
+T 1050 1250 5 8 0 1 90 2 1
+pinseq=5
+T 950 1000 9 8 1 1 180 4 1
+pinlabel=+12
+T 1000 1050 5 8 0 1 90 8 1
+pintype=pwr
+}
+P 1800 500 1500 500 1 0 0
+{
+T 1600 550 5 8 0 1 0 0 1
+pinnumber=3
+T 1600 450 5 8 0 1 0 2 1
+pinseq=3
+T 1450 500 9 8 1 1 0 6 1
+pinlabel=OG
+T 1450 500 5 8 0 1 0 8 1
+pintype=pas
+}
+B 300 300 1200 800 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 600 1200 8 10 1 1 0 6 1
+refdes=X?
+T 900 700 9 8 1 0 0 4 2
+OG
+Reg
+T 1000 1100 5 10 0 0 0 0 1
+device=OGregulator
+T 1000 1300 5 10 0 0 0 0 1
+footprint=none
+T 1000 1500 5 10 0 0 0 0 1
+author=jpd
+T 1000 1700 5 10 0 0 0 0 1
+description=Output Gate Regulator
+T 1000 1900 5 10 0 0 0 0 1
+numslots=0
+T 1000 2100 5 10 0 0 0 0 1
+dist-license=GPL
+T 1000 2300 5 10 0 0 0 0 1
+use-license=GPL
+T -5 -5 8 10 0 0 0 0 1
+source=OG_regulator.sch
+P 0 900 300 900 1 0 0
+{
+T 200 950 5 8 0 1 0 6 1
+pinnumber=1
+T 200 850 5 8 0 1 0 8 1
+pinseq=1
+T 350 900 9 8 1 1 0 0 1
+pinlabel=DAC
+T 350 900 5 8 0 1 0 2 1
+pintype=pas
+}
+P 600 0 600 300 1 0 0
+{
+T 550 200 5 8 0 1 90 6 1
+pinnumber=4
+T 650 200 5 8 0 1 90 8 1
+pinseq=4
+T 650 400 9 8 1 1 180 4 1
+pinlabel=GND
+T 600 350 5 8 0 1 90 2 1
+pintype=pwr
+}
+P 1800 900 1500 900 1 0 0
+{
+T 1600 950 5 8 0 1 0 0 1
+pinnumber=7
+T 1600 850 5 8 0 1 0 2 1
+pinseq=7
+T 1450 900 9 8 1 1 0 6 1
+pinlabel=HK
+T 1450 900 5 8 0 1 0 8 1
+pintype=pas
+}

@@ -1,0 +1,210 @@
+v 20081231 1
+P 0 2200 300 2200 1 0 0
+{
+T 205 2245 5 8 1 1 0 6 1
+pinnumber=95
+T 200 2150 5 8 0 1 0 8 1
+pinseq=95
+T 355 2195 9 8 1 1 0 0 1
+pinlabel=VDDFLASH
+T 350 2200 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 0 2500 300 2500 1 0 0
+{
+T 205 2545 5 8 1 1 0 6 1
+pinnumber=8
+T 200 2450 5 8 0 1 0 8 1
+pinseq=8
+T 355 2495 9 8 1 1 0 0 1
+pinlabel=VDDIN
+T 350 2500 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 2200 2500 1900 2500 1 0 0
+{
+T 1995 2545 5 8 1 1 0 0 1
+pinnumber=7
+T 2000 2450 5 8 0 1 0 2 1
+pinseq=7
+T 1845 2495 9 8 1 1 0 6 1
+pinlabel=VDDOUT
+T 1850 2500 5 8 0 1 0 8 1
+pintype=pwr
+}
+P 2200 1600 1900 1600 1 0 0
+{
+T 1995 1645 5 8 1 1 0 0 1
+pinnumber=15
+T 2000 1550 5 8 0 1 0 2 1
+pinseq=15
+T 1845 1595 9 8 1 1 0 6 1
+pinlabel=VDDCORE
+T 1850 1600 5 8 0 1 0 8 1
+pintype=pwr
+}
+P 2200 1300 1900 1300 1 0 0
+{
+T 1995 1345 5 8 1 1 0 0 1
+pinnumber=37
+T 2000 1250 5 8 0 1 0 2 1
+pinseq=37
+T 1845 1295 9 8 1 1 0 6 1
+pinlabel=VDDCORE
+T 1850 1300 5 8 0 1 0 8 1
+pintype=pwr
+}
+P 2200 1000 1900 1000 1 0 0
+{
+T 1995 1045 5 8 1 1 0 0 1
+pinnumber=62
+T 2000 950 5 8 0 1 0 2 1
+pinseq=62
+T 1845 995 9 8 1 1 0 6 1
+pinlabel=VDDCORE
+T 1850 1000 5 8 0 1 0 8 1
+pintype=pwr
+}
+P 2200 700 1900 700 1 0 0
+{
+T 1995 745 5 8 1 1 0 0 1
+pinnumber=87
+T 2000 650 5 8 0 1 0 2 1
+pinseq=87
+T 1845 695 9 8 1 1 0 6 1
+pinlabel=VDDCORE
+T 1850 700 5 8 0 1 0 8 1
+pintype=pwr
+}
+P 1700 0 1700 300 1 0 0
+{
+T 1650 205 5 8 1 1 90 6 1
+pinnumber=16
+T 1650 100 5 8 0 1 0 8 1
+pinseq=16
+T 1700 355 9 8 1 1 90 0 1
+pinlabel=GND
+T 1700 500 5 8 0 1 0 3 1
+pintype=pwr
+}
+P 1400 0 1400 300 1 0 0
+{
+T 1350 205 5 8 1 1 90 6 1
+pinnumber=32
+T 1350 100 5 8 0 1 0 8 1
+pinseq=32
+T 1400 355 9 8 1 1 90 0 1
+pinlabel=GND
+T 1400 500 5 8 0 1 0 3 1
+pintype=pwr
+}
+B 300 300 1600 2400 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 1500 2800 8 10 1 1 0 0 1
+refdes=U?
+T 100 2800 5 10 0 0 0 0 1
+device=AT91SAM7X256-AU
+T 100 3000 5 10 0 0 0 0 1
+footprint=LQFP100
+T 100 3200 5 10 0 0 0 0 1
+description=AT91SAM7X power section
+T 100 3400 5 10 0 0 0 0 1
+numslots=0
+P 1100 0 1100 300 1 0 0
+{
+T 1050 205 5 8 1 1 90 6 1
+pinnumber=68
+T 1050 100 5 8 0 1 0 8 1
+pinseq=68
+T 1100 355 9 8 1 1 90 0 1
+pinlabel=GND
+T 1100 500 5 8 0 1 0 3 1
+pintype=pwr
+}
+P 800 0 800 300 1 0 0
+{
+T 750 205 5 8 1 1 90 6 1
+pinnumber=83
+T 750 100 5 8 0 1 0 8 1
+pinseq=83
+T 800 355 9 8 1 1 90 0 1
+pinlabel=GND
+T 800 500 5 8 0 1 0 3 1
+pintype=pwr
+}
+P 500 0 500 300 1 0 0
+{
+T 450 205 5 8 1 1 90 6 1
+pinnumber=96
+T 450 100 5 8 0 1 0 8 1
+pinseq=96
+T 500 355 9 8 1 1 90 0 1
+pinlabel=GND
+T 500 500 5 8 0 1 0 3 1
+pintype=pwr
+}
+P 0 1900 300 1900 1 0 0
+{
+T 205 1945 5 8 1 1 0 6 1
+pinnumber=17
+T 200 1850 5 8 0 1 0 8 1
+pinseq=17
+T 355 1895 9 8 1 1 0 0 1
+pinlabel=VDDIO
+T 350 1900 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 0 1600 300 1600 1 0 0
+{
+T 205 1645 5 8 1 1 0 6 1
+pinnumber=33
+T 200 1550 5 8 0 1 0 8 1
+pinseq=33
+T 355 1595 9 8 1 1 0 0 1
+pinlabel=VDDIO
+T 350 1600 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 0 1300 300 1300 1 0 0
+{
+T 205 1345 5 8 1 1 0 6 1
+pinnumber=48
+T 200 1250 5 8 0 1 0 8 1
+pinseq=48
+T 355 1295 9 8 1 1 0 0 1
+pinlabel=VDDIO
+T 350 1300 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 0 1000 300 1000 1 0 0
+{
+T 205 1045 5 8 1 1 0 6 1
+pinnumber=61
+T 200 950 5 8 0 1 0 8 1
+pinseq=61
+T 355 995 9 8 1 1 0 0 1
+pinlabel=VDDIO
+T 350 1000 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 0 700 300 700 1 0 0
+{
+T 205 745 5 8 1 1 0 6 1
+pinnumber=84
+T 200 650 5 8 0 1 0 8 1
+pinseq=84
+T 355 695 9 8 1 1 0 0 1
+pinlabel=VDDIO
+T 350 700 5 8 0 1 0 2 1
+pintype=pwr
+}
+P 2200 1900 1900 1900 1 0 0
+{
+T 1995 1945 5 8 1 1 0 0 1
+pinnumber=100
+T 2000 1850 5 8 0 1 0 2 1
+pinseq=100
+T 1845 1895 9 8 1 1 0 6 1
+pinlabel=VDDPLL
+T 1850 1900 5 8 0 1 0 8 1
+pintype=pwr
+}

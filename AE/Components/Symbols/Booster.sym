@@ -1,0 +1,73 @@
+v 20110115 2
+P 1600 600 1300 600 1 0 0
+{
+T 1395 645 5 8 0 1 0 0 1
+pinnumber=2
+T 1400 550 5 8 0 1 0 2 1
+pinseq=2
+T 1145 595 9 8 1 1 0 7 1
+pinlabel=Out
+T 1250 600 5 8 0 1 0 8 1
+pintype=pas
+}
+P 0 300 300 300 1 0 0
+{
+T 200 350 5 8 0 1 0 6 1
+pinnumber=3
+T 200 250 5 8 0 1 0 8 1
+pinseq=3
+T 350 300 9 8 1 1 0 1 1
+pinlabel=\_Low\_
+T 350 300 5 8 0 1 0 2 1
+pintype=pas
+}
+P 800 1200 800 900 1 0 0
+{
+T 850 1050 5 8 0 1 0 0 1
+pinnumber=7
+T 850 1050 5 8 0 1 0 2 1
+pinseq=7
+T 800 850 9 8 1 1 0 5 1
+pinlabel=V+
+T 800 700 5 8 0 1 0 5 1
+pintype=pwr
+}
+P 800 0 800 300 1 0 0
+{
+T 850 100 5 8 0 1 0 0 1
+pinnumber=9
+T 850 100 5 8 0 1 0 2 1
+pinseq=9
+T 800 350 9 8 1 1 0 3 1
+pinlabel=V-
+T 800 500 5 8 0 1 0 3 1
+pintype=pwr
+}
+P 0 900 300 900 1 0 0
+{
+T 205 945 5 8 0 1 0 6 1
+pinnumber=11
+T 200 850 5 8 0 1 0 8 1
+pinseq=11
+T 355 895 9 8 1 1 0 1 1
+pinlabel=High
+T 350 900 5 8 0 1 0 2 1
+pintype=pas
+}
+T 1100 800 5 10 1 1 0 0 1
+refdes=X?
+T 300 1800 5 10 0 0 0 0 1
+device=Booster
+T 300 2000 5 10 0 0 0 0 1
+author=jpd@noqsi.com
+T 300 2200 5 10 0 0 0 0 1
+description=Parallel clock current booster
+T 300 2400 5 10 0 0 0 0 1
+numslots=0
+T 300 2600 8 10 0 0 0 0 1
+source=Booster.sch
+L 300 1200 300 0 3 0 0 0 -1 -1
+L 300 0 1300 600 3 0 0 0 -1 -1
+L 1300 600 300 1200 3 0 0 0 -1 -1
+T 400 600 9 6 1 0 0 1 1
+Booster
