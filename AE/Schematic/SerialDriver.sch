@@ -1,14 +1,14 @@
-v 20081231 1
+v 20121203 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-03-03 19:17:20 $
+date=20140124
 T 53900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.2 $
+rev=5.0
 T 55400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
+auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/schematic/SerialDriver.sch,v $
+fname=SerialDriver.sch
 T 53200 41200 5 14 1 1 0 4 1
 title=Serial Clock Driver
 }
@@ -53,9 +53,9 @@ refdes=R5
 T 47000 45400 5 10 1 1 0 0 1
 value=1k
 T 46700 45600 5 10 0 1 0 0 1
-footprint=0603
+footprint=1210
 T 46700 45600 5 10 0 1 0 0 1
-spec=5% 1/10W
+spec=5% 1/2W
 }
 C 46600 44500 1 0 0 gnd-1.sym
 N 47600 45700 47600 44800 4
@@ -113,9 +113,9 @@ refdes=R3
 T 43900 45400 5 10 1 1 0 0 1
 value=1k
 T 43600 45600 5 10 0 1 0 0 1
-footprint=0805
+footprint=1210
 T 43600 45600 5 10 0 1 0 0 1
-spec=5% 1/4W
+spec=5% 1/2W
 }
 C 43500 44500 1 0 0 gnd-1.sym
 N 49500 44900 47600 44900 4
@@ -210,7 +210,7 @@ device=RESISTOR
 T 51700 45900 5 10 1 1 0 0 1
 refdes=R6
 T 52500 45700 5 10 1 1 0 0 1
-value=150
+value=510
 T 51500 45600 5 10 0 1 0 0 1
 footprint=2512
 T 51500 45600 5 10 0 1 0 0 1
@@ -223,7 +223,7 @@ device=RESISTOR
 T 51900 45000 5 10 1 1 0 0 1
 refdes=R7
 T 52500 45200 5 10 1 1 0 0 1
-value=150
+value=510
 T 51500 45200 5 10 0 1 0 0 1
 footprint=2512
 T 51500 45200 5 10 0 1 0 0 1
@@ -236,7 +236,7 @@ device=RESISTOR
 T 48800 47100 5 10 1 1 0 0 1
 refdes=R8
 T 49000 46600 5 10 1 1 0 0 1
-value=150
+value=510
 T 48600 46800 5 10 0 1 0 0 1
 footprint=2512
 T 48600 46800 5 10 0 1 0 0 1
@@ -249,7 +249,7 @@ device=RESISTOR
 T 48400 43800 5 10 1 1 0 0 1
 refdes=R9
 T 48600 43300 5 10 1 1 0 0 1
-value=150
+value=510
 T 48200 43500 5 10 0 1 0 0 1
 footprint=2512
 T 48200 43500 5 10 0 1 0 0 1
