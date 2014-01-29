@@ -2,13 +2,13 @@ v 20110115 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-03-03 22:38:27 $
+date=20140129
 T 53900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.7 $
+rev=5.0
 T 55400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
+auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/schematic/Interface.1.sch,v $
+fname=Interface.1.sch
 T 53200 41200 5 14 1 1 0 4 1
 title=Interface Board
 }
@@ -253,31 +253,18 @@ N 41500 49900 42300 49900 4
 N 41500 48100 42000 48100 4
 N 41500 48700 42300 48700 4
 N 41500 47800 42300 47800 4
-C 42300 48700 1 0 0 coil-1.sym
-{
-T 42500 49100 5 10 0 0 0 0 1
-device=CDPH4D19FNP-220MC
-T 42500 48900 5 10 1 1 0 0 1
-refdes=L2
-T 42500 49300 5 10 0 0 0 0 1
-symversion=0.1
-T 42600 48500 5 10 1 1 0 0 1
-value=22uH
-T 42300 48700 5 10 0 1 0 0 1
-footprint=CDPH4D19F
-}
 C 42300 49900 1 0 0 coil-1.sym
 {
 T 42500 50300 5 10 0 0 0 0 1
-device=CDPH4D19FNP-220MC
+device=IHLP5050FDER100M01
 T 42500 50100 5 10 1 1 0 0 1
 refdes=L1
 T 42500 50500 5 10 0 0 0 0 1
 symversion=0.1
 T 42600 49700 5 10 1 1 0 0 1
-value=22uH
+value=10uH
 T 42300 49900 5 10 0 1 0 0 1
-footprint=CDPH4D19F
+footprint=IHLP5050
 }
 C 42300 47800 1 0 0 coil-1.sym
 {
@@ -637,3 +624,16 @@ T 53600 48200 5 10 1 1 270 0 1
 netname=ctrl_ina_p
 }
 C 53500 47200 1 270 0 busripper-1.sym
+C 42300 48700 1 0 0 coil-1.sym
+{
+T 42500 49100 5 10 0 0 0 0 1
+device=IHLP5050FDER100M01
+T 42500 48900 5 10 1 1 0 0 1
+refdes=L2
+T 42500 49300 5 10 0 0 0 0 1
+symversion=0.1
+T 42600 48500 5 10 1 1 0 0 1
+value=10uH
+T 42300 48700 5 10 0 1 0 0 1
+footprint=IHLP5050
+}
