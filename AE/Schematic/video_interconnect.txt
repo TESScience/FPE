@@ -1,0 +1,123 @@
+#
+# Video interconnection down the stack.
+#
+# The format of this file is:
+#
+# (connector)	(pin)	(name)
+#
+# Fields separated by tabs
+# Blank lines and lines starting with # ignored
+# Additional fields ignored by the netlister, but perhaps used by future
+# programs like a document generator.
+
+# Power supplies
+J6	A50	+2.5	
+J6	B50	+3.3
+J6	A49	+5
+J6	B49	+15
+J6	A48	-15
+J6	B48	+24
+
+J6	B14	+3.3DAC	DAC Reference Voltage
+
+# Serial digital video streams
+J6	A44	SDO-A-1	Output A, CCD 1
+J6	A42	SDO-B-1
+J6	A40	SDO-C-1
+J6	A38	SDO-D-1
+J6	A10	SDO-A-2
+J6	A8	SDO-B-2
+J6	A6	SDO-C-2
+J6	A4	SDO-D-2
+J6	B5	SDO-A-3
+J6	B7	SDO-B-3
+J6	B9	SDO-C-3
+J6	B11	SDO-D-3	
+J6	B39	SDO-A-4	
+J6	B41	SDO-B-4	
+J6	B43	SDO-C-4
+J6	B45	SDO-D-4	
+
+# ADC controls from sequencer
+# Partially separated here because I'm concerned about fanout
+J6	A47	SCK-1	Serial Data Clock, CCD 1
+J6	A3	SCK-2
+J6	B2	SCK-3
+J6	B46	SCK-4
+J6	A46	CNV-1	Convert signal, CCD 1
+J6	A2	CNV-2
+J6	B3	CNV-3
+J6	B47	CNV-4
+
+# Video processor clocks from sequencer
+J6	A1	Int	Integrate signal from sequencer
+J6	A18	Deint	Deintegrate
+J6	B1	Clamp	Clamp signal from sequencer	
+
+# Clocks from the driver board
+J6	A23	P1-IA-0	Parallel clocks to CCD
+J6	B24	P2-IA-0
+J6	A25	P3-IA-0
+J6	A21	P1-FS-0
+J6	B20	P2-FS-0
+J6	B26	P3-FS-0
+J6	A27	P1-OR-0	Serial clocks to CCD 
+J6	A29	P2-OR-0
+J6	B28	P3-OR-0 
+J6	B22	RG-0
+J6		ID-0
+J6	A23	P1-IA-1	Parallel clocks to CCD
+J6	B24	P2-IA-1
+J6	A25	P3-IA-1
+J6	A21	P1-FS-1
+J6	B20	P2-FS-1
+J6	B26	P3-FS-1
+J6	A27	P1-OR-1	Serial clocks to CCD 
+J6	A29	P2-OR-1
+J6	B28	P3-OR-1 
+J6	B22	RG-1
+J6		ID-1
+J6	A23	P1-IA-2	Parallel clocks to CCD
+J6	B24	P2-IA-2
+J6	A25	P3-IA-2
+J6	A21	P1-FS-2
+J6	B20	P2-FS-2
+J6	B26	P3-FS-2
+J6	A27	P1-OR-2	Serial clocks to CCD 
+J6	A29	P2-OR-2
+J6	B28	P3-OR-2 
+J6	B22	RG-2
+J6		ID-2
+J6	A23	P1-IA-3	Parallel clocks to CCD
+J6	B24	P2-IA-3
+J6	A25	P3-IA-3
+J6	A21	P1-FS-3
+J6	B20	P2-FS-3
+J6	B26	P3-FS-3
+J6	A27	P1-OR-3	Serial clocks to CCD 
+J6	A29	P2-OR-3
+J6	B28	P3-OR-3 
+J6	B22	RG-3
+J6		ID-3
+
+# Housekeeping
+
+J6	A33	HKA0	Housekeeping address lines
+J6	A34	HKA1
+J6	A35	HKA2
+		HKA3
+		HKA4
+		HKA5
+		HKA6
+
+J6	B34	HKCOM	Common for most HK
+J6	B35	RTDCOM	Common for Al RTD's on chips
+J6	A16	TCOM	Common for AD590 temperature sensors	
+
+# DACs
+		DD
+		DCK
+		DCS0
+		DCS1
+		DSC2
+		DCS3

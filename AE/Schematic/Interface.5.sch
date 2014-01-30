@@ -2,15 +2,15 @@ v 20110115 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-01-11 18:02:03 $
+date=20140130
 T 53900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.1 $
+rev=5.0
 T 55400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
+auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/components/symbols/Noqsi-title-B.sym,v $
+fname=Interface.5.sch
 T 53200 41200 5 14 1 1 0 4 1
-title=TITLE
+title=Interface Board
 }
 C 44000 41200 1 0 0 DriverSet.sym
 {
@@ -104,7 +104,7 @@ C 45200 40900 1 0 0 gnd-1.sym
 N 44000 41900 43500 41900 4
 {
 T 43500 42000 5 10 1 1 0 0 1
-netname=HK96
+netname=HK0
 }
 C 43500 41900 1 90 0 busripper-1.sym
 N 44000 42300 43500 42300 4
@@ -227,3 +227,7 @@ T 46300 50300 5 10 1 1 0 0 1
 netname=+15
 }
 C 46200 50400 1 0 0 busripper-1.sym
+T 51900 40100 9 10 1 0 0 0 1
+10
+T 50500 40100 9 10 1 0 0 0 1
+5
