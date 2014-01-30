@@ -15,7 +15,7 @@ title=Interface Board
 C 44000 41200 1 0 0 DriverSet.sym
 {
 T 45600 48900 5 10 1 1 0 3 1
-refdes=X?
+refdes=X2
 }
 U 48000 49900 48000 45200 10 -1
 N 47100 49500 47800 49500 4

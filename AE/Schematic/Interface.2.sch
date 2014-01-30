@@ -408,14 +408,14 @@ value=0.1uF
 C 46600 41400 1 0 0 resistor.sym
 {
 T 46800 41700 5 10 1 1 0 0 1
-refdes=R?
+refdes=R36
 T 46800 41200 5 10 1 1 0 0 1
 value=100
 }
 C 46000 40900 1 0 0 resistor.sym
 {
 T 46200 41200 5 10 1 1 0 0 1
-refdes=R?
+refdes=R37
 T 46200 40700 5 10 1 1 0 0 1
 value=100
 }
