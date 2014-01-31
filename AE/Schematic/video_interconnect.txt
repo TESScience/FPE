@@ -8,7 +8,8 @@
 # Fields separated by tabs
 # Blank lines and lines starting with # ignored
 
-# J6 carries CCD clocks from the interface board
+# J6 carries CCD clocks and power from the interface board
+
 J6	A1	GND
 J6	B1	P1-IA-0	Parallel clocks to CCD
 J6	A2	P2-IA-0
@@ -70,7 +71,16 @@ J6	B29	P3-OR-3
 J6	A30	RG-3
 J6	B30	ID-3
 
-# J8 carries power, logic, housekeeping
+# Power supplies
+
+J6	A32	GND
+J6	B32	+5
+J6	A33	+15
+J6	B33	-15
+J6	A34	GND
+J6	B34	+24
+
+# J8 carries logic, housekeeping
 
 # Serial digital video streams
 
@@ -123,7 +133,6 @@ J8	B21	CNV-3
 J8	A22	CNV-4
 
 # Video processor clocks from sequencer
-J8	A23	GND
 J8	A24	GND
 J8	B24	Int	Integrate signal from sequencer
 J8	A25	GND
@@ -142,32 +151,25 @@ J8	B29	HKA4
 J8	A30	HKA5
 J8	B30	HKA6
 
-J8	A31	GND
-J8	B31	HKCOM	Common for most HK
-J8	A32	RTDCOM	Common for Al RTD's on chips
-J8	B32	TCOM	Common for AD590 temperature sensors
-J8	A33	GND	
+# Slip the analog HK lines in among the fast digitals: they're neither
+# likely to cause crosstalk nor particularly susceptible to it.
+
+J8	B22	HKCOM	Common for most HK
+J8	A23	RTDCOM	Common for Al RTD's on chips
+J8	B23	TCOM	Common for AD590 temperature sensors
 
 # DACs
 
-J8	A34	GND
-J8	B34	DD
-J8	A35	GND
-J8	B35	DCK
-J8	A36	DCS0
-J8	B36	DCS1
-J8	A37	DSC2
-J8	B37	DCS3
-
-# Power supplies
-J8	A38	GND
-J8	B38	+5
-J8	A39	+15
-J8	B39	-15
-J8	A40	GND
-J8	B40	+24
+J8	A31	GND
+J8	B31	DD
+J8	A32	GND
+J8	B32	DCK
+J8	A33	DCS0
+J8	B33	DCS1
+J8	A34	DSC2
+J8	B34	DCS3
 
 # Spares
-# J8	B22
-# J8	B23
-# J8	B33
+
+# J6	A31
+# J6	B31
