@@ -1,0 +1,7 @@
+J7	1	seq_data[12]
+J7	2	seq_data[13]
+J7	3	seq_data[14]
+J7	5	seq_strbn
+J7	6	seq_strbp
+J7	7	seq_clkn
+J7	8	seq_clkp

@@ -1,0 +1,8 @@
+J4	1	tp_out[0]
+J4	2	tp_out[1]
+J4	3	tp_out[2]
+J4	4	tp_out[3]
+J4	5	tp_out[4]
+J4	6	tp_out[5]
+J4	7	tp_out[6]
+J4	8	tp_out[7]

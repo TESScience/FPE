@@ -184,17 +184,17 @@ refdes=HKA0
 C 49800 43000 1 0 0 in-1.sym
 {
 T 49700 43300 5 10 1 1 0 0 1
-refdes=HKA0
+refdes=HKA1
 }
 C 49800 42300 1 0 0 in-1.sym
 {
 T 49700 42600 5 10 1 1 0 0 1
-refdes=HKA0
+refdes=HKA2
 }
 C 49800 41600 1 0 0 in-1.sym
 {
 T 49700 41900 5 10 1 1 0 0 1
-refdes=HKA0
+refdes=HKSEL
 }
 N 50400 41700 51300 41700 4
 N 50400 42400 51000 42400 4
@@ -283,7 +283,7 @@ refdes=DCK
 C 43100 45400 1 0 0 in-1.sym
 {
 T 42700 45400 5 10 1 1 0 0 1
-refdes=\_DS\_
+refdes=DS
 }
 C 46800 43400 1 0 0 in-1.sym
 {

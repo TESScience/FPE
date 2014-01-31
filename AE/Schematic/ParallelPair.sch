@@ -275,13 +275,13 @@ C 55200 43400 1 0 0 gnd-1.sym
 C 56000 46400 1 0 0 out-1.sym
 {
 T 56000 46600 5 10 1 1 0 0 1
-refdes=Vn
+refdes=OutA
 }
 N 56000 46500 55000 46500 4
 C 56000 44200 1 0 0 out-1.sym
 {
 T 56000 44400 5 10 1 1 0 0 1
-refdes=Vn
+refdes=OutB
 }
 N 56000 44300 55000 44300 4
 C 45200 44900 1 180 0 smallbypass.sym

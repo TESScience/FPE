@@ -1,6 +1,5 @@
-# $Id: Makefile,v 1.5 2009-02-16 17:26:58 jpd Exp $
 
-all : Video.pdf Video.net.txt Interface.pdf Interface.net.txt
+all : Interface.pdf Interface.net.txt
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
@@ -85,7 +84,12 @@ INTERFACEDOCS= ParallelPair.ps \
 	SerialDriver.ps \
 	ParallelReg.ps \
 	SerialRegulator.ps \
-	CapacitorBank.ps \
+	reset_regulator.ps \
+	ParallelPair.ps \
+	DriverSet.1.ps \
+	DriverSet.2.ps \
+	DriverSet.3.ps \
+	DriverSet.4.ps \
 	Interface.1.ps \
 	Interface.2.ps \
 	Interface.3.ps \
@@ -94,6 +98,8 @@ INTERFACEDOCS= ParallelPair.ps \
 	Interface.6.ps \
 	Interface.7.ps \
 	Interface.8.ps \
+	Interface.9.ps \
+	Interface.10.ps \
 	Interface.J1.txt \
 	Interface.J2.txt \
 	Interface.J3.txt \
@@ -111,14 +117,21 @@ INTERFACETOP= \
 	Interface.5.sch \
 	Interface.6.sch \
 	Interface.7.sch \
-	Interface.8.sch
+	Interface.8.sch \
+	Interface.9.sch \
+	Interface.10.sch
 
 INTERFACESUB= \
 	ParallelPair.sch \
 	SerialDriver.sch \
 	ParallelReg.sch \
 	SerialRegulator.sch \
-	CapacitorBank.sch
+	reset_regulator.sch \
+	ParallelPair.sch \
+	DriverSet.1.sch \
+	DriverSet.2.sch \
+	DriverSet.3.sch \
+	DriverSet.4.sch
 
 INTERFACEMERGE= \
 	Interface.J1.psch \
