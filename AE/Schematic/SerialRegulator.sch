@@ -2,15 +2,15 @@ v 20110115 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-01-11 18:02:03 $
+date=20140109
 T 53900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.1 $
+rev=5.0
 T 55400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
+auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/components/symbols/Noqsi-title-B.sym,v $
+fname=SerialRegulator.sch
 T 53200 41200 5 14 1 1 0 4 1
-title=TITLE
+title=Serial Clock Regulator
 }
 C 45900 48200 1 180 0 pnp.sym
 {
@@ -18,6 +18,8 @@ T 45300 47700 5 10 1 1 180 0 1
 refdes=Q2
 T 45900 48200 5 10 0 0 0 0 1
 model-name=MMBT2907A
+T 45900 48200 5 10 0 0 0 0 1
+value=MMBT2907A
 }
 C 46300 47700 1 180 1 pnp.sym
 {
@@ -25,6 +27,8 @@ T 46900 47200 5 10 1 1 180 6 1
 refdes=Q3
 T 46300 47700 5 10 0 0 0 0 1
 model-name=MMBT2907A
+T 46300 47700 5 10 0 0 0 0 1
+value=MMBT2907A
 }
 C 46900 47700 1 90 0 resistor.sym
 {
@@ -178,6 +182,8 @@ T 46000 45000 5 10 1 1 0 0 1
 refdes=Q1
 T 45400 44500 5 10 0 0 0 0 1
 model-name=MMBT2222A
+T 45400 44500 5 10 0 0 0 0 1
+value=MMBT2222A
 }
 C 45800 43300 1 0 0 gnd-1.sym
 N 45900 45500 45900 47200 4
@@ -313,6 +319,8 @@ T 52400 46000 5 10 1 1 180 6 1
 refdes=Q4
 T 51800 46500 5 10 0 0 0 0 1
 model-name=MMBT2907A
+T 51800 46500 5 10 0 0 0 0 1
+value=MMBT2907A
 }
 N 51800 46000 51500 46000 4
 N 51400 46900 51800 46900 4
@@ -341,6 +349,8 @@ T 53600 44500 5 10 1 1 0 0 1
 refdes=Q5
 T 53000 44000 5 10 0 0 0 0 1
 model-name=MMBT2222A
+T 53000 44000 5 10 0 0 0 0 1
+value=MMBT2222A
 }
 C 53600 43100 1 90 0 resistor.sym
 {
@@ -355,6 +365,8 @@ T 52400 44000 5 10 1 1 0 6 1
 refdes=Q6
 T 53000 43500 5 10 0 0 0 6 1
 model-name=MMBT2222A
+T 53000 43500 5 10 0 0 0 0 1
+value=MMBT2222A
 }
 C 51600 43600 1 90 0 resistor.sym
 {
@@ -470,3 +482,7 @@ C 54400 46900 1 0 0 out-1.sym
 T 54400 47100 5 10 1 1 0 0 1
 refdes=HKn
 }
+T 50600 40100 9 10 1 0 0 0 1
+1
+T 51900 40100 9 10 1 0 0 0 1
+1
