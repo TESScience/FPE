@@ -86,6 +86,7 @@ INTERFACEDOCS= ParallelPair.ps \
 	SerialRegulator.ps \
 	reset_regulator.ps \
 	ParallelPair.ps \
+	Minus30.ps \
 	DriverSet.1.ps \
 	DriverSet.2.ps \
 	DriverSet.3.ps \
@@ -131,7 +132,8 @@ INTERFACESUB= \
 	DriverSet.1.sch \
 	DriverSet.2.sch \
 	DriverSet.3.sch \
-	DriverSet.4.sch
+	DriverSet.4.sch \
+	Minus30.sch
 
 INTERFACEMERGE= \
 	Interface.J1.psch \
