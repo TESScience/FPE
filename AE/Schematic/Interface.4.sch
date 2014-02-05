@@ -304,6 +304,14 @@ T 45000 44200 5 10 1 1 0 0 1
 refdes=J1
 T 44200 45000 5 10 0 1 0 0 1
 symversion=20090123
+T 44200 43600 5 10 0 0 0 0 1
+description=connector header
+T 44200 43600 5 10 0 0 0 0 1
+value=JTAG
+T 44200 43600 5 10 0 0 0 0 1
+spec=20 pin
+T 44200 43600 5 10 0 0 0 0 1
+footprint=jtag20
 }
 C 41300 42600 1 0 0 resistor.sym
 {
@@ -421,6 +429,14 @@ T 55600 43600 5 10 1 1 0 0 1
 refdes=J2
 T 54800 44400 5 10 0 1 0 0 1
 symversion=20090123
+T 54800 43000 5 10 0 0 0 0 1
+description=connector header
+T 54800 43000 5 10 0 0 0 0 1
+value=JTAG
+T 54800 43000 5 10 0 0 0 0 1
+spec=10 pin
+T 54800 43000 5 10 0 0 0 0 1
+footprint=jtag10
 }
 U 49200 43300 54800 43300 10 1
 C 49600 42500 1 0 0 resistor.sym
@@ -498,6 +514,14 @@ T 47100 43600 5 10 1 1 0 0 1
 refdes=J4
 T 46300 44400 5 10 0 1 0 0 1
 symversion=20090123
+T 46300 43000 5 10 0 0 0 0 1
+value=LPPB042NFSS
+T 46300 43000 5 10 0 0 0 0 1
+footprint=LPPB042NFSS
+T 46300 43000 5 10 0 0 0 0 1
+spec=8pos, .050" pitch
+T 46300 43000 5 10 0 0 0 0 1
+description=connector header
 }
 U 48100 43200 47400 43200 10 0
 N 48400 49100 47200 49100 4
@@ -514,6 +538,14 @@ T 47100 44400 5 10 1 1 0 0 1
 refdes=J7
 T 46300 45200 5 10 0 1 0 0 1
 symversion=20090123
+T 46300 43800 5 10 0 0 0 0 1
+value=LPPB042NFSS
+T 46300 43800 5 10 0 0 0 0 1
+footprint=LPPB042NFSS
+T 46300 43800 5 10 0 0 0 0 1
+spec=8pos, .050" pitch
+T 46300 43800 5 10 0 0 0 0 1
+description=connector header
 }
 U 47800 43200 47800 44100 10 0
 U 47800 44100 47400 44100 10 0
