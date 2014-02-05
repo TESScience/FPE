@@ -73,6 +73,7 @@ J6	B30	ID-3
 
 # Power supplies
 
+J6	A31	-30
 J6	A32	GND
 J6	B32	+5
 J6	A33	+15
@@ -171,5 +172,4 @@ J8	B34	DCS3
 
 # Spares
 
-# J6	A31
 # J6	B31

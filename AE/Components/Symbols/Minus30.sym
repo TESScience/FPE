@@ -1,0 +1,82 @@
+v 20110115 2
+P 0 1800 300 1800 1 0 0
+{
+T 200 1850 5 8 0 1 0 6 1
+pinnumber=3
+T 200 1750 5 8 0 1 0 8 1
+pinseq=3
+T 350 1800 9 8 1 1 0 0 1
+pinlabel=Clk
+T 350 1800 5 8 0 1 0 2 1
+pintype=in
+}
+P 700 3100 700 2800 1 0 0
+{
+T 750 2950 5 8 0 1 0 0 1
+pinnumber=7
+T 750 2950 5 8 0 1 0 2 1
+pinseq=7
+T 700 2750 9 8 1 1 0 5 1
+pinlabel=V+
+T 700 2600 5 8 0 1 0 5 1
+pintype=pwr
+}
+P 1100 3100 1100 2800 1 0 0
+{
+T 1150 2950 5 8 0 1 0 0 1
+pinnumber=8
+T 1150 2950 5 8 0 1 0 2 1
+pinseq=8
+T 1100 2750 9 8 1 1 0 5 1
+pinlabel=VL
+T 1100 2600 5 8 0 1 0 5 1
+pintype=pwr
+}
+P 700 0 700 300 1 0 0
+{
+T 750 100 5 8 0 1 0 0 1
+pinnumber=9
+T 750 100 5 8 0 1 0 2 1
+pinseq=9
+T 700 350 9 8 1 1 0 3 1
+pinlabel=V-
+T 700 500 5 8 0 1 0 3 1
+pintype=pwr
+}
+P 1100 0 1100 300 1 0 0
+{
+T 1150 100 5 8 0 1 0 0 1
+pinnumber=10
+T 1150 100 5 8 0 1 0 2 1
+pinseq=10
+T 1100 350 9 8 1 1 0 3 1
+pinlabel=GND
+T 1100 500 5 8 0 1 0 3 1
+pintype=pwr
+}
+P 2000 1800 1700 1800 1 0 0
+{
+T 1800 1850 5 8 0 1 0 0 1
+pinnumber=11
+T 1800 1750 5 8 0 1 0 2 1
+pinseq=11
+T 1650 1800 9 8 1 1 0 6 1
+pinlabel=Out
+T 1650 1800 5 8 0 1 0 8 1
+pintype=pas
+}
+B 300 300 1400 2500 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 1700 2900 8 10 1 1 0 6 1
+refdes=X?
+T 900 2100 9 10 1 0 270 0 1
+Minus30
+T 300 4200 5 10 0 0 0 0 1
+device=Minus30
+T 300 4400 5 10 0 0 0 0 1
+author=jpd@noqsi.com
+T 300 4600 5 10 0 0 0 0 1
+description=-30V Generator
+T 300 4800 5 10 0 0 0 0 1
+numslots=0
+T 300 5000 8 10 0 0 0 0 1
+source=Minus30.sch
