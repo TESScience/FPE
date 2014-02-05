@@ -136,7 +136,7 @@ J8	A22	CNV-4
 J8	A24	GND
 J8	B24	Int	Integrate signal from sequencer
 J8	A25	GND
-J8	B25	Deint	Deintegrate
+J8	B25	\_Hold\_	Hold from sequencer
 J8	A26	GND
 J8	B26	Clamp	Clamp signal from sequencer	
 
@@ -166,7 +166,7 @@ J8	A32	GND
 J8	B32	DCK
 J8	A33	DCS0
 J8	B33	DCS1
-J8	A34	DSC2
+J8	A34	DCS2
 J8	B34	DCS3
 
 # Spares

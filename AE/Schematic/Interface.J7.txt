@@ -1,5 +1,5 @@
-J7	1	seq_data[12]
-J7	2	seq_data[13]
+J7	1	CNV
+J7	2	FVAL
 J7	3	seq_data[14]
 J7	5	seq_strbn
 J7	6	seq_strbp

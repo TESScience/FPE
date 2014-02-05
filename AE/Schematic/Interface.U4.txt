@@ -1,36 +1,41 @@
+# Table of FPGA pins
+# column 3 is the name in the schematic
+# column 4, if different, is the FPGA's internal name
+# some pins commented out with # because they aren't used
+
 U4	C15	ack
-U4	T11	adc_cnv[0]
-U4	R11	adc_cnv[1]
-U4	P11	adc_cnv[2]
-U4	P10	adc_cnv[3]
-U4	P9	adc_cnv[4]
-U4	N9	adc_cnv[5]
-U4	P8	adc_cnv[6]
-U4	N8	adc_cnv[7]
-U4	P7	adc_cnv[8]
-U4	N7	adc_cnv[9]
-U4	P6	adc_cnv[10]
-U4	N6	adc_cnv[11]
-U4	P5	adc_cnv[12]
-U4	P4	adc_cnv[13]
-U4	N4	adc_cnv[14]
-U4	T2	adc_cnv[15]
-U4	T10	adc_sclk[0]
-U4	R10	adc_sclk[1]
-U4	T9	adc_sclk[2]
-U4	R9	adc_sclk[3]
-U4	T8	adc_sclk[4]
-U4	R8	adc_sclk[5]
-U4	T7	adc_sclk[6]
-U4	R7	adc_sclk[7]
-U4	T6	adc_sclk[8]
-U4	R6	adc_sclk[9]
-U4	T5	adc_sclk[10]
-U4	R5	adc_sclk[11]
-U4	T4	adc_sclk[12]
-U4	R4	adc_sclk[13]
-U4	T3	adc_sclk[14]
-U4	R3	adc_sclk[15]
+# U4	T11	adc_cnv[0]
+U4	R11	CNV-1	adc_cnv[1]
+U4	P11	CNV-2	adc_cnv[2]
+U4	P10	CNV-3	adc_cnv[3]
+U4	P9	CNV-4	adc_cnv[4]
+# U4	N9	adc_cnv[5]
+# U4	P8	adc_cnv[6]
+# U4	N8	adc_cnv[7]
+# U4	P7	adc_cnv[8]
+# U4	N7	adc_cnv[9]
+# U4	P6	adc_cnv[10]
+# U4	N6	adc_cnv[11]
+# U4	P5	adc_cnv[12]
+# U4	P4	adc_cnv[13]
+# U4	N4	adc_cnv[14]
+# U4	T2	adc_cnv[15]
+# U4	T10	adc_sclk[0]
+U4	R10	SCK-1	adc_sclk[1]
+U4	T9	SCK-2	adc_sclk[2]
+U4	R9	SCK-3	adc_sclk[3]
+U4	T8	SCK-4	adc_sclk[4]
+# U4	R8	adc_sclk[5]
+# U4	T7	adc_sclk[6]
+# U4	R7	adc_sclk[7]
+# U4	T6	adc_sclk[8]
+# U4	R6	adc_sclk[9]
+# U4	T5	adc_sclk[10]
+# U4	R5	adc_sclk[11]
+# U4	T4	adc_sclk[12]
+# U4	R4	adc_sclk[13]
+# U4	T3	adc_sclk[14]
+# U4	R3	adc_sclk[15]
 U4	N15	SDO-A-1	adc_sdo[0]
 U4	L14	SDO-B-1	adc_sdo[1]
 U4	M14	SDO-C-1	adc_sdo[2]
@@ -66,9 +71,9 @@ U4	P16	cmd_fifo_full
 U4	A3	ctrl_ina
 U4	P2	ctrl_ina_n
 U4	P1	ctrl_ina_p
-U4	K4	ctrl_inb
-U4	R2	ctrl_inb_n
-U4	R1	ctrl_inb_p
+# U4	K4	ctrl_inb
+# U4	R2	ctrl_inb_n
+# U4	R1	ctrl_inb_p
 U4	A2	ctrl_out
 U4	N1	ctrl_out_n
 U4	M1	ctrl_out_p
@@ -108,8 +113,8 @@ U4	B7	SP3S	seq_data[8]
 U4	A7	SRG	seq_data[9]
 U4	E8	Int	seq_data[10]
 U4	C9	Clamp	seq_data[11]
-U4	B9	seq_data[12]
-U4	D8	seq_data[13]
+U4	B9	\_Hold\_	seq_data[12]
+U4	D8	SID	seq_data[13]
 U4	C8	seq_data[14]
 U4	B8	CNV	seq_data[15]
 U4	A8	FVAL	seq_data[16]
