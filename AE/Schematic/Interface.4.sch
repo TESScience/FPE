@@ -753,3 +753,9 @@ T 43500 48900 5 10 1 1 0 0 1
 netname=cwclk
 }
 C 44300 48800 1 270 0 busripper-1.sym
+N 41500 46700 40600 46700 4
+{
+T 41300 46800 5 10 1 1 0 7 1
+netname=\_YELLOW\_
+}
+C 40600 46700 1 90 1 busripper-1.sym
