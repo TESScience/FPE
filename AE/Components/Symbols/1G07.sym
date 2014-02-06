@@ -1,4 +1,4 @@
-v 20080127 1
+v 20110115 2
 L 300 700 900 400 3 0 0 0 -1 -1
 T 500 1000 5 10 0 0 0 0 1
 device=SN74LVC1G07DBV
@@ -31,7 +31,7 @@ L 500 200 700 500 3 0 0 0 -1 -1
 T 700 600 8 10 1 1 0 0 1
 refdes=U?
 T 600 2600 5 10 0 0 0 0 1
-footprint=SOT23-5
+footprint=TSOT23-5
 T 600 2800 5 10 0 0 0 0 1
 description=Noninverting driver with open collector output
 P 600 800 600 550 1 0 0

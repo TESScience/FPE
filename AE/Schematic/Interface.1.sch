@@ -488,7 +488,7 @@ refdes=J6
 T 54500 48100 5 10 0 1 0 0 1
 symversion=20090123
 T 54500 46700 5 10 0 0 0 0 1
-footprint=FX2CA2-68S-1.27DSA(71)
+footprint=FX2CA-68S-1.27DSA(71)
 T 54500 46700 5 10 0 0 0 0 1
 device=FX2S
 }
@@ -535,7 +535,7 @@ refdes=J8
 T 54500 47100 5 10 0 1 0 0 1
 symversion=20090123
 T 54500 45700 5 10 0 0 0 0 1
-footprint=FX2CA2-68S-1.27DSA(71)
+footprint=FX2CA-68S-1.27DSA(71)
 T 54500 45700 5 10 0 0 0 0 1
 device=FX2S
 }
