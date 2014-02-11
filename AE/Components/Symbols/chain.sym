@@ -10,15 +10,15 @@ pinlabel=OS
 T 450 1000 5 8 0 1 0 2 1
 pintype=pas
 }
-P 900 100 900 400 1 0 0
+P 600 1900 600 1600 1 0 0
 {
-T 850 300 5 8 0 1 90 6 1
+T 550 1695 5 8 0 1 90 0 1
 pinnumber=4
-T 950 300 5 8 0 1 90 8 1
+T 550 1700 5 8 0 1 270 8 1
 pinseq=4
-T 900 450 9 8 1 1 90 0 1
+T 600 1545 9 8 1 1 90 6 1
 pinlabel=GND
-T 900 450 5 8 0 1 90 2 1
+T 600 1550 5 8 0 1 270 2 1
 pintype=pwr
 }
 P 900 1900 900 1600 1 0 0
@@ -54,70 +54,59 @@ pinlabel=VIO
 T 1500 1550 5 8 0 1 90 8 1
 pintype=pwr
 }
+P 900 100 900 400 1 0 0
+{
+T 850 300 5 8 0 1 90 6 1
+pinnumber=9
+T 950 300 5 8 0 1 90 8 1
+pinseq=9
+T 900 450 9 8 1 1 90 0 1
+pinlabel=Int
+T 900 450 5 8 0 1 90 2 1
+pintype=in
+}
 P 1200 100 1200 400 1 0 0
 {
 T 1150 300 5 8 0 1 90 6 1
-pinnumber=9
+pinnumber=10
 T 1250 300 5 8 0 1 90 8 1
-pinseq=9
+pinseq=10
 T 1200 450 9 8 1 1 90 0 1
-pinlabel=Int
+pinlabel=Clamp
 T 1200 450 5 8 0 1 90 2 1
 pintype=in
 }
 P 1500 100 1500 400 1 0 0
 {
 T 1450 300 5 8 0 1 90 6 1
-pinnumber=10
+pinnumber=11
 T 1550 300 5 8 0 1 90 8 1
-pinseq=10
+pinseq=11
 T 1500 450 9 8 1 1 90 0 1
-pinlabel=Clamp
+pinlabel=CNV
 T 1500 450 5 8 0 1 90 2 1
 pintype=in
 }
 P 1800 100 1800 400 1 0 0
 {
-T 1750 300 5 8 0 1 90 6 1
-pinnumber=11
-T 1850 300 5 8 0 1 90 8 1
-pinseq=11
-T 1800 450 9 8 1 1 90 0 1
-pinlabel=CNV
-T 1800 450 5 8 0 1 90 2 1
-pintype=in
-}
-P 2500 1300 2200 1300 1 0 0
-{
-T 2300 1350 5 8 0 1 0 0 1
-pinnumber=12
-T 2300 1250 5 8 0 1 0 2 1
-pinseq=12
-T 2150 1300 9 8 1 1 0 6 1
-pinlabel=SDI
-T 2150 1300 5 8 0 1 0 8 1
+T 1750 305 5 8 0 1 90 6 1
+pinnumber=13
+T 1750 300 5 8 0 1 270 2 1
+pinseq=13
+T 1800 455 9 8 1 1 90 0 1
+pinlabel=SCK
+T 1800 450 5 8 0 1 270 8 1
 pintype=in
 }
 P 2500 1000 2200 1000 1 0 0
 {
 T 2300 1050 5 8 0 1 0 0 1
-pinnumber=13
-T 2300 950 5 8 0 1 0 2 1
-pinseq=13
-T 2150 1000 9 8 1 1 0 6 1
-pinlabel=SCK
-T 2150 1000 5 8 0 1 0 8 1
-pintype=in
-}
-P 2500 700 2200 700 1 0 0
-{
-T 2300 750 5 8 0 1 0 0 1
 pinnumber=14
-T 2300 650 5 8 0 1 0 2 1
+T 2300 950 5 8 0 1 0 2 1
 pinseq=14
-T 2150 700 9 8 1 1 0 6 1
+T 2150 1000 9 8 1 1 0 6 1
 pinlabel=SDO
-T 2150 700 5 8 0 1 0 8 1
+T 2150 1000 5 8 0 1 0 8 1
 pintype=out
 }
 B 400 400 1800 1200 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
@@ -159,7 +148,7 @@ pinnumber=8
 T 650 300 5 8 0 1 90 8 1
 pinseq=8
 T 600 450 9 8 1 1 90 0 1
-pinlabel=Deint
+pinlabel=\_Hold\_
 T 600 450 5 8 0 1 90 2 1
 pintype=in
 }
