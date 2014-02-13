@@ -316,3 +316,9 @@ T 46700 49500 5 10 1 1 0 0 1
 netname=HKCOM
 }
 C 46100 49400 1 180 0 busripper-1.sym
+N 46100 44500 47500 44500 4
+{
+T 46100 44300 5 10 1 1 0 0 1
+netname=TEMP
+}
+C 46100 44500 1 180 0 busripper-1.sym

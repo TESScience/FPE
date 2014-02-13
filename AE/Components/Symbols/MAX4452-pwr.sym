@@ -1,0 +1,40 @@
+v 20110115 2
+T 500 600 5 10 0 0 0 0 1
+device=MAX4452EXK
+P 400 900 400 1100 1 0 1
+{
+T 400 1100 5 10 0 0 0 0 1
+pinseq=5
+T 300 1000 5 10 1 1 0 4 1
+pinnumber=5
+T 900 1300 5 10 0 0 0 0 1
+pintype=pwr
+T 400 800 5 10 1 1 0 4 1
+pinlabel=Vcc
+}
+P 400 200 400 0 1 0 1
+{
+T 500 0 5 10 0 0 0 0 1
+pinseq=2
+T 500 100 5 10 1 1 0 4 1
+pinnumber=2
+T 1900 100 5 10 0 1 0 0 1
+pintype=pwr
+T 400 300 5 10 1 1 0 4 1
+pinlabel=Vee
+}
+T 700 1000 8 10 1 1 0 4 1
+refdes=U?
+T 1000 100 8 10 0 1 0 0 1
+footprint=SC70
+T -100 1700 8 10 0 0 0 0 1
+model-name=MAX4452
+T 800 2100 8 10 0 0 0 0 1
+file=MAX4452.mod
+T 0 1800 8 10 0 1 0 0 1
+description=Fast opamp
+T 0 2300 8 10 0 0 0 0 1
+spice-prototype=X? %pinseq model-name@
+B 0 200 800 700 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 400 500 9 8 1 0 0 3 1
+MAX4452

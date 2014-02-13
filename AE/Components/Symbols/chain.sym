@@ -39,7 +39,7 @@ pinnumber=6
 T 1250 1750 5 8 0 1 90 2 1
 pinseq=6
 T 1200 1550 9 8 1 1 90 6 1
-pinlabel=VDD
+pinlabel=Vref
 T 1200 1550 5 8 0 1 90 8 1
 pintype=pwr
 }
