@@ -488,14 +488,14 @@ N 47700 47700 46600 47700 4
 C 56400 53300 1 0 1 gp_opamp_dual.sym
 {
 T 55700 54000 5 10 1 1 0 6 1
-refdes=U?
+refdes=U1
 T 56100 56000 5 8 0 0 0 6 1
 symversion=1.0nicer
 }
 C 55200 51200 1 0 0 gp_opamp_dual.sym
 {
 T 55900 51900 5 10 1 1 0 0 1
-refdes=U?
+refdes=U1
 T 55500 53900 5 8 0 0 0 0 1
 symversion=1.0nicer
 }
@@ -587,7 +587,11 @@ footprint=0603
 C 57400 50200 1 0 0 gnd-1.sym
 N 57500 50500 57200 50500 4
 C 56200 48000 1 0 0 gnd-1.sym
-N 57300 49600 58000 49600 4
+N 57300 49600 58900 49600 4
+{
+T 59100 49600 5 10 1 1 0 0 1
+netname=+2.5
+}
 N 58000 49600 58000 54700 4
 N 58000 54700 57400 54700 4
 C 54900 46500 1 0 0 gp_opamp_dual_pwr.sym
@@ -595,7 +599,7 @@ C 54900 46500 1 0 0 gp_opamp_dual_pwr.sym
 T 55100 48500 5 8 0 0 0 0 1
 symversion=1.0
 T 55550 47050 5 10 1 1 0 0 1
-refdes=U?
+refdes=U1
 }
 C 55200 47400 1 0 0 capacitor.sym
 {
