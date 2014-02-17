@@ -128,8 +128,8 @@ T 1100 2200 5 10 0 0 0 0 1
 dist-license=GPL
 T 1100 2400 5 10 0 0 0 0 1
 use-license=GPL
-T 95 95 8 10 0 0 0 0 1
-source=chain.sch
+T 2295 1395 8 10 0 0 0 0 1
+source=Chain.1.sch
 P 1800 1900 1800 1600 1 0 0
 {
 T 1750 1750 5 8 0 1 90 0 1
@@ -154,3 +154,5 @@ pintype=in
 }
 T 1100 2600 8 10 0 0 0 0 1
 spice-prototype=X? %down chain
+T 2295 1195 8 10 0 0 0 0 1
+source=Chain.2.sch

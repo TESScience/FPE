@@ -1,18 +1,10 @@
 J1	1	+3.3
-J1	2	+3.3
-J1	3	nTRST
-J1	4	GND
-J1	5	TDI
-J1	6	GND
-J1	7	TMS
-J1	8	GND
-J1	9	TCK
-J1	10	GND
-J1	11	TCK
-J1	12	GND
-J1	13	TDO
-J1	14	GND
-J1	15	nRST
-J1	16	GND
-J1	18	GND
-J1	20	GND
+J1	2	TMS
+J1	3	GND
+J1	4	TCK
+J1	5	GND
+J1	6	TDO
+# J1	7		Key - do not connect
+J1	8	TDI
+# J1	9		GNDdetect - do not connect
+J1	10	nRST

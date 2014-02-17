@@ -470,3 +470,19 @@ Housekeeping
 T 3700 4800 9 15 1 0 180 0 2
 Per-chip
 circuitry
+T 6800 7200 8 10 0 0 0 0 1
+source=PerChip.1.sch
+T 6800 6900 8 10 0 0 0 0 1
+source=PerChip.2.sch
+T 6800 6600 8 10 0 0 0 0 1
+source=PerChip.3.sch
+T 6800 6300 8 10 0 0 0 0 1
+source=PerChip.4.sch
+T 6800 6000 8 10 0 0 0 0 1
+source=PerChip.5.sch
+T 6800 5700 8 10 0 0 0 0 1
+source=PerChip.6.sch
+T 6800 5400 8 10 0 0 0 0 1
+source=PerChip.7.sch
+T 6800 5100 8 10 0 0 0 0 1
+source=PerChip.8.sch
