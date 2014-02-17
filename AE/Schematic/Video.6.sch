@@ -2,15 +2,15 @@ v 20110115 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-01-11 18:02:03 $
+date=20140217
 T 53900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.1 $
+rev=5.0
 T 55400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
+auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/components/symbols/Noqsi-title-B.sym,v $
+fname=Video.6.sch
 T 53200 41200 5 14 1 1 0 4 1
-title=TITLE
+title=Video Board
 }
 C 42500 47500 1 0 0 74hc138.sym
 {
@@ -307,3 +307,7 @@ N 45300 40300 46300 40300 4
 N 46300 40300 46300 40900 4
 C 44900 40800 1 0 0 gnd-1.sym
 N 45300 41100 45000 41100 4
+T 50400 40100 9 10 1 0 0 0 1
+6
+T 52000 40100 9 10 1 0 0 0 1
+6

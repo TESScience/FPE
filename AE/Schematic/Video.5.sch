@@ -1,27 +1,19 @@
 v 20110115 2
 C 40000 40000 0 0 0 Noqsi-title-C.sym
 {
-T 55000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-01-30 04:17:52 $
-T 58900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.3 $
-T 60400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
-T 55200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/schematic/Video.2.sch,v $
 T 58200 41200 5 14 1 1 0 4 1
 title=Video Board
 }
 C 40000 40000 0 0 0 Noqsi-title-C.sym
 {
 T 55000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-01-30 04:17:52 $
+date=20140217
 T 58900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.3 $
+rev=5.0
 T 60400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
+auth=jpd
 T 55200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/schematic/Video.2.sch,v $
+fname=Video.5.sch
 T 58200 41200 5 14 1 1 0 4 1
 title=Video Board
 }
@@ -88,9 +80,9 @@ C 46100 51200 1 180 1 busripper-1.sym
 U 44700 51000 54300 51000 10 -1
 N 44700 53500 43500 53500 4
 T 55500 40200 9 10 1 0 0 0 1
-2
+5
 T 57000 40200 9 10 1 0 0 0 1
-2
+6
 N 47500 56300 44800 56300 4
 N 44800 56300 44800 55800 4
 C 44700 49100 1 0 0 gnd-1.sym

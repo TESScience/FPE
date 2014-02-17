@@ -8,104 +8,104 @@ rev=5.0
 T 55400 40200 5 10 1 1 0 0 1
 auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=Video.1.sch
+fname=Video.4.sch
 T 53200 41200 5 14 1 1 0 4 1
 title=Video Board
 }
 C 41800 40400 1 0 0 PerChip.sym
 {
 T 44900 47300 5 20 1 1 0 3 1
-refdes=X1
+refdes=X4
 }
 U 40500 42000 40500 48700 10 -1
 N 41800 48300 40700 48300 4
 {
 T 41700 48400 5 10 1 1 0 7 1
-netname=IG1-1
+netname=IG1-4
 }
 C 40700 48300 1 0 1 busripper-1.sym
 N 41800 47900 40700 47900 4
 {
 T 41700 48000 5 10 1 1 0 7 1
-netname=IG2-1
+netname=IG2-4
 }
 C 40700 47900 1 0 1 busripper-1.sym
 N 41800 47500 40700 47500 4
 {
 T 41700 47600 5 10 1 1 0 7 1
-netname=OG-1
+netname=OG-4
 }
 C 40700 47500 1 0 1 busripper-1.sym
 N 41800 47100 40700 47100 4
 {
 T 41700 47200 5 10 1 1 0 7 1
-netname=SCP-1
+netname=SCP-4
 }
 C 40700 47100 1 0 1 busripper-1.sym
 N 41800 46700 40700 46700 4
 {
 T 41700 46800 5 10 1 1 0 7 1
-netname=VSUB-1
+netname=VSUB-4
 }
 C 40700 46700 1 0 1 busripper-1.sym
 N 41800 46300 40700 46300 4
 {
 T 41700 46400 5 10 1 1 0 7 1
-netname=Backside-1
+netname=Backside-4
 }
 C 40700 46300 1 0 1 busripper-1.sym
 N 41800 45900 40700 45900 4
 {
 T 41700 46000 5 10 1 1 0 7 1
-netname=RD-1
+netname=RD-4
 }
 C 40700 45900 1 0 1 busripper-1.sym
 N 41800 45400 40700 45400 4
 {
 T 41700 45500 5 10 1 1 0 7 1
-netname=DR-A-1
+netname=DR-A-4
 }
 C 40700 45400 1 0 1 busripper-1.sym
 N 41800 45000 40700 45000 4
 {
 T 41700 45100 5 10 1 1 0 7 1
-netname=OUT-A-1
+netname=OUT-A-4
 }
 C 40700 45000 1 0 1 busripper-1.sym
 N 41800 44500 40700 44500 4
 {
 T 41700 44600 5 10 1 1 0 7 1
-netname=DR-B-1
+netname=DR-B-4
 }
 C 40700 44500 1 0 1 busripper-1.sym
 N 41800 44100 40700 44100 4
 {
 T 41700 44200 5 10 1 1 0 7 1
-netname=OUT-B-1
+netname=OUT-B-4
 }
 C 40700 44100 1 0 1 busripper-1.sym
 N 41800 43600 40700 43600 4
 {
 T 41700 43700 5 10 1 1 0 7 1
-netname=DR-C-1
+netname=DR-C-4
 }
 C 40700 43600 1 0 1 busripper-1.sym
 N 41800 43200 40700 43200 4
 {
 T 41700 43300 5 10 1 1 0 7 1
-netname=OUT-C-1
+netname=OUT-C-4
 }
 C 40700 43200 1 0 1 busripper-1.sym
 N 41800 42700 40700 42700 4
 {
 T 41700 42800 5 10 1 1 0 7 1
-netname=DR-D-1
+netname=DR-D-4
 }
 C 40700 42700 1 0 1 busripper-1.sym
 N 41800 42300 40700 42300 4
 {
 T 41700 42400 5 10 1 1 0 7 1
-netname=OUT-D-1
+netname=OUT-D-4
 }
 C 40700 42300 1 0 1 busripper-1.sym
 U 43700 49700 47300 49700 10 1
@@ -171,37 +171,37 @@ C 46200 40700 1 270 0 busripper-1.sym
 N 48000 48300 48800 48300 4
 {
 T 48000 48200 5 10 1 1 0 1 1
-netname=SDO-A-1
+netname=SDO-A-4
 }
 C 48800 48300 1 270 0 busripper-1.sym
 N 48000 47900 48800 47900 4
 {
 T 48000 47800 5 10 1 1 0 1 1
-netname=SDO-B-1
+netname=SDO-B-4
 }
 C 48800 47900 1 270 0 busripper-1.sym
 N 48000 47500 48800 47500 4
 {
 T 48000 47400 5 10 1 1 0 1 1
-netname=SDO-C-1
+netname=SDO-C-4
 }
 C 48800 47500 1 270 0 busripper-1.sym
 N 48000 47100 48800 47100 4
 {
 T 48000 47000 5 10 1 1 0 1 1
-netname=SDO-D-1
+netname=SDO-D-4
 }
 C 48800 47100 1 270 0 busripper-1.sym
 N 48000 46700 48800 46700 4
 {
 T 48000 46600 5 10 1 1 0 1 1
-netname=SCK-1
+netname=SCK-4
 }
 C 48800 46700 1 270 0 busripper-1.sym
 N 48000 46300 48800 46300 4
 {
 T 48000 46200 5 10 1 1 0 1 1
-netname=CNV-1
+netname=CNV-4
 }
 C 48800 46300 1 270 0 busripper-1.sym
 N 48000 45500 48800 45500 4
@@ -237,27 +237,27 @@ C 48800 42700 1 270 0 busripper-1.sym
 N 48000 43900 48800 43900 4
 {
 T 48000 43800 5 10 1 1 0 1 1
-netname=DSA-1
+netname=DSA-4
 }
 N 48000 43500 48800 43500 4
 {
 T 48000 43400 5 10 1 1 0 1 1
-netname=DSB-1
+netname=DSB-4
 }
 N 42500 41500 42500 40700 4
 {
 T 42600 41500 5 10 1 1 270 1 1
-netname=HKA-1
+netname=HKA-4
 }
 N 43100 41500 43100 40700 4
 {
 T 43200 41500 5 10 1 1 270 1 1
-netname=HKB-1
+netname=HKB-4
 }
 C 40200 48700 1 0 0 Flex.sym
 {
 T 41000 49300 5 10 1 1 0 0 1
-refdes=J1
+refdes=J4
 T 40200 50100 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -276,6 +276,6 @@ T 48100 50100 5 10 0 1 0 0 1
 symversion=20090123
 }
 T 50400 40200 9 10 1 0 0 0 1
-1
+4
 T 52000 40200 9 10 1 0 0 0 1
 6
