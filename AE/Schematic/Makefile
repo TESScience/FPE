@@ -1,5 +1,5 @@
 
-all : Interface.pdf Interface.net.txt
+all : Interface.pdf Interface.net.txt Video.pdf Video.net.txt
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
@@ -31,19 +31,31 @@ PARTDB=digikey.tsv maxim.tsv
 
 
 VIDEODOCS= \
-	chain.ps \
-	drain_regulator.ps \
-	reset_regulator.ps \
-	OG_regulator.ps \
-	perchip.ps \
+	Chain.1.ps \
+	Chain.2.ps \
+	PerChip.1.ps \
+	PerChip.2.ps \
+	PerChip.3.ps \
+	PerChip.4.ps \
+	PerChip.5.ps \
+	PerChip.6.ps \
+	PerChip.7.ps \
+	PerChip.8.ps \
 	Video.1.ps \
 	Video.2.ps \
+	Video.3.ps \
+	Video.4.ps \
+	Video.5.ps \
+	Video.6.ps \
 	Video.bom.txt
 
-VIDEOTOP= Video.1.sch Video.2.sch
+VIDEOTOP= Video.1.sch Video.2.sch Video.3.sch Video.4.sch \
+	Video.5.sch Video.6.sch
 
-VIDEOSUB= chain.sch drain_regulator.sch reset_regulator.sch \
-	OG_regulator.sch perchip.sch
+VIDEOSUB= PerChip.1.sch PerChip.2.sch PerChip.3.sch \
+	PerChip.4.sch PerChip.5.sch PerChip.6.sch \
+	PerChip.7.sch PerChip.8.sch Chain.1.sch Chain.2.sch
+
 
 # pseudo-schematics to be merged in
 # In this case, connector pin maps
@@ -52,8 +64,8 @@ VIDEOMERGE= Video-connectors.psch
 
 VIDEOSCH= $(VIDEOTOP) $(VIDEOSUB) $(VIDEOMERGE)
 
-CCD-connectors.txt : CCD-37pin.tsv
-	awk -f expand37.awk $< >$@
+CCD-connectors.txt : CCD-51pin.tsv
+	awk -f expand51.awk $< >$@
 
 Video-connectors.psch : \
 	CCD-connectors.txt TempConn.txt video_interconnect.txt
