@@ -2,15 +2,15 @@ v 20110115 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-01-11 18:02:03 $
+date=20140217
 T 53900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.1 $
+rev=5.0
 T 55400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
+auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/components/symbols/Noqsi-title-B.sym,v $
+fname=Chain.2.sch
 T 53200 41200 5 14 1 1 0 4 1
-title=TITLE
+title=Video Chain
 }
 C 49100 42200 1 0 0 max4594-pwr.sym
 {
@@ -298,14 +298,14 @@ N 43800 47700 43700 47700 4
 C 42700 45900 1 0 0 resistor.sym
 {
 T 42900 46200 5 10 1 1 0 0 1
-refdes=R?
+refdes=R28
 T 43000 45700 5 10 1 1 0 0 1
 value=3.01k
 }
 C 42700 46500 1 0 0 capacitor.sym
 {
 T 42900 47000 5 10 1 1 0 0 1
-refdes=C?
+refdes=C24
 T 43300 46500 5 10 1 1 0 0 1
 value=15nF
 T 42700 46500 5 10 0 1 0 0 1
@@ -323,7 +323,7 @@ N 44700 46000 44700 47700 4
 C 41800 45900 1 0 0 resistor.sym
 {
 T 42000 46200 5 10 1 1 0 0 1
-refdes=R?
+refdes=R27
 T 42100 45700 5 10 1 1 0 0 1
 value=4.99k
 }
@@ -331,14 +331,14 @@ C 41700 45700 1 0 0 gnd-1.sym
 C 41500 47800 1 0 0 resistor.sym
 {
 T 41700 48100 5 10 1 1 0 0 1
-refdes=R?
+refdes=R26
 T 41800 47600 5 10 1 1 0 0 1
 value=1.87k
 }
 C 41500 46800 1 0 0 capacitor.sym
 {
 T 41700 47300 5 10 1 1 0 0 1
-refdes=C?
+refdes=C23
 T 42100 46800 5 10 1 1 0 0 1
 value=0.1uF
 T 41500 46800 5 10 0 1 0 0 1
@@ -360,14 +360,14 @@ N 47600 46900 47600 47500 4
 C 45200 47600 1 0 0 resistor.sym
 {
 T 45400 47900 5 10 1 1 0 0 1
-refdes=R?
+refdes=R29
 T 45500 47400 5 10 1 1 0 0 1
 value=10k
 }
 C 45200 46800 1 0 0 resistor.sym
 {
 T 45400 47100 5 10 1 1 0 0 1
-refdes=R?
+refdes=R30
 T 45500 46600 5 10 1 1 0 0 1
 value=10k
 }
@@ -394,3 +394,7 @@ refdes=X?
 T 55400 48500 5 10 0 0 0 0 1
 graphical=1
 }
+T 50600 40100 9 10 1 0 0 0 1
+2
+T 51900 40100 9 10 1 0 0 0 1
+2

@@ -67,12 +67,12 @@ N 43100 42100 43100 45100 4
 C 44000 46700 1 0 0 in-1.sym
 {
 T 44000 47000 5 10 1 1 0 0 1
-refdes=OUT-A
+refdes=OUT-B
 }
 C 47000 46700 1 0 0 out-1.sym
 {
 T 47000 47000 5 10 1 1 0 0 1
-refdes=SDO-A
+refdes=SDO-B
 }
 C 44600 47400 1 0 0 gnd-1.sym
 N 44700 47700 45100 47700 4
@@ -84,12 +84,12 @@ refdes=X2
 C 47300 45900 1 0 0 in-1.sym
 {
 T 47300 46200 5 10 1 1 0 0 1
-refdes=OUT-A
+refdes=OUT-C
 }
 C 50300 45900 1 0 0 out-1.sym
 {
 T 50300 46200 5 10 1 1 0 0 1
-refdes=SDO-A
+refdes=SDO-C
 }
 C 47900 46600 1 0 0 gnd-1.sym
 N 48000 46900 48400 46900 4
@@ -101,12 +101,12 @@ refdes=X3
 C 50500 46700 1 0 0 in-1.sym
 {
 T 50500 47000 5 10 1 1 0 0 1
-refdes=OUT-A
+refdes=OUT-D
 }
 C 53500 46700 1 0 0 out-1.sym
 {
 T 53500 47000 5 10 1 1 0 0 1
-refdes=SDO-A
+refdes=SDO-D
 }
 C 51100 47400 1 0 0 gnd-1.sym
 N 51200 47700 51600 47700 4
@@ -229,3 +229,5 @@ netname=VHK4
 }
 T 50200 40100 9 10 1 0 0 0 1
 1
+T 52200 40100 9 10 1 0 0 0 1
+8

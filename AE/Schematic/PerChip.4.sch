@@ -2,33 +2,33 @@ v 20110115 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-01-11 18:02:03 $
+date=20140217
 T 53900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.1 $
+rev=5.0
 T 55400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
+auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/components/symbols/Noqsi-title-B.sym,v $
+fname=PerChip.4.sch
 T 53200 41200 5 14 1 1 0 4 1
-title=TITLE
+title=Per-chip Circuitry
 }
 C 45700 46900 1 0 0 capacitor.sym
 {
 T 45900 47400 5 10 1 1 0 0 1
-refdes=C?
-T 45900 47800 5 10 0 0 0 0 1
-symversion=0.1
+refdes=C117
 T 46300 46900 5 10 1 1 0 0 1
 value=0.22uF
 T 45700 46900 5 10 0 1 0 0 1
 footprint=1206
 T 45700 46900 5 10 0 1 0 0 1
 spec=25WVDC X7R
+T 45700 47800 5 10 0 0 0 0 1
+symversion=20090121
 }
 C 45700 47900 1 0 0 resistor.sym
 {
 T 45900 48200 5 10 1 1 0 0 1
-refdes=R?
+refdes=R25
 T 46000 47700 5 10 1 1 0 0 1
 value=470
 }
@@ -36,18 +36,18 @@ C 45600 46800 1 0 0 gnd-1.sym
 C 44500 48900 1 0 0 capacitor.sym
 {
 T 44700 49400 5 10 1 1 0 0 1
-refdes=C?
-T 44700 49800 5 10 0 0 0 0 1
-symversion=0.1
+refdes=C118
 T 45100 49200 5 10 1 1 0 0 1
 value=3.3nF
 T 44500 48900 5 10 0 1 0 0 1
 spec=50WVDC X7R
+T 44500 49800 5 10 0 0 0 0 1
+symversion=20090121
 }
 C 44500 49900 1 0 0 resistor.sym
 {
 T 44700 50200 5 10 1 1 0 0 1
-refdes=R?
+refdes=R26
 T 44800 49700 5 10 1 1 0 0 1
 value=200k
 T 44500 49900 5 10 0 1 0 0 1
@@ -56,7 +56,7 @@ spec=1%
 C 43500 49900 1 0 0 resistor.sym
 {
 T 43700 50200 5 10 1 1 0 0 1
-refdes=R?
+refdes=R27
 T 43800 49700 5 10 1 1 0 0 1
 value=44.2k
 T 43500 49900 5 10 0 1 0 0 1
@@ -82,7 +82,7 @@ refdes=SCP
 C 46600 49900 1 0 0 resistor.sym
 {
 T 46800 50200 5 10 1 1 0 0 1
-refdes=R?
+refdes=R28
 T 46900 49700 5 10 1 1 0 0 1
 value=604k
 T 46600 49900 5 10 0 1 0 0 1
@@ -98,7 +98,7 @@ symversion=1.0nicer
 C 43600 47700 1 0 0 resistor.sym
 {
 T 43800 48000 5 10 1 1 0 0 1
-refdes=R?
+refdes=R29
 T 43900 47500 5 10 1 1 0 0 1
 value=36.5k
 T 43600 47700 5 10 0 1 0 0 1
@@ -107,25 +107,25 @@ spec=1%
 C 45900 42200 1 0 0 resistor.sym
 {
 T 46100 42500 5 10 1 1 0 0 1
-refdes=R?
+refdes=R30
 T 46200 42000 5 10 1 1 0 0 1
 value=470
 }
 C 44700 43200 1 0 0 capacitor.sym
 {
 T 44900 43700 5 10 1 1 0 0 1
-refdes=C?
-T 44900 44100 5 10 0 0 0 0 1
-symversion=0.1
+refdes=C119
 T 45300 43500 5 10 1 1 0 0 1
 value=3.3nF
 T 44700 43200 5 10 0 1 0 0 1
 spec=50WVDC X7R
+T 44700 44100 5 10 0 0 0 0 1
+symversion=20090121
 }
 C 44700 44200 1 0 0 resistor.sym
 {
 T 44900 44500 5 10 1 1 0 0 1
-refdes=R?
+refdes=R31
 T 45000 44000 5 10 1 1 0 0 1
 value=200k
 T 44700 44200 5 10 0 1 0 0 1
@@ -134,7 +134,7 @@ spec=1%
 C 43700 44200 1 0 0 resistor.sym
 {
 T 43900 44500 5 10 1 1 0 0 1
-refdes=R?
+refdes=R32
 T 44000 44000 5 10 1 1 0 0 1
 value=44.2k
 T 43700 44200 5 10 0 1 0 0 1
@@ -161,7 +161,7 @@ refdes=RD
 C 46800 44200 1 0 0 resistor.sym
 {
 T 47000 44500 5 10 1 1 0 0 1
-refdes=R?
+refdes=R33
 T 47100 44000 5 10 1 1 0 0 1
 value=604k
 T 46800 44200 5 10 0 1 0 0 1
@@ -177,7 +177,7 @@ symversion=1.0nicer
 C 43800 42000 1 0 0 resistor.sym
 {
 T 44000 42300 5 10 1 1 0 0 1
-refdes=R?
+refdes=R34
 T 44100 41800 5 10 1 1 0 0 1
 value=36.5k
 T 43800 42000 5 10 0 1 0 0 1
@@ -194,7 +194,7 @@ C 50400 42400 1 0 0 gnd-1.sym
 C 51000 43600 1 0 0 capacitor.sym
 {
 T 51000 43900 5 10 1 1 0 0 1
-refdes=C?
+refdes=C120
 T 51000 44500 5 10 0 0 0 0 1
 symversion=20090121
 T 51600 43900 5 10 1 1 0 0 1
@@ -238,15 +238,15 @@ C 50500 45500 1 0 0 busripper-1.sym
 C 45900 41200 1 0 0 capacitor.sym
 {
 T 46100 41700 5 10 1 1 0 0 1
-refdes=C?
-T 46100 42100 5 10 0 0 0 0 1
-symversion=0.1
+refdes=C121
 T 46500 41200 5 10 1 1 0 0 1
 value=0.22uF
 T 45900 41200 5 10 0 1 0 0 1
 footprint=1206
 T 45900 41200 5 10 0 1 0 0 1
 spec=25WVDC X7R
+T 45900 42100 5 10 0 0 0 0 1
+symversion=20090121
 }
 C 45800 41100 1 0 0 gnd-1.sym
 N 46100 44300 46100 45500 4
@@ -255,3 +255,7 @@ T 46300 44900 5 10 1 1 0 0 1
 netname=RD
 }
 C 46100 45500 1 0 0 busripper-1.sym
+T 52200 40100 9 10 1 0 0 0 1
+8
+T 50500 40100 9 10 1 0 0 0 1
+4

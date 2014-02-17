@@ -2,33 +2,33 @@ v 20110115 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=$Date: 2009-01-11 18:02:03 $
+date=20140217
 T 53900 40500 5 10 1 1 0 0 1
-rev=$Revision: 1.1 $
+rev=5.0
 T 55400 40200 5 10 1 1 0 0 1
-auth=$Author: jpd $
+auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=$Source: /cvs/MIT/TESS/AE/minisys/components/symbols/Noqsi-title-B.sym,v $
+fname=PerChip.2.sch
 T 53200 41200 5 14 1 1 0 4 1
-title=TITLE
+title=Per-chip Circuitry
 }
 C 42000 46900 1 0 0 REF43.sym
 {
 T 43400 48500 5 10 1 1 0 6 1
-refdes=U?
+refdes=U6
 }
 C 42600 46600 1 0 0 gnd-1.sym
 C 41300 48800 1 0 0 resistor.sym
 {
 T 41500 49100 5 10 1 1 0 0 1
-refdes=R?
+refdes=R1
 T 41500 48500 5 10 1 1 0 0 1
 value=49.9
 }
 C 43400 48700 1 0 0 bypass.sym
 {
 T 43600 49200 5 10 1 1 0 0 1
-refdes=C?
+refdes=C104
 T 43400 49600 5 10 0 0 0 0 1
 symversion=20131108
 T 44000 48700 5 10 1 1 0 0 1
@@ -41,14 +41,14 @@ N 44500 48900 44300 48900 4
 C 46500 47300 1 90 0 resistor.sym
 {
 T 46900 48100 5 10 1 1 180 0 1
-refdes=R?
+refdes=R2
 T 47100 47800 5 10 1 1 180 0 1
 value=4.99
 }
 C 46600 46400 1 90 0 bypass.sym
 {
 T 46300 47200 5 10 1 1 180 0 1
-refdes=C?
+refdes=C105
 T 45700 46400 5 10 0 0 90 0 1
 symversion=20131108
 T 46800 46700 5 10 1 1 180 0 1
@@ -78,7 +78,7 @@ C 50400 46800 1 0 0 gnd-1.sym
 C 49000 47900 1 0 0 resistor.sym
 {
 T 49200 48200 5 10 1 1 0 0 1
-refdes=R?
+refdes=R3
 T 49300 47700 5 10 1 1 0 0 1
 value=1
 }
@@ -87,7 +87,7 @@ N 49000 47200 49000 48000 4
 C 47000 46400 1 0 0 resistor.sym
 {
 T 47200 46700 5 10 1 1 0 0 1
-refdes=R?
+refdes=R4
 T 47200 46100 5 10 1 1 0 0 1
 value=14.7k
 }
@@ -105,7 +105,7 @@ value=620pF
 C 48100 46400 1 0 0 resistor.sym
 {
 T 48300 46700 5 10 1 1 0 0 1
-refdes=R?
+refdes=R5
 T 48300 46100 5 10 1 1 0 0 1
 value=4.75k
 }
@@ -126,20 +126,20 @@ N 47900 48200 43700 48200 4
 C 46100 41000 1 0 0 capacitor.sym
 {
 T 46300 41500 5 10 1 1 0 0 1
-refdes=C?
-T 46300 41900 5 10 0 0 0 0 1
-symversion=0.1
+refdes=C106
 T 46700 41000 5 10 1 1 0 0 1
 value=0.22uF
 T 46100 41000 5 10 0 1 0 0 1
 footprint=1206
 T 46100 41000 5 10 0 1 0 0 1
 spec=25WVDC X7R
+T 46100 41900 5 10 0 0 0 0 1
+symversion=20090121
 }
 C 46100 42000 1 0 0 resistor.sym
 {
 T 46300 42300 5 10 1 1 0 0 1
-refdes=R?
+refdes=R6
 T 46400 41800 5 10 1 1 0 0 1
 value=470
 }
@@ -147,18 +147,18 @@ C 46000 40900 1 0 0 gnd-1.sym
 C 44900 43000 1 0 0 capacitor.sym
 {
 T 45100 43500 5 10 1 1 0 0 1
-refdes=C?
-T 45100 43900 5 10 0 0 0 0 1
-symversion=0.1
+refdes=C107
 T 45500 43300 5 10 1 1 0 0 1
 value=3.3nF
 T 44900 43000 5 10 0 1 0 0 1
 spec=50WVDC X7R
+T 44900 43900 5 10 0 0 0 0 1
+symversion=20090121
 }
 C 44900 44000 1 0 0 resistor.sym
 {
 T 45100 44300 5 10 1 1 0 0 1
-refdes=R?
+refdes=R7
 T 45200 43800 5 10 1 1 0 0 1
 value=200k
 T 44900 44000 5 10 0 1 0 0 1
@@ -167,7 +167,7 @@ spec=1%
 C 43900 44000 1 0 0 resistor.sym
 {
 T 44100 44300 5 10 1 1 0 0 1
-refdes=R?
+refdes=R8
 T 44200 43800 5 10 1 1 0 0 1
 value=392k
 T 43900 44000 5 10 0 1 0 0 1
@@ -189,12 +189,12 @@ C 47000 42900 1 0 0 out-1.sym
 T 47000 43200 5 10 0 0 0 0 1
 device=OUTPUT
 T 47600 43000 5 10 1 1 0 0 1
-refdes=OG
+refdes=OG1
 }
 C 47000 44000 1 0 0 resistor.sym
 {
 T 47200 44300 5 10 1 1 0 0 1
-refdes=R?
+refdes=R9
 T 47300 43800 5 10 1 1 0 0 1
 value=604k
 T 47000 44000 5 10 0 1 0 0 1
@@ -212,7 +212,7 @@ slot=2
 C 43900 42800 1 0 0 resistor.sym
 {
 T 44100 43100 5 10 1 1 0 0 1
-refdes=R?
+refdes=R10
 T 44200 42600 5 10 1 1 0 0 1
 value=44.2k
 T 43900 42800 5 10 0 1 0 0 1
@@ -221,7 +221,7 @@ spec=1%
 C 44000 41800 1 0 0 resistor.sym
 {
 T 44200 42100 5 10 1 1 0 0 1
-refdes=R?
+refdes=R11
 T 44300 41600 5 10 1 1 0 0 1
 value=33.2k
 T 44000 41800 5 10 0 1 0 0 1
@@ -242,7 +242,7 @@ refdes=U1
 C 53100 43700 1 0 0 capacitor.sym
 {
 T 53100 44000 5 10 1 1 0 0 1
-refdes=C?
+refdes=C108
 T 53100 44600 5 10 0 0 0 0 1
 symversion=20090121
 T 53700 44000 5 10 1 1 0 0 1
@@ -287,7 +287,7 @@ C 51200 44800 1 90 0 busripper-1.sym
 C 53100 42200 1 0 0 capacitor.sym
 {
 T 53100 42500 5 10 1 1 0 0 1
-refdes=C?
+refdes=C109
 T 53100 43100 5 10 0 0 0 0 1
 symversion=20090121
 T 53700 42500 5 10 1 1 0 0 1
@@ -345,7 +345,7 @@ refdes=U5
 C 55600 43700 1 0 0 capacitor.sym
 {
 T 55600 44000 5 10 1 1 0 0 1
-refdes=C?
+refdes=C110
 T 55600 44600 5 10 0 0 0 0 1
 symversion=20090121
 T 56200 44000 5 10 1 1 0 0 1
@@ -363,8 +363,12 @@ C 55000 42500 1 0 0 gnd-1.sym
 C 45500 45800 1 90 0 resistor.sym
 {
 T 45000 46600 5 10 1 1 180 0 1
-refdes=R?
+refdes=R12
 T 45200 46300 5 10 1 1 180 0 1
 value=24.9k
 }
 N 45400 46700 45400 47600 4
+T 52100 40100 9 10 1 0 0 0 1
+8
+T 50400 40100 9 10 1 0 0 0 1
+2
