@@ -77,6 +77,9 @@ Video.net.txt : $(VIDEOSCH) $(VIDEOMERGE)
 Video.bom.txt : $(VIDEOSCH) attribs
 	gnetlist -g bom -o $@ $(VIDEOTOP)
 
+Video.drc.txt: $(VIDEOSCH) $(VIDEOMERGE)
+	gnetlist -g drc2 -o $@ $(VIDEOTOP) $(VIDEOMERGE)
+
 # Screaming Circuits BOM as a tsv
 
 Video.bom.tsv : Video.bom.txt $(PARTDB) video-omit.tsv

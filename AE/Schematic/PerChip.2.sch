@@ -120,7 +120,7 @@ refdes=U1
 T 48100 50300 5 8 0 0 0 0 1
 symversion=1.0nicer
 T 47800 47600 5 10 0 0 0 0 1
-slot=2
+slot=1
 }
 N 47900 48200 43700 48200 4
 C 46100 41000 1 0 0 capacitor.sym

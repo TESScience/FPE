@@ -151,7 +151,7 @@ netname=HKSUB
 C 51500 46500 1 180 1 pnp.sym
 {
 T 52100 46000 5 10 1 1 180 6 1
-refdes=Q3
+refdes=Q1
 T 50500 45300 5 10 0 1 0 0 1
 model-name=MMBT2907A
 T 51500 46500 5 10 0 0 0 0 1
@@ -185,7 +185,7 @@ spec=1%
 C 52600 46000 1 180 1 pnp.sym
 {
 T 53200 45500 5 10 1 1 180 6 1
-refdes=Q3
+refdes=Q2
 T 51600 44800 5 10 0 1 0 0 1
 model-name=MMBT2907A
 T 52600 46000 5 10 0 0 0 0 1
