@@ -189,7 +189,7 @@ C 47000 42900 1 0 0 out-1.sym
 T 47000 43200 5 10 0 0 0 0 1
 device=OUTPUT
 T 47600 43000 5 10 1 1 0 0 1
-refdes=OG1
+refdes=OG
 }
 C 47000 44000 1 0 0 resistor.sym
 {

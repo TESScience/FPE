@@ -8,9 +8,9 @@
 
 {
 	for( ccd = 1; ccd < 5; ccd += 1 ) {
-		net = $NF
+		net = $3
 		sub( "-1$", "-" ccd, net )	# customize netname
-		print "J" ccd "\t" $1 "\t" net
+		print "J" ccd "\t" $2 "\t" net
 	}
 }
 
