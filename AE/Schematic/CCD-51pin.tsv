@@ -3,7 +3,7 @@
 J1	1	P1-IA-1	Parallel clocks to CCD
 J1	2	P2-IA-1
 J1	3	P3-IA-1
-J1	3	P1-FS-1
+J1	51	P1-FS-1
 J1	4	P2-FS-1
 J1	5	P3-FS-1
 J1	6	P1-OR-1	Serial clocks to CCD 
