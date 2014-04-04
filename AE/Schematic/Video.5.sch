@@ -287,9 +287,9 @@ refdes=J5
 T 40500 44200 5 10 0 1 0 0 1
 symversion=20090123
 T 40500 42800 5 10 0 0 0 0 1
-value=MDM-25PCBR
+value=SDR26
 T 40500 42800 5 10 0 0 0 0 1
-footprint=MDM-25PCBR
+footprint=SDR26
 }
 C 54900 44200 1 0 0 StackConn.sym
 {

@@ -97,13 +97,6 @@ value=133k
 T 43200 44700 5 10 0 1 0 0 1
 spec=1%
 }
-C 44400 40500 1 0 0 74_pwr16.sym
-{
-T 44600 42700 5 8 0 0 0 0 1
-symversion=1.0
-T 44900 41400 5 10 1 1 0 1 1
-refdes=U4
-}
 C 44700 40200 1 0 0 gnd-1.sym
 C 45300 41400 1 0 0 capacitor.sym
 {
@@ -333,3 +326,10 @@ Note:
 For a focal plane with common backside connections,
 populate R54 only for the channel you want to have
 control the backside bias.
+C 44500 40500 1 0 0 gp_opamp_dual_pwr.sym
+{
+T 44700 42500 5 8 0 0 0 0 1
+symversion=1.0
+T 45150 41050 5 10 1 1 0 0 1
+refdes=U4
+}
