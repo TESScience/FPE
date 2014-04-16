@@ -48,10 +48,11 @@ VIDEODOCS= \
 	Video.5.ps \
 	Video.6.ps \
 	Video.7.ps \
+	Video.8.ps \
 	Video.bom.txt
 
 VIDEOTOP= Video.1.sch Video.2.sch Video.3.sch Video.4.sch \
-	Video.5.sch Video.6.sch Video.7.sch
+	Video.5.sch Video.6.sch Video.7.sch Video.8.sch
 
 VIDEOSUB= PerChip.1.sch PerChip.2.sch PerChip.3.sch \
 	PerChip.4.sch PerChip.5.sch PerChip.6.sch \
