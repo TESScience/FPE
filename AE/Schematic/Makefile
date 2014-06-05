@@ -1,3 +1,4 @@
+GNET=gnetlist -m censor-fix.scm
 
 all : Interface.pdf Interface.net.txt Video.pdf Video.net.txt
 
@@ -74,13 +75,19 @@ Video-connectors.psch : \
 	awk -f pins2gsch.awk $^ >$@
 
 Video.net.txt : $(VIDEOSCH) $(VIDEOMERGE)
-	gnetlist -g osmond -o $@ $(VIDEOTOP) $(VIDEOMERGE)
+	$(GNET) -g osmond -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 
 Video.bom.txt : $(VIDEOSCH) attribs
-	gnetlist -g bom -o $@ $(VIDEOTOP)
+	$(GNET) -g bom -o $@ $(VIDEOTOP)
 
+Video.bom2.txt : $(VIDEOSCH) attribs
+	$(GNET) -g bom2 -o $@ $(VIDEOTOP)
+
+Video.counts.txt : Video.bom.txt
+	awk -f countem.awk Video.bom.txt | sort -nr >$@
+	
 Video.drc.txt: $(VIDEOSCH) $(VIDEOMERGE)
-	gnetlist -g drc2 -o $@ $(VIDEOTOP) $(VIDEOMERGE)
+	$(GNET) -g drc2 -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 
 # Screaming Circuits BOM as a tsv
 
@@ -165,13 +172,19 @@ INTERFACEMERGE= \
 INTERFACESCH= $(INTERFACETOP) $(INTERFACESUB) $(INTERFACEMERGE)
 
 Interface.net.txt : $(INTERFACESCH)
-	gnetlist -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
+	$(GNET) -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
 Interface.bom.txt: $(INTERFACESCH) attribs
-	gnetlist -g bom -o $@ $(INTERFACETOP)
+	$(GNET) -g bom -o $@ $(INTERFACETOP)
 
+Interface.bom2.txt : $(INTERFACESCH) attribs
+	$(GNET) -g bom2 -o $@ $(INTERFACETOP)
+
+Interface.counts.txt : Interface.bom.txt
+	awk -f countem.awk Interface.bom.txt | sort -nr >$@
+	
 Interface.drc.txt: $(INTERFACESCH) $(INTERFACEMERGE)
-	gnetlist -g drc2 -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
+	$(GNET) -g drc2 -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
 Interface.ps: $(INTERFACEDOCS)
 	$(A2PS)
