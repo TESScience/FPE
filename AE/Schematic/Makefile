@@ -110,6 +110,7 @@ INTERFACEDOCS= ParallelPair.ps \
 	SerialRegulator.ps \
 	reset_regulator.ps \
 	ParallelPair.ps \
+	Booster.ps \
 	Minus30.ps \
 	DriverSet.1.ps \
 	DriverSet.2.ps \
@@ -148,6 +149,7 @@ INTERFACETOP= \
 
 INTERFACESUB= \
 	ParallelPair.sch \
+	Booster.sch \
 	SerialDriver.sch \
 	ParallelReg.sch \
 	SerialRegulator.sch \
