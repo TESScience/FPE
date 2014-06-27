@@ -1,5 +1,12 @@
 # The ADC128 is on NPCS0 of SPI1
 
+\ FFFE4000 SPI1 :constant
+SPI1 SPI1_CR :constant
+SPI1 \ 04 + SPI1_MR :constant
+SPI1 \ 08 + SPI1_RDR :constant
+SPI1 \ 0C + SPI1_TDR :constant
+SPI1 \ 30 + SPI1_CSR0 :constant
+
 # Initialization
 # Master mode, fixed PCS of zero
 1 SPI1_MR !
@@ -8,7 +15,7 @@
 # 16 bit transfers, BITS field is 8
 # SCBR is 3, for a 10 MHz clock
 
-\ 381 SPI1_CSR0 !
+\ 01010381 SPI1_CSR0 !
 
 # Enable SPI1
 
