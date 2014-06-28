@@ -1,4 +1,3 @@
-/* $Id$ */
 
 /* Mapping of sequencer control port to port B on the ARM chip */
 
@@ -8,7 +7,7 @@
 #define	SEQ_RNW		0x00400000	/* Read not Write */
 #define SEQ_STR		0x00800000	/* Strobe */
 #define SEQ_ACK		0x01000000	/* Transfer Acknowledge */
-#define SEQ_CMD_FIFO_FULL	0x02000000
+#define SEQ_CMD_FIFO_FULL	0x20000000
 #define SEQ_RESET	0x04000000
 
 /* Addresses */

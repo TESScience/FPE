@@ -9,8 +9,8 @@
 
 struct pmc {
 	volatile uint32_t scer, scdr, scsr, res0, pcer, pcdr, pcsr, res1,
-		mor, mcfr, res2, pllr, mckr, res3, res4, res5, pck[3],
-		gap[5], ier, idr, sr, imr;
+		mor, mcfr, res2, pllr, mckr, res3, res4, res5, pck[4],
+		gap[4], ier, idr, sr, imr;
 };
 
 /* SCER, SCDR, SCSR */
@@ -20,6 +20,7 @@ struct pmc {
 #define ENB_PCK0	0x100
 #define ENB_PCK1	0x200
 #define ENB_PCK2	0x400
+#define ENB_PCK3	0x800
 
 /* MOR */
 
