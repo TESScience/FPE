@@ -67,7 +67,7 @@ app_lse_c20.o : c20.txt
 stamp.lse :
 	echo -n '" ' >stamp.lse
 	echo -n `git log -1 --format="%cd %h"` >>stamp.lse
-	echo '" t' >>stamp.lse
+	echo '" ,t nl' >>stamp.lse
 
 stamp.o : stamp.txt
 
