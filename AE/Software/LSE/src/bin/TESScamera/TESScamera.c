@@ -161,7 +161,7 @@ Set up the sequencer clock, same as MCLK
 */
 	
 	PMC->pck[2] = PRES(PRESCALE) | CSS_PLL;
-	PMC-pcer = ENB_PCK2;
+	PMC->scer = ENB_PCK2;
 
 /*
 Set up to dispatch interrupts to the error handler, so that once we start turning
