@@ -1,0 +1,5 @@
+w : 100000 {} iterate
+rw : 1 RED! w 0 RED! w
+gw : 1 GREEN! w 0 GREEN! w
+yw : 1 YELLOW! w 0 YELLOW! w
+wink : rw gw yw repeat
