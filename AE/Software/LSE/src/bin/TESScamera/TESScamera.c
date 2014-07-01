@@ -163,6 +163,14 @@ Set up the sequencer clock, same as MCLK
 	PMC->pck[2] = PRES(PRESCALE) | CSS_PLL;
 	PMC->scer = ENB_PCK2;
 
+
+/*
+Turn on -30V generator clock: 32kHz
+*/
+
+	PMC->pck[3] = CSS_SLOW;
+	PMC->scer = ENB_PCK3;
+
 /*
 Set up to dispatch interrupts to the error handler, so that once we start turning
 on peripherals, any interrupt anomaly will attempt to produce a message.
