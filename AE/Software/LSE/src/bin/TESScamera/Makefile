@@ -33,7 +33,7 @@ TESSc80.elf:  $(LDFILE) $(TESSTUFF) TESScamera.o app_lse_c80.o stamp.o
 
 app_lse_c80.o : c80.txt
 
-c80.txt : bitfields.lse pio.lse LEDs.lse
+c80.txt : bitfields.lse pio.lse LEDs.lse wink.lse AD53bb.lse HKADC.lse
 	sed -e '/^#/d' -e '/^$$/d' $^ >$@
 
 # The version that runs on the EK board
