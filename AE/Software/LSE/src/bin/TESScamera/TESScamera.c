@@ -23,12 +23,14 @@ void SeqPrimitives( void );
 Let everyone know what the master clock frequency is.
 */
 
-#define MAINCLK 10000000	/* 10 MHz */
-#define PLLDIV	1
-#define PLLMUL	(12-1)
-#define PRESCALE 2
+// #define MAINCLK 10000000	/* 10 MHz */
+// #define PLLDIV	1
+// #define PLLMUL	(12-1)
+//#define PRESCALE 2
 
-const unsigned mck_hz = (MAINCLK/(PLLDIV*(1<<PRESCALE)))*(PLLMUL+1);
+// const unsigned mck_hz = (MAINCLK/(PLLDIV*(1<<PRESCALE)))*(PLLMUL+1);
+
+const unsigned mck_hz = 29491200;		/* for fast xtal oscillator */
 
 /*
 List the source "files" to read at initialization.
@@ -101,17 +103,21 @@ is 10 MHz.
 
 */
 
-	PMC->mor = OSCBYPASS;
+	PIOA->codr = 0x20000000;
+	PIOA->oer = 0x20000000;		/* Switch to alternate 30 MHz osc */
 
+
+	PMC->mor = OSCBYPASS;
+	
 /*
 
 Program the PLL
 
 */
 
-	PMC->pllr = DIV(PLLDIV) | PLLCOUNT(63) | MUL(PLLMUL);
+//	PMC->pllr = DIV(PLLDIV) | PLLCOUNT(63) | MUL(PLLMUL);
 	
-	while( !(PMC->sr & LOCK));	/* wait for PLL stability */
+//	while( !(PMC->sr & LOCK));	/* wait for PLL stability */
 	
 /*
 
@@ -129,10 +135,12 @@ Prescale if necessary.
 	
 
 /*
-Select the PLL clock.
+Select the clock.
 */
 
-	PMC->mckr |= CSS_PLL;
+//	PMC->mckr |= CSS_PLL;
+	
+    PMC->mckr = CSS_MAIN;
 
 /*
 Turn on peripheral clocks, as needed.
@@ -149,8 +157,8 @@ for clarity and to avoid conflict.
 	PIOA->asr = 0x3;	/* enable TXD0, RXD0 */
 	PIOA->bsr = 0x49e00000; /* programmable clocks, SPI1 */
 	PIOA->pdr = 0x49e00003;	/* relinquish pins to peripherals */
-	PIOA->sodr = 0x2006fffc; /* initialize bitbang outputs to 1 */
-	PIOA->oer = 0x2006fffc;	/* enable bitbang outputs */
+	PIOA->sodr = 0x0006fffc; /* initialize bitbang outputs to 1 */
+	PIOA->oer = 0x0006fffc;	/* enable bitbang outputs */
 	PIOB->oer = 0x04fc0000;	/* enable address lines on Port B */
 
 	PIOA->pudr = 0x7fffffff;	/* get rid of pull up resistors on Port A */
@@ -160,7 +168,8 @@ for clarity and to avoid conflict.
 Set up the sequencer clock, same as MCLK
 */
 	
-	PMC->pck[2] = PRES(PRESCALE) | CSS_PLL;
+//	PMC->pck[2] = PRES(PRESCALE) | CSS_PLL;
+	PMC->pck[2] = CSS_MAIN;
 	PMC->scer = ENB_PCK2;
 
 
