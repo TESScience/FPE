@@ -15,7 +15,7 @@ SPI1 \ 30 + SPI1_CSR0 :constant
 # 16 bit transfers, BITS field is 8
 # SCBR is 3, for a 10 MHz clock
 
-\ 01010381 SPI1_CSR0 !
+\ 381 SPI1_CSR0 !
 
 # Enable SPI1
 
@@ -30,3 +30,18 @@ HKMUX : HKmask PIOA_CODR ! 5 7 >field PIOA_SODR !
 # note that there's no wait for operation complete since
 # HKMUX takes plenty of time.
 HKX : 11 3 >field SPI1_TDR ! HKMUX SPI1_RDR @ \ fff &
+
+4 hk-discard :constant
+16 hk-sum :constant
+1. 4096 hk-sum * float /. hk-norm :constant
+
+# adcchan (HKDIS) yields adcchan
+(HKDIS) : dup SPI1_TDR !
+# adcchan HKDIS yields adcchan
+HKDIS : hk-discard (HKDIS) iterate
+# sum adcchan (HKSUM) yields sum adcchan
+(HKSUM) : dup SPI1_TDR ! swap \ fff SPI1_RDR @ & + swap
+# adcchan HKSUM yields sum
+HKSUM : 0 swap hk-sum HKSUM iterate drop
+# chan mux HKF yields frac
+HKF : HKMUX 11 3 >field HKDIS HKSUM float hk-norm *.
