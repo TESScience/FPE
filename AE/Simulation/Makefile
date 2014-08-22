@@ -5,9 +5,14 @@ NGSPICE=ngspice
 %.cir : %.sch
 	$(GNET) $< -o $@
 
+ChainNoise : ChainNoise.cir Chain.cir max4636.cir max4636sw.cir \
+		MAX4594.cir
+	$(NGSPICE) ChainNoise.cir Chain.cir max4636.cir max4636sw.cir \
+		bf545c.mod LM6142A.MOD
+
 ChainTest : ChainTest.cir Chain.cir max4636.cir max4636sw.cir \
 		MAX4594.cir
-	$(NGSPICE) ChainTest.cir chain.cir max4636.cir max4636sw.cir \
+	$(NGSPICE) ChainTest.cir Chain.cir max4636.cir max4636sw.cir \
 		bf545c.mod LM6142A.MOD
 
 Chain.1.sch : ../Schematic/Chain.1.sch
