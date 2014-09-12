@@ -326,7 +326,7 @@ C 41500 47800 1 0 0 resistor.sym
 T 41700 48100 5 10 1 1 0 0 1
 refdes=R26
 T 41800 47600 5 10 1 1 0 0 1
-value=1.87k
+value=1.07k
 }
 C 41500 46800 1 0 0 capacitor.sym
 {
