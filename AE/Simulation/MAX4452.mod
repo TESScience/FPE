@@ -16,14 +16,23 @@
  XHFAMP1 5 2 3 4 1 HFAMP
 .ENDS
 *****************************
-
+* 10 nV/Sqrt(Hz) noise source
+* 20140822 jpd
+.SUBCKT NOISE10nV n 3
+En n 3 4 0 10
+R1n 4 0 60
+.ENDS
 *****************************
-.SUBCKT HFAMP 10 18 17 16 75
+.SUBCKT HFAMP 10 18 17n 16n 75
 * 10 = VCC
 * 18 = VEE
 * 17 = IN+
 * 16 = IN-
 * 75 = OUT
+*****************
+* put a noise source in series with each input
+XNOISEP 17n 17 NOISE10nV
+XNOISEN 16n 16 NOISE10nV
 *****************
 VS1 10 11 0V
 IBIAS 11 12 440U 

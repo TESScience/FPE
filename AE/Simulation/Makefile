@@ -5,6 +5,9 @@ NGSPICE=ngspice
 %.cir : %.sch
 	$(GNET) $< -o $@
 
+chnoise : chnoise.cir
+	$(NGSPICE) chnoise.cir bf545c.mod
+
 ChainNoise : ChainNoise.cir Chain.cir max4636.cir max4636sw.cir \
 		MAX4594.cir
 	$(NGSPICE) ChainNoise.cir Chain.cir max4636.cir max4636sw.cir \
@@ -13,7 +16,13 @@ ChainNoise : ChainNoise.cir Chain.cir max4636.cir max4636sw.cir \
 ChainTest : ChainTest.cir Chain.cir max4636.cir max4636sw.cir \
 		MAX4594.cir
 	$(NGSPICE) ChainTest.cir Chain.cir max4636.cir max4636sw.cir \
-		bf545c.mod LM6142A.MOD
+		bf545c.mod LM6142A.MOD  Ad8038.cir MAX4452.mod 1N914B.mod
+
+opNoise : opNoise.cir
+	$(NGSPICE) opNoise.cir 
+
+DampReg : DampReg.cir
+	$(NGSPICE) DampReg.cir LM6142A.MOD
 
 Chain.1.sch : ../Schematic/Chain.1.sch
 	cp $< $@

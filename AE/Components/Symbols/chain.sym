@@ -141,32 +141,10 @@ pinlabel=HK
 T 2100 1550 5 8 0 1 90 8 1
 pintype=pas
 }
-P 600 100 600 400 1 0 0
-{
-T 550 300 5 8 0 1 90 6 1
-pinnumber=8
-T 650 300 5 8 0 1 90 8 1
-pinseq=8
-T 600 450 9 8 1 1 90 0 1
-pinlabel=Hold
-T 600 450 5 8 0 1 90 2 1
-pintype=in
-}
 T 1100 2600 8 10 0 0 0 0 1
 spice-prototype=X? %down chain
 T 2295 1195 8 10 0 0 0 0 1
 source=Chain.2.sch
-P 900 100 900 400 1 0 0
-{
-T 850 300 5 8 0 1 90 6 1
-pinnumber=16
-T 950 300 5 8 0 1 90 8 1
-pinseq=16
-T 900 450 9 8 1 1 90 0 1
-pinlabel=\_Hold\_
-T 900 450 5 8 0 1 90 2 1
-pintype=in
-}
 P 1500 100 1500 400 1 0 0
 {
 T 1450 300 5 8 0 1 90 6 1
@@ -174,7 +152,7 @@ pinnumber=15
 T 1550 300 5 8 0 1 90 8 1
 pinseq=15
 T 1500 450 9 8 1 1 90 0 1
-pinlabel=\_Int\_
+pinlabel=DeInt
 T 1500 450 5 8 0 1 90 2 1
 pintype=in
 }
