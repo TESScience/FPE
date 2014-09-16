@@ -35,9 +35,9 @@ TESTDOCS=\
 	PerChip.1.ps PerChip.test.ps\
 	Chain.1.ps Chain.2.ps
 
-TESTTOP=Video.chaintest.1.sch Video.chaintest.2.sch
+TESTTOP=Video.chaintest.1.sch Video.chaintest.6.sch
 
-TESTSUB=
+TESTSUB=\
 	PerChip.1.sch PerChip.test.sch\
 	Chain.1.sch Chain.2.sch
 
@@ -47,13 +47,13 @@ Test-connectors.psch : \
 	CCD-51pin.tsv video_interconnect.txt
 	awk -f pins2gsch.awk $^ >$@
 
-Test.net.txt : $(TESTSCH) $(TESTMERGE)
+Test.net.txt : $(TESTSCH) $(TESTMERGE) $(TESTSUB)
 	$(GNET) -g osmond -o $@ $(TESTTOP) $(TESTMERGE)
 
-Test.bom.txt : $(TESTSCH) attribs
+Test.bom.txt : $(TESTSCH) $(TESTSUB) attribs
 	$(GNET) -g bom -o $@ $(TESTTOP)
 
-Test.bom2.txt : $(TESTSCH) attribs
+Test.bom2.txt : $(TESTSCH) $(TESTSUB) attribs
 	$(GNET) -g bom2 -o $@ $(TESTTOP)
 
 Test.counts.txt : Test.bom.txt

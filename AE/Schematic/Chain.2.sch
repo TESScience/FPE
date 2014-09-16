@@ -229,8 +229,6 @@ C 41300 43100 1 0 0 MAX4452-pwr.sym
 {
 T 42000 44100 5 10 1 1 0 4 1
 refdes=U4
-T 41800 43700 5 10 0 0 0 0 1
-device=AD8038AKSZ
 }
 C 41600 42800 1 0 0 gnd-1.sym
 N 41700 44200 41700 44600 4
@@ -265,6 +263,8 @@ T 44300 45200 5 8 0 0 0 0 1
 symversion=1.0
 T 44750 43750 5 10 1 1 0 0 1
 refdes=U10
+T 44500 43700 5 10 0 1 0 0 1
+description=generic dual operational amplifier, SO8
 }
 C 44300 42900 1 0 0 gnd-1.sym
 C 44600 44100 1 0 0 capacitor.sym
