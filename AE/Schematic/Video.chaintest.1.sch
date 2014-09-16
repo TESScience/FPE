@@ -173,7 +173,7 @@ device=FX2P
 N 48000 45300 48800 45300 4
 {
 T 48100 45400 5 10 1 1 0 1 1
-netname=\_Int\_
+netname=DeInt
 }
 C 48800 45300 1 270 0 busripper-1.sym
 N 42800 49000 42400 49000 4
