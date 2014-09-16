@@ -132,6 +132,8 @@ T 48300 43100 5 8 0 0 0 0 1
 symversion=1.0
 T 48600 41800 5 10 1 1 0 1 1
 refdes=U3
+T 48100 40900 5 10 0 0 0 0 1
+description=3 to 8 decoder/demultiplexer; noninverting
 }
 N 48500 44900 48500 41800 4
 C 48500 42000 1 0 0 capacitor.sym
