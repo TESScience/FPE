@@ -30,6 +30,38 @@ PS2PDF=ps2pdf -sPAPERSIZE=letter
 
 PARTDB=digikey.tsv maxim.tsv
 
+TESTDOCS=\
+	Video.chaintest.1.ps Video.chaintest.6.ps\
+	PerChip.1.ps PerChip.test.ps\
+	Chain.1.ps Chain.2.ps
+
+TESTTOP=Video.chaintest.1.sch Video.chaintest.2.sch
+
+TESTSUB=
+	PerChip.1.sch PerChip.test.sch\
+	Chain.1.sch Chain.2.sch
+
+TESTMERGE=Test-connectors.psch
+
+Test-connectors.psch : \
+	CCD-51pin.tsv video_interconnect.txt
+	awk -f pins2gsch.awk $^ >$@
+
+Test.net.txt : $(TESTSCH) $(TESTMERGE)
+	$(GNET) -g osmond -o $@ $(TESTTOP) $(TESTMERGE)
+
+Test.bom.txt : $(TESTSCH) attribs
+	$(GNET) -g bom -o $@ $(TESTTOP)
+
+Test.bom2.txt : $(TESTSCH) attribs
+	$(GNET) -g bom2 -o $@ $(TESTTOP)
+
+Test.counts.txt : Test.bom.txt
+	awk -f countem.awk Test.bom.txt | sort -nr >$@
+
+Test.ps : $(TESTDOCS)
+	$(A2PS)
+
 
 VIDEODOCS= \
 	Chain.1.ps \
