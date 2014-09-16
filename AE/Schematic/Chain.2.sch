@@ -302,7 +302,7 @@ C 42700 46500 1 0 0 capacitor.sym
 T 42900 47000 5 10 1 1 0 0 1
 refdes=C24
 T 43300 46500 5 10 1 1 0 0 1
-value=15nF
+value=7.5nF
 T 42700 46500 5 10 0 1 0 0 1
 spec=16WVDC X7R
 }
@@ -416,11 +416,11 @@ C 49400 48400 1 0 1 capacitor.sym
 T 49200 48900 5 10 1 1 0 6 1
 refdes=C28
 T 48800 48800 5 10 1 1 0 6 1
-value=10uF
+value=4.7uF
 T 49400 48400 5 10 0 1 0 0 1
-spec=6.3WVDC X5R
+spec=10WVDC X7R
 T 49400 48400 5 10 0 0 0 0 1
-footprint=0603
+footprint=1812
 }
 C 46600 47200 1 0 0 resistor.sym
 {
@@ -448,7 +448,7 @@ C 46600 47700 1 0 0 capacitor.sym
 T 47000 48200 5 10 1 1 0 0 1
 refdes=C29
 T 47200 47700 5 10 1 1 0 0 1
-value=15nF
+value=7.5nF
 T 46600 47700 5 10 0 1 0 0 1
 spec=16WVDC X7R
 }
@@ -460,3 +460,17 @@ For V6.0,
 Vref=2.5V
 V0=3.0V
 ADCref=4.2V
+C 45400 45100 1 0 1 capacitor.sym
+{
+T 45200 45600 5 10 1 1 0 6 1
+refdes=C3
+T 44800 45500 5 10 1 1 0 6 1
+value=4.7uF
+T 45400 45100 5 10 0 1 0 0 1
+spec=10WVDC X7R
+T 45400 45100 5 10 0 0 0 0 1
+footprint=1812
+}
+N 44500 45300 44200 45300 4
+N 44200 45300 44200 46000 4
+C 45300 45000 1 0 0 gnd-1.sym
