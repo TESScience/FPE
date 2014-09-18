@@ -15,7 +15,7 @@ title=Per-chip Circuitry
 C 45700 46900 1 0 0 capacitor.sym
 {
 T 45900 47400 5 10 1 1 0 0 1
-refdes=C117
+refdes=C17
 T 46300 46900 5 10 1 1 0 0 1
 value=0.22uF
 T 45700 46900 5 10 0 1 0 0 1
@@ -36,7 +36,7 @@ C 45600 46800 1 0 0 gnd-1.sym
 C 44500 48900 1 0 0 capacitor.sym
 {
 T 44700 49400 5 10 1 1 0 0 1
-refdes=C118
+refdes=C18
 T 45100 49200 5 10 1 1 0 0 1
 value=3.3nF
 T 44500 48900 5 10 0 1 0 0 1
@@ -88,13 +88,6 @@ value=604k
 T 46600 49900 5 10 0 1 0 0 1
 spec=1%
 }
-C 44400 48400 1 180 1 gp_opamp_dual.sym
-{
-T 45100 47700 5 10 1 1 180 6 1
-refdes=U3
-T 44700 45700 5 8 0 0 180 6 1
-symversion=1.0nicer
-}
 C 43600 47700 1 0 0 resistor.sym
 {
 T 43800 48000 5 10 1 1 0 0 1
@@ -114,7 +107,7 @@ value=470
 C 44700 43200 1 0 0 capacitor.sym
 {
 T 44900 43700 5 10 1 1 0 0 1
-refdes=C119
+refdes=C19
 T 45300 43500 5 10 1 1 0 0 1
 value=3.3nF
 T 44700 43200 5 10 0 1 0 0 1
@@ -167,15 +160,6 @@ value=604k
 T 46800 44200 5 10 0 1 0 0 1
 spec=1%
 }
-C 44600 42700 1 180 1 gp_opamp_dual.sym
-{
-T 45300 42000 5 10 1 1 180 6 1
-refdes=U3
-T 44900 40000 5 8 0 0 180 6 1
-symversion=1.0nicer
-T 44600 42700 5 10 0 0 0 0 1
-slot=2
-}
 C 43800 42000 1 0 0 resistor.sym
 {
 T 44000 42300 5 10 1 1 0 0 1
@@ -189,7 +173,7 @@ C 50400 42400 1 0 0 gnd-1.sym
 C 51000 43600 1 0 0 capacitor.sym
 {
 T 51000 43900 5 10 1 1 0 0 1
-refdes=C120
+refdes=C20
 T 51000 44500 5 10 0 0 0 0 1
 symversion=20090121
 T 51600 43900 5 10 1 1 0 0 1
@@ -233,7 +217,7 @@ C 50500 45500 1 0 0 busripper-1.sym
 C 45900 41200 1 0 0 capacitor.sym
 {
 T 46100 41700 5 10 1 1 0 0 1
-refdes=C121
+refdes=C21
 T 46500 41200 5 10 1 1 0 0 1
 value=0.22uF
 T 45900 41200 5 10 0 1 0 0 1
@@ -254,7 +238,23 @@ T 52200 40100 9 10 1 0 0 0 1
 8
 T 50500 40100 9 10 1 0 0 0 1
 4
-C 50200 42700 1 0 0 gp_opamp_dual_pwr.sym
+C 44400 47600 1 0 0 lp_opamp_dual.sym
+{
+T 45100 48300 5 10 1 1 0 0 1
+refdes=U3
+T 44700 50300 5 8 0 0 0 0 1
+symversion=1.0nicer
+}
+C 44600 41900 1 0 0 lp_opamp_dual.sym
+{
+T 45300 42600 5 10 1 1 0 0 1
+refdes=U3
+T 44900 44600 5 8 0 0 0 0 1
+symversion=1.0nicer
+T 44600 41900 5 10 0 0 0 0 1
+slot=2
+}
+C 50200 42700 1 0 0 lp_opamp_dual_pwr.sym
 {
 T 50400 44700 5 8 0 0 0 0 1
 symversion=1.0

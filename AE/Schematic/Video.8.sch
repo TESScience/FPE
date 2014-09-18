@@ -128,20 +128,6 @@ netname=+5
 }
 C 42500 50200 1 90 0 busripper-1.sym
 N 45700 46200 47500 46200 4
-C 51900 48000 1 0 0 gp_opamp_dual.sym
-{
-T 52600 48700 5 10 1 1 0 0 1
-refdes=U13
-T 52200 50700 5 8 0 0 0 0 1
-symversion=1.0nicer
-}
-C 52200 43000 1 0 0 gp_opamp_dual_pwr.sym
-{
-T 52400 45000 5 8 0 0 0 0 1
-symversion=1.0
-T 52850 43550 5 10 1 1 0 0 1
-refdes=U13
-}
 C 52400 42700 1 0 0 gnd-1.sym
 C 54100 47900 1 0 0 LM395K.sym
 {
@@ -192,15 +178,6 @@ T 51800 46200 5 10 1 1 0 0 1
 netname=HTR-
 }
 C 54400 47200 1 0 0 busripper-1.sym
-C 51700 44900 1 0 0 gp_opamp_dual.sym
-{
-T 52400 45600 5 10 1 1 0 0 1
-refdes=U13
-T 52000 47600 5 8 0 0 0 0 1
-symversion=1.0nicer
-T 51700 44900 5 10 0 0 0 0 1
-slot=2
-}
 C 50900 44400 1 0 0 resistor.sym
 {
 T 51100 44700 5 10 1 1 0 0 1
@@ -403,3 +380,26 @@ T 50500 40200 9 10 1 0 0 0 1
 8
 T 52000 40200 9 10 1 0 0 0 1
 8
+C 51900 48000 1 0 0 lp_opamp_dual.sym
+{
+T 52600 48700 5 10 1 1 0 0 1
+refdes=U13
+T 52200 50700 5 8 0 0 0 0 1
+symversion=1.0nicer
+}
+C 51700 44900 1 0 0 lp_opamp_dual.sym
+{
+T 52400 45600 5 10 1 1 0 0 1
+refdes=U13
+T 52000 47600 5 8 0 0 0 0 1
+symversion=1.0nicer
+T 51700 44900 5 10 0 0 0 0 1
+slot=2
+}
+C 52200 43000 1 0 0 lp_opamp_dual_pwr.sym
+{
+T 52400 45000 5 8 0 0 0 0 1
+symversion=1.0
+T 52850 43550 5 10 1 1 0 0 1
+refdes=U13
+}

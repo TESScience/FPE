@@ -15,7 +15,7 @@ title=Per-chip Circuitry
 C 45200 43900 1 0 0 capacitor.sym
 {
 T 45400 44400 5 10 1 1 0 0 1
-refdes=C122
+refdes=C22
 T 45800 43900 5 10 1 1 0 0 1
 value=0.22uF
 T 45200 43900 5 10 0 1 0 0 1
@@ -36,7 +36,7 @@ C 45100 43800 1 0 0 gnd-1.sym
 C 44100 45900 1 0 0 capacitor.sym
 {
 T 44300 46400 5 10 1 1 0 0 1
-refdes=C123
+refdes=C23
 T 44700 46200 5 10 1 1 0 0 1
 value=3.3nF
 T 44100 45900 5 10 0 1 0 0 1
@@ -101,7 +101,7 @@ C 44700 40200 1 0 0 gnd-1.sym
 C 45300 41400 1 0 0 capacitor.sym
 {
 T 45300 41700 5 10 1 1 0 0 1
-refdes=C124
+refdes=C24
 T 45300 42300 5 10 0 0 0 0 1
 symversion=20090121
 T 45900 41700 5 10 1 1 0 0 1
@@ -202,7 +202,7 @@ C 53800 45700 1 0 0 gnd-1.sym
 C 53300 43700 1 90 0 capacitor.sym
 {
 T 53500 44600 5 10 1 1 180 0 1
-refdes=C125
+refdes=C25
 T 52400 43700 5 10 0 0 90 0 1
 symversion=20090121
 T 53700 43900 5 10 1 1 180 0 1
@@ -232,7 +232,7 @@ spec=1%
 C 50100 47400 1 0 0 capacitor.sym
 {
 T 50100 47700 5 10 1 1 0 0 1
-refdes=C126
+refdes=C26
 T 50100 48300 5 10 0 0 0 0 1
 symversion=20090121
 T 50700 47700 5 10 1 1 0 0 1
@@ -262,7 +262,7 @@ refdes=VSUB
 C 54100 46000 1 90 0 capacitor.sym
 {
 T 54300 46900 5 10 1 1 180 0 1
-refdes=C127
+refdes=C27
 T 53200 46000 5 10 0 0 90 0 1
 symversion=20090121
 T 54500 46200 5 10 1 1 180 0 1
