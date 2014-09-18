@@ -1,4 +1,4 @@
-v 20110115 2
+v 20130925 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50200 40800 5 8 1 1 0 0 1
@@ -172,13 +172,6 @@ value=22nF
 T 42200 40800 5 10 0 1 0 0 1
 spec=50WVDC X7R
 }
-C 43600 40800 1 0 0 gp_opamp_dual_pwr.sym
-{
-T 43800 42800 5 8 0 0 0 0 1
-symversion=1.0
-T 44250 41350 5 10 1 1 0 0 1
-refdes=U1
-}
 N 43900 41900 43900 41700 4
 C 43800 40500 1 0 0 gnd-1.sym
 N 43900 41900 43100 41900 4
@@ -299,19 +292,26 @@ device=OUTPUT
 T 51000 46400 5 10 1 1 0 0 1
 refdes=HKb
 }
-C 43400 48600 1 180 1 gp_opamp_dual.sym
+C 43400 48600 1 180 1 lp_opamp_dual.sym
 {
 T 44100 47900 5 10 1 1 180 6 1
 refdes=U1
 T 43700 45900 5 8 0 0 180 6 1
 symversion=1.0nicer
 }
-C 47800 44700 1 180 1 gp_opamp_dual.sym
+C 47800 44700 1 180 1 lp_opamp_dual.sym
 {
 T 48500 44000 5 10 1 1 180 6 1
 refdes=U1
 T 48100 42000 5 8 0 0 180 6 1
 symversion=1.0nicer
-T 47800 44700 5 10 0 0 0 0 1
+T 47800 44700 5 10 0 0 180 6 1
 slot=2
+}
+C 43600 40800 1 0 0 lp_opamp_dual_pwr.sym
+{
+T 43800 42800 5 8 0 0 0 0 1
+symversion=1.0
+T 44250 41350 5 10 1 1 0 0 1
+refdes=U1
 }
