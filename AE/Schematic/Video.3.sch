@@ -269,33 +269,21 @@ footprint=FX2CA-68P-1.27DSA
 T 47300 50400 5 10 0 0 0 0 1
 device=FX2P
 }
-N 48000 45700 48800 45700 4
-{
-T 48100 45800 5 10 1 1 0 1 1
-netname=Int
-}
-C 48800 45700 1 270 0 busripper-1.sym
-N 48000 44500 48800 44500 4
-{
-T 48100 44600 5 10 1 1 0 1 1
-netname=\_Hold\_
-}
-C 48800 44500 1 270 0 busripper-1.sym
-N 48000 44100 48800 44100 4
-{
-T 48100 44200 5 10 1 1 0 1 1
-netname=Clamp
-}
-C 48800 44100 1 270 0 busripper-1.sym
 N 48000 45300 48800 45300 4
 {
 T 48100 45400 5 10 1 1 0 1 1
-netname=\_Int\_
+netname=Int
 }
 C 48800 45300 1 270 0 busripper-1.sym
+N 48000 44500 48800 44500 4
+{
+T 48100 44600 5 10 1 1 0 1 1
+netname=Clamp
+}
+C 48800 44500 1 270 0 busripper-1.sym
 N 48000 44900 48800 44900 4
 {
 T 48100 45000 5 10 1 1 0 1 1
-netname=Hold
+netname=DeInt
 }
 C 48800 44900 1 270 0 busripper-1.sym
