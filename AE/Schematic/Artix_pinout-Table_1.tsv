@@ -1,0 +1,122 @@
+#	Pin	Net	Signal	I/O	buffer type	io standard	drive strength (mA - 4,8,12, or 16)	PULLUP/PULLDOWN/none		Notes
+U4	1	clkin	OSC CLK	Oscillator clock, 60 MHz	I	IBUF	CVMOS33				
+									
+# Interface to DHU									
+U4	2	DataA_p	DataA_p	LVDS Twisted Pair	O	OBUFDS	LVDS_25				
+U4	3	DataA_n	DataA_n	Image/housekeeping data	O						
+U4	4	DataB_p	DataB_p	LVDS Twisted Pair	O	OBUFDS	LVDS_25				
+U4	5	DataB_n	DataB_n	Image/housekeeping data	O						
+U4	6	CmdClk_p	CmdClk_p	RS-422 SSI Command Clk @ 3 MHz	I	IBUF	CVMOS33				
+U4	7	CmdD_p	CmdD_p	RS-422 SSI Command Data	I	IBUF	CVMOS33				
+									
+# CCD Image Data 									
+U4	8	SDO-A-1	ADC0	Input from CCD ADC 0	I	IBUF	CVMOS25				
+U4	9	SDO-B-1	ADC1	Input from CCD ADC 1	I	IBUF	CVMOS25				
+U4	10	SDO-C-1	ADC2	Input from CCD ADC 2	I	IBUF	CVMOS25				
+U4	11	SDO-D-1	ADC3	Input from CCD ADC 3	I	IBUF	CVMOS25				
+U4	12	SDO-A-2	ADC4	Input from CCD ADC 4	I	IBUF	CVMOS25				
+U4	13	SDO-B-2	ADC5	Input from CCD ADC 5	I	IBUF	CVMOS25				
+U4	14	SDO-C-2	ADC6	Input from CCD ADC 6	I	IBUF	CVMOS25				
+U4	15	SDO-D-2	ADC7	Input from CCD ADC 7	I	IBUF	CVMOS25				
+U4	16	SDO-A-3	ADC8	Input from CCD ADC 8	I	IBUF	CVMOS25				
+U4	17	SDO-B-3	ADC9	Input from CCD ADC 9	I	IBUF	CVMOS25				
+U4	18	SDO-C-3	ADC10	Input from CCD ADC 10	I	IBUF	CVMOS25				
+U4	19	SDO-D-3	ADC11	Input from CCD ADC 11	I	IBUF	CVMOS25				
+U4	20	SDO-A-4	ADC12	Input from CCD ADC 12	I	IBUF	CVMOS25				
+U4	21	SDO-B-4	ADC13	Input from CCD ADC 13	I	IBUF	CVMOS25				
+U4	22	SDO-C-4	ADC14	Input from CCD ADC 14	I	IBUF	CVMOS25				
+U4	23	SDO-D-4	ADC15	Input from CCD ADC 15	I	IBUF	CVMOS25				
+U4	24	SCK-1	ADC_CLK0	Clk0 for CCD ADC	O	OBUF	CVMOS25				
+U4	25	SCK-2	ADC_CLK1	Clk1 for CCD ADC	O	OBUF	CVMOS25				
+U4	26	SCK-3	ADC_CLK2	Clk2 for CCD ADC	O	OBUF	CVMOS25				
+U4	27	SCK-4	ADC_CLK3	Clk3 for CCD ADC	O	OBUF	CVMOS25				
+U4	28	CNV-1	ADC_CNV0	CCD ADC Conversion 0	O	OBUF	CVMOS25				
+U4	29	CNV-2	ADC_CNV1	CCD ADC Conversion 1	O	OBUF	CVMOS25				
+U4	30	CNV-3	ADC_CNV2	CCD ADC Conversion 2	O	OBUF	CVMOS25				
+U4	31	CNV-4	ADC_CNV3	CCD ADC Conversion 3	O	OBUF	CVMOS25				
+									
+# CCD Clocking									
+U4	32	SP1IA	IA_Clock1		O	OBUF	CVMOS33				
+U4	33	SP2IA	IA_Clock2		O	OBUF	CVMOS33				
+U4	34	SP3IA	IA_Clock3		O	OBUF	CVMOS33				
+U4	35	SP1FS	FS_Clock1		O	OBUF	CVMOS33				
+U4	36	SP2FS	FS_Clock2		O	OBUF	CVMOS33				
+U4	37	SP3FS	FS_Clock3		O	OBUF	CVMOS33				
+#	38	SU_Clock1		O	OBUF	CVMOS33	Reserved for upper serial (but we don't have drivers)			
+#	39	SU_Clock2		O	OBUF	CVMOS33	Reserved for upper serial (but we don't have drivers)			
+#	40	SU_Clock3		O	OBUF	CVMOS33	Reserved for upper serial (but we don't have drivers)			
+U4	41	SP1S	S_Clock1		O	OBUF	CVMOS33				
+U4	42	SP2S	S_Clock2		O	OBUF	CVMOS33				
+U4	43	SP3S	S_Clock3		O	OBUF	CVMOS33				
+U4	44	SRG	RG		O	OBUF	CVMOS33				
+									
+# Clock/Bias/Heater Level Control				OBUF	CVMOS25				
+U4	45	\_DS64\_	CL_SEL8	Clock Level Interface Board Select 0	O	OBUF	CVMOS25				
+U4	46	\_DS72\_	CL_SEL9	Clock Level Interface Board Select 1	O	OBUF	CVMOS25				
+U4	47	\_DS80\_	CL_SEL10	Clock Level Interface Board Select 2	O	OBUF	CVMOS25				
+U4	48	\_DS88\_	CL_SEL11	Clock Level Interface Board Select 3	O	OBUF	CVMOS25				
+U4	49	DCK	DAC_CLK	Clock Level DAC Clk	O	OBUF	CVMOS25				
+U4	50	DCS0	CL_DSC0	Clock Level Video Board Address 0	O	OBUF	CVMOS25				
+U4	51	DCS1	CL_DSC1	Clock Level Video Board Address 1	O	OBUF	CVMOS25				
+U4	52	DCS2	CL_DSC2	Clock Level Video Board Address 2	O	OBUF	CVMOS25				
+U4	53	DCS3	CL_DSC3	Clock Level Video Board Address 3	O	OBUF	CVMOS25				
+U4	54	DD	CL_DATA	Clock Level Data	O	OBUF	CVMOS25				
+									
+# Housekeeping									
+U4	55	HKA0	HSK_SEL0	Housekeeping Address 0	O	OBUF	CVMOS33				
+U4	56	HKA1	HSK_SEL1	Housekeeping Address 1	O	OBUF	CVMOS33				
+U4	57	HKA2	HSK_SEL2	Housekeeping Address 2	O	OBUF	CVMOS33				
+U4	58	HKA3	HSK_SEL3	Housekeeping Address 3	O	OBUF	CVMOS33				
+U4	59	HKA4	HSK_SEL4	Housekeeping Address 4	O	OBUF	CVMOS33				
+U4	60	HKA5	HSK_SEL5	Housekeeping Address 5	O	OBUF	CVMOS33				
+U4	61	HKA6	HSK_SEL6	Housekeeping Address 6	O	OBUF	CVMOS33				
+#	62	HSK_SEL7	Housekeeping Address 7	O	OBUF	CVMOS33	Unused			
+U4	?	HK64	?	Interface board Housekeeping select 64-71	O	OBUF	CVMOS33	
+U4	?	HK72	?	Interface board Housekeeping select 72-79	O	OBUF	CVMOS33	
+U4	?	HK80	?	Interface board Housekeeping select 80-87	O	OBUF	CVMOS33	
+U4	?	HK88	?	Interface board Housekeeping select 88-95	O	OBUF	CVMOS33	
+U4	63	HSK_CLK	HSK_CLK	Housekeeping Clock	O	OBUF	CVMOS25				
+U4	63?	HSK_CNV	HSK_CNV	Housekeeping Conversion	O	OBUF	CVMOS25				
+U4	64	HSK_DATA	HSK_DATA	Housekeeping Data	O	OBUF	CVMOS25				
+									
+U4	65	SSDATA	SSDATA	Configuration Serial Data	I	IBUF	CVMOS25				
+									
+# Camera ID									
+U4	66	ID0	Camera ID0	Camera number (strapped)	I	IBUF	CVMOS33				
+U4	67	ID1	Camera ID1		I	IBUF	CVMOS33				
+U4	68	ID2	Camera ID2		I	IBUF	CVMOS33				
+U4	69	ID3	Camera ID3		I	IBUF	CVMOS33				
+									
+# Debug									
+U4	70	tp_out[0]	Debug 0	Internal signal brought out for debug	O	OBUF	CVMOS25				
+U4	71	tp_out[1]	Debug 1	Internal signal brought out for debug	O	OBUF	CVMOS25				
+U4	72	tp_out[2]	Debug 2	Internal signal brought out for debug	O	OBUF	CVMOS25				
+U4	73	tp_out[3]	Debug 3	Internal signal brought out for debug	O	OBUF	CVMOS25				
+U4	74	tp_out[4]	Debug 4	Internal signal brought out for debug	O	OBUF	CVMOS25				
+U4	75	tp_out[5]	Debug 5	Internal signal brought out for debug	O	OBUF	CVMOS25				
+U4	76	tp_out[6]	Debug 6	Internal signal brought out for debug	O	OBUF	CVMOS25				
+U4	77	tp_out[7]	Debug 7	Internal signal brought out for debug	O	OBUF	CVMOS25				
+									
+									
+# Dedicated Configuration Pins in Bank 0(can't be reused)									
+# F12	DONE_0		NA	Must have strong external pull-up resistor.					
+# M10	DXP_0	Temperature sensing diode p	NA						
+# J9	GNDADC_0	XADC ground	NA						
+# J10	VCCADC_0	XADC positive supply voltage	NA						
+# L10	VREFP_0	XADC 1.5V reference	NA						
+# L9	VN_0	Dedicated XADC (unused)	NA						
+# E11	VCCBATT_0		NA						
+# F8	TCK_0	JTAG TCK	Input						
+# M9	DXN_0	Temperature sensing diode n	NA						
+# K9	VREFN_0	XADC 1.5V reference ground	NA						
+# K10	VP_0	Dedicated XADC (unused)	NA						
+# E8	CCLK_0	Clock for Configuration	Input						
+# R12	M0_0	Select for Configuration 	Input	Strap to 1					
+# R11	M1_0	Select for Configuration	Input	Strap to 1					
+# T10	INIT_B_0	Configuration complete	Output	Must have external pullup resistor					
+# T9	TDI_0	JTAG TDI	Input						
+# T8	TDO_0	JTAG TDO	Output						
+# F13	M2_0	Select for Configuration 	Input	Strap to 1					
+# E12	CFGBVS_0	Connect to VCC0	Input	Connect to VCC0					
+# P10	PROGRAM_B_0	Start Configuration	Input						
+# R8	TMS_0	JTAG TMS	Input						
