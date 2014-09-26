@@ -33,5 +33,10 @@ Chain.2.sch : ../Schematic/Chain.2.sch
 Chain.cir : Chain.1.sch Chain.2.sch
 	$(GNET) Chain.1.sch Chain.2.sch -o Chain.cir
 
+ArtixPower.sch : ../Schematic/ArtixPower.sch
+	cp $< $@
+
+AP : AP.cir ArtixPower.cir
+	$(NGSPICE) AP.cir ArtixPower.cir LM6142A.MOD REF43.cir
 clean :
 	rm -f *.cir *.ps *.pdf \#* *~
