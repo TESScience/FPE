@@ -5,6 +5,14 @@ NGSPICE=ngspice
 %.cir : %.sch
 	$(GNET) $< -o $@
 
+S2PS=gschem -p -o $@ -s ../Schematic/print.scm $<
+
+%.sym.ps : %.sym
+	$(S2PS)
+
+%.ps : %.sch
+	$(S2PS)
+
 chnoise : chnoise.cir
 	$(NGSPICE) chnoise.cir bf545c.mod
 
@@ -37,6 +45,10 @@ ArtixPower.sch : ../Schematic/ArtixPower.sch
 	cp $< $@
 
 AP : AP.cir ArtixPower.cir
-	$(NGSPICE) AP.cir ArtixPower.cir LM6142A.MOD REF43.cir
+	$(NGSPICE) AP.cir ArtixPower.cir LM6142A.MOD REF43.cir MMBT2222A.mod MMBT2907A.mod
+
+APSC : APSC.cir ArtixPower.cir
+	$(NGSPICE) APSC.cir ArtixPower.cir LM6142A.MOD REF43.cir MMBT2222A.mod MMBT2907A.mod
+
 clean :
 	rm -f *.cir *.ps *.pdf \#* *~
