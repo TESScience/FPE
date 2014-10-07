@@ -1,6 +1,6 @@
-v 20110115 2
+v 20130925 2
 T 200 2200 5 8 0 0 0 0 1
-description=Power pins for dual opamp
+usage=Power pins for dual opamp
 T 200 1800 5 8 0 0 0 0 1
 author=Kai-Martin Knaak kmk@lilalaser.de
 T 200 1600 5 8 0 0 0 0 1
