@@ -49,4 +49,4 @@ description=n-channel jfet
 T 500 1650 5 10 0 0 0 0 1
 numslots=0
 T 500 1100 8 10 0 0 0 0 1
-spice-prototype=X? %pinseq MMBFJ309
+spice-prototype=J? %pinseq J309

@@ -26,9 +26,9 @@ C 42100 45600 1 0 0 vpulse-1.sym
 T 42800 46250 5 10 1 1 0 0 1
 refdes=Vp3
 T 42800 45650 5 10 1 1 0 0 3
-value=pulse {-vv} 0
-+ {3*step} {tos} {tos}
-+ {(15-3)*step-tos} {48*step}
+value=pulse 0 {-vv}
++ {14*step} {tos} {tos}
++ {(24-14)*step-tos} {48*step}
 }
 C 46200 44400 1 0 0 gnd-1.sym
 N 44000 46800 50900 46800 4
