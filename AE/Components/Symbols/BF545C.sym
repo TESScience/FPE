@@ -1,7 +1,7 @@
-v 20110115 2
+v 20130925 2
 L 400 600 400 200 3 0 0 0 -1 -1
 T 500 850 5 10 0 0 0 0 1
-device=BF545C
+device=MMBFJ309
 L 400 500 600 500 3 0 0 0 -1 -1
 P 600 500 600 800 1 0 1
 {
@@ -49,4 +49,4 @@ description=n-channel jfet
 T 500 1650 5 10 0 0 0 0 1
 numslots=0
 T 500 1100 8 10 0 0 0 0 1
-spice-prototype=X? %pinseq bf545c/PLP
+spice-prototype=X? %pinseq MMBFJ309
