@@ -1,15 +1,15 @@
 v 20130925 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
-T 50000 40500 5 10 1 1 0 0 1
+T 50000 40500 15 10 1 1 0 0 1
 date=20141014
-T 53900 40500 5 10 1 1 0 0 1
+T 53900 40500 15 10 1 1 0 0 1
 rev=6.0
-T 55400 40200 5 10 1 1 0 0 1
+T 55400 40200 15 10 1 1 0 0 1
 auth=jpd
-T 50200 40800 5 8 1 1 0 0 1
+T 50200 40800 15 8 1 1 0 0 1
 fname=Interface.10.sch
-T 53200 41200 5 14 1 1 0 4 1
+T 53200 41200 15 14 1 1 0 4 1
 title=Interface Board
 }
 T 47400 49600 9 20 1 0 0 0 3
@@ -22,8 +22,10 @@ T 52100 40200 9 10 1 0 0 0 1
 10
 C 43500 49700 1 0 0 capacitor.sym
 {
+T 43500 50600 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 50000 5 10 1 1 0 0 1
-refdes=C?
+refdes=C51
 T 44100 50000 5 10 1 1 0 0 1
 value=0.1uF
 T 43500 49700 5 10 0 1 0 0 1
@@ -31,8 +33,10 @@ spec=16WVDC X7R
 }
 C 42200 50000 1 0 0 capacitor.sym
 {
+T 42200 50900 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 50300 5 10 1 1 0 0 1
-refdes=C?
+refdes=C52
 T 42800 50300 5 10 1 1 0 0 1
 value=1uF
 T 42200 50000 5 10 0 1 0 0 1
@@ -42,8 +46,10 @@ footprint=0805
 }
 C 42200 49000 1 0 0 capacitor.sym
 {
+T 42200 49900 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 49300 5 10 1 1 0 0 1
-refdes=C?
+refdes=C53
 T 42800 49300 5 10 1 1 0 0 1
 value=4.7uF
 T 42200 49000 5 10 0 1 0 6 1
@@ -54,7 +60,7 @@ footprint=1812
 C 47400 46800 1 0 0 polarcap.sym
 {
 T 47500 46800 5 10 1 1 0 0 1
-refdes=C?
+refdes=C54
 T 47600 47700 5 10 0 0 0 0 1
 symversion=0.1
 T 48000 46800 5 10 1 1 0 0 1
@@ -67,7 +73,7 @@ spec=15WVDC
 C 42200 47500 1 0 0 polarcap.sym
 {
 T 42200 47400 5 10 1 1 0 0 1
-refdes=C?
+refdes=C55
 T 42400 48400 5 10 0 0 0 0 1
 symversion=0.1
 T 42200 47500 5 10 0 0 0 0 1
@@ -79,8 +85,10 @@ value=220uF
 }
 C 43500 49200 1 0 0 capacitor.sym
 {
+T 43500 50100 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 49500 5 10 1 1 0 0 1
-refdes=C?
+refdes=C56
 T 44100 49500 5 10 1 1 0 0 1
 value=0.1uF
 T 43500 49200 5 10 0 1 0 0 1
@@ -88,35 +96,43 @@ spec=16WVDC X7R
 }
 C 43500 48700 1 0 0 capacitor.sym
 {
+T 43500 49600 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 48700 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 43500 49000 5 10 1 1 0 0 1
-refdes=C?
+refdes=C57
 T 44100 49000 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 43500 48200 1 0 0 capacitor.sym
 {
+T 43500 49100 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 48200 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 43500 48500 5 10 1 1 0 0 1
-refdes=C?
+refdes=C58
 T 44100 48500 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 43500 47700 1 0 0 capacitor.sym
 {
+T 43500 48600 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 47700 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 43500 48000 5 10 1 1 0 0 1
-refdes=C?
+refdes=C59
 T 44100 48000 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 42200 49500 1 0 0 capacitor.sym
 {
+T 42200 50400 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 49800 5 10 1 1 0 0 1
-refdes=C?
+refdes=C10
 T 42800 49800 5 10 1 1 0 0 1
 value=1uF
 T 42200 49500 5 10 0 1 0 0 1
@@ -126,8 +142,10 @@ footprint=0805
 }
 C 42200 48500 1 0 0 capacitor.sym
 {
+T 42200 49400 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 48800 5 10 1 1 0 0 1
-refdes=C?
+refdes=C11
 T 42800 48800 5 10 1 1 0 0 1
 value=4.7uF
 T 42200 48500 5 10 0 1 0 6 1
@@ -137,8 +155,10 @@ footprint=1812
 }
 C 42200 48000 1 0 0 capacitor.sym
 {
+T 42200 48900 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 48300 5 10 1 1 0 0 1
-refdes=C?
+refdes=C12
 T 42800 48300 5 10 1 1 0 0 1
 value=4.7uF
 T 42200 48000 5 10 0 1 0 6 1
@@ -175,21 +195,25 @@ N 44400 48400 44700 48400 4
 N 42100 50500 45000 50500 4
 C 43500 45500 1 0 0 capacitor.sym
 {
+T 43500 46400 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 45500 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 43500 45800 5 10 1 1 0 0 1
-refdes=C?
+refdes=C13
 T 44100 45800 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 42200 45800 1 0 0 capacitor.sym
 {
+T 42200 46700 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 45800 5 10 0 1 0 0 1
 spec=10WVDC X7R
 T 42200 46900 5 10 0 0 0 0 1
 footprint=0805
 T 42200 46100 5 10 1 1 0 0 1
-refdes=C?
+refdes=C14
 T 42800 46100 5 10 1 1 0 0 1
 value=1uF
 }
@@ -202,7 +226,7 @@ spec=6WVDC
 T 42200 45300 5 10 0 0 0 0 1
 footprint=2915
 T 42200 45200 5 10 1 1 0 0 1
-refdes=C?
+refdes=C15
 T 42800 45200 5 10 1 1 0 0 1
 value=220uF
 }
@@ -218,32 +242,38 @@ N 42100 46300 45000 46300 4
 N 43500 45700 43400 45700 4
 C 43500 43200 1 0 0 capacitor.sym
 {
+T 43500 44100 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 43200 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 43500 43500 5 10 1 1 0 0 1
-refdes=C?
+refdes=C16
 T 44100 43500 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 42200 43500 1 0 0 capacitor.sym
 {
+T 42200 44400 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 43500 5 10 0 1 0 0 1
 spec=10WVDC X7R
 T 42200 44600 5 10 0 0 0 0 1
 footprint=0805
 T 42200 43800 5 10 1 1 0 0 1
-refdes=C?
+refdes=C17
 T 42800 43800 5 10 1 1 0 0 1
 value=1uF
 }
 C 42200 42500 1 0 0 capacitor.sym
 {
+T 42200 43400 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 42500 5 10 0 1 0 6 1
 spec=10WVDC X7R
 T 42200 42500 5 10 0 0 0 6 1
 footprint=1812
 T 42200 42800 5 10 1 1 0 0 1
-refdes=C?
+refdes=C18
 T 42800 42800 5 10 1 1 0 0 1
 value=4.7uF
 }
@@ -256,65 +286,77 @@ spec=6WVDC
 T 42200 41500 5 10 0 0 0 0 1
 footprint=2915
 T 42200 41400 5 10 1 1 0 0 1
-refdes=C?
+refdes=C19
 T 42800 41400 5 10 1 1 0 0 1
 value=220uF
 }
 C 43500 42700 1 0 0 capacitor.sym
 {
+T 43500 43600 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 42700 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 43500 43000 5 10 1 1 0 0 1
-refdes=C?
+refdes=C20
 T 44100 43000 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 43500 42200 1 0 0 capacitor.sym
 {
+T 43500 43100 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 42200 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 43500 42500 5 10 1 1 0 0 1
-refdes=C?
+refdes=C21
 T 44100 42500 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 43500 41700 1 0 0 capacitor.sym
 {
+T 43500 42600 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 41700 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 43500 42000 5 10 1 1 0 0 1
-refdes=C?
+refdes=C22
 T 44100 42000 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 43500 41200 1 0 0 capacitor.sym
 {
+T 43500 42100 5 10 0 0 0 0 1
+symversion=20090121
 T 43500 41200 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 43500 41500 5 10 1 1 0 0 1
-refdes=C?
+refdes=C23
 T 44100 41500 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 42200 43000 1 0 0 capacitor.sym
 {
+T 42200 43900 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 43000 5 10 0 1 0 0 1
 spec=10WVDC X7R
 T 42200 44100 5 10 0 0 0 0 1
 footprint=0805
 T 42200 43300 5 10 1 1 0 0 1
-refdes=C?
+refdes=C24
 T 42800 43300 5 10 1 1 0 0 1
 value=1uF
 }
 C 42200 42000 1 0 0 capacitor.sym
 {
+T 42200 42900 5 10 0 0 0 0 1
+symversion=20090121
 T 42200 42000 5 10 0 1 0 6 1
 spec=10WVDC X7R
 T 42200 42000 5 10 0 0 0 6 1
 footprint=1812
 T 42200 42300 5 10 1 1 0 0 1
-refdes=C?
+refdes=C25
 T 42800 42300 5 10 1 1 0 0 1
 value=4.7uF
 }
@@ -363,70 +405,84 @@ C 41600 47100 1 180 0 busripper-1.sym
 C 41600 44000 1 180 0 busripper-1.sym
 C 47400 47800 1 0 0 capacitor.sym
 {
+T 47400 48700 5 10 0 0 0 0 1
+symversion=20090121
 T 47400 47800 5 10 0 1 0 6 1
 spec=10WVDC X7R
 T 47400 47800 5 10 0 0 0 6 1
 footprint=1812
 T 47400 48100 5 10 1 1 0 0 1
-refdes=C?
+refdes=C26
 T 48000 48100 5 10 1 1 0 0 1
 value=4.7uF
 }
 C 48700 48000 1 0 0 capacitor.sym
 {
+T 48700 48900 5 10 0 0 0 0 1
+symversion=20090121
 T 48700 48000 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 48700 48300 5 10 1 1 0 0 1
-refdes=C?
+refdes=C27
 T 49300 48300 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 48700 47500 1 0 0 capacitor.sym
 {
+T 48700 48400 5 10 0 0 0 0 1
+symversion=20090121
 T 48700 47500 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 48700 47800 5 10 1 1 0 0 1
-refdes=C?
+refdes=C28
 T 49300 47800 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 48700 47000 1 0 0 capacitor.sym
 {
+T 48700 47900 5 10 0 0 0 0 1
+symversion=20090121
 T 48700 47000 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 48700 47300 5 10 1 1 0 0 1
-refdes=C?
+refdes=C29
 T 49300 47300 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 48700 46500 1 0 0 capacitor.sym
 {
+T 48700 47400 5 10 0 0 0 0 1
+symversion=20090121
 T 48700 46500 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 48700 46800 5 10 1 1 0 0 1
-refdes=C?
+refdes=C30
 T 49300 46800 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 47400 48300 1 0 0 capacitor.sym
 {
+T 47400 49200 5 10 0 0 0 0 1
+symversion=20090121
 T 47400 48300 5 10 0 1 0 0 1
 spec=10WVDC X7R
 T 47400 49400 5 10 0 0 0 0 1
 footprint=0805
 T 47400 48600 5 10 1 1 0 0 1
-refdes=C?
+refdes=C31
 T 48000 48600 5 10 1 1 0 0 1
 value=1uF
 }
 C 47400 47300 1 0 0 capacitor.sym
 {
+T 47400 48200 5 10 0 0 0 0 1
+symversion=20090121
 T 47400 47300 5 10 0 1 0 6 1
 spec=10WVDC X7R
 T 47400 47300 5 10 0 0 0 6 1
 footprint=1812
 T 47400 47600 5 10 1 1 0 0 1
-refdes=C?
+refdes=C32
 T 48000 47600 5 10 1 1 0 0 1
 value=4.7uF
 }
@@ -460,76 +516,90 @@ footprint=2711
 T 52900 42100 5 10 0 0 0 0 1
 spec=15WVDC
 T 53000 42100 5 10 1 1 0 0 1
-refdes=C?
+refdes=C33
 T 53500 42100 5 10 1 1 0 0 1
 value=47uF
 }
 C 52900 43100 1 0 0 capacitor.sym
 {
+T 52900 44000 5 10 0 0 0 0 1
+symversion=20090121
 T 52900 43100 5 10 0 1 0 6 1
 spec=10WVDC X7R
 T 52900 43100 5 10 0 0 0 6 1
 footprint=1812
 T 52900 43400 5 10 1 1 0 0 1
-refdes=C?
+refdes=C34
 T 53500 43400 5 10 1 1 0 0 1
 value=4.7uF
 }
 C 54200 43300 1 0 0 capacitor.sym
 {
+T 54200 44200 5 10 0 0 0 0 1
+symversion=20090121
 T 54200 43300 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 54200 43600 5 10 1 1 0 0 1
-refdes=C?
+refdes=C35
 T 54800 43600 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 54200 42800 1 0 0 capacitor.sym
 {
+T 54200 43700 5 10 0 0 0 0 1
+symversion=20090121
 T 54200 42800 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 54200 43100 5 10 1 1 0 0 1
-refdes=C?
+refdes=C36
 T 54800 43100 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 54200 42300 1 0 0 capacitor.sym
 {
+T 54200 43200 5 10 0 0 0 0 1
+symversion=20090121
 T 54200 42300 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 54200 42600 5 10 1 1 0 0 1
-refdes=C?
+refdes=C37
 T 54800 42600 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 54200 41800 1 0 0 capacitor.sym
 {
+T 54200 42700 5 10 0 0 0 0 1
+symversion=20090121
 T 54200 41800 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 54200 42100 5 10 1 1 0 0 1
-refdes=C?
+refdes=C38
 T 54800 42100 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 52900 43600 1 0 0 capacitor.sym
 {
+T 52900 44500 5 10 0 0 0 0 1
+symversion=20090121
 T 52900 43600 5 10 0 1 0 0 1
 spec=10WVDC X7R
 T 52900 44700 5 10 0 0 0 0 1
 footprint=0805
 T 52900 43900 5 10 1 1 0 0 1
-refdes=C?
+refdes=C39
 T 53500 43900 5 10 1 1 0 0 1
 value=1uF
 }
 C 52900 42600 1 0 0 capacitor.sym
 {
+T 52900 43500 5 10 0 0 0 0 1
+symversion=20090121
 T 52900 42600 5 10 0 1 0 6 1
 spec=10WVDC X7R
 T 52900 42600 5 10 0 0 0 6 1
 footprint=1812
 T 52900 42900 5 10 1 1 0 0 1
-refdes=C?
+refdes=C40
 T 53500 42900 5 10 1 1 0 0 1
 value=4.7uF
 }
@@ -556,70 +626,84 @@ N 55100 42500 55400 42500 4
 N 52800 42300 52800 44200 4
 C 47400 44700 1 0 0 capacitor.sym
 {
+T 47400 45600 5 10 0 0 0 0 1
+symversion=20090121
 T 47400 44700 5 10 0 1 0 6 1
 spec=10WVDC X7R
 T 47400 44700 5 10 0 0 0 6 1
 footprint=1812
 T 47400 45000 5 10 1 1 0 0 1
-refdes=C?
+refdes=C41
 T 48000 45000 5 10 1 1 0 0 1
 value=4.7uF
 }
 C 48700 44900 1 0 0 capacitor.sym
 {
+T 48700 45800 5 10 0 0 0 0 1
+symversion=20090121
 T 48700 44900 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 48700 45200 5 10 1 1 0 0 1
-refdes=C?
+refdes=C42
 T 49300 45200 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 48700 44400 1 0 0 capacitor.sym
 {
+T 48700 45300 5 10 0 0 0 0 1
+symversion=20090121
 T 48700 44400 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 48700 44700 5 10 1 1 0 0 1
-refdes=C?
+refdes=C43
 T 49300 44700 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 48700 43900 1 0 0 capacitor.sym
 {
+T 48700 44800 5 10 0 0 0 0 1
+symversion=20090121
 T 48700 43900 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 48700 44200 5 10 1 1 0 0 1
-refdes=C?
+refdes=C44
 T 49300 44200 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 48700 43400 1 0 0 capacitor.sym
 {
+T 48700 44300 5 10 0 0 0 0 1
+symversion=20090121
 T 48700 43400 5 10 0 1 0 0 1
 spec=16WVDC X7R
 T 48700 43700 5 10 1 1 0 0 1
-refdes=C?
+refdes=C45
 T 49300 43700 5 10 1 1 0 0 1
 value=0.1uF
 }
 C 47400 45200 1 0 0 capacitor.sym
 {
+T 47400 46100 5 10 0 0 0 0 1
+symversion=20090121
 T 47400 45200 5 10 0 1 0 0 1
 spec=10WVDC X7R
 T 47400 46300 5 10 0 0 0 0 1
 footprint=0805
 T 47400 45500 5 10 1 1 0 0 1
-refdes=C?
+refdes=C46
 T 48000 45500 5 10 1 1 0 0 1
 value=1uF
 }
 C 47400 44200 1 0 0 capacitor.sym
 {
+T 47400 45100 5 10 0 0 0 0 1
+symversion=20090121
 T 47400 44200 5 10 0 1 0 6 1
 spec=10WVDC X7R
 T 47400 44200 5 10 0 0 0 6 1
 footprint=1812
 T 47400 44500 5 10 1 1 0 0 1
-refdes=C?
+refdes=C47
 T 48000 44500 5 10 1 1 0 0 1
 value=4.7uF
 }
@@ -650,7 +734,7 @@ footprint=2711
 T 52900 47300 5 10 0 0 0 0 1
 spec=15WVDC
 T 53000 47300 5 10 1 1 0 0 1
-refdes=C?
+refdes=C48
 T 53500 47300 5 10 1 1 0 0 1
 value=47uF
 }
