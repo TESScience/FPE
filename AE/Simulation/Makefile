@@ -13,6 +13,12 @@ S2PS=gschem -p -o $@ -s ../Schematic/print.scm $<
 %.ps : %.sch
 	$(S2PS)
 
+BoosterTest : BoosterTest.cir Booster.cir
+	$(NGSPICE) BoosterTest.cir Booster.cir irfr9120n.spi irfru220n.spi MMBT2222A.mod MMBT2907A.mod
+
+Booster.sch : ../Schematic/Booster.sch
+	cp $< $@
+
 chnoise : chnoise.cir
 	$(NGSPICE) chnoise.cir bf545c.mod
 
