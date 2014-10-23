@@ -50,3 +50,7 @@ T 100 1800 8 10 0 1 0 0 1
 description=Fast opamp
 T 100 2300 8 10 0 0 0 0 1
 spice-prototype=X? %pinseq model-name@
+T 200 2100 8 10 0 0 0 0 1
+pins=5
+T 200 2000 8 10 0 0 0 0 1
+class=IC

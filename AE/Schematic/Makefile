@@ -108,6 +108,10 @@ Video-connectors.psch : \
 	CCD-connectors.txt TempConn.txt video_interconnect.txt
 	awk -f pins2gsch.awk $^ >$@
 
+Video.allegro : $(VIDEOSCH) $(VIDEOMERGE)
+	rm -rf devfiles
+	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(VIDEOTOP) $(VIDEOMERGE)
+
 Video.net.txt : $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -g osmond -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 
