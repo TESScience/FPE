@@ -374,7 +374,7 @@ C 50000 45100 1 0 0 gnd-1.sym
 C 41300 41200 1 0 0 in-1.sym
 {
 T 41300 41500 5 10 1 1 0 0 1
-refdes=Gnd
+refdes=GND
 }
 C 41800 41000 1 0 0 gnd-1.sym
 C 48500 42100 1 0 0 gp_opamp_dual_pwr.sym

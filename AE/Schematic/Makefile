@@ -211,6 +211,9 @@ INTERFACEMERGE= \
 
 INTERFACESCH= $(INTERFACETOP) $(INTERFACESUB) $(INTERFACEMERGE)
 
+Interface.U4.txt: makeFPGApinmap.awk Artix-signal-map.tsv ArtixPinout.csv
+	awk -f makeFPGApinmap.awk Artix-signal-map.tsv ArtixPinout.csv >$@
+
 Interface.net.txt : $(INTERFACESCH)
 	$(GNET) -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
@@ -236,22 +239,37 @@ Interface.bom.tsv : Interface.bom.txt $(PARTDB) Interface-omit.tsv
 	&& (awk -f screamBOM.awk $(PARTDB) bom=1 Interface.bom.txt >Interface.bom.tsv)
 
 clean : 
-	rm -f *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
+	rm -rf *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
 		*.xls \#* *~ *.psch *.log
 
-# $Log: Makefile,v $
-# Revision 1.5  2009-02-16 17:26:58  jpd
-# First release of Interface board.
-#
-# Revision 1.4  2009-02-04 20:20:38  jpd
-# Automate screaming BOM
-#
-# Revision 1.3  2009-01-24 01:44:13  jpd
-# First complete video board design.
-#
-# Revision 1.2  2009-01-16 03:09:35  jpd
-# Build driver stuff.
-#
-# Revision 1.1  2009-01-16 03:03:38  jpd
-# Added drivers.
-#
+ATESTDOCS=\
+	ArtixPower.ps ArtixTest.1.ps ArtixTest.2.ps \
+	ArtixTest.3.ps ArtixTest.4.ps ArtixTest.5.ps \
+	TestJmp.txt Artix-signal-map.tsv
+
+ATESTTOP= \
+	ArtixTest.1.sch ArtixTest.2.sch ArtixTest.3.sch \
+	ArtixTest.4.sch ArtixTest.5.sch
+
+ATESTSUB=ArtixPower.sch
+
+ATESTMERGE=ArtixTest-connectors.psch Interface.U4.psch
+
+ArtixTest-connectors.psch : TestJmp.txt
+	awk -f pins2gsch.awk $^ >$@
+
+ArtixTest.allegro : $(ATESTTOP) $(ATESTSUB) $(ATESTMERGE)
+	rm -rf devfiles
+	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(ATESTTOP) $(ATESTMERGE)
+
+ArtixTest.bom.txt : $(ATESTTOP) $(ATESTSUB) attribs
+	$(GNET) -g bom -o $@ $(ATESTTOP)
+
+ArtixTest.bom2.txt : $(ATESTTOP) $(ATESTSUB) attribs
+	$(GNET) -g bom2 -o $@ $(ATESTTOP)
+
+ArtixTest.counts.txt : ArtixTest.bom.txt
+	awk -f countem.awk ArtixTest.bom.txt | sort -nr >$@
+
+ArtixTest.ps : $(ATESTDOCS)
+	$(A2PS)
