@@ -61,3 +61,5 @@ pintype=pas
 T 350 550 5 8 1 1 0 0 1
 pinlabel=INH
 }
+T 1400 2100 8 10 0 0 0 0 1
+class=IO

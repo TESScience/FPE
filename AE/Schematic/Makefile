@@ -238,7 +238,7 @@ Interface.bom.tsv : Interface.bom.txt $(PARTDB) Interface-omit.tsv
 
 clean : 
 	rm -rf *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
-		*.xls \#* *~ *.psch *.log
+		*.xls \#* *~ *.psch *.log *devfiles
 
 ATESTDOCS=\
 	ArtixPower.ps ArtixTest.1.ps ArtixTest.2.ps \
@@ -256,9 +256,10 @@ ATESTMERGE=ArtixTest-connectors.psch Interface.U4.psch
 ArtixTest-connectors.psch : TestJmp.txt
 	awk -f pins2gsch.awk $^ >$@
 
-ArtixTest.allegro : $(ATESTTOP) $(ATESTSUB) $(ATESTMERGE)
-	rm -rf devfiles
+ArtixTest.allegro ArtixTest.devfiles: $(ATESTTOP) $(ATESTSUB) $(ATESTMERGE)
+	rm -rf devfiles ArtixTest.devfiles
 	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(ATESTTOP) $(ATESTMERGE)
+	mv devfiles ArtixTest.devfiles
 
 ArtixTest.bom.txt : $(ATESTTOP) $(ATESTSUB) attribs
 	$(GNET) -g bom -o $@ $(ATESTTOP)
