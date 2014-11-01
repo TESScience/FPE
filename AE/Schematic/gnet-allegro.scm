@@ -222,10 +222,18 @@
    (lambda (netnames)
       (if (not (null? netnames))
          (let ((netname (car netnames)))
-            (display netname)
+            (display (gnetlist:alias-net netname))
             (display ";")
             (allegro:display-connections (gnetlist:get-all-connections netname))
             (allegro:write-net (cdr netnames))))))
+
+;; Remove troublesome characters from an Allegro net name.
+;; I based the set of allowed special characters on some advice I found on
+;; the web, but I have not verified that they all work in Allegro. -jpd
+
+(define allegro-net-set (string->char-set "@#%^_-=+{}|.?/" char-set:letter+digit))
+(define (allegro-net-char? c) (char-set-contains? allegro-net-set c))
+(define (allegro-net-filter s) (string-filter allegro-net-char? s))
 
 (define (allegro output-filename)
   (begin
@@ -234,6 +242,7 @@
     (display "$PACKAGES\n")
     (allegro:components packages)
     (display "$NETS\n")
+	(gnetlist:build-net-aliases allegro-net-filter all-unique-nets)
     (allegro:write-net (gnetlist:get-all-unique-nets "dummy"))
     (display "$END\n")
     (if (not (gnetlist:stdout? output-filename))
