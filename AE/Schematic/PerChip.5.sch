@@ -138,9 +138,9 @@ C 51500 46500 1 180 1 pnp.sym
 T 52100 46000 5 10 1 1 180 6 1
 refdes=Q1
 T 50500 45300 5 10 0 1 0 0 1
-model-name=MMBT2907A
+model-name=QPMBTA92
 T 51500 46500 5 10 0 0 0 0 1
-value=MMBT2907A
+value=PMBTA92
 }
 N 48900 42900 48900 47000 4
 {
@@ -172,9 +172,9 @@ C 52600 46000 1 180 1 pnp.sym
 T 53200 45500 5 10 1 1 180 6 1
 refdes=Q2
 T 51600 44800 5 10 0 1 0 0 1
-model-name=MMBT2907A
+model-name=QPMBTA92
 T 52600 46000 5 10 0 0 0 0 1
-value=MMBT2907A
+value=PMBTA92
 }
 N 52000 45500 52600 45500 4
 C 50000 47200 1 180 1 gp_opamp_dual.sym
@@ -208,7 +208,7 @@ symversion=20090121
 T 53700 43900 5 10 1 1 180 0 1
 value=22nF
 T 51900 43700 5 10 0 1 90 0 1
-spec=50WVDC X7R
+spec=100WVDC X7R
 }
 C 53000 43400 1 0 0 gnd-1.sym
 C 50900 44500 1 0 0 resistor.sym
@@ -248,7 +248,7 @@ C 48900 46900 1 0 0 resistor.sym
 T 49100 47200 5 10 1 1 0 0 1
 refdes=R45
 T 49200 46700 5 10 1 1 0 0 1
-value=100k
+value=26.1k
 T 48900 46900 5 10 0 1 0 0 1
 spec=1%
 }
@@ -268,7 +268,7 @@ symversion=20090121
 T 54500 46200 5 10 1 1 180 0 1
 value=22nF
 T 52700 46000 5 10 0 1 90 0 1
-spec=50WVDC X7R
+spec=100WVDC X7R
 }
 C 48900 42900 1 270 0 busripper-1.sym
 N 49800 47000 50100 47000 4
@@ -277,7 +277,7 @@ C 49100 46100 1 0 0 resistor.sym
 T 49300 46400 5 10 1 1 0 0 1
 refdes=R46
 T 49400 45900 5 10 1 1 0 0 1
-value=86.6k
+value=24.9k
 T 49100 46100 5 10 0 1 0 0 1
 spec=1%
 }
@@ -289,7 +289,7 @@ C 53100 47400 1 0 0 resistor.sym
 T 53300 47700 5 10 1 1 0 0 1
 refdes=R47
 T 53400 47200 5 10 1 1 0 0 1
-value=1.00Meg
+value=3.01Meg
 T 53100 47400 5 10 0 1 0 0 1
 spec=1%
 }
