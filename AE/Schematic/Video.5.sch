@@ -71,7 +71,7 @@ netname=HKA0
 N 46100 51200 46100 52000 4
 {
 T 46300 51200 5 10 1 1 90 0 1
-netname=HKA-1
+netname=HK112
 }
 C 45200 51200 1 180 1 busripper-1.sym
 C 45500 51200 1 180 1 busripper-1.sym
@@ -119,7 +119,7 @@ netname=HKA0
 N 46100 44700 46100 46000 4
 {
 T 46300 44700 5 10 1 1 90 0 1
-netname=HKA-1
+netname=HK112
 }
 C 45200 44700 1 180 1 busripper-1.sym
 C 45500 44700 1 180 1 busripper-1.sym
@@ -191,7 +191,7 @@ netname=HKA0
 N 52400 51200 52400 52000 4
 {
 T 52600 51200 5 10 1 1 90 0 1
-netname=HKB-1
+netname=HK120
 }
 C 51500 51200 1 180 1 busripper-1.sym
 C 51800 51200 1 180 1 busripper-1.sym
@@ -232,7 +232,7 @@ netname=HKA0
 N 52400 44700 52400 46000 4
 {
 T 52600 44700 5 10 1 1 90 0 1
-netname=HKB-1
+netname=HK120
 }
 C 51500 44700 1 180 1 busripper-1.sym
 C 51800 44700 1 180 1 busripper-1.sym
