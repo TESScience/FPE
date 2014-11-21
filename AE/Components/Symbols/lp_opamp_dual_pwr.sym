@@ -48,5 +48,5 @@ spec=N/A
 T 1000 300 8 10 0 0 0 0 1
 value=LT2078AIS8
 T 2100 600 8 10 0 0 0 0 2
-spice-prototype=X? #3 #2 #8 #4 #1 LT1078
-X? #5 #6 #8 #4 #7 LT1078
+spice-prototype=X?a #3 #2 #8 #4 #1 LT1078
+X?b #5 #6 #8 #4 #7 LT1078
