@@ -91,3 +91,5 @@ pinlabel=Out-
 T 1650 1300 5 8 0 1 0 8 1
 pintype=pas
 }
+T 300 3900 8 10 0 1 0 0 1
+spice-prototype=X? %down Pump

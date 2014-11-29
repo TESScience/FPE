@@ -13,6 +13,13 @@ S2PS=gschem -p -o $@ -s ../Schematic/print.scm $<
 %.ps : %.sch
 	$(S2PS)
 
+PumpTest : PumpTest.cir Pump.cir
+	$(NGSPICE) PumpTest.cir Pump.cir irfr9120n.spi irfru220n.spi \
+		MMBT2222A.mod MMBT2907A.mod DG403.mod 1N914B.mod
+
+Pump.sch : ../Schematic/Pump.sch
+	cp $< $@
+
 BoosterTest : BoosterTest.cir Booster.cir
 	$(NGSPICE) BoosterTest.cir Booster.cir irfr9120n.spi irfru220n.spi MMBT2222A.mod MMBT2907A.mod
 
