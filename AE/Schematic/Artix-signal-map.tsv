@@ -82,7 +82,8 @@ SRG	CCD_RstGate_pin
 SID	CCD_InDiode_pin
 cwclk	ChargePumpClk_pin
 Clamp	CCD_ADC_Clamp_pin
-Hold	CCD_ADC_Hold_pin
+DeInt	CCD_ADC_Hold_pin
+DeInt	CCD_ADC_DeInt_pin
 Int	CCD_ADC_Int_pin
 CNV	CCD_ADC_Cnv_pin
 SCK	CCD_ADC_Sck_pin
@@ -99,6 +100,7 @@ HK64	HSK_ADC_64_pin
 HK72	HSK_ADC_72_pin
 HK80	HSK_ADC_80_pin
 HK88	HSK_ADC_88_pin
+HK104	HSK_ADC_104_pin
 DD	CLC_DAC_Din_pin
 DCK	CLC_DAC_Sck_pin
 # Things identified by board voltage
