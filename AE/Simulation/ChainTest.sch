@@ -159,3 +159,14 @@ value=pulse 0 3.3
 + {16*step} 5ns 5ns
 + {(22-16)*step-5ns} {24*step}
 }
+C 46100 47200 1 0 0 capacitor-1.sym
+{
+T 46300 47700 5 10 1 1 0 0 1
+refdes=Cos
+T 46300 48100 5 10 0 0 0 0 1
+symversion=0.1
+T 47100 47400 5 10 1 1 0 0 1
+value=20pF
+}
+N 46100 47400 46100 46800 4
+C 46900 47100 1 0 0 gnd-1.sym
