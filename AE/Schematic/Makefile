@@ -148,7 +148,7 @@ INTERFACEDOCS= ParallelPair.ps \
 	SerialRegulator.ps \
 	ParallelPair.ps \
 	Booster.ps \
-	Minus30.ps \
+	Pump.ps \
 	DriverSet.1.ps \
 	DriverSet.2.ps \
 	DriverSet.3.ps \
@@ -163,12 +163,8 @@ INTERFACEDOCS= ParallelPair.ps \
 	Interface.8.ps \
 	Interface.9.ps \
 	Interface.10.ps \
-	Interface.J1.txt \
-	Interface.J2.txt \
-	Interface.J3.txt \
 	Interface.J4.txt \
 	video_interconnect.txt \
-	Interface.J7.txt \
 	Interface.U4.txt \
 	Interface.bom.txt
 
@@ -195,7 +191,7 @@ INTERFACESUB= \
 	DriverSet.2.sch \
 	DriverSet.3.sch \
 	DriverSet.4.sch \
-	Minus30.sch
+	Pump.sch
 
 INTERFACEMERGE= \
 	Interface.J4.psch \
