@@ -393,7 +393,7 @@ value=DNP
 C 40600 46900 1 0 0 gnd-1.sym
 T 40600 50100 9 10 1 0 0 0 4
 Encode board serial number
-by populating selected R80-R83
+by populating selected R80-R84
 with zero-ohm resistors for
 each binary zero.
 C 48300 41600 1 0 0 Header.sym
@@ -407,3 +407,19 @@ footprint=HEADER16
 }
 T 54100 46900 9 15 1 0 0 0 1
 FPGA I/O
+N 41600 46300 42900 46300 4
+{
+T 41900 46400 5 10 1 1 0 0 1
+netname=Cam_ID-4
+}
+C 42900 46300 1 0 0 busripper-1.sym
+C 40700 46200 1 0 0 resistor.sym
+{
+T 41300 46800 5 10 0 0 0 0 1
+spec=5% 1/10W
+T 41400 46400 5 10 1 1 0 0 1
+refdes=R84
+T 40500 46400 5 10 1 1 0 0 1
+value=DNP
+}
+C 40600 46000 1 0 0 gnd-1.sym

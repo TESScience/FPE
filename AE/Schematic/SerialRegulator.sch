@@ -1,4 +1,4 @@
-v 20110115 2
+v 20130925 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
@@ -57,7 +57,7 @@ value=1uF
 T 46100 42300 5 10 0 1 90 0 1
 spec=25WVDC
 T 47000 43300 5 10 0 0 90 0 1
-footprint=1812
+footprint=1712
 }
 C 46900 42200 1 90 0 resistor.sym
 {
@@ -395,7 +395,7 @@ value=1uF
 T 52800 43400 5 10 0 1 90 0 1
 spec=25WVDC
 T 53700 44400 5 10 0 0 90 0 1
-footprint=1812
+footprint=1712
 }
 C 54500 44100 1 0 0 gnd-1.sym
 C 53500 45200 1 0 0 resistor.sym
@@ -441,7 +441,7 @@ value=1uF
 T 51200 41100 5 10 0 1 90 0 1
 spec=25WVDC
 T 52100 42100 5 10 0 0 90 0 1
-footprint=1812
+footprint=1712
 }
 C 52900 41800 1 0 0 gnd-1.sym
 C 54600 47700 1 90 0 bypass.sym
@@ -455,7 +455,7 @@ value=1uF
 T 52600 46700 5 10 0 1 90 0 1
 spec=25WVDC
 T 53500 47700 5 10 0 0 90 0 1
-footprint=1812
+footprint=1712
 }
 C 54300 47400 1 0 0 gnd-1.sym
 C 46800 46300 1 0 0 resistor.sym

@@ -53,7 +53,7 @@ J6	B22	P1-FS-4
 J8	A14	GND
 J8	B14	GND
 J6	A21	GND
-# J6	B21	+2.5 Shoud be spare, but V6 Video connects to 2.5V fef
+# J6	B21	+2.5 Should be spare, but V6 Video connects to 2.5V ref
 J8	A15	GND
 J8	B15	DCS1
 J6	A20	GND

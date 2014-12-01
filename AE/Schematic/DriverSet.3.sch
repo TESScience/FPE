@@ -19,16 +19,18 @@ refdes=C2
 T 45300 48000 5 10 0 0 0 0 1
 symversion=0.1
 T 45700 47100 5 10 1 1 0 0 1
-value=10nF
+value=22nF
 T 45100 47100 5 10 0 1 0 0 1
 footprint=0603
+T 45100 48500 5 10 0 1 0 0 1
+spec=50WVDC X7R
 }
 C 45100 48100 1 0 0 resistor.sym
 {
 T 45300 48400 5 10 1 1 0 0 1
 refdes=R5
 T 45400 47900 5 10 1 1 0 0 1
-value=49.9
+value=21.5
 }
 C 45000 47000 1 0 0 gnd-1.sym
 C 43900 49100 1 0 0 capacitor.sym
@@ -39,6 +41,8 @@ T 44100 50000 5 10 0 0 0 0 1
 symversion=0.1
 T 44500 49400 5 10 1 1 0 0 1
 value=10pF
+T 43900 50500 5 10 0 1 0 0 1
+spec=100WVDC NP0
 }
 C 43900 50100 1 0 0 resistor.sym
 {
@@ -121,16 +125,16 @@ refdes=C5
 T 45300 44300 5 10 0 0 0 0 1
 symversion=0.1
 T 45700 43400 5 10 1 1 0 0 1
-value=10nF
+value=22nF
 T 45100 43400 5 10 0 1 0 0 1
-spec=25WVDC X7R
+spec=50WVDC X7R
 }
 C 45100 44400 1 0 0 resistor.sym
 {
 T 45300 44700 5 10 1 1 0 0 1
 refdes=R8
 T 45400 44200 5 10 1 1 0 0 1
-value=49.9
+value=21.5
 }
 C 45000 43300 1 0 0 gnd-1.sym
 C 43900 45400 1 0 0 capacitor.sym
@@ -141,6 +145,8 @@ T 44100 46300 5 10 0 0 0 0 1
 symversion=0.1
 T 44500 45700 5 10 1 1 0 0 1
 value=10pF
+T 44400 45600 5 10 0 1 0 0 1
+spec=100WVDC NP0
 }
 C 43900 46400 1 0 0 resistor.sym
 {
