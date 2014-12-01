@@ -121,7 +121,7 @@ C 46000 40500 1 0 0 DS26C32-1.sym
 T 46000 40500 5 10 0 0 0 0 1
 footprint=SO16
 T 46872 44100 5 10 1 1 0 0 1
-refdes=U99
+refdes=U9
 T 46872 44000 5 8 1 1 0 1 1
 device=DS26LV32AT
 }
@@ -222,7 +222,7 @@ footprint=KYOCERA-KC3225A-C3
 T 47700 47200 5 10 1 1 0 0 1
 device=OSC
 T 47700 47400 5 10 1 1 0 0 1
-refdes=U88
+refdes=U8
 }
 C 46700 46500 1 0 0 gnd-1.sym
 T 40200 41300 9 10 1 0 0 0 3
@@ -295,7 +295,7 @@ C 42900 44600 1 0 0 busripper-1.sym
 C 42900 44900 1 0 0 busripper-1.sym
 C 42900 45200 1 0 0 busripper-1.sym
 U 43100 50000 48800 50000 10 -1
-U 48800 50000 48800 42400 10 1
+U 48800 50000 48800 42100 10 1
 C 48600 43500 1 0 0 busripper-1.sym
 C 48600 43000 1 0 0 busripper-1.sym
 C 46400 49800 1 90 0 busripper-1.sym
@@ -311,3 +311,99 @@ C 49000 43400 1 90 0 busripper-1.sym
 C 49000 43000 1 90 0 busripper-1.sym
 C 49000 42600 1 90 0 busripper-1.sym
 C 49000 47800 1 90 0 busripper-1.sym
+N 43300 48900 44900 48900 4
+{
+T 44500 49100 5 10 1 1 0 6 1
+netname=\_PROGRAM\_
+}
+C 44900 48800 1 0 0 resistor.sym
+{
+T 45500 49400 5 10 0 0 0 0 1
+spec=5% 1/10W
+T 45600 49000 5 10 1 1 0 0 1
+refdes=R91
+T 44700 49000 5 10 1 1 0 0 1
+value=4.7k
+}
+N 45800 48900 46400 48900 4
+C 43300 48900 1 90 0 busripper-1.sym
+N 41600 49600 42900 49600 4
+{
+T 41900 49700 5 10 1 1 0 0 1
+netname=Cam_ID-0
+}
+C 42900 49600 1 0 0 busripper-1.sym
+C 40700 49500 1 0 0 resistor.sym
+{
+T 41300 50100 5 10 0 0 0 0 1
+spec=5% 1/10W
+T 41400 49700 5 10 1 1 0 0 1
+refdes=R80
+T 40500 49700 5 10 1 1 0 0 1
+value=DNP
+}
+C 40600 49300 1 0 0 gnd-1.sym
+N 41600 48800 42900 48800 4
+{
+T 41900 48900 5 10 1 1 0 0 1
+netname=Cam_ID-1
+}
+C 42900 48800 1 0 0 busripper-1.sym
+C 40700 48700 1 0 0 resistor.sym
+{
+T 41300 49300 5 10 0 0 0 0 1
+spec=5% 1/10W
+T 41400 48900 5 10 1 1 0 0 1
+refdes=R81
+T 40500 48900 5 10 1 1 0 0 1
+value=DNP
+}
+C 40600 48500 1 0 0 gnd-1.sym
+N 41600 48000 42900 48000 4
+{
+T 41900 48100 5 10 1 1 0 0 1
+netname=Cam_ID-2
+}
+C 42900 48000 1 0 0 busripper-1.sym
+C 40700 47900 1 0 0 resistor.sym
+{
+T 41300 48500 5 10 0 0 0 0 1
+spec=5% 1/10W
+T 41400 48100 5 10 1 1 0 0 1
+refdes=R82
+T 40500 48100 5 10 1 1 0 0 1
+value=DNP
+}
+C 40600 47700 1 0 0 gnd-1.sym
+N 41600 47200 42900 47200 4
+{
+T 41900 47300 5 10 1 1 0 0 1
+netname=Cam_ID-3
+}
+C 42900 47200 1 0 0 busripper-1.sym
+C 40700 47100 1 0 0 resistor.sym
+{
+T 41300 47700 5 10 0 0 0 0 1
+spec=5% 1/10W
+T 41400 47300 5 10 1 1 0 0 1
+refdes=R83
+T 40500 47300 5 10 1 1 0 0 1
+value=DNP
+}
+C 40600 46900 1 0 0 gnd-1.sym
+T 40600 50100 9 10 1 0 0 0 4
+Encode board serial number
+by populating selected R80-R83
+with zero-ohm resistors for
+each binary zero.
+C 48300 41600 1 0 0 Header.sym
+{
+T 49100 42200 5 10 1 1 0 0 1
+refdes=J4
+T 48300 43000 5 10 0 1 0 0 1
+symversion=20141030
+T 48300 42400 5 10 0 0 0 0 1
+footprint=HEADER16
+}
+T 54100 46900 9 15 1 0 0 0 1
+FPGA I/O

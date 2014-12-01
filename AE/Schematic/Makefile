@@ -198,12 +198,8 @@ INTERFACESUB= \
 	Minus30.sch
 
 INTERFACEMERGE= \
-	Interface.J1.psch \
-	Interface.J2.psch \
-	Interface.J3.psch \
 	Interface.J4.psch \
 	video_interconnect.psch \
-	Interface.J7.psch \
 	Interface.U4.psch \
 
 
