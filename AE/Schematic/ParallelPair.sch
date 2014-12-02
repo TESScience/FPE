@@ -2,9 +2,9 @@ v 20130925 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
-date=20140109
+date=20141202
 T 53900 40500 5 10 1 1 0 0 1
-rev=5.0
+rev=6.0
 T 55400 40200 5 10 1 1 0 0 1
 auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
@@ -221,7 +221,7 @@ symversion=20131108
 T 55000 46000 5 10 1 1 0 0 1
 value=1uF
 T 56300 44100 5 10 0 1 180 0 1
-spec=25WVDC
+spec=25WVDC X7R
 T 55300 45000 5 10 0 0 180 0 1
 footprint=1712
 }
@@ -235,7 +235,7 @@ symversion=20131108
 T 55000 45000 5 10 1 1 0 0 1
 value=1uF
 T 56300 43100 5 10 0 1 180 0 1
-spec=25WVDC
+spec=25WVDC X7R
 T 55300 44000 5 10 0 0 180 0 1
 footprint=1712
 }
@@ -251,7 +251,7 @@ symversion=20131108
 T 55000 47200 5 10 1 1 0 0 1
 value=1uF
 T 56300 45300 5 10 0 1 180 0 1
-spec=25WVDC
+spec=25WVDC X7R
 T 55300 46200 5 10 0 0 180 0 1
 footprint=1712
 }
@@ -266,7 +266,7 @@ symversion=20131108
 T 55000 43800 5 10 1 1 0 0 1
 value=1uF
 T 56300 41900 5 10 0 1 180 0 1
-spec=25WVDC
+spec=25WVDC X7R
 T 55300 42800 5 10 0 0 180 0 1
 footprint=1712
 }
@@ -293,7 +293,7 @@ symversion=20131108
 T 44900 44500 5 10 1 1 0 0 1
 value=22nF
 T 45200 43500 5 10 0 1 180 0 1
-spec=50WVDC
+spec=50WVDC X7R
 }
 C 46700 44900 1 180 0 smallbypass.sym
 {
@@ -304,7 +304,7 @@ symversion=20131108
 T 46400 44500 5 10 1 1 0 0 1
 value=22nF
 T 46700 43500 5 10 0 1 180 0 1
-spec=50WVDC
+spec=50WVDC X7R
 }
 C 48300 44900 1 180 0 smallbypass.sym
 {
@@ -315,5 +315,5 @@ symversion=20131108
 T 48000 44500 5 10 1 1 0 0 1
 value=22nF
 T 48300 43500 5 10 0 1 180 0 1
-spec=50WVDC
+spec=50WVDC X7R
 }

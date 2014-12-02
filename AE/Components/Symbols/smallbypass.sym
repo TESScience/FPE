@@ -1,4 +1,4 @@
-v 20110115 2
+v 20130925 2
 P 0 200 200 200 1 0 0
 {
 T 100 250 5 8 0 1 0 0 1
@@ -32,6 +32,6 @@ footprint=0603
 T 100 1300 8 10 0 1 0 0 1
 description=Ceramic capacitor
 T 0 1400 8 10 0 1 0 0 1
-spec=10WVDC
+spec=16WVDC X7R
 T 600 0 8 10 1 1 0 0 1
 value=0.1uF

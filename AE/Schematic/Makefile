@@ -201,11 +201,17 @@ INTERFACEMERGE= \
 
 INTERFACESCH= $(INTERFACETOP) $(INTERFACESUB) $(INTERFACEMERGE)
 
+Interface : Interface.pdf Interface.allegro Interface.bom.txt Interface.counts.txt Interface.bom2.txt
+
 Interface.U4.txt: makeFPGApinmap.awk Artix-signal-map.tsv ArtixPinout.csv
 	awk -f makeFPGApinmap.awk Artix-signal-map.tsv ArtixPinout.csv >$@
 
 Interface.net.txt : $(INTERFACESCH)
 	$(GNET) -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
+
+Interface.allegro : $(INTERFACESCH) $(ITERFACEMERGE)
+	rm -rf devfiles
+	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
 Interface.bom.txt: $(INTERFACESCH) attribs
 	$(GNET) -g bom -o $@ $(INTERFACETOP)
