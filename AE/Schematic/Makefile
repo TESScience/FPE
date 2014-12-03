@@ -142,17 +142,18 @@ Video-1-CCD.bom.tsv : Video.bom.tsv
 Video.ps : $(VIDEODOCS)
 	$(A2PS)
 
-INTERFACEDOCS= ParallelPair.ps \
-	SerialDriver.ps \
-	ParallelReg.ps \
-	SerialRegulator.ps \
-	ParallelPair.ps \
+INTERFACEDOCS= \
 	Booster.ps \
-	Pump.ps \
+	ParallelPair.ps \
+	ParallelReg.ps \
+	SerialDriver.ps \
+	SerialRegulator.ps \
 	DriverSet.1.ps \
 	DriverSet.2.ps \
 	DriverSet.3.ps \
 	DriverSet.4.ps \
+	Pump.ps \
+	ArtixPower.ps \
 	Interface.1.ps \
 	Interface.2.ps \
 	Interface.3.ps \
@@ -191,7 +192,8 @@ INTERFACESUB= \
 	DriverSet.2.sch \
 	DriverSet.3.sch \
 	DriverSet.4.sch \
-	Pump.sch
+	Pump.sch \
+	ArtixPower.sch
 
 INTERFACEMERGE= \
 	Interface.J4.psch \
