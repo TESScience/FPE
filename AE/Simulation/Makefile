@@ -64,4 +64,4 @@ APSC : APSC.cir ArtixPower.cir
 	$(NGSPICE) APSC.cir ArtixPower.cir LM6142A.MOD REF43.cir MMBT2222A.mod MMBT2907A.mod
 
 clean :
-	rm -f *.cir *.ps *.pdf \#* *~
+	rm -f *.cir *.ps *.pdf \#* *~ Pump.sch Booster.sch Chain.1.sch Chain.2.sch ArtixPower.sch
