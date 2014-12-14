@@ -32,7 +32,7 @@ device=RESISTOR
 T 45000 46800 5 10 1 1 0 0 1
 refdes=R5
 T 45100 46300 5 10 1 1 0 0 1
-value=1.5k
+value=100
 T 44800 46500 5 10 0 1 0 0 1
 footprint=0805
 T 44800 46500 5 10 0 0 0 0 1
@@ -47,7 +47,7 @@ device=RESISTOR
 T 43400 46800 5 10 1 1 0 0 1
 refdes=R4
 T 43500 46300 5 10 1 1 0 0 1
-value=1.5k
+value=100
 T 43200 46500 5 10 0 1 0 0 1
 footprint=0603
 T 43200 46500 5 10 0 0 0 0 1
@@ -62,7 +62,7 @@ device=RESISTOR
 T 41900 46800 5 10 1 1 0 0 1
 refdes=R3
 T 42000 46300 5 10 1 1 0 0 1
-value=1.5k
+value=100
 T 41700 46500 5 10 0 1 0 0 1
 footprint=0805
 T 41700 46500 5 10 0 0 0 0 1
