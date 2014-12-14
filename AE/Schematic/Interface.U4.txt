@@ -18,7 +18,7 @@ U4	P9	CNV-4	adc_cnv[4]
 # U4	N6	adc_cnv[11]
 # U4	P5	adc_cnv[12]
 # U4	P4	adc_cnv[13]
-# U4	N4	adc_cnv[14]
+# U4	A5	adc_cnv[14]
 # U4	T2	adc_cnv[15]
 # U4	T10	adc_sclk[0]
 U4	R10	SCK-1	adc_sclk[1]
@@ -56,8 +56,8 @@ U4	C11	addr[0]
 U4	D11	addr[1]
 U4	D10	addr[2]
 U4	D9	addr[3]
-U4	G1	cl_clkn
-U4	G2	cl_clkp
+U4	G2	cl_clkn
+U4	G3	cl_clkp
 U4	C2	cl_out0n
 U4	B2	cl_out0p
 U4	C1	cl_out1n
@@ -71,12 +71,12 @@ U4	P16	cmd_fifo_full
 U4	A3	ctrl_ina
 U4	P2	ctrl_ina_n
 U4	P1	ctrl_ina_p
-# U4	K4	ctrl_inb
+# U4	M15	ctrl_inb
 # U4	R2	ctrl_inb_n
 # U4	R1	ctrl_inb_p
 U4	A2	ctrl_out
-U4	N1	ctrl_out_n
-U4	M1	ctrl_out_p
+U4	M2	ctrl_out_n
+U4	L3	ctrl_out_p
 U4	C10	data[0]
 U4	B10	data[1]
 U4	A10	data[2]
@@ -101,7 +101,7 @@ U4	E9	rnw
 U4	G13	seq_active
 U4	B16	seq_clkn
 U4	B15	seq_clkp
-U4	D4	SP1IA	seq_data[0]
+U4	B6	SP1IA	seq_data[0]
 U4	C4	SP2IA	seq_data[1]
 U4	B4	SP3IA	seq_data[2]
 U4	C5	SP1FS	seq_data[3]
