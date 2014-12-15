@@ -1,5 +1,5 @@
 
-all : Interface.pdf Interface.net.txt
+all : Interface.pdf Interface.net.txt Interface.bom.txt Interface.bom2.txt Interface.counts.txt
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
@@ -15,6 +15,7 @@ S2PS=gschem -p -o $@ -s print.scm $<
 %.psch : %.txt
 	awk -f pins2gsch.awk $^ >$@
 
+GNET=gnetlist -m censor-fix.scm
 
 # And definitions to assemble the documentation
 
@@ -85,6 +86,7 @@ INTERFACEDOCS= ParallelPair.ps \
 	ParallelReg.ps \
 	SerialRegulator.ps \
 	reset_regulator.ps \
+	Booster.ps \
 	ParallelPair.ps \
 	Minus30.ps \
 	DriverSet.1.ps \
@@ -123,6 +125,7 @@ INTERFACETOP= \
 	Interface.10.sch
 
 INTERFACESUB= \
+	Booster.sch \
 	ParallelPair.sch \
 	SerialDriver.sch \
 	ParallelReg.sch \
@@ -148,10 +151,16 @@ INTERFACEMERGE= \
 INTERFACESCH= $(INTERFACETOP) $(INTERFACESUB) $(INTERFACEMERGE)
 
 Interface.net.txt : $(INTERFACESCH)
-	gnetlist -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
+	$(GNET) -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
 Interface.bom.txt: $(INTERFACESCH) attribs
-	gnetlist -g bom -o $@ $(INTERFACETOP)
+	$(GNET) -g bom -o $@ $(INTERFACETOP)
+
+Interface.bom2.txt : $(INTERFACESCH) attribs
+	$(GNET) -g bom2 -o $@ $(INTERFACETOP)
+
+Interface.counts.txt : Interface.bom.txt
+	awk -f countem.awk Interface.bom.txt | sort -nr >$@
 
 Interface.drc.txt: $(INTERFACESCH) $(INTERFACEMERGE)
 	gnetlist -g drc2 -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
