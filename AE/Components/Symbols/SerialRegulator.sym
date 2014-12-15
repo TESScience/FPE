@@ -1,4 +1,4 @@
-v 20110115 2
+v 20130925 2
 P 1800 1600 1500 1600 1 0 0
 {
 T 1595 1645 5 8 0 1 0 0 1
@@ -135,3 +135,5 @@ pinlabel=+5
 T 500 2100 5 8 0 1 0 5 1
 pintype=pwr
 }
+T 300 3800 8 10 0 0 0 0 1
+spice-prototype=X? %down SerialRegulator 

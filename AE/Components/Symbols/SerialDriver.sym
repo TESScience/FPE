@@ -1,4 +1,4 @@
-v 20081231 1
+v 20130925 2
 P 0 1800 300 1800 1 0 0
 {
 T 200 1850 5 8 0 1 0 6 1
@@ -102,3 +102,5 @@ T 300 4800 5 10 0 0 0 0 1
 numslots=0
 T 300 5000 8 10 0 0 0 0 1
 source=SerialDriver.sch
+T 300 4000 8 10 0 0 0 0 1
+spice-prototype=X? %down SerialDriver

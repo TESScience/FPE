@@ -13,6 +13,16 @@ S2PS=gschem -p -o $@ -s ../Schematic/print.scm $<
 %.ps : %.sch
 	$(S2PS)
 
+SerialTest : SerialTest.cir SerialRegulator.cir SerialDriver.cir 3phase.cir
+	$(NGSPICE) SerialTest.cir SerialRegulator.cir SerialDriver.cir \
+		MMBT2222A.mod MMBT2907A.mod DG403.mod LM6142A.MOD 3phase.cir
+
+SerialRegulator.sch : ../Schematic/SerialRegulator.sch
+	cp $< $@
+
+SerialDriver.sch : ../Schematic/SerialDriver.sch
+	cp $< $@
+
 PumpTest : PumpTest.cir Pump.cir
 	$(NGSPICE) PumpTest.cir Pump.cir irfr9120n.spi irfru220n.spi \
 		MMBT2222A.mod MMBT2907A.mod DG403.mod 1N914B.mod
@@ -64,4 +74,5 @@ APSC : APSC.cir ArtixPower.cir
 	$(NGSPICE) APSC.cir ArtixPower.cir LM6142A.MOD REF43.cir MMBT2222A.mod MMBT2907A.mod
 
 clean :
-	rm -f *.cir *.ps *.pdf \#* *~ Pump.sch Booster.sch Chain.1.sch Chain.2.sch ArtixPower.sch
+	rm -f *.cir *.ps *.pdf \#* *~ Pump.sch Booster.sch Chain.1.sch Chain.2.sch \
+		ArtixPower.sch SerialRegulator.sch SerialDriver.sch

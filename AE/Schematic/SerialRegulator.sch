@@ -490,3 +490,5 @@ T 50600 40100 9 10 1 0 0 0 1
 1
 T 51900 40100 9 10 1 0 0 0 1
 1
+T 40700 47500 8 10 1 1 0 0 1
+spice-prolog=.subckt SerialRegulator %up
