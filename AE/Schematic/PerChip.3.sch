@@ -285,11 +285,11 @@ symversion=20090121
 T 52200 43700 5 10 1 1 0 0 1
 value=0.1uF
 }
-C 45000 47400 1 0 0 lp_opamp_dual.sym
+C 45000 48200 1 180 1 lp_opamp_dual.sym
 {
-T 45700 48100 5 10 1 1 0 0 1
+T 45700 47500 5 10 1 1 180 6 1
 refdes=U2
-T 45300 50100 5 8 0 0 0 0 1
+T 45300 45500 5 8 0 0 180 6 1
 symversion=1.0nicer
 }
 C 50800 42500 1 0 0 lp_opamp_dual_pwr.sym
@@ -299,12 +299,12 @@ symversion=1.0
 T 51450 43050 5 10 1 1 0 0 1
 refdes=U2
 }
-C 45200 41700 1 0 0 lp_opamp_dual.sym
+C 45200 42500 1 180 1 lp_opamp_dual.sym
 {
-T 45900 42400 5 10 1 1 0 0 1
+T 45900 41800 5 10 1 1 180 6 1
 refdes=U2
-T 45500 44400 5 8 0 0 0 0 1
+T 45500 39800 5 8 0 0 180 6 1
 symversion=1.0nicer
-T 45200 41700 5 10 0 0 0 0 1
+T 45200 42500 5 10 0 0 180 6 1
 slot=2
 }
