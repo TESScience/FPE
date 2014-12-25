@@ -347,13 +347,13 @@ refdes=U1
 T 44600 49900 5 8 0 0 0 0 1
 symversion=1.0nicer
 }
-C 44800 41700 1 0 0 lp_opamp_dual.sym
+C 44800 42500 1 180 1 lp_opamp_dual.sym
 {
-T 45500 42400 5 10 1 1 0 0 1
+T 45500 41800 5 10 1 1 180 6 1
 refdes=U1
-T 45100 44400 5 8 0 0 0 0 1
+T 45100 39800 5 8 0 0 180 6 1
 symversion=1.0nicer
-T 44800 41700 5 10 0 0 0 0 1
+T 44800 42500 5 10 0 0 180 6 1
 slot=2
 }
 C 52300 42800 1 0 0 lp_opamp_dual_pwr.sym
