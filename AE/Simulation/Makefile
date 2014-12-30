@@ -13,6 +13,11 @@ S2PS=gschem -p -o $@ -s ../Schematic/print.scm $<
 %.ps : %.sch
 	$(S2PS)
 
+PS2PDF=ps2pdf -sPAPERSIZE=letter
+
+%.pdf : %.ps
+	$(PS2PDF) $<
+
 SerialTest : SerialTest.cir SerialRegulator.cir SerialDriver.cir 3phase.cir
 	$(NGSPICE) SerialTest.cir SerialRegulator.cir SerialDriver.cir \
 		MMBT2222A.mod MMBT2907A.mod DG403.mod LM6142A.MOD 3phase.cir
