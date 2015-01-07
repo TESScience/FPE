@@ -19,6 +19,9 @@ T 0 300 5 10 0 0 0 0 1
 pinseq=2
 T 0 300 5 10 0 0 0 0 1
 pintype=pas
+T 600 2000 5 10 0 0 0 0 2
+allegro-options=PINORDER MOSFET G D S
+FUNCTION PMOS MOSFET G D S
 }
 P 500 600 500 800 1 0 1
 {
