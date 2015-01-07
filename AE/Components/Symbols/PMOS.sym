@@ -19,9 +19,6 @@ T 0 300 5 10 0 0 0 0 1
 pinseq=2
 T 0 300 5 10 0 0 0 0 1
 pintype=pas
-T 600 2000 5 10 0 0 0 0 2
-allegro-options=PINORDER MOSFET G D S
-FUNCTION PMOS MOSFET G D S
 }
 P 500 600 500 800 1 0 1
 {
@@ -61,3 +58,6 @@ T 500 1100 5 10 0 0 0 0 1
 model-name=irfr9120n
 T 500 900 5 10 0 0 0 0 1
 value=IRFR9120N
+T 500 1900 5 10 0 0 0 0 2
+allegro-options=PINORDER MOSFET G D S
+FUNCTION PMOS MOSFET G D S
