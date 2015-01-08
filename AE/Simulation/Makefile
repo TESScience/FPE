@@ -18,9 +18,9 @@ PS2PDF=ps2pdf -sPAPERSIZE=letter
 %.pdf : %.ps
 	$(PS2PDF) $<
 
-SerialTest : SerialTest.cir SerialRegulator.cir SerialDriver.cir 3phase.cir
+SerialTest : SerialTest.cir SerialRegulator.cir SerialDriver.cir 3phase.cir DG403.cir
 	$(NGSPICE) SerialTest.cir SerialRegulator.cir SerialDriver.cir \
-		MMBT2222A.mod MMBT2907A.mod DG403.mod LM6142A.MOD 3phase.cir
+		MMBT2222A.mod MMBT2907A.mod DG403.cir LM6142A.MOD 3phase.cir
 
 SerialRegulator.sch : ../Schematic/SerialRegulator.sch
 	cp $< $@
@@ -77,6 +77,9 @@ AP : AP.cir ArtixPower.cir
 
 APSC : APSC.cir ArtixPower.cir
 	$(NGSPICE) APSC.cir ArtixPower.cir LM6142A.MOD REF43.cir MMBT2222A.mod MMBT2907A.mod
+
+DG403.cir : DG403.1.sch DG403.2.sch
+	$(GNET) DG403.1.sch DG403.2.sch -o DG403.cir
 
 clean :
 	rm -f *.cir *.ps *.pdf \#* *~ Pump.sch Booster.sch Chain.1.sch Chain.2.sch \

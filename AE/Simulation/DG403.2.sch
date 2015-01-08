@@ -15,14 +15,14 @@ title=TITLE
 C 42100 47400 1 0 0 spice-vc-switch-1.sym
 {
 T 43000 48600 5 12 1 1 0 0 1
-refdes=Sl3
+refdes=Sp1
 T 42800 47550 5 8 1 1 0 0 1
 model-name=swvl
 }
 C 42100 42800 1 0 0 spice-vc-switch-1.sym
 {
 T 43000 44000 5 12 1 1 0 0 1
-refdes=Sh3
+refdes=Sn1
 T 42800 42950 5 8 1 1 0 0 1
 model-name=swvh
 }
@@ -37,14 +37,14 @@ C 42500 43200 1 180 0 vee-1.sym
 C 51700 47400 1 0 1 spice-vc-switch-1.sym
 {
 T 50800 48600 5 12 1 1 0 6 1
-refdes=Sl2
+refdes=Sp2
 T 51000 47550 5 8 1 1 0 6 1
 model-name=swvl
 }
 C 51700 42800 1 0 1 spice-vc-switch-1.sym
 {
 T 50800 44000 5 12 1 1 0 6 1
-refdes=Sh2
+refdes=Sn2
 T 51000 42950 5 8 1 1 0 6 1
 model-name=swvh
 }
@@ -78,8 +78,11 @@ value=60pF
 N 43800 48400 45000 48400 4
 N 45000 47500 43800 47500 4
 N 43800 43800 43800 47800 4
+{
+T 44000 45900 5 10 1 1 0 0 1
+netname=diss1
+}
 N 45000 43200 43800 43200 4
-C 45200 43200 1 180 0 vee-1.sym
 N 45000 44100 43800 44100 4
 C 48600 48400 1 0 0 vdd-1.sym
 C 48600 47500 1 270 1 capacitor-1.sym
@@ -87,7 +90,7 @@ C 48600 47500 1 270 1 capacitor-1.sym
 T 49500 47700 5 10 0 0 90 2 1
 symversion=0.1
 T 49100 47900 5 10 1 1 180 6 1
-refdes=CPP1
+refdes=CPP2
 T 48600 47500 5 10 1 1 0 6 1
 value=60pF
 }
@@ -96,13 +99,18 @@ C 48600 43200 1 270 1 capacitor-1.sym
 T 49500 43400 5 10 0 0 90 2 1
 symversion=0.1
 T 49100 43600 5 10 1 1 180 6 1
-refdes=CPN1
+refdes=CPN2
 T 48600 43200 5 10 1 1 0 6 1
 value=60pF
 }
 N 50000 48400 48800 48400 4
 N 48800 47500 50000 47500 4
 N 50000 43800 50000 47800 4
+{
+T 49300 45900 5 10 1 1 0 0 1
+netname=diss2
+}
 N 48800 43200 50000 43200 4
-C 48600 43200 1 180 1 vee-1.sym
 N 48800 44100 50000 44100 4
+C 44800 43200 1 180 1 vss-1.sym
+C 48600 43200 1 180 1 vss-1.sym
