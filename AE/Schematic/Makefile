@@ -99,7 +99,7 @@ VIDEOMERGE= Video-connectors.psch
 
 VIDEOSCH= $(VIDEOTOP) $(VIDEOSUB) $(VIDEOMERGE)
 
-Video : Video.pdf Video.allegro Video.bom.txt Video.bom2.txt Video.counts.txt
+Video : Video.pdf Video.allegro Video.bom.txt Video.bom2.txt Video.counts.txt Video-Cirrexx.tsv
 
 CCD-connectors.txt : CCD-51pin.tsv
 	awk -f expand51.awk $< >$@
@@ -124,6 +124,9 @@ Video.bom2.txt : $(VIDEOSCH) attribs
 Video.counts.txt : Video.bom.txt
 	awk -f countem.awk Video.bom.txt | sort -nr >$@
 	
+Video-Cirrexx.tsv : Video.bom2.txt CirrexxBOM.awk partnumbers.tsv
+	awk -f CirrexxBOM.awk partnumbers.tsv Video.bom2.txt >Video-Cirrexx.tsv
+
 Video.drc.txt: $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -g drc2 -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 

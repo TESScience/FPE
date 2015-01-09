@@ -1,0 +1,88 @@
+# Device	Value	Spec	footprint	Manufacturer	Part#
+CAPACITOR	0.1uF	16WVDC X7R	0603	Murata Electronics North America	GRM188R71C104KA01D
+RESISTOR	3.00k	1%	0603	Panasonic Electronic Components	ERJ-3EKF3001V
+RESISTOR	330	1/8W	0805	Panasonic Electronic Components	ERJ-6ENF3300V
+MAX4452EXK	unknown	unknown	SC70	Maxim Integrated	MAX4452EXK+T
+MAX4594DCKR	unknown	unknown	SC70	Texas Instruments	MAX4594DCKR
+CAPACITOR	0.1uF	25WVDC X7R	0603	Murata Electronics North America	GRM188R71E104KA01D
+RESISTOR	470	1% 1/10W	0603	Rohm Semiconductor	MCR03ERTF4700
+CAPACITOR	22nF	50WVDC X7R	0603	Murata Electronics North America	GRM188R71H223KA01D
+CAPACITOR	1nF	50WVDC C0G	0603	Murata Electronics North America	GRM1885C1H102JA01D
+CAPACITOR	2pF	25WVDC X7R	0603	TDK Corp	C1608C0G1H020C080AA
+CAPACITOR	4.7uF	10WVDC X7R	1812	TDK Corp	C4532X7R1E475K200KM
+CAPACITOR	7.5nF	16WVDC X7R	0603	Kemet	C0603C752J3GAC7867
+RESISTOR	46.4	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF46R4V
+RESISTOR	1.00Meg	1%	0603	Panasonic Electronic Components	ERJ-3EKF1004V
+RESISTOR	100k	1%	0603	Panasonic Electronic Components	ERJ-3EKF1003V
+RESISTOR	3.01k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF3011V
+RESISTOR	300k	1%	0603	Panasonic Electronic Components	ERJ-3EKF3003V
+DUAL_OPAMP	LM6142AIM	N/A	SO8	Texas Instruments	LM6142AIM/NOPB
+RESISTOR	200k	1%	0603	Panasonic Electronic Components	ERJ-3EKF2003V
+RESISTOR	604k	1%	0603	Panasonic Electronic Components	ERJ-3EKF6043V
+CAPACITOR	0.22uF	25WVDC X7R	1206	Murata Electronics North America	GRM319R71H224KA01D
+CAPACITOR	3.3nF	50WVDC X7R	0603	Murata Electronics North America	GRM188R71H332KA01D
+DUAL_OPAMP	LT2078AIS8	N/A	SO8	Panasonic Electronic Components	ERJ-3EKF49R9V
+RESISTOR	49.9	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF49R9V
+CAPACITOR	0.047uF	50WVDC X7R	0603	Murata Electronics North America	GRM188R71H473KA61D
+RESISTOR	1	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3RQF1R0V
+RESISTOR	44.2k	1%	0603	Panasonic Electronic Components	ERJ-3EKF4422V
+CAPACITOR	0.1uF	10WVDC	0603	Murata Electronics North America	GRM188R71E104KA01D
+RESISTOR	10k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF1002V
+RESISTOR	7.5k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF7501V
+AD7984BRMZ	unknown	unknown	MSOP10	Analog Devices	AD7984BRMZ
+CAPACITOR	100pF	5% NP0 Vitreous	0505	Vishay Vitramon	VJ0505D101JXCAJ
+CAPACITOR	1uF	10WVDC X7R	0805	Murata Electronics North America	GRM21BR71A105KA01L
+CAPACITOR	220pF	50WVDC	0805	Murata Electronics North America	GRM216R71H221KA01D
+CAPACITOR	330pF	50WVDC X7R	0603	Murata Electronics North America	GRM188R72E331KW07D
+CAPACITOR	47nF	50WVDC X7R	0805	Murata Electronics North America	GRM21BR71H473KA01L
+CAPACITOR	DNP	5% NP0 Vitreous	0505			Do not populate
+DIODE	1N914UR	N/A	DO213AA	Microsemi HI-REL [MIL]	JANTX1N914UR
+EXC-3BB102H	unknown	unknown	0603	Wurth Electronics Inc	74279266
+MMBFJ309	unknown	unknown	SOT23	Fairchild Semiconductor	MMBFJ309
+RESISTOR	1	1/4W	1206	Panasonic Electronic Components	ERJ-8RQF1R0V
+RESISTOR	20	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF20R0V
+RESISTOR	62	1% 1/10W	0805	Panasonic Electronic Components	ERJ-6ENF62R0V
+RESISTOR	1.05k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF1021V
+RESISTOR	1.50k	1%	0603	Panasonic Electronic Components	ERJ-3EKF1501V
+RESISTOR	15.0k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF1502V
+RESISTOR	15k	1%	0603	Panasonic Electronic Components	ERJ-3EKF1502V
+RESISTOR	3.74k	1%	0603	Panasonic Electronic Components	ERJ-3EKF3741V
+RESISTOR	3.74k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF3741V
+RESISTOR	392k	1%	0603	Panasonic Electronic Components	ERJ-3EKF3923V
+RESISTOR	4.3k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF4301V
+RESISTOR	4.42k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF4421V
+MAX308CSE+	unknown	unknown	SO16	Maxim Integrated	MAX308CSE+
+CAPACITOR	1uF	10WVDC	0805	Murata Electronics North America	GRM21BR71A105KA01L
+RESISTOR	10k	1%	0603	Panasonic Electronic Components	ERJ-3EKF1002V
+RESISTOR	33.2k	1%	0603	Panasonic Electronic Components	ERJ-3EKF3322V
+AD5328	unknown	unknown	TSSOP16	Analog Devices	AD5328ARUZ
+CAPACITOR	620pF	10WVDC	0805	Samsung Electro-Mechanical America, Inc	CL21C621JBCNNNC
+CAPACITOR	22nF	100WVDC X7R	0805	Murata Electronics North America	GRM21BR72A223KA01L
+PNP_TRANSISTOR	PMBTA92	unknown	SOT23	NXP Semiconductors	PMBTA92,215
+RESISTOR	14.7k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF1472V
+RESISTOR	36.5k	1%	0603	Panasonic Electronic Components	ERJ-3EKF3652V
+RESISTOR	4.75k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF4751V
+REFERENCE	REF43GS	N/A	SO8	Analog Devices	REF43GSZ
+RESISTOR	464	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF4640V
+RESISTOR	100k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF1003V
+RESISTOR	24.9k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF2492V
+CAPACITOR	33nF	25WVDC X7R	0603	Murata Electronics North America	GRM188R71E333KA01D
+Flexprint	unknown	unknown	NK-2M2-051			WILL ADD AT MIT
+RESISTOR	0	1%	0603	Panasonic Electronic Components	ERJ-3GEY0R00V
+RESISTOR	4.99	1% 1/10W	0603	Vishay Dale	CRCW06034R99FKEA
+RESISTOR	133k	1%	0603	Panasonic Electronic Components	ERJ-3EKF1333V
+RESISTOR	24.9k	1%	0603	Panasonic Electronic Components	ERJ-3EKF2492V
+RESISTOR	26.1k	1%	0603	Panasonic Electronic Components	ERJ-3EKF2612V
+RESISTOR	3.01Meg	1%	0603	Vishay Dale	CRCW06033M01FKEA
+74HC138	unknown	unknown	SO16N	Texas Instruments	CD74HC138M
+74HC238	unknown	unknown	SO16N	Texas Instruments	CD74HC238M
+FX2P	unknown	unknown	FX2CA-68P-1P27DSA	Hirose	FX2CA-68P-1.27DSA(71)
+RESISTOR	31.6k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF3162V
+LM395T	unknown	unknown	TO220	Texas Instruments	LM395T/NOPB
+RESISTOR	0.402	1% 1/10W	0603	Yageo	RL0603FR-070R4L	Actually 0.4
+RESISTOR	1k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF1001V
+RESISTOR	7.15k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF7151V
+TempConn	MDM25pads	unknown	MDM25pads			No Component
+					
+					
+					
