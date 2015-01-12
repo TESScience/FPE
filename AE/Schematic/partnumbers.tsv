@@ -37,7 +37,7 @@ CAPACITOR	330pF	50WVDC X7R	0603	Murata Electronics North America	GRM188R72E331KW
 CAPACITOR	47nF	50WVDC X7R	0805	Murata Electronics North America	GRM21BR71H473KA01L
 CAPACITOR	DNP	5% NP0 Vitreous	0505		
 DIODE	1N914UR	N/A	DO213AA	Microsemi HI-REL [MIL]	JANTX1N914UR
-EXC-3BB102H	BEAD CORE 1K OHM 50MA 0603 SMD	unknown	0603	Wurth Electronics Inc	74279266
+EXC-3BB102H	unknown	unknown	0603	Wurth Electronics Inc	74279266
 MMBFJ309	unknown	unknown	SOT23	Fairchild Semiconductor	MMBFJ309
 RESISTOR	1	1/4W	1206	Panasonic Electronic Components	ERJ-8RQF1R0V
 RESISTOR	20	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF20R0V
@@ -52,7 +52,7 @@ RESISTOR	392k	1%	0603	Panasonic Electronic Components	ERJ-3EKF3923V
 RESISTOR	4.3k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF4301V
 RESISTOR	4.42k	1% 1/10W	0603	Panasonic Electronic Components	ERJ-3EKF4421V
 MAX308CSE+	unknown	unknown	SO16	Maxim Integrated	MAX308CSE+
-CAPACITOR	1uF	10WVDC X7R	0805	Murata Electronics North America	GRM21BR71A105KA01L
+CAPACITOR	1uF	10WVDC	0805	Murata Electronics North America	GRM21BR71A105KA01L
 RESISTOR	10k	1%	0603	Panasonic Electronic Components	ERJ-3EKF1002V
 RESISTOR	33.2k	1%	0603	Panasonic Electronic Components	ERJ-3EKF3322V
 AD5328	unknown	unknown	TSSOP16	Analog Devices	AD5328ARUZ
