@@ -79,10 +79,16 @@
 (footprint-pins-prefix "SOT325" 5)
 (footprint-pins-prefix "SOT26" 6)
 (footprint-pins-prefix "SOT326" 6)
+
+;; It's important to get the order right here: later prefixes override earlier.
+;; TO39 overrides TO3. TO3 overrides TO.
+
 (footprint-pins-prefix "TO" 3)
 (footprint-pins-prefix "TO3" 4)
+(footprint-pins-prefix "TO39" 3)
 (footprint-pins-prefix "TO66" 4)
 (footprint-pins-prefix "TO220" 4)
+
 (footprint-pins-prefix "SOD" 2)
 (footprint-pins-prefix "SOT23" 3)
 (footprint-pins-prefix "SOT323" 3)
