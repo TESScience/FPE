@@ -224,7 +224,7 @@ value=1uF
 T 47200 44800 5 10 0 1 90 0 1
 spec=25WVDC X7R
 T 48100 45800 5 10 0 0 90 0 1
-footprint=1712
+footprint=1812
 }
 C 49100 46700 1 90 0 resistor.sym
 {
@@ -271,7 +271,7 @@ symversion=20131108
 T 49100 42600 5 10 1 1 0 0 1
 value=47pF
 T 49400 41700 5 10 0 1 180 0 1
-spec=50WVDC X7R
+spec=50WVDC NP0
 }
 N 48500 42900 48500 43700 4
 N 48500 43700 48900 43700 4
@@ -303,7 +303,7 @@ value=1uF
 T 49100 41400 5 10 0 1 90 0 1
 spec=25WVDC X7R
 T 50000 42400 5 10 0 0 90 0 1
-footprint=1712
+footprint=1812
 }
 C 51000 43300 1 90 0 resistor.sym
 {
@@ -404,7 +404,7 @@ value=1uF
 T 47900 47400 5 10 0 1 90 0 1
 spec=25WVDC X7R
 T 48800 48400 5 10 0 0 90 0 1
-footprint=1712
+footprint=1812
 }
 C 49600 48100 1 0 0 gnd-1.sym
 N 53300 49300 49000 49300 4
@@ -427,7 +427,7 @@ value=1uF
 T 46000 40000 5 10 0 1 90 0 1
 spec=25WVDC X7R
 T 46900 41000 5 10 0 0 90 0 1
-footprint=1712
+footprint=1812
 }
 C 47700 40700 1 0 0 gnd-1.sym
 C 46900 41800 1 0 0 in-1.sym

@@ -451,7 +451,7 @@ value=620pF
 T 47600 48700 5 10 0 0 0 0 1
 footprint=0603
 T 47600 49000 5 10 0 1 0 0 1
-spec=25WVDC NP0
+spec=50WVDC X7R
 }
 C 47600 47000 1 0 0 resistor.sym
 {

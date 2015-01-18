@@ -11,7 +11,7 @@ refdes=C2
 T 44900 48000 5 10 0 0 0 0 1
 symversion=0.1
 T 45300 47100 5 10 1 1 0 0 1
-value=47nF
+value=0.1uF
 T 44700 47100 5 10 0 1 0 0 1
 footprint=0805
 T 44700 47100 5 10 0 1 0 0 1
@@ -30,7 +30,7 @@ C 43500 49100 1 0 0 capacitor.sym
 T 43700 49600 5 10 1 1 0 0 1
 refdes=C1
 T 44100 49400 5 10 1 1 0 0 1
-value=330pF
+value=620pF
 T 43500 49100 5 10 0 1 0 0 1
 spec=50WVDC X7R
 }
@@ -182,7 +182,7 @@ refdes=C5
 T 49300 44100 5 10 0 0 0 0 1
 symversion=0.1
 T 49700 43200 5 10 1 1 0 0 1
-value=47nF
+value=0.1uF
 T 49100 43200 5 10 0 1 0 0 1
 footprint=0805
 T 49100 43200 5 10 0 1 0 0 1
@@ -201,7 +201,7 @@ C 47900 45200 1 0 0 capacitor.sym
 T 48100 45700 5 10 1 1 0 0 1
 refdes=C4
 T 48500 45500 5 10 1 1 0 0 1
-value=330pF
+value=620pF
 T 47900 45200 5 10 0 1 0 0 1
 spec=50WVDC X7R
 }

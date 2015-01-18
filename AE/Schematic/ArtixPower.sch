@@ -42,7 +42,7 @@ symversion=20090121
 T 44300 48500 5 10 1 1 0 0 1
 value=0.1uF
 T 43700 49600 5 10 0 0 0 0 1
-footprint=0805
+footprint=0603
 T 43700 48500 5 10 0 0 0 0 1
 spec=16WVDC X7R
 }
@@ -128,7 +128,7 @@ refdes=C2
 T 44400 45100 5 10 1 1 0 0 1
 value=0.1uF
 T 43800 46200 5 10 0 0 0 0 1
-footprint=0805
+footprint=0603
 T 43800 45100 5 10 0 0 0 0 1
 spec=16WVDC X7R
 }
@@ -236,7 +236,7 @@ refdes=C4
 T 44400 41500 5 10 1 1 0 0 1
 value=0.1uF
 T 43800 42600 5 10 0 0 0 0 1
-footprint=0805
+footprint=0603
 T 43800 41500 5 10 0 0 0 0 1
 spec=16WVDC X7R
 }
@@ -318,7 +318,7 @@ refdes=C6
 T 50300 46700 5 10 1 1 0 0 1
 value=0.1uF
 T 49700 46700 5 10 0 0 0 0 1
-footprint=0805
+footprint=0603
 T 49700 46700 5 10 0 0 0 0 1
 spec=16WVDC X7R
 }
