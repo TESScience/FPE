@@ -1,0 +1,141 @@
+\documentclass[12pt]{article}
+\usepackage[
+singlelinecheck=false % The magic that stops caption centering
+]{caption}
+\usepackage{color}
+\begin{document}
+
+\section{Housekeeping Channels and DAC-controlled operating parameters}
+
+While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. In the following tables CC represents two bits selecting the CCD in offset binary (00$\Rightarrow$CCD1, 01$\Rightarrow$CCD2, 10$\Rightarrow$CCD3, 11$\Rightarrow$CCD4).
+
+The control ranges often go outside the actual range allowed for the parameters, which depend on circuit details and power supply voltages. \textcolor{red}{I will document these limits in the future.} Control is sometimes relative to another parameter. If the control range is not given, the parameter is not under DAC control.
+
+\begin{table}[ht!]
+\caption{Bias Group}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\multicolumn{4}{|l|}{Address 0CCXXXX} \\
+\hline
+XXXX & Housekeeping Signal & Scale & Control Range \\
+\hline
+0000 & Output Gate & $\pm$16.5V & -14.9V, 5.0V \\
+0001 & Input Gate 1 & $\pm$16.5V   & -14.9V, 5.0V \\
+0010 & Input Gate 2 & $\pm$16.5V   & -14.9V, 5.0V \\
+0011 & Scupper & $\pm$16.5V  & 0, 10.2V \\
+0100 & Reset Drain & $\pm$16.5V & 0, 18.2V \\
+0101 & Backside & $\pm$16.5V & 0, 5.0V \\
+0110 & Substrate & $\pm$82V  & 0, -76.4 \\
+0111 & Board Temperature & $\pm$360K &\\
+1000 & Output Drain A & $\pm$27.3V & 0, 10.0V$\dagger$ \\
+1001 & Output Drain B & $\pm$27.3V& 0, 10.0V$\dagger$ \\
+1010 & Output Drain C & $\pm$27.3V& 0, 10.0V$\dagger$ \\
+1011 & Output Drain D & $\pm$27.3V&  0, 10.0V$\dagger$ \\
+1100 & Output Source A & $\pm$27.3V &\\
+1100 & Output Source B & $\pm$27.3V &\\
+1100 & Output Source C & $\pm$27.3V &\\
+1100 & Output Source D & $\pm$27.3V &\\
+\hline
+\end{tabular}
+\vspace{5pt}
+
+$\dagger$ Relative to Reset Drain for the specified chip
+\label{biastab}
+\end{table}
+
+\textcolor{red}{Clearly, the control ranges of the Bias Group (Figure \ref{biastab}) need review and adjustment.}
+
+\begin{table}[ht!]
+\caption{Clock Driver Group}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\multicolumn{4}{|l|}{Address 10CCXXX} \\
+\hline
+XXX & Housekeeping Signal & Scale  & Control Range \\
+\hline
+000 & Parallel High & $\pm$16.5V & 0, 18.1V$\dagger$ \\
+001 &Parallel Low &$\pm$16.5V & 0, -13.2V \\
+010 & Serial High &$\pm$16.5V & 14.9V, -14.9V \\
+011 & Serial Low &$\pm$16.5V & 14.9V, -14.9V \\
+100 & Reset High &$\pm$16.5V & 14.9V, -14.9V \\
+101 &Reset Low &$\pm$16.5V & 14.9V, -14.9V \\
+110 &Input Diode High &$\pm$16.5V & 0, +15.0V \\
+111 & Input Diode Low &$\pm$16.5V & 0, +15.0V \\
+\hline
+\end{tabular}
+\vspace{5pt}
+
+$\dagger$ Relative to Parallel Low for the specified chip
+\label{clocktab}
+\end{table}
+
+\begin{table}[ht!]
+\caption{Heater Group}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\multicolumn{4}{|l|}{Address 1100000} \\
+\hline
+XXX & Housekeeping Signal & Scale &  Control Range \\
+\hline
+1100000 & Heater Current & $\pm$418mA & 0, 12.5V$\dagger$ \\
+\hline
+\end{tabular}
+\vspace{5pt}
+
+$\dagger$ Control range in mA depends on the external heater resistance
+\label{heattab}
+\end{table}
+
+\begin{table}[ht!]
+\caption{Interface Group}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|l|}{Address 1101XXX} \\
+\hline
+XXX & Housekeeping Signal & Scale  \\
+\hline
+000 & Board Temperature & $\pm$360K\\
+001 & +15 & $\pm$16.5V\\
+010 & +5 & $\pm$16.5V\\
+011 & -12 & $\pm$16.5V\\
+100 & +3.3F & $\pm$16.5V\\
+101 & +2.5F & $\pm$16.5V\\
+110 & +1.8F & $\pm$16.5V\\
+111 & +1F & $\pm$16.5V\\
+\hline
+\end{tabular}
+\label{inttab}
+\end{table}
+
+\begin{table}[ht!]
+\caption{Thermal Group}
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|l|}{Address 111XXXX} \\
+\hline
+XXX & Housekeeping Signal & Scale  \\
+\hline
+0000 & Pt1000 sensor 1 & -125C, +130C\\
+0001 & Pt1000 sensor 2 & -125C, +130C\\
+0010 & Pt1000 sensor 3 & -125C, +130C\\
+0011 & Pt1000 sensor 4 & -125C, +130C\\
+0100 & Pt1000 sensor 5 & -125C, +130C\\
+0101 & Pt1000 sensor 6 & -125C, +130C\\
+0110 & Pt1000 sensor 7 & -125C, +130C\\
+0111 & Pt1000 sensor 8 & -125C, +130C\\
+1000 & Pt1000 sensor 9 & -125C, +130C\\
+1001 & Pt1000 sensor 10 & -125C, +130C\\
+1010 & Pt1000 sensor 11 & -125C, +130C\\
+1011 & Pt1000 sensor 12 & -125C, +130C\\
+1100 & AlCu sensor CCD1 & -150C, +40C\\
+1101 & AlCu sensor CCD2 & -150C, +40C\\
+1110 & AlCu sensor CCD3 & -150C, +40C\\
+1111 & AlCu sensor CCD4 & -150C, +40C\\
+\hline
+\end{tabular}
+\label{ttab}
+\end{table}
+
+The Thermal Group (Table \ref{ttab}) sensors are external temperature-sensitive resistors. The nominal range for the circuitry is 500½ to 1500½, which translates into the given temperature ranges. It may be useful to calibrate the board using external fixed resistors near the limits of the range.
+
+\end{document}
