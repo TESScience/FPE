@@ -66,6 +66,7 @@ Test.ps : $(TESTDOCS)
 VIDEODOCS= \
 	Chain.1.ps \
 	Chain.2.ps \
+	DrainRegulator.ps \
 	PerChip.1.ps \
 	PerChip.2.ps \
 	PerChip.3.ps \
@@ -89,7 +90,7 @@ VIDEOTOP= Video.1.sch Video.2.sch Video.3.sch Video.4.sch \
 
 VIDEOSUB= PerChip.1.sch PerChip.2.sch PerChip.3.sch \
 	PerChip.4.sch PerChip.5.sch PerChip.6.sch \
-	PerChip.7.sch PerChip.8.sch Chain.1.sch Chain.2.sch
+	PerChip.7.sch PerChip.8.sch Chain.1.sch Chain.2.sch DrainRegulator.sch
 
 
 # pseudo-schematics to be merged in
