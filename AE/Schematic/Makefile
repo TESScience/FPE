@@ -102,7 +102,7 @@ VIDEOSCH= $(VIDEOTOP) $(VIDEOSUB) $(VIDEOMERGE)
 
 Video : Video.pdf Video.allegro Video.bom.txt Video.bom2.txt Video.counts.txt Video-Cirrexx.tsv
 
-CCD-connectors.txt : CCD-51pin.tsv
+CCD-connectors.txt : CCD-51pin.txt
 	awk -f expand51.awk $< >$@
 
 Video-connectors.psch : \
