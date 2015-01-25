@@ -146,7 +146,36 @@ Connector & Pin & Net & Comment \\
 \schempage{Interface.8}
 \schempage{Interface.9}
 \schempage{Interface.10}
+\subsection{Artix FPGA}
+
+\begin{longtable}{|Hl|l|l|} %Hide the refdes field
+\caption{Artix FPGA Connections} \label{Artix} \\
+\hline
+Connector & Pin & Net & Signal \\
+\hline \endfirsthead
+\caption{Artix FPGA Connections (continued)} \\
+\hline 
+Connector & Pin & Net & Signal \\
+\hline
+\endhead
+\hline \endfoot
+\input{Interface.U4.tex}
+\end{longtable}
+
 \subsection{Interface Board Connectors}
+
+\subsubsection{FPGA Test Header}
+\begin{table}[ht!]
+\caption{FPGA Test Header}
+\begin{tabular}{|l|l|lH|} %Comment column hidden for now
+\hline
+Connector & Pin & Net & Comment \\
+\hline
+\input{Interface.J4.tex}
+\hline
+\end{tabular}
+\label{IJ4}
+\end{table}
 
 \section{Housekeeping Channels and DAC-controlled operating parameters}
 

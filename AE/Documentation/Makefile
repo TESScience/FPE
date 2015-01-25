@@ -8,8 +8,8 @@ SCHPDF= ArtixPower.pdf Booster.pdf DriverSet.1.pdf DriverSet.2.pdf DriverSet.3.p
 	PerChip.5.pdf PerChip.6.pdf PerChip.7.pdf PerChip.8.pdf Video.1.pdf Video.2.pdf \
 	Video.3.pdf Video.4.pdf Video.5.pdf Video.6.pdf Video.7.pdf Video.8.pdf 
 	
-PINTEX= CCD-51pin.tex TempConn.tex \
-	Interface.J1.tex Interface.J2.tex Interface.J3.tex Interface.J4.tex Interface.J7.tex video_interconnect.tex
+PINTEX= CCD-51pin.tex TempConn.tex Interface.U4.tex \
+	Interface.J1.tex Interface.J4.tex video_interconnect.tex
 
 AE.pdf : AE.tex $(SCHPDF) $(PINTEX) stamp.txt date.txt
 	$(PDFLATEX) AE.tex
