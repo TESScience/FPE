@@ -3,14 +3,157 @@
 singlelinecheck=false % The magic that stops caption centering
 ]{caption}
 \usepackage{color}
+\usepackage{graphicx}
+\usepackage{grffile}	% makes graphicx less fussy about file names
+\usepackage{longtable}
+\setlength{\LTleft}{0pt} % put longtables on the left
+
+% Trick to hide unused columns in tables
+\usepackage{array}
+\newcolumntype{H}{@{}>{\lrbox0}l<{\endlrbox}}
+
+
+% Flush graphics before every new section
+\usepackage{placeins}
+\let\oldsection\section
+\renewcommand{\section}{\FloatBarrier\oldsection} 
+\let\oldsubsection\subsection
+\renewcommand{\subsection}{\FloatBarrier\oldsubsection} 
+\let\oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}{\FloatBarrier\oldsubsubsection} 
+
+% Space out paragraphs, don't indent
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.1in}
+
+% Macro for including schematic pages
+\newcommand{\schempage}[1]{
+   \begin{figure}[ht!]
+   \centerline{\includegraphics[width=1.3\textwidth,angle=0,keepaspectratio=true]{#1.pdf}}
+    \caption{#1}
+    \label{#1}
+    \end{figure}
+}
+
+
+\author{John P. Doty}
+\title{TESS Focal Plane Electronics Manual}
+\date{\input{date.txt}}
+
 \begin{document}
+\begin{titlepage}
+\maketitle
+\begin{center}
+Very Preliminary Edition
+
+Commit \input{stamp.txt}
+\end{center}
+\end{titlepage} 
+
+\section{Introduction}
+\section{Video Board}
+\subsection{Building blocks}
+\schempage{Chain.1}
+\schempage{Chain.2}
+\schempage{DrainRegulator}
+\schempage{PerChip.1}
+\schempage{PerChip.2}
+\schempage{PerChip.3}
+\schempage{PerChip.4}
+\schempage{PerChip.5}
+\schempage{PerChip.6}
+\schempage{PerChip.7}
+\schempage{PerChip.8}
+\subsection{Video Board Top Level}
+\schempage{Video.1}
+\schempage{Video.2}
+\schempage{Video.3}
+\schempage{Video.4}
+\schempage{Video.5}
+\schempage{Video.6}
+\schempage{Video.7}
+\schempage{Video.8}
+\subsection{Video Board Connectors}
+
+\begin{longtable}{|l|l|l|l|}
+\caption{Flexprint Connector} \label{J1} \\
+\hline
+Connector & Pin & Net & Signal \\
+\hline \endfirsthead
+\caption{Flexprint Connector (continued)} \\
+\hline 
+Connector & Pin & Net & Signal \\
+\hline
+\endhead
+\hline \endfoot
+\input{CCD-51pin.tex}
+\end{longtable}
+
+\begin{table}[ht!]
+\caption{Temperature Connector}
+\begin{tabular}{|l|l|lH|} %Comment column hidden for now
+\hline
+Connector & Pin & Net & Comment \\
+\hline
+\input{TempConn.tex}
+\hline
+\end{tabular}
+\label{J5}
+\end{table}
+
+\section{Video Board to Interface Board Interconnection}
+
+\begin{longtable}{|l|l|l|l|}
+\caption{Stack Connectors} \label{stack} \\
+\hline
+Connector & Pin & Net & Comment \\
+\hline \endfirsthead
+\caption{Stack Connectors (continued)} \\
+\hline 
+Connector & Pin & Net & Comment \\
+\hline
+\endhead
+\hline \endfoot
+\input{video_interconnect.tex}
+\end{longtable}
+
+
+\section{Interface Board}
+\subsection{Building blocks}
+\subsubsection{Drivers for high capacitance (parallel) clocks}
+\schempage{Booster}
+\schempage{ParallelPair}
+\schempage{ParallelReg}
+\subsubsection{Drivers for low capacitance clocks}
+\schempage{SerialDriver}
+\schempage{SerialRegulator}
+\subsubsection{Clock drivers for one CCD}
+\schempage{DriverSet.1}
+\schempage{DriverSet.2}
+\schempage{DriverSet.3}
+\schempage{DriverSet.4}
+\subsubsection{Power conditioning}
+\schempage{Pump}
+\schempage{ArtixPower}
+\subsection{Interface Board Top Level}
+\schempage{Interface.1}
+\schempage{Interface.2}
+\schempage{Interface.3}
+\schempage{Interface.4}
+\schempage{Interface.5}
+\schempage{Interface.6}
+\schempage{Interface.7}
+\schempage{Interface.8}
+\schempage{Interface.9}
+\schempage{Interface.10}
+\subsection{Interface Board Connectors}
 
 \section{Housekeeping Channels and DAC-controlled operating parameters}
 
 While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. In the following tables CC represents two bits selecting the CCD in offset binary (00$\Rightarrow$CCD1, 01$\Rightarrow$CCD2, 10$\Rightarrow$CCD3, 11$\Rightarrow$CCD4).
 
 The control ranges often go outside the actual range allowed for the parameters, which depend on circuit details and power supply voltages. \textcolor{red}{I will document these limits in the future.} Control is sometimes relative to another parameter. If the control range is not given, the parameter is not under DAC control.
-
+\subsection{Bias Group}
 \begin{table}[ht!]
 \caption{Bias Group}
 \begin{tabular}{|l|l|l|l|}
@@ -43,8 +186,8 @@ $\dagger$ Relative to Reset Drain for the specified chip
 \label{biastab}
 \end{table}
 
-\textcolor{red}{Clearly, the control ranges of the Bias Group (Figure \ref{biastab}) need review and adjustment.}
-
+\textcolor{red}{Clearly, the control ranges of the Bias Group (Table \ref{biastab}) need review and adjustment.}
+\subsection{Clock Driver Group}
 \begin{table}[ht!]
 \caption{Clock Driver Group}
 \begin{tabular}{|l|l|l|l|}
@@ -68,7 +211,7 @@ XXX & Housekeeping Signal & Scale  & Control Range \\
 $\dagger$ Relative to Parallel Low for the specified chip
 \label{clocktab}
 \end{table}
-
+\subsection{Heater Group}
 \begin{table}[ht!]
 \caption{Heater Group}
 \begin{tabular}{|l|l|l|l|}
@@ -85,7 +228,7 @@ XXX & Housekeeping Signal & Scale &  Control Range \\
 $\dagger$ Control range in mA depends on the external heater resistance
 \label{heattab}
 \end{table}
-
+\subsection{Interface Group}
 \begin{table}[ht!]
 \caption{Interface Group}
 \begin{tabular}{|l|l|l|}
@@ -106,7 +249,7 @@ XXX & Housekeeping Signal & Scale  \\
 \end{tabular}
 \label{inttab}
 \end{table}
-
+\subsection{Thermal Group}
 \begin{table}[ht!]
 \caption{Thermal Group}
 \begin{tabular}{|l|l|l|}
