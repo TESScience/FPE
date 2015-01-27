@@ -51,6 +51,7 @@ Commit \input{stamp.txt}
 \end{titlepage} 
 
 \section{Introduction}
+The TESS Focal Plane Electronics (FPE) serve as the intermediary between the CCD sensors on the focal plane and the Data Handling Unit (DHU).
 \section{Video Board}
 \subsection{Building blocks}
 \schempage{Chain.1}
@@ -74,6 +75,8 @@ Commit \input{stamp.txt}
 \schempage{Video.7}
 \schempage{Video.8}
 \subsection{Video Board Connectors}
+
+J1, J2, J3, and J4 connect to the flexprint cables from CCD1, CCD2, CCD3, and CCD4. Table \ref{J1} shows the pinout of J1. The -1 at the end of most net names indicates that the net serves CCD1. For J2, the corresponding net names end in -2, etc. Table \ref{J5} shows the pinout for J5, which serves the external temperature sensors and heater. Table \ref{stack} in the next section covers J6 and J8, the connection to the Interface Board.
 
 \begin{longtable}{|l|l|l|l|}
 \caption{Flexprint Connector} \label{J1} \\
@@ -135,18 +138,21 @@ Connector & Pin & Net & Comment \\
 \subsubsection{Power conditioning}
 \schempage{Pump}
 \schempage{ArtixPower}
+Figure \ref{ArtixPower} shows the power regulators for the Artix FPGA. An RC filter on the reference insures that the 1.8V AUX power rises more slowly than the 1V core power. The 2.5V and 3.3V IO power follow the 1.8V AUX power with additional delays. This insures proper initialization. Q5 pulls down the 3.3V IO power if the 1.8V level is low, insuring that the rated maximum 2.625V difference cannot be exceeded for more than the allowed time (see Xilinx data sheet DS181). The resistors on the collectors of the pass transistors limit the surge current, and are rated to handle the fault current if the FPGA should latch up. 
 \subsection{Interface Board Top Level}
 \schempage{Interface.1}
-\schempage{Interface.2}
-\schempage{Interface.3}
-\schempage{Interface.4}
-\schempage{Interface.5}
-\schempage{Interface.6}
-\schempage{Interface.7}
-\schempage{Interface.8}
-\schempage{Interface.9}
-\schempage{Interface.10}
-\subsection{Artix FPGA}
+Figure \ref{Interface.1} shows the Artix FPGA (U4). Its pin connections are too complex to draw: Table \ref{Artix} shows them. J1 is the JTAG header for FPGA debugging. J3 is the data connector to the DHU. J4 is test signals and configuration jumpers for the FPGA. Table \ref{IJ4} shows its pinout.
+\begin{table}[ht!]
+\caption{FPGA Test Header}
+\begin{tabular}{|l|l|lH|} %Comment column hidden for now
+\hline
+Connector & Pin & Net & Comment \\
+\hline
+\input{Interface.J4.tex}
+\hline
+\end{tabular}
+\label{IJ4}
+\end{table}
 
 \begin{longtable}{|Hl|l|l|} %Hide the refdes field
 \caption{Artix FPGA Connections} \label{Artix} \\
@@ -162,20 +168,29 @@ Connector & Pin & Net & Signal \\
 \input{Interface.U4.tex}
 \end{longtable}
 
-\subsection{Interface Board Connectors}
+\FloatBarrier
+\schempage{Interface.2}
+\FloatBarrier
+\schempage{Interface.3}
+\FloatBarrier
+\schempage{Interface.4}
+For pinouts of J6 and J8, the interface to the Video Board, see Table \ref{stack}.
+\FloatBarrier
+\schempage{Interface.5}
+\FloatBarrier
+\schempage{Interface.6}
+\FloatBarrier
+\schempage{Interface.7}
+\FloatBarrier
+\schempage{Interface.8}
+\FloatBarrier
+\schempage{Interface.9}
+Figure \ref{Interface.9} shows power input from the DHU (J5) and low voltage power conditioning. LEDs are for debugging: we will not install them on flight boards.
+\FloatBarrier
+\schempage{Interface.10}
 
-\subsubsection{FPGA Test Header}
-\begin{table}[ht!]
-\caption{FPGA Test Header}
-\begin{tabular}{|l|l|lH|} %Comment column hidden for now
-\hline
-Connector & Pin & Net & Comment \\
-\hline
-\input{Interface.J4.tex}
-\hline
-\end{tabular}
-\label{IJ4}
-\end{table}
+
+
 
 \section{Housekeeping Channels and DAC-controlled operating parameters}
 
