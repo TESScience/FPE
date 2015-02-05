@@ -66,7 +66,7 @@ DCS0	CLC_CS8_11_pin[0]
 # TestMode-0	TestMode_pins[0]
 Debug7	DebugStatus_pins[7]
 Debug6	DebugStatus_pins[6]
-\_RED\_	DebugStatus_pins[5]
+Debug5	DebugStatus_pins[5]
 \_ORANGE\_	DebugStatus_pins[4]
 \_YELLOW\_	DebugStatus_pins[3]
 \_GREEN\_	DebugStatus_pins[2]
@@ -115,7 +115,7 @@ GND	GND
 # Things identified by signal name
 C422	CCLK_0
 +3.3F	CFGBVS_0
-DONE_0	DONE_0
+\_RED\_	DONE_0
 \_INIT\_	INIT_B_0
 M0_0	M0_0
 M1_0	M1_0

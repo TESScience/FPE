@@ -1,6 +1,6 @@
 J4	9	Debug7	DebugStatus_pins[7]
 J4	8	Debug6	DebugStatus_pins[6]
-J4	7	\_RED\_	DebugStatus_pins[5]
+J4	7	Debug5	DebugStatus_pins[5]
 J4	6	\_ORANGE\_	DebugStatus_pins[4]
 J4	5	\_YELLOW\_	DebugStatus_pins[3]
 J4	4	\_GREEN\_	DebugStatus_pins[2]
