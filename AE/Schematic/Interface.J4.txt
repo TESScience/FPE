@@ -1,16 +1,9 @@
+J4	9	Debug7	DebugStatus_pins[7]
+J4	8	Debug6	DebugStatus_pins[6]
+J4	7	\_RED\_	DebugStatus_pins[5]
+J4	6	\_ORANGE\_	DebugStatus_pins[4]
+J4	5	\_YELLOW\_	DebugStatus_pins[3]
+J4	4	\_GREEN\_	DebugStatus_pins[2]
+J4	3	\_BLUE\_	DebugStatus_pins[1]
+J4	2	\_WHITE\_	DebugStatus_pins[0]
 J4	1	GND
-J4	2	TestMode-1
-J4	3	GND
-J4	4	TestMode-0
-J4	5	GND
-J4	6	DONE_0
-J4	7	GND
-J4	8	M0_0
-J4	9	GND
-J4	10	M1_0
-J4	11	GND
-J4	12	M2_0
-J4	13	GND
-J4	14	\_INIT\_
-J4	15	GND
-J4	16	\_PROGRAM\_
