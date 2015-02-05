@@ -81,6 +81,7 @@
 (footprint-pins-prefix "SOT326" 6)
 (footprint-pins-prefix "TO" 3)
 (footprint-pins-prefix "TO3" 4)
+(footprint-pins-prefix "TO39" 3)
 (footprint-pins-prefix "TO66" 4)
 (footprint-pins-prefix "TO220" 4)
 (footprint-pins-prefix "SOD" 2)
