@@ -105,7 +105,7 @@ HK80	HSK_ADC_80_pin
 HK88	HSK_ADC_88_pin
 HK104	HSK_ADC_104_pin
 DD	CLC_DAC_Din_pin
-DCK	CLC_DAC_Sck_pin
+DCKX	CLC_DAC_Sck_pin
 # Things identified by board voltage
 +3.3F	3.30
 +2.5F	2.50
