@@ -1,9 +1,9 @@
 J8	A1	GND
-J8	B1	+24
+# J8	B1	+24 Local to Video in 6.1
 J6	A34	-12
 J6	B34	+5
 J8	A2	SCK
-J8	B2	-50
+# J8	B2	-50 Local to Video in 6.1
 J6	A33	GND
 J6	B33	+15
 J8	A3	GND
@@ -75,7 +75,8 @@ J8	B19	HKCOM
 J6	A16	HKA5
 J6	B16	HKA4
 J8	A20	GND
-# J8	B20	TCOM Spare: not used in V6
+# J8	B20	TCOM Spare: not used in V6.0
+J8	B20	cwclk	Placeholder assignment for 6.1
 J6	A15	GND
 J6	B15	HKA6
 J8	A21	Clamp

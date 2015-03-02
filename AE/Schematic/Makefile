@@ -116,6 +116,9 @@ Video.allegro : $(VIDEOSCH) $(VIDEOMERGE)
 Video.net.txt : $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -g osmond -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 
+Video.stats.txt : $(VIDEOSCH) $(VIDEOMERGE)
+	$(GNET) -L . -g stats -o $@ $(VIDEOTOP) $(VIDEOMERGE)
+
 Video.bom.txt : $(VIDEOSCH) attribs
 	$(GNET) -g bom -o $@ $(VIDEOTOP)
 
@@ -214,6 +217,9 @@ Interface.U4.txt: makeFPGApinmap.awk Artix-signal-map.tsv ArtixPinout.csv
 
 Interface.net.txt : $(INTERFACESCH)
 	$(GNET) -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
+
+Interface.stats.txt : $(INTERFACESCH)
+	$(GNET) -L . -g stats -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
 Interface.allegro : $(INTERFACESCH) $(ITERFACEMERGE)
 	rm -rf devfiles
