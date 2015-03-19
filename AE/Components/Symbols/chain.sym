@@ -167,3 +167,14 @@ pinlabel=VDD
 T 1500 1550 5 8 0 1 90 8 1
 pintype=pwr
 }
+P 600 100 600 400 1 0 0
+{
+T 550 300 5 8 0 1 90 6 1
+pinnumber=20
+T 650 300 5 8 0 1 90 8 1
+pinseq=20
+T 600 450 9 8 1 1 90 0 1
+pinlabel=VS
+T 600 450 5 8 0 1 90 2 1
+pintype=pwr
+}
