@@ -272,13 +272,13 @@ pintype=pas
 P 1600 8600 1600 8300 1 0 0
 {
 T 1600 8250 9 10 1 1 0 5 1
-pinlabel=GND
+pinlabel=VS
 T 1650 8350 5 8 0 1 0 0 1
-pinnumber=29
+pinnumber=50
 T 1650 8350 5 8 0 1 0 0 1
-pinseq=29
+pinseq=50
 T 1500 50 9 10 0 1 0 6 1
-pintype=pas
+pintype=pwr
 }
 P 2200 8600 2200 8300 1 0 0
 {
@@ -483,5 +483,16 @@ pinnumber=47
 T 6000 4550 5 8 0 1 0 0 1
 pinseq=47
 T 5800 4550 9 10 0 1 0 6 1
+pintype=pas
+}
+P 1000 8600 1000 8300 1 0 0
+{
+T 1000 8250 9 10 1 1 0 5 1
+pinlabel=GND
+T 1050 8350 5 8 0 1 0 0 1
+pinnumber=29
+T 1050 8350 5 8 0 1 0 0 1
+pinseq=29
+T 900 50 9 10 0 1 0 6 1
 pintype=pas
 }
