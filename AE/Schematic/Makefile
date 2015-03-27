@@ -36,7 +36,7 @@ PARTDB=digikey.tsv maxim.tsv
 TESTDOCS=\
 	Video.chaintest.1.ps Video.chaintest.6.ps\
 	PerChip.1.ps PerChip.test.ps\
-	Chain.1.ps Chain.2.ps
+	Chain.1.ps Chain.2.ps 
 
 TESTTOP=Video.chaintest.1.sch Video.chaintest.6.sch
 
@@ -78,6 +78,7 @@ VIDEODOCS= \
 	PerChip.6.ps \
 	PerChip.7.ps \
 	PerChip.8.ps \
+	Pump.ps \
 	Video.1.ps \
 	Video.2.ps \
 	Video.3.ps \
@@ -93,7 +94,8 @@ VIDEOTOP= Video.1.sch Video.2.sch Video.3.sch Video.4.sch \
 
 VIDEOSUB= PerChip.1.sch PerChip.2.sch PerChip.3.sch \
 	PerChip.4.sch PerChip.5.sch PerChip.6.sch \
-	PerChip.7.sch PerChip.8.sch Chain.1.sch Chain.2.sch DrainRegulator.sch
+	PerChip.7.sch PerChip.8.sch Chain.1.sch Chain.2.sch DrainRegulator.sch \
+	Pump.sch
 
 
 # pseudo-schematics to be merged in
@@ -165,7 +167,7 @@ INTERFACEDOCS= \
 	DriverSet.2.ps \
 	DriverSet.3.ps \
 	DriverSet.4.ps \
-	Pump.ps \
+	DriverSet.5.ps \
 	ArtixPower.ps \
 	Interface.1.ps \
 	Interface.2.ps \
@@ -174,10 +176,9 @@ INTERFACEDOCS= \
 	Interface.5.ps \
 	Interface.6.ps \
 	Interface.7.ps \
-	Interface.8.ps \
-	Interface.9.ps \
-	Interface.10.ps \
-	Interface.J4.txt \
+	Interface.J6.txt \
+	Interface.J7.txt \
+	Interface.J8.txt \
 	Interface.U4.txt \
 	Interface.bom.txt
 
@@ -188,10 +189,7 @@ INTERFACETOP= \
 	Interface.4.sch \
 	Interface.5.sch \
 	Interface.6.sch \
-	Interface.7.sch \
-	Interface.8.sch \
-	Interface.9.sch \
-	Interface.10.sch
+	Interface.7.sch
 
 INTERFACESUB= \
 	ParallelPair.sch \
@@ -204,11 +202,13 @@ INTERFACESUB= \
 	DriverSet.2.sch \
 	DriverSet.3.sch \
 	DriverSet.4.sch \
-	Pump.sch \
+	DriverSet.5.sch \
 	ArtixPower.sch
 
 INTERFACEMERGE= \
-	Interface.J4.psch \
+	Interface.J6.psch \
+	Interface.J7.psch \
+	Interface.J8.psch \
 	Stack.psch \
 	Interface.U4.psch \
 

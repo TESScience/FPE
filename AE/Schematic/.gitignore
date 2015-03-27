@@ -1,8 +1,10 @@
 *.ps
-Video-connectors.psch
-Video.allegro
-Video.bom.txt
-Video.bom2.txt
-Video.counts.txt
+*.allegro
 *.pdf
+*.psch
+*.bom.txt
+*.bom2.txt
+*.counts.txt
 Stack.txt
+Video-Cirrexx.tsv
+Interface.U4.txt
