@@ -5,7 +5,12 @@ all : Interface.pdf Interface.net.txt Video.pdf Video.net.txt
 # "Standard Boilerplate"
 # Definitions to generate the drawings
 
-S2PS=gschem -p -o $@ -s print.scm $<
+# Use xvfb-run if present (works on both Macs and Linux then)
+# http://stackoverflow.com/questions/12644001/how-to-add-the-missing-randr-extension
+# (may need to run Xvfb +extension RANDR)
+GSCHEM=$(shell [ -x "$(shell which xvfb-run)" ] && echo xvfb-run ; echo gschem)
+
+S2PS=$(GSCHEM) -p -o $@ -s print.scm $<
 
 %.sym.ps : %.sym
 	$(S2PS)
