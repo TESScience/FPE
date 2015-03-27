@@ -5,6 +5,7 @@
 *.bom.txt
 *.bom2.txt
 *.counts.txt
+*.drc.txt
 Stack.txt
 Video-Cirrexx.tsv
 Interface.U4.txt

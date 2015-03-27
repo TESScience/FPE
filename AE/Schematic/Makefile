@@ -292,3 +292,6 @@ Driver.counts.txt : Driver.bom.txt
 
 Driver.ps : $(DRIVERDOCS)
 	$(A2PS)
+
+Driver.drc.txt: $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
+	$(GNET) -g drc2 -o $@ $(DRIVERTOP) $(DRIVERMERGE)
