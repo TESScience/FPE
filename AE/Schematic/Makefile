@@ -6,8 +6,6 @@ all : Interface.pdf Interface.net.txt Video.pdf Video.net.txt
 # Definitions to generate the drawings
 
 # Use xvfb-run if present (works on both Macs and Linux then)
-# http://stackoverflow.com/questions/12644001/how-to-add-the-missing-randr-extension
-# (may need to run Xvfb +extension RANDR)
 GSCHEM=$(shell [ -x "$(shell which xvfb-run)" ] && echo xvfb-run ; echo gschem)
 
 S2PS=$(GSCHEM) -p -o $@ -s print.scm $<
@@ -49,7 +47,7 @@ TESTSUB=\
 TESTMERGE=Test-connectors.psch
 
 Test-connectors.psch : \
-	CCD-51pin.tsv video_interconnect.txt
+	CCD-51pin.tsv Stack.txt
 	awk -f pins2gsch.awk $^ >$@
 
 Test.net.txt : $(TESTSCH) $(TESTMERGE) $(TESTSUB)
@@ -110,8 +108,11 @@ Video : Video.pdf Video.allegro Video.bom.txt Video.bom2.txt Video.counts.txt Vi
 CCD-connectors.txt : CCD-51pin.txt
 	awk -f expand51.awk $< >$@
 
+Stack.txt: StackMap.txt
+	awk -f mkStack.awk $< >$@
+	
 Video-connectors.psch : \
-	CCD-connectors.txt TempConn.txt video_interconnect.txt
+	CCD-connectors.txt TempConn.txt Stack.txt
 	awk -f pins2gsch.awk $^ >$@
 
 Video.allegro : $(VIDEOSCH) $(VIDEOMERGE)
@@ -177,7 +178,6 @@ INTERFACEDOCS= \
 	Interface.9.ps \
 	Interface.10.ps \
 	Interface.J4.txt \
-	video_interconnect.txt \
 	Interface.U4.txt \
 	Interface.bom.txt
 
@@ -209,7 +209,7 @@ INTERFACESUB= \
 
 INTERFACEMERGE= \
 	Interface.J4.psch \
-	video_interconnect.psch \
+	Stack.psch \
 	Interface.U4.psch \
 
 
