@@ -249,7 +249,7 @@ Interface.bom.tsv : Interface.bom.txt $(PARTDB) Interface-omit.tsv
 
 clean : 
 	rm -rf *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
-		*.xls \#* *~ *.psch *.log *devfiles
+		*.xls \#* *~ *.psch *.log *devfiles *.counts.txt *.stats.txt
 
 ##########################
 
@@ -295,3 +295,6 @@ Driver.ps : $(DRIVERDOCS)
 
 Driver.drc.txt: $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
 	$(GNET) -g drc2 -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+
+Driver.stats.txt : $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
+	$(GNET) -L . -g stats -o $@ $(DRIVERTOP) $(VIDEOMERGE)
