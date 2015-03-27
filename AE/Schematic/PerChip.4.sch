@@ -211,7 +211,7 @@ C 47800 45500 1 0 0 busripper-1.sym
 N 50500 43600 50500 45500 4
 {
 T 50600 44900 5 10 1 1 0 0 1
-netname=+15
+netname=+12
 }
 C 50500 45500 1 0 0 busripper-1.sym
 C 45900 41200 1 0 0 capacitor.sym
