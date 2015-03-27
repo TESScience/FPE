@@ -255,35 +255,44 @@ clean :
 	rm -rf *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
 		*.xls \#* *~ *.psch *.log *devfiles
 
-ATESTDOCS=\
-	ArtixPower.ps ArtixTest.1.ps ArtixTest.2.ps \
-	ArtixTest.3.ps ArtixTest.4.ps ArtixTest.5.ps \
-	TestJmp.txt Artix-signal-map.tsv
+##########################
 
-ATESTTOP= \
-	ArtixTest.1.sch ArtixTest.2.sch ArtixTest.3.sch \
-	ArtixTest.4.sch ArtixTest.5.sch
+DRIVERSUB=\
+	Booster.sch \
+	ParallelPair.sch \
+	ParallelReg.sch \
+	SerialDriver.sch \
+	SerialRegulator.sch \
+	DriverSet.1.sch \
+	DriverSet.2.sch \
+	DriverSet.3.sch \
+	DriverSet.4.sch \
+	DriverSet.5.sch \
 
-ATESTSUB=ArtixPower.sch
+DRIVERDOCS=$(DRIVERSUB:.sch=.ps)
 
-ATESTMERGE=ArtixTest-connectors.psch Interface.U4.psch
+DRIVERTOP=\
+	Driver.1.sch \
+	Driver.2.sch \
+	Driver.3.sch \
 
-ArtixTest-connectors.psch : TestJmp.txt
-	awk -f pins2gsch.awk $^ >$@
+DRIVERMERGE=Stack.psch
 
-ArtixTest.allegro ArtixTest.devfiles: $(ATESTTOP) $(ATESTSUB) $(ATESTMERGE)
-	rm -rf devfiles ArtixTest.devfiles
-	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(ATESTTOP) $(ATESTMERGE)
-	mv devfiles ArtixTest.devfiles
+Driver: Driver.pdf Driver.allegro Driver.bom.txt Driver.bom2.txt Driver.counts.txt
 
-ArtixTest.bom.txt : $(ATESTTOP) $(ATESTSUB) attribs
-	$(GNET) -g bom -o $@ $(ATESTTOP)
+Driver.allegro Driver.devfiles: $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
+	rm -rf devfiles Driver.devfiles
+	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+	mv devfiles Driver.devfiles
 
-ArtixTest.bom2.txt : $(ATESTTOP) $(ATESTSUB) attribs
-	$(GNET) -g bom2 -o $@ $(ATESTTOP)
+Driver.bom.txt : $(DRIVERTOP) $(DRIVERSUB) attribs
+	$(GNET) -g bom -o $@ $(DRIVERTOP)
 
-ArtixTest.counts.txt : ArtixTest.bom.txt
-	awk -f countem.awk ArtixTest.bom.txt | sort -nr >$@
+Driver.bom2.txt : $(DRIVERTOP) $(DRIVERSUB) attribs
+	$(GNET) -g bom2 -o $@ $(DRIVERTOP)
 
-ArtixTest.ps : $(ATESTDOCS)
+Driver.counts.txt : Driver.bom.txt
+	awk -f countem.awk Driver.bom.txt | sort -nr >$@
+
+Driver.ps : $(DRIVERDOCS)
 	$(A2PS)
