@@ -1,9 +1,0 @@
-J2	1	tck
-J2	3	tdo
-J2	5	tms
-J2	7	vpump
-J2	9	tdi
-J2	2	GND
-J2	6	+3.3
-J2	8	trst
-J2	10	GND
