@@ -176,8 +176,6 @@ INTERFACEDOCS= \
 	Interface.5.ps \
 	Interface.6.ps \
 	Interface.7.ps \
-	Interface.J6.txt \
-	Interface.J7.txt \
 	Interface.J8.txt \
 	Interface.U4.txt \
 	Interface.bom.txt
@@ -206,8 +204,6 @@ INTERFACESUB= \
 	ArtixPower.sch
 
 INTERFACEMERGE= \
-	Interface.J6.psch \
-	Interface.J7.psch \
 	Interface.J8.psch \
 	Stack.psch \
 	Interface.U4.psch \
