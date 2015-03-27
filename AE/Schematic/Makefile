@@ -1,9 +1,9 @@
-GNET=gnetlist -m censor-fix.scm
-
-all : Interface.pdf Interface.net.txt Video.pdf Video.net.txt
+all : Video Interface Driver
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
+
+GNET=gnetlist -m censor-fix.scm
 
 # Use xvfb-run if present (works on both Macs and Linux then)
 GSCHEM=$(shell [ -x "$(shell which xvfb-run)" ] && echo xvfb-run ; echo gschem)
