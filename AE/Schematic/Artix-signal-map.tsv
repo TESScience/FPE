@@ -23,10 +23,6 @@ SP3-FS-4	CCD_FS3_pin[3]
 SP3-FS-3	CCD_FS3_pin[2]
 SP3-FS-2	CCD_FS3_pin[1]
 SP3-FS-1	CCD_FS3_pin[0]
-# CNV-4	CCD_ADC_Cnv_pin[3]
-# CNV-3	CCD_ADC_Cnv_pin[2]
-# CNV-2	CCD_ADC_Cnv_pin[1]
-# CNV-1	CCD_ADC_Cnv_pin[0]
 SDO-D-4	CCD_ADC_Sdi_pin[15]
 SDO-C-4	CCD_ADC_Sdi_pin[14]
 SDO-B-4	CCD_ADC_Sdi_pin[13]
@@ -43,24 +39,37 @@ SDO-D-1	CCD_ADC_Sdi_pin[3]
 SDO-C-1	CCD_ADC_Sdi_pin[2]
 SDO-B-1	CCD_ADC_Sdi_pin[1]
 SDO-A-1	CCD_ADC_Sdi_pin[0]
-# SCK-4	CCD_ADC_Sck_pin[3]
-# SCK-3	CCD_ADC_Sck_pin[2]
-# SCK-2	CCD_ADC_Sck_pin[1]
-# SCK-1	CCD_ADC_Sck_pin[0]
+# Remove for 6.1:
 HKA6	HSK_ADC_Sel_pin[6]
+# Remove for 6.1:
 HKA5	HSK_ADC_Sel_pin[5]
+# Remove for 6.1:
 HKA4	HSK_ADC_Sel_pin[4]
+# Remove for 6.1:
 HKA3	HSK_ADC_Sel_pin[3]
 HKA2	HSK_ADC_Sel_pin[2]
 HKA1	HSK_ADC_Sel_pin[1]
 HKA0	HSK_ADC_Sel_pin[0]
+\_DS96\_	New_Pin_For_6.1
 \_DS88\_	CLC_DCS_pin[3]
 \_DS80\_	CLC_DCS_pin[2]
 \_DS72\_	CLC_DCS_pin[1]
 \_DS64\_	CLC_DCS_pin[0]
+\_DS56\_	New_Pin_For_6.1
+\_DS48\_	New_Pin_For_6.1
+\_DS40\_	New_Pin_For_6.1
+\_DS32\_	New_Pin_For_6.1
+\_DS24\_	New_Pin_For_6.1
+\_DS16\_	New_Pin_For_6.1
+\_DS8\_	New_Pin_For_6.1
+\_DS0\_	New_Pin_For_6.1
+# Remove for 6.1:
 DCS3	CLC_CS8_11_pin[3]
+# Remove for 6.1:
 DCS2	CLC_CS8_11_pin[2]
+# Remove for 6.1:
 DCS1	CLC_CS8_11_pin[1]
+# Remove for 6.1:
 DCS0	CLC_CS8_11_pin[0]
 TestMode-1	TestMode_pins[1]
 TestMode-0	TestMode_pins[0]
@@ -76,13 +85,17 @@ Cam_ID-2	Cam_ID[2]
 Cam_ID-1	Cam_ID[1]
 Cam_ID-0	Cam_ID[0]
 osc_clk	osc_clk_60_pin
-SP1S	CCD_S1_pin
-SP2S	CCD_S2_pin
-SP3S	CCD_S3_pin
+SP1OR	CCD_S1_pin
+SP2OR	CCD_S2_pin
+SP3OR	CCD_S3_pin
+SP1U	New_Pin_For_6.1
+SP2U	New_Pin_For_6.1
+SP3U	New_Pin_For_6.1
 SRG	CCD_RstGate_pin
 SID	CCD_InDiode_pin
 cwclk	ChargePumpClk_pin
 Clamp	CCD_ADC_Clamp_pin
+# Fix pin name in 6.1:
 DeInt	CCD_ADC_Hold_pin
 DeInt	CCD_ADC_DeInt_pin
 Int	CCD_ADC_Int_pin
@@ -97,11 +110,21 @@ DATA-B	dataB_out_pin_p
 HKC	HSK_ADC_Sck_pin
 HKD	HSK_ADC_Sdi_pin
 \_HKCS\_	HSK_ADC_Cnv_pin
+HK0	New_Pin_For_6.1
+HK8	New_Pin_For_6.1
+HK16	New_Pin_For_6.1
+HK32	New_Pin_For_6.1
+HK40	New_Pin_For_6.1
+HK48	New_Pin_For_6.1
+HK56	New_Pin_For_6.1
 HK64	HSK_ADC_64_pin
 HK72	HSK_ADC_72_pin
 HK80	HSK_ADC_80_pin
 HK88	HSK_ADC_88_pin
+HK96	New_Pin_For_6.1
 HK104	HSK_ADC_104_pin
+HK112	New_Pin_For_6.1
+HK120	New_Pin_For_6.1
 DD	CLC_DAC_Din_pin
 DCK	CLC_DAC_Sck_pin
 # Things identified by board voltage
