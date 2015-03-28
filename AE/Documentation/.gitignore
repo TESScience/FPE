@@ -1,0 +1,7 @@
+*.pdf
+*.tex
+*.swp
+*.log
+*.aux
+date.txt
+stamp.txt
