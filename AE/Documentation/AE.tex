@@ -8,10 +8,17 @@ singlelinecheck=false % The magic that stops caption centering
 \usepackage{longtable}
 \setlength{\LTleft}{0pt} % put longtables on the left
 
-% Trick to hide unused columns in tables
+%% Trick to hide unused columns in tables
 \usepackage{array}
 \newcolumntype{H}{@{}>{\lrbox0}l<{\endlrbox}}
 
+\usepackage{ucs}
+\usepackage[english]{babel}
+\usepackage{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
+\pagestyle{headings}
 
 % Flush graphics before every new section
 \usepackage{placeins}
@@ -29,7 +36,7 @@ singlelinecheck=false % The magic that stops caption centering
 % Macro for including schematic pages
 \newcommand{\schempage}[1]{
    \begin{figure}[ht!]
-   \centerline{\includegraphics[width=1.3\textwidth,angle=0,keepaspectratio=true]{#1.pdf}}
+   \centerline{\includegraphics[width=1.3\textwidth,angle=90,keepaspectratio=true]{#1.pdf}}
     \caption{#1}
     \label{#1}
     \end{figure}
@@ -46,7 +53,7 @@ singlelinecheck=false % The magic that stops caption centering
 \begin{center}
 Very Preliminary Edition
 
-Commit \input{stamp.txt} \\
+\input{stamp.tex}
 \input{tag.tex}
 \end{center}
 \end{titlepage} 
