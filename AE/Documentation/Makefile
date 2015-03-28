@@ -13,7 +13,7 @@ SCHPSS=$(patsubst %.pdf, $(SCH)/%.ps, $(PDFS))
 PINTEX= CCD-51pin.tex TempConn.tex Interface.U4.tex \
 	Interface.J8.tex Stack.tex
 
-AE.pdf : AE.tex $(PINTEX) stamp.txt date.txt tag.txt $(PDFS) StackMap.tex
+AE.pdf : AE.tex $(PINTEX) stamp.txt date.txt tag.tex $(PDFS) StackMap.tex
 	$(PDFLATEX) AE.tex
 	$(PDFLATEX) AE.tex
 	$(PDFLATEX) AE.tex
@@ -40,8 +40,11 @@ stamp.txt :
 date.txt :
 	git log -1 --format="%cd" > $@
 
-tag.txt :
-	git describe --abbrev=0 > $@
+tag.tex :
+	if [ "$(shell git describe --tags $(shell git log -1 --format="%h"))" = \
+             "$(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h"))" ] ; then \
+           echo "Tag $(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h")) \\\\\\\\" ; \
+        fi > $@
 
 clean :
-	rm -f MPU.pdf $(PDFS) $(PINTEX) *.out *.aux *.log stamp.txt date.txt StackMap.tex
+	rm -f MPU.pdf $(PDFS) $(PINTEX) *.out *.aux *.log stamp.txt date.txt StackMap.tex tag.tex AE.pdf

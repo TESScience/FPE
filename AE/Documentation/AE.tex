@@ -46,7 +46,8 @@ singlelinecheck=false % The magic that stops caption centering
 \begin{center}
 Very Preliminary Edition
 
-Commit \input{stamp.txt}
+Commit \input{stamp.txt} \\
+\input{tag.tex}
 \end{center}
 \end{titlepage} 
 
@@ -106,18 +107,17 @@ Connector & Pin & Net & Comment \\
 
 \section{Video Board to Interface Board Interconnection}
 
-\begin{longtable}{|l|l|l|l|}
-\caption{Stack Connectors} \label{stack} \\
+TODO: VIDEO INTERCONNECT TABLE
+\begin{longtable}{|l|l|l|l|l|l|l|l|}
+%\caption{Stack Connectors} \label{stack} \\
+%\hline \endfirsthead
+%\caption{Stack Connectors (continued)} \\
+%\hline 
+%Connector & Pin & Net & Comment \\
+%\endhead
+%\hline \endfoot
 \hline
-Connector & Pin & Net & Comment \\
-\hline \endfirsthead
-\caption{Stack Connectors (continued)} \\
-\hline 
-Connector & Pin & Net & Comment \\
-\hline
-\endhead
-\hline \endfoot
-\input{video_interconnect.tex}
+\input{StackMap.tex}
 \end{longtable}
 
 
@@ -142,17 +142,19 @@ Figure \ref{ArtixPower} shows the power regulators for the Artix FPGA. An RC fil
 \subsection{Interface Board Top Level}
 \schempage{Interface.1}
 Figure \ref{Interface.1} shows the Artix FPGA (U4). Its pin connections are too complex to draw: Table \ref{Artix} shows them. J1 is the JTAG header for FPGA debugging. J3 is the data connector to the DHU. J4 is test signals and configuration jumpers for the FPGA. Table \ref{IJ4} shows its pinout.
-\begin{table}[ht!]
-\caption{FPGA Test Header}
-\begin{tabular}{|l|l|lH|} %Comment column hidden for now
-\hline
-Connector & Pin & Net & Comment \\
-\hline
-\input{Interface.J4.tex}
-\hline
-\end{tabular}
-\label{IJ4}
-\end{table}
+
+TODO: Interface.J4 is obsolete
+% \begin{table}[ht!]
+% \caption{FPGA Test Header}
+% \begin{tabular}{|l|l|lH|} %Comment column hidden for now
+% \hline
+% Connector & Pin & Net & Comment \\
+% \hline
+% \input{Interface.J4.tex}
+% \hline
+% \end{tabular}
+% \label{IJ4}
+% \end{table}
 
 \begin{longtable}{|Hl|l|l|} %Hide the refdes field
 \caption{Artix FPGA Connections} \label{Artix} \\
@@ -182,15 +184,9 @@ For pinouts of J6 and J8, the interface to the Video Board, see Table \ref{stack
 \FloatBarrier
 \schempage{Interface.7}
 \FloatBarrier
-\schempage{Interface.8}
-\FloatBarrier
-\schempage{Interface.9}
+TODO: The stuff below is wrong
+
 Figure \ref{Interface.9} shows power input from the DHU (J5) and low voltage power conditioning. LEDs are for debugging: we will not install them on flight boards.
-\FloatBarrier
-\schempage{Interface.10}
-
-
-
 
 \section{Housekeeping Channels and DAC-controlled operating parameters}
 
