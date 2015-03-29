@@ -7,6 +7,7 @@ singlelinecheck=false % The magic that stops caption centering
 \usepackage{grffile}	% makes graphicx less fussy about file names
 \usepackage{longtable}
 \setlength{\LTleft}{0pt} % put longtables on the left
+\usepackage{wrapfig}
 
 %% Trick to hide unused columns in tables
 \usepackage{array}
@@ -19,6 +20,7 @@ singlelinecheck=false % The magic that stops caption centering
 \usepackage{grffile}
 \usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
 \pagestyle{headings}
+
 
 % Flush graphics before every new section
 \usepackage{placeins}
@@ -100,6 +102,7 @@ Connector & Pin & Net & Signal \\
 \input{CCD-51pin.tex}
 \end{longtable}
 
+
 \begin{table}[ht!]
 \caption{Temperature Connector}
 \begin{tabular}{|l|l|lH|} %Comment column hidden for now
@@ -114,18 +117,15 @@ Connector & Pin & Net & Comment \\
 
 \section{Video Board to Interface Board Interconnection}
 
-TODO: VIDEO INTERCONNECT TABLE
-\begin{longtable}{|l|l|l|l|l|l|l|l|}
-%\caption{Stack Connectors} \label{stack} \\
-%\hline \endfirsthead
-%\caption{Stack Connectors (continued)} \\
-%\hline 
-%Connector & Pin & Net & Comment \\
-%\endhead
-%\hline \endfoot
-\hline
-\input{StackMap.tex}
-\end{longtable}
+\tiny{
+% This is pretty crazy; here's the hack that makes this happen:
+% http://tex.stackexchange.com/a/174166
+    \begin{longtable}{|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|@{}m{0pt}@{}}
+    \caption{Video Board Connections} \label{VideoBoard} \\
+    \hline
+    \input{StackMap.tex}
+    \end{longtable}
+}
 
 
 \section{Interface Board}

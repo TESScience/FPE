@@ -29,10 +29,11 @@ $(PINTEX) :
 	gawk -f pins2tex.awk < $(SCH)/$(@:.tex=.txt) >$@
 
 StackMap.tex: $(SCH)/StackMap.txt
-	tr '\t' '&' < $< | sed -e 's/&&&/\&\\multicolumn{2}{l|}{}\&/g' \
+	tr '\t' '&' < $< | sed -e 's/\\_\([^\\]*\)\\_/$$\\overline{\\textup{\1}}$$/g' \
+                               -e 's/&&&/\&\\multicolumn{2}{l|}{}\&/g' \
                                -e 's/&&$$/\&\\multicolumn{2}{l|}{}/' \
                                -e 's/^&&/\\multicolumn{2}{|l|}{}\&/' \
-                               -e 's/$$/\\\\\\hline/'   >$@
+                               -e 's/$$/\&\ \\\\[2ex]\'$$'\n''\\hline/' > $@
 
 date.txt :
 	git log -1 --format="%cd" > $@
