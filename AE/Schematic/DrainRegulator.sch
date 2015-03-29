@@ -2,7 +2,7 @@ v 20130925 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50200 40800 5 8 1 1 0 0 1
-fname=drain_regulator.sch
+fname=DrainRegulator.sch
 }
 C 44700 47100 1 0 0 capacitor.sym
 {
@@ -106,9 +106,9 @@ T 45700 49200 5 10 1 1 0 0 1
 refdes=ODa
 }
 T 50100 40500 5 10 1 1 0 0 1
-date=20140923
+date=20150328
 T 54000 40500 5 10 1 1 0 0 1
-rev=6.0
+rev=6.1
 T 55500 40200 5 10 1 1 0 0 1
 auth=jpd
 T 53300 41200 5 14 1 1 0 4 1
