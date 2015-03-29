@@ -5,7 +5,7 @@ B 0 0 1100 500 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 T 800 600 8 10 1 1 0 0 1
 refdes=J?
 T 0 800 8 10 0 0 0 0 1
-footprint=Joel?
+footprint=MDM31P
 T 0 1000 8 10 0 0 0 0 1
 device=TempConn
 T 0 1200 8 10 0 0 0 0 1
@@ -13,6 +13,6 @@ numslots=0
 T 0 1400 8 10 0 1 0 0 1
 symversion=20090123
 T 0 1600 8 10 0 0 0 0 1
-pins=25
+pins=31
 T 800 1600 8 10 0 0 0 0 1
 class=IO
