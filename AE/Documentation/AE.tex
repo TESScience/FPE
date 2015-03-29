@@ -60,6 +60,9 @@ Very Preliminary Edition
 \end{center}
 \end{titlepage} 
 
+\tableofcontents
+\pagebreak
+
 \section{Introduction}
 The TESS Focal Plane Electronics (FPE) serve as the intermediary between the CCD sensors on a focal plane and the Data Handling Unit (DHU). 
 \section{Video Board}
@@ -75,6 +78,7 @@ The TESS Focal Plane Electronics (FPE) serve as the intermediary between the CCD
 \schempage{PerChip.6}
 \schempage{PerChip.7}
 \schempage{PerChip.8}
+\schempage{Pump}
 \subsection{Video Board Top Level}
 \schempage{Video.1}
 \schempage{Video.2}
@@ -86,7 +90,7 @@ The TESS Focal Plane Electronics (FPE) serve as the intermediary between the CCD
 \schempage{Video.8}
 \subsection{Video Board Connectors}
 
-J1, J2, J3, and J4 connect to the flexprint cables from CCD1, CCD2, CCD3, and CCD4. Table \ref{J1} shows the pinout of J1. The -1 at the end of most net names indicates that the net serves CCD1. For J2, the corresponding net names end in -2, etc. Table \ref{J5} shows the pinout for J5, which serves the external temperature sensors and heater. Table \ref{stack} in the next section covers J6 and J8, the connection to the Interface Board.
+J1, J2, J3, and J4 connect to the flexprint cables from CCD1, CCD2, CCD3, and CCD4. Table \ref{J1} shows the pinout of J1. The -1 at the end of most net names indicates that the net serves CCD1. For J2, the corresponding net names end in -2, etc. Table \ref{J5} shows the pinout for J5, which serves the external temperature sensors and heater. Table \ref{Stack} covers Js, the board stack connector.
 
 \begin{longtable}{|l|l|l|l|}
 \caption{Flexprint Connector} \label{J1} \\
@@ -115,18 +119,6 @@ Connector & Pin & Net & Comment \\
 \label{J5}
 \end{table}
 
-\section{Video Board to Interface Board Interconnection}
-
-\tiny{
-% This is pretty crazy; here's the hack that makes this happen:
-% http://tex.stackexchange.com/a/174166
-    \begin{longtable}{|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|@{}m{0pt}@{}}
-    \caption{Video Board Connections} \label{VideoBoard} \\
-    \hline
-    \input{StackMap.tex}
-    \end{longtable}
-}
-
 
 \section{Interface Board}
 \subsection{Building blocks}
@@ -143,25 +135,24 @@ Connector & Pin & Net & Comment \\
 \schempage{DriverSet.3}
 \schempage{DriverSet.4}
 \subsubsection{Power conditioning}
-\schempage{Pump}
 \schempage{ArtixPower}
 Figure \ref{ArtixPower} shows the power regulators for the Artix FPGA. An RC filter on the reference insures that the 1.8V AUX power rises more slowly than the 1V core power. The 2.5V and 3.3V IO power follow the 1.8V AUX power with additional delays. This insures proper initialization. Q5 pulls down the 3.3V IO power if the 1.8V level is low, insuring that the rated maximum 2.625V difference cannot be exceeded for more than the allowed time (see Xilinx data sheet DS181). The resistors on the collectors of the pass transistors limit the surge current, and are rated to handle the fault current if the FPGA should latch up. 
 \subsection{Interface Board Top Level}
 \schempage{Interface.1}
-Figure \ref{Interface.1} shows the Artix FPGA (U4). Its pin connections are too complex to draw: Table \ref{Artix} shows them. J1 is the JTAG header for FPGA debugging. J3 is the data connector to the DHU. J4 is test signals and configuration jumpers for the FPGA. Table \ref{IJ4} shows its pinout.
+Figure \ref{Interface.1} shows the Artix FPGA (U4). Its pin connections are too complex to draw: Table \ref{Artix} shows them. J9 is the JTAG header for FPGA debugging. J6 is the data connector to the DHU. J8 is test signals and configuration jumpers for the FPGA. Table \ref{IJ8} shows its pinout. For the pinouts of Js, the stacking connector, see Table \ref{Stack}.
 
-TODO: Interface.J4 is obsolete
-% \begin{table}[ht!]
-% \caption{FPGA Test Header}
-% \begin{tabular}{|l|l|lH|} %Comment column hidden for now
-% \hline
-% Connector & Pin & Net & Comment \\
-% \hline
-% \input{Interface.J4.tex}
-% \hline
-% \end{tabular}
-% \label{IJ4}
-% \end{table}
+
+\begin{table}[ht!]
+\caption{FPGA Test Header}
+\begin{tabular}{|l|l|lH|} %Comment column hidden for now
+\hline
+Connector & Pin & Net & Comment \\
+\hline
+\input{Interface.J8.tex}
+\hline
+\end{tabular}
+\label{IJ8}
+\end{table}
 
 \begin{longtable}{|Hl|l|l|} %Hide the refdes field
 \caption{Artix FPGA Connections} \label{Artix} \\
@@ -183,7 +174,6 @@ Connector & Pin & Net & Signal \\
 \schempage{Interface.3}
 \FloatBarrier
 \schempage{Interface.4}
-For pinouts of J6 and J8, the interface to the Video Board, see Table \ref{stack}.
 \FloatBarrier
 \schempage{Interface.5}
 \FloatBarrier
@@ -191,11 +181,30 @@ For pinouts of J6 and J8, the interface to the Video Board, see Table \ref{stack
 \FloatBarrier
 \schempage{Interface.7}
 \FloatBarrier
-TODO: The stuff below is wrong
+Figure \ref{Interface.7} shows power input from the DHU (J7) and low voltage power conditioning. LEDs are for debugging: we will not install them on flight boards.
 
-Figure \ref{Interface.9} shows power input from the DHU (J5) and low voltage power conditioning. LEDs are for debugging: we will not install them on flight boards.
+\section{Driver Board}
+See the previous section for the DriverSet building blocks.
+\schempage{Driver.1}
+\schempage{Driver.2}
+\schempage{Driver.3}
 
-\section{Housekeeping Channels and DAC-controlled operating parameters}
+\section{Stack Interconnection}
+
+\tiny{
+% This is pretty crazy; here's the hack that makes this happen:
+% http://tex.stackexchange.com/a/174166
+    \begin{longtable}{|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|m{0.1\textwidth}|@{}m{0pt}@{}}
+    \caption{Inter-board Stack Connections} \label{Stack} \\
+    \hline
+    \input{StackMap.tex}
+    \end{longtable}
+}
+
+% get back to normal
+\normalsize
+
+\section{Operating parameters and Housekeeping Channels}
 
 While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. In the following tables CC represents two bits selecting the CCD in offset binary (00$\Rightarrow$CCD1, 01$\Rightarrow$CCD2, 10$\Rightarrow$CCD3, 11$\Rightarrow$CCD4).
 
@@ -209,13 +218,13 @@ The control ranges often go outside the actual range allowed for the parameters,
 \hline
 XXXX & Housekeeping Signal & Scale & Control Range \\
 \hline
-0000 & Output Gate & $\pm$16.5V & -14.9V, 5.0V \\
-0001 & Input Gate 1 & $\pm$16.5V   & -14.9V, 5.0V \\
-0010 & Input Gate 2 & $\pm$16.5V   & -14.9V, 5.0V \\
-0011 & Scupper & $\pm$16.5V  & 0, 10.2V \\
-0100 & Reset Drain & $\pm$16.5V & 0, 18.2V \\
+0000 & Output Gate & $\pm$16.5V & -8.0V, 4.0V \\
+0001 & Input Gate 1 & $\pm$16.5V   & -8.0V, 4.0V \\
+0010 & Input Gate 2 & $\pm$16.5V   & -8.0V, 4.0V \\
+0011 & Scupper & $\pm$16.5V  & 0, 15.0V \\
+0100 & Reset Drain & $\pm$16.5V & 0, 15.0V \\
 0101 & Backside & $\pm$16.5V & 0, 5.0V \\
-0110 & Substrate & $\pm$82V  & 0, -76.4 \\
+0110 & Substrate & $\pm$82V  & 0, -50V \\
 0111 & Board Temperature & $\pm$360K &\\
 1000 & Output Drain A & $\pm$27.3V & 0, 10.0V$\dagger$ \\
 1001 & Output Drain B & $\pm$27.3V& 0, 10.0V$\dagger$ \\
@@ -233,7 +242,6 @@ $\dagger$ Relative to Reset Drain for the specified chip
 \label{biastab}
 \end{table}
 
-\textcolor{red}{Clearly, the control ranges of the Bias Group (Table \ref{biastab}) need review and adjustment.}
 \subsection{Clock Driver Group}
 \begin{table}[ht!]
 \caption{Clock Driver Group}
@@ -326,6 +334,6 @@ XXX & Housekeeping Signal & Scale  \\
 \label{ttab}
 \end{table}
 
-The Thermal Group (Table \ref{ttab}) sensors are external temperature-sensitive resistors. The nominal range for the circuitry is 500½ to 1500½, which translates into the given temperature ranges. It may be useful to calibrate the board using external fixed resistors near the limits of the range.
+The Thermal Group (Table \ref{ttab}) sensors are external temperature-sensitive resistors. The nominal range for the circuitry is $500\Omega$ to $1500\Omega$, which translates into the given temperature ranges. It may be useful to calibrate the board using external fixed resistors near the limits of the range.
 
 \end{document}

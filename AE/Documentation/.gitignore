@@ -1,7 +1,7 @@
 *.pdf
-*.tex
 *.swp
 *.log
 *.aux
 date.txt
-stamp.txt
+stamp.tex
+tag.tex
