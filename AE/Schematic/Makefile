@@ -1,4 +1,4 @@
-all : Video Interface Driver
+/all : Video Interface Driver
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
@@ -117,9 +117,10 @@ Video-connectors.psch : \
 	CCD-connectors.txt TempConn.txt Stack.txt
 	awk -f pins2gsch.awk $^ >$@
 
-Video.allegro : $(VIDEOSCH) $(VIDEOMERGE)
-	rm -rf devfiles
+Video.allegro Video.devfiles: $(VIDEOSCH) $(VIDEOMERGE)
+	rm -rf devfiles Video.devfiles
 	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(VIDEOTOP) $(VIDEOMERGE)
+	mv devfiles Video.devfiles
 
 Video.net.txt : $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -g osmond -o $@ $(VIDEOTOP) $(VIDEOMERGE)
@@ -222,9 +223,10 @@ Interface.net.txt : $(INTERFACESCH)
 Interface.stats.txt : $(INTERFACESCH)
 	$(GNET) -L . -g stats -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
-Interface.allegro : $(INTERFACESCH) $(ITERFACEMERGE)
-	rm -rf devfiles
+Interface.allegro Interface.devfiles: $(INTERFACESCH) $(ITERFACEMERGE)
+	rm -rf devfiles Interface.devfiles
 	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
+	mv devfiles Interface.devfiles
 
 Interface.bom.txt: $(INTERFACESCH) attribs
 	$(GNET) -g bom -o $@ $(INTERFACETOP)
