@@ -2,6 +2,7 @@
 *.swp
 *.log
 *.aux
+*.toc
 date.txt
 stamp.tex
 tag.tex
