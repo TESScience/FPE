@@ -2,8 +2,10 @@
 \usepackage[
 singlelinecheck=false % The magic that stops caption centering
 ]{caption}
-\usepackage{color}
 \usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{color}
 \usepackage{grffile}	% makes graphicx less fussy about file names
 \usepackage{longtable}
 \setlength{\LTleft}{0pt} % put longtables on the left
@@ -21,6 +23,15 @@ singlelinecheck=false % The magic that stops caption centering
 \usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
 \pagestyle{headings}
 
+% Clickable references
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 % Flush graphics before every new section
 \usepackage{placeins}
@@ -92,7 +103,7 @@ The TESS Focal Plane Electronics (FPE) serve as the intermediary between the CCD
 \schempage{Video.8}
 \subsection{Video Board Connectors}
 
-J1, J2, J3, and J4 connect to the flexprint cables from CCD1, CCD2, CCD3, and CCD4. Table \ref{J1} shows the pinout of J1. The -1 at the end of most net names indicates that the net serves CCD1. For J2, the corresponding net names end in -2, etc. Table \ref{J5} shows the pinout for J5, which serves the external temperature sensors and heater. Table \ref{Stack} covers Js, the board stack connector.
+J1, J2, J3, and J4 connect to the flexprint cables from CCD1, CCD2, CCD3, and CCD4, respectively. Table \ref{J1} shows the pinout of J1. The -1 at the end of most net names indicates that the net serves CCD1. For J2, the corresponding net names end in -2, etc. Table \ref{J5} shows the pinout for J5, which serves the external temperature sensors and heater. Table \ref{Stack} covers Js, the board stack connector.
 
 \begin{longtable}{|l|l|l|l|}
 \caption{Flexprint Connector} \label{J1} \\
@@ -138,6 +149,7 @@ Connector & Pin & Net & Comment \\
 \schempage{DriverSet.4}
 \subsubsection{Power conditioning}
 \schempage{ArtixPower}
+
 Figure \ref{ArtixPower} shows the power regulators for the Artix FPGA. An RC filter on the reference insures that the 1.8V AUX power rises more slowly than the 1V core power. The 2.5V and 3.3V IO power follow the 1.8V AUX power with additional delays. This insures proper initialization. Q5 pulls down the 3.3V IO power if the 1.8V level is low, insuring that the rated maximum 2.625V difference cannot be exceeded for more than the allowed time (see Xilinx data sheet DS181). The resistors on the collectors of the pass transistors limit the surge current, and are rated to handle the fault current if the FPGA should latch up. 
 \subsection{Interface Board Top Level}
 \schempage{Interface.1}
