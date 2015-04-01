@@ -3,6 +3,13 @@
 *.log
 *.aux
 *.toc
+*.out
 date.txt
 stamp.tex
 tag.tex
+CCD-51pin.tex
+Interface.J8.tex
+Interface.U4.tex
+Stack.tex
+StackMap.tex
+TempConn.tex
