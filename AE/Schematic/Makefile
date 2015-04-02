@@ -1,4 +1,4 @@
-/all : Video Interface Driver
+all : Video Interface Driver
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
@@ -7,8 +7,11 @@ GNET=gnetlist -m censor-fix.scm
 
 # Use xvfb-run if present (works on both Macs and Linux then)
 GSCHEM=$(shell [ -x "$(shell which xvfb-run)" ] && echo xvfb-run ; echo gschem)
-
-S2PS=$(GSCHEM) -p -o $@ -s print.scm $<
+DATE=$(shell git log -1 --format="%cd")
+REV=$(shell git describe --tags)
+S2PS=sed -e "s/date=.*$$/date=$(DATE)/" -e "s/rev=.*$$/rev=$(REV)/" $< >tmp.sch; \
+	$(GSCHEM) -p -o $@ -s print.scm tmp.sch; \
+	rm tmp.sch
 
 %.sym.ps : %.sym
 	$(S2PS)
@@ -251,7 +254,7 @@ Interface.bom.tsv : Interface.bom.txt $(PARTDB) Interface-omit.tsv
 
 clean : 
 	rm -rf *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
-		*.xls \#* *~ *.psch *.log *devfiles *.counts.txt *.stats.txt
+		*.xls \#* *~ *.psch *.log *devfiles *.counts.txt *.stats.txt tmp.sch
 
 ##########################
 
