@@ -77,8 +77,21 @@ Very Preliminary Edition
 \pagebreak
 
 \section{Introduction}
-The TESS Focal Plane Electronics (FPE) serve as the intermediary between the CCD sensors on a focal plane and the Data Handling Unit (DHU). 
+The TESS Focal Plane Electronics (FPE) serve as the intermediary between the four CCD sensors on a focal plane and the Data Handling Unit (DHU). Three boards make up a full FPE assembly: Video (\S \ref{Video}), Interface (\S  \ref{Interface}), and Driver (\S \ref{Driver}). The boards are connected by a 200 pin bus implemented with stacking connectors. 
+
+Each CCD has independent clock and bias level controls. This makes the FPE robust against short-circuit failure of a CCD: in that case setting clock levels to zero will minimize fault current. Each CCD also has independent parallel clock timing to enable staggered frame store operations. This helps with the trade-off between the need to minimize the power surge due to the rapid clocking of high capacitance gates during transfer and the desire to minimize streaking by clocking as rapidly as possible. Timing of other CCD clocks is synchronous among the four CCDs.
+
+The Driver board is not strictly necessary in a testing environment. Without the Driver board, CCD 1 and CCD 2 are fully functional. The driver board supplies clocks for CCD 3 and CCD 4. A passive jumper board that connected CCD 1 clocks to CCD 3 and CCD 2 clocks to CCD 4 would allow operation of four CCDs without a driver board, but without as much independence of clock timing and voltages.
+
 \section{Video Board}
+\label{Video}
+\subsection{Input}
+\begin{figure}[ht!]
+\centerline{\includegraphics[keepaspectratio=true]{VideoSig.pdf}}
+ \caption{Video Signal From CCD}
+ \label{VideoSig}
+ \end{figure}
+Figure \ref{VideoSig} shows voltage versus time for a typical CCD video signal.
 \subsection{Building blocks}
 \schempage{Chain.1}
 \schempage{Chain.2}
@@ -134,6 +147,7 @@ Connector & Pin & Net & Comment \\
 
 
 \section{Interface Board}
+\label{Interface}
 \subsection{Building blocks}
 \subsubsection{Drivers for high capacitance (parallel) clocks}
 \schempage{Booster}
@@ -198,6 +212,7 @@ Connector & Pin & Net & Signal \\
 Figure \ref{Interface.7} shows power input from the DHU (J7) and low voltage power conditioning. LEDs are for debugging: we will not install them on flight boards.
 
 \section{Driver Board}
+\label{Driver}
 See the previous section for the DriverSet building blocks.
 \schempage{Driver.1}
 \schempage{Driver.2}
@@ -218,7 +233,7 @@ See the previous section for the DriverSet building blocks.
 % get back to normal
 \normalsize
 
-\section{Operating parameters and Housekeeping Channels}
+\section{Operating Parameters and Housekeeping Channels}
 
 While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. In the following tables CC represents two bits selecting the CCD in offset binary (00$\Rightarrow$CCD1, 01$\Rightarrow$CCD2, 10$\Rightarrow$CCD3, 11$\Rightarrow$CCD4).
 
