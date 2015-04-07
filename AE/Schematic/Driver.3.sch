@@ -164,5 +164,5 @@ refdes=Js
 T 42900 46500 5 10 0 1 0 0 1
 symversion=20150327
 T 42900 45900 5 10 0 0 0 0 1
-footprint=RC422-200-201-39FT
+footprint=RC422-200-201-3900
 }
