@@ -57,7 +57,7 @@ singlelinecheck=false % The magic that stops caption centering
 
 
 \author{
-John P. Doty, Matthew P. Wampler-Doty
+John P. Doty \and Matthew P. Wampler-Doty
 }
 \title{TESS Focal Plane Electronics Manual}
 \date{\input{date.txt}}
@@ -85,16 +85,35 @@ The Driver board is not strictly necessary in a testing environment. Without the
 
 \section{Video Board}
 \label{Video}
-\subsection{Input}
+\subsection{Input and Signal Processing Strategy}
 \begin{figure}[ht!]
 \centerline{\includegraphics[keepaspectratio=true]{VideoSig.pdf}}
  \caption{Video Signal From CCD}
  \label{VideoSig}
  \end{figure}
-Figure \ref{VideoSig} shows voltage versus time for a typical CCD video signal.
+Figure \ref{VideoSig} shows voltage versus time for a typical CCD video signal. The reset pulse resets the output node to a reference voltage that is approximately constant. However, that voltage is relatively large (10--15V) and somewhat uncertain due to switching (``kTC") noise. Then, we transfer electrons into the output node, resulting in a negative voltage step proportional to the charge.
+
+We measure the height of the step with a three-stage process. First, we couple the signal into our measurement chains through a capacitor. On the output side of the capacitor, we have a ``clamp": a switch that forces the signal to a more reasonable level (about 3V for TESS). After we release the clamp, we ``deintegrate", averaging the baseline level before charge transfer. After charge transfer, we ``integrate", averaging the level after charge transfer. The difference in the averages is our best estimate the height of the step. We sample that difference and digitize it. In CCD jargon, this is ``correlated double sampling". Our approach combines the common ``clamp/sample" and ``Dual slope" approaches.
 \subsection{Building blocks}
+\subsubsection{The Video Measurement Chain}
 \schempage{Chain.1}
+Figure \ref{Chain.1} shows the signal path through the measurement chain.
+Q2 is the active current load for the CCD output. R1 controls the current. As shown, it sinks $\approx0.5\ $mA.
+
+U3 is the clamp. U4 buffers the clamped video. R7, R8, and C18 control the buffer gain: for maximum dynamic range we will use unity gain. U8 is the integrator that performs the signal averaging. U11 and U12 switch its inputs to control the sign of the the input signal for the deintegrate and integrate phases. 
+
+U5 inverts the video signal, so the input to the integrator is positive during the integrate phase. It also attenuates the signal slightly to achieve greater dynamic range. R11 is reduced relative to R38 to compensate for this attenuation, keeping the correlated double sampling balanced.
+
+U9, the ADC, uses a differential input. U6 inverts the integrator output to provide this. Filters R14/C20 and R13/C21 provide some anti-aliasing, limiting the effect of broadband noise at the outputs of U6 and U8. The ADC does not work well for a rapidly slewing input: U11 and U12 should both be off for an adequate time to allow the ADC inputs to settle before the ADC samples.
+
+\textcolor{red}{Jerry, Joel, and I need to get together, compare sims and reality, and define what the timing diagram should really be -jpd}
+
+R25 feeds a current proportional to the CCD output voltage to the housekeeping circuitry for monitoring the DC component. R41 prevents the voltage on the line from exceeding the limit of the housekeeping multiplexor.
+
+C4 should be a low hysteresis capacitor, not a common NP0. It's split because commercial capacitors of this type are difficult to obtain for values $>100\ $pF. For flight, this may be a single capacitor.
+
 \schempage{Chain.2}
+Figure \ref{Chain.2} shows the support circuitry for the measurement chain. U10 provides local voltage regulation.
 \schempage{DrainRegulator}
 \schempage{PerChip.1}
 \schempage{PerChip.2}
