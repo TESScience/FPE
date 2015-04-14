@@ -114,7 +114,10 @@ C4 should be a low hysteresis capacitor, not a common NP0. It's split because co
 
 \schempage{Chain.2}
 Figure \ref{Chain.2} shows the support circuitry for the measurement chain. U10 provides local voltage regulation.
+\subsubsection{Drain Regulator}
 \schempage{DrainRegulator}
+To protect the CCD charge sense MOSFET from overvoltage, the output drain voltage range is controlled relative to the CCD reset drain.  Since the reset drain voltage controls the gate voltage on the sense MOSFET, limiting the difference to 10V limits the gate-drain voltage (see CCID80 data sheet).
+\subsubsection{Per Chip Circuitry}
 \schempage{PerChip.1}
 \schempage{PerChip.2}
 \schempage{PerChip.3}
