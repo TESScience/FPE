@@ -117,7 +117,7 @@ Figure \ref{Chain.2} shows the support circuitry for the measurement chain. U10 
 \subsubsection{Drain Regulator}
 \schempage{DrainRegulator}
 To protect the CCD charge sense MOSFET from overvoltage, the output drain voltage range is controlled relative to the CCD reset drain.  Since the reset drain voltage controls the gate voltage on the sense MOSFET, limiting the difference to 10V limits the gate-drain voltage (see CCID80 data sheet).
-\subsubsection{Per Chip Circuitry}
+\subsubsection{Per-Chip Circuitry}
 \schempage{PerChip.1}
 \schempage{PerChip.2}
 \schempage{PerChip.3}
@@ -126,7 +126,12 @@ To protect the CCD charge sense MOSFET from overvoltage, the output drain voltag
 \schempage{PerChip.6}
 \schempage{PerChip.7}
 \schempage{PerChip.8}
+Most of the Video board is consists of four blocks devoted to per-chip video processing and operating bias generation. In each block, there is a video measurement chain for each segment (Figure \ref{PerChip.1}).
+Figure \ref{PerChip.2} shows local fixed voltage regulation and the variable output gate regulator. Figures \ref{PerChip.3}--\ref{PerChip.6} show regulators for other variable CCD biases. Figures \ref{PerChip.7} and \ref{PerChip.8} show the DACs and housekeeping multiplexors that support these functions, as tabulated in
+Table \ref{biastab} in Section \ref{param}.
+\subsubsection{Charge Pumps}
 \schempage{Pump}
+The CCD output drains and substrate bias require modest currents at voltages outside the power supply rails. In Figure \ref{Pump}, U1, Q5, and Q6 generate a $\approx25$V peak-to-peak square wave. This is AC-coupled to a pair of Cockroft-Walton diode/capacitor ladders to make 24V (nominal) for the drain regulators, and -50V (nominal) for the substrate regulator.
 \subsection{Video Board Top Level}
 \schempage{Video.1}
 \schempage{Video.2}
@@ -136,6 +141,16 @@ To protect the CCD charge sense MOSFET from overvoltage, the output drain voltag
 \schempage{Video.6}
 \schempage{Video.7}
 \schempage{Video.8}
+Figures \ref{Video.1}-\ref{Video.4} show the connections to the per-chip blocks.
+
+Figure \ref{Video.5} shows the readout circuitry for the resistive temperature sensors on the CCD chip and camera structure. U1 is a fixed current source. U5 and U7 steer the current to the selected sensor. U6 and U8 select the resulting voltage, transmitting it to RTDCOM on the stacking connector. This goes to the housekeeping ADC on the Interface board.
+
+Figure \ref{Video.6} shows more local voltage generation and regulation. VS12 and VS34 are regulated 4.8V for the switches in the measurement chains: these need tight regulation to control charge injection.
+
+Figure \ref{Video.7} shows filters on the output gates. Since the output gates are next to the charge sense node, they may be a source of noise or crosstalk.
+
+Figure \ref{Video.8} shows the control circuit for the trim heater. Q1 is an LM195: an IC that behaves like a transistor except that it shuts down if it becomes too hot.
+
 \subsection{Video Board Connectors}
 
 J1, J2, J3, and J4 connect to the flexprint cables from CCD1, CCD2, CCD3, and CCD4, respectively. Table \ref{J1} shows the pinout of J1. The -1 at the end of most net names indicates that the net serves CCD1. For J2, the corresponding net names end in -2, etc. Table \ref{J5} shows the pinout for J5, which serves the external temperature sensors and heater. Table \ref{Stack} covers Js, the board stack connector.
@@ -256,6 +271,7 @@ See the previous section for the DriverSet building blocks.
 \normalsize
 
 \section{Operating Parameters and Housekeeping Channels}
+\label{param}
 
 While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. In the following tables CC represents two bits selecting the CCD in offset binary (00$\Rightarrow$CCD1, 01$\Rightarrow$CCD2, 10$\Rightarrow$CCD3, 11$\Rightarrow$CCD4).
 
