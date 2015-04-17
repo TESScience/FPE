@@ -1,7 +1,7 @@
 J8	1	GND
-J8	2	TestMode-1
+J8	2	ArtixDebug7
 J8	3	GND
-J8	4	TestMode-0
+J8	4	ArtixDebug6
 J8	5	GND
 J8	6	DONE_0
 J8	7	GND

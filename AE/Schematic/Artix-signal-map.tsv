@@ -55,8 +55,6 @@ HKA0	HSK_ADC_Sel_pin[0]
 \_DS16\_	CLS_DCS_16_pin
 \_DS8\_	CLS_DCS_8_pin
 \_DS0\_	CLS_DCS_0_pin
-TestMode-1	TestMode_pins[1]
-TestMode-0	TestMode_pins[0]
 ArtixDebug7	DebugStatus_pins[7]
 ArtixDebug6	DebugStatus_pins[6]
 \_RED\_	DebugStatus_pins[5]
