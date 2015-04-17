@@ -39,14 +39,6 @@ SDO-D-1	CCD_ADC_Sdi_pin[3]
 SDO-C-1	CCD_ADC_Sdi_pin[2]
 SDO-B-1	CCD_ADC_Sdi_pin[1]
 SDO-A-1	CCD_ADC_Sdi_pin[0]
-# Remove for 6.1:
-HKA6	HSK_ADC_Sel_pin[6]
-# Remove for 6.1:
-HKA5	HSK_ADC_Sel_pin[5]
-# Remove for 6.1:
-HKA4	HSK_ADC_Sel_pin[4]
-# Remove for 6.1:
-HKA3	HSK_ADC_Sel_pin[3]
 HKA2	HSK_ADC_Sel_pin[2]
 HKA1	HSK_ADC_Sel_pin[1]
 HKA0	HSK_ADC_Sel_pin[0]
@@ -89,8 +81,6 @@ SRG	CCD_RstGate_pin
 SID	CCD_InDiode_pin
 cwclk	ChargePumpClk_pin
 Clamp	CCD_ADC_Clamp_pin
-# Fix pin name in 6.1:
-DeInt	CCD_ADC_Hold_pin
 DeInt	CCD_ADC_DeInt_pin
 Int	CCD_ADC_Int_pin
 CNV	CCD_ADC_Cnv_pin
