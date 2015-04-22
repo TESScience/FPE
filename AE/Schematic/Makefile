@@ -1,4 +1,28 @@
-all : Video Interface Driver
+VIDEOPRODUCTS = Video.pdf Video.allegro Video.devfiles Video.bom.txt \
+	Video.bom2.txt Video.counts.txt Video-Cirrexx.tsv Video.pads Video.osmond \
+	Video.stats.txt
+
+INTERFACEPRODUCTS = Interface.pdf Interface.allegro Interface.devfiles \
+	Interface.bom.txt Interface.bom2.txt Interface.counts.txt \
+	Interface-Cirrexx.tsv Interface.pads Interface.osmond Interface.stats.txt
+
+DRIVERPRODUCTS = Driver.pdf Driver.allegro Driver.devfiles Driver.bom.txt \
+	Driver.bom2.txt Driver.counts.txt Driver-Cirrexx.tsv Driver.pads \
+	Driver.osmond Driver.stats.txt
+
+PRODUCTS = $(VIDEOPRODUCTS) $(INTERFACEPRODUCTS) $(DRIVERPRODUCTS) \
+	../Documentation/AE.pdf
+
+all : $(PRODUCTS)
+
+release : $(PRODUCTS)
+	mkdir -p ../../Releases/$(REV)
+	mv $(PRODUCTS) ../../Releases/$(REV)
+	zip -r ../../Releases/$(REV).zip ../../Releases/$(REV)
+
+../Documentation/AE.pdf : ../Documentation/AE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
+	$(DRIVERDOCS)
+	make -C ../Documentation AE.pdf
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
@@ -125,8 +149,11 @@ Video.allegro Video.devfiles: $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 	mv devfiles Video.devfiles
 
-Video.net.txt : $(VIDEOSCH) $(VIDEOMERGE)
+Video.osmond : $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -g osmond -o $@ $(VIDEOTOP) $(VIDEOMERGE)
+
+Video.pads : $(VIDEOSCH) $(VIDEOMERGE)
+	$(GNET) -g pads -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 
 Video.stats.txt : $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -L . -g stats -o $@ $(VIDEOTOP) $(VIDEOMERGE)
@@ -220,8 +247,11 @@ Interface : Interface.pdf Interface.allegro Interface.bom.txt Interface.counts.t
 Interface.U4.txt: makeFPGApinmap.awk Artix-signal-map.tsv ArtixPinout.csv
 	awk -f makeFPGApinmap.awk Artix-signal-map.tsv ArtixPinout.csv >$@
 
-Interface.net.txt : $(INTERFACESCH)
+Interface.osmond : $(INTERFACESCH) $(INTERFACEMERGE)
 	$(GNET) -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
+
+Interface.pads : $(INTERFACESCH) $(INTERFACEMERGE)
+	$(GNET) -g pads -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
 Interface.stats.txt : $(INTERFACESCH)
 	$(GNET) -L . -g stats -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
@@ -240,6 +270,9 @@ Interface.bom2.txt : $(INTERFACESCH) attribs
 Interface.counts.txt : Interface.bom.txt
 	awk -f countem.awk Interface.bom.txt | sort -nr >$@
 	
+Interface-Cirrexx.tsv : Interface.bom2.txt CirrexxBOM.awk partnumbers.tsv
+	awk -f CirrexxBOM.awk partnumbers.tsv Interface.bom2.txt >Interface-Cirrexx.tsv
+
 Interface.drc.txt: $(INTERFACESCH) $(INTERFACEMERGE)
 	$(GNET) -g drc2 -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
@@ -275,7 +308,7 @@ DRIVERDOCS=$(DRIVERSUB:.sch=.ps)
 DRIVERTOP=\
 	Driver.1.sch \
 	Driver.2.sch \
-	Driver.3.sch \
+	Driver.3.sch
 
 DRIVERMERGE=Stack.psch
 
@@ -286,11 +319,20 @@ Driver.allegro Driver.devfiles: $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
 	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(DRIVERTOP) $(DRIVERMERGE)
 	mv devfiles Driver.devfiles
 
+Driver.osmond : $(DRIVERSCH) $(DRIVERMERGE)
+	$(GNET) -g osmond -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+
+Driver.pads : $(DRIVERSCH) $(DRIVERMERGE)
+	$(GNET) -g pads -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+
 Driver.bom.txt : $(DRIVERTOP) $(DRIVERSUB) attribs
 	$(GNET) -g bom -o $@ $(DRIVERTOP)
 
 Driver.bom2.txt : $(DRIVERTOP) $(DRIVERSUB) attribs
 	$(GNET) -g bom2 -o $@ $(DRIVERTOP)
+
+Driver-Cirrexx.tsv : Driver.bom2.txt CirrexxBOM.awk partnumbers.tsv
+	awk -f CirrexxBOM.awk partnumbers.tsv Driver.bom2.txt >Driver-Cirrexx.tsv
 
 Driver.counts.txt : Driver.bom.txt
 	awk -f countem.awk Driver.bom.txt | sort -nr >$@
