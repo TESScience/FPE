@@ -18,6 +18,7 @@ all : $(PRODUCTS)
 release : $(PRODUCTS)
 	mkdir -p ../../Releases/$(REV)
 	mv $(PRODUCTS) ../../Releases/$(REV)
+	cp Source_of_release_README ../../Releases/$(REV)/README
 	zip -r ../../Releases/$(REV).zip ../../Releases/$(REV)
 
 ../Documentation/AE.pdf : ../Documentation/AE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
