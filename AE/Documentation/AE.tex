@@ -334,20 +334,21 @@ $\dagger$ Relative to Parallel Low for the specified chip
 \label{clocktab}
 \end{table}
 \subsection{Heater Group}
+The Heater Group controls the three trim heaters on the lens barrel.
 \begin{table}[ht!]
 \caption{Heater Group}
 \begin{tabular}{|l|l|l|l|}
 \hline
-\multicolumn{4}{|l|}{Address 1100000} \\
+\multicolumn{4}{|l|}{Address 1100XXX} \\
 \hline
 XXX & Housekeeping Signal & Scale &  Control Range \\
 \hline
-1100000 & Heater Current & $\pm$418mA & 0, 12.5V$\dagger$ \\
+000 & Heater 1 Current & $\pm$273mA & 0, 227mA \\
+001 & Heater 2 Current & $\pm$273mA & 0, 227mA \\
+010 & Heater 3 Current & $\pm$273mA & 0, 227mA \\
 \hline
 \end{tabular}
-\vspace{5pt}
 
-$\dagger$ Control range in mA depends on the external heater resistance
 \label{heattab}
 \end{table}
 \subsection{Interface Group}
