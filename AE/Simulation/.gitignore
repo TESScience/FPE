@@ -1,0 +1,6 @@
+*.cir
+Booster.sch
+ParallelPair.sch
+ParallelReg.sch
+SerialDriver.sch
+SerialRegulator.sch

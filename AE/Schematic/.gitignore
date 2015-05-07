@@ -12,3 +12,6 @@ Video-Cirrexx.tsv
 Interface.U4.txt
 CCD-connectors.txt
 *.devfiles/
+*-Cirrexx.tsv
+*.osmond
+*.pads
