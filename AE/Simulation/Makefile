@@ -18,6 +18,20 @@ PS2PDF=ps2pdf -sPAPERSIZE=letter
 %.pdf : %.ps
 	$(PS2PDF) $<
 
+ParallelTest : ParallelTest.cir Booster.cir ParallelPair.cir ParallelReg.cir \
+	3phase.cir lm195.cir old-ic.mod MMBT2222A.mod MMBT2907A.mod DG403.cir \
+	LM6142A.MOD irfr9120n.spi  irfru220n.spi LT1078.mod
+	$(NGSPICE) $^
+
+ParallelPair.sch : ../Schematic/ParallelPair.sch
+	cp $< $@
+
+ParallelReg.sch : ../Schematic/ParallelReg.sch
+	cp $< $@
+
+RegReg : RegReg.cir
+	$(NGSPICE) RegReg.cir LM6142A.MOD
+
 SerialTest : SerialTest.cir SerialRegulator.cir SerialDriver.cir 3phase.cir DG403.cir
 	$(NGSPICE) SerialTest.cir SerialRegulator.cir SerialDriver.cir \
 		MMBT2222A.mod MMBT2907A.mod DG403.cir LM6142A.MOD 3phase.cir

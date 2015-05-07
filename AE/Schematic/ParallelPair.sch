@@ -309,3 +309,5 @@ footprint=0603
 T 45800 44500 5 10 0 1 0 0 1
 spec=16WVDC X7R
 }
+T 40200 47200 8 10 1 1 0 0 1
+spice-prolog=.subckt ParallelPair %up

@@ -75,7 +75,7 @@ value={m*ccc}
 N 48700 45600 49600 45600 4
 N 49600 45600 49600 46500 4
 T 40200 49900 8 10 1 1 0 0 5
-spice-prolog=.subckt clocks3 %up ccc=70pF ccs=70pF m=1
+spice-prolog=.subckt clocks3 %up ccc=25pF ccs=80pF m=4
 * Three phase clock set
 * ccc is clock-clock capacitance per segment
 * ccs is clock-channel stop capacitance per segment

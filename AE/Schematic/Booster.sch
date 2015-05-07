@@ -164,3 +164,5 @@ C 48300 47200 1 180 1 PMOS.sym
 T 49000 46600 5 10 1 1 180 6 1
 refdes=Q1
 }
+T 41200 44400 8 10 1 1 0 0 1
+spice-prolog=.subckt Booster %up
