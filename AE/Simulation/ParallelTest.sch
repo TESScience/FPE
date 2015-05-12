@@ -301,7 +301,7 @@ T 40000 41450 5 10 1 1 0 0 1
 refdes=V1
 T 40800 40850 5 10 1 1 0 0 5
 value=pulse
-+ 0 3.3
++ 3.3 0
 + 0
 + 10n 10n
 + {pix/2} {pix}
@@ -313,7 +313,7 @@ T 40000 43550 5 10 1 1 0 0 1
 refdes=V2
 T 40800 42950 5 10 1 1 0 0 5
 value=pulse
-+ 0 3.3
++ 3.3 0
 + {pix/3}
 + 10n 10n
 + {pix/2} {pix}
@@ -326,13 +326,15 @@ refdes=V3
 T 40800 45150 5 10 1 1 0 0 5
 value=pulse
 + 0 3.3
-+ {2*pix/3}
++ {pix/6}
 + 10n 10n
 + {pix/2} {pix}
 }
 C 40300 44400 1 0 0 gnd-1.sym
-T 40400 50500 8 10 1 0 0 0 1
-spice-prolog=.param pix=9.6us
+T 42000 50200 8 10 1 0 0 0 3
+spice-prolog=
+.param pix=9.6us
+.options abstol=1nA
 N 40400 41600 40400 42000 4
 N 40400 42000 41700 42000 4
 {
@@ -402,7 +404,7 @@ C 40200 48700 1 0 0 vdc-1.sym
 T 40900 49350 5 10 1 1 0 0 1
 refdes=VDP
 T 40900 49150 5 10 1 1 0 0 1
-value=DC 2.0V
+value=DC 1.8V
 }
 C 40100 46900 1 0 0 vdc-1.sym
 {

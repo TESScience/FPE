@@ -18,6 +18,19 @@ PS2PDF=ps2pdf -sPAPERSIZE=letter
 %.pdf : %.ps
 	$(PS2PDF) $<
 
+FilterTest : FilterTest.cir
+	$(NGSPICE) $^
+
+ParallelRegStress : ParallelRegStress.cir Booster.cir ParallelPair.cir ParallelReg.cir \
+	3phase.cir lm195.cir old-ic.mod MMBT2222A.mod MMBT2907A.mod DG403.cir \
+	LM6142A.MOD irfr9120n.spi  irfru220n.spi LT1078.mod
+	$(NGSPICE) $^
+
+ParallelStress : ParallelStress.cir Booster.cir ParallelPair.cir ParallelReg.cir \
+	3phase.cir lm195.cir old-ic.mod MMBT2222A.mod MMBT2907A.mod DG403.cir \
+	LM6142A.MOD irfr9120n.spi  irfru220n.spi LT1078.mod
+	$(NGSPICE) $^
+
 ParallelTest : ParallelTest.cir Booster.cir ParallelPair.cir ParallelReg.cir \
 	3phase.cir lm195.cir old-ic.mod MMBT2222A.mod MMBT2907A.mod DG403.cir \
 	LM6142A.MOD irfr9120n.spi  irfru220n.spi LT1078.mod
@@ -34,6 +47,10 @@ RegReg : RegReg.cir
 
 SerialTest : SerialTest.cir SerialRegulator.cir SerialDriver.cir 3phase.cir DG403.cir
 	$(NGSPICE) SerialTest.cir SerialRegulator.cir SerialDriver.cir \
+		MMBT2222A.mod MMBT2907A.mod DG403.cir LM6142A.MOD 3phase.cir
+
+SerialStress : SerialStress.cir SerialRegulator.cir SerialDriver.cir 3phase.cir DG403.cir
+	$(NGSPICE) SerialStress.cir SerialRegulator.cir SerialDriver.cir \
 		MMBT2222A.mod MMBT2907A.mod DG403.cir LM6142A.MOD 3phase.cir
 
 SerialRegulator.sch : ../Schematic/SerialRegulator.sch
