@@ -154,7 +154,7 @@ Video.osmond : $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -g osmond -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 
 Video.pads : $(VIDEOSCH) $(VIDEOMERGE)
-	$(GNET) -g pads -o $@ $(VIDEOTOP) $(VIDEOMERGE)
+	$(GNET) -m map-footprints.scm -m SDPCB-footprints.scm -g pads -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 
 Video.stats.txt : $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -L . -g stats -o $@ $(VIDEOTOP) $(VIDEOMERGE)
@@ -252,7 +252,7 @@ Interface.osmond : $(INTERFACESCH) $(INTERFACEMERGE)
 	$(GNET) -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
 Interface.pads : $(INTERFACESCH) $(INTERFACEMERGE)
-	$(GNET) -g pads -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
+	$(GNET) -m map-footprints.scm -m SDPCB-footprints.scm -g pads -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
 Interface.stats.txt : $(INTERFACESCH)
 	$(GNET) -L . -g stats -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
@@ -324,7 +324,7 @@ Driver.osmond : $(DRIVERSCH) $(DRIVERMERGE)
 	$(GNET) -g osmond -o $@ $(DRIVERTOP) $(DRIVERMERGE)
 
 Driver.pads : $(DRIVERSCH) $(DRIVERMERGE)
-	$(GNET) -g pads -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+	$(GNET) -m map-footprints.scm -m SDPCB-footprints.scm -g pads -o $@ $(DRIVERTOP) $(DRIVERMERGE)
 
 Driver.bom.txt : $(DRIVERTOP) $(DRIVERSUB) attribs
 	$(GNET) -g bom -o $@ $(DRIVERTOP)
