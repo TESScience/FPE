@@ -80,3 +80,6 @@
 (area "none" 0.0)
 (area "unknown" 0.0)
 (area "MDM31P" 5.337)
+(area "MIL4922" 0.78)
+(area "CHASSIS" 0)
+(area "KYOCERA-KC3225A-C3" 0.08)
