@@ -1,0 +1,4 @@
+pins:      2323
+packages:  707
+nets:      677
+area cm^2: 92.38787930000142
