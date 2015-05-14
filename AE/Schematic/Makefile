@@ -147,7 +147,7 @@ Video-connectors.psch : \
 
 Video.allegro Video.devfiles: $(VIDEOSCH) $(VIDEOMERGE)
 	rm -rf devfiles Video.devfiles
-	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(VIDEOTOP) $(VIDEOMERGE)
+	$(GNET) -L . -l backward-compat.scm -m map-footprints.scm -m Flexdude-footprints.scm -g allegro -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 	mv devfiles Video.devfiles
 
 Video.osmond : $(VIDEOSCH) $(VIDEOMERGE)
@@ -259,7 +259,7 @@ Interface.stats.txt : $(INTERFACESCH)
 
 Interface.allegro Interface.devfiles: $(INTERFACESCH) $(ITERFACEMERGE)
 	rm -rf devfiles Interface.devfiles
-	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
+	$(GNET) -L . -l backward-compat.scm -m map-footprints.scm -m Flexdude-footprints.scm -g allegro -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 	mv devfiles Interface.devfiles
 
 Interface.bom.txt: $(INTERFACESCH) attribs
@@ -317,7 +317,7 @@ Driver: Driver.pdf Driver.allegro Driver.bom.txt Driver.bom2.txt Driver.counts.t
 
 Driver.allegro Driver.devfiles: $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
 	rm -rf devfiles Driver.devfiles
-	$(GNET) -L . -l backward-compat.scm -g allegro -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+	$(GNET) -L . -l backward-compat.scm -m map-footprints.scm -m Flexdude-footprints.scm -g allegro -o $@ $(DRIVERTOP) $(DRIVERMERGE)
 	mv devfiles Driver.devfiles
 
 Driver.osmond : $(DRIVERSCH) $(DRIVERMERGE)
