@@ -382,7 +382,7 @@ C 55500 47100 1 0 1 bypass10V.sym
 T 55500 48000 5 10 0 0 0 6 1
 symversion=20131216
 T 55000 47500 5 10 1 1 0 6 1
-refdes=C88
+refdes=C8
 T 55600 47400 5 10 1 1 0 6 1
 value=0.1uF
 }
@@ -528,6 +528,16 @@ C 54700 45700 1 0 0 gnd-1.sym
 N 56100 44200 56400 44200 4
 N 55300 46600 54400 46600 4
 T 53900 42500 9 10 1 0 0 0 3
-Populate U8 or U88, not both.
+Populate U8/C8 or U88/C88, not both.
 Keep net osc_clk as short as
 possible.
+C 53500 44800 1 0 0 bypass10V.sym
+{
+T 53500 45700 5 10 0 0 0 0 1
+symversion=20131216
+T 54000 45200 5 10 1 1 0 0 1
+refdes=C88
+T 52900 45200 5 10 1 1 0 0 1
+value=0.1uF DNP
+}
+C 53400 44700 1 0 0 gnd-1.sym
