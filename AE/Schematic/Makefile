@@ -1,12 +1,12 @@
-VIDEOPRODUCTS = Video.pdf Video.allegro Video.devfiles Video.bom.txt \
+VIDEOPRODUCTS = Video.allegro Video.devfiles Video.bom.txt \
 	Video.bom2.txt Video.counts.txt Video-Cirrexx.tsv Video.pads Video.osmond \
 	Video.stats.txt
 
-INTERFACEPRODUCTS = Interface.pdf Interface.allegro Interface.devfiles \
+INTERFACEPRODUCTS = Interface.allegro Interface.devfiles \
 	Interface.bom.txt Interface.bom2.txt Interface.counts.txt \
 	Interface-Cirrexx.tsv Interface.pads Interface.osmond Interface.stats.txt
 
-DRIVERPRODUCTS = Driver.pdf Driver.allegro Driver.devfiles Driver.bom.txt \
+DRIVERPRODUCTS = Driver.allegro Driver.devfiles Driver.bom.txt \
 	Driver.bom2.txt Driver.counts.txt Driver-Cirrexx.tsv Driver.pads \
 	Driver.osmond Driver.stats.txt
 
