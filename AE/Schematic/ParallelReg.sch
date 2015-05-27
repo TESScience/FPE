@@ -142,7 +142,7 @@ symversion=20131108
 T 47200 46900 5 10 1 1 0 0 1
 value=680pF
 T 47500 46000 5 10 0 1 180 0 1
-spec=50WVDC NP0
+spec=50WVDC X7R
 }
 C 46600 46400 1 0 0 resistor.sym
 {
