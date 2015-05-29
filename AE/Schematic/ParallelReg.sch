@@ -500,6 +500,8 @@ T 53500 41700 5 10 0 0 0 0 1
 footprint=SOD80C
 T 53500 41700 5 10 0 0 0 0 1
 value=BZV55-B3V3
+T 53500 41700 5 10 0 0 0 0 1
+spice-prototype=D? %pinseq BZV55_B3V3
 }
 C 54400 46500 1 0 1 zener-1.sym
 {
@@ -509,6 +511,10 @@ T 54400 46500 5 10 0 0 0 6 1
 footprint=SOD80C
 T 54400 46500 5 10 0 0 0 6 1
 value=BZV55-B3V3
+T 54400 46500 5 10 0 0 0 0 1
+spice-prototype=D? %pinseq BZV55_B3V3
 }
 N 53500 46700 53300 46700 4
 N 53300 46700 53300 49300 4
+T 41900 49600 8 10 1 1 0 0 1
+spice-prolog=.subckt ParallelReg %up

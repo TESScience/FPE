@@ -1,4 +1,4 @@
-v 20110115 2
+v 20130925 2
 P 1700 1500 1400 1500 1 0 0
 {
 T 1545 1545 5 8 0 1 0 0 1
@@ -113,3 +113,5 @@ pinlabel=HKn
 T 1400 600 5 8 0 1 0 8 1
 pintype=pas
 }
+T 300 3600 8 10 0 0 0 0 1
+spice-prototype=X? %down ParallelReg

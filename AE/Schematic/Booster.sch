@@ -1,4 +1,4 @@
-v 20110115 2
+v 20130925 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
 T 50000 40500 5 10 1 1 0 0 1
@@ -19,7 +19,7 @@ refdes=Q2
 T 48300 43700 5 10 0 0 0 0 1
 spice-prototype=X? %pinseq model-name@
 T 48900 43900 5 10 1 1 0 0 1
-model-name=IRFR3410
+model-name=IRFRU3410
 T 48300 43700 5 10 0 0 0 0 1
 value=IRFR3410
 T 48300 43700 5 10 0 0 0 0 1
@@ -177,3 +177,5 @@ model-name=IRF9333
 T 48300 47600 5 10 0 0 180 6 1
 value=IRF9333
 }
+T 54100 46400 8 10 1 1 0 0 1
+spice-prolog=.subckt Booster %up

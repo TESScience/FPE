@@ -305,3 +305,5 @@ value=22nF
 T 48300 43500 5 10 0 1 180 0 1
 spec=50WVDC
 }
+T 43800 49900 8 10 1 1 0 0 1
+spice-prolog=.subckt ParallelPair %up
