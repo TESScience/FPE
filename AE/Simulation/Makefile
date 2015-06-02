@@ -33,7 +33,7 @@ ParallelStress : ParallelStress.cir Booster.cir ParallelPair.cir ParallelReg.cir
 
 ParallelTest : ParallelTest.cir Booster.cir ParallelPair.cir ParallelReg.cir \
 	3phase.cir lm195.cir old-ic.mod MMBT2222A.mod MMBT2907A.mod DG403.cir \
-	LM6142A.MOD irf9333.spi  irfru3410.spi LT1078.mod
+	LM6142A.MOD irf9333.spi  irfru3410.spi LT1078.mod Par3.cir L3.cir
 	$(NGSPICE) $^
 
 ParallelPair.sch : ../Schematic/ParallelPair.sch
