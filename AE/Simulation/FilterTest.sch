@@ -341,7 +341,7 @@ C 51900 44500 1 0 0 idc-1.sym
 T 52600 45150 5 10 1 1 0 0 1
 refdes=I5
 T 52600 44950 5 10 1 1 0 0 1
-value=AC 1
+value=AC 1 PULSE 0 250mA 10u 10u 10u
 }
 C 52100 44200 1 0 0 gnd-1.sym
 C 51900 42300 1 0 0 idc-1.sym
@@ -349,6 +349,6 @@ C 51900 42300 1 0 0 idc-1.sym
 T 52600 42950 5 10 1 1 0 0 1
 refdes=I12
 T 52600 42750 5 10 1 1 0 0 1
-value=AC 1
+value=AC 1 PULSE 0 -250mA 10u 10u 10u
 }
 C 52100 42000 1 0 0 gnd-1.sym
