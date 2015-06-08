@@ -26,15 +26,24 @@ ParallelRegStress : ParallelRegStress.cir Booster.cir ParallelPair.cir ParallelR
 	LM6142A.MOD irfr9120n.spi  irfru220n.spi LT1078.mod
 	$(NGSPICE) $^
 
-ParallelStress : ParallelStress.cir Booster.cir ParallelPair.cir ParallelReg.cir \
-	3phase.cir lm195.cir old-ic.mod MMBT2222A.mod MMBT2907A.mod DG403.cir \
-	LM6142A.MOD irfr9120n.spi  irfru220n.spi LT1078.mod
+PARFILES=Booster.cir ParallelPair.cir ParallelReg.cir \
+	lm195.cir old-ic.mod MMBT2222A.mod MMBT2907A.mod DG403.cir \
+	LM6142A.MOD irfr9120n.spi  irfru220n.spi LT1078.mod Par3.cir L3.cir
+
+ParallelStress : ParallelStress.cir $(PARFILES) 
 	$(NGSPICE) $^
 
-ParallelTest : ParallelTest.cir Booster.cir ParallelPair.cir ParallelReg.cir \
-	3phase.cir lm195.cir old-ic.mod MMBT2222A.mod MMBT2907A.mod DG403.cir \
-	LM6142A.MOD irfr9120n.spi  irfru220n.spi LT1078.mod
+parallelstress.txt : ParallelStress.cir $(PARFILES) ParallelStressContol.cir
+	rm -f parallelstress.txt
+	for p in 2 3 4 6 8 12 16 24 32 48 64 96 128 \
+	do \
+		echo .param 'pix={'$p'/15Meg}' >pixparam.cir \
+		$(NGSPICE) ParallelStress.cir pixparam.cir $(PARFILES) ParallelStressContol.cir \
+	done
+
+ParallelTest : $(PARFILES)
 	$(NGSPICE) $^
+		
 
 ParallelPair.sch : ../Schematic/ParallelPair.sch
 	cp $< $@

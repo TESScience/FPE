@@ -157,29 +157,7 @@ C 52900 45400 1 270 0 busripper-1.sym
 N 50400 45000 50400 45400 4
 T 44550 50000 9 20 1 0 0 0 1
 Parallel Clock Drivers
-C 54200 41900 1 0 0 3phase.sym
-{
-T 55700 42500 5 10 1 1 0 0 1
-refdes=FS
-T 55100 42000 5 10 1 0 0 0 1
-ccc=25pF
-T 55100 41800 5 10 1 0 0 0 1
-ccs=80pF
-T 55200 41600 5 10 1 0 0 0 1
-m=200
-}
 C 54900 41600 1 0 0 gnd-1.sym
-C 54200 43900 1 0 0 3phase.sym
-{
-T 55700 44500 5 10 1 1 0 0 1
-refdes=IA
-T 55100 44000 5 10 1 0 0 0 1
-ccc=25pF
-T 55100 43800 5 10 1 0 0 0 1
-ccs=80pF
-T 55200 43600 5 10 1 0 0 0 1
-m=400
-}
 C 54900 43600 1 0 0 gnd-1.sym
 N 54500 42800 53300 42800 4
 {
@@ -404,7 +382,7 @@ C 40200 48700 1 0 0 vdc-1.sym
 T 40900 49350 5 10 1 1 0 0 1
 refdes=VDP
 T 40900 49150 5 10 1 1 0 0 1
-value=DC 1.8V
+value=DC 1.84V
 }
 C 40100 46900 1 0 0 vdc-1.sym
 {
@@ -428,3 +406,25 @@ netname=DACPP
 }
 N 42300 49900 42300 49500 4
 C 42300 49500 1 270 0 busripper-1.sym
+C 54200 43900 1 0 0 3phase.sym
+{
+T 55700 44500 5 10 1 1 0 0 1
+refdes=IA
+T 54200 45500 5 10 0 0 0 0 1
+spice-prototype=X? %down model-name@ m=
+T 55300 44000 5 10 1 1 0 0 1
+model-name=Par3
+T 54200 45700 5 10 0 0 0 0 1
+source=Par3.sch
+}
+C 54200 41900 1 0 0 3phase.sym
+{
+T 55700 42500 5 10 1 1 0 0 1
+refdes=FS
+T 54200 43500 5 10 0 0 0 0 1
+spice-prototype=X? %down model-name@ m=
+T 55300 42000 5 10 1 1 0 0 1
+model-name=Par3
+T 54200 43700 5 10 0 0 0 0 1
+source=Par3.sch
+}
