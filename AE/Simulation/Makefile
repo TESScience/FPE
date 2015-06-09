@@ -33,12 +33,11 @@ PARFILES=Booster.cir ParallelPair.cir ParallelReg.cir \
 ParallelStress : ParallelStress.cir $(PARFILES) 
 	$(NGSPICE) $^
 
-parallelstress.txt : ParallelStress.cir $(PARFILES) ParallelStressContol.cir
+parallelstress.txt : ParallelStress.cir $(PARFILES) ParallelStressControl.cir
 	rm -f parallelstress.txt
-	for p in 2 3 4 6 8 12 16 24 32 48 64 96 128 \
-	do \
-		echo .param 'pix={'$p'/15Meg}' >pixparam.cir \
-		$(NGSPICE) ParallelStress.cir pixparam.cir $(PARFILES) ParallelStressContol.cir \
+	for p in 2 3 4 6 8 12 16 24 32 48 64 96 128 ; do \
+		echo .param 'pix={' $$p '/15Meg}' >pixparam.cir ; \
+		$(NGSPICE) ParallelStress.cir pixparam.cir $(PARFILES) ParallelStressControl.cir ; \
 	done
 
 ParallelTest : $(PARFILES)
