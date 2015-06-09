@@ -1,0 +1,186 @@
+\documentclass[12pt]{report}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+\parskip = 0.2in
+\parindent = 0.0in
+
+\title{TESS FPE Development Log}
+\author{John P. Doty}
+\begin{document}
+\maketitle
+
+\section*{6/9/2015 Stress Simulations of Parallel Drivers}
+We have promised that the drivers will be immune to bad sequencer programming. The hazard is that at unusually high clock frequencies and duty cycles the dissipation will be too high.
+
+Since the driver voltage regulators implement current and dissipation limits, they are not the first concern. Each regulator powers the six drivers for a single CCD, so the worst case is rapid clocking of a single driver, focusing all of the available power on a few components. The voltage swing also matters: I am assuming we will soon restict that to 10V.
+
+The files for these sims are from commit 89d13541bd. The simulated ParallelReg and ParallelPair schematics are in AE/Simulation/Annex. They have added current monitors and do not exactly correspond to any revision of the mainline schematics. They suggest important revisions: see below. To reproduce this result
+
+\begin{verbatim}
+cd tess/AE/Simulationcp Annex/ParallelPair.sch Annex/ParallelReg.sch .
+make parallelstress.txt\end{verbatim}
+
+It'll make lots of SPICE spewage an your screen. Here's the result in parallelstress.txt:
+
+\begin{verbatim}pixel_period = 1.333333e-07
+total_power = 8.358019e-01
+ccd_dissipation = -2.41912e-05
+booster_q1_dissipation = 1.764529e-07
+booster_q2_dissipation = 1.006460e-04
+booster_r7_dissipation = 2.628663e-01
+regulator_q1_dissipation = 9.834006e-02
+regulator_q2_dissipation = 1.371268e-01
+regulator_r21_dissipation = 1.144064e-03
+regulator_r22_dissipation = 1.225501e-03
+ 
+pixel_period = 2.000000e-07
+total_power = 7.661961e-01
+ccd_dissipation = -2.42715e-05
+booster_q1_dissipation = 2.537668e-07
+booster_q2_dissipation = 9.615248e-05
+booster_r7_dissipation = 2.609991e-01
+regulator_q1_dissipation = 9.764662e-02
+regulator_q2_dissipation = 1.362251e-01
+regulator_r21_dissipation = 1.128223e-03
+regulator_r22_dissipation = 1.209362e-03
+ 
+pixel_period = 2.666667e-07
+total_power = 7.251575e-01
+ccd_dissipation = -2.41384e-05
+booster_q1_dissipation = 2.794415e-07
+booster_q2_dissipation = 9.383525e-05
+booster_r7_dissipation = 2.567996e-01
+regulator_q1_dissipation = 9.668702e-02
+regulator_q2_dissipation = 1.349711e-01
+regulator_r21_dissipation = 1.106448e-03
+regulator_r22_dissipation = 1.187129e-03
+ 
+pixel_period = 4.000000e-07
+total_power = 6.702551e-01
+ccd_dissipation = -2.68291e-05
+booster_q1_dissipation = -1.13272e-08
+booster_q2_dissipation = 1.185802e-04
+booster_r7_dissipation = 2.412091e-01
+regulator_q1_dissipation = 9.362991e-02
+regulator_q2_dissipation = 1.310063e-01
+regulator_r21_dissipation = 1.039114e-03
+regulator_r22_dissipation = 1.118229e-03
+ 
+pixel_period = 5.333333e-07
+total_power = 6.314401e-01
+ccd_dissipation = 1.036446e-03
+booster_q1_dissipation = 3.745419e-05
+booster_q2_dissipation = 7.616798e-03
+booster_r7_dissipation = 2.221996e-01
+regulator_q1_dissipation = 8.973050e-02
+regulator_q2_dissipation = 1.268042e-01
+regulator_r21_dissipation = 9.567884e-04
+regulator_r22_dissipation = 1.048598e-03
+ 
+pixel_period = 8.000000e-07
+total_power = 5.969821e-01
+ccd_dissipation = 2.981062e-03
+booster_q1_dissipation = 1.071532e-04
+booster_q2_dissipation = -5.83759e-04
+booster_r7_dissipation = 2.116022e-01
+regulator_q1_dissipation = 8.761025e-02
+regulator_q2_dissipation = 1.233901e-01
+regulator_r21_dissipation = 9.134624e-04
+regulator_r22_dissipation = 9.914689e-04
+ 
+pixel_period = 1.066667e-06
+total_power = 5.654631e-01
+ccd_dissipation = 7.911254e-04
+booster_q1_dissipation = 9.835954e-05
+booster_q2_dissipation = -7.47503e-04
+booster_r7_dissipation = 1.961213e-01
+regulator_q1_dissipation = 8.398984e-02
+regulator_q2_dissipation = 1.184516e-01
+regulator_r21_dissipation = 8.412774e-04
+regulator_r22_dissipation = 9.137481e-04
+ 
+pixel_period = 1.600000e-06
+total_power = 5.646182e-01
+ccd_dissipation = 3.090247e-04
+booster_q1_dissipation = 3.835051e-02
+booster_q2_dissipation = -9.39081e-04
+booster_r7_dissipation = 1.548198e-01
+regulator_q1_dissipation = 8.591047e-02
+regulator_q2_dissipation = 1.206368e-01
+regulator_r21_dissipation = 8.725175e-04
+regulator_r22_dissipation = 9.491317e-04
+ 
+pixel_period = 2.133333e-06
+total_power = 1.937990e+00
+ccd_dissipation = 2.245338e-01
+booster_q1_dissipation = 4.722572e-01
+booster_q2_dissipation = 1.761843e-01
+booster_r7_dissipation = 1.229537e-01
+regulator_q1_dissipation = 3.152604e-01
+regulator_q2_dissipation = 4.312550e-01
+regulator_r21_dissipation = 1.242146e-02
+regulator_r22_dissipation = 1.256129e-02
+ 
+pixel_period = 3.200000e-06
+total_power = 2.071263e+00
+ccd_dissipation = 2.946155e-01
+booster_q1_dissipation = 3.600199e-01
+booster_q2_dissipation = 3.323593e-01
+booster_r7_dissipation = 9.073041e-02
+regulator_q1_dissipation = 3.378139e-01
+regulator_q2_dissipation = 4.610033e-01
+regulator_r21_dissipation = 1.432644e-02
+regulator_r22_dissipation = 1.487209e-02
+ 
+pixel_period = 4.266667e-06
+total_power = 1.627515e+00
+ccd_dissipation = 2.273986e-01
+booster_q1_dissipation = 2.697074e-01
+booster_q2_dissipation = 2.574485e-01
+booster_r7_dissipation = 6.866426e-02
+regulator_q1_dissipation = 2.669412e-01
+regulator_q2_dissipation = 3.629527e-01
+regulator_r21_dissipation = 8.775428e-03
+regulator_r22_dissipation = 9.541275e-03
+ 
+pixel_period = 6.400000e-06
+total_power = 1.141460e+00
+ccd_dissipation = 1.515176e-01
+booster_q1_dissipation = 1.797313e-01
+booster_q2_dissipation = 1.721775e-01
+booster_r7_dissipation = 4.547011e-02
+regulator_q1_dissipation = 1.879895e-01
+regulator_q2_dissipation = 2.548577e-01
+regulator_r21_dissipation = 4.251466e-03
+regulator_r22_dissipation = 5.192248e-03
+ 
+pixel_period = 8.533333e-06
+total_power = 8.937256e-01
+ccd_dissipation = 1.130203e-01
+booster_q1_dissipation = 1.359123e-01
+booster_q2_dissipation = 1.292140e-01
+booster_r7_dissipation = 3.403328e-02
+regulator_q1_dissipation = 1.468536e-01
+regulator_q2_dissipation = 1.990946e-01
+regulator_r21_dissipation = 2.563844e-03
+regulator_r22_dissipation = 3.597144e-03\end{verbatim}The circuit in these sims omits the 1$\Omega$ 1W resistors in the Booster outputs from FPE-6.1-RR9 and earlier versions. The Booster robustly prevents overlap conduction between Q1 and Q2 (and the regulator is current-limited anyway), so these are not needed. They actually dissipated very little. The output waveforms are cleaner without them. R7 in the boosters is 365$\Omega$, up from 200$\Omega$ in FPE-6.1-RR9, slowing the rise times and reducing its dissipation. The CCD model is a lumped-constant approximation to the distributed parallel clock resistance/capacitance, with parameters adjusted to match Jerry's measurements of 5.1 driver waveforms. 
+
+R7 remains the most problematic component, dissipating over 1/4W at the maximum clock frequency. It is a 1/10W component that really needs to be 1/2W.
+
+For the Booster transistors, maximum dissipation is about 1/2W for Q1. Q2 is a bit less. According to the IR data sheets, these have thermal resistance junction to the PC board of 26C/W, so that's not a large temperature rise.
+
+The regulator transistors Q1 and Q2 are thermally protected, and probably close to their limits at periods $\approx3\mu$s, so the actual power dissipation at periods in that range may be lower.
+
+
+
+ \end{document}
