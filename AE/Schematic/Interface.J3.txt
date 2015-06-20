@@ -16,11 +16,11 @@ J3	8	ctrl_out_n
 J3	21	ctrl_out_p
 J3	9	cl_cc1_n
 J3	22	cl_cc1_p
-# J3	10	cl_cc2_n
-# J3	23	cl_cc2_p
-# J3	11	cl_cc3_n
-# J3	24	cl_cc3_p
-# J3	12	cl_cc4_n
-# J3	25	cl_cc4_p
+J3	10	cl_cc2_n
+J3	23	cl_cc2_p
+J3	11	cl_cc3_n
+J3	24	cl_cc3_p
+J3	12	cl_cc4_n
+J3	25	cl_cc4_p
 J3	13	GND
 J3	26	GND

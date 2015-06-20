@@ -103,7 +103,6 @@ INTERFACEDOCS= ParallelPair.ps \
 	Interface.8.ps \
 	Interface.9.ps \
 	Interface.10.ps \
-	Interface.J1.txt \
 	Interface.J2.txt \
 	Interface.J3.txt \
 	Interface.J4.txt \
@@ -139,7 +138,6 @@ INTERFACESUB= \
 	Minus30.sch
 
 INTERFACEMERGE= \
-	Interface.J1.psch \
 	Interface.J2.psch \
 	Interface.J3.psch \
 	Interface.J4.psch \
