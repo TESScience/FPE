@@ -4,7 +4,13 @@ all : Interface.pdf Interface.net.txt Interface.bom.txt Interface.bom2.txt Inter
 # "Standard Boilerplate"
 # Definitions to generate the drawings
 
-S2PS=gschem -p -o $@ -s print.scm $<
+# Use xvfb-run if present (works on both Macs and Linux then)
+GSCHEM=$(shell [ -x "$(shell which xvfb-run)" ] && echo xvfb-run ; echo gschem)
+DATE=$(shell git log -1 --format="%cd")
+REV=$(shell git describe --tags)
+S2PS=sed -e "s/date=.*$$/date=$(DATE)/" -e "s/rev=.*$$/rev=$(REV)/" $< >tmp.sch; \
+	$(GSCHEM) -p -o $@ -s print.scm tmp.sch; \
+	rm tmp.sch
 
 %.sym.ps : %.sym
 	$(S2PS)
