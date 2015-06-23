@@ -82,7 +82,7 @@ Clamp	CCD_ADC_Clamp_pin
 DeInt	CCD_ADC_DeInt_pin
 Int	CCD_ADC_Int_pin
 CNV	CCD_ADC_Cnv_pin
-SCK	CCD_ADC_Sck_pin
+ArtSCK	CCD_ADC_Sck_pin
 C422	Cmd_SCK_pin
 D422	Cmd_DIN_pin
 DATA-A	dataA_out_pin_p
@@ -109,7 +109,7 @@ HK104	HSK_ADC_104_pin
 HK112	HSK_ADC_112_pin
 HK120	HSK_ADC_120_pin
 DD	CLC_DAC_Din_pin
-DCK	CLC_DAC_Sck_pin
+ArtDCK	CLC_DAC_Sck_pin
 # Things identified by board voltage
 +3.3F	3.30
 +2.5F	2.50
