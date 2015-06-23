@@ -1,4 +1,4 @@
-v 20081220 1
+v 20130925 2
 B 0 0 22000 17000 15 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 T 14400 1500 5 10 0 0 0 0 1
 graphical=1
@@ -37,3 +37,5 @@ T 14500 1200 15 8 1 0 0 0 1
 TITLE
 T 14500 500 15 8 1 0 0 0 1
 DATE
+T 0 17036 9 6 1 0 0 0 1
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of the license, visit https://creativecommons.org/licenses/by-sa/4.0/legalcode

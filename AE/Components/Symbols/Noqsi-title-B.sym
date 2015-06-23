@@ -1,4 +1,4 @@
-v 20060123 1
+v 20130925 2
 B 0 0 17000 11000 15 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
 T 14400 1500 5 10 0 0 0 0 1
 graphical=1
@@ -37,3 +37,5 @@ T 10600 10100 9 10 1 0 0 0 1
 T 11300 9500 9 10 1 0 0 0 2
 +1-303-816-2756    jpd@noqsi.com
 
+T 0 11036 9 6 1 0 0 0 1
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of the license, visit https://creativecommons.org/licenses/by-sa/4.0/legalcode
