@@ -6,25 +6,25 @@
 .control
 run
 linearize
-echo ' ' >>ParallelStress.txt
-print pixel_period >>ParallelStress.txt
+echo ' ' >>parallelstress.txt
+print pixel_period >>parallelstress.txt
 let total_power = 5*mean(-v5#branch)+12*mean(v12#branch)
-print total_power >>ParallelStress.txt
+print total_power >>parallelstress.txt
 let CCD_dissipation = mean(v.xia.v1#branch*p1ia)
-print CCD_dissipation >>ParallelStress.txt
+print CCD_dissipation >>parallelstress.txt
 let booster_Q1_dissipation = mean((vp-p1ia)*v.x2.x1.vq1#branch)
-print booster_Q1_dissipation >>ParallelStress.txt
+print booster_Q1_dissipation >>parallelstress.txt
 let booster_Q2_dissipation = mean((p1ia-vn)*v.x2.x1.vq2#branch)
-print booster_Q2_dissipation >>ParallelStress.txt
+print booster_Q2_dissipation >>parallelstress.txt
 let booster_R7_dissipation = mean((x2.x1.g1-x2.x1.g2)^2)/@r.x2.x1.r7[resistance]
-print booster_R7_dissipation >>ParallelStress.txt
+print booster_R7_dissipation >>parallelstress.txt
 let regulator_Q1_dissipation = mean((x1.cp-vp)*(v.x1.v1#branch))
-print regulator_Q1_dissipation >>ParallelStress.txt
+print regulator_Q1_dissipation >>parallelstress.txt
 let regulator_Q2_dissipation = mean((vn-x1.cn)*v.x1.v2#branch)
-print regulator_Q2_dissipation >>ParallelStress.txt
+print regulator_Q2_dissipation >>parallelstress.txt
 let regulator_R21_dissipation = mean((5-x1.cp)^2)/@r.x1.r21[resistance]
-print regulator_R21_dissipation >>ParallelStress.txt
+print regulator_R21_dissipation >>parallelstress.txt
 let regulator_R22_dissipation = mean((x1.cn+12)^2)/@r.x1.r22[resistance]
-print regulator_R22_dissipation >>ParallelStress.txt
+print regulator_R22_dissipation >>parallelstress.txt
 quit
 .endc
