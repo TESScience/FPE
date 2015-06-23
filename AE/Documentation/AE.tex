@@ -235,14 +235,17 @@ Connector & Pin & Net & Signal \\
 
 \FloatBarrier
 \schempage{Interface.2}
-\FloatBarrier
+Figure \ref{Interface.2} shows support for housekeeping and temperature measurement. HKCOM is the primary housekeeping analog bus. The selected housekeeping channel will drive a current into this bus. U5 converts the current to a voltage. Full scale is $\pm27.3\,\mu$A. RTDCOM is a voltage input for the resistive temperature sensors on the CCD chips and the camera, U6 scales the voltage from the sensor circuitry on the Video board so that the full measurement range is 500\,$\Omega$ to 1500\,$\Omega$. The temperature range depends on the sensor: see Table \ref{ttab} for the nominal ranges. U3 multiplexes some voltage measurements onto HKCOM. The sense resistors are 604\,k$\Omega$. $\pm27.3\,\mu$A through 604\,k$\Omega$ is $\pm$16.5\,V, so that's full scale on these housekeeping channels.
+
 \schempage{Interface.3}
-\FloatBarrier
+Figure \ref{Interface.3} shows the housekeeping ADC subsystem. There are two sources of housekeeping voltage inputs to this: HKV and RTDV. Housekeeping addresses $<$112 use HKV, while the higher addresses use RTDV (see Figure \ref{Interface.2}). U1 selects which of these voltage sources to use. U6 creates a differential input for the ADC, U2.
+
 \schempage{Interface.4}
-\FloatBarrier
+Figure \ref{Interface.4} shows the FPGA bypass capacitors. The smallest capacitors should be closest to the power pins on the FPGA.
+
 \schempage{Interface.5}
-\FloatBarrier
 \schempage{Interface.6}
+Figures \ref{Interface.5} and \ref{Interface.6} show the connections of the Driver Sets for CCD chips 1 and 2. The Driver Sets for CCD chips 3 and 4 are on the Driver Board.
 \FloatBarrier
 \schempage{Interface.7}
 \FloatBarrier
@@ -320,10 +323,10 @@ XXX & Housekeeping Signal & Scale  & Control Range \\
 \hline
 000 & Parallel High & $\pm$16.5V & 0, 18.1V$\dagger$ \\
 001 &Parallel Low &$\pm$16.5V & 0, -13.2V \\
-010 & Serial High &$\pm$16.5V & 14.9V, -14.9V \\
-011 & Serial Low &$\pm$16.5V & 14.9V, -14.9V \\
-100 & Reset High &$\pm$16.5V & 14.9V, -14.9V \\
-101 &Reset Low &$\pm$16.5V & 14.9V, -14.9V \\
+010 & Serial High &$\pm$16.5V & 15.2V, -14.5V \\
+011 & Serial Low &$\pm$16.5V & 15.2V, -14.5V \\
+100 & Reset High &$\pm$16.5V & 15.2V, -14.5V \\
+101 &Reset Low &$\pm$16.5V & 15.2V, -14.5V \\
 110 &Input Diode High &$\pm$16.5V & 0, +15.0V \\
 111 & Input Diode Low &$\pm$16.5V & 0, +15.0V \\
 \hline
