@@ -1,0 +1,17 @@
+#!/bin/sh
+gawk '
+/^Part/{next}
+/^End/{exit}
+/^Signal/{ 
+	net = $2
+	gsub(/"/,"",net)
+	next
+}
+{
+	for( i = 1; i <= NF; i += 1 ){
+		if( $i == "{" ) continue
+		if( $i == "}" ) continue
+		if( $i ~ /^VIA/ ) continue
+		print net, $i
+	}
+}' | sort

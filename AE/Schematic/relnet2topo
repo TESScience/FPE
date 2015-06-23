@@ -1,0 +1,8 @@
+#!/bin/sh
+gawk '
+{	if($1 != thisnet) {
+		print connections
+		thisnet = $1
+		connections = $2 }
+	else connections = connections " " $2 }
+END{	print connections }'
