@@ -112,10 +112,10 @@ ArtixPower.sch : ../Schematic/ArtixPower.sch
 	cp $< $@
 
 AP : AP.cir ArtixPower.cir
-	$(NGSPICE) AP.cir ArtixPower.cir LM6142A.MOD REF43.cir MMBT2222A.mod MMBT2907A.mod
+	$(NGSPICE) AP.cir ArtixPower.cir LM6142A.MOD REF43.mod MMBT2222A.mod MMBT2907A.mod
 
 APSC : APSC.cir ArtixPower.cir
-	$(NGSPICE) APSC.cir ArtixPower.cir LM6142A.MOD REF43.cir MMBT2222A.mod MMBT2907A.mod
+	$(NGSPICE) APSC.cir ArtixPower.cir LM6142A.MOD REF43.mod MMBT2222A.mod MMBT2907A.mod
 
 DG403.cir : DG403.1.sch DG403.2.sch
 	$(GNET) DG403.1.sch DG403.2.sch -o DG403.cir
