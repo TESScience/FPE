@@ -469,9 +469,9 @@ C 41500 50000 1 0 0 capacitor.sym
 T 41700 50500 5 10 1 1 0 0 1
 refdes=C94
 T 42100 50300 5 10 1 1 0 0 1
-value=10pF
+value=100pF
 T 41500 51400 5 10 0 1 0 0 1
-spec=100WVDC NP0
+spec=25WVDC NP0
 T 41500 50900 5 10 0 0 0 0 1
 symversion=20090121
 }
