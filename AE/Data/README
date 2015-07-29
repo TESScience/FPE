@@ -1,0 +1,7 @@
+HKmap.tsv is the overall map for the FPE housekeeping/DAC address space. Columns are:
+
+(Address Offset)	(CCD)	(Group)
+
+BiasGroup.tsv, ClockDriverGroup.tsv, HeaterGroup.tsv, and ThermalGroup.tsv give the info for the groups. Columns are:
+
+(Address Offset)	(Signal)	(HK Low)	(HK High)	(Control Low)	(Control High)	(Range Low)	(Range High)	(Unit)	(Relative To)
