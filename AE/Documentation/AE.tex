@@ -276,7 +276,21 @@ See the previous section for the DriverSet building blocks.
 \section{Operating Parameters and Housekeeping Channels}
 \label{param}
 
-While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. In the following tables CC represents two bits selecting the CCD in offset binary (00$\Rightarrow$CCD1, 01$\Rightarrow$CCD2, 10$\Rightarrow$CCD3, 11$\Rightarrow$CCD4).
+While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. 
+
+\begin{table}[ht!]
+\caption{Address Map}
+\begin{tabular}{|l|l|l|}
+\hline
+Address Offset & CCD & Group \\
+\hline
+\input{HKmap.tex}
+\hline
+\end{tabular}
+\vspace{5pt}
+
+\label{hkmap}
+\end{table}
 
 The control ranges often go outside the actual range allowed for the parameters, which depend on circuit details and power supply voltages. \textcolor{red}{I will document these limits in the future.} Control is sometimes relative to another parameter. If the control range is not given, the parameter is not under DAC control.
 \subsection{Bias Group}
@@ -284,8 +298,6 @@ The control ranges often go outside the actual range allowed for the parameters,
 \caption{Bias Group}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
-% \multicolumn{4}{|l|}{Address 0CCXXXX} \\
-% \hline
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  \multicolumn{2}{c|}{Control} &  \multicolumn{2}{c|}{Range} &Unit & Relative \\
 Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \hline
@@ -294,7 +306,6 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \end{tabular}
 \vspace{5pt}
 
-%$\dagger$ Relative to Reset Drain for the specified chip
 \label{biastab}
 \end{table}
 
@@ -303,9 +314,6 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \caption{Clock Driver Group}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
-%\multicolumn{4}{|l|}{Address 10CCXXX} \\
-%\hline
-%XXX & Housekeeping Signal & Scale  & Control Range \\
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  \multicolumn{2}{c|}{Control} &  \multicolumn{2}{c|}{Range} &Unit & Relative \\
 Offset &  & Low & High & Low & High & Low & High &  & To  \\
 
@@ -315,7 +323,6 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \end{tabular}
 \vspace{5pt}
 
-%$\dagger$ Relative to Parallel Low for the specified chip
 \label{clocktab}
 \end{table}
 \subsection{Heater Group}
@@ -324,9 +331,6 @@ The Heater Group controls the three trim heaters on the lens barrel.
 \caption{Heater Group}
 \begin{tabular}{|l|l|l|l|l|l|HHlH|}
 \hline
-%\multicolumn{4}{|l|}{Address 1100XXX} \\
-%\hline
-%XXX & Housekeeping Signal & Scale &  Control Range \\
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  \multicolumn{2}{c|}{Control} &  &&Unit & Relative \\
 Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \hline
@@ -341,9 +345,6 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \caption{Interface Group}
 \begin{tabular}{|l|l|l|l|HHHHlH|}
 \hline
-%\multicolumn{3}{|l|}{Address 1101XXX} \\
-%\hline
-%XXX & Housekeeping Signal & Scale  \\
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  & &  & &Unit & Relative \\
 Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \hline
@@ -357,9 +358,6 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \caption{Thermal Group}
 \begin{tabular}{|l|l|l|l|HHHHlH|}
 \hline
-%\multicolumn{3}{|l|}{Address 111XXXX} \\
-%\hline
-%XXX & Housekeeping Signal & Scale  \\
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  & &  & &Unit & Relative \\
 Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \hline
