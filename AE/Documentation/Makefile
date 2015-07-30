@@ -47,7 +47,7 @@ date.txt :
 	git log -1 --format="%cd" > $@
 
 stamp.tex :
-	echo "Commit $(shell git log -1 --format="%h") \\\\\\\\" > $@
+	echo "Version  $(shell git describe --tags) \\\\\\\\" > $@
 
 tag.tex :
 	if [ "$(shell git describe --tags $(shell git log -1 --format="%h"))" = \
