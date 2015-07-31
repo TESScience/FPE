@@ -40,7 +40,7 @@ parallelstress.txt : ParallelStress.cir $(PARFILES) ParallelStressControl.spice
 		$(NGSPICE) ParallelStress.cir pixparam.cir $(PARFILES) ParallelStressControl.spice ; \
 	done
 
-ParallelTest : $(PARFILES)
+ParallelTest : ParallelTest.cir $(PARFILES)
 	$(NGSPICE) $^
 		
 
