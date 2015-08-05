@@ -67,9 +67,9 @@ SerialRegulator.sch : ../Schematic/SerialRegulator.sch
 SerialDriver.sch : ../Schematic/SerialDriver.sch
 	cp $< $@
 
-PumpTest : PumpTest.cir Pump.cir
+PumpTest : PumpTest.cir Pump.cir DG403.cir
 	$(NGSPICE) PumpTest.cir Pump.cir irfr9120n.spi irfru220n.spi \
-		MMBT2222A.mod MMBT2907A.mod DG403.mod 1N914B.mod
+		MMBT2222A.mod MMBT2907A.mod DG403.cir 1N914B.mod
 
 Pump.sch : ../Schematic/Pump.sch
 	cp $< $@
