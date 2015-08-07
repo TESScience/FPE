@@ -27,12 +27,15 @@ Since the driver voltage regulators implement current and dissipation limits, th
 The files for these sims are from commit 89d13541bd. The simulated ParallelReg and ParallelPair schematics are in AE/Simulation/Annex. They have added current monitors and do not exactly correspond to any revision of the mainline schematics. They suggest important revisions: see below. To reproduce this result
 
 \begin{verbatim}
-cd tess/AE/Simulationcp Annex/ParallelPair.sch Annex/ParallelReg.sch .
-make parallelstress.txt\end{verbatim}
+cd tess/AE/Simulation
+cp Annex/ParallelPair.sch Annex/ParallelReg.sch .
+make parallelstress.txt
+\end{verbatim}
 
 It'll make lots of SPICE spewage an your screen. Here's the result in parallelstress.txt:
 
-\begin{verbatim}pixel_period = 1.333333e-07
+\begin{verbatim}
+pixel_period = 1.333333e-07
 total_power = 8.358019e-01
 ccd_dissipation = -2.41912e-05
 booster_q1_dissipation = 1.764529e-07
@@ -173,7 +176,10 @@ booster_r7_dissipation = 3.403328e-02
 regulator_q1_dissipation = 1.468536e-01
 regulator_q2_dissipation = 1.990946e-01
 regulator_r21_dissipation = 2.563844e-03
-regulator_r22_dissipation = 3.597144e-03\end{verbatim}The circuit in these sims omits the 1$\Omega$ 1W resistors in the Booster outputs from FPE-6.1-RR9 and earlier versions. The Booster robustly prevents overlap conduction between Q1 and Q2 (and the regulator is current-limited anyway), so these are not needed. They actually dissipated very little. The output waveforms are cleaner without them. R7 in the boosters is 365$\Omega$, up from 200$\Omega$ in FPE-6.1-RR9, slowing the rise times and reducing its dissipation. The CCD model is a lumped-constant approximation to the distributed parallel clock resistance/capacitance, with parameters adjusted to match Jerry's measurements of 5.1 driver waveforms. 
+regulator_r22_dissipation = 3.597144e-03
+\end{verbatim}
+
+The circuit in these sims omits the 1$\Omega$ 1W resistors in the Booster outputs from FPE-6.1-RR9 and earlier versions. The Booster robustly prevents overlap conduction between Q1 and Q2 (and the regulator is current-limited anyway), so these are not needed. They actually dissipated very little. The output waveforms are cleaner without them. R7 in the boosters is 365$\Omega$, up from 200$\Omega$ in FPE-6.1-RR9, slowing the rise times and reducing its dissipation. The CCD model is a lumped-constant approximation to the distributed parallel clock resistance/capacitance, with parameters adjusted to match Jerry's measurements of 5.1 driver waveforms. 
 
 R7 remains the most problematic component, dissipating over 1/4W at the maximum clock frequency. It is a 1/10W component that really needs to be 1/2W.
 
@@ -181,6 +187,68 @@ For the Booster transistors, maximum dissipation is about 1/2W for Q1. Q2 is a b
 
 The regulator transistors Q1 and Q2 are thermally protected, and probably close to their limits at periods $\approx3\mu$s, so the actual power dissipation at periods in that range may be lower.
 
+\section*{8/7/2015 Stress Simulations of Charge Pump}
 
+The worrisome components turn out to be some resistors. At 26C/W thermal resistance, the MOSFETS can handle >1W dissipation apiece. The bipolars dissipate <100mW apiece, even driving short circuits. After much exploration, I got the following model:
+
+\begin{verbatim}
+With:
+R1, R4 = 12.1½
+R10 = 4.99½
+R12 = 182½
+R13 = 16.2½
+
+0mA	29.4V
+10mA	26.5V
+20mA	24.3V
+30mA	21.9V
+40mA	9.7V
+
+Positive output shorted:
+mean(vm#branch)*12-mean(vp#branch)*15v-mean(vl#branch)*5v = 1.670607e+00
+
+R10
+mean((xpp.ve-xpp.vac)^2)/4.99 = 1.440800e-01
+
+R11
+mean((5v-xpp.pr)^2)/100 = 2.976090e-01
+
+R13
+mean((xpp.pt-op)^2)/16.2 = 6.965483e-02
+
+Q5, Q6
+mean((xpp.vpp-xpp.ve)*v.xpp.vq5#branch) = 5.688234e-02
+mean((xpp.ve-xpp.vpm)*v.xpp.vq6#branch) = 6.403048e-02
+
+Negative output shorted:
+
+R12
+mean((xpp.nt-om)^2)/182 = 1.386983e-01
+
+High but not excessive load case: 
+
+positive out:
+mean(op)/2k+16ma = 2.730725e-02
+mean(op) = 2.261451e+01
+(mean(op)/2k+16ma)*(mean(op)) = 6.175400e-01
+
+negative out:
+mean(om)/50k = -1.11578e-03
+mean(om) = -5.57888e+01
+mean(om^2)/50k = 6.224791e-02
+
+Total power in:
+mean(vm#branch)*12-mean(vp#branch)*15v-mean(vl#branch)*5v = 1.073801e+00
+63% efficiency
+\end{verbatim}
+
+Thus, we need a bit of ratings increase on a few resistors (issue \#91).
+\begin{verbatim}
+R10 should be 1/4W 
+R11 should be 1/2W 
+R12 should be 1/4W 
+R13 should be 1/8W
+\end{verbatim}
 
  \end{document}
+ 
