@@ -17,7 +17,7 @@ C 40500 40600 1 0 0 vdc-1.sym
 T 41200 41250 5 10 1 1 0 0 1
 refdes=Vcc
 T 41200 41050 5 10 1 1 0 0 1
-value=DC 5V
+value=DC 5.2V
 }
 C 40600 41800 1 0 0 vcc-1.sym
 C 40700 40300 1 0 0 gnd-1.sym
@@ -79,20 +79,22 @@ N 52300 47700 53600 47700 4
 N 53600 45900 53600 47700 4
 N 53600 45900 52900 45900 4
 C 53200 45600 1 0 0 gnd-1.sym
-T 40400 50800 8 10 1 1 0 2 18
+T 40400 50800 8 10 1 1 0 2 20
 spice-epilog=
 * ccd output response time
 .param tos=100ns
 * sequencer step size
 .param step=1/15Meg
 * video voltage
-.param vv=1.4
+.param vv=2.5
 .csparam vv={vv}
 .control
 tran 10n 3.5u
 linearize
 print vv
-* print differential ADC input at 3.25 us
+* print differential ADC input at 1.65, 3.25 us
+* corresponding to vv and zero
+print xut.inp[165]-xut.inm[165]
 print xut.inp[325]-xut.inm[325]
 * quit
 .endc

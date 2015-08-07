@@ -91,7 +91,7 @@ ChainNoise : ChainNoise.cir Chain.cir max4636.cir max4636sw.cir \
 ChainTest : ChainTest.cir Chain.cir max4636.cir max4636sw.cir \
 		MAX4594.cir
 	$(NGSPICE) ChainTest.cir Chain.cir max4636.cir max4636sw.cir \
-		bf545c.mod LM6142A.MOD  Ad8038.cir MAX4452.mod 1N914B.mod J309.mod
+		LM6142A.MOD ADA4805.mod 1N914B.mod J309.mod
 
 opNoise : opNoise.cir
 	$(NGSPICE) opNoise.cir 
