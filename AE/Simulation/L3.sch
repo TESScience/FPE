@@ -1,14 +1,12 @@
 v 20130925 2
 C 40000 40000 0 0 0 Noqsi-title-B.sym
 {
-T 50000 40500 5 10 1 1 0 0 1
-date=20141207
 T 53900 40500 5 10 1 1 0 0 1
 rev=1
 T 55400 40200 5 10 1 1 0 0 1
 auth=jpd
 T 50200 40800 5 8 1 1 0 0 1
-fname=3phase.sch
+fname=L3.sch
 T 53200 41200 5 14 1 1 0 4 1
 title=Three Phase Clock Model
 }
