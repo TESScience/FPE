@@ -80,13 +80,10 @@ BoosterTest : BoosterTest.cir Booster.cir
 Booster.sch : ../Schematic/Booster.sch
 	cp $< $@
 
-chnoise : chnoise.cir
-	$(NGSPICE) chnoise.cir bf545c.mod
-
 ChainNoise : ChainNoise.cir Chain.cir max4636.cir max4636sw.cir \
 		MAX4594.cir
 	$(NGSPICE) ChainNoise.cir Chain.cir max4636.cir max4636sw.cir \
-		bf545c.mod LM6142A.MOD
+		J309.mod LM6142A.MOD ADA4805.mod
 
 ChainTest : ChainTest.cir Chain.cir max4636.cir max4636sw.cir \
 		MAX4594.cir
