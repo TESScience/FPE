@@ -122,4 +122,4 @@ DG403.cir : DG403.1.sch DG403.2.sch
 
 clean :
 	rm -f *.cir *.ps *.pdf \#* *~ Pump.sch Booster.sch Chain.1.sch Chain.2.sch \
-		ArtixPower.sch SerialRegulator.sch SerialDriver.sch
+		ArtixPower.sch SerialRegulator.sch SerialDriver.sch parallelstress.txt
