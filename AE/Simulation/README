@@ -1,0 +1,26 @@
+TESS FPE SPICE simulations
+
+In most cases, the top level schematic for a test is "test.sch". "make test" will build all of the circuit files required and load them into ngspice. In some cases, this will trigger a simulation run, while in others you'll need to command what you want interactively.
+
+Some of these are "test fixtures" for subsystem schematics in ../Schematics. In those cases, the Makefile makes copies of the source schematics in the Simulation directory. This is convenient if you want to make an experimental change.
+
+Some useful things to "make":
+
+FilterTest		Frequency/transient response of power input filters.
+ParallelRegStress	Behavior of parallel regulator versus load.
+ParallelStress		Parallel clocks at unreasonable operationg conditions
+	 		(interactive).
+parallelstress.txt	Parallel clocks at unreasonable operationg conditions
+			(scripted series at different clock frequencies).
+ParallelTest		"Normal" behavior of parallel clocks.
+RegReg			Check PSRR of LM6142-based voltage regulators
+SerialTest		"Normal" behavior of serial clocks
+SerialStress		Serial clocks at unreasonable operationg conditions
+PumpTest		Test charge pump that makes high voltages
+BoosterTest		Test parallel clock booster circuit
+ChainNoise		Static noise in measurement chain
+ChainTest		Clocked measurement chain
+AP			Artix power regulators, "normal" conditions.
+APSC			Artix power regulators, short circuited outputs.
+
+And, of course, "make clean" cleans up temporary files.

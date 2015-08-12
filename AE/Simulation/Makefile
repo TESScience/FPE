@@ -42,7 +42,6 @@ parallelstress.txt : ParallelStress.cir $(PARFILES) ParallelStressControl.spice
 
 ParallelTest : ParallelTest.cir $(PARFILES)
 	$(NGSPICE) $^
-		
 
 ParallelPair.sch : ../Schematic/ParallelPair.sch
 	cp $< $@
@@ -89,12 +88,6 @@ ChainTest : ChainTest.cir Chain.cir max4636.cir max4636sw.cir \
 		MAX4594.cir
 	$(NGSPICE) ChainTest.cir Chain.cir max4636.cir max4636sw.cir \
 		LM6142A.MOD ADA4805.mod 1N914B.mod J309.mod
-
-opNoise : opNoise.cir
-	$(NGSPICE) opNoise.cir 
-
-DampReg : DampReg.cir
-	$(NGSPICE) DampReg.cir LM6142A.MOD
 
 Chain.1.sch : ../Schematic/Chain.1.sch
 	cp $< $@
