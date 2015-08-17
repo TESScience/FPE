@@ -1,8 +1,23 @@
+#!/usr/bin/env python
 """
-A python module for managing operating parameters and housekeeping 
-channels for the TESS Focal Plane Electronics (FPE).
+The `tessfpe` python module provides datastructures for managing 
+operating parameters and housekeeping  channels for the TESS 
+Focal Plane Electronics (FPE).
 
-These are described in section 6 of the TESS FPE manual.
+Operating parameters and housekeeping channels are described in 
+Section 6 of the TESS FPE manual (TODO: Link to manual)
+
+This file exports two dictionaries:
+	- `operating_parameters`
+	- `housekeeping_parameters`
+
+Each of these dictionaries has labeled entries associated `high` and 
+`low` values, along with a `unit` and associated `address` value in memory
+
+>>> operating_parameters['ccd1_input_diode_high'] 
+{'high': 15.0, 'low': 0.0, 'unit': 'V', 'address': 70}
+>>> housekeeping_parameters['ccd1_input_diode_high'] 
+{'high': 16.5, 'low': -16.5, 'unit': 'V', 'address': 70}
 """
 
 import os
@@ -62,3 +77,6 @@ housekeeping_parameters = \
          for address_offset, ccd, group in read_data_tsv("HKmap.tsv")
          for entry_name, entry in get_housekeeping_parameters(
 		 group.replace(' ','') + ".tsv").iteritems()}
+
+if __name__ == "__main__":
+	__import__("doctest").testmod()
