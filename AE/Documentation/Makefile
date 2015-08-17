@@ -30,7 +30,10 @@ $(PDFS) :
 	make -C $(SCH) $(@:.pdf=.ps)
 	ps2pdf $(SCH)/$(@:.pdf=.ps) $@
 
-$(PINTEX) :
+$(SCH)/%.txt:
+	make -C $(SCH) $(notdir $@)
+
+$(PINTEX) : $(patsubst %.tex, $(SCH)/%.txt, $(PINTEX))
 	gawk -f pins2tex.awk < $(SCH)/$(@:.tex=.txt) >$@
 
 $(TSVTEX) :

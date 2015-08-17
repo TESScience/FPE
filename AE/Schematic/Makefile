@@ -288,7 +288,8 @@ Interface.bom.tsv : Interface.bom.txt $(PARTDB) Interface-omit.tsv
 
 clean : 
 	rm -rf *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
-		*.xls \#* *~ *.psch *.log *devfiles *.counts.txt *.stats.txt tmp.sch
+        *.xls *.psch *.log *devfiles *.counts.txt \
+        *.stats.txt tmp.sch *.U*.txt *~ \#* 
 
 ##########################
 
