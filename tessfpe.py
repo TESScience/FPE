@@ -25,7 +25,7 @@ import os
 # Data directory where TSV files live that hold parameters of interest
 data_dir = os.path.normpath(
 		os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                             "AE", "Data"))
+                             "FPE", "Data"))
 
 def read_data_tsv(tsv_file_name):
 	"""Reads a Tab Seperated Value file (TSV) 
