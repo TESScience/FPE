@@ -1,10 +1,7 @@
-language: python
 sudo: false
 addons:
   apt:
     packages:
     - geda-gschem
     - geda-gnetlist
-python:
-  - "2.7"
 script: make test
