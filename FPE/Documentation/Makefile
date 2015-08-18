@@ -59,4 +59,4 @@ tag.tex :
         fi > $@
 
 clean :
-	rm -f MPU.pdf $(PDFS) $(PINTEX) $(TSVTEX) *.out *.aux *.log stamp.tex date.txt StackMap.tex tag.tex FPE.pdf *.toc
+	rm -f MPU.pdf $(PDFS) $(PINTEX) $(TSVTEX) *.out *.aux *.log stamp.tex date.txt StackMap.tex tag.tex FPE.pdf *.toc *.lof *.lot *.synctex.gz
