@@ -4,6 +4,9 @@
 *.aux
 *.toc
 *.out
+*.lof
+*.lot
+*.synctex.gz
 date.txt
 stamp.tex
 tag.tex
