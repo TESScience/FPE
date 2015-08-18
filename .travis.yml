@@ -1,7 +1,10 @@
 language: python
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y make geda-gschem
+sudo: false
+addons:
+  apt:
+    packages:
+    - geda-gschem
+    - geda-gnetlist
 python:
   - "2.7"
 script: make test
