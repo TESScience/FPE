@@ -9,7 +9,7 @@ manual: $(MANUAL_DIR)/FPE.pdf
 $(MANUAL_DIR)/FPE.pdf: $(MANUAL_DIR)/FPE.tex
 	make -C $(dir $@) $(notdir $@)
 
-test: manual
+test:
 	./tessfpe.py
 
 clean:
