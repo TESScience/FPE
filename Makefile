@@ -4,7 +4,7 @@ all: manual
 
 manual: FPE/Documentation/FPE.pdf
 
-FPE/Documentation/FPE.pdf:
+FPE/Documentation/FPE.pdf: FPE/Documentation/FPE.tex
 	make -C $(dir $@) $(notdir $@)
 
 clean:
