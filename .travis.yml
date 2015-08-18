@@ -3,5 +3,5 @@ python:
   - "2.7"
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y geda-{gschem,gnetlist} a2ps
+  - sudo apt-get install -y geda-{gschem,gnetlist} a2ps texlive-latex-base
 script: make test
