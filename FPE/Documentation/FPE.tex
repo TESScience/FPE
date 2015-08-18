@@ -8,8 +8,10 @@ singlelinecheck=false % The magic that stops caption centering
 \usepackage{color}
 \usepackage{grffile}	% makes graphicx less fussy about file names
 \usepackage{longtable}
-\setlength{\LTleft}{0pt} % put longtables on the left
+%\setlength{\LTleft}{0pt} % put longtables on the left
 \usepackage{wrapfig}
+
+% Center Captions
 \usepackage[justification=centering]{caption}
 
 %% Trick to hide unused columns in tables
@@ -160,6 +162,7 @@ Figure \ref{Video.8} shows the control circuit for the trim heater. Q1 is an LM1
 
 J1, J2, J3, and J4 connect to the flexprint cables from CCD1, CCD2, CCD3, and CCD4, respectively. Table \ref{J1} shows the pinout of J1. The -1 at the end of most net names indicates that the net serves CCD1. For J2, the corresponding net names end in -2, etc. Table \ref{J5} shows the pinout for J5, which serves the external temperature sensors and heater. Table \ref{Stack} covers Js, the board stack connector.
 
+\begin{center}
 \begin{longtable}{|l|l|l|l|}
 \caption{Flexprint Connector} \label{J1} \\
 \hline
@@ -173,10 +176,12 @@ Connector & Pin & Net & Signal \\
 \hline \endfoot
 \input{CCD-51pin.tex}
 \end{longtable}
+\end{center}
 
 
 \begin{table}[ht!]
 \caption{Temperature Connector}
+\begin{center}
 \begin{tabular}{|l|l|l|l|}
 \hline
 Connector & Pin & Net & Comment \\
@@ -184,6 +189,7 @@ Connector & Pin & Net & Comment \\
 \input{TempConn.tex}
 \hline
 \end{tabular}
+\end{center}
 \label{J5}
 \end{table}
 
@@ -214,6 +220,7 @@ Figure \ref{Interface.1} shows the Artix FPGA (U4). Its pin connections are too 
 
 \begin{table}[ht!]
 \caption{FPGA Test Header}
+\begin{center}
 \begin{tabular}{|l|l|lH|} %Comment column hidden for now
 \hline
 Connector & Pin & Net & Comment \\
@@ -221,6 +228,7 @@ Connector & Pin & Net & Comment \\
 \input{Interface.J8.tex}
 \hline
 \end{tabular}
+\end{center}
 \label{IJ8}
 \end{table}
 
@@ -285,6 +293,7 @@ While the implementation details differ, the housekeeping channels and the DAC-c
 
 \begin{table}[ht!]
 \caption{Address Map}
+\begin{center}
 \begin{tabular}{|l|l|l|}
 \hline
 Address Offset & CCD & Group \\
@@ -292,6 +301,7 @@ Address Offset & CCD & Group \\
 \input{HKmap.tex}
 \hline
 \end{tabular}
+\end{center}
 \vspace{5pt}
 
 \label{hkmap}
@@ -301,6 +311,7 @@ The control ranges often go outside the actual range allowed for the parameters,
 \subsection{Bias Group}
 \begin{table}[ht!]
 \caption{Bias Group}
+\begin{center}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  \multicolumn{2}{c|}{Control} &  \multicolumn{2}{c|}{Range} &Unit & Relative \\
@@ -309,6 +320,7 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \input{BiasGroup.tex}
 \hline
 \end{tabular}
+\end{center}
 \vspace{5pt}
 
 \label{biastab}
@@ -317,6 +329,7 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \subsection{Clock Driver Group}
 \begin{table}[ht!]
 \caption{Clock Driver Group}
+\begin{center}
 \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
 \hline
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  \multicolumn{2}{c|}{Control} &  \multicolumn{2}{c|}{Range} &Unit & Relative \\
@@ -326,6 +339,7 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \input{ClockDriverGroup.tex}
 \hline
 \end{tabular}
+\end{center}
 \vspace{5pt}
 
 \label{clocktab}
@@ -334,6 +348,7 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 The Heater Group controls the three trim heaters on the lens barrel.
 \begin{table}[ht!]
 \caption{Heater Group}
+\begin{center}
 \begin{tabular}{|l|l|l|l|l|l|HHlH|}
 \hline
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  \multicolumn{2}{c|}{Control} &  &&Unit & Relative \\
@@ -342,12 +357,14 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \input{HeaterGroup.tex}
 \hline
 \end{tabular}
+\end{center}
 
 \label{heattab}
 \end{table}
 \subsection{Interface Group}
 \begin{table}[ht!]
 \caption{Interface Group}
+\begin{center}
 \begin{tabular}{|l|l|l|l|HHHHlH|}
 \hline
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  & &  & &Unit & Relative \\
@@ -356,11 +373,13 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \input{InterfaceGroup.tex}
 \hline
 \end{tabular}
+\end{center}
 \label{inttab}
 \end{table}
 \subsection{Thermal Group}
 \begin{table}[ht!]
 \caption{Thermal Group}
+\begin{center}
 \begin{tabular}{|l|l|l|l|HHHHlH|}
 \hline
 Address & Signal & \multicolumn{2}{c|}{Housekeeping} &  & &  & &Unit & Relative \\
@@ -369,6 +388,7 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 \input{ThermalGroup}
 \hline
 \end{tabular}
+\end{center}
 \label{ttab}
 \end{table}
 
