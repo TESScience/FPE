@@ -1,7 +1,7 @@
-sudo: false
-addons:
-  apt:
-    packages:
-    - geda-gschem
-    - geda-gnetlist
+language: python
+python:
+  - "2.7"
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y geda-{gschem,gnetlist}
 script: make test
