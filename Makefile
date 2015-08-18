@@ -1,8 +1,12 @@
-all: AE/Documentation/AE.pdf
+.PHONY: all manual clean
 
-AE/Documentation/AE.pdf:
+all: manual
+
+manual: FPE/Documentation/FPE.pdf
+
+FPE/Documentation/FPE.pdf:
 	make -C $(dir $@) $(notdir $@)
 
 clean:
-	make -C AE/Documentation clean
-	make -C AE/Schematic clean
+	make -C FPE/Documentation clean
+	make -C FPE/Schematic clean

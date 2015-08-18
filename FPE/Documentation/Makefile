@@ -18,10 +18,10 @@ PINTEX= CCD-51pin.tex TempConn.tex Interface.U4.tex \
 TSVTEX=BiasGroup.tex ClockDriverGroup.tex HKmap.tex \
 	HeaterGroup.tex ThermalGroup.tex InterfaceGroup.tex
 
-AE.pdf : AE.tex $(PINTEX) stamp.tex date.txt tag.tex $(PDFS) StackMap.tex $(TSVTEX)
-	$(PDFLATEX) AE.tex
-	$(PDFLATEX) AE.tex
-	$(PDFLATEX) AE.tex
+FPE.pdf : FPE.tex $(PINTEX) stamp.tex date.txt tag.tex $(PDFS) StackMap.tex $(TSVTEX)
+	$(PDFLATEX) FPE.tex
+	$(PDFLATEX) FPE.tex
+	$(PDFLATEX) FPE.tex
 
 .PHONY: pdfs
 pdfs: $(PDFS)
@@ -59,4 +59,4 @@ tag.tex :
         fi > $@
 
 clean :
-	rm -f MPU.pdf $(PDFS) $(PINTEX) $(TSVTEX) *.out *.aux *.log stamp.tex date.txt StackMap.tex tag.tex AE.pdf *.toc
+	rm -f MPU.pdf $(PDFS) $(PINTEX) $(TSVTEX) *.out *.aux *.log stamp.tex date.txt StackMap.tex tag.tex FPE.pdf *.toc
