@@ -1,4 +1,4 @@
-PDFLATEX=pdflatex
+PDFLATEX=cat /dev/null | pdflatex
 SCH=../Schematic
 DATA=../Data
 PDFS= ArtixPower.pdf Booster.pdf DriverSet.1.pdf DriverSet.2.pdf DriverSet.3.pdf DriverSet.4.pdf \
