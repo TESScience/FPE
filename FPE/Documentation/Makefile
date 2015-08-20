@@ -44,7 +44,8 @@ StackMap.tex: $(SCH)/StackMap.txt
                                -e 's/&&&/\&\\multicolumn{2}{l|}{}\&/g' \
                                -e 's/&&$$/\&\\multicolumn{2}{l|}{}/' \
                                -e 's/^&&/\\multicolumn{2}{|l|}{}\&/' \
-                               -e 's/$$/\&\ \\\\[2ex]\'$$'\n''\\hline/' > $@
+                               -e 's/$$/\&\\\\[2ex]\n\\hline/' \
+                               > $@
 
 date.txt :
 	git log -1 --format="%cd" > $@
