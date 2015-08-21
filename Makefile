@@ -23,14 +23,21 @@ setup.py: templates/setup.py.template
 	sed -e "s/<TAG>/$(VERSION)/g" $< > $@
 
 release: setup.py manual
-	if ! curl -s --head https://github.com/TESScience/FPE/tarball/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
+	# Commit the tagged release to github if necessary
+	if ! curl -s --head https://codeload.github.com/TESScience/FPE/legacy.tar.gz/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
 		if [[ $(GITHUB_REMOTE) == *[!\ ]* ]] ; then \
 			git push $(GITHUB_REMOTE) $(VERSION) ; \
 		else \
 			echo -e "\e[31mCould not find a remote that goes with \e[34mgit@github.com:TESScience/FPE.git\e[31m to push tag \e[32m$(VERSION)\e[31m to\e[0m" ; \
 		fi \
 	fi
-	python setup.py sdist upload -r pypi
+	# Upload the release to pypi if necessary
+	if ! curl -s --head https://testpypi.python.org/pypi/tessfpe/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
+		python setup.py sdist upload -r testpypi ; \
+	fi
+	if ! curl -s --head https://pypi.python.org/pypi/tessfpe/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
+		python setup.py sdist upload -r pypi ; \
+	fi
 
 test:
 	./tessfpe/__init__.py
