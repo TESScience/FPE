@@ -48,3 +48,5 @@ Where:
 
   **Hardware developers can safely ignore *D***
 
+  Releases must conform to the above specification, which is a subset of [PEP 440](https://www.python.org/dev/peps/pep-0440/), in order to be accepted by [pypi](https://pypi.python.org/pypi).  In the event that a tag *does not* conform to the above spec, it will not be possible to create a software release on pypi. 
+
