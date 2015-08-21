@@ -6,4 +6,4 @@ before_install:
   - sudo apt-get install -y geda-{gschem,gnetlist} a2ps texlive-latex-{base,extra,recommended}
 script: 
   - make test
-  - make manual
+  - make clean manual
