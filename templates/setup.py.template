@@ -1,7 +1,11 @@
-from distutils.core import setup
-setup(
+from distutils.core import setup, find_packages
+setup (
   name = 'tessfpe',
-  packages = ['tessfpe'], # this must be the same as the name above
+  packages = find_packages(),
+  package_data = {
+      # Add all of the TSV files in the package
+      '': ['*.tsv'],
+  },
   version = '<TAG>',
   description = 'Software to accompany the Focal Plane Electronics (FPE) for the Transiting Exoplanet Survey Satellite (TESS)',
   author = 'John Doty',
@@ -9,5 +13,4 @@ setup(
   url = 'https://github.com/TESScience/FPE', # use the URL to the github repo
   download_url = 'https://github.com/TESScience/FPE/tarball/<TAG>',
   keywords = ['tess', 'science', 'astronomy', 'exoplanet'],
-  classifiers = [],
 )
