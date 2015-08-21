@@ -33,9 +33,11 @@ release: setup.py manual
 	fi
 	# Upload the release to pypi if necessary
 	if ! curl -s --head https://testpypi.python.org/pypi/tessfpe/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
+		rm -rf dist/ tessfpe.egg-info/ ; \
 		python setup.py sdist upload -r testpypi ; \
 	fi
 	if ! curl -s --head https://pypi.python.org/pypi/tessfpe/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
+		rm -rf dist/ tessfpe.egg-info/ ; \
 		python setup.py sdist upload -r pypi ; \
 	fi
 
@@ -43,6 +45,6 @@ test:
 	./tessfpe/__init__.py
 
 clean:
-	rm -f FPD.pdf setup.py
+	rm -rf FPD.pdf setup.py dist/ tessfpe.egg-info/
 	make -C $(MANUAL_DIR) clean
 	make -C $(SCHEMATIC_DIR) clean
