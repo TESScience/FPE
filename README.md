@@ -31,3 +31,20 @@ To run the tests (which do sanity checks on the python module) type:
 ```bash
 make test
 ```
+
+Release
+-----------
+
+To make a release, first create a [git tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging) conforming to the following convention:
+
+<center>*A.B.C.devD*</center>
+
+Where:
+
+  - *A* is the major revision number
+  - *B* is the minor revision number
+  - *C* is the review release number
+  - *D* is the software release number
+
+  **Hardware developers can safely ignore *D***
+
