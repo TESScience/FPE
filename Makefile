@@ -4,13 +4,16 @@ SCHEMATIC_DIR=FPE/Schematic
 
 all: manual
 
-manual: $(MANUAL_DIR)/FPE.pdf
+manual: FPE.pdf
+
+FPE.pdf: $(MANUAL_DIR)/FPE.pdf
+	ln -s $< $@
 
 $(MANUAL_DIR)/FPE.pdf: $(MANUAL_DIR)/FPE.tex
 	make -C $(dir $@) $(notdir $@)
 
 test:
-	./tessfpe.py
+	./tessfpe/__init__.py
 
 clean:
 	make -C $(MANUAL_DIR) clean
