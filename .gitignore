@@ -2,3 +2,5 @@
 \#*
 .DS_Store
 setup.py
+MANIFEST
+dist/
