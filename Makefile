@@ -42,6 +42,6 @@ test:
 	./tessfpe/__init__.py
 
 clean:
-	rm -rf FPD.pdf setup.py dist/ tessfpe.egg-info/
+	rm -rf FPD.pdf setup.py dist/ tessfpe.egg-info/ MANIFEST
 	make -C $(MANUAL_DIR) clean
 	make -C $(SCHEMATIC_DIR) clean
