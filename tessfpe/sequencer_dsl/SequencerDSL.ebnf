@@ -1,12 +1,13 @@
-readout = defaults { ( sequence | program | parameter ) }+ hold ;
+readout = defaults { ( sequence | program | parameter ) }* hold ;
 
 (* No semantics at this level. *)
 
-defaults = defaults "{" { state_change }* "}" ;
+defaults = "defaults" "{" { state_change }* "}" ;
 
 (* Semantics: records the state resulting from applying <state_changes> to the all "off" state. This defines the initial state for the subsequent sequences. No output. *)
 
-sequence = "sequence" symbol "{" { step }+ "}" ;
+steps = { step }+ ;
+sequence = "sequence" symbol "{" >steps "}" ;
 
 (* Semantics: Add symbol to the sequencer symbol table associated with the next free address in sequencer memory before processing the <steps>. After processing the <steps>, associate the last used address in sequencer memory with the symbol also. *)
 
