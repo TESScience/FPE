@@ -53,4 +53,11 @@ expression = term { ( "+" | "-" ) term } ;
 term = value { ( "*" | "/" ) value } ;
 value = symbol | constant | "(" expression ")" ;
 
+constant = /[0-9]+/ ;
+symbol = /[a-zA-Z][a-zA-Z0-9_]*/ ; 
+bit_name = "P1-IA-1" | "P2-IA-1" | "P3-IA-1" | "P1-IA-2" | "P2-IA-2" | "P3-IA-2" | "P1-IA-3" | 
+           "P2-IA-3" | "P3-IA-3" | "P1-IA-4" | "P2-IA-4" | "P3-IA-4" | "P1-FS-1" | "P2-FS-1" | 
+           "P3-FS-1" | "P1-FS-2" | "P2-FS-2" | "P3-FS-2" | "P1-FS-3" | "P2-FS-3" | "P3-FS-3" | 
+           "P1-FS-4" | "P2-FS-4" | "P3-FS-4" | "P1-OR"   | "P2-OR"   | "P3-OR"   | "RG"      |
+           "ID"      | "Int"     | "DeInt"   | "Clamp"   | "CNV" ;
 (* Evaluate an expression. Symbols refer to the parameter namespace. *)
