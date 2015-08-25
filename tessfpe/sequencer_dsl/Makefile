@@ -1,12 +1,13 @@
+FPE_SCRIPTS=$(wildcard examples/*.fpe)
+FPE_TESTS=$(patsubst examples/%.fpe, %_test, $(FPE_SCRIPTS))
 .PHONY: all clean test
 
 all: SequencerDSLParser.py
 
-test: SequencerDSLParser.py
-	@for ex in $(CURDIR)/examples/*.fpe ; do \
-		echo Testing $(notdir $$ex) ; \
-		./__init__.py $$ex && echo $(notdir $$ex) okay ; \
-	done
+%_test: examples/%.fpe SequencerDSLParser.py
+	./__init__.py $<
+
+test: $(FPE_TESTS) 
 
 SequencerDSLParser.py: SequencerDSL.ebnf
 	grako $< -o $@
