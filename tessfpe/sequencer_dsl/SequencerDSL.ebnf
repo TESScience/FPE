@@ -1,64 +1,56 @@
-readout = defaults { ( sequence | program | parameter ) }* hold ;
+@@comments :: ?/\/\*.*?\*\//?
+@@eol_comments :: ?/\/\/.*?$/?
 
-(* No semantics at this level. *)
+(* Semantics for defaults: records the state resulting from 
+   applying <state_changes> to the all "off" state. This 
+   defines the initial state for the subsequent sequences. 
+   No output. *)
+defaults = "defaults" "{" default:state_changes "}" ;
 
-defaults = "defaults" "{" { state_change }* "}" ;
+(* Semantics for hold: Emit a program instruction to execute 
+   the sequence identified  by symbol count times. The 
+   instruction should have the HOLD bit set, and 
+   DATA_TYPE of no_data. *)
+hold = "hold" hold:symbol ;
 
-(* Semantics: records the state resulting from applying <state_changes> to the all "off" state. This defines the initial state for the subsequent sequences. No output. *)
+(* Top level rule *)
+readout = {parameter}* >defaults body:{ ( sequence | parameter ) }* >hold $ ;
 
-steps = { step }+ ;
-sequence = "sequence" symbol "{" >steps "}" ;
-
-(* Semantics: Add symbol to the sequencer symbol table associated with the next free address in sequencer memory before processing the <steps>. After processing the <steps>, associate the last used address in sequencer memory with the symbol also. *)
-
-(* No semantics at this level. *)
-
-step = { state_change }* "step" [ ";" ] ;
-
-(* Semantics: starting with the default state, apply the state changes. When done, emit the resulting state to the next available sequencer memory location and increment the counter that keeps track of it. *)
-
-(* Semantics: bit_name must be the name of a sequencer bit from Section 5.2.2 of the the FPGA document. Change the state accordingly. *)
+(* Semantics for state_change: must be the name of a sequencer bit 
+   from Section 5.2.2 of the the FPGA document. 
+   Change the state accordingly. *)
+state_changes = { state_change }* ;
 state_change = bit_name ( "high" | "low" ) ;
+bit_name = "P1-IA-1" | "P2-IA-1" | "P3-IA-1" | "P1-IA-2" | "P2-IA-2" | 
+           "P3-IA-2" | "P1-IA-3" | "P2-IA-3" | "P3-IA-3" | "P1-IA-4" | 
+           "P2-IA-4" | "P3-IA-4" | "P1-FS-1" | "P2-FS-1" | "P3-FS-1" | 
+           "P1-FS-2" | "P2-FS-2" | "P3-FS-2" | "P1-FS-3" | "P2-FS-3" | 
+           "P3-FS-3" | "P1-FS-4" | "P2-FS-4" | "P3-FS-4" | "P1-OR"   | 
+           "P2-OR"   | "P3-OR"   | "RG"      | "ID"      | "Int"     | 
+           "DeInt"   | "Clamp"   | "CNV"     | "P1-U"    | "P2-U"    | 
+           "P3-U" ;
 
-program = ( frame | loop ) ;
+symbol = /[a-zA-Z][a-zA-Z0-9_]*/ ; 
 
-frame = "frame" "{" { loop } "}" ;
-
-(* Semantics: Program code emitted within a frame block should have the FRAME bit set. Outside a frame block the bit should be clear. *)
-
-loop = ( do | data ) ;
-
-(* No semantics at this level. *)
-
-do = "do" count "{" { data }+ "}" ;
-
-(* Save the current program location as top of loop. After compiling the data instructions, emit a program instruction with the given count, RPT_TYPE=1, back to top of loop. *)
-
-count = "(" expression ")" ;
-
-(* Evaluate the expression for the caller. *)
-
-data = ( "pixel_data" | "no_data" ) count symbol [ ";" ] ;
-
-(* Emit a program instruction to execute the sequence identified by symbol count times. The keyword determines the DATA_TYPE field. *)
-
-hold = "hold" symbol [ ";" ] ;
-
-(* Emit a program instruction to execute the sequence identified by symbol count times. The instruction should have the HOLD bit set, and DATA_TYPE of no_data. *)
-
-parameter = "parameter" symbol "=" expression ;
+(* Semantics for sequence: Add symbol to the sequencer symbol 
+   table associated with the next free address in sequencer 
+   memory before processing the <steps>. After processing the 
+   <steps>, associate the last used address in sequencer 
+   memory with the symbol also. *)
+single_step = "step" ;
+multi_step = "step" "(" steps:expression ")" ;
+steps = {(single_step | multi_step)}+ ;
+signal = state_changes steps ;
+signals = {signal}+ ;
+sequence = "sequence" name:symbol "{" value:signals "}" ;
 
 (* Set the value of a symbol in the parameter namespace. *)
-
-expression = term { ( "+" | "-" ) term } ;
-term = value { ( "*" | "/" ) value } ;
-value = symbol | constant | "(" expression ")" ;
-
+parameter = "parameter" name:symbol "=" value:expression ;
+expression = add | subtract | multiply | divide | value ;
+add = value "+" value ;
+subtract = value "-" value ;
+multiply = value "*" value ;
+divide = value "/" value ;
+value = value:predefined_symbol | value:constant | "(" value:expression ")" ;
+predefined_symbol = symbol ;
 constant = /[0-9]+/ ;
-symbol = /[a-zA-Z][a-zA-Z0-9_]*/ ; 
-bit_name = "P1-IA-1" | "P2-IA-1" | "P3-IA-1" | "P1-IA-2" | "P2-IA-2" | "P3-IA-2" | "P1-IA-3" | 
-           "P2-IA-3" | "P3-IA-3" | "P1-IA-4" | "P2-IA-4" | "P3-IA-4" | "P1-FS-1" | "P2-FS-1" | 
-           "P3-FS-1" | "P1-FS-2" | "P2-FS-2" | "P3-FS-2" | "P1-FS-3" | "P2-FS-3" | "P3-FS-3" | 
-           "P1-FS-4" | "P2-FS-4" | "P3-FS-4" | "P1-OR"   | "P2-OR"   | "P3-OR"   | "RG"      |
-           "ID"      | "Int"     | "DeInt"   | "Clamp"   | "CNV" ;
-(* Evaluate an expression. Symbols refer to the parameter namespace. *)
