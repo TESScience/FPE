@@ -8,16 +8,27 @@ def strip_block_comments(text):
     return re.sub(block_comment_re, '', text)
 
 class Semantics:
+    "Semantics for the FPE DSL implemented in Grako"
 
     def __init__(self):
         self.parameters = {}
         self.sequences = {}
+        self.sequence_counter = 0
 
     def parameter(self, ast):
         self.parameters[ast["name"]] = ast["value"]
 
     def sequence(self, ast):
-        self.sequences[ast["name"]] = ast["value"]
+        new_sequencer_counter_val = self.sequence_counter + \
+                                    sum(s["steps"]
+                                        for s in ast["value"]
+                                        if "steps" in s)
+        self.sequences[ast["name"]] = {
+          "sequence": ast["value"],
+          "start": self.sequence_counter,
+          "end": new_sequencer_counter_val - 1
+        }
+        self.sequence_counter = new_sequencer_counter_val
 
     def single_step(_, __):
         return {"steps": 1}
@@ -36,7 +47,7 @@ class Semantics:
             return ast
 
     def subsequence(self, ast):
-        return self.sequences[ast]
+        return self.sequences[ast]["sequence"]
 
     def sequence_body(_, ast):
         def merge_sequences(s1, s2):
@@ -57,18 +68,24 @@ class Semantics:
     def value(_, ast):
         return ast["value"]
 
-    def multiply(_, ast):
-        a, _, b = ast
-        return a * b
+    def term(_, ast):
+        val, ops = ast
+        for op, val2 in zip(ops[::2], ops[1::2]):
+            if op == "*":
+                val *= val2
+            elif op == "/":
+                val /= val2
+            else:
+                raise Exception("Unsupported term operation: " + op)
+        return val
 
-    def divide(_, ast):
-        a, _, b = ast
-        return a / b
-
-    def subtract(_, ast):
-        a, _, b = ast
-        return a - b
-
-    def add(_, ast):
-        a, _, b = ast
-        return a + b
+    def expression(_, ast):
+        val, ops = ast
+        for op, val2 in zip(ops[::2], ops[1::2]):
+            if op == "-":
+                val -= val2
+            elif op == "+":
+                val += val2
+            else:
+                raise Exception("Unsupported expression operation: " + op)
+        return val

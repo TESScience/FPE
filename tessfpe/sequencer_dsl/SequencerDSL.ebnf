@@ -39,7 +39,7 @@ symbol = /[a-zA-Z][a-zA-Z0-9_]*/ ;
    sequencer memory with the symbol also. *)
 single_step = "step" ;
 multi_step = "step" "(" steps:expression ")" ;
-steps = {(single_step | multi_step)}+ ;
+steps = {(multi_step | single_step)}+ ;
 signal = state_changes steps ;
 signals = {signal}+ ;
 subsequence = symbol ;
@@ -69,14 +69,10 @@ do = "do" do:expression "{" body:{ data }+ "}" ;
    The keyword determines the DATA_TYPE field. *)
 data = DATA_TYPE:( "pixel_data" | "no_data" ) count:expression sequence:symbol ;
 
-
 (* Set the value of a symbol in the parameter namespace. *)
 parameter = "parameter" name:symbol "=" value:expression ;
-expression = add | subtract | multiply | divide | value ;
-add = value "+" value ;
-subtract = value "-" value ;
-multiply = value "*" value ;
-divide = value "/" value ;
-value = value:predefined_symbol | value:constant | "(" value:expression ")" ;
+expression = term {("+" | "-") term}*;
+term =  value {("*" | "/") value}*;
 predefined_symbol = symbol ;
+value = value:predefined_symbol | value:constant | "(" value:expression ")" ;
 constant = /[0-9]+/ ;
