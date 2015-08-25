@@ -14,7 +14,7 @@ defaults = "defaults" "{" default:state_changes "}" ;
 hold = "hold" hold:symbol ;
 
 (* Top level rule *)
-readout = {parameter}* >defaults body:{ ( sequence | parameter ) }* >hold $ ;
+readout = >defaults body:{ ( sequence | parameter | program ) }* >hold $ ;
 
 (* Semantics for state_change: must be the name of a sequencer bit 
    from Section 5.2.2 of the the FPGA document. 
