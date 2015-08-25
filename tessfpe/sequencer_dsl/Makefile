@@ -5,7 +5,7 @@ FPE_TESTS=$(patsubst examples/%.fpe, %_test, $(FPE_SCRIPTS))
 all: SequencerDSLParser.py
 
 %_test: examples/%.fpe SequencerDSLParser.py
-	./__init__.py $<
+	./parse.py $<
 
 test: $(FPE_TESTS) 
 
