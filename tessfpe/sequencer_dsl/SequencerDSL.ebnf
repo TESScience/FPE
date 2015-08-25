@@ -42,7 +42,9 @@ multi_step = "step" "(" steps:expression ")" ;
 steps = {(single_step | multi_step)}+ ;
 signal = state_changes steps ;
 signals = {signal}+ ;
-sequence = "sequence" name:symbol "{" value:signals "}" ;
+subsequence = symbol ;
+sequence_body = {(signals | subsequence)}+ ;
+sequence = "sequence" name:symbol "{" value:sequence_body "}" ;
 
 (* Set the value of a symbol in the parameter namespace. *)
 parameter = "parameter" name:symbol "=" value:expression ;

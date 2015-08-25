@@ -16,6 +16,9 @@ class Semantics:
     def parameter(self, ast):
         self.parameters[ast["name"]] = ast["value"]
 
+    def sequence(self, ast):
+        self.sequences[ast["name"]] = ast["value"]
+
     def single_step(_, __):
         return {"steps": 1}
 
@@ -31,6 +34,19 @@ class Semantics:
             return steps
         else:
             return ast
+
+    def subsequence(self, ast):
+        return self.sequences[ast]
+
+    def sequence_body(_, ast):
+        def merge_sequences(s1, s2):
+            if "steps" in s1[-1] and "steps" in s2[0]:
+               return s1[:-1] + \
+                      [{"steps": s1[-1]["steps"] + s2[0]["steps"]}] + \
+                      s2[1:]
+            else:
+               return s1 + s2
+        return reduce(merge_sequences, ast)
 
     def constant(_, ast):
         return int(ast)
