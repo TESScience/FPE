@@ -50,7 +50,7 @@ def sequence_to_int(s,current_value=0):
 
 def compile_sequences(ast):
     "Compile a dictionary of sequences into an 1024x36 array"
-    default_value = sequence_to_int(ast["default"])
+    default_value = sequence_to_int(ast["defaults"])
     out = [default_value for _ in range(1024)]
     sequences = ast["sequences"]
     for x in sequences.itervalues():
@@ -69,6 +69,10 @@ def compile_sequences(ast):
 if __name__ == "__main__":
     from parse import parse_file
     from sys import argv
-    from pprint import pprint
     ast = parse_file(argv[1])
-    pprint(compile_sequences(ast))
+    print '['
+    out = compile_sequences(ast)
+    for i in out[:-1]:
+        print '    0b{0:036b},'.format(i)
+    print '    0b{0:036b}'.format(i)
+    print ']'
