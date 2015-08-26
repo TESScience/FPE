@@ -15,6 +15,10 @@ class Semantics:
         self.sequences = {}
         self.sequence_counter = 0
 
+    def readout(_, ast):
+	return {"programs": [p for l in ast["programs"] for p in l],
+		"defaults": ast["defaults"]}
+
     def parameter(self, ast):
         self.parameters[ast["name"]] = ast["value"]
 
@@ -29,6 +33,12 @@ class Semantics:
           "end": new_sequencer_counter_val - 1
         }
         self.sequence_counter = new_sequencer_counter_val
+
+    def frame(_, ast):
+	out = ast["body"]
+	for d in out:
+	    d["frame"] = True
+	return out
 
     def single_step(_, __):
         return {"steps": 1}

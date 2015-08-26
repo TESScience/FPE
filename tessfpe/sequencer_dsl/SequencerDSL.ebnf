@@ -5,7 +5,7 @@
    applying <state_changes> to the all "off" state. This 
    defines the initial state for the subsequent sequences. 
    No output. *)
-defaults = "defaults" "{" default:state_changes "}" ;
+defaults = "defaults" "{" defaults:state_changes "}" ;
 
 (* Semantics for hold: Emit a program instruction to execute 
    the sequence identified  by symbol count times. The 
@@ -14,7 +14,7 @@ defaults = "defaults" "{" default:state_changes "}" ;
 hold = "hold" hold:symbol ;
 
 (* Top level rule *)
-readout = >defaults body:{ ( sequence | parameter | program ) }* >hold $ ;
+readout = >defaults programs:{ ( sequence | parameter | program ) }* >hold $ ;
 
 (* Semantics for state_change: must be the name of a sequencer bit 
    from Section 5.2.2 of the the FPGA document. 
@@ -53,7 +53,7 @@ program = ( frame | not_frame ) ;
    block should have the FRAME bit set. Outside a frame block 
    the bit should be clear. *)
 frame = "frame" "{" body:{ loop }* "}" ;
-not_frame = loop;
+not_frame = {loop}+;
 
 loop = ( do | not_do ) ;
 not_do = data ;
@@ -67,7 +67,7 @@ do = "do" do:expression "{" body:{ data }+ "}" ;
 (* Semantics for data: emit a program instruction to execute i
    the sequence identified by symbol count times. 
    The keyword determines the DATA_TYPE field. *)
-data = DATA_TYPE:( "pixel_data" | "no_data" ) count:expression sequence:symbol ;
+data = DATA_TYPE:( "pixel_data" | "no_data" ) RPT:expression sequence:symbol ;
 
 (* Set the value of a symbol in the parameter namespace. *)
 parameter = "parameter" name:symbol "=" value:expression ;
