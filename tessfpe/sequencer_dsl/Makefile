@@ -6,6 +6,8 @@ all: SequencerDSLParser.py
 
 %_test: examples/%.fpe SequencerDSLParser.py
 	./parse.py $<
+	./sequence.py $<
+	./program.py $<
 
 test: $(FPE_TESTS) 
 

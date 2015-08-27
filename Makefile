@@ -39,7 +39,7 @@ release: setup.py manual
 	fi
 
 test:
-	./tessfpe/__init__.py
+	make -C tessfpe test
 
 clean:
 	rm -rf FPE.pdf setup.py MANIFEST dist/ tessfpe.egg-info/ 
