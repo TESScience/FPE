@@ -9,7 +9,7 @@ GITHUB_REMOTE=$(shell for i in $(shell git remote) ; do \
    fi ; \
 done) 
 
-all: manual 
+all: manual tessfpe/sequencer_dsl/SequencerDSLParser.py
 
 manual: FPE.pdf
 
@@ -21,6 +21,9 @@ $(MANUAL_DIR)/FPE.pdf: $(MANUAL_DIR)/FPE.tex
 
 setup.py: templates/setup.py.template
 	sed -e "s/<TAG>/$(VERSION)/g" $< > $@
+
+tessfpe/sequencer_dsl/SequencerDSLParser.py: 
+	make -C $(dir $@) $(notdir $@)
 
 release: setup.py manual
 	# Commit the tagged release to github if necessary
@@ -43,5 +46,6 @@ test:
 
 clean:
 	rm -rf FPE.pdf setup.py MANIFEST dist/ tessfpe.egg-info/ 
+	make -C tessfpe clean
 	make -C $(MANUAL_DIR) clean
 	make -C $(SCHEMATIC_DIR) clean
