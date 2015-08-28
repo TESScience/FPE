@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+"""
+A module that wraps grako's generated parser as well
+as the associated grammatical semantics for the FPE DSL.
+"""
+
 from __future__ import print_function
 
 def parse(text):

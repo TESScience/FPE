@@ -1,3 +1,8 @@
+"""
+A specification of the grammatical semantics for grako's
+generated parser for the FPE DSL
+"""
+
 def strip_block_comments(text):
     "Strips text of block comments"
     import re

@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+"""
+This python module compiles a sequence specified in the FPE DSL to a
+1024x36 array suitable for uploading to the TESS FPE Observatory Simulator
+"""
 
 sequencer_bits = {
   "P1-U" : 35,
@@ -49,7 +53,7 @@ def sequence_to_int(s,current_value=0):
     return out
 
 def compile_sequences(ast):
-    "Compile a dictionary of sequences into an 1024x36 array"
+    "Compile a dictionary of sequences into a 1024x36 array"
     default_value = sequence_to_int(ast["defaults"])
     out = [default_value for _ in range(1024)]
     sequences = ast["sequences"]
