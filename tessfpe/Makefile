@@ -1,8 +1,10 @@
 .PHONY: all clean
-all:
-	make -C sequencer_dsl all
+all: sequencer_dsl/SequencerDSLParser.py
 
-test:
+sequencer_dsl/SequencerDSLParser.py:
+	make -C $(dir $@) $(notdir $@)
+
+test: sequencer_dsl/SequencerDSLParser.py
 	./__init__.py
 	./simulator.py
 	make -C sequencer_dsl test
