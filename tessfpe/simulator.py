@@ -50,4 +50,9 @@ class Simulator(object):
         del self._program
 
 if __name__ == "__main__":
-    Simulator()
+    sim = Simulator()
+    from pprint import pprint
+    pprint(sim.program)
+    pprint(sim.ast)
+    pprint(sim.compiled_programs)
+    pprint(sim.compiled_sequences)
