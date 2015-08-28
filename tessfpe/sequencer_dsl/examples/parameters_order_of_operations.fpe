@@ -17,6 +17,8 @@ defaults {
          Int low DeInt low Clamp low CNV low
          }
 
+sequence pixcycle { step };
+
 parameter one = 1;
 parameter two = one * 2;
 parameter three = 1 + one * 2;

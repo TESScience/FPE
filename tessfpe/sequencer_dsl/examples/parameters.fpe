@@ -17,6 +17,8 @@ defaults {
          Int low DeInt low Clamp low CNV low
          }
 
+sequence pixcycle { step };
+
 parameter rows = 2048;
 parameter rows_again = 2048;
 parameter rows_again_again = rows;

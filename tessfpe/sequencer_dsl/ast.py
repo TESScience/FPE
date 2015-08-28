@@ -17,7 +17,8 @@ class Semantics:
 
     def readout(_, ast):
 	return {"programs": [p for l in ast["programs"] for p in l],
-		"defaults": ast["defaults"]}
+		"defaults": ast["defaults"],
+		"hold": ast["hold"]}
 
     def parameter(self, ast):
         self.parameters[ast["name"]] = ast["value"]

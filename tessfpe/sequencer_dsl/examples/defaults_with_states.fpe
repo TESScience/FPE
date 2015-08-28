@@ -14,4 +14,6 @@ defaults {
 	Int low DeInt low Clamp low CNV low
 	}
 
+sequence pixcycle { step } 
+
 hold pixcycle; /* clock serials between frames */

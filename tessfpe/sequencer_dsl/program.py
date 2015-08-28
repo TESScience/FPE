@@ -42,10 +42,24 @@ def compile_ordinary_program(prog, sequences):
     return [out]
 
 def compile_program(prog, sequences):
+    "Compile a program, either a do program or a regular program"
     if "do" in prog:
         return compile_do_program(prog, sequences)
     else:
         return compile_ordinary_program(prog, sequences)
+
+def hold_program(sequence_name, sequences):
+    "Compile a hold program into a number"
+    if sequence_name not in sequences:
+        raise Exception("Unknown sequence: " + sequence_name)
+    out = 0
+    start = sequences[sequence_name]["start"]
+    end = sequences[sequence_name]["end"]
+    out |= start << 37
+    out |= end << 27
+    out |= 1 << 3 # hold bit
+    out |= data_type_codes["no_data"] << 1
+    return [out]
 
 def number_programs(programs):
     idx = 0
@@ -66,7 +80,8 @@ def compile_programs(ast):
     sequences = ast["sequences"]
     number_programs(ast["programs"])
     return [y for x in ast["programs"]
-	      for y in compile_program(x, sequences)]
+	      for y in compile_program(x, sequences)] + \
+	   hold_program(ast["hold"], sequences)
 
 if __name__ == "__main__":
     from parse import parse_file
