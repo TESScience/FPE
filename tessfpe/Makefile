@@ -4,6 +4,7 @@ all:
 
 test:
 	./__init__.py
+	./simulator.py
 	make -C sequencer_dsl test
 
 clean:
