@@ -17,7 +17,7 @@ FPE.pdf: $(MANUAL_DIR)/FPE.pdf
 	rm -f $@ ; ln -s $< $@
 
 $(MANUAL_DIR)/FPE.pdf: $(MANUAL_DIR)/FPE.tex
-	make -C $(dir $@) $(notdir $@)
+	make -C $(dir $@) $(notdir $@) > /dev/null
 
 setup.py: templates/setup.py.template
 	sed -e "s/<TAG>/$(VERSION)/g" $< > $@
