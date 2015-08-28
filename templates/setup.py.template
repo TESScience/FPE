@@ -12,4 +12,7 @@ setup (
   author_email = 'jpd@noqsi.com',
   url = 'https://github.com/TESScience/FPE', # use the URL to the github repo
   download_url = 'https://github.com/TESScience/FPE/tarball/<TAG>',
+  install_requires=[
+      'grako>=3.6.3',
+  ],
 )
