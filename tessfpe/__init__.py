@@ -43,11 +43,13 @@ Specifically, the unused housekeeping channels are:
 [99, 100, 101, 102, 103, 104]
 """
 
-from data.operating_parameters import operating_parameters, \
-                                      operating_parameter_memory_map
+from data.operating_parameters import \
+    operating_parameters, \
+    operating_parameter_memory_map
 
-from data.housekeeping_channels import housekeeping_channels, \
-                                       housekeeping_channel_memory_map
+from data.housekeeping_channels import \
+    housekeeping_channels, \
+    housekeeping_channel_memory_map
 
 if __name__ == "__main__":
     import doctest
