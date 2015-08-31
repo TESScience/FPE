@@ -5,7 +5,8 @@ operating parameters and housekeeping channels for the TESS
 Focal Plane Electronics (FPE).
 
 Operating parameters and housekeeping channels are described in
-Section 6 of the TESS FPE manual. (TODO: Link to manual)
+Section 6 of the TESS FPE manual: 
+https://raw.githubusercontent.com/TESScience/FPE/master/FPE/Documentation/FPE.pdf
 
 This file exports two dictionaries:
     - `operating_parameters`

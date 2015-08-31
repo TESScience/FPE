@@ -1,7 +1,9 @@
 """
 This module gives a data structure wrapping the housekeeping channels
 for the TESS Focal Plane Electronics (FPE), as described in Section 6 of
-the manual. (TODO: Link to manual)
+the manual.
+
+https://raw.githubusercontent.com/TESScience/FPE/master/FPE/Documentation/FPE.pdf
 """
 
 from data import read_data_tsv

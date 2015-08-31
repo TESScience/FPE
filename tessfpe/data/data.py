@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 """
 This module wraps reading TSVs that are used to specify the
-TESS Focal Plane Electronics (FPE) design. (TODO: Link to manual)
+TESS Focal Plane Electronics (FPE) design.
+
+https://raw.githubusercontent.com/TESScience/FPE/master/FPE/Documentation/FPE.pdf
 """
 
 # Data directory where TSV files live that hold parameters of interest
