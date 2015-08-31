@@ -25,7 +25,7 @@ setup.py: templates/setup.py.template
 tessfpe/sequencer_dsl/SequencerDSLParser.py: 
 	make -C $(dir $@) $(notdir $@)
 
-release: setup.py manual
+release: setup.py manual tessfpe/sequencer_dsl/SequencerDSLParser.py
 	# Commit the tagged release to github if necessary
 	if ! curl -s --head https://codeload.github.com/TESScience/FPE/legacy.tar.gz/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
 		if [[ $(GITHUB_REMOTE) == *[!\ ]* ]] ; then \
