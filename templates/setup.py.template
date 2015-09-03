@@ -16,5 +16,6 @@ setup (
   download_url = 'https://github.com/TESScience/FPE/tarball/<TAG>',
   install_requires=[
       'grako>=3.6.3',
+      'sh>=1.11',
   ],
 )
