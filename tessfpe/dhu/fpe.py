@@ -16,11 +16,11 @@ class FPE(object):
 
         # Default memory configuration files
         self.fpe_wrapper_bin = os.path.join(_dir, "MemFiles", "FPE_Wrapper.bin")
-        self.sequencer_memory = os.path.join(_dir, "MemFiles", "Seq.mem")
-        self.register_memory = os.path.join(_dir, "MemFiles", "Reg.mem")
-        self.program_memory = os.path.join(_dir, "MemFiles", "Prg.mem")
-        self.operating_parameter_memory = os.path.join(_dir, "MemFiles", "CLV.mem")
-        self.housekeeping_memory = os.path.join(_dir, "MemFiles", "Hsk.mem")
+        self.sequencer_memory = os.path.join(_dir, "MemFiles", "Seq.bin")
+        self.register_memory = os.path.join(_dir, "MemFiles", "Reg.bin")
+        self.program_memory = os.path.join(_dir, "MemFiles", "Prg.bin")
+        self.operating_parameter_memory = os.path.join(_dir, "MemFiles", "CLV.bin")
+        self.housekeeping_memory = os.path.join(_dir, "MemFiles", "Hsk.bin")
         if initialize:
             self.preload()
 
