@@ -11,6 +11,10 @@ This project contains the design specification for the focal plane electronics f
 Manual
 ----------
 
+You can read the latest version of the manual here:
+
+[https://github.com/TESScience/FPE/raw/master/FPE/Documentation/FPE.pdf](https://github.com/TESScience/FPE/raw/master/FPE/Documentation/FPE.pdf)
+
 To build the TESS FPE manual, type:
 
 ```bash
