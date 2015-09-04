@@ -11,10 +11,7 @@ done)
 
 all: manual tessfpe/sequencer_dsl/SequencerDSLParser.py
 
-manual: FPE.pdf
-
-FPE.pdf: $(MANUAL_DIR)/FPE.pdf
-	rm -f $@ ; ln -s $< $@
+manual: $(MANUAL_DIR)/FPE.pdf
 
 $(MANUAL_DIR)/FPE.pdf: $(MANUAL_DIR)/FPE.tex
 	make -C $(dir $@) $(notdir $@) > /dev/null
@@ -45,7 +42,7 @@ test:
 	make -C tessfpe test
 
 clean:
-	rm -rf FPE.pdf setup.py MANIFEST dist/ tessfpe.egg-info/ 
+	rm -rf setup.py MANIFEST dist/ tessfpe.egg-info/ 
 	make -C tessfpe clean
 	make -C $(MANUAL_DIR) clean
 	make -C $(SCHEMATIC_DIR) clean
