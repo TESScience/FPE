@@ -4,7 +4,7 @@
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, number, debug=False, initialize=True):
+    def __init__(self, number, debug=False, preload=True):
         from fpesocketconnection import FPESocketConnection
         import os
         if not self.ping():
@@ -21,8 +21,13 @@ class FPE(object):
         self.program_memory = os.path.join(_dir, "MemFiles", "Prg.bin")
         self.operating_parameter_memory = os.path.join(_dir, "MemFiles", "CLV.bin")
         self.housekeeping_memory = os.path.join(_dir, "MemFiles", "Hsk.bin")
-        if initialize:
-            self.preload()
+        if preload:
+            self.upload_fpe_wrapper_bin()
+        self.upload_sequencer_memory()
+        self.upload_register_memory()
+        self.upload_program_memory()
+        self.upload_operating_parameter_memory()
+        self.upload_housekeeping_memory()
 
     def tftp_put(self, file_name, destination):
         """Upload a file to the FPE"""
@@ -44,8 +49,8 @@ class FPE(object):
             if not re.match(r'Sent [0-9]+ bytes in [0-9]+\.[0-9]+ seconds',
                             e.stdout):
                 raise e
-        # Wait for the fpe to give you a prompt after sending the file
-        self.connection.wait_for_prompt()
+        # Wait for the fpe to report the load is complete
+        self.connection.wait_for_pattern(r'.*Load complete\n\r')
 
     @staticmethod
     def ping():
@@ -54,6 +59,11 @@ class FPE(object):
         out = ping('-c', '1', '-t', '1', '192.168.100.1')
         return '1 packets transmitted, 1 packets received' in str(out)
 
+    def camrst(self):
+        """Reset the camera after running frames"""
+        # Is it just me, or shouldn't this be "Reset" not "Rest"?
+        return self.connection.send_command("camrst", pattern='FPE Rest complete')
+
     def get_cam_status(self):
         """Get the camera status"""
         return int(self.connection.send_command("cam_status")[13:], 16)
@@ -61,6 +71,19 @@ class FPE(object):
     def get_version(self):
         """Get the version of the Observatory Simulator DHU software"""
         return self.connection.send_command("version")
+
+    def get_cam_hsk(self):
+        """Get the camera HSK"""
+        import re
+        from ..data.housekeeping_channels import housekeeping_channel_memory_map
+        channels = 114
+        out = self.connection.send_command(
+            "cam_hsk",
+            pattern="Hsk\[[0-9]+\] = 0x[0-9a-f]+",
+            matches=channels
+        )
+        vals = [int(n, 16) for n in re.findall('0x[0-9a-f]+', out)]
+        return dict(zip(housekeeping_channel_memory_map, vals))
 
     @property
     def version(self):
@@ -80,44 +103,47 @@ class FPE(object):
 
     def upload_sequencer_memory(self):
         """Upload the Sequencer Memory to the FPE"""
+        #self.camrst()
         return self.tftp_put(
             self.sequencer_memory,
             "seqmem" + str(self.fpe_number))
 
     def upload_register_memory(self):
         """Upload the Register Memory to the FPE"""
+        #self.camrst()
         return self.tftp_put(
             self.register_memory,
             "regmem" + str(self.fpe_number))
 
     def upload_program_memory(self):
         """Upload the Program Memory to the FPE"""
+        #self.camrst()
         return self.tftp_put(
             self.program_memory,
             "prgmem" + str(self.fpe_number))
 
     def upload_operating_parameter_memory(self):
         """Upload the Operating Parameter Memory to the FPE"""
+        #self.camrst()
         return self.tftp_put(
             self.program_memory,
             "clvmem" + str(self.fpe_number))
 
     def upload_housekeeping_memory(self):
         """Upload the Operating Parameter Memory to the FPE"""
+        #self.camrst()
         return self.tftp_put(
             self.housekeeping_memory,
             "hskmem" + str(self.fpe_number))
 
-    def preload(self):
-        """Preload all of the memory to the FPE"""
-        self.upload_fpe_wrapper_bin()
-        self.upload_sequencer_memory()
-        self.upload_register_memory()
-        self.upload_program_memory()
-        self.upload_operating_parameter_memory()
-        self.upload_housekeeping_memory()
-
 
 if __name__ == "__main__":
-    fpe1 = FPE(1, debug=True)
-    fpe2 = FPE(2, debug=True)
+    # Note, to run this diagnostic the computer needs to be hooked up
+    fpe1 = FPE(1, debug=True, preload=False)
+    print fpe1.version
+    print hex(fpe1.cam_status)
+    print '--------------------\n', fpe1.get_cam_hsk()
+    #fpe2 = FPE(2, debug=True, preload=True)
+    #print fpe2.version
+    #print hex(fpe2.cam_status)
+    #print fpe2.get_cam_hsk()

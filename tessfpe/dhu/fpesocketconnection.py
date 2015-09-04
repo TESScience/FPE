@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 
-def is_prompt(text):
-    """Checks to see if text is an FPE prompt, returns a match object if so"""
-    import re
-    return re.match(r'FPE[1-9]> ', text)
-
 
 class FPESocketConnection(object):
     """An object for encapsulating an open socket connection with the Observatory Simulator"""
@@ -33,26 +28,43 @@ class FPESocketConnection(object):
         """Send a string to the FPE DHU controller"""
         self.socket.sendall((b'\n' + command + b'\n').encode())
 
-    def send_command(self, command, chars=1024, prompt_skips=10):
+    def send_command(self, command, chars=1024, matches=1, prompt_skips=10, pattern=None):
         """Send a command to the FPE"""
+        import re
         self.socket.sendall((command + b'\n').encode())
         data = ''
-        for _ in range(prompt_skips):
-            # Skip the prompt until we get real data
-            data = self.socket.recv(chars)
-            if self._debug:
-                print data,
-            if not is_prompt(data):
-                break
+        if pattern:
+            data = self.wait_for_pattern(
+                pattern,
+                matches=matches,
+                chars=chars)
+        else:
+            for _ in range(prompt_skips):
+                # Skip the prompt until we get real data
+                data = self.socket.recv(chars)
+                if self._debug:
+                    print data,
+                if not re.match(r'FPE[1-9]> ', data):
+                    break
         return data.rstrip('\n\r')
+
+    def wait_for_pattern(self, pattern, matches=1, chars=1024, seperator='\n'):
+        """Dumps output waiting for a specified regex pattern"""
+        import re
+        out = []
+        while len(out) < matches:
+            data = None
+            while data is None or \
+                    not re.match(pattern, data):
+                data = str(self.socket.recv(chars)).encode()
+                if self._debug:
+                    print data,
+            out += re.findall(pattern, data)
+        return seperator.join(out)
 
     def wait_for_prompt(self, chars=1024):
         """Dumps output waiting for the FPE Prompt"""
-        out = ""
-        while not is_prompt(out):
-            out = str(self.socket.recv(chars)).encode()
-            if self._debug:
-                print out,
+        return self.wait_for_pattern(r'FPE[1-9]> ', chars=chars)
 
     def get_prompt(self):
         """Gets the FPE prompt"""
