@@ -4,8 +4,9 @@ setup (
   packages = find_packages(),
   package_data = {
       'tessfpe': [
-                  'data/files/*.tsv', # Add all of the TSV files in the package
-                  'data/files/*.fpe'  # Add all of the preconfigured FPE programs in the package
+                  'data/files/*.tsv',   # Add all of the TSV files in the package
+                  'data/files/*.fpe',   # Add all of the preconfigured FPE programs in the package
+                  'dhu/MemFiles/*.bin'  # Add all of the binary files to be uploaded to the FPE
                  ],
   },
   version = '<TAG>',
