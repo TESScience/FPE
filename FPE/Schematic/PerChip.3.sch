@@ -248,13 +248,13 @@ C 51400 41800 1 0 0 capacitor.sym
 T 51600 42300 5 10 1 1 0 0 1
 refdes=C16
 T 51000 41700 5 10 1 1 0 0 1
-value=0.047uF
+value=0.1uF
 T 51400 41800 5 10 0 1 0 0 1
-footprint=0603
-T 51400 41800 5 10 0 1 0 0 1
-spec=50WVDC X7R
+footprint=0805
 T 51400 42700 5 10 0 0 0 0 1
 symversion=20090121
+T 51400 43200 5 10 0 1 0 0 1
+spec=50WVDC X7R
 }
 C 51600 43400 1 0 0 capacitor.sym
 {
@@ -264,6 +264,8 @@ T 51600 44300 5 10 0 0 0 0 1
 symversion=20090121
 T 52200 43700 5 10 1 1 0 0 1
 value=0.1uF
+T 51600 44800 5 10 0 1 0 0 1
+spec=16WVDC X7R
 }
 C 45000 48200 1 180 1 lp_opamp_dual.sym
 {
