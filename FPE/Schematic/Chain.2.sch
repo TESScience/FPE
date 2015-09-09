@@ -27,7 +27,7 @@ C 54000 43100 1 0 0 resistor.sym
 T 54200 43400 5 10 1 1 0 0 1
 refdes=R23
 T 54200 42900 5 10 1 1 0 0 1
-value=330
+value=332
 }
 C 55200 43000 1 0 0 capacitor.sym
 {
@@ -49,7 +49,7 @@ C 51400 43100 1 0 0 resistor.sym
 T 51600 43400 5 10 1 1 0 0 1
 refdes=R22
 T 51600 42900 5 10 1 1 0 0 1
-value=330
+value=332
 }
 C 52600 43000 1 0 0 capacitor.sym
 {
@@ -70,7 +70,7 @@ C 48600 43100 1 0 0 resistor.sym
 T 48800 43400 5 10 1 1 0 0 1
 refdes=R21
 T 48800 42900 5 10 1 1 0 0 1
-value=330
+value=332
 }
 C 49800 43000 1 0 0 capacitor.sym
 {
@@ -304,7 +304,7 @@ C 54000 44900 1 0 0 resistor.sym
 T 54200 45200 5 10 1 1 0 0 1
 refdes=R33
 T 54200 44700 5 10 1 1 0 0 1
-value=330
+value=332
 }
 C 55200 44800 1 0 0 capacitor.sym
 {
