@@ -11,7 +11,7 @@ DRIVERPRODUCTS = Driver.allegro Driver.devfiles Driver.bom.txt \
 	Driver.osmond Driver.stats.txt
 
 PRODUCTS = $(VIDEOPRODUCTS) $(INTERFACEPRODUCTS) $(DRIVERPRODUCTS) \
-	../Documentation/AE.pdf
+	../Documentation/AE.pdf counts.txt
 
 all : $(PRODUCTS)
 
@@ -24,6 +24,9 @@ release : $(PRODUCTS)
 ../Documentation/AE.pdf : ../Documentation/AE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
 	$(DRIVERDOCS)
 	make -C ../Documentation AE.pdf
+
+counts.txt : Video.bom.txt Driver.bom.txt Interface.bom.txt
+	awk -f countem.awk $^ | sort -nr >$@
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
