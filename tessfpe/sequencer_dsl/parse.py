@@ -7,7 +7,7 @@ as the associated grammatical semantics for the FPE DSL.
 from __future__ import print_function
 
 def parse(text):
-    "Parses some SequencerDSL text into an AST"
+    """Parses some SequencerDSL text into an AST"""
     from SequencerDSLParser import SequencerDSLParser
     from ast import strip_block_comments, Semantics
     comment_stripped_text = strip_block_comments(text)
@@ -21,7 +21,7 @@ def parse(text):
     return ast
 
 def parse_file(file_name):
-    "Parses a file containing SequencerDSL text into an AST"
+    """Parses a file containing SequencerDSL text into an AST"""
     with open(file_name) as f:
         return parse(f.read())
 

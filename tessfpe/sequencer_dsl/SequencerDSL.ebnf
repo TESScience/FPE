@@ -1,6 +1,8 @@
 @@comments :: ?/\/\*.*?\*\//?
 @@eol_comments :: ?/\/\/.*?$/?
 
+#include :: "Sequences.ebnf"
+
 (* Semantics for defaults: records the state resulting from 
    applying <state_changes> to the all "off" state. This 
    defines the initial state for the subsequent sequences. 
@@ -15,36 +17,6 @@ hold = "hold" hold:symbol ;
 
 (* Top level rule *)
 readout = >defaults programs:{ ( sequence | parameter | program ) }* >hold $ ;
-
-(* Semantics for state_change: must be the name of a sequencer bit 
-   from Section 5.2.2 of the the FPGA document. 
-   Change the state accordingly. *)
-state_changes = { state_change }* ;
-state_change = bit_name ( "high" | "low" ) ;
-bit_name = "P1-IA-1" | "P2-IA-1" | "P3-IA-1" | "P1-IA-2" | "P2-IA-2" | 
-           "P3-IA-2" | "P1-IA-3" | "P2-IA-3" | "P3-IA-3" | "P1-IA-4" | 
-           "P2-IA-4" | "P3-IA-4" | "P1-FS-1" | "P2-FS-1" | "P3-FS-1" | 
-           "P1-FS-2" | "P2-FS-2" | "P3-FS-2" | "P1-FS-3" | "P2-FS-3" | 
-           "P3-FS-3" | "P1-FS-4" | "P2-FS-4" | "P3-FS-4" | "P1-OR"   | 
-           "P2-OR"   | "P3-OR"   | "RG"      | "ID"      | "Int"     | 
-           "DeInt"   | "Clamp"   | "CNV"     | "P1-U"    | "P2-U"    | 
-           "P3-U" ;
-
-symbol = /[a-zA-Z][a-zA-Z0-9_]*/ ; 
-
-(* Semantics for sequence: Add symbol to the sequencer symbol 
-   table associated with the next free address in sequencer 
-   memory before processing the <sequence_body>. After processing 
-   the <sequence_body>, associate the last used address in 
-   sequencer memory with the symbol also. *)
-single_step = "step" ;
-multi_step = "step" "(" steps:expression ")" ;
-steps = {(multi_step | single_step)}+ ;
-signal = state_changes steps ;
-signals = {signal}+ ;
-subsequence = symbol ;
-sequence_body = {(signals | subsequence)}+ ;
-sequence = "sequence" name:symbol "{" value:sequence_body "}" ;
 
 (* Programs are essentially series of instructions *)
 program = ( frame | not_frame ) ;
@@ -68,11 +40,3 @@ do = "do" do:expression "{" body:{ data }+ "}" ;
    the sequence identified by symbol count times. 
    The keyword determines the DATA_TYPE field. *)
 data = DATA_TYPE:( "pixel_data" | "no_data" ) RPT:expression sequence:symbol ;
-
-(* Set the value of a symbol in the parameter namespace. *)
-parameter = "parameter" name:symbol "=" value:expression ;
-expression = term {("+" | "-") term}*;
-term =  value {("*" | "/") value}*;
-predefined_symbol = symbol ;
-value = value:predefined_symbol | value:constant | "(" value:expression ")" ;
-constant = /[0-9]+/ ;
