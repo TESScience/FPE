@@ -21,9 +21,9 @@ release : $(PRODUCTS)
 	cp Source_of_release_README ../../Releases/$(REV)/README
 	zip -r ../../Releases/$(REV).zip ../../Releases/$(REV)
 
-../Documentation/AE.pdf : ../Documentation/AE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
+../Documentation/FPE.pdf : ../Documentation/FPE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
 	$(DRIVERDOCS)
-	make -C ../Documentation AE.pdf
+	make -C ../Documentation FPE.pdf
 
 counts.txt : Video.bom.txt Driver.bom.txt Interface.bom.txt
 	awk -f countem.awk $^ | sort -nr >$@
