@@ -100,7 +100,11 @@ refdes=C3
 T 48100 47900 5 10 0 0 0 0 1
 symversion=20131108
 T 48700 46900 5 10 1 1 0 0 1
-value=620pF
+value=680pF
+T 48100 48100 5 10 0 0 0 0 1
+footprint=0603
+T 48100 48400 5 10 0 1 0 0 1
+spec=50WVDC X7R
 }
 C 48100 46400 1 0 0 resistor.sym
 {
