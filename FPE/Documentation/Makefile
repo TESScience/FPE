@@ -1,16 +1,6 @@
 PDFLATEX=cat /dev/null | pdflatex
 SCH=../Schematic
 DATA=../Data
-PDFS= ArtixPower.pdf Booster.pdf DriverSet.1.pdf DriverSet.2.pdf DriverSet.3.pdf DriverSet.4.pdf \
-	Interface.1.pdf Interface.pdf Interface.2.pdf Interface.3.pdf Interface.4.pdf Interface.5.pdf \
-	Interface.6.pdf Interface.7.pdf ParallelPair.pdf \
-	ParallelReg.pdf Pump.pdf SerialDriver.pdf SerialRegulator.pdf DrainRegulator.pdf \
-	Chain.1.pdf Chain.2.pdf PerChip.1.pdf PerChip.2.pdf PerChip.3.pdf PerChip.4.pdf \
-	PerChip.5.pdf PerChip.6.pdf PerChip.7.pdf PerChip.8.pdf Video.1.pdf Video.2.pdf \
-	Video.3.pdf Video.4.pdf Video.5.pdf Video.6.pdf Video.7.pdf Video.8.pdf \
-	Driver.1.pdf Driver.2.pdf Driver.3.pdf
-
-SCHPSS=$(patsubst %.pdf, $(SCH)/%.ps, $(PDFS))
 
 PINTEX= CCD-51pin.tex TempConn.tex Interface.U4.tex \
 	Interface.J8.tex Stack.tex
@@ -18,17 +8,20 @@ PINTEX= CCD-51pin.tex TempConn.tex Interface.U4.tex \
 TSVTEX=BiasGroup.tex ClockDriverGroup.tex HKmap.tex \
 	HeaterGroup.tex ThermalGroup.tex InterfaceGroup.tex
 
-FPE.pdf : FPE.tex $(PINTEX) stamp.tex date.txt tag.tex $(PDFS) StackMap.tex $(TSVTEX)
-	$(PDFLATEX) FPE.tex
-	$(PDFLATEX) FPE.tex
-	$(PDFLATEX) FPE.tex
+PDFS=Figs/ArtixPower.pdf Figs/Booster.pdf Figs/Chain.1.pdf Figs/Chain.2.pdf Figs/DrainRegulator.pdf Figs/Driver.1.pdf Figs/Driver.2.pdf Figs/Driver.3.pdf Figs/DriverSet.1.pdf Figs/DriverSet.2.pdf Figs/DriverSet.3.pdf Figs/DriverSet.4.pdf Figs/Interface.1.pdf Figs/Interface.2.pdf Figs/Interface.3.pdf Figs/Interface.4.pdf Figs/Interface.5.pdf Figs/Interface.6.pdf Figs/Interface.7.pdf Figs/Interface.pdf Figs/ParallelPair.pdf Figs/ParallelReg.pdf Figs/PerChip.1.pdf Figs/PerChip.2.pdf Figs/PerChip.3.pdf Figs/PerChip.4.pdf Figs/PerChip.5.pdf Figs/PerChip.6.pdf Figs/PerChip.7.pdf Figs/PerChip.8.pdf Figs/Pump.pdf Figs/SerialDriver.pdf Figs/SerialRegulator.pdf Figs/Video.1.pdf Figs/Video.2.pdf Figs/Video.3.pdf Figs/Video.4.pdf Figs/Video.5.pdf Figs/Video.6.pdf Figs/Video.7.pdf Figs/Video.8.pdf
 
-.PHONY: pdfs
+.PHONY: pdfs all clean
+
+all: FPE.pdf
 pdfs: $(PDFS)
 
-$(PDFS) :
-	make -C $(SCH) $(@:.pdf=.ps)
-	ps2pdf $(SCH)/$(@:.pdf=.ps) $@
+Figs/%.pdf :
+	make -C $(dir $@) $(notdir $@)
+
+FPE.pdf : FPE.tex $(PINTEX) stamp.tex date.txt tag.tex $(wildcard Figs/*.pdf) StackMap.tex $(TSVTEX) $(PDFS)
+	$(PDFLATEX) FPE.tex
+	$(PDFLATEX) FPE.tex
+	$(PDFLATEX) FPE.tex
 
 $(SCH)/%.txt:
 	make -C $(SCH) $(notdir $@)
@@ -44,7 +37,8 @@ StackMap.tex: $(SCH)/StackMap.txt
                                -e 's/&&&/\&\\multicolumn{2}{l|}{}\&/g' \
                                -e 's/&&$$/\&\\multicolumn{2}{l|}{}/' \
                                -e 's/^&&/\\multicolumn{2}{|l|}{}\&/' \
-                               -e 's/$$/\&\ \\\\[2ex]\'$$'\n''\\hline/' > $@
+                               -e 's/$$/\&\\\\[2ex]ⓝ\\hline/' \
+                         | tr 'ⓝ' '\n' > $@
 
 date.txt :
 	git log -1 --format="%cd" > $@
@@ -59,4 +53,5 @@ tag.tex :
         fi > $@
 
 clean :
-	rm -f MPU.pdf $(PDFS) $(PINTEX) $(TSVTEX) *.out *.aux *.log stamp.tex date.txt StackMap.tex tag.tex FPE.pdf *.toc *.lof *.lot *.synctex.gz
+	make -C Figs clean
+	rm -f $(PINTEX) $(TSVTEX) *.out *.aux *.log stamp.tex date.txt StackMap.tex tag.tex FPE.pdf *.toc *.lof *.lot *.synctex.gz
