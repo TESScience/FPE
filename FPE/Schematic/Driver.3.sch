@@ -75,7 +75,7 @@ spec=50WVDC X7R
 T 51100 46300 5 10 1 1 0 0 1
 refdes=C3
 T 51500 45700 5 10 1 1 0 0 1
-value=620pF
+value=680pF
 }
 C 50900 45200 1 0 0 resistor.sym
 {
