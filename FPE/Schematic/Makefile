@@ -290,8 +290,8 @@ Interface.bom.tsv : Interface.bom.txt $(PARTDB) Interface-omit.tsv
 	&& (awk -f screamBOM.awk $(PARTDB) bom=1 Interface.bom.txt >Interface.bom.tsv)
 
 clean : 
-	rm -rf *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
-        *.xls *.psch *.log *devfiles *.counts.txt CCD-connectors.txt Stack.txt \
+	rm -rf *.ps *.pdf *.bom*.txt *.bom.tsv *.drc.txt *.net.txt \
+        *.xls *.psch *.log *devfiles *counts.txt CCD-connectors.txt Stack.txt \
         *.stats.txt tmp.sch *.U*.txt *~ \#* 
 
 ##########################
