@@ -37,7 +37,7 @@ C 7000 83600 1 0 0 resistor.sym
 T 7400 83200 5 10 1 1 0 0 1
 refdes=R9
 T 7300 83400 5 10 1 1 0 0 1
-value=3.00k
+value=3.01k
 }
 C 7900 83000 1 0 0 resistor.sym
 {
@@ -113,14 +113,14 @@ C 12500 83500 1 0 0 resistor.sym
 T 12700 83800 5 10 1 1 0 0 1
 refdes=R12
 T 12800 83300 5 10 1 1 0 0 1
-value=3.00k
+value=3.01k
 }
 C 13400 83800 1 0 0 resistor.sym
 {
 T 13600 84100 5 10 1 1 0 0 1
 refdes=R10
 T 13700 83600 5 10 1 1 0 0 1
-value=3.00k
+value=3.01k
 }
 C 13400 82900 1 0 0 capacitor.sym
 {
@@ -237,7 +237,7 @@ C 13400 86500 1 0 0 resistor.sym
 T 14400 86500 5 10 1 1 0 0 1
 refdes=R4
 T 13500 86300 5 10 1 1 0 0 1
-value=3.00k
+value=3.01k
 }
 C 14200 86300 1 0 0 gnd-1.sym
 C 15300 85900 1 0 1 gnd-1.sym
@@ -267,7 +267,7 @@ C 14300 87100 1 180 0 resistor.sym
 T 14400 87300 5 10 1 1 180 0 1
 refdes=R15
 T 14000 87300 5 10 1 1 180 0 1
-value=3.00k
+value=3.01k
 }
 C 17000 87900 1 0 0 resistor.sym
 {
@@ -340,7 +340,7 @@ C 10100 85400 1 0 0 resistor.sym
 T 10300 85700 5 10 1 1 0 0 1
 refdes=R38
 T 10400 85200 5 10 1 1 0 0 1
-value=3.00k
+value=3.01k
 }
 N 5100 88100 11500 88100 4
 C 8900 86300 1 0 0 in-1.sym

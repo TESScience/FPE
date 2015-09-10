@@ -61,7 +61,7 @@ C 42400 47200 1 0 0 resistor.sym
 T 42600 47500 5 10 1 1 0 0 1
 refdes=R2
 T 42700 47000 5 10 1 1 0 0 1
-value=300k
+value=301k
 }
 C 42400 47900 1 0 0 resistor.sym
 {
@@ -222,7 +222,7 @@ C 46800 43300 1 0 0 resistor.sym
 T 47000 43600 5 10 1 1 0 0 1
 refdes=R9
 T 47100 43100 5 10 1 1 0 0 1
-value=300k
+value=301k
 }
 C 46800 44000 1 0 0 resistor.sym
 {
