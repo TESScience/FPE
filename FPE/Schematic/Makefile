@@ -11,7 +11,7 @@ DRIVERPRODUCTS = Driver.allegro Driver.devfiles Driver.bom.txt \
 	Driver.osmond Driver.stats.txt
 
 PRODUCTS = $(VIDEOPRODUCTS) $(INTERFACEPRODUCTS) $(DRIVERPRODUCTS) \
-	../Documentation/AE.pdf counts.txt
+	../Documentation/FPE.pdf counts.txt
 
 all : $(PRODUCTS)
 
