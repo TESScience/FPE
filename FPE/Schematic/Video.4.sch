@@ -15,7 +15,7 @@ title=Video Board
 C 41800 40400 1 0 0 PerChip.sym
 {
 T 44900 47300 5 20 1 1 0 3 1
-refdes=X4
+refdes=X4V
 }
 U 40500 42000 40500 48700 10 -1
 N 41800 48300 40700 48300 4
@@ -222,7 +222,7 @@ netname=HK56
 C 40200 48700 1 0 0 Flex.sym
 {
 T 41000 49300 5 10 1 1 0 0 1
-refdes=J4
+refdes=J4V
 T 40200 50100 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -261,13 +261,6 @@ C 48800 43500 1 270 0 busripper-1.sym
 C 48800 43100 1 270 0 busripper-1.sym
 C 43100 40700 1 270 0 busripper-1.sym
 C 42500 40700 1 270 0 busripper-1.sym
-C 47300 49500 1 0 0 StackConn.sym
-{
-T 47000 49400 5 10 1 1 0 0 1
-refdes=Js
-T 47300 50900 5 10 0 1 0 0 1
-symversion=20150327
-}
 N 48000 46700 48800 46700 4
 {
 T 48000 46600 5 10 1 1 0 1 1

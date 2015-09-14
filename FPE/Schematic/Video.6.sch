@@ -52,7 +52,7 @@ N 52700 45100 53900 45100 4
 C 53200 45100 1 0 0 Pump.sym
 {
 T 54900 48000 5 10 1 1 0 6 1
-refdes=PP
+refdes=PPV
 }
 N 55200 46400 55900 46400 4
 N 55900 46400 55900 48800 4
@@ -69,14 +69,14 @@ C 41900 48300 1 0 0 gp_opamp_dual.sym
 T 42200 51000 5 8 0 0 0 0 1
 symversion=1.0nicer
 T 42600 49000 5 10 1 1 0 0 1
-refdes=U15
+refdes=U15V
 }
 C 41100 48400 1 0 0 resistor.sym
 {
 T 41100 48400 5 10 0 0 0 0 1
 footprint=0603
 T 41300 48700 5 10 1 1 0 0 1
-refdes=R38
+refdes=R38V
 T 41300 48200 5 10 1 1 0 0 1
 value=11.0k
 }
@@ -85,7 +85,7 @@ C 42100 47000 1 0 0 resistor.sym
 T 42100 47000 5 10 0 0 0 0 1
 footprint=0603
 T 42300 47300 5 10 1 1 0 0 1
-refdes=R39
+refdes=R39V
 T 42300 46800 5 10 1 1 0 0 1
 value=10k
 }
@@ -99,14 +99,14 @@ value=MMBT2222A
 T 44200 48200 5 10 0 0 0 0 1
 model-name=MMBT2222A
 T 44800 48700 5 10 1 1 0 0 1
-refdes=Q2
+refdes=Q2V
 }
 C 43100 48600 1 0 0 resistor.sym
 {
 T 43100 48600 5 10 0 0 0 0 1
 footprint=0603
 T 43300 48900 5 10 1 1 0 0 1
-refdes=R40
+refdes=R40V
 T 43300 48400 5 10 1 1 0 0 1
 value=4.99k
 }
@@ -127,7 +127,7 @@ spec=1% 1/4W
 T 44000 50500 5 10 0 0 0 0 1
 footprint=1206
 T 43300 49900 5 10 1 1 0 0 1
-refdes=R41
+refdes=R41V
 T 43300 49400 5 10 1 1 0 0 1
 value=1.5k
 }
@@ -143,14 +143,14 @@ C 42200 40800 1 0 0 gp_opamp_dual_pwr.sym
 T 42400 42800 5 8 0 0 0 0 1
 symversion=1.0
 T 42850 41350 5 10 1 1 0 0 1
-refdes=U15
+refdes=U15V
 }
 C 42500 41700 1 0 0 capacitor.sym
 {
 T 42500 42600 5 10 0 0 0 0 1
 symversion=20090121
 T 43100 42000 5 10 1 1 0 0 1
-refdes=C34
+refdes=C34V
 T 43100 41700 5 10 1 1 0 0 1
 value=0.1uF
 T 42500 42800 5 10 0 0 0 0 1
@@ -174,14 +174,14 @@ symversion=1.0nicer
 T 41900 44800 5 10 0 0 0 0 1
 slot=2
 T 42600 45500 5 10 1 1 0 0 1
-refdes=U15
+refdes=U15V
 }
 C 41100 44900 1 0 0 resistor.sym
 {
 T 41100 44900 5 10 0 0 0 0 1
 footprint=0603
 T 41300 45200 5 10 1 1 0 0 1
-refdes=R42
+refdes=R42V
 T 41300 44700 5 10 1 1 0 0 1
 value=11.0k
 }
@@ -190,7 +190,7 @@ C 42100 43500 1 0 0 resistor.sym
 T 42100 43500 5 10 0 0 0 0 1
 footprint=0603
 T 42300 43800 5 10 1 1 0 0 1
-refdes=R43
+refdes=R43V
 T 42300 43300 5 10 1 1 0 0 1
 value=10k
 }
@@ -204,14 +204,14 @@ value=MMBT2222A
 T 44200 44700 5 10 0 0 0 0 1
 model-name=MMBT2222A
 T 44800 45200 5 10 1 1 0 0 1
-refdes=Q3
+refdes=Q3V
 }
 C 43100 45100 1 0 0 resistor.sym
 {
 T 43100 45100 5 10 0 0 0 0 1
 footprint=0603
 T 43300 45400 5 10 1 1 0 0 1
-refdes=R44
+refdes=R44V
 T 43300 44900 5 10 1 1 0 0 1
 value=4.99k
 }
@@ -232,7 +232,7 @@ spec=1% 1/4W
 T 44000 47000 5 10 0 0 0 0 1
 footprint=1206
 T 43300 46400 5 10 1 1 0 0 1
-refdes=R45
+refdes=R45V
 T 43300 45900 5 10 1 1 0 0 1
 value=1.5k
 }
@@ -266,7 +266,7 @@ symversion=20090121
 T 42100 46800 5 10 0 1 0 0 1
 spec=50WVDC NP0
 T 42200 48100 5 10 1 1 0 0 1
-refdes=C33
+refdes=C33V
 T 42600 47500 5 10 1 1 0 0 1
 value=47pF
 }
@@ -277,7 +277,7 @@ symversion=20090121
 T 42100 43300 5 10 0 1 0 0 1
 spec=50WVDC NP0
 T 42200 44600 5 10 1 1 0 0 1
-refdes=C35
+refdes=C35V
 T 42600 44000 5 10 1 1 0 0 1
 value=47pF
 }
@@ -290,7 +290,7 @@ C 41600 41800 1 0 0 resistor.sym
 T 41600 41800 5 10 0 0 0 0 1
 footprint=0603
 T 41800 42100 5 10 1 1 0 0 1
-refdes=R46
+refdes=R46V
 T 41800 41600 5 10 1 1 0 0 1
 value=49.9
 }

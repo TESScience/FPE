@@ -1,17 +1,9 @@
-VIDEOPRODUCTS = Video.allegro Video.devfiles Video.bom.txt \
-	Video.bom2.txt Video.counts.txt Video-Cirrexx.tsv Video.pads Video.osmond \
-	Video.stats.txt
 
-INTERFACEPRODUCTS = Interface.allegro Interface.devfiles \
-	Interface.bom.txt Interface.bom2.txt Interface.counts.txt \
-	Interface-Cirrexx.tsv Interface.pads Interface.osmond Interface.stats.txt
-
-DRIVERPRODUCTS = Driver.allegro Driver.devfiles Driver.bom.txt \
-	Driver.bom2.txt Driver.counts.txt Driver-Cirrexx.tsv Driver.pads \
-	Driver.osmond Driver.stats.txt
-
-PRODUCTS = $(VIDEOPRODUCTS) $(INTERFACEPRODUCTS) $(DRIVERPRODUCTS) \
-	../Documentation/FPE.pdf counts.txt
+PRODUCTS = Flex.allegro Flex.devfiles \
+	Flex.bom.txt Flex.bom2.txt Flex.counts.txt
+	
+#	Flex-Cirrexx.tsv Flex.pads Flex.osmond Flex.stats.txt \
+#	../Documentation/FPE.pdf
 
 all : $(PRODUCTS)
 
@@ -24,9 +16,6 @@ release : $(PRODUCTS)
 ../Documentation/FPE.pdf : ../Documentation/FPE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
 	$(DRIVERDOCS)
 	make -C ../Documentation FPE.pdf
-
-counts.txt : Video.bom.txt Driver.bom.txt Interface.bom.txt
-	awk -f countem.awk $^ | sort -nr >$@
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
@@ -63,38 +52,6 @@ PS2PDF=ps2pdf -sPAPERSIZE=letter
 # Files making up the part # database
 
 PARTDB=digikey.tsv maxim.tsv
-
-TESTDOCS=\
-	Video.chaintest.1.ps Video.chaintest.6.ps\
-	PerChip.1.ps PerChip.test.ps\
-	Chain.1.ps Chain.2.ps 
-
-TESTTOP=Video.chaintest.1.sch Video.chaintest.6.sch
-
-TESTSUB=\
-	PerChip.1.sch PerChip.test.sch\
-	Chain.1.sch Chain.2.sch
-
-TESTMERGE=Test-connectors.psch
-
-Test-connectors.psch : \
-	CCD-51pin.tsv Stack.txt
-	awk -f pins2gsch.awk $^ >$@
-
-Test.net.txt : $(TESTSCH) $(TESTMERGE) $(TESTSUB)
-	$(GNET) -g osmond -o $@ $(TESTTOP) $(TESTMERGE)
-
-Test.bom.txt : $(TESTSCH) $(TESTSUB) attribs
-	$(GNET) -g bom -o $@ $(TESTTOP)
-
-Test.bom2.txt : $(TESTSCH) $(TESTSUB) attribs
-	$(GNET) -g bom2 -o $@ $(TESTTOP)
-
-Test.counts.txt : Test.bom.txt
-	awk -f countem.awk Test.bom.txt | sort -nr >$@
-
-Test.ps : $(TESTDOCS)
-	$(A2PS)
 
 
 VIDEODOCS= \
@@ -141,56 +98,9 @@ Video : Video.pdf Video.allegro Video.bom.txt Video.bom2.txt Video.counts.txt Vi
 CCD-connectors.txt : CCD-51pin.txt
 	awk -f expand51.awk $< >$@
 
-Stack.txt: StackMap.txt
-	awk -f mkStack.awk $< >$@
-	
 Video-connectors.psch : \
-	CCD-connectors.txt TempConn.txt Stack.txt
+	CCD-connectors.txt TempConn.txt
 	awk -f pins2gsch.awk $^ >$@
-
-Video.allegro Video.devfiles: $(VIDEOSCH) $(VIDEOMERGE)
-	rm -rf devfiles Video.devfiles
-	$(GNET) -L . -l backward-compat.scm -m map-footprints.scm -m Flexdude-footprints.scm -g allegro -o $@ $(VIDEOTOP) $(VIDEOMERGE)
-	mv devfiles Video.devfiles
-
-Video.osmond : $(VIDEOSCH) $(VIDEOMERGE)
-	$(GNET) -g osmond -o $@ $(VIDEOTOP) $(VIDEOMERGE)
-
-Video.pads : $(VIDEOSCH) $(VIDEOMERGE)
-	$(GNET) -m map-footprints.scm -m SDPCB-footprints.scm -g pads -o $@ $(VIDEOTOP) $(VIDEOMERGE)
-
-Video.stats.txt : $(VIDEOSCH) $(VIDEOMERGE)
-	$(GNET) -L . -g stats -o $@ $(VIDEOTOP) $(VIDEOMERGE)
-
-Video.bom.txt : $(VIDEOSCH) attribs
-	$(GNET) -g bom -o $@ $(VIDEOTOP)
-
-Video.bom2.txt : $(VIDEOSCH) attribs
-	$(GNET) -g bom2 -o $@ $(VIDEOTOP)
-
-Video.counts.txt : Video.bom.txt
-	awk -f countem.awk Video.bom.txt | sort -nr >$@
-
-Video-Cirrexx.tsv : Video.bom2.txt CirrexxBOM.awk partnumbers.tsv
-	awk -f CirrexxBOM.awk partnumbers.tsv Video.bom2.txt >Video-Cirrexx.tsv
-
-Video.drc.txt: $(VIDEOSCH) $(VIDEOMERGE)
-	$(GNET) -g drc2 -o $@ $(VIDEOTOP) $(VIDEOMERGE)
-
-# Screaming Circuits BOM as a tsv
-
-Video.bom.tsv : Video.bom.txt $(PARTDB) video-omit.tsv
-	awk -f partcheck.awk $(PARTDB) video-omit.tsv bom=1 Video.bom.txt \
-	&& (awk -f screamBOM.awk $(PARTDB) bom=1 Video.bom.txt >Video.bom.tsv)
-
-# Partially populated version
-
-Video-1-CCD.bom.tsv : Video.bom.tsv
-	awk 'BEGIN{ FS="\t"}(!match($$2,"^J[2-4]$$"))&&(!match($$2,"^X[2-4]/")){print}' \
-		<Video.bom.tsv >Video-1-CCD.bom.tsv
-
-Video.ps : $(VIDEODOCS)
-	$(A2PS)
 
 INTERFACEDOCS= \
 	Booster.ps \
@@ -240,54 +150,13 @@ INTERFACESUB= \
 
 INTERFACEMERGE= \
 	Interface.J8.psch \
-	Stack.psch \
 	Interface.U4.psch \
 
 
 INTERFACESCH= $(INTERFACETOP) $(INTERFACESUB) $(INTERFACEMERGE)
 
-Interface : Interface.pdf Interface.allegro Interface.bom.txt Interface.counts.txt Interface.bom2.txt
-
 Interface.U4.txt: makeFPGApinmap.awk Artix-signal-map.tsv ArtixPinout.csv
 	awk -f makeFPGApinmap.awk Artix-signal-map.tsv ArtixPinout.csv >$@
-
-Interface.osmond : $(INTERFACESCH) $(INTERFACEMERGE)
-	$(GNET) -g osmond -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
-
-Interface.pads : $(INTERFACESCH) $(INTERFACEMERGE)
-	$(GNET) -m map-footprints.scm -m SDPCB-footprints.scm -g pads -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
-
-Interface.stats.txt : $(INTERFACESCH)
-	$(GNET) -L . -g stats -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
-
-Interface.allegro Interface.devfiles: $(INTERFACESCH) $(ITERFACEMERGE)
-	rm -rf devfiles Interface.devfiles
-	$(GNET) -L . -l backward-compat.scm -m map-footprints.scm -m Flexdude-footprints.scm -g allegro -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
-	mv devfiles Interface.devfiles
-
-Interface.bom.txt: $(INTERFACESCH) attribs
-	$(GNET) -g bom -o $@ $(INTERFACETOP)
-
-Interface.bom2.txt : $(INTERFACESCH) attribs
-	$(GNET) -g bom2 -o $@ $(INTERFACETOP)
-
-Interface.counts.txt : Interface.bom.txt
-	awk -f countem.awk Interface.bom.txt | sort -nr >$@
-	
-Interface-Cirrexx.tsv : Interface.bom2.txt CirrexxBOM.awk partnumbers.tsv
-	awk -f CirrexxBOM.awk partnumbers.tsv Interface.bom2.txt >Interface-Cirrexx.tsv
-
-Interface.drc.txt: $(INTERFACESCH) $(INTERFACEMERGE)
-	$(GNET) -g drc2 -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
-
-Interface.ps: $(INTERFACEDOCS)
-	$(A2PS)
-
-# Screaming Circuits BOM as a tsv
-
-Interface.bom.tsv : Interface.bom.txt $(PARTDB) Interface-omit.tsv
-	awk -f partcheck.awk $(PARTDB) Interface-omit.tsv bom=1 Interface.bom.txt \
-	&& (awk -f screamBOM.awk $(PARTDB) bom=1 Interface.bom.txt >Interface.bom.tsv)
 
 clean : 
 	rm -rf *.ps *.pdf *.bom*.txt *.bom.tsv *.drc.txt *.net.txt \
@@ -315,38 +184,41 @@ DRIVERTOP=\
 	Driver.2.sch \
 	Driver.3.sch
 
-DRIVERMERGE=Stack.psch
+DRIVERMERGE=
 
-Driver: Driver.pdf Driver.allegro Driver.bom.txt Driver.bom2.txt Driver.counts.txt
+FLEXSUB=$(VIDEOSUB) $(INTERFACESUB) $(DRIVERSUB)
+FLEXDOCS=$(VIDEODOCS) $(INTERFACEDOCS) $(DRIVERDOCS)
+FLEXTOP=$(VIDEOTOP) $(INTERFACETOP) $(DRIVERTOP)
+FLEXMERGE=$(VIDEOMERGE) $(INTERFACEMERGE) $(DRIVERMERGE)
 
-Driver.allegro Driver.devfiles: $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
-	rm -rf devfiles Driver.devfiles
-	$(GNET) -L . -l backward-compat.scm -m map-footprints.scm -m Flexdude-footprints.scm -g allegro -o $@ $(DRIVERTOP) $(DRIVERMERGE)
-	mv devfiles Driver.devfiles
+Flex.allegro Flex.devfiles: $(FLEXTOP) $(FLEXSUB) $(FLEXMERGE)
+	rm -rf devfiles Flex.devfiles
+	$(GNET) -L . -l backward-compat.scm -m map-footprints.scm -m Flexdude-footprints.scm -g allegro -o $@ $(FLEXTOP) $(FLEXMERGE)
+	mv devfiles Flex.devfiles
 
-Driver.osmond : $(DRIVERSCH) $(DRIVERMERGE)
-	$(GNET) -g osmond -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+Flex.osmond : $(FLEXSCH) $(FLEXMERGE)
+	$(GNET) -g osmond -o $@ $(FLEXTOP) $(FLEXMERGE)
 
-Driver.pads : $(DRIVERSCH) $(DRIVERMERGE)
-	$(GNET) -m map-footprints.scm -m SDPCB-footprints.scm -g pads -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+Flex.pads : $(FLEXSCH) $(FLEXMERGE)
+	$(GNET) -m map-footprints.scm -m SDPCB-footprints.scm -g pads -o $@ $(FLEXTOP) $(FLEXMERGE)
 
-Driver.bom.txt : $(DRIVERTOP) $(DRIVERSUB) attribs
-	$(GNET) -g bom -o $@ $(DRIVERTOP)
+Flex.bom.txt : $(FLEXTOP) $(FLEXSUB) attribs
+	$(GNET) -g bom -o $@ $(FLEXTOP)
 
-Driver.bom2.txt : $(DRIVERTOP) $(DRIVERSUB) attribs
-	$(GNET) -g bom2 -o $@ $(DRIVERTOP)
+Flex.bom2.txt : $(FLEXTOP) $(FLEXSUB) attribs
+	$(GNET) -g bom2 -o $@ $(FLEXTOP)
 
-Driver-Cirrexx.tsv : Driver.bom2.txt CirrexxBOM.awk partnumbers.tsv
-	awk -f CirrexxBOM.awk partnumbers.tsv Driver.bom2.txt >Driver-Cirrexx.tsv
+Flex-Cirrexx.tsv : Flex.bom2.txt CirrexxBOM.awk partnumbers.tsv
+	awk -f CirrexxBOM.awk partnumbers.tsv Flex.bom2.txt >Flex-Cirrexx.tsv
 
-Driver.counts.txt : Driver.bom.txt
-	awk -f countem.awk Driver.bom.txt | sort -nr >$@
+Flex.counts.txt : Flex.bom.txt
+	awk -f countem.awk Flex.bom.txt | sort -nr >$@
 
-Driver.ps : $(DRIVERDOCS)
+Flex.ps : $(FLEXDOCS)
 	$(A2PS)
 
-Driver.drc.txt: $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
-	$(GNET) -g drc2 -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+Flex.drc.txt: $(FLEXTOP) $(FLEXSUB) $(FLEXMERGE)
+	$(GNET) -g drc2 -o $@ $(FLEXTOP) $(FLEXMERGE)
 
-Driver.stats.txt : $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
-	$(GNET) -L . -g stats -o $@ $(DRIVERTOP) $(VIDEOMERGE)
+Flex.stats.txt : $(FLEXTOP) $(FLEXSUB) $(FLEXMERGE)
+	$(GNET) -L . -g stats -o $@ $(FLEXTOP) $(VIDEOMERGE)

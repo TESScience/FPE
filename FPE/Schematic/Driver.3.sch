@@ -16,13 +16,13 @@ N 47300 47000 50700 47000 4
 C 45600 45700 1 0 0 REF43.sym
 {
 T 47000 47300 5 10 1 1 0 6 1
-refdes=U1
+refdes=U1D
 }
 C 46200 45400 1 0 0 gnd-1.sym
 C 44900 47600 1 0 0 resistor.sym
 {
 T 45100 47900 5 10 1 1 0 0 1
-refdes=R1
+refdes=R1D
 T 45100 47300 5 10 1 1 0 0 1
 value=51.1
 }
@@ -31,7 +31,7 @@ C 47000 47500 1 0 0 bypass.sym
 T 47000 48400 5 10 0 0 0 0 1
 symversion=20131108
 T 47200 48000 5 10 1 1 0 0 1
-refdes=C1
+refdes=C1D
 T 47600 47500 5 10 1 1 0 0 1
 value=1uF
 }
@@ -49,7 +49,7 @@ C 44500 47700 1 180 0 busripper-1.sym
 C 51800 46700 1 0 0 resistor.sym
 {
 T 52000 47000 5 10 1 1 0 0 1
-refdes=R5
+refdes=R5D
 T 52100 46500 5 10 1 1 0 0 1
 value=1
 }
@@ -58,7 +58,7 @@ N 51800 46000 51800 46800 4
 C 49800 45200 1 0 0 resistor.sym
 {
 T 50200 45500 5 10 1 1 0 0 1
-refdes=R3
+refdes=R3D
 T 50000 44900 5 10 1 1 0 0 1
 value=14.7k
 }
@@ -73,14 +73,14 @@ footprint=0603
 T 50900 47200 5 10 0 1 0 0 1
 spec=50WVDC X7R
 T 51100 46300 5 10 1 1 0 0 1
-refdes=C3
+refdes=C3D
 T 51500 45700 5 10 1 1 0 0 1
 value=680pF
 }
 C 50900 45200 1 0 0 resistor.sym
 {
 T 51300 45500 5 10 1 1 0 0 1
-refdes=R4
+refdes=R4D
 T 51100 44900 5 10 1 1 0 0 1
 value=4.75k
 }
@@ -98,7 +98,7 @@ C 53500 45900 1 90 0 bypass.sym
 T 52600 45900 5 10 0 0 90 0 1
 symversion=20131108
 T 53200 46700 5 10 1 1 180 0 1
-refdes=C2
+refdes=C2D
 T 53700 46200 5 10 1 1 180 0 1
 value=1uF
 }
@@ -109,7 +109,7 @@ C 50500 48500 1 0 1 bypass10V.sym
 T 50500 49400 5 10 0 0 0 6 1
 symversion=20131216
 T 50000 48900 5 10 1 1 0 6 1
-refdes=C4
+refdes=C4D
 T 50600 48800 5 10 1 1 0 6 1
 value=0.1uF
 }
@@ -122,7 +122,7 @@ N 53500 48700 53000 48700 4
 C 49000 48600 1 0 1 resistor.sym
 {
 T 48800 48900 5 10 1 1 0 6 1
-refdes=R2
+refdes=R2D
 T 48800 48400 5 10 1 1 0 6 1
 value=51.1
 }
@@ -133,7 +133,7 @@ C 49000 47600 1 0 0 gp_opamp_dual_pwr.sym
 T 49200 49600 5 8 0 0 0 0 1
 symversion=1.0
 T 49650 48150 5 10 1 1 0 0 1
-refdes=U2
+refdes=U2D
 }
 C 50600 46400 1 0 0 gp_opamp_dual.sym
 {
@@ -142,7 +142,7 @@ symversion=1.0nicer
 T 50600 46400 5 10 0 0 0 0 1
 slot=2
 T 51300 47100 5 10 1 1 0 0 1
-refdes=U2
+refdes=U2D
 }
 N 49300 48500 49300 48700 4
 C 53400 48100 1 0 0 gp_opamp_dual.sym
@@ -150,22 +150,13 @@ C 53400 48100 1 0 0 gp_opamp_dual.sym
 T 53700 50800 5 8 0 0 0 0 1
 symversion=1.0nicer
 T 54100 48800 5 10 1 1 0 0 1
-refdes=U2
+refdes=U2D
 }
 C 52900 48400 1 0 0 gnd-1.sym
 T 50600 40200 9 10 1 0 0 0 1
 3
 T 52200 40200 9 10 1 0 0 0 1
 3
-C 43800 40400 1 0 0 StackConn.sym
-{
-T 44600 41000 5 10 1 1 0 0 1
-refdes=Js
-T 43800 41800 5 10 0 1 0 0 1
-symversion=20150327
-T 43800 41200 5 10 0 0 0 0 1
-footprint=RC422-200-201-3900
-}
 N 41800 48600 44100 48600 4
 {
 T 43900 48700 5 10 1 1 0 0 1
@@ -193,7 +184,7 @@ footprint=2915
 T 42100 47500 5 10 0 0 0 6 1
 spec=15WVDC, low R
 T 42000 47500 5 10 1 1 0 6 1
-refdes=C7
+refdes=C7D
 T 41900 47300 5 10 1 1 0 6 1
 value=100uF
 }
@@ -209,7 +200,7 @@ footprint=2915
 T 41800 49200 5 10 0 0 0 6 1
 spec=35WVDC
 T 41700 49200 5 10 1 1 0 6 1
-refdes=C5
+refdes=C5D
 T 41200 49200 5 10 1 1 0 6 1
 value=10uF
 }
@@ -225,7 +216,7 @@ footprint=2915
 T 41200 46300 5 10 0 0 0 0 1
 spec=25WVDC
 T 41300 46300 5 10 1 1 0 0 1
-refdes=C9
+refdes=C9D
 T 41600 46100 5 10 1 1 0 0 1
 value=33uF
 }
@@ -238,7 +229,7 @@ symversion=20131108
 T 43000 46800 5 10 0 0 180 0 1
 footprint=1812
 T 42200 47400 5 10 1 1 0 0 1
-refdes=C8
+refdes=C8D
 T 42700 47800 5 10 1 1 0 0 1
 value=4.7uF
 }
@@ -252,7 +243,7 @@ spec=25WVDC X7R
 T 43000 45600 5 10 0 0 180 0 1
 footprint=2225
 T 42700 46200 5 10 1 1 0 0 1
-refdes=C10
+refdes=C10D
 T 42700 46600 5 10 1 1 0 0 1
 value=3.3uF
 }
@@ -267,7 +258,7 @@ spec=50WVDC X7R
 T 42700 48500 5 10 0 0 180 0 1
 footprint=2225
 T 42400 49100 5 10 1 1 0 0 1
-refdes=C6
+refdes=C6D
 T 42400 49500 5 10 1 1 0 0 1
 value=2.2uF
 }
@@ -277,7 +268,7 @@ N 43900 47700 43000 47700 4
 C 47900 46000 1 0 0 lp_opamp_dual.sym
 {
 T 48600 46700 5 10 1 1 0 0 1
-refdes=U3
+refdes=U3D
 T 48200 48700 5 8 0 0 0 0 1
 symversion=1.0nicer
 }
@@ -288,7 +279,7 @@ N 49000 45500 49000 46400 4
 C 49100 44600 1 90 0 resistor.sym
 {
 T 48600 45400 5 10 1 1 180 0 1
-refdes=R6
+refdes=R6D
 T 48800 45100 5 10 1 1 180 0 1
 value=24.9k
 }
@@ -297,12 +288,12 @@ C 45900 49200 1 0 0 lp_opamp_dual_pwr.sym
 T 46100 51200 5 8 0 0 0 0 1
 symversion=1.0
 T 46550 49750 5 10 1 1 0 0 1
-refdes=U3
+refdes=U3D
 }
 C 46700 50100 1 0 0 capacitor.sym
 {
 T 46600 50400 5 10 1 1 0 0 1
-refdes=C11
+refdes=C11D
 T 46700 51000 5 10 0 0 0 0 1
 symversion=20090121
 T 47300 50400 5 10 1 1 0 0 1
@@ -325,7 +316,7 @@ N 55400 46000 55400 46400 4
 C 54400 42600 1 0 0 MUX08.sym
 {
 T 56100 45800 5 10 1 1 0 0 1
-refdes=U4
+refdes=U4D
 }
 N 55500 42600 55500 41900 4
 {
@@ -350,7 +341,7 @@ C 54500 46300 1 0 0 resistor.sym
 T 54500 46300 5 10 0 0 0 0 1
 footprint=0603
 T 54700 46600 5 10 1 1 0 0 1
-refdes=R8
+refdes=R8D
 T 54700 46100 5 10 1 1 0 0 1
 value=464
 }
@@ -363,7 +354,7 @@ symversion=20090121
 T 55400 46200 5 10 0 0 0 0 1
 spec=16WVDC X7R
 T 55600 46700 5 10 1 1 0 0 1
-refdes=C12
+refdes=C12D
 T 56000 46200 5 10 1 1 0 0 1
 value=0.1uF
 }
@@ -394,7 +385,7 @@ C 46900 44300 1 0 0 lp_opamp_dual.sym
 T 47200 47000 5 8 0 0 0 0 1
 symversion=1.0nicer
 T 47600 45000 5 10 1 1 0 0 1
-refdes=U3
+refdes=U3D
 T 46900 44300 5 10 0 0 0 0 1
 slot=2
 }
@@ -404,7 +395,7 @@ N 48000 44100 48000 44700 4
 C 48100 43200 1 90 0 resistor.sym
 {
 T 47600 44000 5 10 1 1 180 0 1
-refdes=R7
+refdes=R7D
 T 47800 43700 5 10 1 1 180 0 1
 value=24.9k
 }
@@ -418,7 +409,7 @@ C 44500 44900 1 180 0 busripper-1.sym
 C 52800 44000 1 0 0 resistor.sym
 {
 T 53000 44300 5 10 1 1 0 0 1
-refdes=R9
+refdes=R9D
 T 53000 43800 5 10 1 1 0 0 1
 value=604k
 }

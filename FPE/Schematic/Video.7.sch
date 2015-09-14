@@ -15,7 +15,7 @@ title=Video Board
 C 54300 46400 1 90 0 capacitor.sym
 {
 T 53800 46600 5 10 1 1 90 0 1
-refdes=C22
+refdes=C22V
 T 54700 47200 5 10 1 1 180 0 1
 value=22nF
 T 54300 46400 5 10 0 1 90 0 1
@@ -26,7 +26,7 @@ symversion=20090121
 C 52600 47200 1 0 0 resistor.sym
 {
 T 52800 47500 5 10 1 1 0 0 1
-refdes=R26
+refdes=R26V
 T 52800 47000 5 10 1 1 0 0 1
 value=10k
 T 52600 47200 5 10 0 0 0 0 1
@@ -41,7 +41,7 @@ netname=OG-A-4
 C 54700 47800 1 0 0 Flex.sym
 {
 T 55500 48400 5 10 1 1 0 0 1
-refdes=J4
+refdes=J4V
 T 54700 49200 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -50,7 +50,7 @@ C 55000 47300 1 270 0 busripper-1.sym
 C 54300 44900 1 90 0 capacitor.sym
 {
 T 53800 45100 5 10 1 1 90 0 1
-refdes=C23
+refdes=C23V
 T 54700 45700 5 10 1 1 180 0 1
 value=22nF
 T 54300 44900 5 10 0 1 90 0 1
@@ -61,7 +61,7 @@ symversion=20090121
 C 52600 45700 1 0 0 resistor.sym
 {
 T 52800 46000 5 10 1 1 0 0 1
-refdes=R27
+refdes=R27V
 T 52800 45500 5 10 1 1 0 0 1
 value=10k
 T 52600 45700 5 10 0 0 0 0 1
@@ -77,7 +77,7 @@ C 55000 45800 1 270 0 busripper-1.sym
 C 54300 43400 1 90 0 capacitor.sym
 {
 T 53800 43600 5 10 1 1 90 0 1
-refdes=C24
+refdes=C24V
 T 54700 44200 5 10 1 1 180 0 1
 value=22nF
 T 54300 43400 5 10 0 1 90 0 1
@@ -88,7 +88,7 @@ symversion=20090121
 C 52600 44200 1 0 0 resistor.sym
 {
 T 52800 44500 5 10 1 1 0 0 1
-refdes=R28
+refdes=R28V
 T 52800 44000 5 10 1 1 0 0 1
 value=10k
 T 52600 44200 5 10 0 0 0 0 1
@@ -104,7 +104,7 @@ C 55000 44300 1 270 0 busripper-1.sym
 C 54300 41900 1 90 0 capacitor.sym
 {
 T 53800 42100 5 10 1 1 90 0 1
-refdes=C25
+refdes=C25V
 T 54700 42700 5 10 1 1 180 0 1
 value=22nF
 T 54300 41900 5 10 0 1 90 0 1
@@ -115,7 +115,7 @@ symversion=20090121
 C 52600 42700 1 0 0 resistor.sym
 {
 T 52800 43000 5 10 1 1 0 0 1
-refdes=R29
+refdes=R29V
 T 52800 42500 5 10 1 1 0 0 1
 value=10k
 T 52600 42700 5 10 0 0 0 0 1
@@ -131,7 +131,7 @@ C 55000 42800 1 270 0 busripper-1.sym
 C 50700 46400 1 90 0 capacitor.sym
 {
 T 50200 46600 5 10 1 1 90 0 1
-refdes=C18
+refdes=C18V
 T 51100 47200 5 10 1 1 180 0 1
 value=22nF
 T 50700 46400 5 10 0 1 90 0 1
@@ -142,7 +142,7 @@ symversion=20090121
 C 49000 47200 1 0 0 resistor.sym
 {
 T 49200 47500 5 10 1 1 0 0 1
-refdes=R22
+refdes=R22V
 T 49200 47000 5 10 1 1 0 0 1
 value=10k
 T 49000 47200 5 10 0 0 0 0 1
@@ -157,7 +157,7 @@ netname=OG-A-3
 C 51100 47800 1 0 0 Flex.sym
 {
 T 51900 48400 5 10 1 1 0 0 1
-refdes=J3
+refdes=J3V
 T 51100 49200 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -166,7 +166,7 @@ C 51400 47300 1 270 0 busripper-1.sym
 C 50700 44900 1 90 0 capacitor.sym
 {
 T 50200 45100 5 10 1 1 90 0 1
-refdes=C19
+refdes=C19V
 T 51100 45700 5 10 1 1 180 0 1
 value=22nF
 T 50700 44900 5 10 0 1 90 0 1
@@ -177,7 +177,7 @@ symversion=20090121
 C 49000 45700 1 0 0 resistor.sym
 {
 T 49200 46000 5 10 1 1 0 0 1
-refdes=R23
+refdes=R23V
 T 49200 45500 5 10 1 1 0 0 1
 value=10k
 T 49000 45700 5 10 0 0 0 0 1
@@ -193,7 +193,7 @@ C 51400 45800 1 270 0 busripper-1.sym
 C 50700 43400 1 90 0 capacitor.sym
 {
 T 50200 43600 5 10 1 1 90 0 1
-refdes=C20
+refdes=C20V
 T 51100 44200 5 10 1 1 180 0 1
 value=22nF
 T 50700 43400 5 10 0 1 90 0 1
@@ -204,7 +204,7 @@ symversion=20090121
 C 49000 44200 1 0 0 resistor.sym
 {
 T 49200 44500 5 10 1 1 0 0 1
-refdes=R24
+refdes=R24V
 T 49200 44000 5 10 1 1 0 0 1
 value=10k
 T 49000 44200 5 10 0 0 0 0 1
@@ -220,7 +220,7 @@ C 51400 44300 1 270 0 busripper-1.sym
 C 50700 41900 1 90 0 capacitor.sym
 {
 T 50200 42100 5 10 1 1 90 0 1
-refdes=C21
+refdes=C21V
 T 51100 42700 5 10 1 1 180 0 1
 value=22nF
 T 50700 41900 5 10 0 1 90 0 1
@@ -231,7 +231,7 @@ symversion=20090121
 C 49000 42700 1 0 0 resistor.sym
 {
 T 49200 43000 5 10 1 1 0 0 1
-refdes=R25
+refdes=R25V
 T 49200 42500 5 10 1 1 0 0 1
 value=10k
 T 49000 42700 5 10 0 0 0 0 1
@@ -247,7 +247,7 @@ C 51400 42800 1 270 0 busripper-1.sym
 C 47200 46400 1 90 0 capacitor.sym
 {
 T 46700 46600 5 10 1 1 90 0 1
-refdes=C14
+refdes=C14V
 T 47600 47200 5 10 1 1 180 0 1
 value=22nF
 T 47200 46400 5 10 0 1 90 0 1
@@ -258,7 +258,7 @@ symversion=20090121
 C 45500 47200 1 0 0 resistor.sym
 {
 T 45700 47500 5 10 1 1 0 0 1
-refdes=R18
+refdes=R18V
 T 45700 47000 5 10 1 1 0 0 1
 value=10k
 T 45500 47200 5 10 0 0 0 0 1
@@ -273,7 +273,7 @@ netname=OG-A-2
 C 47600 47800 1 0 0 Flex.sym
 {
 T 48400 48400 5 10 1 1 0 0 1
-refdes=J2
+refdes=J2V
 T 47600 49200 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -282,7 +282,7 @@ C 47900 47300 1 270 0 busripper-1.sym
 C 47200 44900 1 90 0 capacitor.sym
 {
 T 46700 45100 5 10 1 1 90 0 1
-refdes=C15
+refdes=C15V
 T 47600 45700 5 10 1 1 180 0 1
 value=22nF
 T 47200 44900 5 10 0 1 90 0 1
@@ -293,7 +293,7 @@ symversion=20090121
 C 45500 45700 1 0 0 resistor.sym
 {
 T 45700 46000 5 10 1 1 0 0 1
-refdes=R19
+refdes=R19V
 T 45700 45500 5 10 1 1 0 0 1
 value=10k
 T 45500 45700 5 10 0 0 0 0 1
@@ -309,7 +309,7 @@ C 47900 45800 1 270 0 busripper-1.sym
 C 47200 43400 1 90 0 capacitor.sym
 {
 T 46700 43600 5 10 1 1 90 0 1
-refdes=C16
+refdes=C16V
 T 47600 44200 5 10 1 1 180 0 1
 value=22nF
 T 47200 43400 5 10 0 1 90 0 1
@@ -320,7 +320,7 @@ symversion=20090121
 C 45500 44200 1 0 0 resistor.sym
 {
 T 45700 44500 5 10 1 1 0 0 1
-refdes=R20
+refdes=R20V
 T 45700 44000 5 10 1 1 0 0 1
 value=10k
 T 45500 44200 5 10 0 0 0 0 1
@@ -336,7 +336,7 @@ C 47900 44300 1 270 0 busripper-1.sym
 C 47200 41900 1 90 0 capacitor.sym
 {
 T 46700 42100 5 10 1 1 90 0 1
-refdes=C17
+refdes=C17V
 T 47600 42700 5 10 1 1 180 0 1
 value=22nF
 T 47200 41900 5 10 0 1 90 0 1
@@ -347,7 +347,7 @@ symversion=20090121
 C 45500 42700 1 0 0 resistor.sym
 {
 T 45700 43000 5 10 1 1 0 0 1
-refdes=R21
+refdes=R21V
 T 45700 42500 5 10 1 1 0 0 1
 value=10k
 T 45500 42700 5 10 0 0 0 0 1
@@ -363,7 +363,7 @@ C 47900 42800 1 270 0 busripper-1.sym
 C 43600 46400 1 90 0 capacitor.sym
 {
 T 43100 46600 5 10 1 1 90 0 1
-refdes=C10
+refdes=C10V
 T 44000 47200 5 10 1 1 180 0 1
 value=22nF
 T 43600 46400 5 10 0 1 90 0 1
@@ -374,7 +374,7 @@ symversion=20090121
 C 41900 47200 1 0 0 resistor.sym
 {
 T 42100 47500 5 10 1 1 0 0 1
-refdes=R14
+refdes=R14V
 T 42100 47000 5 10 1 1 0 0 1
 value=10k
 T 41900 47200 5 10 0 0 0 0 1
@@ -389,7 +389,7 @@ netname=OG-A-1
 C 44000 47800 1 0 0 Flex.sym
 {
 T 44800 48400 5 10 1 1 0 0 1
-refdes=J1
+refdes=J1V
 T 44000 49200 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -398,7 +398,7 @@ C 44300 47300 1 270 0 busripper-1.sym
 C 43600 44900 1 90 0 capacitor.sym
 {
 T 43100 45100 5 10 1 1 90 0 1
-refdes=C11
+refdes=C11V
 T 44000 45700 5 10 1 1 180 0 1
 value=22nF
 T 43600 44900 5 10 0 1 90 0 1
@@ -409,7 +409,7 @@ symversion=20090121
 C 41900 45700 1 0 0 resistor.sym
 {
 T 42100 46000 5 10 1 1 0 0 1
-refdes=R15
+refdes=R15V
 T 42100 45500 5 10 1 1 0 0 1
 value=10k
 T 41900 45700 5 10 0 0 0 0 1
@@ -425,7 +425,7 @@ C 44300 45800 1 270 0 busripper-1.sym
 C 43600 43400 1 90 0 capacitor.sym
 {
 T 43100 43600 5 10 1 1 90 0 1
-refdes=C12
+refdes=C12V
 T 44000 44200 5 10 1 1 180 0 1
 value=22nF
 T 43600 43400 5 10 0 1 90 0 1
@@ -436,7 +436,7 @@ symversion=20090121
 C 41900 44200 1 0 0 resistor.sym
 {
 T 42100 44500 5 10 1 1 0 0 1
-refdes=R16
+refdes=R16V
 T 42100 44000 5 10 1 1 0 0 1
 value=10k
 T 41900 44200 5 10 0 0 0 0 1
@@ -452,7 +452,7 @@ C 44300 44300 1 270 0 busripper-1.sym
 C 43600 41900 1 90 0 capacitor.sym
 {
 T 43100 42100 5 10 1 1 90 0 1
-refdes=C13
+refdes=C13V
 T 44000 42700 5 10 1 1 180 0 1
 value=22nF
 T 43600 41900 5 10 0 1 90 0 1
@@ -463,7 +463,7 @@ symversion=20090121
 C 41900 42700 1 0 0 resistor.sym
 {
 T 42100 43000 5 10 1 1 0 0 1
-refdes=R17
+refdes=R17V
 T 42100 42500 5 10 1 1 0 0 1
 value=10k
 T 41900 42700 5 10 0 0 0 0 1
