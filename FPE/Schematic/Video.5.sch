@@ -283,7 +283,7 @@ C 53800 44700 1 180 1 busripper-1.sym
 C 40500 42800 1 0 0 TempConn.sym
 {
 T 41300 43400 5 10 1 1 0 0 1
-refdes=J5V
+refdes=J5
 T 40500 44200 5 10 0 1 0 0 1
 symversion=20090123
 }
@@ -390,7 +390,7 @@ U 41600 43100 49500 43100 10 -1
 C 52200 43100 1 0 0 Flex.sym
 {
 T 53000 43700 5 10 1 1 0 0 1
-refdes=J1V
+refdes=J1
 T 52200 44500 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -405,7 +405,7 @@ C 51900 43500 1 270 0 busripper-1.sym
 C 52200 42100 1 0 0 Flex.sym
 {
 T 53000 42700 5 10 1 1 0 0 1
-refdes=J2V
+refdes=J2
 T 52200 43500 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -420,7 +420,7 @@ C 51900 42500 1 270 0 busripper-1.sym
 C 52200 41200 1 0 0 Flex.sym
 {
 T 53000 41800 5 10 1 1 0 0 1
-refdes=J3V
+refdes=J3
 T 52200 42600 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -435,7 +435,7 @@ C 51900 41600 1 270 0 busripper-1.sym
 C 52200 40200 1 0 0 Flex.sym
 {
 T 53000 40800 5 10 1 1 0 0 1
-refdes=J4V
+refdes=J4
 T 52200 41600 5 10 0 1 0 0 1
 symversion=20140207
 }

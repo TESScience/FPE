@@ -222,7 +222,7 @@ netname=HK56
 C 40200 48700 1 0 0 Flex.sym
 {
 T 41000 49300 5 10 1 1 0 0 1
-refdes=J4V
+refdes=J4
 T 40200 50100 5 10 0 1 0 0 1
 symversion=20140207
 }

@@ -41,7 +41,7 @@ netname=OG-A-4
 C 54700 47800 1 0 0 Flex.sym
 {
 T 55500 48400 5 10 1 1 0 0 1
-refdes=J4V
+refdes=J4
 T 54700 49200 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -157,7 +157,7 @@ netname=OG-A-3
 C 51100 47800 1 0 0 Flex.sym
 {
 T 51900 48400 5 10 1 1 0 0 1
-refdes=J3V
+refdes=J3
 T 51100 49200 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -273,7 +273,7 @@ netname=OG-A-2
 C 47600 47800 1 0 0 Flex.sym
 {
 T 48400 48400 5 10 1 1 0 0 1
-refdes=J2V
+refdes=J2
 T 47600 49200 5 10 0 1 0 0 1
 symversion=20140207
 }
@@ -389,7 +389,7 @@ netname=OG-A-1
 C 44000 47800 1 0 0 Flex.sym
 {
 T 44800 48400 5 10 1 1 0 0 1
-refdes=J1V
+refdes=J1
 T 44000 49200 5 10 0 1 0 0 1
 symversion=20140207
 }
