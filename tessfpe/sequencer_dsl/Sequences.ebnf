@@ -1,6 +1,3 @@
-#include :: "State_Changes.ebnf"
-#include :: "Terms.ebnf"
-
 (* Semantics for sequence: Add symbol to the sequencer symbol
    table associated with the next free address in sequencer
    memory before processing the <sequence_body>. After processing

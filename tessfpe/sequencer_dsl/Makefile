@@ -14,5 +14,7 @@ test: $(FPE_TESTS)
 SequencerDSLParser.py: SequencerDSL.ebnf
 	grako $< -o $@
 
+SequenceParser.py: Sequenc
+
 clean:
 	rm -rf SequencerDSLParser.py *.pyc
