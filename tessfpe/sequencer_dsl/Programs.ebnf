@@ -1,0 +1,22 @@
+(* Programs are essentially series of instructions *)
+program = ( frame | not_frame ) ;
+
+(* Semantics for frame: Program code emitted within a frame
+   block should have the FRAME bit set. Outside a frame block
+   the bit should be clear. *)
+frame = "frame" "{" body:{ loop }* "}" ;
+not_frame = {loop}+;
+
+loop = ( do | not_do ) ;
+not_do = data ;
+
+(* Semantics for do: Save the current program location as top
+   of loop. After compiling the data instructions, emit a
+   program instruction with the given count, RPT_TYPE=1,
+   back to top of loop. *)
+do = "do" do:expression "{" body:{ data }+ "}" ;
+
+(* Semantics for data: emit a program instruction to execute i
+   the sequence identified by symbol count times.
+   The keyword determines the DATA_TYPE field. *)
+data = DATA_TYPE:( "pixel_data" | "no_data" ) RPT:expression sequence:symbol ;
