@@ -4,13 +4,8 @@
 #include :: "Terms.ebnf"
 #include :: "State_Changes.ebnf"
 #include :: "Sequences.ebnf"
+#include :: "Defaults.ebnf"
 #include :: "Programs.ebnf"
-
-(* Semantics for defaults: records the state resulting from 
-   applying <state_changes> to the all "off" state. This 
-   defines the initial state for the subsequent sequences. 
-   No output. *)
-defaults = "defaults" "{" defaults:state_changes "}" ;
 
 (* Semantics for hold: Emit a program instruction to execute 
    the sequence identified  by symbol count times. The 
