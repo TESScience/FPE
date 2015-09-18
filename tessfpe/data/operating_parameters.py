@@ -8,6 +8,7 @@ https://raw.githubusercontent.com/TESScience/FPE/master/FPE/Documentation/FPE.pd
 
 from data import read_data_tsv
 
+
 def get_operating_parameters(tsv_file_name):
     "Extract the operating parameters from a data TSV file"
     return {line[1].lower().replace(' ', '_'):
@@ -15,19 +16,20 @@ def get_operating_parameters(tsv_file_name):
                  "low": float(line[4]),
                  "high": float(line[5]),
                  "unit": line[8]}
-        for line in read_data_tsv(tsv_file_name)
-        if line[4] != '' and line[5] != ''}
+            for line in read_data_tsv(tsv_file_name)
+            if line[4] != '' and line[5] != ''}
+
 
 # Operating Parameters for the FPE
 operating_parameters = \
     {("ccd" + ccd + '_' if ccd != '' else '') + entry_name:
-     {"address": int(address_offset) + entry["address_offset"],
-      "low": entry["low"],
-      "high": entry["high"],
-      "unit": entry["unit"]}
-         for address_offset, ccd, group in read_data_tsv("HKmap.tsv")
-         for entry_name, entry in get_operating_parameters(
-         group.replace(' ','') + ".tsv").iteritems()}
+         {"address": int(address_offset) + entry["address_offset"],
+          "low": entry["low"],
+          "high": entry["high"],
+          "unit": entry["unit"]}
+     for address_offset, ccd, group in read_data_tsv("HKmap.tsv")
+     for entry_name, entry in get_operating_parameters(
+        group.replace(' ', '') + ".tsv").iteritems()}
 
 # Memory map for operating parameters
 operating_parameter_memory_map = [None for _ in range(128)]
