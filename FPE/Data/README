@@ -5,3 +5,7 @@ HKmap.tsv is the overall map for the FPE housekeeping/DAC address space. Columns
 BiasGroup.tsv, ClockDriverGroup.tsv, HeaterGroup.tsv, InterfaceGroup.tsv, and ThermalGroup.tsv give the info for the groups. Columns are:
 
 (Address Offset)	(Signal)	(HK Low)	(HK High)	(Control Low)	(Control High)	(Range Low)	(Range High)	(Unit)	(Relative To)
+
+DefaultParameters.tsv contains what jpd believes are reasonable operating parameters for a CCID80. Columns are:
+
+(Signal)	(Value)
