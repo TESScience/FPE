@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 
+import house_keeping
+import binary_files
 
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, number, debug=False, preload=True):
+    def __init__(self, number, hsk_data=house_keeping.bit_data, debug=False, preload=True):
         from fpesocketconnection import FPESocketConnection
         import os
         if not self.ping():
@@ -19,8 +21,8 @@ class FPE(object):
         self.sequencer_memory = os.path.join(_dir, "MemFiles", "Seq.bin")
         self.register_memory = os.path.join(_dir, "MemFiles", "Reg.bin")
         self.program_memory = os.path.join(_dir, "MemFiles", "Prg.bin")
+        self.hsk_data = hsk_data
         self.operating_parameter_memory = os.path.join(_dir, "MemFiles", "CLV.bin")
-        self.housekeeping_memory = os.path.join(_dir, "MemFiles", "Hsk.bin")
         if preload:
             self.upload_fpe_wrapper_bin()
         self.upload_sequencer_memory()
@@ -133,7 +135,7 @@ class FPE(object):
         """Upload the Operating Parameter Memory to the FPE"""
         #self.camrst()
         return self.tftp_put(
-            self.housekeeping_memory,
+            binary_files.write_hskmem(self.hsk_data),
             "hskmem" + str(self.fpe_number))
 
 

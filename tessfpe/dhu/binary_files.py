@@ -6,7 +6,7 @@ def write_mem_file(contents, fmt, file_name):
     """Writes a .mem file containing the specified contents with a set type"""
     data = ''.join(struct.pack(">" + fmt, x) for x in contents)
     with open(file_name, 'wb') as f:
-        f.write(struct.pack(">" + fmt, data))
+        f.write(data)
     return file_name
 
 
