@@ -9,7 +9,10 @@ GITHUB_REMOTE=$(shell for i in $(shell git remote) ; do \
    fi ; \
 done) 
 
-all: manual tessfpe/sequencer_dsl/SequencerDSLParser.py
+all: manual tessfpe/sequencer_dsl/SequencerDSLParser.py docs/_build/html
+
+docs/_build/html:
+	make -C docs html
 
 manual: $(MANUAL_DIR)/FPE.pdf
 
@@ -42,7 +45,8 @@ test:
 	make -C tessfpe test
 
 clean:
-	rm -rf setup.py MANIFEST dist/ tessfpe.egg-info/ 
+	rm -rf setup.py MANIFEST dist/ tessfpe.egg-info/
+	make -C docs clean
 	make -C tessfpe clean
 	make -C $(MANUAL_DIR) clean
 	make -C $(SCHEMATIC_DIR) clean
