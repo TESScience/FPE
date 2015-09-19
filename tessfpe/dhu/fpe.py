@@ -35,14 +35,17 @@ class FPE(object):
         """Upload a file to the FPE"""
         from sh import tftp, ErrorReturnCode_1
         import re
-        tftp_command = "put {} {}".format(file_name, destination)
+        tftp_mode = "mode binary"
+        tftp_port = "connect 192.168.100.1 69"
+        tftp_file = "put {} {}".format(file_name, destination)
+        tftp_command = tftp_mode + "\n" + tftp_port + "\n" + tftp_file
 
         if self._debug:
-            print "Running:\ntftp -e 192.168.100.1 69 <<EOF\n", \
+            print "Running:\ntftp <<EOF\n", \
                 tftp_command, "\n", \
                 "EOF"
         try:
-            tftp('-e', '192.168.100.1', '69', _in=tftp_command)
+            tftp(_in=tftp_command)
         except ErrorReturnCode_1 as e:
             # tftp *always* fails because it's awesome
             # so just check that it reports in stdout it sent the thing
