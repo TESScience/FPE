@@ -88,13 +88,13 @@ class FPE(object):
         """Get the camera HSK"""
         import re
         from ..data.housekeeping_channels import housekeeping_channel_memory_map
-        channels = 128
+        channels = len(housekeeping_channel_memory_map)
         out = self.connection.send_command(
             "cam_hsk",
             pattern="Hsk\[[0-9]+\] = 0x[0-9a-f]+",
             matches=channels
         )
-        vals = [int(n, 16) for n in re.findall('0x[0-9a-f]+', out)]
+        vals = [n for n in re.findall('0x[0-9a-f]+', out)]
         return dict(zip(housekeeping_channel_memory_map, vals))
 
     @property
