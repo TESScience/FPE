@@ -46,7 +46,7 @@ def write_hskmem(contents, file_name=tempfile.mktemp('HskMem.bin')):
     return write_mem_file(contents, 'B', file_name)
 
 
-def write_clvmem(contents, file_name=tempfile.mktemp('HskMem.bin')):
+def write_clvmem(contents, file_name=tempfile.mktemp('CLVMem.bin')):
     """Write the Clock level voltage memory; contains values for programming FPE clock
     level voltages via DACs."""
     if not len(contents) == 128 or \
