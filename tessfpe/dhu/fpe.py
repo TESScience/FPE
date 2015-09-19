@@ -1,7 +1,9 @@
 #!/usr/bin/env python
+from ops import OperatingParameters
 
 import house_keeping
 import binary_files
+
 
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
@@ -13,23 +15,28 @@ class FPE(object):
             raise Exception("Cannot ping 192.168.100.1")
         self._debug = debug
         self.fpe_number = number
-        self.connection = FPESocketConnection(5554+number, self._debug)
+        self.connection = FPESocketConnection(5554 + number, self._debug)
         _dir = os.path.dirname(os.path.realpath(__file__))
 
         # Default memory configuration files
         self.fpe_wrapper_bin = os.path.join(_dir, "MemFiles", "FPE_Wrapper.bin")
+
+        # TODO: Sunset these
         self.sequencer_memory = os.path.join(_dir, "MemFiles", "Seq.bin")
         self.register_memory = os.path.join(_dir, "MemFiles", "Reg.bin")
         self.program_memory = os.path.join(_dir, "MemFiles", "Prg.bin")
+
+        # Set the House Keeping and Operating Parameters
         self.hsk_data = hsk_data
-        self.operating_parameter_memory = os.path.join(_dir, "MemFiles", "CLV.bin")
+        self.ops = OperatingParameters(self)
+
         if preload:
-            self.upload_fpe_wrapper_bin()
-        self.upload_sequencer_memory()
-        self.upload_register_memory()
-        self.upload_program_memory()
-        self.upload_operating_parameter_memory()
-        self.upload_housekeeping_memory()
+            self.upload_fpe_wrapper_bin(self.fpe_wrapper_bin)
+        self.upload_sequencer_memory(self.sequencer_memory)
+        self.upload_register_memory(self.register_memory)
+        self.upload_program_memory(self.program_memory)
+        self.ops.send()
+        self.upload_housekeeping_memory(binary_files.write_hskmem(self.hsk_data))
 
     def tftp_put(self, file_name, destination):
         """Upload a file to the FPE"""
@@ -97,45 +104,45 @@ class FPE(object):
         """Get the camera status for the Observatory Simulator for a particular FPE"""
         return self.get_cam_status()
 
-    def upload_fpe_wrapper_bin(self):
+    def upload_fpe_wrapper_bin(self, fpe_wrapper_bin):
         """Upload the FPE Wrapper binary file to the FPE"""
         return self.tftp_put(
-            self.fpe_wrapper_bin,
+            fpe_wrapper_bin,
             "bitmem" + str(self.fpe_number))
 
-    def upload_sequencer_memory(self):
+    def upload_sequencer_memory(self, sequencer_memory):
         """Upload the Sequencer Memory to the FPE"""
-        #self.camrst()
+        # self.camrst()
         return self.tftp_put(
-            self.sequencer_memory,
+            sequencer_memory,
             "seqmem" + str(self.fpe_number))
 
-    def upload_register_memory(self):
+    def upload_register_memory(self, register_memory):
         """Upload the Register Memory to the FPE"""
-        #self.camrst()
+        # self.camrst()
         return self.tftp_put(
-            self.register_memory,
+            register_memory,
             "regmem" + str(self.fpe_number))
 
-    def upload_program_memory(self):
+    def upload_program_memory(self, program_memory):
         """Upload the Program Memory to the FPE"""
-        #self.camrst()
+        # self.camrst()
         return self.tftp_put(
-            self.program_memory,
+            program_memory,
             "prgmem" + str(self.fpe_number))
 
-    def upload_operating_parameter_memory(self):
+    def upload_operating_parameter_memory(self, operating_parameter_memory):
         """Upload the Operating Parameter Memory to the FPE"""
-        #self.camrst()
+        # self.camrst()
         return self.tftp_put(
-            self.program_memory,
+            operating_parameter_memory,
             "clvmem" + str(self.fpe_number))
 
-    def upload_housekeeping_memory(self):
+    def upload_housekeeping_memory(self, hsk_memory):
         """Upload the Operating Parameter Memory to the FPE"""
-        #self.camrst()
+        # self.camrst()
         return self.tftp_put(
-            binary_files.write_hskmem(self.hsk_data),
+            hsk_memory,
             "hskmem" + str(self.fpe_number))
 
 
@@ -145,7 +152,7 @@ if __name__ == "__main__":
     print fpe1.version
     print hex(fpe1.cam_status)
     print '--------------------\n', fpe1.get_cam_hsk()
-    #fpe2 = FPE(2, debug=True, preload=True)
-    #print fpe2.version
-    #print hex(fpe2.cam_status)
-    #print fpe2.get_cam_hsk()
+    # fpe2 = FPE(2, debug=True, preload=True)
+    # print fpe2.version
+    # print hex(fpe2.cam_status)
+    # print fpe2.get_cam_hsk()
