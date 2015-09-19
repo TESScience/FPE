@@ -8,6 +8,8 @@ https://raw.githubusercontent.com/TESScience/FPE/master/FPE/Documentation/FPE.pd
 
 from data import read_data_tsv
 
+defaults = {v: float(k) for (v, k) in read_data_tsv("DefaultParameters.tsv")}
+
 
 def get_operating_parameters(tsv_file_name):
     "Extract the operating parameters from a data TSV file"
@@ -15,7 +17,8 @@ def get_operating_parameters(tsv_file_name):
                 {"address_offset": int(line[0]),
                  "low": float(line[4]),
                  "high": float(line[5]),
-                 "unit": line[8]}
+                 "unit": line[8],
+                 "default": defaults[line[1]]}
             for line in read_data_tsv(tsv_file_name)
             if line[4] != '' and line[5] != ''}
 
@@ -26,7 +29,8 @@ operating_parameters = \
          {"address": int(address_offset) + entry["address_offset"],
           "low": entry["low"],
           "high": entry["high"],
-          "unit": entry["unit"]}
+          "unit": entry["unit"],
+          "default": entry["default"]}
      for address_offset, ccd, group in read_data_tsv("HKmap.tsv")
      for entry_name, entry in get_operating_parameters(
         group.replace(' ', '') + ".tsv").iteritems()}
