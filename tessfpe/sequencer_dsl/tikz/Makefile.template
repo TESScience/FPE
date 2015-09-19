@@ -1,0 +1,11 @@
+.PHONY: all clean
+
+all: pdf
+
+pdf: $(PDF)
+
+%.pdf: %.tex
+	pdflatex $< < /dev/null
+
+clean: 
+	rm -rf *.pdf *.aux *.log

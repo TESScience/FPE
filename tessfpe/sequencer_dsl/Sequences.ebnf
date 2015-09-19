@@ -1,0 +1,13 @@
+(* Semantics for sequence: Add symbol to the sequencer symbol
+   table associated with the next free address in sequencer
+   memory before processing the <sequence_body>. After processing
+   the <sequence_body>, associate the last used address in
+   sequencer memory with the symbol also. *)
+single_step = "step" ;
+multi_step = "step" "(" steps:expression ")" ;
+steps = {(multi_step | single_step)}+ ;
+signal = state_changes steps ;
+signals = {signal}+ ;
+subsequence = symbol ;
+sequence_body = {(signals | subsequence)}+ ;
+sequence = "sequence" name:symbol "{" value:sequence_body "}" ;
