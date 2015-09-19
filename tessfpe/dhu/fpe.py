@@ -88,7 +88,7 @@ class FPE(object):
         """Get the camera HSK"""
         import re
         from ..data.housekeeping_channels import housekeeping_channel_memory_map
-        channels = 114
+        channels = 128
         out = self.connection.send_command(
             "cam_hsk",
             pattern="Hsk\[[0-9]+\] = 0x[0-9a-f]+",
@@ -111,51 +111,39 @@ class FPE(object):
         """Upload the FPE Wrapper binary file to the FPE"""
         return self.tftp_put(
             fpe_wrapper_bin,
-            "bitmem" + str(self.fpe_number))
+            "bitmem")
 
     def upload_sequencer_memory(self, sequencer_memory):
         """Upload the Sequencer Memory to the FPE"""
         # self.camrst()
         return self.tftp_put(
             sequencer_memory,
-            "seqmem" + str(self.fpe_number))
+            "seqmem")
 
     def upload_register_memory(self, register_memory):
         """Upload the Register Memory to the FPE"""
         # self.camrst()
         return self.tftp_put(
             register_memory,
-            "regmem" + str(self.fpe_number))
+            "regmem")
 
     def upload_program_memory(self, program_memory):
         """Upload the Program Memory to the FPE"""
         # self.camrst()
         return self.tftp_put(
             program_memory,
-            "prgmem" + str(self.fpe_number))
+            "prgmem")
 
     def upload_operating_parameter_memory(self, operating_parameter_memory):
         """Upload the Operating Parameter Memory to the FPE"""
         # self.camrst()
         return self.tftp_put(
             operating_parameter_memory,
-            "clvmem" + str(self.fpe_number))
+            "clvmem")
 
     def upload_housekeeping_memory(self, hsk_memory):
         """Upload the Operating Parameter Memory to the FPE"""
         # self.camrst()
         return self.tftp_put(
             hsk_memory,
-            "hskmem" + str(self.fpe_number))
-
-
-if __name__ == "__main__":
-    # Note, to run this diagnostic the computer needs to be hooked up
-    fpe1 = FPE(1, debug=True, preload=False)
-    print fpe1.version
-    print hex(fpe1.cam_status)
-    print '--------------------\n', fpe1.get_cam_hsk()
-    # fpe2 = FPE(2, debug=True, preload=True)
-    # print fpe2.version
-    # print hex(fpe2.cam_status)
-    # print fpe2.get_cam_hsk()
+            "hskmem")
