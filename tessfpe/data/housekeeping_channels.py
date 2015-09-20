@@ -30,6 +30,6 @@ housekeeping_channels = \
          group.replace(' ','') + ".tsv").iteritems()}
 
 # Housekeeping map for housekeeping parameters
-housekeeping_channel_memory_map = [None for _ in range(128)]
+housekeeping_channel_memory_map = 128*[None]
 for entry_name, entry in housekeeping_channels.iteritems():
     housekeeping_channel_memory_map[entry["address"]] = entry_name
