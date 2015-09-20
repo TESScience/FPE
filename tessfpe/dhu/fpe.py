@@ -8,7 +8,7 @@ import binary_files
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, number, hsk_data=house_keeping.bit_data, debug=False, preload=True):
+    def __init__(self, number, preload=True, debug=False, hsk_data=house_keeping.bit_data):
         from fpesocketconnection import FPESocketConnection
         import os
         if not self.ping():
@@ -27,7 +27,7 @@ class FPE(object):
         self.program_memory = os.path.join(_dir, "MemFiles", "Prg.bin")
 
         # Set the House Keeping and Operating Parameters
-        self.hsk_data = hsk_data
+        self._hsk_data = hsk_data
         self.ops = OperatingParameters(self)
 
         if preload:
@@ -36,14 +36,14 @@ class FPE(object):
         self.upload_register_memory(self.register_memory)
         self.upload_program_memory(self.program_memory)
         self.ops.send()
-        self.upload_housekeeping_memory(binary_files.write_hskmem(self.hsk_data))
+        self.upload_housekeeping_memory(binary_files.write_hskmem(self._hsk_data))
 
     def tftp_put(self, file_name, destination):
         """Upload a file to the FPE"""
         from sh import tftp, ErrorReturnCode_1
         import re
         tftp_mode = "mode binary"
-        tftp_port = "connect 192.168.100.1 69"
+        tftp_port = "connect 192.168.100.1 {}".format(68 + self.fpe_number)
         tftp_file = "put {} {}".format(file_name, destination)
         tftp_command = tftp_mode + "\n" + tftp_port + "\n" + tftp_file
 
