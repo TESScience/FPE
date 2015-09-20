@@ -56,7 +56,7 @@ def compile_sequences(ast):
     "Compile a dictionary of sequences into a 1024x36 array"
     default_value = sequence_to_int(ast["defaults"])
     out = [default_value for _ in range(1024)]
-    sequences = ast["sequences"]
+    sequences = ast["sequences"] if "sequences" in ast else ast
     for x in sequences.itervalues():
         idx = x["start"]
         val = out[idx]

@@ -8,7 +8,7 @@ import binary_files
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, number, preload=True, debug=False, hsk_data=house_keeping.bit_data):
+    def __init__(self, number, preload=True, debug=False, hsk_byte_array=house_keeping.bit_data):
         from fpesocketconnection import FPESocketConnection
         import os
         if not self.ping():
@@ -21,22 +21,22 @@ class FPE(object):
         # Default memory configuration files
         self.fpe_wrapper_bin = os.path.join(_dir, "MemFiles", "FPE_Wrapper.bin")
 
-        # TODO: Sunset these
-        self.sequencer_memory = os.path.join(_dir, "MemFiles", "Seq.bin")
+        self._program_file = os.path.join(_dir, "..", "data", "files", "default_program.fpe")
+
+        # TODO: Sunset this
         self.register_memory = os.path.join(_dir, "MemFiles", "Reg.bin")
-        self.program_memory = os.path.join(_dir, "MemFiles", "Prg.bin")
 
         # Set the House Keeping and Operating Parameters
-        self._hsk_data = hsk_data
+        self.hsk_byte_array = hsk_byte_array
         self.ops = OperatingParameters(self)
 
         if preload:
             self.upload_fpe_wrapper_bin(self.fpe_wrapper_bin)
-        self.upload_sequencer_memory(self.sequencer_memory)
         self.upload_register_memory(self.register_memory)
-        self.upload_program_memory(self.program_memory)
+        self.upload_housekeeping_memory(binary_files.write_hskmem(self.hsk_byte_array))
         self.ops.send()
-        self.upload_housekeeping_memory(binary_files.write_hskmem(self._hsk_data))
+        self.load_code()
+
 
     def tftp_put(self, file_name, destination):
         """Upload a file to the FPE"""
@@ -96,6 +96,58 @@ class FPE(object):
         )
         vals = [int(n, 16) for n in re.findall('0x[0-9a-f]+', out)]
         return dict(zip(housekeeping_channel_memory_map, vals))
+
+    def load_code(self):
+        """Loads the program code using tftp"""
+        self.upload_sequencer_memory(
+            binary_files.write_seqmem(self.sequences_byte_array))
+        self.upload_program_memory(
+            binary_files.write_prgmem(self.programs_byte_array))
+
+    @property
+    def sequences_byte_array(self):
+        """A byte array representing the sequences set by the program code"""
+        from ..sequencer_dsl.sequence import compile_sequences
+        return compile_sequences(self.sequences)
+
+    @property
+    def programs_byte_array(self):
+        """A byte array representing the programs set by the program code"""
+        from ..sequencer_dsl.program import compile_programs
+        return compile_programs(self._ast)
+
+    @property
+    def _ast(self):
+        from ..sequencer_dsl.parse import parse_file
+        return parse_file(self._program_file)
+
+    @property
+    def code(self):
+        """The program code"""
+        with open(self._program_file) as f:
+            return "// File: {filename}\n\n{code}".format(
+                file=self._program_file,
+                code=f.read())
+
+    @property
+    def parameters(self):
+        """The parameters set by the program code"""
+        return self._ast["parameters"]
+
+    @property
+    def hold(self):
+        """The hold instruction set by the program code"""
+        return self._ast["hold"]
+
+    @property
+    def sequences(self):
+        """The sequences set by the program code"""
+        return self._ast["sequences"]
+
+    @property
+    def defaults(self):
+        """The sequencer default values set by the program code"""
+        return self._ast["sequences"]
 
     @property
     def version(self):
