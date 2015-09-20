@@ -5,15 +5,23 @@ import tempfile
 import uuid
 
 
-def timing(file_name, sequence_name, sequencer_bits=None, debug=False):
+def timing(file_name, sequence_names=None, sequencer_bits=None, debug=False):
     from ..parse import parse_file
     ast = parse_file(file_name)
-    timings = timing_ast(ast, sequence_name, sequencer_bits=sequencer_bits, debug=debug)
-    return compile_tikz_timing_diagram(timings, sequence_name, debug=debug)
+    if sequence_names is None:
+        sequence_names = ast["sequences"].keys()
+    timings = timing_ast(ast, sequence_names, sequencer_bits=sequencer_bits, debug=debug)
+    return compile_tikz_timing_diagram(timings, debug=debug)
 
 
-def timing_ast(ast, sequence_name, sequencer_bits=None, debug=False):
-    """Outputs TikZ timings for an AST."""
+def timing_ast(ast, sequence_names, sequencer_bits=None, debug=False):
+    """Outputs a dictionary of sequences and their timings as lists"""
+    return {name: tikz_timing_sequence(ast, name, sequencer_bits=sequencer_bits, debug=debug)
+            for name in sequence_names}
+
+
+def tikz_timing_sequence(ast, sequence_name, sequencer_bits=None, debug=False):
+    """Outputs the timings ast list for a particular sequence in an AST."""
     sequence = ast["sequences"][sequence_name]["sequence"]
     if sequencer_bits is None:
         sequencer_bits = list(set(k for i in sequence
@@ -68,7 +76,7 @@ def write_tikz_timing_table_file(table_string, file_name=tempfile.mktemp(suffix=
 def write_tikz_toplevel_file(table_file_name):
     """Write a LaTeX file for formatting a TikZ timing table"""
     output = """
-    \\documentclass[]{{standalone}}
+    \\documentclass[varwidth=\maxdimen]{{standalone}}[2011/12/21]
     \\usepackage{{tikz-timing}}
     \\usetikztiminglibrary{{nicetabs}}
 
@@ -96,20 +104,28 @@ def write_latex_makefile(latex_file):
     return makefile_name
 
 
-def compile_tikz_timing_diagram(tikz_timings,
-                                sequence_name="unknown_sequence",
-                                work_dir=tempfile.mkdtemp(),
-                                debug=False):
-    from sh import make
+def tikz_timings_diagram(tikz_timings):
     output_rows = ('{} & {} \\\\'.format(b, t) for (b, t) in tikz_timings)
-    output = """
+    return """
     \\begin{{tikztimingtable}}
     {}
     \\extracode
     \\tablegrid[black!25,step=1]
     \\end{{tikztimingtable}}
     """.format("\n".join(output_rows))
-    table_file_name = os.path.join(work_dir, sequence_name + "_table.tex")
+
+def named_tikz_timings_diagram(sequence_name, tikz_timings):
+    return "\n\\texttt{{" + sequence_name + ":}}\n\n\\par\\bigskip\n" + \
+           tikz_timings_diagram(tikz_timings)
+
+def compile_tikz_timing_diagram(tikz_timings,
+                                work_dir=tempfile.mkdtemp(),
+                                debug=False):
+    from sh import make
+    output = "".join(named_tikz_timings_diagram(name, timing)
+                     for name, timing in tikz_timings.iteritems())
+    #tikz_timings_diagram(timing_pairs[0][1])
+    table_file_name = os.path.join(work_dir, "tikz_timing_table.tex")
     write_tikz_timing_table_file(output, table_file_name)
     if debug:
         print "Wrote: " + table_file_name
@@ -128,4 +144,4 @@ def compile_tikz_timing_diagram(tikz_timings,
 if __name__ == "__main__":
     from sys import argv
 
-    print timing(argv[1], argv[2], argv[3] if len(argv) >= 4 else None, debug=True)
+    print timing(argv[1], [argv[2]] if len(argv) >= 3 else None, argv[3] if len(argv) >= 4 else None, debug=True)
