@@ -8,7 +8,7 @@ import binary_files
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, number, preload=True, debug=False, hsk_byte_array=house_keeping.bit_data):
+    def __init__(self, number, preload=True, debug=False, hsk_byte_array=house_keeping.identity_map):
         from fpesocketconnection import FPESocketConnection
         import os
         if not self.ping():
