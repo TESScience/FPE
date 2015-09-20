@@ -1,0 +1,3 @@
+#include defaults.fpe_defaults
+sequence pixcycle { step };
+hold pixcycle;

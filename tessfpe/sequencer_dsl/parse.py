@@ -7,6 +7,22 @@ as the associated grammatical semantics for the FPE DSL.
 from __future__ import print_function
 
 
+def include_files(text, search_path="."):
+    """Include text from other files"""
+    import re
+    import os
+    out = []
+    for l in text.split('\n'):
+        m = re.match(r'(?:#\w*include\w*) (.*)', l)
+        if m is None:
+            out.append(l)
+        else:
+            file_name = m.groups()[0].strip('"')
+            with open(os.path.join(search_path,file_name)) as f:
+                out.append(f.read())
+    return "\n".join(out)
+
+
 def strip_block_comments(text):
     """Strips text of block comments"""
     import re
@@ -129,11 +145,16 @@ def parse(text):
     ast["sequences"] = semantics.sequences
     return ast
 
+def preprocess(file_name):
+    """Preprocesses a file and returns the code; leaves comments"""
+    import os.path
+    with open(file_name) as f:
+        return include_files(f.read(),
+                             search_path=os.path.dirname(file_name))
 
 def parse_file(file_name):
     """Parses a file containing SequencerDSL text into an AST"""
-    with open(file_name) as f:
-        return parse(f.read())
+    return parse(preprocess(file_name))
 
 
 if __name__ == "__main__":
