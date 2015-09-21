@@ -33,7 +33,8 @@ class FPE(object):
         if preload:
             self.upload_fpe_wrapper_bin(self.fpe_wrapper_bin)
         self.upload_register_memory(self.register_memory)
-        self.upload_housekeeping_memory(binary_files.write_hskmem(self.hsk_byte_array))
+        self.upload_housekeeping_memory(
+            binary_files.write_hskmem(self.hsk_byte_array))
         self.ops.send()
         self.load_code()
 
@@ -94,8 +95,7 @@ class FPE(object):
             pattern="Hsk\[[0-9]+\] = 0x[0-9a-f]+",
             matches=channels
         )
-        vals = [n for n in re.findall('0x[0-9a-f]+', out)]
-        return dict(zip(housekeeping_channel_memory_map, vals))
+        return [int(n, 16) for n in re.findall('0x[0-9a-f]+', out)]
 
     def load_code(self):
         """Loads the program code using tftp"""
@@ -108,7 +108,7 @@ class FPE(object):
     def sequences_byte_array(self):
         """A byte array representing the sequences set by the program code"""
         from ..sequencer_dsl.sequence import compile_sequences
-        return compile_sequences(self.sequences)
+        return compile_sequences(self._ast)
 
     @property
     def programs_byte_array(self):
