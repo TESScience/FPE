@@ -75,16 +75,11 @@ def compile_sequences_from_file(file_name):
     from parse import parse_file
     return compile_sequences(parse_file(file_name))
 
-def binary(i):
-    """The binary equivalent of the `hex` function"""
-    # TODO: optional number of 0 padding
-    return "0b{0:036b}".format(i)
-
 if __name__ == "__main__":
     from sys import argv
     ast = compile_sequences_from_file(argv[1])
     print '['
     for i in out[:-1]:
-        print '    {},'.format(binary(i))
-    print '    {}'.format(binary(i))
+        print '    {},'.format(bin(i))
+    print '    {}'.format(bin(i))
     print ']'
