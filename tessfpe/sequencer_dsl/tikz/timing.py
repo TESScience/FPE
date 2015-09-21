@@ -6,6 +6,16 @@ import uuid
 
 
 def timing(file_name, sequence_names=None, sequencer_bits=None, debug=False):
+    "Create an image of the timing diagrams in an fpe program"
+    from wand.image import Image
+    return Image(filename=timing_pdf(file_name,
+                                     sequence_names=sequence_names,
+                                     sequencer_bits=sequencer_bits,
+                                     debug=debug))
+
+
+def timing_pdf(file_name, sequence_names=None, sequencer_bits=None, debug=False):
+    """Create a pdf image of the timing diagrams in an fpe program"""
     from ..parse import parse_file
     ast = parse_file(file_name)
     if sequence_names is None:
@@ -114,9 +124,11 @@ def tikz_timings_diagram(tikz_timings):
     \\end{{tikztimingtable}}
     """.format("\n".join(output_rows))
 
+
 def named_tikz_timings_diagram(sequence_name, tikz_timings):
     return "\n\\texttt{{" + sequence_name + ":}}\n\n\\par\\bigskip\n" + \
            tikz_timings_diagram(tikz_timings)
+
 
 def compile_tikz_timing_diagram(tikz_timings,
                                 work_dir=tempfile.mkdtemp(),
@@ -124,7 +136,7 @@ def compile_tikz_timing_diagram(tikz_timings,
     from sh import make
     output = "".join(named_tikz_timings_diagram(name, timing)
                      for name, timing in tikz_timings.iteritems())
-    #tikz_timings_diagram(timing_pairs[0][1])
+    # tikz_timings_diagram(timing_pairs[0][1])
     table_file_name = os.path.join(work_dir, "tikz_timing_table.tex")
     write_tikz_timing_table_file(output, table_file_name)
     if debug:
@@ -144,4 +156,4 @@ def compile_tikz_timing_diagram(tikz_timings,
 if __name__ == "__main__":
     from sys import argv
 
-    print timing(argv[1], [argv[2]] if len(argv) >= 3 else None, argv[3] if len(argv) >= 4 else None, debug=True)
+    print timing_pdf(argv[1], [argv[2]] if len(argv) >= 3 else None, argv[3] if len(argv) >= 4 else None, debug=True)
