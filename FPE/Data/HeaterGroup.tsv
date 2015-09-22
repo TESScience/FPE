@@ -1,3 +1,8 @@
 0	Heater 1 Current	273	-273	0	227			mA	
 1	Heater 2 Current	273	-273	0	227			mA	
 2	Heater 3 Current	273	-273	0	227			mA	
+3	Input Bias 1	-27.27	27.27					uA	
+4	FIXME1	-9999	9999					uA	
+5	FIXME2	-9999	9999					uA	
+6	FIXME3	-9999	9999					uA	
+7	FIXME4	-9999	9999					uA	
