@@ -1,0 +1,11 @@
+0	1	Bias Group
+16	2	Bias Group
+32	3	Bias Group
+48	4	Bias Group
+64	1	Clock Driver Group
+72	2	Clock Driver Group
+80	3	Clock Driver Group
+88	4	Clock Driver Group
+96		Heater Group
+104		Interface Group
+112		Thermal Group
