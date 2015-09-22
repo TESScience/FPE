@@ -58,11 +58,11 @@ date.txt :
 stamp.tex :
 	echo "Version  $(shell git describe --tags) \\\\\\\\" > $@
 
-tag.tex :
-	if [ "$(shell git describe --tags $(shell git log -1 --format="%h"))" = \
-             "$(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h"))" ] ; then \
-           echo "Tag $(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h")) \\\\\\\\" ; \
-        fi > $@
+# tag.tex :
+#	if [ "$(shell git describe --tags $(shell git log -1 --format="%h"))" = \
+#             "$(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h"))" ] ; then \
+#           echo "Tag $(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h")) \\\\\\\\" ; \
+#        fi > $@
 
 clean :
 	make -C Figs clean
