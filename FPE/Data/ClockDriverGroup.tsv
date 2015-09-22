@@ -1,4 +1,4 @@
-0	Parallel High	16.5	-16.5	0	9.9	-10	9.9	V	Parallel Low
+0	Parallel High	16.5	-16.5	0	9.9	-10	3.0	V	Parallel Low
 1	Parallel Low	16.5	-16.5	0	-13.2	-10	0	V	
 2	Serial High	16.5	-16.5	15.0	-10.3	-10.3	4.5	V	
 3	Serial Low	16.5	-16.5	0	-9.9	-11.5	4.5	V	Serial High
