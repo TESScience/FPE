@@ -119,7 +119,7 @@ U5 inverts the video signal, so the input to the integrator is positive during t
 
 U9, the ADC, uses a differential input. U6 inverts the integrator output to provide this. Filters R14/C20 and R13/C21 provide some anti-aliasing, limiting the effect of broadband noise at the outputs of U6 and U8. The ADC does not work well for a rapidly slewing input: U11 and U12 should both be off for an adequate time to allow the ADC inputs to settle before the ADC samples.
 
-\textcolor{red}{Jerry, Joel, and I need to get together, compare sims and reality, and define what the timing diagram should really be -jpd}
+%\textcolor{red}{Jerry, Joel, and I need to get together, compare sims and reality, and define what the timing diagram should really be -jpd}
 
 R25 feeds a current proportional to the CCD output voltage to the housekeeping circuitry for monitoring the DC component. R41 prevents the voltage on the line from exceeding the limit of the housekeeping multiplexor.
 
@@ -215,6 +215,7 @@ Connector & Pin & Net & Comment \\
 \schempage{DriverSet.2}
 \schempage{DriverSet.3}
 \schempage{DriverSet.4}
+\schempage{DriverSet.5}
 \subsubsection{Power conditioning}
 \schempage{ArtixPower}
 
@@ -313,7 +314,9 @@ Address Offset & CCD & Group \\
 \label{hkmap}
 \end{table}
 
-The control ranges often go outside the actual range allowed for the parameters, which depend on circuit details and power supply voltages. \textcolor{red}{I will document these limits in the future.} Control is sometimes relative to another parameter. If the control range is not given, the parameter is not under DAC control.
+The control ranges often go outside the actual range allowed for the parameters, which depend on circuit details and power supply voltages. 
+% \textcolor{red}{I will document these limits in the future.}
+Control is sometimes relative to another parameter. If the control range is not given, the parameter is not under DAC control.
 \subsection{Bias Group}
 \begin{table}[ht!]
 \caption{Bias Group}
@@ -400,14 +403,14 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 
 The Thermal Group (Table \ref{ttab}) sensors are external temperature-sensitive resistors. The nominal range for the circuitry is $500\Omega$ to $1500\Omega$, which translates into the given temperature ranges. It may be useful to calibrate the board using external fixed resistors near the limits of the range.
 
-\begin{appendices}
-\section{Default FPE Program}
-
-The following is the default \emph{Sequencer DSL} FPE program associated with the observatory simulator.
-
-\lstset{language=C} % Use C because it is vaguely similar
-\lstinputlisting{../Data/default_program.fpe}
-
-\end{appendices}
+% \begin{appendices}
+% \section{Default FPE Program}
+%
+% The following is the default \emph{Sequencer DSL} FPE program associated with the observatory simulator.
+%
+% \lstset{language=C} % Use C because it is vaguely similar
+% \lstinputlisting{../Data/default_program.fpe}
+%
+% \end{appendices}
 
 \end{document}
