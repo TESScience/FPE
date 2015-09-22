@@ -314,9 +314,9 @@ Address Offset & CCD & Group \\
 \label{hkmap}
 \end{table}
 
-The control ranges often go outside the actual range allowed for the parameters, which depend on circuit details and power supply voltages. 
-% \textcolor{red}{I will document these limits in the future.}
-Control is sometimes relative to another parameter. If the control range is not given, the parameter is not under DAC control.
+The housekeeping ADC uses twos complement 16 bit coding. The ``Housekeeping Low'' column gives the nominal value for a code of -32768. The ``Housekeeping High'' column gives the nominal value for a code of 32767. The range is often inverted: a low code represents a high value and vice-versa.
+
+The nominal control ranges sometimes go outside the actual range allowed for the parameters, which depend on circuit details and power supply voltages. The ``Range'' columns document the actual range in volts relative to system ground. Control is sometimes relative to another parameter. The controlling DAC chips use 12 bit unsigned coding, range 0-4095. The ``Control Low'' column gives the nominal parameter for a code of zero. The ``Control High'' column gives the nominal parameter for a code of 4095. The range is sometimes inverted: a low code represents a high value and vice-versa. If the control range is not given, the parameter is not under DAC control.
 \subsection{Bias Group}
 \begin{table}[ht!]
 \caption{Bias Group}
