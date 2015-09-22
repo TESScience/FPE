@@ -1,14 +1,19 @@
 VIDEOPRODUCTS = Video.allegro Video.devfiles Video.bom.txt \
-	Video.bom2.txt Video.counts.txt Video-Cirrexx.tsv Video.pads Video.osmond \
+	Video.bom2.txt Video.counts.txt  \
 	Video.stats.txt
+
+# Video-Cirrexx.tsv Video.pads Video.osmond
 
 INTERFACEPRODUCTS = Interface.allegro Interface.devfiles \
 	Interface.bom.txt Interface.bom2.txt Interface.counts.txt \
-	Interface-Cirrexx.tsv Interface.pads Interface.osmond Interface.stats.txt
+	 Interface.stats.txt
+
+#Interface-Cirrexx.tsv Interface.pads Interface.osmond
 
 DRIVERPRODUCTS = Driver.allegro Driver.devfiles Driver.bom.txt \
-	Driver.bom2.txt Driver.counts.txt Driver-Cirrexx.tsv Driver.pads \
-	Driver.osmond Driver.stats.txt
+	Driver.bom2.txt Driver.counts.txt Driver.stats.txt
+
+#  Driver-Cirrexx.tsv Driver.pads Driver.osmond 
 
 PRODUCTS = $(VIDEOPRODUCTS) $(INTERFACEPRODUCTS) $(DRIVERPRODUCTS) \
 	../Documentation/FPE.pdf counts.txt
