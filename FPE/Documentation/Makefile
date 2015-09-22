@@ -30,7 +30,7 @@ pdfs: $(PDFS)
 Figs/%.pdf :
 	make -C $(dir $@) $(notdir $@)
 
-FPE.pdf : FPE.tex $(PINTEX) stamp.tex date.txt tag.tex $(wildcard Figs/*.pdf) StackMap.tex $(TSVTEX) $(PDFS)
+FPE.pdf : FPE.tex $(PINTEX) stamp.tex date.txt $(wildcard Figs/*.pdf) StackMap.tex $(TSVTEX) $(PDFS)
 	$(PDFLATEX) FPE.tex
 	$(PDFLATEX) FPE.tex
 	$(PDFLATEX) FPE.tex
