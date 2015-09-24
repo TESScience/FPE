@@ -303,11 +303,13 @@ T 46400 46700 5 10 1 1 0 0 1
 value=DNP
 }
 N 47000 47000 47000 48300 4
-T 43200 49000 9 10 1 0 0 0 4
+T 43200 49000 9 10 1 0 0 0 6
 Note:
-For a focal plane with common backside connections,
-populate R54 only for the channel you want to have
-control the backside bias.
+For a focal plane with frontside illuminated chips and 
+common backside connections, populate R54 with zero
+ohms only for the channel you want to have
+control the backside bias. For a backside illuminated
+chip, do not populate.
 C 44500 40500 1 0 0 gp_opamp_dual_pwr.sym
 {
 T 44700 42500 5 8 0 0 0 0 1

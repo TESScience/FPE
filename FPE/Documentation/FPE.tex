@@ -111,7 +111,7 @@ We measure the height of the step with a three-stage process. First, we couple t
 \subsubsection{The Video Measurement Chain}
 \schempage{Chain.1}
 Figure \ref{Chain.1} shows the signal path through the measurement chain.
-Q2 is the active current load for the CCD output. R1 controls the current. As shown, it sinks $\approx0.5\ $mA.
+Q2 is the active current load for the CCD output. R1 controls the current. As shown, it sinks $\approx0.8\ $mA.
 
 U3 is the clamp. U4 buffers the clamped video. R7, R8, and C18 control the buffer gain: for maximum dynamic range we will use unity gain. U8 is the integrator that performs the signal averaging. U11 and U12 switch its inputs to control the sign of the the input signal for the deintegrate and integrate phases. 
 
@@ -139,7 +139,7 @@ To protect the CCD charge sense MOSFET from overvoltage, the output drain voltag
 \schempage{PerChip.6}
 \schempage{PerChip.7}
 \schempage{PerChip.8}
-Most of the Video board is consists of four blocks devoted to per-chip video processing and operating bias generation. In each block, there is a video measurement chain for each segment (Figure \ref{PerChip.1}).
+Most of the Video board consists of four blocks devoted to per-chip video processing and operating bias generation. In each block, there is a video measurement chain for each segment (Figure \ref{PerChip.1}).
 Figure \ref{PerChip.2} shows local fixed voltage regulation and the variable output gate regulator. Figures \ref{PerChip.3}--\ref{PerChip.6} show regulators for other variable CCD biases. Figures \ref{PerChip.7} and \ref{PerChip.8} show the DACs and housekeeping multiplexors that support these functions, as tabulated in
 Table \ref{biastab} in Section \ref{param}.
 \subsubsection{Charge Pumps}
@@ -162,7 +162,7 @@ Figure \ref{Video.6} shows more local voltage generation and regulation. VS12 an
 
 Figure \ref{Video.7} shows filters on the output gates. Since the output gates are next to the charge sense node, they may be a source of noise or crosstalk.
 
-Figure \ref{Video.8} shows the control circuit for the trim heater. Q1 is an LM195: an IC that behaves like a transistor except that it shuts down if it becomes too hot.
+Figure \ref{Video.8} shows the control circuit for the trim heaters. Q1, Q4, and Q6 are  LM195 devices: an IC that behaves like a transistor except that it shuts down if it becomes too hot.
 
 \subsection{Video Board Connectors}
 
