@@ -1,6 +1,6 @@
 PDFLATEX=cat /dev/null | pdflatex
 SCH=../../Schematic
-PDFS= ArtixPower.pdf Booster.pdf DriverSet.1.pdf DriverSet.2.pdf DriverSet.3.pdf DriverSet.4.pdf \
+PDFS= ArtixPower.pdf Booster.pdf DriverSet.1.pdf DriverSet.2.pdf DriverSet.3.pdf DriverSet.4.pdf DriverSet.5.pdf\
       Interface.1.pdf Interface.pdf Interface.2.pdf Interface.3.pdf Interface.4.pdf Interface.5.pdf \
       Interface.6.pdf Interface.7.pdf ParallelPair.pdf \
       ParallelReg.pdf Pump.pdf SerialDriver.pdf SerialRegulator.pdf DrainRegulator.pdf \
