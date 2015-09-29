@@ -178,7 +178,7 @@ def values_to_5328(values):
 
 
 class OperatingParameters(object):
-    def __init__(self, fpe):
+    def __init__(self, fpe=None):
         # The underscore here is used as sloppy "private" memory
         self._fpe = fpe
         self.address = 128 * [None]
@@ -186,6 +186,9 @@ class OperatingParameters(object):
             op = OperatingParameter(name, data)
             setattr(self, name, op)
             self.address[op.address] = op
+
+    def __getitem__(self, item):
+        return self.__dict__[item]
 
     @property
     def values(self):
