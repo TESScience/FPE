@@ -79,7 +79,7 @@ if __name__ == "__main__":
     from sys import argv
     ast = compile_sequences_from_file(argv[1])
     print '['
-    for i in out[:-1]:
+    for i in ast[:-1]:
         print '    {},'.format(bin(i))
     print '    {}'.format(bin(i))
     print ']'

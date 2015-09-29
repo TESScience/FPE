@@ -153,7 +153,7 @@ class OperatingParameter(object):
                 + "low: {}\n".format(self.low)
                 + "high: {}".format(self.high))
         self._twelve_bit_value = x
-        self._value = (self.high - self.low) / float(2**12) * x + self.low
+        self._value = (self.high - self.low) / float(2 ** 12) * x + self.low
 
 
 import binary_files
@@ -182,13 +182,24 @@ class OperatingParameters(object):
         # The underscore here is used as sloppy "private" memory
         self._fpe = fpe
         self.address = 128 * [None]
+        self._keys = operating_parameters.keys()
         for (name, data) in operating_parameters.iteritems():
+            self._keys.append(name)
             op = OperatingParameter(name, data)
-            setattr(self, name, op)
+            super(OperatingParameters, self).__setattr__(name, op)
             self.address[op.address] = op
 
     def __getitem__(self, item):
-        return self.__dict__[item]
+        if item in self._keys:
+            return self.__dict__[item]
+        else:
+            raise KeyError(item)
+
+    def __setattr__(self, name, value):
+        if "_keys" in self.__dict__ and name in self._keys:
+            self.__dict__[name].value = value
+        else:
+            super(OperatingParameters, self).__setattr__(name, value)
 
     @property
     def values(self):
@@ -210,8 +221,10 @@ class OperatingParameters(object):
         return self._fpe.upload_operating_parameter_memory(
             binary_files.write_clvmem(128 * [0xffff]))
 
+
 if __name__ == "__main__":
     import doctest
     from binary_files import write_clvmem
+
     doctest.testmod()
-    print write_clvmem(values_to_5328(OperatingParameters(None).values))
+    print write_clvmem(values_to_5328(OperatingParameters().values))

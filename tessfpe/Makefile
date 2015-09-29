@@ -6,8 +6,7 @@ sequencer_dsl/SequencerDSLParser.py:
 
 test: sequencer_dsl/SequencerDSLParser.py
 	./__init__.py > /dev/null
-	./simulator.py > /dev/null
-	./dhu/OperatingParameters.py
+	(cd .. ; python -m tessfpe.dhu.ops)
 	make -C sequencer_dsl test > /dev/null
 
 clean:
