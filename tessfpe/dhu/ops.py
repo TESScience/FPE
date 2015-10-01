@@ -70,6 +70,20 @@ The values set are only approximate; they can only match the declared high and l
 >>> abs(op.value - op.high) < 0.01
 True
 
+One can also create a *collection* of operating parameters, like so:
+
+>>> ops = OperatingParameters()
+
+This object has two access methods:
+  - You can use `ops.address` to set an operating parameter at a particular address
+  - You can use `ops.<name>` to set an operating parameter with a particular name
+
+>>> ops.address[80].name
+'ccd3_parallel_high'
+>>> ops.ccd3_parallel_high = 5.0
+>>> ops.address[80].value
+5.0
+
 """
 
 import collections
