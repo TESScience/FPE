@@ -18,7 +18,7 @@ PS2PDF=ps2pdf -sPAPERSIZE=letter
 %.pdf : %.ps
 	$(PS2PDF) $<
 
-ResetTest : ResetTest.cir Reset.cir MMBT2907A.mod
+ResetTest : ResetTest.cir Reset.cir MMBT2907A.mod MMBT2222A.mod
 	$(NGSPICE) $^
 
 FilterTest : FilterTest.cir

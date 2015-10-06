@@ -209,6 +209,7 @@ INTERFACEDOCS= \
 	DriverSet.4.ps \
 	DriverSet.5.ps \
 	ArtixPower.ps \
+	Reset.ps \
 	Interface.1.ps \
 	Interface.2.ps \
 	Interface.3.ps \
@@ -241,7 +242,8 @@ INTERFACESUB= \
 	DriverSet.3.sch \
 	DriverSet.4.sch \
 	DriverSet.5.sch \
-	ArtixPower.sch
+	ArtixPower.sch \
+	Reset.sch
 
 INTERFACEMERGE= \
 	Interface.J8.psch \
