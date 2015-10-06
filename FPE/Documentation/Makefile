@@ -8,7 +8,7 @@ PINTEX= CCD-51pin.tex TempConn.tex Interface.U4.tex \
 TSVTEX=BiasGroup.tex ClockDriverGroup.tex HKmap.tex \
 	HeaterGroup.tex ThermalGroup.tex InterfaceGroup.tex
 
-PDFS=Figs/ArtixPower.pdf Figs/Booster.pdf Figs/Chain.1.pdf \
+PDFS=Figs/ArtixPower.pdf Figs/Reset.pdf Figs/Booster.pdf Figs/Chain.1.pdf \
      Figs/Chain.2.pdf Figs/DrainRegulator.pdf Figs/Driver.1.pdf \
      Figs/Driver.2.pdf Figs/Driver.3.pdf Figs/DriverSet.1.pdf \
      Figs/DriverSet.2.pdf Figs/DriverSet.3.pdf Figs/DriverSet.4.pdf Figs/DriverSet.5.pdf \
