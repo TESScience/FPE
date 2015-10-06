@@ -21,6 +21,9 @@ PS2PDF=ps2pdf -sPAPERSIZE=letter
 ResetTest : ResetTest.cir Reset.cir MMBT2907A.mod MMBT2222A.mod
 	$(NGSPICE) $^
 
+Reset.sch : ../Schematic/Reset.sch
+	cp $< $@
+
 FilterTest : FilterTest.cir
 	$(NGSPICE) $^
 
@@ -115,4 +118,5 @@ DG403.cir : DG403.1.sch DG403.2.sch
 
 clean :
 	rm -f *.cir *.ps *.pdf \#* *~ Pump.sch Booster.sch Chain.1.sch Chain.2.sch \
-		ArtixPower.sch SerialRegulator.sch SerialDriver.sch parallelstress.txt
+		ArtixPower.sch SerialRegulator.sch SerialDriver.sch parallelstress.txt \
+		Reset.sch
