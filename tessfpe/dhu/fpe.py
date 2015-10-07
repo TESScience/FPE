@@ -8,9 +8,11 @@ import binary_files
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, number, debug=False, preload=False, hsk_byte_array=house_keeping.identity_map):
+    def __init__(self, number, FPE_Wrapper_version="6.1.1", debug=False, preload=False, hsk_byte_array=house_keeping.identity_map):
         from fpesocketconnection import FPESocketConnection
+        from tests import check_house_keeping_voltages
         import os
+        import time
         if not self.ping():
             raise Exception("Cannot ping 192.168.100.1")
         self._debug = debug
@@ -19,7 +21,8 @@ class FPE(object):
         self._dir = os.path.dirname(os.path.realpath(__file__))
 
         # Default memory configuration files
-        self.fpe_wrapper_bin = os.path.join(self._dir, "MemFiles", "FPE_Wrapper.bin")
+        self.fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
+                                            "FPE_Wrapper-{version}.bin".format(version=FPE_Wrapper_version))
 
         self._program_file = os.path.join(self._dir, "..", "data", "files", "default_program.fpe")
 
@@ -39,6 +42,10 @@ class FPE(object):
             binary_files.write_hskmem(self.hsk_byte_array))
         self.ops.send()
         self.load_code()
+
+        # Run sanity checks on the FPE to make sure basic functions are working
+        time.sleep(.01) # Need to wait for 1/100th of a sec for prince charming
+        check_house_keeping_voltages(self)
 
     def tftp_put(self, file_name, destination):
         """Upload a file to the FPE"""
