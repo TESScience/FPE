@@ -19,7 +19,7 @@ refdes=C1
 T 4500 88700 5 10 1 1 180 0 1
 value=220pF
 T 4100 87800 5 10 0 1 90 0 1
-spec=50WVDC
+spec=50WVDC C0G
 T 3000 87800 5 10 0 0 90 0 1
 footprint=0805
 }
