@@ -26,7 +26,13 @@ singlelinecheck=false % The magic that stops caption centering
 \usepackage{graphicx}
 \usepackage{grffile}
 \usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
-\pagestyle{headings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%\pagestyle{headings}
+\fancyfoot{}
+\fancyfoot[LO,LE]{20102 \input{stamp.tex}}
+\fancyfoot[RO,RE]{\thepage}
 
 % Clickable references
 \usepackage{hyperref}
@@ -295,7 +301,7 @@ See the previous section for the DriverSet building blocks.
 % get back to normal
 \normalsize
 
-\section{Operating Parameters and Housekeeping Channels}
+\section{Operating Parameters and Housekeeping}
 \label{param}
 
 While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. 
@@ -405,7 +411,25 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 
 The Thermal Group (Table \ref{ttab}) sensors are external temperature-sensitive resistors. The nominal range for the circuitry is $500\Omega$ to $1500\Omega$, which translates into the given temperature ranges. It may be useful to calibrate the board using external fixed resistors near the limits of the range.
 
-% \begin{appendices}
+\FloatBarrier
+\begin{appendices}
+\section{Acronyms and other abbreviations}
+\begin{longtable}{l p{5in}}
+ADC & Analog to digital converter. \\
+AUX & FPGA auxiliary power. \\
+CCD & Charge-coupled device. \\
+DAC & Digital to analog converter. \\
+HKCOM & Common output for the housekeeping multiplexors. \\
+IO & Input output. \\
+JTAG & Joint Test Action Group. \\
+kTC & The variance of the thermal charge on a capacitor. \\
+MOSFET & Metal oxide semiconductor field-effect transistor. \\
+RC & Resistor-capacitor. \\
+RTDCOM & Common output for the resistance temperature device multiplexors. \\
+
+
+\end{longtable}
+
 % \section{Default FPE Program}
 %
 % The following is the default \emph{Sequencer DSL} FPE program associated with the observatory simulator.
@@ -413,6 +437,6 @@ The Thermal Group (Table \ref{ttab}) sensors are external temperature-sensitive 
 % \lstset{language=C} % Use C because it is vaguely similar
 % \lstinputlisting{../Data/default_program.fpe}
 %
-% \end{appendices}
+\end{appendices}
 
 \end{document}
