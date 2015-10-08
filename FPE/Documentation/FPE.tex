@@ -228,6 +228,8 @@ Connector & Pin & Net & Comment \\
 Figure \ref{ArtixPower} shows the power regulators for the Artix FPGA. An RC filter on the reference insures that the 1.8V AUX power rises more slowly than the 1V core power. The 2.5V and 3.3V IO power follow the 1.8V AUX power with additional delays. This insures proper initialization. Q5 pulls down the 3.3V IO power if the 1.8V level is low, insuring that the rated maximum 2.625V difference cannot be exceeded for more than the allowed time (see Xilinx data sheet DS181). The resistors on the collectors of the pass transistors limit the surge current, and are rated to handle the fault current if the FPGA should latch up. 
 \subsubsection{FPGA Reset}
 \schempage{Reset}
+
+Figure \ref{Reset} shows the circuit that resets the FPGA to allow it to accept a program upload. The FPGA is normally in this state after power is turned on. Once programmed, the uplink is control data, not programming data. By driving the uplink clock high for $>$50ms, the controlling computer may restore the FPGA to the unprogrammed state. Normally, the controlling computer should either hold the uplink clock low, or cycle it to clock uplink data.
 \subsection{Interface Board Top Level}
 \schempage{Interface.1}
 Figure \ref{Interface.1} shows the Artix FPGA (U4). Its pin connections are too complex to draw: Table \ref{Artix} shows them. J9 is the JTAG header for FPGA debugging. J6 is the data connector to the DHU. J8 is test signals and configuration jumpers for the FPGA. Table \ref{IJ8} shows its pinout. For the pinouts of Js, the stacking connector, see Table \ref{Stack}.
@@ -419,6 +421,7 @@ ADC & Analog to digital converter. \\
 AUX & FPGA auxiliary power. \\
 CCD & Charge-coupled device. \\
 DAC & Digital to analog converter. \\
+FPGA & Field Programmable Gate Array. \\
 HKCOM & Common output for the housekeeping multiplexors. \\
 IO & Input output. \\
 JTAG & Joint Test Action Group. \\
