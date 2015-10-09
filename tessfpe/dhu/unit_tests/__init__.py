@@ -24,7 +24,7 @@ def check_house_keeping_voltages(fpe, tolerance=0.05):
                 "Housekeeping value for {key} should be {expected}, was {actual}".format(
                     key=key,
                     expected=expected,
-                    actual=actual))
+                    actual=hsk["analogue"][key]))
     return True
 
 
