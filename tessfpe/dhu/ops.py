@@ -78,11 +78,11 @@ This object has two access methods:
   - You can use `ops.address` to set an operating parameter at a particular address
   - You can use `ops.<name>` to set an operating parameter with a particular name
 
->>> ops.address[80].name
-'ccd3_parallel_high'
->>> ops.ccd3_parallel_high = 5.0
->>> ops.address[80].value
-5.0
+>>> ops.address[81].name
+'ccd3_parallel_low'
+>>> ops.ccd3_parallel_low = -5.0
+>>> ops.address[81].value
+-5.0
 
 """
 
@@ -170,6 +170,22 @@ class OperatingParameter(object):
         self._value = (self.high - self.low) / float(2 ** 12) * x + self.low
 
 
+class DerivedOperatingParameter(object):
+    """An operating parameter object that is derived from two operating parameter objects"""
+
+    def __init__(self, base, offset):
+        self._base = base
+        self._offset = offset
+
+    @property
+    def value(self):
+        return self._base.value + self._offset.value
+
+    @value.setter
+    def value(self, x):
+        self._offset.value = x - self._base.value
+
+
 import binary_files
 from ..data.operating_parameters import operating_parameters
 from ops import OperatingParameter
@@ -193,24 +209,56 @@ def values_to_5328(values):
 
 class OperatingParameters(object):
     def __init__(self, fpe=None):
+        import re
         # The underscore here is used as sloppy "private" memory
         self._fpe = fpe
         self.address = 128 * [None]
         self._keys = operating_parameters.keys()
+
+        # Set ordinary Operating Parameters
         for (name, data) in operating_parameters.iteritems():
             self._keys.append(name)
             op = OperatingParameter(name, data)
             super(OperatingParameters, self).__setattr__(name, op)
             self.address[op.address] = op
 
+        # Set Derived Operating Parameters
+        derived_operating_parameters = {}
+        for name in operating_parameters:
+            if 'offset' in name:
+                offset_name = name
+                derived_parameter_name = name.replace('_offset', '')
+                if 'low' in derived_parameter_name:
+                    base_name = derived_parameter_name.replace('low', 'high')
+                    derived_operating_parameters[derived_parameter_name] = \
+                        DerivedOperatingParameter(self[base_name], self[offset_name])
+                if 'high' in derived_parameter_name:
+                    base_name = derived_parameter_name.replace('high', 'low')
+                    derived_operating_parameters[derived_parameter_name] = \
+                        DerivedOperatingParameter(self[base_name], self[offset_name])
+                if 'output_drain' in derived_parameter_name:
+                    base_name = re.sub(r'output_drain_._offset$', 'reset_drain', offset_name)
+                    derived_operating_parameters[derived_parameter_name] = \
+                        DerivedOperatingParameter(self[base_name],
+                                                  self[offset_name])
+                super(OperatingParameters, self).__setattr__(
+                    derived_parameter_name,
+                    derived_operating_parameters[derived_parameter_name])
+        self._derived_operating_parameters = derived_operating_parameters
+
     def __getitem__(self, item):
         if item in self._keys:
+            return self.__dict__[item]
+        elif item in self._derived_operating_parameters:
             return self.__dict__[item]
         else:
             raise KeyError(item)
 
     def __setattr__(self, name, value):
         if "_keys" in self.__dict__ and name in self._keys:
+            self.__dict__[name].value = value
+        elif "_derived_keys" in self.__dict__ and \
+                        name in self._derived_operating_parameters:
             self.__dict__[name].value = value
         else:
             super(OperatingParameters, self).__setattr__(name, value)
