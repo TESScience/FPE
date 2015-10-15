@@ -229,7 +229,7 @@ Figure \ref{ArtixPower} shows the power regulators for the Artix FPGA. An RC fil
 \subsubsection{FPGA Reset}
 \schempage{Reset}
 
-Figure \ref{Reset} shows the circuit that resets the FPGA to allow it to accept a program upload. The FPGA is normally in this state after power is turned on. Once programmed, the uplink is control data, not programming data. By driving the uplink clock high for $>$50ms, the controlling computer may restore the FPGA to the unprogrammed state. Normally, the controlling computer should either hold the uplink clock low, or cycle it to clock uplink data.
+Figure \ref{Reset} shows the circuit that resets the FPGA to allow it to accept a program upload. The FPGA is normally in this state after power is turned on. Once programmed, the uplink is control data, not programming data. By driving the uplink clock high for $>$50ms, the controlling computer restores the FPGA to the unprogrammed state. Normally, the controlling computer should either hold the uplink clock low, or cycle it to clock uplink data.
 \subsection{Interface Board Top Level}
 \schempage{Interface.1}
 Figure \ref{Interface.1} shows the Artix FPGA (U4). Its pin connections are too complex to draw: Table \ref{Artix} shows them. J9 is the JTAG header for FPGA debugging. J6 is the data connector to the DHU. J8 is test signals and configuration jumpers for the FPGA. Table \ref{IJ8} shows its pinout. For the pinouts of Js, the stacking connector, see Table \ref{Stack}.
