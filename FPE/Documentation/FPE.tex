@@ -306,7 +306,10 @@ See the previous section for the DriverSet building blocks.
 \section{Operating Parameters and Housekeeping}
 \label{param}
 
-While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. 
+While the implementation details differ, the housekeeping channels and the operating  parameters share a common addressing scheme. An address is seven bits. 
+For the housekeeping, the most significant four bits drive the multiplexor selection logic via the decoded signals HK0, HK8, ..., HK120. The three least significant bits, HKA[2:0], are common among all of the multiplexors, controlling the individual channel selection. 
+
+For the operating parameters, the most significant four bits of the address drive the DAC selection logic via the decoded signals $\overline{\textup{DS0}}$, $\overline{\textup{DS8}}$, ..., $\overline{\textup{DS96}}$. The least significant three bits are part of the serial command that sets a DAC. 
 
 \begin{table}[ht!]
 \caption{Address Map}
