@@ -41,3 +41,5 @@ T 200 1600 5 10 0 0 0 0 1
 spec=N/A
 T 200 800 5 10 0 0 0 0 1
 description=Signal Diode
+T 200 1800 8 10 0 0 0 0 1
+pins=2

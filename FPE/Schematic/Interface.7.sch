@@ -485,6 +485,8 @@ T 40300 41100 5 10 0 0 0 0 1
 refdes=GP1
 T 40300 41100 5 10 0 0 0 0 1
 footprint=CHASSIS
+T 40300 41100 5 10 0 0 0 0 1
+pins=1
 }
 C 41800 41300 1 0 1 resistor.sym
 {
