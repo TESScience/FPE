@@ -4,21 +4,31 @@ VIDEOPRODUCTS = Video.allegro Video.devfiles Video.bom.txt \
 
 # Video-Cirrexx.tsv Video.pads Video.osmond
 
+VIDEOCHECKS = Video.check-duplicates Video.check-pincount
+
 INTERFACEPRODUCTS = Interface.allegro Interface.devfiles \
 	Interface.bom.txt Interface.bom2.txt Interface.counts.txt \
 	 Interface.stats.txt
 
 #Interface-Cirrexx.tsv Interface.pads Interface.osmond
 
+INTERFACECHECKS = Interface.check-duplicates Interface.check-pincount
+
 DRIVERPRODUCTS = Driver.allegro Driver.devfiles Driver.bom.txt \
 	Driver.bom2.txt Driver.counts.txt Driver.stats.txt
 
 #  Driver-Cirrexx.tsv Driver.pads Driver.osmond 
 
+DRIVERCHECKS = Driver.check-duplicates Driver.check-pincount
+
 PRODUCTS = $(VIDEOPRODUCTS) $(INTERFACEPRODUCTS) $(DRIVERPRODUCTS) \
 	../Documentation/FPE.pdf counts.txt
 
+CHECKS = $(VIDEOCHECKS) $(INTERFACECHECKS) $(DRIVERCHECKS)
+
 all : $(PRODUCTS)
+
+checks : $(DRIVERCHECKS) $(INTERFACECHECKS) $(VIDEOCHECKS)
 
 release : $(PRODUCTS)
 	mkdir -p ../../Releases/$(REV)
