@@ -22,7 +22,7 @@ C 44700 48100 1 0 0 resistor.sym
 T 44900 48400 5 10 1 1 0 0 1
 refdes=R5
 T 45000 47900 5 10 1 1 0 0 1
-value=475
+value=470
 }
 C 44600 47000 1 0 0 gnd-1.sym
 C 43500 49100 1 0 0 capacitor.sym
@@ -183,7 +183,7 @@ C 49100 44200 1 0 0 resistor.sym
 T 49300 44500 5 10 1 1 0 0 1
 refdes=R12
 T 49400 44000 5 10 1 1 0 0 1
-value=475
+value=470
 }
 C 49000 43100 1 0 0 gnd-1.sym
 C 47900 45200 1 0 0 capacitor.sym

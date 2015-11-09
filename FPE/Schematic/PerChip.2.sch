@@ -145,7 +145,7 @@ C 46100 42000 1 0 0 resistor.sym
 T 46300 42300 5 10 1 1 0 0 1
 refdes=R6
 T 46400 41800 5 10 1 1 0 0 1
-value=475
+value=470
 }
 C 46000 40900 1 0 0 gnd-1.sym
 C 44900 43000 1 0 0 capacitor.sym

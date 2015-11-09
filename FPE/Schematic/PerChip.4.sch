@@ -30,7 +30,7 @@ C 45700 47900 1 0 0 resistor.sym
 T 45900 48200 5 10 1 1 0 0 1
 refdes=R25
 T 46000 47700 5 10 1 1 0 0 1
-value=475
+value=470
 }
 C 45600 46800 1 0 0 gnd-1.sym
 C 44500 48900 1 0 0 capacitor.sym
@@ -94,7 +94,7 @@ C 45900 42200 1 0 0 resistor.sym
 T 46100 42500 5 10 1 1 0 0 1
 refdes=R30
 T 46200 42000 5 10 1 1 0 0 1
-value=475
+value=470
 }
 C 44700 43200 1 0 0 capacitor.sym
 {

@@ -30,7 +30,7 @@ C 46300 47700 1 0 0 resistor.sym
 T 46500 48000 5 10 1 1 0 0 1
 refdes=R13
 T 46600 47500 5 10 1 1 0 0 1
-value=475
+value=470
 }
 C 46200 46600 1 0 0 gnd-1.sym
 C 45100 48700 1 0 0 capacitor.sym
@@ -119,7 +119,7 @@ C 46500 42000 1 0 0 resistor.sym
 T 46700 42300 5 10 1 1 0 0 1
 refdes=R19
 T 46800 41800 5 10 1 1 0 0 1
-value=475
+value=470
 }
 C 46400 40900 1 0 0 gnd-1.sym
 C 45300 43000 1 0 0 capacitor.sym
