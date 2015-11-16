@@ -10,7 +10,7 @@ class FPE(object):
 
     def __init__(self, number, FPE_Wrapper_version="6.1.1", debug=False, preload=False, hsk_byte_array=house_keeping.identity_map):
         from fpesocketconnection import FPESocketConnection
-        from tests import check_house_keeping_voltages
+        from unit_tests import check_house_keeping_voltages
         import os
         import time
         if not self.ping():

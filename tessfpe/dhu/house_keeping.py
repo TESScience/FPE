@@ -10,7 +10,23 @@ identity_map = map(add,
 
 
 def rescale_value(v, bits, high=None, low=None):
-    return ((v + 2**15) / float(1 << bits)) * (high - low) + low
+    """Rescale a voltage value represented by a number of bits from a DAC, given high and low values.
+       >>> rescale_value(123, 16, -27, 27)
+       -0.101348876953125
+    """
+    return ((v + 2 ** (bits - 1)) / float(1 << bits)) * (high - low) + low
+
+
+def unscale_value(v, bits, high=None, low=None):
+    """Unscales a rescaled DAC value to its original voltage.
+
+    This obeys the following simple law:
+       >>> from random import random
+       >>> x = random()
+       >>> x == rescale_value(unscale_value(x, 16, high=0, low=1), 16, high=0, low=1)
+       True
+    """
+    return (v - low) / (high - low) * float(1 << bits) - 2 ** (bits - 1)
 
 
 def unpack_pair(p):
@@ -40,7 +56,5 @@ def hsk_to_analogue_dictionary(hsk):
 
 
 if __name__ == "__main__":
-    from sh import od
-    from binary_files import write_hskmem
-
-    print od("-A", "x", "-t", "x1", write_hskmem(identity_map))
+    import doctest
+    doctest.testmod()
