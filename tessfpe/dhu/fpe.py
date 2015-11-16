@@ -84,7 +84,9 @@ class FPE(object):
     def cmd_camrst(self):
         """Reset the camera after running frames"""
         # Is it just me, or shouldn't this be "Reset" not "Rest"?
-        return self.connection.send_command("camrst", reply_pattern='FPE Rest complete')
+        return self.connection.send_command(
+            "camrst",
+            reply_pattern='FPE Rest complete')
 
     def cmd_cam_status(self):
         """Get the camera status"""
