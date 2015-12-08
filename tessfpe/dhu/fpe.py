@@ -79,7 +79,9 @@ class FPE(object):
         """Ping the Observation Simulator to make sure it is alive"""
         from sh import ping
         out = ping('-c', '1', '-t', '1', '192.168.100.1')
-        return '1 packets transmitted, 1 packets received' in str(out)
+       # return '1 packets transmitted, 1 packets received' in str(out) #MacOS
+        return '1 packets transmitted, 1 received' in str(out) #Centos
+    
 
     def cmd_camrst(self):
         """Reset the camera after running frames"""
