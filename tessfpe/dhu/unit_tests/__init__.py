@@ -15,8 +15,9 @@ voltage_reference_values = {
 def check_house_keeping_voltages(fpe, tolerance=0.05):
     """Check the housekpeeing voltages, up to a 5% tolerance"""
     # We apparently need to flip frames off and then on again before getting housekeeping
-    fpe.cmd_start_frames()
-    fpe.cmd_stop_frames()
+    #TODO ObsSim 1.7 and wrapper >=6.1.3 fixes this problem, so these can be deleted. EB
+    #fpe.cmd_start_frames()
+    #fpe.cmd_stop_frames()
     hsk = fpe.house_keeping
     for key, expected in voltage_reference_values.iteritems():
         if abs(hsk["analogue"][key] / expected - 1) > tolerance:
