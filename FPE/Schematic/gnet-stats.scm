@@ -89,3 +89,4 @@
 (area "MIL4922" 0.78)
 (area "CHASSIS" 0)
 (area "KYOCERA-KC3225A-C3" 0.08)
+(area "Vectron-1116" 1.24)
