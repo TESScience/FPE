@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 """The housekeeping identity map, padded with enough zeros to fill
 the 512 bytes."""
 

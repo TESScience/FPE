@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 from ops import OperatingParameters
 
 import house_keeping
@@ -54,7 +54,7 @@ class FPE(object):
         tftp_mode = "mode binary"
         tftp_port = "connect 192.168.100.1 {}".format(68 + self.fpe_number)
         tftp_file = "put {} {}".format(file_name, destination)
-        tftp_command = tftp_mode + "\n" + tftp_port + "\n" + tftp_file
+        tftp_command = "\n" + tftp_mode + "\n" + tftp_port + "\n" + tftp_file
 
         if self._debug:
             print "Running:\ntftp <<EOF\n", \
@@ -79,7 +79,9 @@ class FPE(object):
         """Ping the Observation Simulator to make sure it is alive"""
         from sh import ping
         out = ping('-c', '1', '-t', '1', '192.168.100.1')
-        return '1 packets transmitted, 1 packets received' in str(out)
+       # return '1 packets transmitted, 1 packets received' in str(out) #MacOS
+        return '1 packets transmitted, 1 received' in str(out) #Centos
+    
 
     def cmd_camrst(self):
         """Reset the camera after running frames"""
@@ -218,35 +220,35 @@ class FPE(object):
         """Upload the FPE Wrapper binary file to the FPE"""
         return self.tftp_put(
             fpe_wrapper_bin,
-            "bitmem")
+            "bitmem" + str(self.fpe_number))
 
     def upload_sequencer_memory(self, sequencer_memory):
         """Upload the Sequencer Memory to the FPE"""
         # self.camrst()
         return self.tftp_put(
             sequencer_memory,
-            "seqmem")
+            "seqmem" + str(self.fpe_number))
 
     def upload_register_memory(self, register_memory):
         """Upload the Register Memory to the FPE"""
         return self.tftp_put(
             register_memory,
-            "regmem")
+            "regmem" + str(self.fpe_number))
 
     def upload_program_memory(self, program_memory):
         """Upload the Program Memory to the FPE"""
         return self.tftp_put(
             program_memory,
-            "prgmem")
+            "prgmem" + str(self.fpe_number))
 
     def upload_operating_parameter_memory(self, operating_parameter_memory):
         """Upload the Operating Parameter Memory to the FPE"""
         return self.tftp_put(
             operating_parameter_memory,
-            "clvmem")
+            "clvmem" + str(self.fpe_number))
 
     def upload_housekeeping_memory(self, hsk_memory):
         """Upload the Operating Parameter Memory to the FPE"""
         return self.tftp_put(
             hsk_memory,
-            "hskmem")
+            "hskmem" + str(self.fpe_number))
