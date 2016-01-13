@@ -31,6 +31,8 @@ PS2PDF=ps2pdf -sPAPERSIZE=letter
 
 SCH=DummyCCD.1.sch	Pclock.sch	Sclock2.sch	Sclock4.sch
 
+MERGE=J1.psch J2.psch
+
 PINS=J1.txt	J2.txt
 	
 PS=DummyCCD.1.ps	Pclock.ps	Sclock2.ps	Sclock4.ps
@@ -43,7 +45,17 @@ DummyCCD.ps : $(PS) $(PINS) $(BOM)
 	$(A2PS)
 
 DummyCCD.bom.txt : $(SCH)
-	$(GNET) -g bom -o $@ DummyCCD.1.sch
+	$(GNET) -g bom -o $@ DummyCCD.1.sch $(MERGE)
 
 DummyCCD.counts.txt : DummyCCD.bom.txt
 	awk -f ../Schematic/countem.awk DummyCCD.bom.txt | sort -nr >$@
+
+check-duplicates: DummyCCD.1.sch $(MERGE)
+	$(GNET) -L ../Schematic -g check-duplicates DummyCCD.1.sch $(MERGE)
+
+check-pincount: DummyCCD.1.sch $(MERGE)
+	$(GNET) -L ../Schematic -g check-pincount \
+		-m ../Schematic/FPE-footprint-pins.scm DummyCCD.1.sch $(MERGE)
+
+clean :
+	rm -rf *.ps *.pdf *.bom*.txt *devfiles *counts.txt *.psch tmp.sch *~ \#*
