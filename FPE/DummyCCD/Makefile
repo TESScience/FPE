@@ -44,7 +44,7 @@ products : DummyCCD.pdf
 DummyCCD.ps : $(PS) $(PINS) $(BOM)
 	$(A2PS)
 
-DummyCCD.bom.txt : $(SCH)
+DummyCCD.bom.txt : $(SCH) $(MERGE)
 	$(GNET) -g bom -o $@ DummyCCD.1.sch $(MERGE)
 
 DummyCCD.counts.txt : DummyCCD.bom.txt
