@@ -39,7 +39,10 @@ PS=DummyCCD.1.ps	Pclock.ps	Sclock2.ps	Sclock4.ps
 
 BOM=DummyCCD.bom.txt DummyCCD.counts.txt
 
-products : DummyCCD.pdf
+products : DummyCCD.pdf DummyCCD.osmond DummyCCD.bom.txt DummyCCD.counts.txt
+
+DummyCCD.osmond : $(SCH) $(MERGE)
+	$(GNET) -g osmond -o $@ DummyCCD.1.sch $(MERGE)
 
 DummyCCD.ps : $(PS) $(PINS) $(BOM)
 	$(A2PS)
