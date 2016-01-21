@@ -8,44 +8,72 @@ import binary_files
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, number, FPE_Wrapper_version="6.1.1", debug=False, preload=False, hsk_byte_array=house_keeping.identity_map):
+    def __init__(self, number, FPE_Wrapper_version=None, debug=False, check_hk=True):
         from fpesocketconnection import FPESocketConnection
         from unit_tests import check_house_keeping_voltages
         import os
         import time
+
+        # First sanity check: ping the observatory simulator
         if not self.ping():
             raise Exception("Cannot ping 192.168.100.1")
         self._debug = debug
         self.fpe_number = number
         self.connection = FPESocketConnection(5554 + number, self._debug)
+
+        # Second sanity check: get the observatory simulator version
+        try:
+           version = self.version
+           if self._debug:
+              print version
+        except Exception as e:
+           raise type(e)("Could not read Observatory Simulator version... {0}\n".format(str(e)) + 
+                         "Are you sure you firmware for the Observatory Simulator is properly installed?")
+           
+
         self._dir = os.path.dirname(os.path.realpath(__file__))
-
         # Default memory configuration files
-        self.fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
-                                            "FPE_Wrapper-{version}.bin".format(version=FPE_Wrapper_version))
-
         self._program_file = os.path.join(self._dir, "..", "data", "files", "default_program.fpe")
-
-        # TODO: Sunset this
         self.register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
 
         # Set the House Keeping and Operating Parameters
-        self.hsk_byte_array = hsk_byte_array
+        self.hsk_byte_array = house_keeping.identity_map
         self.ops = OperatingParameters(self)
 
-        self._safe_to_load_FPE = None
+        # Load the wrapper.  First check if loading the wrapper is *necessary* by checking reference values on housekeeping channels
+        if FPE_Wrapper_version != None:
+            try:
+                check_house_keeping_voltages(self)
+                if self._debug:
+                    print "House keeping reports sane values for reference voltages, *NOT* loading wrapper"
+            except:
+                fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
+                                               "FPE_Wrapper-{version}.bin".format(version=FPE_Wrapper_version))
+                self.upload_fpe_wrapper_bin(fpe_wrapper_bin)
 
-        if preload:
-            self.upload_fpe_wrapper_bin(self.fpe_wrapper_bin)
         self.upload_register_memory(self.register_memory)
         self.upload_housekeeping_memory(
             binary_files.write_hskmem(self.hsk_byte_array))
         self.ops.send()
         self.load_code()
 
-        # Run sanity checks on the FPE to make sure basic functions are working
-        time.sleep(.01) # Need to wait for 1/100th of a sec for prince charming
-        check_house_keeping_voltages(self)
+        time.sleep(.01) # Need to wait for 1/100th of a sec for the box to catch up with us
+
+        # Run sanity checks on the FPE to make sure basic functions are working (if specified)
+        if check_hk:
+            check_house_keeping_voltages(self)
+
+    def close(self):
+        """Close the fpe object (namely its socket connection)"""
+        return self.connection.close()
+
+    def __enter__(self):
+        """Enter the python object, used for context management.  See: https://www.python.org/dev/peps/pep-0343/"""
+        return self
+
+    def __exit__(self, exception_type, exception_value, traceback):
+        """Exit the python object, used for context management.  See: https://www.python.org/dev/peps/pep-0343/"""
+        return self.close()
 
     def tftp_put(self, file_name, destination):
         """Upload a file to the FPE"""

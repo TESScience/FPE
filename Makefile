@@ -1,4 +1,4 @@
-.PHONY: all manual clean test
+.PHONY: all manual install_testsuite clean test
 MANUAL_DIR=FPE/Documentation
 SCHEMATIC_DIR=FPE/Schematic
 VERSION=$(shell git describe --abbrev=0 --tags)
@@ -25,6 +25,13 @@ setup.py: templates/setup.py.template
 tessfpe/sequencer_dsl/SequencerDSLParser.py: 
 	make -C $(dir $@) $(notdir $@)
 
+install_testsuite: setup.py testsuite/venv
+	@[ -d testsuite/venv/lib/python2.7/site-packages/tessfpe-*.egg ] \
+        || testsuite/venv/bin/python setup.py install
+
+testsuite/venv:
+	make -C testsuite venv
+
 release: setup.py manual tessfpe/sequencer_dsl/SequencerDSLParser.py
 	# Commit the tagged release to github if necessary
 	if ! curl -s --head https://codeload.github.com/TESScience/FPE/legacy.tar.gz/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
@@ -50,3 +57,4 @@ clean:
 	make -C tessfpe clean
 	make -C $(MANUAL_DIR) clean
 	make -C $(SCHEMATIC_DIR) clean
+	make -C testsuite clean

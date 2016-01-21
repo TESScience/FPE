@@ -7,3 +7,4 @@ dist/
 tessfpe.egg-info/
 *.swp
 .ipynb_checkpoints/
+build/
