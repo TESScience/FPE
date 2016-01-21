@@ -25,7 +25,7 @@ setup.py: templates/setup.py.template
 tessfpe/sequencer_dsl/SequencerDSLParser.py: 
 	make -C $(dir $@) $(notdir $@)
 
-install_testsuite: setup.py testsuite/venv
+install_testsuite: setup.py testsuite/venv tessfpe/sequencer_dsl/SequencerDSLParser.py
 	@[ -d testsuite/venv/lib/python2.7/site-packages/tessfpe-*.egg ] \
         || testsuite/venv/bin/python setup.py install
 
