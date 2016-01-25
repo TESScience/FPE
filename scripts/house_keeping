@@ -1,0 +1,23 @@
+#!/usr/bin/env python2.7
+"""This script checks prints the house keeping data for the focal plane electronics hooked up to the Observatory Simulator"""
+
+if __name__ == "__main__":
+    from tessfpe.dhu.fpe import FPE
+    from tessfpe.data.housekeeping_channels import housekeeping_channels
+    from tessfpe.dhu.unit_tests import voltage_reference_values
+    from pprint import pprint
+    from copy import deepcopy
+    import numpy as np
+    import pandas as pd
+    import argparse
+    import sys
+
+    # Parse the command line arguments
+    parser = argparse.ArgumentParser(description='Measure the housekeeping data')
+    parser.add_argument('samples', metavar='N', type=int, nargs='?', default=1, help='number of samples to take')
+    args = parser.parse_args()
+     
+    with FPE(1) as fpe:
+        if args.samples <= 1:
+            pprint(fpe.analogue_house_keeping_with_units)
+        sys.exit(0)  # 0 is SUCCESS for shell commands

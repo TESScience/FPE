@@ -10,12 +10,10 @@ if __name__ == "__main__":
     import pandas as pd
     import argparse
     import sys
-    import tessfpe.report.ascii_plot as ap
 
     # Parse the command line arguments
     parser = argparse.ArgumentParser(description='Measure the voltages on the housekeeping to verify they match the reference values')
     parser.add_argument('samples', metavar='N', type=int, nargs='?', default=100, help='number of samples to take')
-    parser.add_argument('--histograms', action='store_true', help='print histograms at the command line')
     args = parser.parse_args()
     
     with FPE(1) as fpe:
@@ -28,11 +26,6 @@ if __name__ == "__main__":
             for k in keys:
                 reported_values[k].append(hk["analogue"][k])
 
-        if args.histograms:
-            for k in keys:
-                print "Measurements for", k, "({0} Samples)".format(args.samples)
-                ap.hist(reported_values[k])
-            
         final_report = pd.DataFrame(
            np.transpose(
              [["{0:.4f} {1}".format(voltage_reference_values[k], units[k]) for k in keys],

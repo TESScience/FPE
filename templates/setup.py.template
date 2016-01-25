@@ -19,7 +19,7 @@ setup (
   author_email = 'jpd@noqsi.com',
   url = 'https://github.com/TESScience/FPE', # use the URL to the github repo
   download_url = 'https://github.com/TESScience/FPE/tarball/<TAG>',
-  scripts = glob.glob('scripts/*.py'),
+  scripts = glob.glob('scripts/*'),
   install_requires=[
       'grako>=3.6.3',
       'pandas>=0.17.1',

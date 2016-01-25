@@ -54,6 +54,12 @@ def hsk_to_analogue_dictionary(hsk):
                  for j in hsk[1 + i:17 + i]
                  for k in unpack_pair(j)])}
 
+def hsk_to_analogue_dictionary_with_units(hsk):
+    from ..data.housekeeping_channels import \
+        housekeeping_channels
+    return {k: "{0} {1}".format(v, housekeeping_channels[k]["unit"])
+            for k,v in hsk_to_analogue_dictionary(hsk).iteritems()}
+    
 
 if __name__ == "__main__":
     import doctest

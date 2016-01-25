@@ -129,6 +129,8 @@ class FPE(object):
     def cmd_version(self):
         """Get the version of the Observatory Simulator DHU software"""
         import re
+        # Frames must be stopped to read version, otherwise the observatory simulator will not respond
+        self.cmd_stop_frames()
         return \
             re.sub(r'FPE[0-9]>', '',
                    self.connection.send_command(
@@ -213,6 +215,11 @@ class FPE(object):
                    for k in house_keeping.unpack_pair(j)]
         return {"analogue": analogue,
                 "digital": digital}
+
+    @property
+    def analogue_house_keeping_with_units(self):
+        hsk = self.cmd_cam_hsk()
+        return house_keeping.hsk_to_analogue_dictionary_with_units(hsk)
 
     @property
     def parameters(self):
