@@ -1,5 +1,26 @@
 #!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
 """This script performs measurements of reference voltages to verify functionality."""
+
+def report_table(data, expected_values={}):
+    """Make a table (string) reporting the values of the data"""
+    from tessfpe.data.housekeeping_channels import housekeeping_channels
+    keys = data.keys()
+    units = {k: housekeeping_channels[k]["unit"] for k in keys}
+    report = pd.DataFrame(
+       np.transpose(
+         [[u"{0:.4f} {1}".format(expected_values[k], units[k]) if k in expected_values else "" 
+           for k in keys],
+          [u"{0:.4f} {1}".format(np.average(data[k]), units[k])
+           for k in keys],
+          [u"{0:.4f} {1}²".format(np.var(data[k]), units[k])
+           for k in keys]]),
+       index=keys,
+       columns=['Expected', 'Average', 'Variance'])
+    
+    return report.to_string(formatters={col:u'{{:<{}s}}'.format(final_report[col].str.len().max()).format
+                                        for col in report.columns.values})
+    
 
 if __name__ == "__main__":
     from tessfpe.dhu.fpe import FPE
@@ -28,12 +49,12 @@ if __name__ == "__main__":
 
         final_report = pd.DataFrame(
            np.transpose(
-             [["{0:.4f} {1}".format(voltage_reference_values[k], units[k]) for k in keys],
-              ["{0:.4f} {1}".format(np.average(reported_values[k]), units[k]) for k in keys],
-              ["{0:.4f} {1}".format(np.std(reported_values[k]), units[k]) for k in keys]]),
+             [[u"{0:.4f} {1}".format(voltage_reference_values[k], units[k]) for k in keys],
+              [u"{0:.4f} {1}".format(np.average(reported_values[k]), units[k]) for k in keys],
+              [u"{0:.4f} {1}²".format(np.var(reported_values[k]), units[k]) for k in keys]]),
            index=keys,
-           columns=['Expected', 'Average', 'STD'])
+           columns=['Expected', 'Average', 'Variance'])
 
         print "Samples: {0}".format(args.samples)
-        print final_report
+        print report_table(reported_values, voltage_reference_values)
         sys.exit(0)  # 0 is SUCCESS for shell commands

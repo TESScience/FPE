@@ -38,3 +38,8 @@ housekeeping_channels = \
 housekeeping_channel_memory_map = 128 * [None]
 for entry_name, entry in housekeeping_channels.iteritems():
     housekeeping_channel_memory_map[entry["address"]] = entry_name
+
+def add_hsk_units(hsk_dict, suffix=""):
+    "Takes a dictionary of housekeeping units and makes a new one with units attached (takes an optional suffix)"
+    return {k: "{0} {1}{2}".format(v, housekeeping_channels[k]["unit"], suffix)
+            for k,v in hsk_dict.iteritems()}
