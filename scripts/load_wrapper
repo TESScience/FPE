@@ -16,7 +16,7 @@ def check_hk(n):
     from contextlib import closing
     import tessfpe.dhu.fpesocketconnection
 
-    with closing(FPE(n, debug=False, check_hk=False)) as fpe:
+    with FPE(n, debug=False, sanity_checks=False) as fpe:
         try:
             check_house_keeping_voltages(fpe)
             return True

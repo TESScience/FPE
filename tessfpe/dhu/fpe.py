@@ -8,7 +8,7 @@ import binary_files
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, number, FPE_Wrapper_version=None, debug=False, check_hk=True):
+    def __init__(self, number, FPE_Wrapper_version=None, debug=False, sanity_checks=True):
         from fpesocketconnection import FPESocketConnection
         from unit_tests import check_house_keeping_voltages
         import os
@@ -21,24 +21,24 @@ class FPE(object):
         self.fpe_number = number
         self.connection = FPESocketConnection(5554 + number, self._debug)
 
-        # Second sanity check: get the observatory simulator version
-        try:
-           version = self.version
-           if self._debug:
-              print version
-        except Exception as e:
-           raise type(e)("Could not read Observatory Simulator version... {0}\n".format(str(e)) + 
-                         "Are you sure you firmware for the Observatory Simulator is properly installed?")
+        # Second sanity check: check if frames are running, get the observatory simulator version
+        original_frames_running_status = "unknown"
+        if sanity_checks:
+            try:
+               original_frames_running_status = self.frames_running_status
+            except Exception as e:
+               raise type(e)("Could not read if frames are running on the Observatory Simulator... {0}\n".format(str(e)) + 
+                             "Are you sure you firmware for the Observatory Simulator is properly installed?")
+            try:
+               version = self.version
+               if self._debug:
+                  print version
+            except Exception as e:
+               raise type(e)("Could not read Observatory Simulator version... {0}\n".format(str(e)) + 
+                             "Are you sure you firmware for the Observatory Simulator is properly installed?")
            
 
         self._dir = os.path.dirname(os.path.realpath(__file__))
-        # Default memory configuration files
-        self._program_file = os.path.join(self._dir, "..", "data", "files", "default_program.fpe")
-        self.register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
-
-        # Set the House Keeping and Operating Parameters
-        self.hsk_byte_array = house_keeping.identity_map
-        self.ops = OperatingParameters(self)
 
         # Load the wrapper.  First check if loading the wrapper is *necessary* by checking reference values on housekeeping channels
         if FPE_Wrapper_version != None:
@@ -50,17 +50,24 @@ class FPE(object):
                 fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
                                                "FPE_Wrapper-{version}.bin".format(version=FPE_Wrapper_version))
                 self.upload_fpe_wrapper_bin(fpe_wrapper_bin)
+                register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
+                self.upload_register_memory(register_memory)
+                self.upload_housekeeping_memory(
+                    binary_files.write_hskmem(house_keeping.identity_map))
 
-        self.upload_register_memory(self.register_memory)
-        self.upload_housekeeping_memory(
-            binary_files.write_hskmem(self.hsk_byte_array))
+        # Set the House Keeping and Operating Parameters
+        # TODO: get operating parameters from the device
+        self.ops = OperatingParameters(self)
         self.ops.send()
+        # TODO: sunset this and just load Joel's binary file
+        self._program_file = os.path.join(self._dir, "..", "data", "files", "default_program.fpe")
         self.load_code()
 
         time.sleep(.01) # Need to wait for 1/100th of a sec for the box to catch up with us
 
         # Run sanity checks on the FPE to make sure basic functions are working (if specified)
-        if check_hk:
+        if sanity_checks:
+            self.frames_running_status = original_frames_running_status
             check_house_keeping_voltages(self)
 
     def close(self):
@@ -118,7 +125,7 @@ class FPE(object):
             "camrst",
             reply_pattern='FPE Rest complete')
 
-    def cmd_cam_status(self):
+    def cmd_status(self):
         """Get the camera status"""
         response = self.connection.send_command(
             "cam_status",
@@ -126,11 +133,20 @@ class FPE(object):
         val = int(response, 16)
         return val
 
+    def cmd_control(self):
+        """Get the camera control status"""
+        response = self.connection.send_command(
+            "cam_control",
+            reply_pattern="cam_control = 0x[0-9a-f]+")[14:]
+        val = int(response, 16)
+        return val
+
+
     def cmd_version(self):
         """Get the version of the Observatory Simulator DHU software"""
         import re
         # Frames must be stopped to read version, otherwise the observatory simulator will not respond
-        self.cmd_stop_frames()
+        self.frames_running_status = False
         return \
             re.sub(r'FPE[0-9]>', '',
                    self.connection.send_command(
@@ -149,11 +165,12 @@ class FPE(object):
             reply_pattern="Frames Stopped..."
         )
 
-    def cmd_cam_hsk(self):
+    def cmd_hsk(self):
         """Get the camera housekeeping data, outputs an array of the housekeeping data"""
         import re
         channels = 128
         # TODO: switch on whether frames have been started
+        self.frames_running_status = False
         out = self.connection.send_command(
             "cam_hsk",
             reply_pattern="Hsk\[[0-9]+\] = 0x[0-9a-f]+",
@@ -206,7 +223,7 @@ class FPE(object):
 
     @property
     def house_keeping(self):
-        hsk = self.cmd_cam_hsk()
+        hsk = self.cmd_hsk()
         # Create a dictionary of the analogue outputs
         analogue = house_keeping.hsk_to_analogue_dictionary(hsk)
         # Create array of digital outs
@@ -218,7 +235,7 @@ class FPE(object):
 
     @property
     def analogue_house_keeping_with_units(self):
-        hsk = self.cmd_cam_hsk()
+        hsk = self.cmd_hsk()
         return house_keeping.hsk_to_analogue_dictionary_with_units(hsk)
 
     @property
@@ -247,9 +264,29 @@ class FPE(object):
         return self.cmd_version()
 
     @property
-    def cam_status(self):
+    def status(self):
         """Get the camera status for the Observatory Simulator for a particular FPE"""
-        return self.cmd_cam_status()
+        return self.cmd_status()
+
+    @property
+    def control_status(self):
+        """Get the camera control status for the Observatory Simulator for a particular FPE"""
+        return self.cmd_control()
+
+    @property
+    def frames_running_status(self):
+        """Check if frames are being run or not"""
+        return (0b10 & self.control_status) == 0b10
+
+    @frames_running_status.setter
+    def frames_running_status(self, value):
+        """Set if frames are running or not"""
+        if value == True:
+           self.cmd_start_frames()
+        if value == False:
+           self.cmd_stop_frames()
+        else:
+           raise Exception("Trying to set frames_running_status to value that is not boolean: {0}".format(value))
 
     def upload_fpe_wrapper_bin(self, fpe_wrapper_bin):
         """Upload the FPE Wrapper binary file to the FPE"""

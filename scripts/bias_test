@@ -2,23 +2,27 @@
 # -*- coding: utf-8 -*-
 """This script performs measurements of reference voltages to verify functionality."""
 
-def report_table(data, expected_values={}):
+def report_table(data, expected_values={}, precision=4):
     """Make a table (string) reporting the values of the data"""
     from tessfpe.data.housekeeping_channels import housekeeping_channels
     keys = data.keys()
     units = {k: housekeeping_channels[k]["unit"] for k in keys}
     report = pd.DataFrame(
        np.transpose(
-         [[u"{0:.4f} {1}".format(expected_values[k], units[k]) if k in expected_values else "" 
+         [[(u"{0:." + unicode(precision) + "f} {1}").format(expected_values[k], units[k]) if k in expected_values else "" 
            for k in keys],
-          [u"{0:.4f} {1}".format(np.average(data[k]), units[k])
+          [(u"{0:." + unicode(precision) + "f} {1}").format(np.average(data[k]), units[k])
            for k in keys],
-          [u"{0:.4f} {1}²".format(np.var(data[k]), units[k])
-           for k in keys]]),
-       index=keys,
-       columns=['Expected', 'Average', 'Variance'])
+          [u"{0} {1}²".format(np.var(data[k]), units[k])
+           for k in keys],
+          [(u"{0:." + unicode(precision) + "f} {1}").format(np.std(data[k]), units[k])
+           for k in keys]
+]),
+       index=keys, 
+       columns=['Expected', 'Average', 'Variance', 'STD']
+    )
     
-    return report.to_string(formatters={col:u'{{:<{}s}}'.format(final_report[col].str.len().max()).format
+    return report.to_string(formatters={col:u'{{:<{}s}}'.format(report[col].str.len().max()).format
                                         for col in report.columns.values})
     
 
@@ -33,8 +37,9 @@ if __name__ == "__main__":
     import sys
 
     # Parse the command line arguments
-    parser = argparse.ArgumentParser(description='Measure the voltages on the housekeeping to verify they match the reference values')
+    parser = argparse.ArgumentParser(description='Measure the bias voltages on the housekeeping to verify they match the reference values')
     parser.add_argument('samples', metavar='N', type=int, nargs='?', default=100, help='number of samples to take')
+    parser.add_argument('precision', metavar='N', type=int, nargs='?', default=4, help='number of digits of precision to use when outputting')
     args = parser.parse_args()
     
     with FPE(1) as fpe:
@@ -47,14 +52,7 @@ if __name__ == "__main__":
             for k in keys:
                 reported_values[k].append(hk["analogue"][k])
 
-        final_report = pd.DataFrame(
-           np.transpose(
-             [[u"{0:.4f} {1}".format(voltage_reference_values[k], units[k]) for k in keys],
-              [u"{0:.4f} {1}".format(np.average(reported_values[k]), units[k]) for k in keys],
-              [u"{0:.4f} {1}²".format(np.var(reported_values[k]), units[k]) for k in keys]]),
-           index=keys,
-           columns=['Expected', 'Average', 'Variance'])
-
-        print "Samples: {0}".format(args.samples)
-        print report_table(reported_values, voltage_reference_values)
+        if args.samples > 1:
+            print "Samples: {0}".format(args.samples)
+        print report_table(reported_values, expected_values = voltage_reference_values, precision=args.precision)
         sys.exit(0)  # 0 is SUCCESS for shell commands
