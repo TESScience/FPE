@@ -1,0 +1,13 @@
+.control
+* this is a DNP, but resistance defaults to zero in SPICE
+alter r.x1.r25 1g
+tran 10n 10u
+set hcopypscolor=1
+* red, green, blue traces
+set color2=rgb:f/0/0
+set color3=rgb:0/8/0
+set color4=rgb:0/0/f
+hardcopy ia_loaded.ps P1IA+20 P2IA+10 P3IA
+hardcopy fs_loaded.ps P1FS+20 P2FS+10 P3FS
+quit
+.endc
