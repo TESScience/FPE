@@ -7,24 +7,37 @@ def report_table(data, expected_values={}, precision=4):
     from tessfpe.data.housekeeping_channels import housekeeping_channels
     keys = data.keys()
     units = {k: housekeeping_channels[k]["unit"] for k in keys}
-    report = pd.DataFrame(
-       np.transpose(
-         [[(u"{0:." + unicode(precision) + "f} {1}").format(expected_values[k], units[k]) if k in expected_values else "" 
-           for k in keys],
-          [(u"{0:." + unicode(precision) + "f} {1}").format(np.average(data[k]), units[k])
-           for k in keys],
-          [u"{0} {1}²".format(np.var(data[k]), units[k])
-           for k in keys],
-          [(u"{0:." + unicode(precision) + "f} {1}").format(np.std(data[k]), units[k])
-           for k in keys]
-]),
-       index=keys, 
-       columns=['Expected', 'Average', 'Variance', 'STD']
-    )
-    
-    return report.to_string(formatters={col:u'{{:<{}s}}'.format(report[col].str.len().max()).format
+    if all(isinstance(v, (list, set, tuple)) for v in data.values()):
+        samples_text = "Samples: {0}\n".format(len(data.values()[0])) \
+                       if len(set([len(v) for v in data.values()])) == 1 else ""
+        report = pd.DataFrame(
+           np.transpose(
+             [[(u"{0:." + unicode(precision) + "f} {1}").format(expected_values[k], units[k]) \
+               if k in expected_values else "N/A" 
+               for k in keys],
+              [(u"{0:." + unicode(precision) + "f} {1}").format(np.average(data[k]), units[k])
+               for k in keys],
+              [(u"{0:." + unicode(precision) + "f} {1}").format(np.std(data[k]), units[k])
+               for k in keys],
+              [u"{0} {1}²".format(np.var(data[k]), units[k])
+               for k in keys]]),
+           index=keys, 
+           columns=[' Expected', ' Average', ' STD', ' Variance'])
+
+        if list(report[' Expected'].unique()) == ['N/A']:
+            del report[' Expected']
+    else:
+        samples_text = ""
+        report = pd.DataFrame(
+           np.transpose(
+             [[(u"{0:." + unicode(precision) + "f} {1}").format(data[k], units[k])
+               for k in keys]]),
+           index=keys)
+
+    return samples_text + \
+           report.to_string(justify='left',
+                            formatters={col:u'{{:<{}s}}'.format(report[col].str.len().max()).format
                                         for col in report.columns.values})
-    
 
 if __name__ == "__main__":
     from tessfpe.dhu.fpe import FPE
@@ -52,7 +65,7 @@ if __name__ == "__main__":
             for k in keys:
                 reported_values[k].append(hk["analogue"][k])
 
-        if args.samples > 1:
-            print "Samples: {0}".format(args.samples)
-        print report_table(reported_values, expected_values = voltage_reference_values, precision=args.precision)
+        print report_table(reported_values, 
+                           expected_values = voltage_reference_values,
+                           precision = args.precision)
         sys.exit(0)  # 0 is SUCCESS for shell commands
