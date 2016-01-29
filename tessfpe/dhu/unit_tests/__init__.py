@@ -11,6 +11,21 @@ voltage_reference_values = {
     "-12": -12
 }
 
+temperature_sensor_calibration_values = {
+        "pt1000_sensor_1": -127.43,
+        "pt1000_sensor_2": -97.40,
+        "pt1000_sensor_3": -64.09,
+        "pt1000_sensor_4": -46.18,
+        "pt1000_sensor_5": -24.95,
+        "pt1000_sensor_6": 0.51,
+        "pt1000_sensor_7": 22.13,
+        "pt1000_sensor_8": 45.16,
+        "pt1000_sensor_9": 48.23,
+        "pt1000_sensor_10": 77.14,
+        "pt1000_sensor_11": 126.14,
+        "pt1000_sensor_12": 23.92
+}
+
 
 def check_house_keeping_voltages(fpe, tolerance=0.05):
     """Check the housekpeeing voltages, up to a 5% tolerance"""

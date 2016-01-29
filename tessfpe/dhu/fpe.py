@@ -56,10 +56,9 @@ class FPE(object):
                     binary_files.write_hskmem(house_keeping.identity_map))
 
         # Set the House Keeping and Operating Parameters
-        # TODO: get operating parameters from the device
         self.ops = OperatingParameters(self)
         self.ops.send()
-        # TODO: sunset this and just load Joel's binary file
+        # TODO: take this as a parameter, make sure it is only done when specified or at bring up
         self._program_file = os.path.join(self._dir, "..", "data", "files", "default_program.fpe")
         self.load_code()
 
@@ -125,6 +124,7 @@ class FPE(object):
             "camrst",
             reply_pattern='FPE Rest complete')
 
+
     def cmd_status(self):
         """Get the camera status"""
         response = self.connection.send_command(
@@ -132,6 +132,7 @@ class FPE(object):
             reply_pattern="cam_status = 0x[0-9a-f]+")[13:]
         val = int(response, 16)
         return val
+
 
     def cmd_control(self):
         """Get the camera control status"""
@@ -153,17 +154,20 @@ class FPE(object):
                        "version",
                        reply_pattern="Observatory Simulator Version .*"))
 
+
     def cmd_start_frames(self):
         return self.connection.send_command(
             "cam_start_frames",
             reply_pattern="(Starting frames...|Frames already enabled)"
         )
 
+
     def cmd_stop_frames(self):
         return self.connection.send_command(
             "cam_stop_frames",
             reply_pattern="Frames Stopped..."
         )
+
 
     def cmd_hsk(self):
         """Get the camera housekeeping data, outputs an array of the housekeeping data"""
@@ -178,12 +182,14 @@ class FPE(object):
         )
         return [int(n, 16) for n in re.findall('0x[0-9a-f]+', out)]
 
+
     def load_code(self):
         """Loads the program code using tftp"""
         self.upload_sequencer_memory(
             binary_files.write_seqmem(self.sequences_byte_array))
         self.upload_program_memory(
             binary_files.write_prgmem(self.programs_byte_array))
+
 
     def capture_frames(self, n):
         """Capture frames"""
@@ -196,11 +202,13 @@ class FPE(object):
         proc.communicate()
         self.cmd_stop_frames()
 
+
     @property
     def sequences_byte_array(self):
         """A byte array representing the sequences set by the program code"""
         from ..sequencer_dsl.sequence import compile_sequences
         return compile_sequences(self._ast)
+
 
     @property
     def programs_byte_array(self):
@@ -208,10 +216,12 @@ class FPE(object):
         from ..sequencer_dsl.program import compile_programs
         return compile_programs(self._ast)
 
+
     @property
     def _ast(self):
         from ..sequencer_dsl.parse import parse_file
         return parse_file(self._program_file)
+
 
     @property
     def code(self):
@@ -220,6 +230,7 @@ class FPE(object):
             return "// File: {filename}\n\n{code}".format(
                 file=self._program_file,
                 code=f.read())
+
 
     @property
     def house_keeping(self):
@@ -233,50 +244,77 @@ class FPE(object):
         return {"analogue": analogue,
                 "digital": digital}
 
+
     @property
     def analogue_house_keeping_with_units(self):
         hsk = self.cmd_hsk()
         return house_keeping.hsk_to_analogue_dictionary_with_units(hsk)
+
 
     @property
     def parameters(self):
         """The parameters set by the program code"""
         return self._ast["parameters"]
 
+
     @property
     def hold(self):
         """The hold instruction set by the program code"""
         return self._ast["hold"]
+
 
     @property
     def sequences(self):
         """The sequences set by the program code"""
         return self._ast["sequences"]
 
+
     @property
     def defaults(self):
         """The sequencer default values set by the program code"""
         return self._ast["defaults"]
+
 
     @property
     def version(self):
         """Version property for the Observatory Simulator DHU software"""
         return self.cmd_version()
 
+
     @property
     def status(self):
         """Get the camera status for the Observatory Simulator for a particular FPE"""
         return self.cmd_status()
+
 
     @property
     def control_status(self):
         """Get the camera control status for the Observatory Simulator for a particular FPE"""
         return self.cmd_control()
 
+
+    @property
+    def expected_housekeeping(self):
+        """Report the expected values for the housekeeping"""
+        from copy import deepcopy
+        from tessfpe.data.housekeeping_channels import housekeeping_channels
+        from tessfpe.dhu.unit_tests import voltage_reference_values, temperature_sensor_calibration_values
+        expected_values = deepcopy(self.ops.values)
+        for k in housekeeping_channels:
+            if 'bias' in k:
+                expected_values[k] = 0
+        for v in voltage_reference_values:
+            expected_values[v] = voltage_reference_values[v]
+        for v in temperature_sensor_calibration_values:
+            expected_values[v] = temperature_sensor_calibration_values[v]
+        return expected_values
+
+
     @property
     def frames_running_status(self):
         """Check if frames are being run or not"""
         return (0b10 & self.control_status) == 0b10
+
 
     @frames_running_status.setter
     def frames_running_status(self, value):
@@ -288,11 +326,13 @@ class FPE(object):
         else:
            raise Exception("Trying to set frames_running_status to value that is not boolean: {0}".format(value))
 
+
     def upload_fpe_wrapper_bin(self, fpe_wrapper_bin):
         """Upload the FPE Wrapper binary file to the FPE"""
         return self.tftp_put(
             fpe_wrapper_bin,
             "bitmem" + str(self.fpe_number))
+
 
     def upload_sequencer_memory(self, sequencer_memory):
         """Upload the Sequencer Memory to the FPE"""
@@ -301,11 +341,13 @@ class FPE(object):
             sequencer_memory,
             "seqmem" + str(self.fpe_number))
 
+
     def upload_register_memory(self, register_memory):
         """Upload the Register Memory to the FPE"""
         return self.tftp_put(
             register_memory,
             "regmem" + str(self.fpe_number))
+
 
     def upload_program_memory(self, program_memory):
         """Upload the Program Memory to the FPE"""
@@ -313,11 +355,13 @@ class FPE(object):
             program_memory,
             "prgmem" + str(self.fpe_number))
 
+
     def upload_operating_parameter_memory(self, operating_parameter_memory):
         """Upload the Operating Parameter Memory to the FPE"""
         return self.tftp_put(
             operating_parameter_memory,
             "clvmem" + str(self.fpe_number))
+
 
     def upload_housekeeping_memory(self, hsk_memory):
         """Upload the Operating Parameter Memory to the FPE"""

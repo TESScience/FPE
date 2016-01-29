@@ -179,6 +179,10 @@ class DerivedOperatingParameter(object):
         self._offset = offset
 
     @property
+    def default(self):
+        return self._base.default + self._offset.default
+
+    @property
     def value(self):
         return self._base.value + self._offset.value
 
@@ -214,41 +218,51 @@ class OperatingParameters(object):
         # The underscore here is used as sloppy "private" memory
         self._fpe = fpe
         self.address = 128 * [None]
-        self._keys = operating_parameters.keys()
+        self._operating_parameters = {}
 
         # Set ordinary Operating Parameters
         for (name, data) in operating_parameters.iteritems():
-            self._keys.append(name)
             op = OperatingParameter(name, data)
             super(OperatingParameters, self).__setattr__(name, op)
             self.address[op.address] = op
+            self._operating_parameters[name] = op
 
         # Set Derived Operating Parameters
-        derived_operating_parameters = {}
+        self._derived_operating_parameters = {}
         for name in operating_parameters:
             if 'offset' in name:
                 offset_name = name
                 derived_parameter_name = name.replace('_offset', '')
                 if 'low' in derived_parameter_name:
                     base_name = derived_parameter_name.replace('low', 'high')
-                    derived_operating_parameters[derived_parameter_name] = \
+                    self._derived_operating_parameters[derived_parameter_name] = \
                         DerivedOperatingParameter(self[base_name], self[offset_name])
                 if 'high' in derived_parameter_name:
                     base_name = derived_parameter_name.replace('high', 'low')
-                    derived_operating_parameters[derived_parameter_name] = \
+                    self._derived_operating_parameters[derived_parameter_name] = \
                         DerivedOperatingParameter(self[base_name], self[offset_name])
                 if 'output_drain' in derived_parameter_name:
                     base_name = re.sub(r'output_drain_._offset$', 'reset_drain', offset_name)
-                    derived_operating_parameters[derived_parameter_name] = \
+                    self._derived_operating_parameters[derived_parameter_name] = \
                         DerivedOperatingParameter(self[base_name],
                                                   self[offset_name])
                 super(OperatingParameters, self).__setattr__(
                     derived_parameter_name,
-                    derived_operating_parameters[derived_parameter_name])
-        self._derived_operating_parameters = derived_operating_parameters
+                    self._derived_operating_parameters[derived_parameter_name])
+
+    def keys(self):
+        return self._operating_parameters.keys() + self._derived_operating_parameters.keys()
+
+    @property
+    def defaults(self):
+        return {k: self.__dict__[k].default for k in self.keys()}
+
+    @property
+    def values(self):
+        return {k: self.__dict__[k].value for k in self.keys()}
 
     def __getitem__(self, item):
-        if item in self._keys:
+        if item in self._operating_parameters:
             return self.__dict__[item]
         elif item in self._derived_operating_parameters:
             return self.__dict__[item]
@@ -256,16 +270,17 @@ class OperatingParameters(object):
             raise KeyError(item)
 
     def __setattr__(self, name, value):
-        if "_keys" in self.__dict__ and name in self._keys:
+        if "_operating_paremeters" in self.__dict__ and \
+           name in self._operating_parameters:
             self.__dict__[name].value = value
-        elif "_derived_keys" in self.__dict__ and \
+        elif "_derived_operating_parameters" in self.__dict__ and \
                         name in self._derived_operating_parameters:
             self.__dict__[name].value = value
         else:
             super(OperatingParameters, self).__setattr__(name, value)
 
     @property
-    def values(self):
+    def raw_values(self):
         """The 12-bit unsigned values of the operating parameters"""
         return [0 if x is None else x.twelve_bit_value
                 for x in self.address]
@@ -273,7 +288,7 @@ class OperatingParameters(object):
     def send(self):
         """Send the current DAC values to the hardware."""
         return self._fpe.upload_operating_parameter_memory(
-            binary_files.write_clvmem(values_to_5328(self.values)))
+            binary_files.write_clvmem(values_to_5328(self.raw_values)))
 
     def upload_operating_parameter_memory(self):
         """Synonym for send"""
@@ -290,4 +305,4 @@ if __name__ == "__main__":
     from binary_files import write_clvmem
 
     doctest.testmod()
-    print write_clvmem(values_to_5328(OperatingParameters().values))
+    print write_clvmem(values_to_5328(OperatingParameters().raw_values))

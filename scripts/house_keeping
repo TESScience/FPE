@@ -1,23 +1,55 @@
 #!/usr/bin/env python2.7
-"""This script checks prints the house keeping data for the focal plane electronics hooked up to the Observatory Simulator"""
+# -*- coding: utf-8 -*-
+"""This script performs measurements of reference voltages to verify functionality."""
+
+def unique(ls):
+    """Takes an iterable and returns a unique list of elements"""
+    visited = set()
+    output = []
+    for l in ls:
+        if l in visited:
+            continue
+        else:
+            output.append(l)
+            visited.add(l)
+    return output
+
+def match_channels(patterns, channels):
+    """Given a list of patterns and channels, return those channels that match those patterns"""
+    return unique(c for p in patterns
+                    for c in channels
+                    if p in c) # TODO: handle wildcards
 
 if __name__ == "__main__":
     from tessfpe.dhu.fpe import FPE
-    from tessfpe.data.housekeeping_channels import housekeeping_channels
+    from tessfpe.data.housekeeping_channels import housekeeping_channels, report_table
     from tessfpe.dhu.unit_tests import voltage_reference_values
-    from pprint import pprint
     from copy import deepcopy
-    import numpy as np
-    import pandas as pd
     import argparse
     import sys
 
     # Parse the command line arguments
-    parser = argparse.ArgumentParser(description='Measure the housekeeping data')
-    parser.add_argument('samples', metavar='N', type=int, nargs='?', default=1, help='number of samples to take')
+    parser = argparse.ArgumentParser(description='Measure the bias voltages on the housekeeping to verify they match the reference values')
+    parser.add_argument('--samples', metavar='N', type=int, nargs='?', default=1, help='number of samples to take')
+    parser.add_argument('--precision', metavar='N', type=int, nargs='?', default=4, help='number of digits of precision to use when outputting')
+    parser.add_argument('--channels', nargs='+', help='channels to report (defaults to all channels)')
     args = parser.parse_args()
-     
+    
     with FPE(1) as fpe:
-        if args.samples <= 1:
-            pprint(fpe.analogue_house_keeping_with_units)
+        if args.channels:
+           channels = match_channels(args.channels, housekeeping_channels.keys())
+        else:
+           channels = housekeeping_channels.keys()
+           channels.sort()
+
+        reported_values = {k:[] for k in channels}
+        for _ in range(args.samples):
+            hk = deepcopy(fpe.house_keeping)
+            for k in channels:
+                reported_values[k].append(hk["analogue"][k])
+
+        print report_table(reported_values, 
+                           expected_values = fpe.expected_housekeeping,
+                           keys = channels,
+                           precision = args.precision)
         sys.exit(0)  # 0 is SUCCESS for shell commands
