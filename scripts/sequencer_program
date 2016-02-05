@@ -27,12 +27,12 @@ if __name__ == "__main__":
        pprint(parse_file(args.program))
        sys.exit(0)
 
-    if args.output_sequencer:
-       load_program = False
-       ast = parse_file(args.program)
-       pprint({"sequencer_bytes": compile_sequences(ast),
-               "program_bytes":   compile_programs(ast)})
-       sys.exit(0)
+    #if args.output_sequencer:
+    #   load_program = False
+    #   ast = parse_file(args.program)
+    #   pprint({"sequencer_bytes": compile_sequences(ast),
+    #           "program_bytes":   compile_programs(ast)})
+    #   sys.exit(0)
 
     with FPE(args.FPE_number, args.program):
          print "Loaded program from {0}".format(args.program.name)
