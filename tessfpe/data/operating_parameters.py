@@ -8,8 +8,7 @@ https://raw.githubusercontent.com/TESScience/FPE/master/FPE/Documentation/FPE.pd
 
 from data import read_data_tsv
 
-defaults = {v: float(k) for (v, k) in read_data_tsv("DefaultParameters.tsv")}
-
+defaults = {v: float(k) for v, k in read_data_tsv("DefaultParameters.tsv")}
 
 def get_operating_parameters(tsv_file_name):
     "Extract the operating parameters from a data TSV file"

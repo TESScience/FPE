@@ -5,36 +5,41 @@ import os
 import house_keeping
 import binary_files
 
+def ping():
+    """Ping the Observation Simulator to make sure it is alive"""
+    from sh import ping
+    out = ping('-c', '1', '-t', '1', '192.168.100.1')
+    
+    return ('1 packets transmitted, 1 packets received' in str(out) or #MacOSX
+            '1 packets transmitted, 1 received' in str(out)) #Centos
+
+
 
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
     def __init__(self, 
                  number, 
-                 FPE_Wrapper_version=None, 
                  debug=False, 
-                 sanity_checks=True, 
-                 program=os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "files", "default_program.fpe"),
-                 load_program=False):
+                 sanity_checks=True):
         from fpesocketconnection import FPESocketConnection
         from unit_tests import check_house_keeping_voltages
         import time
 
         # First sanity check: ping the observatory simulator
-        if not self.ping():
+        if not ping():
             raise Exception("Cannot ping 192.168.100.1")
         self._debug = debug
         self.fpe_number = number
         self.connection = FPESocketConnection(5554 + number, self._debug)
 
         # Second sanity check: check if frames are running, get the observatory simulator version
-        original_frames_running_status = "unknown"
         if sanity_checks:
             try:
                original_frames_running_status = self.frames_running_status
             except Exception as e:
                raise type(e)("Could not read if frames are running on the Observatory Simulator... {0}\n".format(str(e)) + 
-                             "Are you sure you firmware for the Observatory Simulator is properly installed?")
+                             "Are you sure the firmware for the Observatory Simulator is properly installed?")
             try:
                version = self.version
                if self._debug:
@@ -45,29 +50,7 @@ class FPE(object):
            
 
         self._dir = os.path.dirname(os.path.realpath(__file__))
-        self._program_file = program
         self.ops = OperatingParameters(self)
-
-        # Load the wrapper.  First check if loading the wrapper is *necessary* by checking reference values on housekeeping channels
-        if FPE_Wrapper_version != None:
-            try:
-                check_house_keeping_voltages(self)
-                if self._debug:
-                    print "House keeping reports sane values for reference voltages, *NOT* loading wrapper"
-            except:
-                fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
-                                               "FPE_Wrapper-{version}.bin".format(version=FPE_Wrapper_version))
-                self.upload_fpe_wrapper_bin(fpe_wrapper_bin)
-                register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
-                self.upload_register_memory(register_memory)
-                self.upload_housekeeping_memory(
-                    binary_files.write_hskmem(house_keeping.identity_map))
-                self.load_code()
-                self.ops.send()
-        elif load_program == True:
-            self.load_code()
-
-        # Set the House Keeping and Operating Parameters
 
         time.sleep(.01) # Need to wait for 1/100th of a sec for the box to catch up with us
 
@@ -75,6 +58,30 @@ class FPE(object):
         if sanity_checks:
             self.frames_running_status = original_frames_running_status
             check_house_keeping_voltages(self)
+
+    def load_wrapper(self, wrapper_version):
+        import os.path
+        fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
+                                       "FPE_Wrapper-{version}.bin".format(version=FPE_Wrapper_version))
+        assert os.path.isfile(fpe_wrapper_bin), "Wrapper does not exist for version {}".format(wrapper_version)
+        try:
+            check_house_keeping_voltages(self)
+            if self._debug:
+                print "House keeping reports sane values for reference voltages, *NOT* loading wrapper"
+            return True
+        except:
+            # Upload the wrapper
+            assert self.upload_fpe_wrapper_bin(fpe_wrapper_bin), "Could not load wrapper: {}".format(fpe_wrapper_bin)
+            # Upload the regist memory
+            register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
+            assert self.upload_register_memory(register_memory), "Could not load register memory: {}".format(register_memory)
+            # Set the housekeeping memory to the identity map
+            house_keeping_memory = binary_files.write_hskmem(house_keeping.identity_map)
+            assert self.upload_housekeeping_memory(house_keeping_memory), "Could not load house keeping memory: {}".format(house_keeping_memory)
+            # Set the operating parameters to their defaults
+            assert self.ops.send(), "Could not send operating parameters"
+        check_house_keeping_voltages(self)
+        return False
 
     def close(self):
         """Close the fpe object (namely its socket connection)"""
@@ -92,37 +99,36 @@ class FPE(object):
         """Upload a file to the FPE"""
         from sh import tftp, ErrorReturnCode_1
         import re
+        import os.path
+        assert os.path.isfile(file_name), "Could not find file for TFTP upload: {}".format(file_name)
         tftp_mode = "mode binary"
         tftp_port = "connect 192.168.100.1 {}".format(68 + self.fpe_number)
         tftp_file = "put {} {}".format(file_name, destination)
         tftp_command = "\n" + tftp_mode + "\n" + tftp_port + "\n" + tftp_file
 
-        if self._debug:
-            print "Running:\ntftp <<EOF\n", \
-                tftp_command, "\n", \
-                "EOF"
+        status = self.frames_running_status
         try:
-            tftp(_in=tftp_command)
-        except ErrorReturnCode_1 as e:
-            # tftp *always* fails because it's awesome
-            # so just check that it reports in stdout it sent the thing
             if self._debug:
-                print e
-            if not re.match(r'Sent [0-9]+ bytes in [0-9]+\.[0-9]+ seconds',
-                            e.stdout):
-                raise e
-
-        # Wait for the fpe to report the load is complete
-        self.connection.wait_for_pattern(r'.*Load complete\n\r')
-
-    @staticmethod
-    def ping():
-        """Ping the Observation Simulator to make sure it is alive"""
-        from sh import ping
-        out = ping('-c', '1', '-t', '1', '192.168.100.1')
-       # return '1 packets transmitted, 1 packets received' in str(out) #MacOS
-        return '1 packets transmitted, 1 received' in str(out) #Centos
-    
+               print "Running:\ntftp <<EOF\n", \
+               tftp_command, "\n", \
+                 "EOF"
+            self.frames_running_status = False
+            try:
+                 tftp(_in=tftp_command)
+            except ErrorReturnCode_1 as e:
+                # tftp *always* fails on OS X because it's awesome
+                # so just check that it reports in stdout it sent the thing
+                if self._debug:
+                    print e
+                if not re.match(r'Sent [0-9]+ bytes in [0-9]+\.[0-9]+ seconds',
+                                e.stdout):
+                    raise e
+            # Wait for the fpe to report the load is complete
+            self.connection.wait_for_pattern(r'.*Load complete\n\r')
+            return True
+        finally:
+            self.frames_running_status = status
+        return False
 
     def cmd_camrst(self):
         """Reset the camera after running frames"""
@@ -184,7 +190,7 @@ class FPE(object):
         """Get the camera housekeeping data, outputs an array of the housekeeping data"""
         import re
         channels = 128
-        # TODO: switch on whether frames have been started
+        # TODO: switch on whether frames have been started and use obsim
         self.frames_running_status = False
         out = self.connection.send_command(
             "cam_hsk",
@@ -194,17 +200,16 @@ class FPE(object):
         return [int(n, 16) for n in re.findall('0x[0-9a-f]+', out)]
 
 
-    def load_code(self):
+    def compile_and_load_fpe_program(self, program):
         """Loads the program code using tftp"""
-        status = self.frames_running_status
-        try:
-             self.frames_running_status = False
-             self.upload_sequencer_memory(
-                 binary_files.write_seqmem(self.sequences_byte_array))
-             self.upload_program_memory(
-                binary_files.write_prgmem(self.programs_byte_array))
-        finally:
-             self.frames_running_status = status
+        from ..sequencer_dsl.program import compile_programs
+        from ..sequencer_dsl.sequence import compile_sequences
+        from ..sequencer_dsl.parse import parse_file
+        ast = parse_file(program)
+        sequencer_byte_code = binary_files.write_seqmem(compile_sequences(ast))
+        program_byte_code = binary_files.write_prgmem(compile_programs(ast))
+        return self.upload_sequencer_memory(sequencer_byte_code) and \
+               self.upload_program_memory(program_byte_code)
 
 
     def capture_frames(self, n):
@@ -217,35 +222,6 @@ class FPE(object):
             shell=False)
         proc.communicate()
         self.cmd_stop_frames()
-
-
-    @property
-    def sequences_byte_array(self):
-        """A byte array representing the sequences set by the program code"""
-        from ..sequencer_dsl.sequence import compile_sequences
-        return compile_sequences(self._ast)
-
-
-    @property
-    def programs_byte_array(self):
-        """A byte array representing the programs set by the program code"""
-        from ..sequencer_dsl.program import compile_programs
-        return compile_programs(self._ast)
-
-
-    @property
-    def _ast(self):
-        from ..sequencer_dsl.parse import parse_file
-        return parse_file(self._program_file)
-
-
-    @property
-    def code(self):
-        """The program code"""
-        with open(self._program_file) as f:
-            return "// File: {filename}\n\n{code}".format(
-                file=self._program_file,
-                code=f.read())
 
 
     @property
@@ -265,30 +241,6 @@ class FPE(object):
     def analogue_house_keeping_with_units(self):
         hsk = self.cmd_hsk()
         return house_keeping.hsk_to_analogue_dictionary_with_units(hsk)
-
-
-    @property
-    def parameters(self):
-        """The parameters set by the program code"""
-        return self._ast["parameters"]
-
-
-    @property
-    def hold(self):
-        """The hold instruction set by the program code"""
-        return self._ast["hold"]
-
-
-    @property
-    def sequences(self):
-        """The sequences set by the program code"""
-        return self._ast["sequences"]
-
-
-    @property
-    def defaults(self):
-        """The sequencer default values set by the program code"""
-        return self._ast["defaults"]
 
 
     @property
@@ -352,10 +304,9 @@ class FPE(object):
 
     def upload_sequencer_memory(self, sequencer_memory):
         """Upload the Sequencer Memory to the FPE"""
-        # self.camrst()
         return self.tftp_put(
-            sequencer_memory,
-            "seqmem" + str(self.fpe_number))
+                 sequencer_memory,
+                 "seqmem" + str(self.fpe_number))
 
 
     def upload_register_memory(self, register_memory):
