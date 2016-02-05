@@ -12,10 +12,10 @@ ${PYTHON} ${DIR}/venv/bin/house_keeping
 ${DIR}/venv/bin/voltage_test --samples 20
 ${DIR}/venv/bin/bias_test --samples 20
 ${DIR}/venv/bin/rtd_test --samples 20
+${PYTHON} ${DIR}/venv/bin/sequencer_program ${DIR}/program.fpe
 
-# These test basic start and stop frame functinality, they are currently broken
-#${PYTHON} ${DIR}/venv/bin/start_frames
-#${PYTHON} ${DIR}/venv/bin/observatory_simulator_version
-#${PYTHON} ${DIR}/venv/bin/frames_running_status
-#${PYTHON} ${DIR}/venv/bin/stop_frames
-#${PYTHON} ${DIR}/venv/bin/frames_running_status
+${PYTHON} ${DIR}/venv/bin/start_frames
+${PYTHON} ${DIR}/venv/bin/observatory_simulator_version
+${PYTHON} ${DIR}/venv/bin/frames_running_status
+${PYTHON} ${DIR}/venv/bin/stop_frames
+${PYTHON} ${DIR}/venv/bin/frames_running_status

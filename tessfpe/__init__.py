@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 """
 The `tessfpe` python module provides datastructures for managing
 operating parameters and housekeeping channels for the TESS
@@ -9,13 +9,13 @@ Section 6 of the TESS FPE manual:
 https://raw.githubusercontent.com/TESScience/FPE/master/FPE/Documentation/FPE.pdf
 
 This file exports two dictionaries:
-    - `operating_parameters`
+    - `default_operating_parameters`
     - `housekeeping_channels`
 
 Each of these dictionaries has labeled entries associated `high` and
 `low` values, along with a `unit` and associated `address` values in memory.
 
->>> operating_parameters['ccd1_input_diode_high']
+>>> default_operating_parameters['ccd1_input_diode_high']
 {'high': 15.0, 'low': 0.0, 'unit': 'V', 'address': 70}
 >>> housekeeping_channels['ccd1_input_diode_high']
 {'high': 16.5, 'low': -16.5, 'unit': 'V', 'address': 70}
@@ -45,7 +45,7 @@ Specifically, the unused housekeeping channels are:
 """
 
 from data.operating_parameters import \
-    operating_parameters, \
+    default_operating_parameters, \
     operating_parameter_memory_map
 
 from data.housekeeping_channels import \

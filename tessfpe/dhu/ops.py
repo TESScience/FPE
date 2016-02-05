@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 """
 This module contains object for handling setting operating parameters for the FPE.
 
@@ -74,25 +74,39 @@ One can also create a *collection* of operating parameters, like so:
 
 >>> ops = OperatingParameters()
 
-This object has two access methods:
+This object has two important attributes: `defaults` and `values`
+
+These attributes are maps which have the same keys.
+
+>>> ops.defaults.keys() == ops.values.keys()
+True
+
+Provided that `/tmp/operator_parameter_settings.json` does not exist, these attributes should be equal
+
+>>> import os
+>>> os.path.isfile('/tmp/operator_parameter_settings.json') or ops.defaults == ops.values
+True
+
+Operating parameters controlled by this object can be accessed two different ways:
   - You can use `ops.address` to set an operating parameter at a particular address
   - You can use `ops.<name>` to set an operating parameter with a particular name
 
->>> ops.address[81].name
-'ccd3_parallel_low'
->>> ops.ccd3_parallel_low = -5.0
->>> ops.address[81].value
+>>> ops.address[50].name
+'ccd4_input_gate_2'
+>>> ops.ccd4_input_gate_2 = -5.0
+>>> ops.address[50].value
 -5.0
+
+TODO: talk about derived parameters
 
 """
 
 import collections
+import binary_files
 
 OperatingParameterInfo = \
     collections.namedtuple('OperatingParameterInfo',
                            ['name', 'address', 'high', 'low', 'unit', 'default'])
-
-
 
 class OperatingParameter(object):
     """An operating parameter object for the FPE Data Handling Unit (DHU) object"""
@@ -191,10 +205,6 @@ class DerivedOperatingParameter(object):
         self._offset.value = x - self._base.value
 
 
-import binary_files
-from ..data.operating_parameters import operating_parameters
-from ops import OperatingParameter
-
 
 def values_to_5328(values):
     """Convert the value list to AD5328 codes.
@@ -211,25 +221,28 @@ def values_to_5328(values):
         raise Exception("Should have 128 values, had: {}".format(len(values)))
     return map(lambda x, y: x + y, list(values), 16 * range(0, 8 * 4096, 4096))
 
+fpe_operating_parameter_settings_file = '/tmp/operating_parameter_settings.json'
 
 class OperatingParameters(object):
     def __init__(self, fpe=None):
         import re
+        from ..data.operating_parameters import default_operating_parameters
+        import os
+        import json
         # The underscore here is used as sloppy "private" memory
         self._fpe = fpe
         self.address = 128 * [None]
         self._operating_parameters = {}
 
         # Set ordinary Operating Parameters
-        for (name, data) in operating_parameters.iteritems():
+        for (name, data) in default_operating_parameters.iteritems():
             op = OperatingParameter(name, data)
-            super(OperatingParameters, self).__setattr__(name, op)
             self.address[op.address] = op
             self._operating_parameters[name] = op
 
         # Set Derived Operating Parameters
         self._derived_operating_parameters = {}
-        for name in operating_parameters:
+        for name in default_operating_parameters:
             if 'offset' in name:
                 offset_name = name
                 derived_parameter_name = name.replace('_offset', '')
@@ -250,32 +263,42 @@ class OperatingParameters(object):
                     derived_parameter_name,
                     self._derived_operating_parameters[derived_parameter_name])
 
+        # If we have already previously loaded our parameter settings to the fpe, load those values from file
+        if os.path.isfile(fpe_operating_parameter_settings_file):
+            with open(fpe_operating_parameter_settings_file) as data_file:
+                for k,v in json.load(data_file).iteritems():
+                    # Avoid derived parameters since they will be derived from ordinary operating parameters
+                    if k in self._operating_parameters:
+                       self[k].value = v
+
     def keys(self):
         return self._operating_parameters.keys() + self._derived_operating_parameters.keys()
 
     @property
     def defaults(self):
-        return {k: self.__dict__[k].default for k in self.keys()}
+        return {k: self[k].default for k in self.keys()}
 
     @property
     def values(self):
-        return {k: self.__dict__[k].value for k in self.keys()}
+        return {k: self[k].value for k in self.keys()}
 
     def __getitem__(self, item):
         if item in self._operating_parameters:
-            return self.__dict__[item]
+            return self._operating_parameters[item]
         elif item in self._derived_operating_parameters:
-            return self.__dict__[item]
+            return self._derived_operating_parameters[item]
         else:
-            raise KeyError(item)
+            return super(OperatingParameters, self).__getitem__(item)
+
+    # TODO: getattr?
 
     def __setattr__(self, name, value):
-        if "_operating_paremeters" in self.__dict__ and \
+        if "_operating_parameters" in self.__dict__ and \
            name in self._operating_parameters:
-            self.__dict__[name].value = value
+            self._operating_parameters[name].value = value
         elif "_derived_operating_parameters" in self.__dict__ and \
                         name in self._derived_operating_parameters:
-            self.__dict__[name].value = value
+            self._derived_operating_parameters[name].value = value
         else:
             super(OperatingParameters, self).__setattr__(name, value)
 
@@ -287,8 +310,18 @@ class OperatingParameters(object):
 
     def send(self):
         """Send the current DAC values to the hardware."""
-        return self._fpe.upload_operating_parameter_memory(
-            binary_files.write_clvmem(values_to_5328(self.raw_values)))
+        import json
+        with open(fpe_operating_parameter_settings_file, 'w') as outfile:
+            json.dump(self.values, outfile, sort_keys=True, indent=4)
+
+        # Get the frames status, restore it after we are done uploading the operating parameters
+        frames_status = self._fpe.frames_running_status
+        self._fpe.cmd_stop_frames()
+        try:
+            return self._fpe.upload_operating_parameter_memory(
+                   binary_files.write_clvmem(values_to_5328(self.raw_values)))
+        finally:
+            self._fpe.frames_running_status = frames_status
 
     def upload_operating_parameter_memory(self):
         """Synonym for send"""

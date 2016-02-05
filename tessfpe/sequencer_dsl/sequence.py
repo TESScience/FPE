@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 """
 This python module compiles a sequence specified in the FPE DSL to a
 1024x36 array suitable for uploading to the TESS FPE Observatory Simulator

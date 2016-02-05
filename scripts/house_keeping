@@ -29,13 +29,14 @@ if __name__ == "__main__":
     import sys
 
     # Parse the command line arguments
-    parser = argparse.ArgumentParser(description='Measure the bias voltages on the housekeeping to verify they match the reference values')
+    parser = argparse.ArgumentParser(description='Get the housekeeping data for specified parameters')
+    parser.add_argument('--FPE-number', metavar='N', type=int, nargs='?', default=1, help='which FPE to use')
     parser.add_argument('--samples', metavar='N', type=int, nargs='?', default=1, help='number of samples to take')
     parser.add_argument('--precision', metavar='N', type=int, nargs='?', default=4, help='number of digits of precision to use when outputting')
     parser.add_argument('--channels', nargs='+', help='channels to report (defaults to all channels)')
     args = parser.parse_args()
     
-    with FPE(1) as fpe:
+    with FPE(args.FPE_number) as fpe:
         if args.channels:
            channels = match_channels(args.channels, housekeeping_channels.keys())
         else:

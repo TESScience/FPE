@@ -1,0 +1,40 @@
+#!/usr/bin/env python2.7
+# -*- coding: utf-8 -*-
+"""This script parses, compiles and can load an FPE sequencer program to the DHU."""
+
+if __name__ == "__main__":
+    from tessfpe.dhu.fpe import FPE
+    from tessfpe.sequencer_dsl.parse import parse_file
+    from tessfpe.sequencer_dsl.sequence import compile_sequences
+    from tessfpe.sequencer_dsl.program import compile_programs
+    from pprint import pprint
+    import argparse
+    import sys
+
+    # Parse the command line arguments
+    parser = argparse.ArgumentParser(description='Load a sequencer program')
+    parser.add_argument('program', nargs='?', type=argparse.FileType('r'), default=sys.stdin)
+    parser.add_argument('--FPE-number', metavar='N', type=int, nargs='?', default=1, help='which FPE to use')
+    parser.add_argument('--ast', action='store_true', help="print the abstract syntax tree of the parsed program")
+    #parser.add_argument("-os", "--output-sequencer", help="Output the sequencer byte-code to a specied file")
+    #parser.add_argument("-op", "--output-program", help="Output the program byte-code file to a specified file")
+    args = parser.parse_args()
+
+    load_program = True    
+
+    if args.ast:
+       load_program = False
+       pprint(parse_file(args.program))
+       sys.exit(0)
+
+    if args.output_sequencer:
+       load_program = False
+       ast = parse_file(args.program)
+       pprint({"sequencer_bytes": compile_sequences(ast),
+               "program_bytes":   compile_programs(ast)})
+       sys.exit(0)
+
+    with FPE(args.FPE_number, args.program):
+         print "Loaded program from {0}".format(args.program.name)
+
+    sys.exit(0)

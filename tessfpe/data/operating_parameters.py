@@ -24,7 +24,7 @@ def get_operating_parameters(tsv_file_name):
 
 
 # Operating Parameters for the FPE
-operating_parameters = \
+default_operating_parameters = \
     {("ccd" + ccd + '_' if ccd != '' else '') + entry_name:
          {"address": int(address_offset) + entry["address_offset"],
           "low": entry["low"],
@@ -37,5 +37,5 @@ operating_parameters = \
 
 # Memory map for operating parameters
 operating_parameter_memory_map = [None for _ in range(128)]
-for entry_name, entry in operating_parameters.iteritems():
+for entry_name, entry in default_operating_parameters.iteritems():
     operating_parameter_memory_map[entry["address"]] = entry_name

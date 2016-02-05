@@ -1,6 +1,7 @@
 #!/usr/bin/env python2.7
 from ops import OperatingParameters
 
+import os
 import house_keeping
 import binary_files
 
@@ -8,10 +9,15 @@ import binary_files
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, number, FPE_Wrapper_version=None, debug=False, sanity_checks=True):
+    def __init__(self, 
+                 number, 
+                 FPE_Wrapper_version=None, 
+                 debug=False, 
+                 sanity_checks=True, 
+                 program=os.path.join(os.path.dirname(os.path.realpath(__file__)), "..", "data", "files", "default_program.fpe"),
+                 load_program=False):
         from fpesocketconnection import FPESocketConnection
         from unit_tests import check_house_keeping_voltages
-        import os
         import time
 
         # First sanity check: ping the observatory simulator
@@ -39,6 +45,8 @@ class FPE(object):
            
 
         self._dir = os.path.dirname(os.path.realpath(__file__))
+        self._program_file = program
+        self.ops = OperatingParameters(self)
 
         # Load the wrapper.  First check if loading the wrapper is *necessary* by checking reference values on housekeeping channels
         if FPE_Wrapper_version != None:
@@ -54,13 +62,12 @@ class FPE(object):
                 self.upload_register_memory(register_memory)
                 self.upload_housekeeping_memory(
                     binary_files.write_hskmem(house_keeping.identity_map))
+                self.load_code()
+                self.ops.send()
+        elif load_program == True:
+            self.load_code()
 
         # Set the House Keeping and Operating Parameters
-        self.ops = OperatingParameters(self)
-        self.ops.send()
-        # TODO: take this as a parameter, make sure it is only done when specified or at bring up
-        self._program_file = os.path.join(self._dir, "..", "data", "files", "default_program.fpe")
-        self.load_code()
 
         time.sleep(.01) # Need to wait for 1/100th of a sec for the box to catch up with us
 
@@ -147,12 +154,16 @@ class FPE(object):
         """Get the version of the Observatory Simulator DHU software"""
         import re
         # Frames must be stopped to read version, otherwise the observatory simulator will not respond
-        self.frames_running_status = False
-        return \
-            re.sub(r'FPE[0-9]>', '',
-                   self.connection.send_command(
-                       "version",
-                       reply_pattern="Observatory Simulator Version .*"))
+        status = self.frames_running_status
+        try:
+            self.frames_running_status = False
+            return \
+                re.sub(r'FPE[0-9]>', '',
+                       self.connection.send_command(
+                           "version",
+                           reply_pattern="Observatory Simulator Version .*"))
+        finally:
+            self.frames_running_status = status
 
 
     def cmd_start_frames(self):
@@ -185,10 +196,15 @@ class FPE(object):
 
     def load_code(self):
         """Loads the program code using tftp"""
-        self.upload_sequencer_memory(
-            binary_files.write_seqmem(self.sequences_byte_array))
-        self.upload_program_memory(
-            binary_files.write_prgmem(self.programs_byte_array))
+        status = self.frames_running_status
+        try:
+             self.frames_running_status = False
+             self.upload_sequencer_memory(
+                 binary_files.write_seqmem(self.sequences_byte_array))
+             self.upload_program_memory(
+                binary_files.write_prgmem(self.programs_byte_array))
+        finally:
+             self.frames_running_status = status
 
 
     def capture_frames(self, n):
@@ -321,7 +337,7 @@ class FPE(object):
         """Set if frames are running or not"""
         if value == True:
            self.cmd_start_frames()
-        if value == False:
+        elif value == False:
            self.cmd_stop_frames()
         else:
            raise Exception("Trying to set frames_running_status to value that is not boolean: {0}".format(value))

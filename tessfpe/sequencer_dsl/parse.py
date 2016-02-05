@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 """
 A module that wraps grako's generated parser as well
 as the associated grammatical semantics for the FPE DSL.
@@ -148,9 +148,19 @@ def parse(text):
 def preprocess(file_name):
     """Preprocesses a file and returns the code; leaves comments"""
     import os.path
-    with open(file_name) as f:
-        return include_files(f.read(),
-                             search_path=os.path.dirname(file_name))
+
+    if isinstance(file_name, basestring):
+       f = open(file_name)
+    elif hasattr(file_name, 'read'):
+       f = file_name
+    else:
+       raise Exception("Cannot read FPE program from object with type {0}".format(type(file_name)))
+       
+    try:
+       return include_files(f.read(), search_path=os.path.dirname(f.name))
+    finally:
+       if hasattr(f, 'close'):
+          f.close()
 
 def parse_file(file_name):
     """Parses a file containing SequencerDSL text into an AST"""

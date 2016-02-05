@@ -21,7 +21,7 @@ def get_housekeeping_channels(tsv_file_name):
 
 # Housekeeping parameters for the FPE
 housekeeping_channels = \
-    {("ccd" + ccd + '_' if ccd != '' else '') + entry_name:
+    {("ccd" + ccd + '_' if ccd != '' else '') + entry_name.replace("_offset", ""):
          {"address": int(address_offset) + entry["address_offset"],
           "low": entry["low"],
           "high": entry["high"],
@@ -72,6 +72,8 @@ def report_table(data, expected_values={}, precision=4, keys=None):
                for k in keys]]),
            index=keys, 
            columns=[u' Expected', u' Average', u' STD', u' Variance'])
+        # Variance is silly, don't worry about it
+        del report[u' Variance']
 
         if list(report[u' Expected'].unique()) == [u'N/A']:
             del report[u' Expected']

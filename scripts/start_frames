@@ -6,6 +6,7 @@ if __name__ == "__main__":
     from tessfpe.dhu.unit_tests import check_house_keeping_voltages
     import sys
     
+    # TODO: Handle exceptions?
     with FPE(1, sanity_checks=False) as fpe:
         print fpe.cmd_start_frames()
         sys.exit(0)  # 0 is SUCCESS for shell commands
