@@ -1,17 +1,22 @@
 VIDEOPRODUCTS = Video.allegro Video.devfiles Video.bom.txt \
-	Video.bom2.txt Video.counts.txt Video-Cirrexx.tsv Video.pads Video.osmond \
+	Video.bom2.txt Video.counts.txt  \
 	Video.stats.txt
+
+# Video-Cirrexx.tsv Video.pads Video.osmond
 
 INTERFACEPRODUCTS = Interface.allegro Interface.devfiles \
 	Interface.bom.txt Interface.bom2.txt Interface.counts.txt \
-	Interface-Cirrexx.tsv Interface.pads Interface.osmond Interface.stats.txt
+	 Interface.stats.txt
+
+#Interface-Cirrexx.tsv Interface.pads Interface.osmond
 
 DRIVERPRODUCTS = Driver.allegro Driver.devfiles Driver.bom.txt \
-	Driver.bom2.txt Driver.counts.txt Driver-Cirrexx.tsv Driver.pads \
-	Driver.osmond Driver.stats.txt
+	Driver.bom2.txt Driver.counts.txt Driver.stats.txt
+
+#  Driver-Cirrexx.tsv Driver.pads Driver.osmond 
 
 PRODUCTS = $(VIDEOPRODUCTS) $(INTERFACEPRODUCTS) $(DRIVERPRODUCTS) \
-	../Documentation/AE.pdf
+	../Documentation/FPE.pdf counts.txt
 
 all : $(PRODUCTS)
 
@@ -21,9 +26,12 @@ release : $(PRODUCTS)
 	cp Source_of_release_README ../../Releases/$(REV)/README
 	zip -r ../../Releases/$(REV).zip ../../Releases/$(REV)
 
-../Documentation/AE.pdf : ../Documentation/AE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
+../Documentation/FPE.pdf : ../Documentation/FPE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
 	$(DRIVERDOCS)
-	make -C ../Documentation AE.pdf
+	make -C ../Documentation FPE.pdf
+
+counts.txt : Video.bom.txt Driver.bom.txt Interface.bom.txt
+	awk -f countem.awk $^ | sort -nr >$@
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
@@ -201,6 +209,7 @@ INTERFACEDOCS= \
 	DriverSet.4.ps \
 	DriverSet.5.ps \
 	ArtixPower.ps \
+	Reset.ps \
 	Interface.1.ps \
 	Interface.2.ps \
 	Interface.3.ps \
@@ -233,7 +242,8 @@ INTERFACESUB= \
 	DriverSet.3.sch \
 	DriverSet.4.sch \
 	DriverSet.5.sch \
-	ArtixPower.sch
+	ArtixPower.sch \
+	Reset.sch
 
 INTERFACEMERGE= \
 	Interface.J8.psch \
@@ -287,8 +297,8 @@ Interface.bom.tsv : Interface.bom.txt $(PARTDB) Interface-omit.tsv
 	&& (awk -f screamBOM.awk $(PARTDB) bom=1 Interface.bom.txt >Interface.bom.tsv)
 
 clean : 
-	rm -rf *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
-        *.xls *.psch *.log *devfiles *.counts.txt \
+	rm -rf *.ps *.pdf *.bom*.txt *.bom.tsv *.drc.txt *.net.txt \
+        *.xls *.psch *.log *devfiles *counts.txt CCD-connectors.txt Stack.txt \
         *.stats.txt tmp.sch *.U*.txt *~ \#* 
 
 ##########################

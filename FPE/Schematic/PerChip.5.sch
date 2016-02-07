@@ -30,7 +30,7 @@ C 45200 44900 1 0 0 resistor.sym
 T 45400 45200 5 10 1 1 0 0 1
 refdes=R35
 T 45500 44700 5 10 1 1 0 0 1
-value=470
+value=475
 }
 C 45100 43800 1 0 0 gnd-1.sym
 C 44100 45900 1 0 0 capacitor.sym
@@ -50,8 +50,6 @@ T 44300 47200 5 10 1 1 0 0 1
 refdes=R36
 T 44400 46700 5 10 1 1 0 0 1
 value=200k
-T 44100 46900 5 10 0 1 0 0 1
-spec=1%
 }
 C 43100 46900 1 0 0 resistor.sym
 {
@@ -59,8 +57,6 @@ T 43300 47200 5 10 1 1 0 0 1
 refdes=R37
 T 43400 46700 5 10 1 1 0 0 1
 value=392k
-T 43100 46900 5 10 0 1 0 0 1
-spec=1%
 }
 N 45200 45000 45100 45000 4
 N 45100 45000 45100 46100 4
@@ -78,8 +74,6 @@ T 47200 47200 5 10 1 1 0 0 1
 refdes=R38
 T 47300 46700 5 10 1 1 0 0 1
 value=604k
-T 47000 46900 5 10 0 1 0 0 1
-spec=1%
 }
 C 44000 45400 1 180 1 gp_opamp_dual.sym
 {
@@ -94,8 +88,6 @@ T 43400 45000 5 10 1 1 0 0 1
 refdes=R39
 T 43500 44500 5 10 1 1 0 0 1
 value=133k
-T 43200 44700 5 10 0 1 0 0 1
-spec=1%
 }
 C 44700 40200 1 0 0 gnd-1.sym
 C 45300 41400 1 0 0 capacitor.sym
@@ -106,6 +98,8 @@ T 45300 42300 5 10 0 0 0 0 1
 symversion=20090121
 T 45900 41700 5 10 1 1 0 0 1
 value=0.1uF
+T 45300 42800 5 10 0 1 0 0 1
+spec=16WVDC X7R
 }
 C 46100 41300 1 0 0 gnd-1.sym
 N 44400 41600 45300 41600 4
@@ -141,6 +135,8 @@ T 50500 45300 5 10 0 1 0 0 1
 model-name=QPMBTA92
 T 51500 46500 5 10 0 0 0 0 1
 value=PMBTA92
+T 52400 45700 5 10 0 0 180 6 1
+footprint=SOT23
 }
 N 48900 42900 48900 47000 4
 {
@@ -153,8 +149,6 @@ T 51300 47000 5 10 1 1 0 0 1
 refdes=R40
 T 51400 46500 5 10 1 1 0 0 1
 value=10k
-T 51100 46700 5 10 0 1 0 0 1
-spec=1%
 }
 N 52000 46500 52000 46800 4
 C 51400 45700 1 0 0 gnd-1.sym
@@ -164,8 +158,6 @@ T 52500 45300 5 10 1 1 180 0 1
 refdes=R41
 T 52600 45000 5 10 1 1 180 0 1
 value=200k
-T 52100 44600 5 10 0 1 90 0 1
-spec=1%
 }
 C 52600 46000 1 180 1 pnp.sym
 {
@@ -175,6 +167,8 @@ T 51600 44800 5 10 0 1 0 0 1
 model-name=QPMBTA92
 T 52600 46000 5 10 0 0 0 0 1
 value=PMBTA92
+T 53500 45200 5 10 0 0 180 6 1
+footprint=SOT23
 }
 N 52000 45500 52600 45500 4
 C 50000 47200 1 180 1 gp_opamp_dual.sym
@@ -194,8 +188,6 @@ T 53600 46700 5 10 1 1 180 0 1
 refdes=R42
 T 53600 46400 5 10 1 1 180 0 1
 value=10k
-T 53200 46000 5 10 0 1 90 0 1
-spec=1%
 }
 N 53100 46900 53900 46900 4
 C 53800 45700 1 0 0 gnd-1.sym
@@ -219,8 +211,6 @@ T 51100 44800 5 10 1 1 0 0 1
 refdes=R43
 T 51200 44300 5 10 1 1 0 0 1
 value=10k
-T 50900 44500 5 10 0 1 0 0 1
-spec=1%
 }
 C 50100 48300 1 0 0 resistor.sym
 {
@@ -228,8 +218,6 @@ T 50300 48600 5 10 1 1 0 0 1
 refdes=R44
 T 50400 48100 5 10 1 1 0 0 1
 value=604k
-T 50100 48300 5 10 0 1 0 0 1
-spec=1%
 }
 C 50100 47400 1 0 0 capacitor.sym
 {
@@ -239,6 +227,8 @@ T 50100 48300 5 10 0 0 0 0 1
 symversion=20090121
 T 50700 47700 5 10 1 1 0 0 1
 value=33nF
+T 50100 48500 5 10 0 0 0 0 1
+footprint=0805
 }
 N 50100 48400 50100 47000 4
 N 51100 46800 51100 47600 4
@@ -251,8 +241,6 @@ T 49100 47200 5 10 1 1 0 0 1
 refdes=R45
 T 49200 46700 5 10 1 1 0 0 1
 value=40.2k
-T 48900 46900 5 10 0 1 0 0 1
-spec=1%
 }
 C 53100 48300 1 0 0 out-1.sym
 {
@@ -282,8 +270,6 @@ T 49300 46400 5 10 1 1 0 0 1
 refdes=R46
 T 49400 45900 5 10 1 1 0 0 1
 value=37.4k
-T 49100 46100 5 10 0 1 0 0 1
-spec=1%
 }
 C 49000 45900 1 0 0 gnd-1.sym
 N 50000 46200 50000 46600 4
@@ -294,8 +280,6 @@ T 53300 47700 5 10 1 1 0 0 1
 refdes=R47
 T 53400 47200 5 10 1 1 0 0 1
 value=3.01Meg
-T 53100 47400 5 10 0 1 0 0 1
-spec=1%
 }
 N 54000 47500 55000 47500 4
 C 55000 42900 1 270 0 busripper-1.sym
@@ -320,16 +304,16 @@ C 46100 46900 1 0 0 resistor.sym
 T 46300 47200 5 10 1 1 0 0 1
 refdes=R54
 T 46400 46700 5 10 1 1 0 0 1
-value=0
-T 46100 46900 5 10 0 1 0 0 1
-spec=1%
+value=DNP
 }
 N 47000 47000 47000 48300 4
-T 43200 49000 9 10 1 0 0 0 4
+T 43200 49000 9 10 1 0 0 0 6
 Note:
-For a focal plane with common backside connections,
-populate R54 only for the channel you want to have
-control the backside bias.
+For a focal plane with frontside illuminated chips and 
+common backside connections, populate R54 with zero
+ohms only for the channel you want to have
+control the backside bias. For a backside illuminated
+chip, do not populate.
 C 44500 40500 1 0 0 gp_opamp_dual_pwr.sym
 {
 T 44700 42500 5 8 0 0 0 0 1
@@ -343,8 +327,6 @@ T 55200 47700 5 10 1 1 0 0 1
 refdes=R57
 T 55300 47200 5 10 1 1 0 0 1
 value=301k
-T 55000 47400 5 10 0 1 0 0 1
-spec=1%
 }
 C 56100 47200 1 0 0 gnd-1.sym
 N 56200 47500 55900 47500 4

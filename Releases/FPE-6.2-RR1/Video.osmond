@@ -1,0 +1,4347 @@
+Part 0603 { Name R55 }
+Part 0603 { Name C30 }
+Part 0603 { Name R54 }
+Part 0603 { Name R53 }
+Part TO39 { Name Q5 }
+Part 0603 { Name R51 }
+Part 0603 { Name R52 }
+Part 0603 { Name R50 }
+Part 0603 { Name R49 }
+Part TO39 { Name Q4 }
+Part 0603 { Name R47 }
+Part 0603 { Name R48 }
+Part SO8 { Name U16 }
+Part 0603 { Name C36 }
+Part 0603 { Name R36 }
+Part 0603 { Name R33 }
+Part TO39 { Name Q1 }
+Part 0603 { Name R32 }
+Part 0603 { Name R31 }
+Part SO8 { Name U13 }
+Part 0805 { Name C28 }
+Part 0805 { Name R30 }
+Part 0603 { Name R37 }
+Part 0603 { Name C31 }
+Part 0603 { Name R34 }
+Part SO16 { Name U14 }
+Part 0603 { Name C29 }
+Part TSSOP16 { Name U12 }
+Part 0603 { Name R17 }
+Part 0603 { Name C13 }
+Part 0603 { Name R16 }
+Part 0603 { Name C12 }
+Part 0603 { Name R15 }
+Part 0603 { Name C11 }
+Part 0603 { Name R14 }
+Part 0603 { Name C10 }
+Part 0603 { Name R21 }
+Part 0603 { Name C17 }
+Part 0603 { Name R20 }
+Part 0603 { Name C16 }
+Part 0603 { Name R19 }
+Part 0603 { Name C15 }
+Part 0603 { Name R18 }
+Part 0603 { Name C14 }
+Part 0603 { Name R25 }
+Part 0603 { Name C21 }
+Part 0603 { Name R24 }
+Part 0603 { Name C20 }
+Part 0603 { Name R23 }
+Part 0603 { Name C19 }
+Part 0603 { Name R22 }
+Part 0603 { Name C18 }
+Part 0603 { Name R29 }
+Part 0603 { Name C25 }
+Part 0603 { Name R28 }
+Part 0603 { Name C24 }
+Part 0603 { Name R27 }
+Part 0603 { Name C23 }
+Part 0603 { Name R26 }
+Part 0603 { Name C22 }
+Part 0603 { Name R46 }
+Part 0603 { Name C35 }
+Part 0603 { Name C33 }
+Part 1206 { Name R45 }
+Part 0603 { Name R44 }
+Part UB { Name Q3 }
+Part 0603 { Name R43 }
+Part 0603 { Name R42 }
+Part 0805 { Name C34 }
+Part 1206 { Name R41 }
+Part 0603 { Name R40 }
+Part UB { Name Q2 }
+Part 0603 { Name R39 }
+Part 0603 { Name R38 }
+Part SO8 { Name U15 }
+Part 1812 { Name PP/C14 }
+Part 0805 { Name PP/R13 }
+Part 0805 { Name PP/C13 }
+Part 1206 { Name PP/R12 }
+Part 0603 { Name PP/C12 }
+Part 2010 { Name PP/R11 }
+Part 1206 { Name PP/C10 }
+Part 0603 { Name PP/R3 }
+Part 0603 { Name PP/R2 }
+Part 0603 { Name PP/R1 }
+Part TO252AA { Name PP/Q4 }
+Part UB { Name PP/Q1 }
+Part 1206 { Name PP/C11 }
+Part 0603 { Name PP/C9 }
+Part 0603 { Name PP/C8 }
+Part 0603 { Name PP/C7 }
+Part 0603 { Name PP/C6 }
+Part DO213AA { Name PP/D8 }
+Part DO213AA { Name PP/D7 }
+Part DO213AA { Name PP/D6 }
+Part DO213AA { Name PP/D5 }
+Part DO213AA { Name PP/D4 }
+Part 0603 { Name PP/C5 }
+Part DO213AA { Name PP/D3 }
+Part 0603 { Name PP/C4 }
+Part DO213AA { Name PP/D2 }
+Part 0603 { Name PP/C3 }
+Part 1206 { Name PP/R10 }
+Part 0603 { Name PP/C2 }
+Part DO213AA { Name PP/D1 }
+Part 0603 { Name PP/R9 }
+Part UB { Name PP/Q6 }
+Part 0603 { Name PP/R8 }
+Part UB { Name PP/Q5 }
+Part 0603 { Name PP/R7 }
+Part 0603 { Name PP/C1 }
+Part SO16 { Name PP/U1 }
+Part 0603 { Name PP/R6 }
+Part 0603 { Name PP/R5 }
+Part 0603 { Name PP/R4 }
+Part TO252AA { Name PP/Q3 }
+Part UB { Name PP/Q2 }
+Part SO8 { Name U1 }
+Part 0603 { Name C6 }
+Part 0603 { Name C5 }
+Part SO8 { Name U9 }
+Part 0603 { Name R10 }
+Part 0603 { Name R9 }
+Part 0603 { Name R8 }
+Part 0603 { Name R7 }
+Part 0603 { Name R6 }
+Part 0603 { Name R5 }
+Part 0603 { Name C4 }
+Part 0603 { Name C3 }
+Part 0603 { Name R4 }
+Part 0603 { Name R3 }
+Part 0603 { Name C2 }
+Part 0603 { Name R2 }
+Part MDM31P { Name J5 }
+Part SO16 { Name U8 }
+Part SO16 { Name U7 }
+Part SO16 { Name U6 }
+Part SO16 { Name U5 }
+Part 0603 { Name R1 }
+Part 0603 { Name C1 }
+Part NK-2M2-051 { Name J4 }
+Part 0805 { Name X4/C39 }
+Part 0805 { Name X4/R51 }
+Part 0603 { Name X4/R53 }
+Part 0603 { Name X4/R52 }
+Part 0603 { Name X4/C38 }
+Part 0603 { Name X4/C37 }
+Part SO16 { Name X4/U10 }
+Part 0603 { Name X4/C36 }
+Part TSSOP16 { Name X4/U9 }
+Part 0805 { Name X4/C35 }
+Part 0805 { Name X4/R48 }
+Part 0603 { Name X4/R50 }
+Part 0603 { Name X4/R49 }
+Part 0603 { Name X4/C34 }
+Part 0603 { Name X4/C33 }
+Part SO16 { Name X4/U8 }
+Part 0603 { Name X4/C32 }
+Part TSSOP16 { Name X4/U7 }
+Part 0603 { Name X4/C31 }
+Part 0603 { Name X4/L4 }
+Part 0603 { Name X4/C30 }
+Part 0603 { Name X4/L3 }
+Part 0603 { Name X4/C29 }
+Part 0603 { Name X4/L2 }
+Part 0603 { Name X4/L1 }
+Part 0603 { Name X4/C28 }
+Part 0603 { Name X4/X6/R14 }
+Part 0603 { Name X4/X6/R15 }
+Part SO8 { Name X4/X6/U1 }
+Part 0603 { Name X4/X6/R13 }
+Part 0603 { Name X4/X6/R8 }
+Part 0603 { Name X4/X6/R9 }
+Part 0603 { Name X4/X6/R10 }
+Part 0603 { Name X4/X6/R11 }
+Part 0603 { Name X4/X6/C4 }
+Part 0603 { Name X4/X6/R12 }
+Part 0805 { Name X4/X6/C5 }
+Part 0603 { Name X4/X6/C3 }
+Part 0603 { Name X4/X6/R6 }
+Part 0603 { Name X4/X6/R7 }
+Part 0603 { Name X4/X6/R1 }
+Part 0603 { Name X4/X6/R2 }
+Part 0603 { Name X4/X6/R3 }
+Part 0603 { Name X4/X6/R4 }
+Part 0603 { Name X4/X6/C1 }
+Part 0603 { Name X4/X6/R5 }
+Part 0805 { Name X4/X6/C2 }
+Part 0603 { Name X4/X5/R14 }
+Part 0603 { Name X4/X5/R15 }
+Part SO8 { Name X4/X5/U1 }
+Part 0603 { Name X4/X5/R13 }
+Part 0603 { Name X4/X5/R8 }
+Part 0603 { Name X4/X5/R9 }
+Part 0603 { Name X4/X5/R10 }
+Part 0603 { Name X4/X5/R11 }
+Part 0603 { Name X4/X5/C4 }
+Part 0603 { Name X4/X5/R12 }
+Part 0805 { Name X4/X5/C5 }
+Part 0603 { Name X4/X5/C3 }
+Part 0603 { Name X4/X5/R6 }
+Part 0603 { Name X4/X5/R7 }
+Part 0603 { Name X4/X5/R1 }
+Part 0603 { Name X4/X5/R2 }
+Part 0603 { Name X4/X5/R3 }
+Part 0603 { Name X4/X5/R4 }
+Part 0603 { Name X4/X5/C1 }
+Part 0603 { Name X4/X5/R5 }
+Part 0805 { Name X4/X5/C2 }
+Part 0603 { Name X4/R62 }
+Part 0603 { Name X4/R57 }
+Part 0603 { Name X4/R54 }
+Part 0603 { Name X4/R47 }
+Part 0603 { Name X4/R46 }
+Part 0805 { Name X4/C27 }
+Part 0603 { Name X4/R45 }
+Part 0805 { Name X4/C26 }
+Part 0603 { Name X4/R44 }
+Part 0603 { Name X4/R43 }
+Part 0805 { Name X4/C25 }
+Part 0603 { Name X4/R42 }
+Part UB { Name X4/Q2 }
+Part 0603 { Name X4/R41 }
+Part 0603 { Name X4/R40 }
+Part UB { Name X4/Q1 }
+Part 0603 { Name X4/C24 }
+Part 0603 { Name X4/R39 }
+Part SO8 { Name X4/U4 }
+Part 0603 { Name X4/R38 }
+Part 0603 { Name X4/R37 }
+Part 0603 { Name X4/R36 }
+Part 0603 { Name X4/C23 }
+Part 0603 { Name X4/R35 }
+Part 1206 { Name X4/C22 }
+Part SO8 { Name X4/U3 }
+Part 1206 { Name X4/C21 }
+Part 0805 { Name X4/C20 }
+Part 0603 { Name X4/R34 }
+Part 0603 { Name X4/R33 }
+Part 0603 { Name X4/R32 }
+Part 0603 { Name X4/R31 }
+Part 0603 { Name X4/C19 }
+Part 0603 { Name X4/R30 }
+Part 0603 { Name X4/R29 }
+Part 0603 { Name X4/R28 }
+Part 0603 { Name X4/R27 }
+Part 0603 { Name X4/R26 }
+Part 0603 { Name X4/C18 }
+Part 0603 { Name X4/R25 }
+Part 1206 { Name X4/C17 }
+Part SO8 { Name X4/U2 }
+Part 0603 { Name X4/C15 }
+Part 0805 { Name X4/C16 }
+Part 0603 { Name X4/R24 }
+Part 0603 { Name X4/R23 }
+Part 0603 { Name X4/R22 }
+Part 0603 { Name X4/R21 }
+Part 0603 { Name X4/R20 }
+Part 0603 { Name X4/C14 }
+Part 0603 { Name X4/R19 }
+Part 1206 { Name X4/C13 }
+Part 0603 { Name X4/R18 }
+Part 0603 { Name X4/R17 }
+Part 0603 { Name X4/R16 }
+Part 0603 { Name X4/R15 }
+Part 0603 { Name X4/R14 }
+Part 0603 { Name X4/C12 }
+Part 0603 { Name X4/R13 }
+Part 1206 { Name X4/C11 }
+Part 0603 { Name X4/R60 }
+Part 0603 { Name X4/R61 }
+Part 0603 { Name X4/C40 }
+Part SO8 { Name X4/U11 }
+Part SO8 { Name X4/U1 }
+Part 0603 { Name X4/R12 }
+Part 0603 { Name X4/C10 }
+Part 0805 { Name X4/C9 }
+Part 0603 { Name X4/C8 }
+Part 0603 { Name X4/R11 }
+Part 0603 { Name X4/R10 }
+Part 0603 { Name X4/R9 }
+Part 0603 { Name X4/R8 }
+Part 0603 { Name X4/R7 }
+Part 0603 { Name X4/C7 }
+Part 0603 { Name X4/R6 }
+Part 1206 { Name X4/C6 }
+Part SO8 { Name X4/U5 }
+Part 0603 { Name X4/R5 }
+Part 0603 { Name X4/C3 }
+Part 0603 { Name X4/R4 }
+Part 0603 { Name X4/R3 }
+Part 0805 { Name X4/C2 }
+Part 0805 { Name X4/C5 }
+Part 0603 { Name X4/R2 }
+Part 0805 { Name X4/C4 }
+Part 0603 { Name X4/R1 }
+Part SO8 { Name X4/U6 }
+Part 0603 { Name X4/R59 }
+Part 0603 { Name X4/X4/R27 }
+Part 1812 { Name X4/X4/C3 }
+Part 0603 { Name X4/X4/C24 }
+Part 0603 { Name X4/X4/R28 }
+Part 0603 { Name X4/X4/R6 }
+Part 0603 { Name X4/X4/C29 }
+Part 2711 { Name X4/X4/C30 }
+Part 0603 { Name X4/X4/R39 }
+Part 0603 { Name X4/X4/R40 }
+Part 1812 { Name X4/X4/C28 }
+Part 0603 { Name X4/X4/C25 }
+Part 0603 { Name X4/X4/R33 }
+Part 1206 { Name X4/X4/R20 }
+Part 0603 { Name X4/X4/C23 }
+Part 0603 { Name X4/X4/R26 }
+Part 0603 { Name X4/X4/C10 }
+Part SO8 { Name X4/X4/U10 }
+Part 0603 { Name X4/X4/C14 }
+Part 0603 { Name X4/X4/R18 }
+Part 0603 { Name X4/X4/C13 }
+Part 0603 { Name X4/X4/R17 }
+Part 0603 { Name X4/X4/C11 }
+Part 0603 { Name X4/X4/R16 }
+Part 0603 { Name X4/X4/C5 }
+Part 0603 { Name X4/X4/R5 }
+Part 0603 { Name X4/X4/C9 }
+Part 0603 { Name X4/X4/R21 }
+Part 0603 { Name X4/X4/C8 }
+Part 0603 { Name X4/X4/R22 }
+Part 0603 { Name X4/X4/C7 }
+Part 0603 { Name X4/X4/R23 }
+Part 0603 { Name X4/X4/R42 }
+Part 0603 { Name X4/X4/R1 }
+Part SOT23 { Name X4/X4/Q2 }
+Part 0603 { Name X4/X4/C22 }
+Part 0603 { Name X4/X4/R13 }
+Part 0603 { Name X4/X4/R41 }
+Part SC70-6 { Name X4/X4/U6 }
+Part SC70-6 { Name X4/X4/U8 }
+Part SC70-6 { Name X4/X4/U5 }
+Part SC70-6 { Name X4/X4/U4 }
+Part 0603 { Name X4/X4/R24 }
+Part 0805 { Name X4/X4/C16 }
+Part 0505 { Name X4/X4/C4a }
+Part 0603 { Name X4/X4/C2 }
+Part 0603 { Name X4/X4/R11 }
+Part SC70 { Name X4/X4/U12 }
+Part 0603 { Name X4/X4/C17 }
+Part 0603 { Name X4/X4/R38 }
+Part SC70 { Name X4/X4/U11 }
+Part 0603 { Name X4/X4/C6 }
+Part SC70 { Name X4/X4/U3 }
+Part 0603 { Name X4/X4/R25 }
+Part 0805 { Name X4/X4/R19 }
+Part 0603 { Name X4/X4/R15 }
+Part 0603 { Name X4/X4/C12 }
+Part 0603 { Name X4/X4/R4 }
+Part 0604 { Name X4/X4/C20 }
+Part 0604 { Name X4/X4/C21 }
+Part 0603 { Name X4/X4/R14 }
+Part MSOP10 { Name X4/X4/U9 }
+Part 0603 { Name X4/X4/R7 }
+Part 0603 { Name X4/X4/C18 }
+Part 0603 { Name X4/X4/C19 }
+Part 0603 { Name X4/X4/R10 }
+Part 0603 { Name X4/X4/R12 }
+Part SC70 { Name X4/X4/U7 }
+Part 0505 { Name X4/X4/C4 }
+Part 0603 { Name X4/X4/R2 }
+Part 0603 { Name X4/X4/R9 }
+Part 0603 { Name X4/X4/R8 }
+Part 0805 { Name X4/X4/C1 }
+Part 0603 { Name X4/X3/R27 }
+Part 1812 { Name X4/X3/C3 }
+Part 0603 { Name X4/X3/C24 }
+Part 0603 { Name X4/X3/R28 }
+Part 0603 { Name X4/X3/R6 }
+Part 0603 { Name X4/X3/C29 }
+Part 2711 { Name X4/X3/C30 }
+Part 0603 { Name X4/X3/R39 }
+Part 0603 { Name X4/X3/R40 }
+Part 1812 { Name X4/X3/C28 }
+Part 0603 { Name X4/X3/C25 }
+Part 0603 { Name X4/X3/R33 }
+Part 1206 { Name X4/X3/R20 }
+Part 0603 { Name X4/X3/C23 }
+Part 0603 { Name X4/X3/R26 }
+Part 0603 { Name X4/X3/C10 }
+Part SO8 { Name X4/X3/U10 }
+Part 0603 { Name X4/X3/C14 }
+Part 0603 { Name X4/X3/R18 }
+Part 0603 { Name X4/X3/C13 }
+Part 0603 { Name X4/X3/R17 }
+Part 0603 { Name X4/X3/C11 }
+Part 0603 { Name X4/X3/R16 }
+Part 0603 { Name X4/X3/C5 }
+Part 0603 { Name X4/X3/R5 }
+Part 0603 { Name X4/X3/C9 }
+Part 0603 { Name X4/X3/R21 }
+Part 0603 { Name X4/X3/C8 }
+Part 0603 { Name X4/X3/R22 }
+Part 0603 { Name X4/X3/C7 }
+Part 0603 { Name X4/X3/R23 }
+Part 0603 { Name X4/X3/R42 }
+Part 0603 { Name X4/X3/R1 }
+Part SOT23 { Name X4/X3/Q2 }
+Part 0603 { Name X4/X3/C22 }
+Part 0603 { Name X4/X3/R13 }
+Part 0603 { Name X4/X3/R41 }
+Part SC70-6 { Name X4/X3/U6 }
+Part SC70-6 { Name X4/X3/U8 }
+Part SC70-6 { Name X4/X3/U5 }
+Part SC70-6 { Name X4/X3/U4 }
+Part 0603 { Name X4/X3/R24 }
+Part 0805 { Name X4/X3/C16 }
+Part 0505 { Name X4/X3/C4a }
+Part 0603 { Name X4/X3/C2 }
+Part 0603 { Name X4/X3/R11 }
+Part SC70 { Name X4/X3/U12 }
+Part 0603 { Name X4/X3/C17 }
+Part 0603 { Name X4/X3/R38 }
+Part SC70 { Name X4/X3/U11 }
+Part 0603 { Name X4/X3/C6 }
+Part SC70 { Name X4/X3/U3 }
+Part 0603 { Name X4/X3/R25 }
+Part 0805 { Name X4/X3/R19 }
+Part 0603 { Name X4/X3/R15 }
+Part 0603 { Name X4/X3/C12 }
+Part 0603 { Name X4/X3/R4 }
+Part 0604 { Name X4/X3/C20 }
+Part 0604 { Name X4/X3/C21 }
+Part 0603 { Name X4/X3/R14 }
+Part MSOP10 { Name X4/X3/U9 }
+Part 0603 { Name X4/X3/R7 }
+Part 0603 { Name X4/X3/C18 }
+Part 0603 { Name X4/X3/C19 }
+Part 0603 { Name X4/X3/R10 }
+Part 0603 { Name X4/X3/R12 }
+Part SC70 { Name X4/X3/U7 }
+Part 0505 { Name X4/X3/C4 }
+Part 0603 { Name X4/X3/R2 }
+Part 0603 { Name X4/X3/R9 }
+Part 0603 { Name X4/X3/R8 }
+Part 0805 { Name X4/X3/C1 }
+Part 0603 { Name X4/X2/R27 }
+Part 1812 { Name X4/X2/C3 }
+Part 0603 { Name X4/X2/C24 }
+Part 0603 { Name X4/X2/R28 }
+Part 0603 { Name X4/X2/R6 }
+Part 0603 { Name X4/X2/C29 }
+Part 2711 { Name X4/X2/C30 }
+Part 0603 { Name X4/X2/R39 }
+Part 0603 { Name X4/X2/R40 }
+Part 1812 { Name X4/X2/C28 }
+Part 0603 { Name X4/X2/C25 }
+Part 0603 { Name X4/X2/R33 }
+Part 1206 { Name X4/X2/R20 }
+Part 0603 { Name X4/X2/C23 }
+Part 0603 { Name X4/X2/R26 }
+Part 0603 { Name X4/X2/C10 }
+Part SO8 { Name X4/X2/U10 }
+Part 0603 { Name X4/X2/C14 }
+Part 0603 { Name X4/X2/R18 }
+Part 0603 { Name X4/X2/C13 }
+Part 0603 { Name X4/X2/R17 }
+Part 0603 { Name X4/X2/C11 }
+Part 0603 { Name X4/X2/R16 }
+Part 0603 { Name X4/X2/C5 }
+Part 0603 { Name X4/X2/R5 }
+Part 0603 { Name X4/X2/C9 }
+Part 0603 { Name X4/X2/R21 }
+Part 0603 { Name X4/X2/C8 }
+Part 0603 { Name X4/X2/R22 }
+Part 0603 { Name X4/X2/C7 }
+Part 0603 { Name X4/X2/R23 }
+Part 0603 { Name X4/X2/R42 }
+Part 0603 { Name X4/X2/R1 }
+Part SOT23 { Name X4/X2/Q2 }
+Part 0603 { Name X4/X2/C22 }
+Part 0603 { Name X4/X2/R13 }
+Part 0603 { Name X4/X2/R41 }
+Part SC70-6 { Name X4/X2/U6 }
+Part SC70-6 { Name X4/X2/U8 }
+Part SC70-6 { Name X4/X2/U5 }
+Part SC70-6 { Name X4/X2/U4 }
+Part 0603 { Name X4/X2/R24 }
+Part 0805 { Name X4/X2/C16 }
+Part 0505 { Name X4/X2/C4a }
+Part 0603 { Name X4/X2/C2 }
+Part 0603 { Name X4/X2/R11 }
+Part SC70 { Name X4/X2/U12 }
+Part 0603 { Name X4/X2/C17 }
+Part 0603 { Name X4/X2/R38 }
+Part SC70 { Name X4/X2/U11 }
+Part 0603 { Name X4/X2/C6 }
+Part SC70 { Name X4/X2/U3 }
+Part 0603 { Name X4/X2/R25 }
+Part 0805 { Name X4/X2/R19 }
+Part 0603 { Name X4/X2/R15 }
+Part 0603 { Name X4/X2/C12 }
+Part 0603 { Name X4/X2/R4 }
+Part 0604 { Name X4/X2/C20 }
+Part 0604 { Name X4/X2/C21 }
+Part 0603 { Name X4/X2/R14 }
+Part MSOP10 { Name X4/X2/U9 }
+Part 0603 { Name X4/X2/R7 }
+Part 0603 { Name X4/X2/C18 }
+Part 0603 { Name X4/X2/C19 }
+Part 0603 { Name X4/X2/R10 }
+Part 0603 { Name X4/X2/R12 }
+Part SC70 { Name X4/X2/U7 }
+Part 0505 { Name X4/X2/C4 }
+Part 0603 { Name X4/X2/R2 }
+Part 0603 { Name X4/X2/R9 }
+Part 0603 { Name X4/X2/R8 }
+Part 0805 { Name X4/X2/C1 }
+Part 0603 { Name X4/X1/R27 }
+Part 1812 { Name X4/X1/C3 }
+Part 0603 { Name X4/X1/C24 }
+Part 0603 { Name X4/X1/R28 }
+Part 0603 { Name X4/X1/R6 }
+Part 0603 { Name X4/X1/C29 }
+Part 2711 { Name X4/X1/C30 }
+Part 0603 { Name X4/X1/R39 }
+Part 0603 { Name X4/X1/R40 }
+Part 1812 { Name X4/X1/C28 }
+Part 0603 { Name X4/X1/C25 }
+Part 0603 { Name X4/X1/R33 }
+Part 1206 { Name X4/X1/R20 }
+Part 0603 { Name X4/X1/C23 }
+Part 0603 { Name X4/X1/R26 }
+Part 0603 { Name X4/X1/C10 }
+Part SO8 { Name X4/X1/U10 }
+Part 0603 { Name X4/X1/C14 }
+Part 0603 { Name X4/X1/R18 }
+Part 0603 { Name X4/X1/C13 }
+Part 0603 { Name X4/X1/R17 }
+Part 0603 { Name X4/X1/C11 }
+Part 0603 { Name X4/X1/R16 }
+Part 0603 { Name X4/X1/C5 }
+Part 0603 { Name X4/X1/R5 }
+Part 0603 { Name X4/X1/C9 }
+Part 0603 { Name X4/X1/R21 }
+Part 0603 { Name X4/X1/C8 }
+Part 0603 { Name X4/X1/R22 }
+Part 0603 { Name X4/X1/C7 }
+Part 0603 { Name X4/X1/R23 }
+Part 0603 { Name X4/X1/R42 }
+Part 0603 { Name X4/X1/R1 }
+Part SOT23 { Name X4/X1/Q2 }
+Part 0603 { Name X4/X1/C22 }
+Part 0603 { Name X4/X1/R13 }
+Part 0603 { Name X4/X1/R41 }
+Part SC70-6 { Name X4/X1/U6 }
+Part SC70-6 { Name X4/X1/U8 }
+Part SC70-6 { Name X4/X1/U5 }
+Part SC70-6 { Name X4/X1/U4 }
+Part 0603 { Name X4/X1/R24 }
+Part 0805 { Name X4/X1/C16 }
+Part 0505 { Name X4/X1/C4a }
+Part 0603 { Name X4/X1/C2 }
+Part 0603 { Name X4/X1/R11 }
+Part SC70 { Name X4/X1/U12 }
+Part 0603 { Name X4/X1/C17 }
+Part 0603 { Name X4/X1/R38 }
+Part SC70 { Name X4/X1/U11 }
+Part 0603 { Name X4/X1/C6 }
+Part SC70 { Name X4/X1/U3 }
+Part 0603 { Name X4/X1/R25 }
+Part 0805 { Name X4/X1/R19 }
+Part 0603 { Name X4/X1/R15 }
+Part 0603 { Name X4/X1/C12 }
+Part 0603 { Name X4/X1/R4 }
+Part 0604 { Name X4/X1/C20 }
+Part 0604 { Name X4/X1/C21 }
+Part 0603 { Name X4/X1/R14 }
+Part MSOP10 { Name X4/X1/U9 }
+Part 0603 { Name X4/X1/R7 }
+Part 0603 { Name X4/X1/C18 }
+Part 0603 { Name X4/X1/C19 }
+Part 0603 { Name X4/X1/R10 }
+Part 0603 { Name X4/X1/R12 }
+Part SC70 { Name X4/X1/U7 }
+Part 0505 { Name X4/X1/C4 }
+Part 0603 { Name X4/X1/R2 }
+Part 0603 { Name X4/X1/R9 }
+Part 0603 { Name X4/X1/R8 }
+Part 0805 { Name X4/X1/C1 }
+Part NK-2M2-051 { Name J3 }
+Part 0805 { Name X3/C39 }
+Part 0805 { Name X3/R51 }
+Part 0603 { Name X3/R53 }
+Part 0603 { Name X3/R52 }
+Part 0603 { Name X3/C38 }
+Part 0603 { Name X3/C37 }
+Part SO16 { Name X3/U10 }
+Part 0603 { Name X3/C36 }
+Part TSSOP16 { Name X3/U9 }
+Part 0805 { Name X3/C35 }
+Part 0805 { Name X3/R48 }
+Part 0603 { Name X3/R50 }
+Part 0603 { Name X3/R49 }
+Part 0603 { Name X3/C34 }
+Part 0603 { Name X3/C33 }
+Part SO16 { Name X3/U8 }
+Part 0603 { Name X3/C32 }
+Part TSSOP16 { Name X3/U7 }
+Part 0603 { Name X3/C31 }
+Part 0603 { Name X3/L4 }
+Part 0603 { Name X3/C30 }
+Part 0603 { Name X3/L3 }
+Part 0603 { Name X3/C29 }
+Part 0603 { Name X3/L2 }
+Part 0603 { Name X3/L1 }
+Part 0603 { Name X3/C28 }
+Part 0603 { Name X3/X6/R14 }
+Part 0603 { Name X3/X6/R15 }
+Part SO8 { Name X3/X6/U1 }
+Part 0603 { Name X3/X6/R13 }
+Part 0603 { Name X3/X6/R8 }
+Part 0603 { Name X3/X6/R9 }
+Part 0603 { Name X3/X6/R10 }
+Part 0603 { Name X3/X6/R11 }
+Part 0603 { Name X3/X6/C4 }
+Part 0603 { Name X3/X6/R12 }
+Part 0805 { Name X3/X6/C5 }
+Part 0603 { Name X3/X6/C3 }
+Part 0603 { Name X3/X6/R6 }
+Part 0603 { Name X3/X6/R7 }
+Part 0603 { Name X3/X6/R1 }
+Part 0603 { Name X3/X6/R2 }
+Part 0603 { Name X3/X6/R3 }
+Part 0603 { Name X3/X6/R4 }
+Part 0603 { Name X3/X6/C1 }
+Part 0603 { Name X3/X6/R5 }
+Part 0805 { Name X3/X6/C2 }
+Part 0603 { Name X3/X5/R14 }
+Part 0603 { Name X3/X5/R15 }
+Part SO8 { Name X3/X5/U1 }
+Part 0603 { Name X3/X5/R13 }
+Part 0603 { Name X3/X5/R8 }
+Part 0603 { Name X3/X5/R9 }
+Part 0603 { Name X3/X5/R10 }
+Part 0603 { Name X3/X5/R11 }
+Part 0603 { Name X3/X5/C4 }
+Part 0603 { Name X3/X5/R12 }
+Part 0805 { Name X3/X5/C5 }
+Part 0603 { Name X3/X5/C3 }
+Part 0603 { Name X3/X5/R6 }
+Part 0603 { Name X3/X5/R7 }
+Part 0603 { Name X3/X5/R1 }
+Part 0603 { Name X3/X5/R2 }
+Part 0603 { Name X3/X5/R3 }
+Part 0603 { Name X3/X5/R4 }
+Part 0603 { Name X3/X5/C1 }
+Part 0603 { Name X3/X5/R5 }
+Part 0805 { Name X3/X5/C2 }
+Part 0603 { Name X3/R62 }
+Part 0603 { Name X3/R57 }
+Part 0603 { Name X3/R54 }
+Part 0603 { Name X3/R47 }
+Part 0603 { Name X3/R46 }
+Part 0805 { Name X3/C27 }
+Part 0603 { Name X3/R45 }
+Part 0805 { Name X3/C26 }
+Part 0603 { Name X3/R44 }
+Part 0603 { Name X3/R43 }
+Part 0805 { Name X3/C25 }
+Part 0603 { Name X3/R42 }
+Part UB { Name X3/Q2 }
+Part 0603 { Name X3/R41 }
+Part 0603 { Name X3/R40 }
+Part UB { Name X3/Q1 }
+Part 0603 { Name X3/C24 }
+Part 0603 { Name X3/R39 }
+Part SO8 { Name X3/U4 }
+Part 0603 { Name X3/R38 }
+Part 0603 { Name X3/R37 }
+Part 0603 { Name X3/R36 }
+Part 0603 { Name X3/C23 }
+Part 0603 { Name X3/R35 }
+Part 1206 { Name X3/C22 }
+Part SO8 { Name X3/U3 }
+Part 1206 { Name X3/C21 }
+Part 0805 { Name X3/C20 }
+Part 0603 { Name X3/R34 }
+Part 0603 { Name X3/R33 }
+Part 0603 { Name X3/R32 }
+Part 0603 { Name X3/R31 }
+Part 0603 { Name X3/C19 }
+Part 0603 { Name X3/R30 }
+Part 0603 { Name X3/R29 }
+Part 0603 { Name X3/R28 }
+Part 0603 { Name X3/R27 }
+Part 0603 { Name X3/R26 }
+Part 0603 { Name X3/C18 }
+Part 0603 { Name X3/R25 }
+Part 1206 { Name X3/C17 }
+Part SO8 { Name X3/U2 }
+Part 0603 { Name X3/C15 }
+Part 0805 { Name X3/C16 }
+Part 0603 { Name X3/R24 }
+Part 0603 { Name X3/R23 }
+Part 0603 { Name X3/R22 }
+Part 0603 { Name X3/R21 }
+Part 0603 { Name X3/R20 }
+Part 0603 { Name X3/C14 }
+Part 0603 { Name X3/R19 }
+Part 1206 { Name X3/C13 }
+Part 0603 { Name X3/R18 }
+Part 0603 { Name X3/R17 }
+Part 0603 { Name X3/R16 }
+Part 0603 { Name X3/R15 }
+Part 0603 { Name X3/R14 }
+Part 0603 { Name X3/C12 }
+Part 0603 { Name X3/R13 }
+Part 1206 { Name X3/C11 }
+Part 0603 { Name X3/R60 }
+Part 0603 { Name X3/R61 }
+Part 0603 { Name X3/C40 }
+Part SO8 { Name X3/U11 }
+Part SO8 { Name X3/U1 }
+Part 0603 { Name X3/R12 }
+Part 0603 { Name X3/C10 }
+Part 0805 { Name X3/C9 }
+Part 0603 { Name X3/C8 }
+Part 0603 { Name X3/R11 }
+Part 0603 { Name X3/R10 }
+Part 0603 { Name X3/R9 }
+Part 0603 { Name X3/R8 }
+Part 0603 { Name X3/R7 }
+Part 0603 { Name X3/C7 }
+Part 0603 { Name X3/R6 }
+Part 1206 { Name X3/C6 }
+Part SO8 { Name X3/U5 }
+Part 0603 { Name X3/R5 }
+Part 0603 { Name X3/C3 }
+Part 0603 { Name X3/R4 }
+Part 0603 { Name X3/R3 }
+Part 0805 { Name X3/C2 }
+Part 0805 { Name X3/C5 }
+Part 0603 { Name X3/R2 }
+Part 0805 { Name X3/C4 }
+Part 0603 { Name X3/R1 }
+Part SO8 { Name X3/U6 }
+Part 0603 { Name X3/R59 }
+Part 0603 { Name X3/X4/R27 }
+Part 1812 { Name X3/X4/C3 }
+Part 0603 { Name X3/X4/C24 }
+Part 0603 { Name X3/X4/R28 }
+Part 0603 { Name X3/X4/R6 }
+Part 0603 { Name X3/X4/C29 }
+Part 2711 { Name X3/X4/C30 }
+Part 0603 { Name X3/X4/R39 }
+Part 0603 { Name X3/X4/R40 }
+Part 1812 { Name X3/X4/C28 }
+Part 0603 { Name X3/X4/C25 }
+Part 0603 { Name X3/X4/R33 }
+Part 1206 { Name X3/X4/R20 }
+Part 0603 { Name X3/X4/C23 }
+Part 0603 { Name X3/X4/R26 }
+Part 0603 { Name X3/X4/C10 }
+Part SO8 { Name X3/X4/U10 }
+Part 0603 { Name X3/X4/C14 }
+Part 0603 { Name X3/X4/R18 }
+Part 0603 { Name X3/X4/C13 }
+Part 0603 { Name X3/X4/R17 }
+Part 0603 { Name X3/X4/C11 }
+Part 0603 { Name X3/X4/R16 }
+Part 0603 { Name X3/X4/C5 }
+Part 0603 { Name X3/X4/R5 }
+Part 0603 { Name X3/X4/C9 }
+Part 0603 { Name X3/X4/R21 }
+Part 0603 { Name X3/X4/C8 }
+Part 0603 { Name X3/X4/R22 }
+Part 0603 { Name X3/X4/C7 }
+Part 0603 { Name X3/X4/R23 }
+Part 0603 { Name X3/X4/R42 }
+Part 0603 { Name X3/X4/R1 }
+Part SOT23 { Name X3/X4/Q2 }
+Part 0603 { Name X3/X4/C22 }
+Part 0603 { Name X3/X4/R13 }
+Part 0603 { Name X3/X4/R41 }
+Part SC70-6 { Name X3/X4/U6 }
+Part SC70-6 { Name X3/X4/U8 }
+Part SC70-6 { Name X3/X4/U5 }
+Part SC70-6 { Name X3/X4/U4 }
+Part 0603 { Name X3/X4/R24 }
+Part 0805 { Name X3/X4/C16 }
+Part 0505 { Name X3/X4/C4a }
+Part 0603 { Name X3/X4/C2 }
+Part 0603 { Name X3/X4/R11 }
+Part SC70 { Name X3/X4/U12 }
+Part 0603 { Name X3/X4/C17 }
+Part 0603 { Name X3/X4/R38 }
+Part SC70 { Name X3/X4/U11 }
+Part 0603 { Name X3/X4/C6 }
+Part SC70 { Name X3/X4/U3 }
+Part 0603 { Name X3/X4/R25 }
+Part 0805 { Name X3/X4/R19 }
+Part 0603 { Name X3/X4/R15 }
+Part 0603 { Name X3/X4/C12 }
+Part 0603 { Name X3/X4/R4 }
+Part 0604 { Name X3/X4/C20 }
+Part 0604 { Name X3/X4/C21 }
+Part 0603 { Name X3/X4/R14 }
+Part MSOP10 { Name X3/X4/U9 }
+Part 0603 { Name X3/X4/R7 }
+Part 0603 { Name X3/X4/C18 }
+Part 0603 { Name X3/X4/C19 }
+Part 0603 { Name X3/X4/R10 }
+Part 0603 { Name X3/X4/R12 }
+Part SC70 { Name X3/X4/U7 }
+Part 0505 { Name X3/X4/C4 }
+Part 0603 { Name X3/X4/R2 }
+Part 0603 { Name X3/X4/R9 }
+Part 0603 { Name X3/X4/R8 }
+Part 0805 { Name X3/X4/C1 }
+Part 0603 { Name X3/X3/R27 }
+Part 1812 { Name X3/X3/C3 }
+Part 0603 { Name X3/X3/C24 }
+Part 0603 { Name X3/X3/R28 }
+Part 0603 { Name X3/X3/R6 }
+Part 0603 { Name X3/X3/C29 }
+Part 2711 { Name X3/X3/C30 }
+Part 0603 { Name X3/X3/R39 }
+Part 0603 { Name X3/X3/R40 }
+Part 1812 { Name X3/X3/C28 }
+Part 0603 { Name X3/X3/C25 }
+Part 0603 { Name X3/X3/R33 }
+Part 1206 { Name X3/X3/R20 }
+Part 0603 { Name X3/X3/C23 }
+Part 0603 { Name X3/X3/R26 }
+Part 0603 { Name X3/X3/C10 }
+Part SO8 { Name X3/X3/U10 }
+Part 0603 { Name X3/X3/C14 }
+Part 0603 { Name X3/X3/R18 }
+Part 0603 { Name X3/X3/C13 }
+Part 0603 { Name X3/X3/R17 }
+Part 0603 { Name X3/X3/C11 }
+Part 0603 { Name X3/X3/R16 }
+Part 0603 { Name X3/X3/C5 }
+Part 0603 { Name X3/X3/R5 }
+Part 0603 { Name X3/X3/C9 }
+Part 0603 { Name X3/X3/R21 }
+Part 0603 { Name X3/X3/C8 }
+Part 0603 { Name X3/X3/R22 }
+Part 0603 { Name X3/X3/C7 }
+Part 0603 { Name X3/X3/R23 }
+Part 0603 { Name X3/X3/R42 }
+Part 0603 { Name X3/X3/R1 }
+Part SOT23 { Name X3/X3/Q2 }
+Part 0603 { Name X3/X3/C22 }
+Part 0603 { Name X3/X3/R13 }
+Part 0603 { Name X3/X3/R41 }
+Part SC70-6 { Name X3/X3/U6 }
+Part SC70-6 { Name X3/X3/U8 }
+Part SC70-6 { Name X3/X3/U5 }
+Part SC70-6 { Name X3/X3/U4 }
+Part 0603 { Name X3/X3/R24 }
+Part 0805 { Name X3/X3/C16 }
+Part 0505 { Name X3/X3/C4a }
+Part 0603 { Name X3/X3/C2 }
+Part 0603 { Name X3/X3/R11 }
+Part SC70 { Name X3/X3/U12 }
+Part 0603 { Name X3/X3/C17 }
+Part 0603 { Name X3/X3/R38 }
+Part SC70 { Name X3/X3/U11 }
+Part 0603 { Name X3/X3/C6 }
+Part SC70 { Name X3/X3/U3 }
+Part 0603 { Name X3/X3/R25 }
+Part 0805 { Name X3/X3/R19 }
+Part 0603 { Name X3/X3/R15 }
+Part 0603 { Name X3/X3/C12 }
+Part 0603 { Name X3/X3/R4 }
+Part 0604 { Name X3/X3/C20 }
+Part 0604 { Name X3/X3/C21 }
+Part 0603 { Name X3/X3/R14 }
+Part MSOP10 { Name X3/X3/U9 }
+Part 0603 { Name X3/X3/R7 }
+Part 0603 { Name X3/X3/C18 }
+Part 0603 { Name X3/X3/C19 }
+Part 0603 { Name X3/X3/R10 }
+Part 0603 { Name X3/X3/R12 }
+Part SC70 { Name X3/X3/U7 }
+Part 0505 { Name X3/X3/C4 }
+Part 0603 { Name X3/X3/R2 }
+Part 0603 { Name X3/X3/R9 }
+Part 0603 { Name X3/X3/R8 }
+Part 0805 { Name X3/X3/C1 }
+Part 0603 { Name X3/X2/R27 }
+Part 1812 { Name X3/X2/C3 }
+Part 0603 { Name X3/X2/C24 }
+Part 0603 { Name X3/X2/R28 }
+Part 0603 { Name X3/X2/R6 }
+Part 0603 { Name X3/X2/C29 }
+Part 2711 { Name X3/X2/C30 }
+Part 0603 { Name X3/X2/R39 }
+Part 0603 { Name X3/X2/R40 }
+Part 1812 { Name X3/X2/C28 }
+Part 0603 { Name X3/X2/C25 }
+Part 0603 { Name X3/X2/R33 }
+Part 1206 { Name X3/X2/R20 }
+Part 0603 { Name X3/X2/C23 }
+Part 0603 { Name X3/X2/R26 }
+Part 0603 { Name X3/X2/C10 }
+Part SO8 { Name X3/X2/U10 }
+Part 0603 { Name X3/X2/C14 }
+Part 0603 { Name X3/X2/R18 }
+Part 0603 { Name X3/X2/C13 }
+Part 0603 { Name X3/X2/R17 }
+Part 0603 { Name X3/X2/C11 }
+Part 0603 { Name X3/X2/R16 }
+Part 0603 { Name X3/X2/C5 }
+Part 0603 { Name X3/X2/R5 }
+Part 0603 { Name X3/X2/C9 }
+Part 0603 { Name X3/X2/R21 }
+Part 0603 { Name X3/X2/C8 }
+Part 0603 { Name X3/X2/R22 }
+Part 0603 { Name X3/X2/C7 }
+Part 0603 { Name X3/X2/R23 }
+Part 0603 { Name X3/X2/R42 }
+Part 0603 { Name X3/X2/R1 }
+Part SOT23 { Name X3/X2/Q2 }
+Part 0603 { Name X3/X2/C22 }
+Part 0603 { Name X3/X2/R13 }
+Part 0603 { Name X3/X2/R41 }
+Part SC70-6 { Name X3/X2/U6 }
+Part SC70-6 { Name X3/X2/U8 }
+Part SC70-6 { Name X3/X2/U5 }
+Part SC70-6 { Name X3/X2/U4 }
+Part 0603 { Name X3/X2/R24 }
+Part 0805 { Name X3/X2/C16 }
+Part 0505 { Name X3/X2/C4a }
+Part 0603 { Name X3/X2/C2 }
+Part 0603 { Name X3/X2/R11 }
+Part SC70 { Name X3/X2/U12 }
+Part 0603 { Name X3/X2/C17 }
+Part 0603 { Name X3/X2/R38 }
+Part SC70 { Name X3/X2/U11 }
+Part 0603 { Name X3/X2/C6 }
+Part SC70 { Name X3/X2/U3 }
+Part 0603 { Name X3/X2/R25 }
+Part 0805 { Name X3/X2/R19 }
+Part 0603 { Name X3/X2/R15 }
+Part 0603 { Name X3/X2/C12 }
+Part 0603 { Name X3/X2/R4 }
+Part 0604 { Name X3/X2/C20 }
+Part 0604 { Name X3/X2/C21 }
+Part 0603 { Name X3/X2/R14 }
+Part MSOP10 { Name X3/X2/U9 }
+Part 0603 { Name X3/X2/R7 }
+Part 0603 { Name X3/X2/C18 }
+Part 0603 { Name X3/X2/C19 }
+Part 0603 { Name X3/X2/R10 }
+Part 0603 { Name X3/X2/R12 }
+Part SC70 { Name X3/X2/U7 }
+Part 0505 { Name X3/X2/C4 }
+Part 0603 { Name X3/X2/R2 }
+Part 0603 { Name X3/X2/R9 }
+Part 0603 { Name X3/X2/R8 }
+Part 0805 { Name X3/X2/C1 }
+Part 0603 { Name X3/X1/R27 }
+Part 1812 { Name X3/X1/C3 }
+Part 0603 { Name X3/X1/C24 }
+Part 0603 { Name X3/X1/R28 }
+Part 0603 { Name X3/X1/R6 }
+Part 0603 { Name X3/X1/C29 }
+Part 2711 { Name X3/X1/C30 }
+Part 0603 { Name X3/X1/R39 }
+Part 0603 { Name X3/X1/R40 }
+Part 1812 { Name X3/X1/C28 }
+Part 0603 { Name X3/X1/C25 }
+Part 0603 { Name X3/X1/R33 }
+Part 1206 { Name X3/X1/R20 }
+Part 0603 { Name X3/X1/C23 }
+Part 0603 { Name X3/X1/R26 }
+Part 0603 { Name X3/X1/C10 }
+Part SO8 { Name X3/X1/U10 }
+Part 0603 { Name X3/X1/C14 }
+Part 0603 { Name X3/X1/R18 }
+Part 0603 { Name X3/X1/C13 }
+Part 0603 { Name X3/X1/R17 }
+Part 0603 { Name X3/X1/C11 }
+Part 0603 { Name X3/X1/R16 }
+Part 0603 { Name X3/X1/C5 }
+Part 0603 { Name X3/X1/R5 }
+Part 0603 { Name X3/X1/C9 }
+Part 0603 { Name X3/X1/R21 }
+Part 0603 { Name X3/X1/C8 }
+Part 0603 { Name X3/X1/R22 }
+Part 0603 { Name X3/X1/C7 }
+Part 0603 { Name X3/X1/R23 }
+Part 0603 { Name X3/X1/R42 }
+Part 0603 { Name X3/X1/R1 }
+Part SOT23 { Name X3/X1/Q2 }
+Part 0603 { Name X3/X1/C22 }
+Part 0603 { Name X3/X1/R13 }
+Part 0603 { Name X3/X1/R41 }
+Part SC70-6 { Name X3/X1/U6 }
+Part SC70-6 { Name X3/X1/U8 }
+Part SC70-6 { Name X3/X1/U5 }
+Part SC70-6 { Name X3/X1/U4 }
+Part 0603 { Name X3/X1/R24 }
+Part 0805 { Name X3/X1/C16 }
+Part 0505 { Name X3/X1/C4a }
+Part 0603 { Name X3/X1/C2 }
+Part 0603 { Name X3/X1/R11 }
+Part SC70 { Name X3/X1/U12 }
+Part 0603 { Name X3/X1/C17 }
+Part 0603 { Name X3/X1/R38 }
+Part SC70 { Name X3/X1/U11 }
+Part 0603 { Name X3/X1/C6 }
+Part SC70 { Name X3/X1/U3 }
+Part 0603 { Name X3/X1/R25 }
+Part 0805 { Name X3/X1/R19 }
+Part 0603 { Name X3/X1/R15 }
+Part 0603 { Name X3/X1/C12 }
+Part 0603 { Name X3/X1/R4 }
+Part 0604 { Name X3/X1/C20 }
+Part 0604 { Name X3/X1/C21 }
+Part 0603 { Name X3/X1/R14 }
+Part MSOP10 { Name X3/X1/U9 }
+Part 0603 { Name X3/X1/R7 }
+Part 0603 { Name X3/X1/C18 }
+Part 0603 { Name X3/X1/C19 }
+Part 0603 { Name X3/X1/R10 }
+Part 0603 { Name X3/X1/R12 }
+Part SC70 { Name X3/X1/U7 }
+Part 0505 { Name X3/X1/C4 }
+Part 0603 { Name X3/X1/R2 }
+Part 0603 { Name X3/X1/R9 }
+Part 0603 { Name X3/X1/R8 }
+Part 0805 { Name X3/X1/C1 }
+Part NK-2M2-051 { Name J2 }
+Part 0805 { Name X2/C39 }
+Part 0805 { Name X2/R51 }
+Part 0603 { Name X2/R53 }
+Part 0603 { Name X2/R52 }
+Part 0603 { Name X2/C38 }
+Part 0603 { Name X2/C37 }
+Part SO16 { Name X2/U10 }
+Part 0603 { Name X2/C36 }
+Part TSSOP16 { Name X2/U9 }
+Part 0805 { Name X2/C35 }
+Part 0805 { Name X2/R48 }
+Part 0603 { Name X2/R50 }
+Part 0603 { Name X2/R49 }
+Part 0603 { Name X2/C34 }
+Part 0603 { Name X2/C33 }
+Part SO16 { Name X2/U8 }
+Part 0603 { Name X2/C32 }
+Part TSSOP16 { Name X2/U7 }
+Part 0603 { Name X2/C31 }
+Part 0603 { Name X2/L4 }
+Part 0603 { Name X2/C30 }
+Part 0603 { Name X2/L3 }
+Part 0603 { Name X2/C29 }
+Part 0603 { Name X2/L2 }
+Part 0603 { Name X2/L1 }
+Part 0603 { Name X2/C28 }
+Part 0603 { Name X2/X6/R14 }
+Part 0603 { Name X2/X6/R15 }
+Part SO8 { Name X2/X6/U1 }
+Part 0603 { Name X2/X6/R13 }
+Part 0603 { Name X2/X6/R8 }
+Part 0603 { Name X2/X6/R9 }
+Part 0603 { Name X2/X6/R10 }
+Part 0603 { Name X2/X6/R11 }
+Part 0603 { Name X2/X6/C4 }
+Part 0603 { Name X2/X6/R12 }
+Part 0805 { Name X2/X6/C5 }
+Part 0603 { Name X2/X6/C3 }
+Part 0603 { Name X2/X6/R6 }
+Part 0603 { Name X2/X6/R7 }
+Part 0603 { Name X2/X6/R1 }
+Part 0603 { Name X2/X6/R2 }
+Part 0603 { Name X2/X6/R3 }
+Part 0603 { Name X2/X6/R4 }
+Part 0603 { Name X2/X6/C1 }
+Part 0603 { Name X2/X6/R5 }
+Part 0805 { Name X2/X6/C2 }
+Part 0603 { Name X2/X5/R14 }
+Part 0603 { Name X2/X5/R15 }
+Part SO8 { Name X2/X5/U1 }
+Part 0603 { Name X2/X5/R13 }
+Part 0603 { Name X2/X5/R8 }
+Part 0603 { Name X2/X5/R9 }
+Part 0603 { Name X2/X5/R10 }
+Part 0603 { Name X2/X5/R11 }
+Part 0603 { Name X2/X5/C4 }
+Part 0603 { Name X2/X5/R12 }
+Part 0805 { Name X2/X5/C5 }
+Part 0603 { Name X2/X5/C3 }
+Part 0603 { Name X2/X5/R6 }
+Part 0603 { Name X2/X5/R7 }
+Part 0603 { Name X2/X5/R1 }
+Part 0603 { Name X2/X5/R2 }
+Part 0603 { Name X2/X5/R3 }
+Part 0603 { Name X2/X5/R4 }
+Part 0603 { Name X2/X5/C1 }
+Part 0603 { Name X2/X5/R5 }
+Part 0805 { Name X2/X5/C2 }
+Part 0603 { Name X2/R62 }
+Part 0603 { Name X2/R57 }
+Part 0603 { Name X2/R54 }
+Part 0603 { Name X2/R47 }
+Part 0603 { Name X2/R46 }
+Part 0805 { Name X2/C27 }
+Part 0603 { Name X2/R45 }
+Part 0805 { Name X2/C26 }
+Part 0603 { Name X2/R44 }
+Part 0603 { Name X2/R43 }
+Part 0805 { Name X2/C25 }
+Part 0603 { Name X2/R42 }
+Part UB { Name X2/Q2 }
+Part 0603 { Name X2/R41 }
+Part 0603 { Name X2/R40 }
+Part UB { Name X2/Q1 }
+Part 0603 { Name X2/C24 }
+Part 0603 { Name X2/R39 }
+Part SO8 { Name X2/U4 }
+Part 0603 { Name X2/R38 }
+Part 0603 { Name X2/R37 }
+Part 0603 { Name X2/R36 }
+Part 0603 { Name X2/C23 }
+Part 0603 { Name X2/R35 }
+Part 1206 { Name X2/C22 }
+Part SO8 { Name X2/U3 }
+Part 1206 { Name X2/C21 }
+Part 0805 { Name X2/C20 }
+Part 0603 { Name X2/R34 }
+Part 0603 { Name X2/R33 }
+Part 0603 { Name X2/R32 }
+Part 0603 { Name X2/R31 }
+Part 0603 { Name X2/C19 }
+Part 0603 { Name X2/R30 }
+Part 0603 { Name X2/R29 }
+Part 0603 { Name X2/R28 }
+Part 0603 { Name X2/R27 }
+Part 0603 { Name X2/R26 }
+Part 0603 { Name X2/C18 }
+Part 0603 { Name X2/R25 }
+Part 1206 { Name X2/C17 }
+Part SO8 { Name X2/U2 }
+Part 0603 { Name X2/C15 }
+Part 0805 { Name X2/C16 }
+Part 0603 { Name X2/R24 }
+Part 0603 { Name X2/R23 }
+Part 0603 { Name X2/R22 }
+Part 0603 { Name X2/R21 }
+Part 0603 { Name X2/R20 }
+Part 0603 { Name X2/C14 }
+Part 0603 { Name X2/R19 }
+Part 1206 { Name X2/C13 }
+Part 0603 { Name X2/R18 }
+Part 0603 { Name X2/R17 }
+Part 0603 { Name X2/R16 }
+Part 0603 { Name X2/R15 }
+Part 0603 { Name X2/R14 }
+Part 0603 { Name X2/C12 }
+Part 0603 { Name X2/R13 }
+Part 1206 { Name X2/C11 }
+Part 0603 { Name X2/R60 }
+Part 0603 { Name X2/R61 }
+Part 0603 { Name X2/C40 }
+Part SO8 { Name X2/U11 }
+Part SO8 { Name X2/U1 }
+Part 0603 { Name X2/R12 }
+Part 0603 { Name X2/C10 }
+Part 0805 { Name X2/C9 }
+Part 0603 { Name X2/C8 }
+Part 0603 { Name X2/R11 }
+Part 0603 { Name X2/R10 }
+Part 0603 { Name X2/R9 }
+Part 0603 { Name X2/R8 }
+Part 0603 { Name X2/R7 }
+Part 0603 { Name X2/C7 }
+Part 0603 { Name X2/R6 }
+Part 1206 { Name X2/C6 }
+Part SO8 { Name X2/U5 }
+Part 0603 { Name X2/R5 }
+Part 0603 { Name X2/C3 }
+Part 0603 { Name X2/R4 }
+Part 0603 { Name X2/R3 }
+Part 0805 { Name X2/C2 }
+Part 0805 { Name X2/C5 }
+Part 0603 { Name X2/R2 }
+Part 0805 { Name X2/C4 }
+Part 0603 { Name X2/R1 }
+Part SO8 { Name X2/U6 }
+Part 0603 { Name X2/R59 }
+Part 0603 { Name X2/X4/R27 }
+Part 1812 { Name X2/X4/C3 }
+Part 0603 { Name X2/X4/C24 }
+Part 0603 { Name X2/X4/R28 }
+Part 0603 { Name X2/X4/R6 }
+Part 0603 { Name X2/X4/C29 }
+Part 2711 { Name X2/X4/C30 }
+Part 0603 { Name X2/X4/R39 }
+Part 0603 { Name X2/X4/R40 }
+Part 1812 { Name X2/X4/C28 }
+Part 0603 { Name X2/X4/C25 }
+Part 0603 { Name X2/X4/R33 }
+Part 1206 { Name X2/X4/R20 }
+Part 0603 { Name X2/X4/C23 }
+Part 0603 { Name X2/X4/R26 }
+Part 0603 { Name X2/X4/C10 }
+Part SO8 { Name X2/X4/U10 }
+Part 0603 { Name X2/X4/C14 }
+Part 0603 { Name X2/X4/R18 }
+Part 0603 { Name X2/X4/C13 }
+Part 0603 { Name X2/X4/R17 }
+Part 0603 { Name X2/X4/C11 }
+Part 0603 { Name X2/X4/R16 }
+Part 0603 { Name X2/X4/C5 }
+Part 0603 { Name X2/X4/R5 }
+Part 0603 { Name X2/X4/C9 }
+Part 0603 { Name X2/X4/R21 }
+Part 0603 { Name X2/X4/C8 }
+Part 0603 { Name X2/X4/R22 }
+Part 0603 { Name X2/X4/C7 }
+Part 0603 { Name X2/X4/R23 }
+Part 0603 { Name X2/X4/R42 }
+Part 0603 { Name X2/X4/R1 }
+Part SOT23 { Name X2/X4/Q2 }
+Part 0603 { Name X2/X4/C22 }
+Part 0603 { Name X2/X4/R13 }
+Part 0603 { Name X2/X4/R41 }
+Part SC70-6 { Name X2/X4/U6 }
+Part SC70-6 { Name X2/X4/U8 }
+Part SC70-6 { Name X2/X4/U5 }
+Part SC70-6 { Name X2/X4/U4 }
+Part 0603 { Name X2/X4/R24 }
+Part 0805 { Name X2/X4/C16 }
+Part 0505 { Name X2/X4/C4a }
+Part 0603 { Name X2/X4/C2 }
+Part 0603 { Name X2/X4/R11 }
+Part SC70 { Name X2/X4/U12 }
+Part 0603 { Name X2/X4/C17 }
+Part 0603 { Name X2/X4/R38 }
+Part SC70 { Name X2/X4/U11 }
+Part 0603 { Name X2/X4/C6 }
+Part SC70 { Name X2/X4/U3 }
+Part 0603 { Name X2/X4/R25 }
+Part 0805 { Name X2/X4/R19 }
+Part 0603 { Name X2/X4/R15 }
+Part 0603 { Name X2/X4/C12 }
+Part 0603 { Name X2/X4/R4 }
+Part 0604 { Name X2/X4/C20 }
+Part 0604 { Name X2/X4/C21 }
+Part 0603 { Name X2/X4/R14 }
+Part MSOP10 { Name X2/X4/U9 }
+Part 0603 { Name X2/X4/R7 }
+Part 0603 { Name X2/X4/C18 }
+Part 0603 { Name X2/X4/C19 }
+Part 0603 { Name X2/X4/R10 }
+Part 0603 { Name X2/X4/R12 }
+Part SC70 { Name X2/X4/U7 }
+Part 0505 { Name X2/X4/C4 }
+Part 0603 { Name X2/X4/R2 }
+Part 0603 { Name X2/X4/R9 }
+Part 0603 { Name X2/X4/R8 }
+Part 0805 { Name X2/X4/C1 }
+Part 0603 { Name X2/X3/R27 }
+Part 1812 { Name X2/X3/C3 }
+Part 0603 { Name X2/X3/C24 }
+Part 0603 { Name X2/X3/R28 }
+Part 0603 { Name X2/X3/R6 }
+Part 0603 { Name X2/X3/C29 }
+Part 2711 { Name X2/X3/C30 }
+Part 0603 { Name X2/X3/R39 }
+Part 0603 { Name X2/X3/R40 }
+Part 1812 { Name X2/X3/C28 }
+Part 0603 { Name X2/X3/C25 }
+Part 0603 { Name X2/X3/R33 }
+Part 1206 { Name X2/X3/R20 }
+Part 0603 { Name X2/X3/C23 }
+Part 0603 { Name X2/X3/R26 }
+Part 0603 { Name X2/X3/C10 }
+Part SO8 { Name X2/X3/U10 }
+Part 0603 { Name X2/X3/C14 }
+Part 0603 { Name X2/X3/R18 }
+Part 0603 { Name X2/X3/C13 }
+Part 0603 { Name X2/X3/R17 }
+Part 0603 { Name X2/X3/C11 }
+Part 0603 { Name X2/X3/R16 }
+Part 0603 { Name X2/X3/C5 }
+Part 0603 { Name X2/X3/R5 }
+Part 0603 { Name X2/X3/C9 }
+Part 0603 { Name X2/X3/R21 }
+Part 0603 { Name X2/X3/C8 }
+Part 0603 { Name X2/X3/R22 }
+Part 0603 { Name X2/X3/C7 }
+Part 0603 { Name X2/X3/R23 }
+Part 0603 { Name X2/X3/R42 }
+Part 0603 { Name X2/X3/R1 }
+Part SOT23 { Name X2/X3/Q2 }
+Part 0603 { Name X2/X3/C22 }
+Part 0603 { Name X2/X3/R13 }
+Part 0603 { Name X2/X3/R41 }
+Part SC70-6 { Name X2/X3/U6 }
+Part SC70-6 { Name X2/X3/U8 }
+Part SC70-6 { Name X2/X3/U5 }
+Part SC70-6 { Name X2/X3/U4 }
+Part 0603 { Name X2/X3/R24 }
+Part 0805 { Name X2/X3/C16 }
+Part 0505 { Name X2/X3/C4a }
+Part 0603 { Name X2/X3/C2 }
+Part 0603 { Name X2/X3/R11 }
+Part SC70 { Name X2/X3/U12 }
+Part 0603 { Name X2/X3/C17 }
+Part 0603 { Name X2/X3/R38 }
+Part SC70 { Name X2/X3/U11 }
+Part 0603 { Name X2/X3/C6 }
+Part SC70 { Name X2/X3/U3 }
+Part 0603 { Name X2/X3/R25 }
+Part 0805 { Name X2/X3/R19 }
+Part 0603 { Name X2/X3/R15 }
+Part 0603 { Name X2/X3/C12 }
+Part 0603 { Name X2/X3/R4 }
+Part 0604 { Name X2/X3/C20 }
+Part 0604 { Name X2/X3/C21 }
+Part 0603 { Name X2/X3/R14 }
+Part MSOP10 { Name X2/X3/U9 }
+Part 0603 { Name X2/X3/R7 }
+Part 0603 { Name X2/X3/C18 }
+Part 0603 { Name X2/X3/C19 }
+Part 0603 { Name X2/X3/R10 }
+Part 0603 { Name X2/X3/R12 }
+Part SC70 { Name X2/X3/U7 }
+Part 0505 { Name X2/X3/C4 }
+Part 0603 { Name X2/X3/R2 }
+Part 0603 { Name X2/X3/R9 }
+Part 0603 { Name X2/X3/R8 }
+Part 0805 { Name X2/X3/C1 }
+Part 0603 { Name X2/X2/R27 }
+Part 1812 { Name X2/X2/C3 }
+Part 0603 { Name X2/X2/C24 }
+Part 0603 { Name X2/X2/R28 }
+Part 0603 { Name X2/X2/R6 }
+Part 0603 { Name X2/X2/C29 }
+Part 2711 { Name X2/X2/C30 }
+Part 0603 { Name X2/X2/R39 }
+Part 0603 { Name X2/X2/R40 }
+Part 1812 { Name X2/X2/C28 }
+Part 0603 { Name X2/X2/C25 }
+Part 0603 { Name X2/X2/R33 }
+Part 1206 { Name X2/X2/R20 }
+Part 0603 { Name X2/X2/C23 }
+Part 0603 { Name X2/X2/R26 }
+Part 0603 { Name X2/X2/C10 }
+Part SO8 { Name X2/X2/U10 }
+Part 0603 { Name X2/X2/C14 }
+Part 0603 { Name X2/X2/R18 }
+Part 0603 { Name X2/X2/C13 }
+Part 0603 { Name X2/X2/R17 }
+Part 0603 { Name X2/X2/C11 }
+Part 0603 { Name X2/X2/R16 }
+Part 0603 { Name X2/X2/C5 }
+Part 0603 { Name X2/X2/R5 }
+Part 0603 { Name X2/X2/C9 }
+Part 0603 { Name X2/X2/R21 }
+Part 0603 { Name X2/X2/C8 }
+Part 0603 { Name X2/X2/R22 }
+Part 0603 { Name X2/X2/C7 }
+Part 0603 { Name X2/X2/R23 }
+Part 0603 { Name X2/X2/R42 }
+Part 0603 { Name X2/X2/R1 }
+Part SOT23 { Name X2/X2/Q2 }
+Part 0603 { Name X2/X2/C22 }
+Part 0603 { Name X2/X2/R13 }
+Part 0603 { Name X2/X2/R41 }
+Part SC70-6 { Name X2/X2/U6 }
+Part SC70-6 { Name X2/X2/U8 }
+Part SC70-6 { Name X2/X2/U5 }
+Part SC70-6 { Name X2/X2/U4 }
+Part 0603 { Name X2/X2/R24 }
+Part 0805 { Name X2/X2/C16 }
+Part 0505 { Name X2/X2/C4a }
+Part 0603 { Name X2/X2/C2 }
+Part 0603 { Name X2/X2/R11 }
+Part SC70 { Name X2/X2/U12 }
+Part 0603 { Name X2/X2/C17 }
+Part 0603 { Name X2/X2/R38 }
+Part SC70 { Name X2/X2/U11 }
+Part 0603 { Name X2/X2/C6 }
+Part SC70 { Name X2/X2/U3 }
+Part 0603 { Name X2/X2/R25 }
+Part 0805 { Name X2/X2/R19 }
+Part 0603 { Name X2/X2/R15 }
+Part 0603 { Name X2/X2/C12 }
+Part 0603 { Name X2/X2/R4 }
+Part 0604 { Name X2/X2/C20 }
+Part 0604 { Name X2/X2/C21 }
+Part 0603 { Name X2/X2/R14 }
+Part MSOP10 { Name X2/X2/U9 }
+Part 0603 { Name X2/X2/R7 }
+Part 0603 { Name X2/X2/C18 }
+Part 0603 { Name X2/X2/C19 }
+Part 0603 { Name X2/X2/R10 }
+Part 0603 { Name X2/X2/R12 }
+Part SC70 { Name X2/X2/U7 }
+Part 0505 { Name X2/X2/C4 }
+Part 0603 { Name X2/X2/R2 }
+Part 0603 { Name X2/X2/R9 }
+Part 0603 { Name X2/X2/R8 }
+Part 0805 { Name X2/X2/C1 }
+Part 0603 { Name X2/X1/R27 }
+Part 1812 { Name X2/X1/C3 }
+Part 0603 { Name X2/X1/C24 }
+Part 0603 { Name X2/X1/R28 }
+Part 0603 { Name X2/X1/R6 }
+Part 0603 { Name X2/X1/C29 }
+Part 2711 { Name X2/X1/C30 }
+Part 0603 { Name X2/X1/R39 }
+Part 0603 { Name X2/X1/R40 }
+Part 1812 { Name X2/X1/C28 }
+Part 0603 { Name X2/X1/C25 }
+Part 0603 { Name X2/X1/R33 }
+Part 1206 { Name X2/X1/R20 }
+Part 0603 { Name X2/X1/C23 }
+Part 0603 { Name X2/X1/R26 }
+Part 0603 { Name X2/X1/C10 }
+Part SO8 { Name X2/X1/U10 }
+Part 0603 { Name X2/X1/C14 }
+Part 0603 { Name X2/X1/R18 }
+Part 0603 { Name X2/X1/C13 }
+Part 0603 { Name X2/X1/R17 }
+Part 0603 { Name X2/X1/C11 }
+Part 0603 { Name X2/X1/R16 }
+Part 0603 { Name X2/X1/C5 }
+Part 0603 { Name X2/X1/R5 }
+Part 0603 { Name X2/X1/C9 }
+Part 0603 { Name X2/X1/R21 }
+Part 0603 { Name X2/X1/C8 }
+Part 0603 { Name X2/X1/R22 }
+Part 0603 { Name X2/X1/C7 }
+Part 0603 { Name X2/X1/R23 }
+Part 0603 { Name X2/X1/R42 }
+Part 0603 { Name X2/X1/R1 }
+Part SOT23 { Name X2/X1/Q2 }
+Part 0603 { Name X2/X1/C22 }
+Part 0603 { Name X2/X1/R13 }
+Part 0603 { Name X2/X1/R41 }
+Part SC70-6 { Name X2/X1/U6 }
+Part SC70-6 { Name X2/X1/U8 }
+Part SC70-6 { Name X2/X1/U5 }
+Part SC70-6 { Name X2/X1/U4 }
+Part 0603 { Name X2/X1/R24 }
+Part 0805 { Name X2/X1/C16 }
+Part 0505 { Name X2/X1/C4a }
+Part 0603 { Name X2/X1/C2 }
+Part 0603 { Name X2/X1/R11 }
+Part SC70 { Name X2/X1/U12 }
+Part 0603 { Name X2/X1/C17 }
+Part 0603 { Name X2/X1/R38 }
+Part SC70 { Name X2/X1/U11 }
+Part 0603 { Name X2/X1/C6 }
+Part SC70 { Name X2/X1/U3 }
+Part 0603 { Name X2/X1/R25 }
+Part 0805 { Name X2/X1/R19 }
+Part 0603 { Name X2/X1/R15 }
+Part 0603 { Name X2/X1/C12 }
+Part 0603 { Name X2/X1/R4 }
+Part 0604 { Name X2/X1/C20 }
+Part 0604 { Name X2/X1/C21 }
+Part 0603 { Name X2/X1/R14 }
+Part MSOP10 { Name X2/X1/U9 }
+Part 0603 { Name X2/X1/R7 }
+Part 0603 { Name X2/X1/C18 }
+Part 0603 { Name X2/X1/C19 }
+Part 0603 { Name X2/X1/R10 }
+Part 0603 { Name X2/X1/R12 }
+Part SC70 { Name X2/X1/U7 }
+Part 0505 { Name X2/X1/C4 }
+Part 0603 { Name X2/X1/R2 }
+Part 0603 { Name X2/X1/R9 }
+Part 0603 { Name X2/X1/R8 }
+Part 0805 { Name X2/X1/C1 }
+Part RC422-200-101-3000 { Name Js }
+Part NK-2M2-051 { Name J1 }
+Part 0805 { Name X1/C39 }
+Part 0805 { Name X1/R51 }
+Part 0603 { Name X1/R53 }
+Part 0603 { Name X1/R52 }
+Part 0603 { Name X1/C38 }
+Part 0603 { Name X1/C37 }
+Part SO16 { Name X1/U10 }
+Part 0603 { Name X1/C36 }
+Part TSSOP16 { Name X1/U9 }
+Part 0805 { Name X1/C35 }
+Part 0805 { Name X1/R48 }
+Part 0603 { Name X1/R50 }
+Part 0603 { Name X1/R49 }
+Part 0603 { Name X1/C34 }
+Part 0603 { Name X1/C33 }
+Part SO16 { Name X1/U8 }
+Part 0603 { Name X1/C32 }
+Part TSSOP16 { Name X1/U7 }
+Part 0603 { Name X1/C31 }
+Part 0603 { Name X1/L4 }
+Part 0603 { Name X1/C30 }
+Part 0603 { Name X1/L3 }
+Part 0603 { Name X1/C29 }
+Part 0603 { Name X1/L2 }
+Part 0603 { Name X1/L1 }
+Part 0603 { Name X1/C28 }
+Part 0603 { Name X1/X6/R14 }
+Part 0603 { Name X1/X6/R15 }
+Part SO8 { Name X1/X6/U1 }
+Part 0603 { Name X1/X6/R13 }
+Part 0603 { Name X1/X6/R8 }
+Part 0603 { Name X1/X6/R9 }
+Part 0603 { Name X1/X6/R10 }
+Part 0603 { Name X1/X6/R11 }
+Part 0603 { Name X1/X6/C4 }
+Part 0603 { Name X1/X6/R12 }
+Part 0805 { Name X1/X6/C5 }
+Part 0603 { Name X1/X6/C3 }
+Part 0603 { Name X1/X6/R6 }
+Part 0603 { Name X1/X6/R7 }
+Part 0603 { Name X1/X6/R1 }
+Part 0603 { Name X1/X6/R2 }
+Part 0603 { Name X1/X6/R3 }
+Part 0603 { Name X1/X6/R4 }
+Part 0603 { Name X1/X6/C1 }
+Part 0603 { Name X1/X6/R5 }
+Part 0805 { Name X1/X6/C2 }
+Part 0603 { Name X1/X5/R14 }
+Part 0603 { Name X1/X5/R15 }
+Part SO8 { Name X1/X5/U1 }
+Part 0603 { Name X1/X5/R13 }
+Part 0603 { Name X1/X5/R8 }
+Part 0603 { Name X1/X5/R9 }
+Part 0603 { Name X1/X5/R10 }
+Part 0603 { Name X1/X5/R11 }
+Part 0603 { Name X1/X5/C4 }
+Part 0603 { Name X1/X5/R12 }
+Part 0805 { Name X1/X5/C5 }
+Part 0603 { Name X1/X5/C3 }
+Part 0603 { Name X1/X5/R6 }
+Part 0603 { Name X1/X5/R7 }
+Part 0603 { Name X1/X5/R1 }
+Part 0603 { Name X1/X5/R2 }
+Part 0603 { Name X1/X5/R3 }
+Part 0603 { Name X1/X5/R4 }
+Part 0603 { Name X1/X5/C1 }
+Part 0603 { Name X1/X5/R5 }
+Part 0805 { Name X1/X5/C2 }
+Part 0603 { Name X1/R62 }
+Part 0603 { Name X1/R57 }
+Part 0603 { Name X1/R54 }
+Part 0603 { Name X1/R47 }
+Part 0603 { Name X1/R46 }
+Part 0805 { Name X1/C27 }
+Part 0603 { Name X1/R45 }
+Part 0805 { Name X1/C26 }
+Part 0603 { Name X1/R44 }
+Part 0603 { Name X1/R43 }
+Part 0805 { Name X1/C25 }
+Part 0603 { Name X1/R42 }
+Part UB { Name X1/Q2 }
+Part 0603 { Name X1/R41 }
+Part 0603 { Name X1/R40 }
+Part UB { Name X1/Q1 }
+Part 0603 { Name X1/C24 }
+Part 0603 { Name X1/R39 }
+Part SO8 { Name X1/U4 }
+Part 0603 { Name X1/R38 }
+Part 0603 { Name X1/R37 }
+Part 0603 { Name X1/R36 }
+Part 0603 { Name X1/C23 }
+Part 0603 { Name X1/R35 }
+Part 1206 { Name X1/C22 }
+Part SO8 { Name X1/U3 }
+Part 1206 { Name X1/C21 }
+Part 0805 { Name X1/C20 }
+Part 0603 { Name X1/R34 }
+Part 0603 { Name X1/R33 }
+Part 0603 { Name X1/R32 }
+Part 0603 { Name X1/R31 }
+Part 0603 { Name X1/C19 }
+Part 0603 { Name X1/R30 }
+Part 0603 { Name X1/R29 }
+Part 0603 { Name X1/R28 }
+Part 0603 { Name X1/R27 }
+Part 0603 { Name X1/R26 }
+Part 0603 { Name X1/C18 }
+Part 0603 { Name X1/R25 }
+Part 1206 { Name X1/C17 }
+Part SO8 { Name X1/U2 }
+Part 0603 { Name X1/C15 }
+Part 0805 { Name X1/C16 }
+Part 0603 { Name X1/R24 }
+Part 0603 { Name X1/R23 }
+Part 0603 { Name X1/R22 }
+Part 0603 { Name X1/R21 }
+Part 0603 { Name X1/R20 }
+Part 0603 { Name X1/C14 }
+Part 0603 { Name X1/R19 }
+Part 1206 { Name X1/C13 }
+Part 0603 { Name X1/R18 }
+Part 0603 { Name X1/R17 }
+Part 0603 { Name X1/R16 }
+Part 0603 { Name X1/R15 }
+Part 0603 { Name X1/R14 }
+Part 0603 { Name X1/C12 }
+Part 0603 { Name X1/R13 }
+Part 1206 { Name X1/C11 }
+Part 0603 { Name X1/R60 }
+Part 0603 { Name X1/R61 }
+Part 0603 { Name X1/C40 }
+Part SO8 { Name X1/U11 }
+Part SO8 { Name X1/U1 }
+Part 0603 { Name X1/R12 }
+Part 0603 { Name X1/C10 }
+Part 0805 { Name X1/C9 }
+Part 0603 { Name X1/C8 }
+Part 0603 { Name X1/R11 }
+Part 0603 { Name X1/R10 }
+Part 0603 { Name X1/R9 }
+Part 0603 { Name X1/R8 }
+Part 0603 { Name X1/R7 }
+Part 0603 { Name X1/C7 }
+Part 0603 { Name X1/R6 }
+Part 1206 { Name X1/C6 }
+Part SO8 { Name X1/U5 }
+Part 0603 { Name X1/R5 }
+Part 0603 { Name X1/C3 }
+Part 0603 { Name X1/R4 }
+Part 0603 { Name X1/R3 }
+Part 0805 { Name X1/C2 }
+Part 0805 { Name X1/C5 }
+Part 0603 { Name X1/R2 }
+Part 0805 { Name X1/C4 }
+Part 0603 { Name X1/R1 }
+Part SO8 { Name X1/U6 }
+Part 0603 { Name X1/R59 }
+Part 0603 { Name X1/X4/R27 }
+Part 1812 { Name X1/X4/C3 }
+Part 0603 { Name X1/X4/C24 }
+Part 0603 { Name X1/X4/R28 }
+Part 0603 { Name X1/X4/R6 }
+Part 0603 { Name X1/X4/C29 }
+Part 2711 { Name X1/X4/C30 }
+Part 0603 { Name X1/X4/R39 }
+Part 0603 { Name X1/X4/R40 }
+Part 1812 { Name X1/X4/C28 }
+Part 0603 { Name X1/X4/C25 }
+Part 0603 { Name X1/X4/R33 }
+Part 1206 { Name X1/X4/R20 }
+Part 0603 { Name X1/X4/C23 }
+Part 0603 { Name X1/X4/R26 }
+Part 0603 { Name X1/X4/C10 }
+Part SO8 { Name X1/X4/U10 }
+Part 0603 { Name X1/X4/C14 }
+Part 0603 { Name X1/X4/R18 }
+Part 0603 { Name X1/X4/C13 }
+Part 0603 { Name X1/X4/R17 }
+Part 0603 { Name X1/X4/C11 }
+Part 0603 { Name X1/X4/R16 }
+Part 0603 { Name X1/X4/C5 }
+Part 0603 { Name X1/X4/R5 }
+Part 0603 { Name X1/X4/C9 }
+Part 0603 { Name X1/X4/R21 }
+Part 0603 { Name X1/X4/C8 }
+Part 0603 { Name X1/X4/R22 }
+Part 0603 { Name X1/X4/C7 }
+Part 0603 { Name X1/X4/R23 }
+Part 0603 { Name X1/X4/R42 }
+Part 0603 { Name X1/X4/R1 }
+Part SOT23 { Name X1/X4/Q2 }
+Part 0603 { Name X1/X4/C22 }
+Part 0603 { Name X1/X4/R13 }
+Part 0603 { Name X1/X4/R41 }
+Part SC70-6 { Name X1/X4/U6 }
+Part SC70-6 { Name X1/X4/U8 }
+Part SC70-6 { Name X1/X4/U5 }
+Part SC70-6 { Name X1/X4/U4 }
+Part 0603 { Name X1/X4/R24 }
+Part 0805 { Name X1/X4/C16 }
+Part 0505 { Name X1/X4/C4a }
+Part 0603 { Name X1/X4/C2 }
+Part 0603 { Name X1/X4/R11 }
+Part SC70 { Name X1/X4/U12 }
+Part 0603 { Name X1/X4/C17 }
+Part 0603 { Name X1/X4/R38 }
+Part SC70 { Name X1/X4/U11 }
+Part 0603 { Name X1/X4/C6 }
+Part SC70 { Name X1/X4/U3 }
+Part 0603 { Name X1/X4/R25 }
+Part 0805 { Name X1/X4/R19 }
+Part 0603 { Name X1/X4/R15 }
+Part 0603 { Name X1/X4/C12 }
+Part 0603 { Name X1/X4/R4 }
+Part 0604 { Name X1/X4/C20 }
+Part 0604 { Name X1/X4/C21 }
+Part 0603 { Name X1/X4/R14 }
+Part MSOP10 { Name X1/X4/U9 }
+Part 0603 { Name X1/X4/R7 }
+Part 0603 { Name X1/X4/C18 }
+Part 0603 { Name X1/X4/C19 }
+Part 0603 { Name X1/X4/R10 }
+Part 0603 { Name X1/X4/R12 }
+Part SC70 { Name X1/X4/U7 }
+Part 0505 { Name X1/X4/C4 }
+Part 0603 { Name X1/X4/R2 }
+Part 0603 { Name X1/X4/R9 }
+Part 0603 { Name X1/X4/R8 }
+Part 0805 { Name X1/X4/C1 }
+Part 0603 { Name X1/X3/R27 }
+Part 1812 { Name X1/X3/C3 }
+Part 0603 { Name X1/X3/C24 }
+Part 0603 { Name X1/X3/R28 }
+Part 0603 { Name X1/X3/R6 }
+Part 0603 { Name X1/X3/C29 }
+Part 2711 { Name X1/X3/C30 }
+Part 0603 { Name X1/X3/R39 }
+Part 0603 { Name X1/X3/R40 }
+Part 1812 { Name X1/X3/C28 }
+Part 0603 { Name X1/X3/C25 }
+Part 0603 { Name X1/X3/R33 }
+Part 1206 { Name X1/X3/R20 }
+Part 0603 { Name X1/X3/C23 }
+Part 0603 { Name X1/X3/R26 }
+Part 0603 { Name X1/X3/C10 }
+Part SO8 { Name X1/X3/U10 }
+Part 0603 { Name X1/X3/C14 }
+Part 0603 { Name X1/X3/R18 }
+Part 0603 { Name X1/X3/C13 }
+Part 0603 { Name X1/X3/R17 }
+Part 0603 { Name X1/X3/C11 }
+Part 0603 { Name X1/X3/R16 }
+Part 0603 { Name X1/X3/C5 }
+Part 0603 { Name X1/X3/R5 }
+Part 0603 { Name X1/X3/C9 }
+Part 0603 { Name X1/X3/R21 }
+Part 0603 { Name X1/X3/C8 }
+Part 0603 { Name X1/X3/R22 }
+Part 0603 { Name X1/X3/C7 }
+Part 0603 { Name X1/X3/R23 }
+Part 0603 { Name X1/X3/R42 }
+Part 0603 { Name X1/X3/R1 }
+Part SOT23 { Name X1/X3/Q2 }
+Part 0603 { Name X1/X3/C22 }
+Part 0603 { Name X1/X3/R13 }
+Part 0603 { Name X1/X3/R41 }
+Part SC70-6 { Name X1/X3/U6 }
+Part SC70-6 { Name X1/X3/U8 }
+Part SC70-6 { Name X1/X3/U5 }
+Part SC70-6 { Name X1/X3/U4 }
+Part 0603 { Name X1/X3/R24 }
+Part 0805 { Name X1/X3/C16 }
+Part 0505 { Name X1/X3/C4a }
+Part 0603 { Name X1/X3/C2 }
+Part 0603 { Name X1/X3/R11 }
+Part SC70 { Name X1/X3/U12 }
+Part 0603 { Name X1/X3/C17 }
+Part 0603 { Name X1/X3/R38 }
+Part SC70 { Name X1/X3/U11 }
+Part 0603 { Name X1/X3/C6 }
+Part SC70 { Name X1/X3/U3 }
+Part 0603 { Name X1/X3/R25 }
+Part 0805 { Name X1/X3/R19 }
+Part 0603 { Name X1/X3/R15 }
+Part 0603 { Name X1/X3/C12 }
+Part 0603 { Name X1/X3/R4 }
+Part 0604 { Name X1/X3/C20 }
+Part 0604 { Name X1/X3/C21 }
+Part 0603 { Name X1/X3/R14 }
+Part MSOP10 { Name X1/X3/U9 }
+Part 0603 { Name X1/X3/R7 }
+Part 0603 { Name X1/X3/C18 }
+Part 0603 { Name X1/X3/C19 }
+Part 0603 { Name X1/X3/R10 }
+Part 0603 { Name X1/X3/R12 }
+Part SC70 { Name X1/X3/U7 }
+Part 0505 { Name X1/X3/C4 }
+Part 0603 { Name X1/X3/R2 }
+Part 0603 { Name X1/X3/R9 }
+Part 0603 { Name X1/X3/R8 }
+Part 0805 { Name X1/X3/C1 }
+Part 0603 { Name X1/X2/R27 }
+Part 1812 { Name X1/X2/C3 }
+Part 0603 { Name X1/X2/C24 }
+Part 0603 { Name X1/X2/R28 }
+Part 0603 { Name X1/X2/R6 }
+Part 0603 { Name X1/X2/C29 }
+Part 2711 { Name X1/X2/C30 }
+Part 0603 { Name X1/X2/R39 }
+Part 0603 { Name X1/X2/R40 }
+Part 1812 { Name X1/X2/C28 }
+Part 0603 { Name X1/X2/C25 }
+Part 0603 { Name X1/X2/R33 }
+Part 1206 { Name X1/X2/R20 }
+Part 0603 { Name X1/X2/C23 }
+Part 0603 { Name X1/X2/R26 }
+Part 0603 { Name X1/X2/C10 }
+Part SO8 { Name X1/X2/U10 }
+Part 0603 { Name X1/X2/C14 }
+Part 0603 { Name X1/X2/R18 }
+Part 0603 { Name X1/X2/C13 }
+Part 0603 { Name X1/X2/R17 }
+Part 0603 { Name X1/X2/C11 }
+Part 0603 { Name X1/X2/R16 }
+Part 0603 { Name X1/X2/C5 }
+Part 0603 { Name X1/X2/R5 }
+Part 0603 { Name X1/X2/C9 }
+Part 0603 { Name X1/X2/R21 }
+Part 0603 { Name X1/X2/C8 }
+Part 0603 { Name X1/X2/R22 }
+Part 0603 { Name X1/X2/C7 }
+Part 0603 { Name X1/X2/R23 }
+Part 0603 { Name X1/X2/R42 }
+Part 0603 { Name X1/X2/R1 }
+Part SOT23 { Name X1/X2/Q2 }
+Part 0603 { Name X1/X2/C22 }
+Part 0603 { Name X1/X2/R13 }
+Part 0603 { Name X1/X2/R41 }
+Part SC70-6 { Name X1/X2/U6 }
+Part SC70-6 { Name X1/X2/U8 }
+Part SC70-6 { Name X1/X2/U5 }
+Part SC70-6 { Name X1/X2/U4 }
+Part 0603 { Name X1/X2/R24 }
+Part 0805 { Name X1/X2/C16 }
+Part 0505 { Name X1/X2/C4a }
+Part 0603 { Name X1/X2/C2 }
+Part 0603 { Name X1/X2/R11 }
+Part SC70 { Name X1/X2/U12 }
+Part 0603 { Name X1/X2/C17 }
+Part 0603 { Name X1/X2/R38 }
+Part SC70 { Name X1/X2/U11 }
+Part 0603 { Name X1/X2/C6 }
+Part SC70 { Name X1/X2/U3 }
+Part 0603 { Name X1/X2/R25 }
+Part 0805 { Name X1/X2/R19 }
+Part 0603 { Name X1/X2/R15 }
+Part 0603 { Name X1/X2/C12 }
+Part 0603 { Name X1/X2/R4 }
+Part 0604 { Name X1/X2/C20 }
+Part 0604 { Name X1/X2/C21 }
+Part 0603 { Name X1/X2/R14 }
+Part MSOP10 { Name X1/X2/U9 }
+Part 0603 { Name X1/X2/R7 }
+Part 0603 { Name X1/X2/C18 }
+Part 0603 { Name X1/X2/C19 }
+Part 0603 { Name X1/X2/R10 }
+Part 0603 { Name X1/X2/R12 }
+Part SC70 { Name X1/X2/U7 }
+Part 0505 { Name X1/X2/C4 }
+Part 0603 { Name X1/X2/R2 }
+Part 0603 { Name X1/X2/R9 }
+Part 0603 { Name X1/X2/R8 }
+Part 0805 { Name X1/X2/C1 }
+Part 0603 { Name X1/X1/R27 }
+Part 1812 { Name X1/X1/C3 }
+Part 0603 { Name X1/X1/C24 }
+Part 0603 { Name X1/X1/R28 }
+Part 0603 { Name X1/X1/R6 }
+Part 0603 { Name X1/X1/C29 }
+Part 2711 { Name X1/X1/C30 }
+Part 0603 { Name X1/X1/R39 }
+Part 0603 { Name X1/X1/R40 }
+Part 1812 { Name X1/X1/C28 }
+Part 0603 { Name X1/X1/C25 }
+Part 0603 { Name X1/X1/R33 }
+Part 1206 { Name X1/X1/R20 }
+Part 0603 { Name X1/X1/C23 }
+Part 0603 { Name X1/X1/R26 }
+Part 0603 { Name X1/X1/C10 }
+Part SO8 { Name X1/X1/U10 }
+Part 0603 { Name X1/X1/C14 }
+Part 0603 { Name X1/X1/R18 }
+Part 0603 { Name X1/X1/C13 }
+Part 0603 { Name X1/X1/R17 }
+Part 0603 { Name X1/X1/C11 }
+Part 0603 { Name X1/X1/R16 }
+Part 0603 { Name X1/X1/C5 }
+Part 0603 { Name X1/X1/R5 }
+Part 0603 { Name X1/X1/C9 }
+Part 0603 { Name X1/X1/R21 }
+Part 0603 { Name X1/X1/C8 }
+Part 0603 { Name X1/X1/R22 }
+Part 0603 { Name X1/X1/C7 }
+Part 0603 { Name X1/X1/R23 }
+Part 0603 { Name X1/X1/R42 }
+Part 0603 { Name X1/X1/R1 }
+Part SOT23 { Name X1/X1/Q2 }
+Part 0603 { Name X1/X1/C22 }
+Part 0603 { Name X1/X1/R13 }
+Part 0603 { Name X1/X1/R41 }
+Part SC70-6 { Name X1/X1/U6 }
+Part SC70-6 { Name X1/X1/U8 }
+Part SC70-6 { Name X1/X1/U5 }
+Part SC70-6 { Name X1/X1/U4 }
+Part 0603 { Name X1/X1/R24 }
+Part 0805 { Name X1/X1/C16 }
+Part 0505 { Name X1/X1/C4a }
+Part 0603 { Name X1/X1/C2 }
+Part 0603 { Name X1/X1/R11 }
+Part SC70 { Name X1/X1/U12 }
+Part 0603 { Name X1/X1/C17 }
+Part 0603 { Name X1/X1/R38 }
+Part SC70 { Name X1/X1/U11 }
+Part 0603 { Name X1/X1/C6 }
+Part SC70 { Name X1/X1/U3 }
+Part 0603 { Name X1/X1/R25 }
+Part 0805 { Name X1/X1/R19 }
+Part 0603 { Name X1/X1/R15 }
+Part 0603 { Name X1/X1/C12 }
+Part 0603 { Name X1/X1/R4 }
+Part 0604 { Name X1/X1/C20 }
+Part 0604 { Name X1/X1/C21 }
+Part 0603 { Name X1/X1/R14 }
+Part MSOP10 { Name X1/X1/U9 }
+Part 0603 { Name X1/X1/R7 }
+Part 0603 { Name X1/X1/C18 }
+Part 0603 { Name X1/X1/C19 }
+Part 0603 { Name X1/X1/R10 }
+Part 0603 { Name X1/X1/R12 }
+Part SC70 { Name X1/X1/U7 }
+Part 0505 { Name X1/X1/C4 }
+Part 0603 { Name X1/X1/R2 }
+Part 0603 { Name X1/X1/R9 }
+Part 0603 { Name X1/X1/R8 }
+Part 0805 { Name X1/X1/C1 }
+Signal "CuS-4"
+  { J4-45 J4-33 }
+Signal "CuS-3"
+  { J3-45 J3-33 }
+Signal "CuS-2"
+  { J2-45 J2-33 }
+Signal "ID-2"
+  { J2-27 Js-100 }
+Signal "P1-FS-3"
+  { J3-25 Js-150 }
+Signal "P3-U-2"
+  { J2-9 Js-99 }
+Signal "P2-FS-3"
+  { J3-24 Js-149 }
+Signal "P2-U-2"
+  { J2-8 Js-98 }
+Signal "P3-FS-3"
+  { J3-23 Js-148 }
+Signal "P1-U-2"
+  { J2-7 Js-97 }
+Signal "P3-OR-3"
+  { J3-20 J3-6 Js-147 }
+Signal "P3-IA-2"
+  { J2-13 Js-96 }
+Signal "P2-OR-3"
+  { J3-21 J3-5 Js-146 }
+Signal "P2-IA-2"
+  { J2-14 Js-95 }
+Signal "P1-OR-3"
+  { J3-22 J3-4 Js-145 }
+Signal "P1-IA-2"
+  { J2-15 Js-94 }
+Signal "RG-3"
+  { J3-44 Js-144 }
+Signal "RG-2"
+  { J2-44 Js-93 }
+Signal "P1-IA-3"
+  { J3-15 Js-143 }
+Signal "\_DS88\_"
+  { Js-192 }
+Signal "P1-OR-2"
+  { J2-22 J2-4 Js-92 }
+Signal "P2-IA-3"
+  { J3-14 Js-142 }
+Signal "P2-OR-2"
+  { J2-21 J2-5 Js-91 }
+Signal "P3-IA-3"
+  { J3-13 Js-141 }
+Signal "\_DS80\_"
+  { Js-190 }
+Signal "P3-OR-2"
+  { J2-20 J2-6 Js-90 }
+Signal "P1-U-3"
+  { J3-7 Js-140 }
+Signal "SP3U"
+  { Js-40 }
+Signal "P3-FS-2"
+  { J2-23 Js-89 }
+Signal "P2-U-3"
+  { J3-8 Js-139 }
+Signal "\_DS72\_"
+  { Js-188 }
+Signal "P2-FS-2"
+  { J2-24 Js-88 }
+Signal "P3-U-3"
+  { J3-9 Js-138 }
+Signal "SP2U"
+  { Js-38 }
+Signal "P1-FS-2"
+  { J2-25 Js-87 }
+Signal "ID-3"
+  { J3-27 Js-137 }
+Signal "\_DS64\_"
+  { Js-186 }
+Signal "SP3-FS-2"
+  { Js-86 }
+Signal "SP1-IA-3"
+  { Js-136 }
+Signal "SP1U"
+  { Js-36 }
+Signal "SP2-FS-2"
+  { Js-85 }
+Signal "SP2-IA-3"
+  { Js-135 }
+Signal "SP1-FS-2"
+  { Js-84 }
+Signal "SP3-IA-3"
+  { Js-134 }
+Signal "SID"
+  { Js-34 }
+Signal "SP3-IA-2"
+  { Js-83 }
+Signal "SP1-FS-3"
+  { Js-133 }
+Signal "SP2-IA-2"
+  { Js-82 }
+Signal "SP2-FS-3"
+  { Js-132 }
+Signal "SRG"
+  { Js-32 }
+Signal "SP1-IA-2"
+  { Js-81 }
+Signal "SP3-FS-3"
+  { Js-131 }
+Signal "HK72"
+  { Js-80 }
+Signal "SP3OR"
+  { Js-30 }
+Signal "HK64"
+  { Js-79 }
+Signal "SP2OR"
+  { Js-28 }
+Signal "SP1OR"
+  { Js-26 }
+Signal "HK104"
+  { Js-124 }
+Signal "IBTEMP"
+  { Js-172 }
+Signal "HK88"
+  { Js-122 }
+Signal "HK80"
+  { Js-121 }
+Signal "SP3-FS-1"
+  { Js-70 }
+Signal "SP1-IA-4"
+  { Js-120 }
+Signal "SP2-FS-1"
+  { Js-69 }
+Signal "SP2-IA-4"
+  { Js-119 }
+Signal "SP1-FS-1"
+  { Js-68 }
+Signal "SP3-IA-4"
+  { Js-118 }
+Signal "SP3-IA-1"
+  { Js-67 }
+Signal "SP1-FS-4"
+  { Js-117 }
+Signal "SP2-IA-1"
+  { Js-66 }
+Signal "SP2-FS-4"
+  { Js-116 }
+Signal "SP1-IA-1"
+  { Js-65 }
+Signal "SP3-FS-4"
+  { Js-115 }
+Signal "P1-FS-4"
+  { J4-25 Js-114 }
+Signal "P2-FS-4"
+  { J4-24 Js-113 }
+Signal "P3-FS-4"
+  { J4-23 Js-112 }
+Signal "P3-OR-4"
+  { J4-20 J4-6 Js-111 }
+Signal "P2-OR-4"
+  { J4-21 J4-5 Js-110 }
+Signal "P1-OR-4"
+  { J4-22 J4-4 Js-109 }
+Signal "RG-4"
+  { J4-44 Js-108 }
+Signal "P1-IA-4"
+  { J4-15 Js-107 }
+Signal "P2-IA-4"
+  { J4-14 Js-106 }
+Signal "P3-IA-4"
+  { J4-13 Js-105 }
+Signal "P1-U-4"
+  { J4-7 Js-104 }
+Signal "P2-U-4"
+  { J4-8 Js-103 }
+Signal "P3-U-4"
+  { J4-9 Js-102 }
+Signal "ID-4"
+  { J4-27 Js-101 }
+Signal "RG-1"
+  { Js-57 J1-44 }
+Signal "CuS-1"
+  { J1-45 J1-33 }
+Signal "ID-1"
+  { Js-64 J1-27 }
+Signal "P1-FS-1"
+  { Js-51 J1-25 }
+Signal "P2-FS-1"
+  { Js-52 J1-24 }
+Signal "P3-FS-1"
+  { Js-53 J1-23 }
+Signal "P1-IA-1"
+  { Js-58 J1-15 }
+Signal "P2-IA-1"
+  { Js-59 J1-14 }
+Signal "P3-IA-1"
+  { Js-60 J1-13 }
+Signal "P3-U-1"
+  { Js-63 J1-9 }
+Signal "P2-U-1"
+  { Js-62 J1-8 }
+Signal "P1-U-1"
+  { Js-61 J1-7 }
+Signal "P3-OR-1"
+  { Js-54 J1-20 J1-6 }
+Signal "P2-OR-1"
+  { Js-55 J1-21 J1-5 }
+Signal "P1-OR-1"
+  { Js-56 J1-22 J1-4 }
+Signal "unnamed_net1043"
+  { U16-6 U16-7 }
+Signal "HTR3-"
+  { J5-31 Q5-3 }
+Signal "unnamed_net1042"
+  { R52-2 R51-1 U16-3 }
+Signal "unnamed_net1041"
+  { R53-2 R54-1 Q5-1 U16-2 }
+Signal "unnamed_net1040"
+  { Q5-2 U16-1 }
+Signal "HTR2-"
+  { J5-30 Q4-3 }
+Signal "unnamed_net1039"
+  { R48-2 R47-1 U13-5 }
+Signal "unnamed_net1038"
+  { R49-2 R50-1 Q4-1 U13-6 }
+Signal "unnamed_net1037"
+  { Q4-2 U13-7 }
+Signal "HTR1-"
+  { J5-29 Q1-3 }
+Signal "unnamed_net1036"
+  { R31-2 R32-1 U13-3 }
+Signal "unnamed_net1035"
+  { R33-2 R36-1 Q1-1 U13-2 }
+Signal "unnamed_net1034"
+  { Q1-2 U13-1 }
+Signal "DCK"
+  { Js-24 R37-2 }
+Signal "HK96"
+  { Js-123 U14-2 }
+Signal "unnamed_net1033"
+  { R55-2 U14-7 }
+Signal "unnamed_net1032"
+  { R54-2 U14-6 }
+Signal "unnamed_net1031"
+  { R50-2 U14-5 }
+Signal "unnamed_net1030"
+  { R36-2 U14-4 }
+Signal "unnamed_net1029"
+  { C31-1 R34-2 U14-13 }
+Signal "\_DS96\_"
+  { Js-42 U12-2 }
+Signal "unnamed_net1028"
+  { R51-2 U12-6 }
+Signal "unnamed_net1027"
+  { R47-2 U12-5 }
+Signal "unnamed_net1026"
+  { R32-2 U12-4 }
+Signal "unnamed_net1025"
+  { C28-2 R30-2 U12-3 }
+Signal "OG-D-1"
+  { J1-29 R17-2 C13-2 }
+Signal "OG-C-1"
+  { J1-37 R16-2 C12-2 }
+Signal "OG-B-1"
+  { J1-41 R15-2 C11-2 }
+Signal "OG-A-1"
+  { J1-49 R14-2 C10-2 }
+Signal "OG-D-2"
+  { J2-29 R21-2 C17-2 }
+Signal "OG-C-2"
+  { J2-37 R20-2 C16-2 }
+Signal "OG-B-2"
+  { J2-41 R19-2 C15-2 }
+Signal "OG-A-2"
+  { J2-49 R18-2 C14-2 }
+Signal "OG-D-3"
+  { J3-29 R25-2 C21-2 }
+Signal "OG-C-3"
+  { J3-37 R24-2 C20-2 }
+Signal "OG-B-3"
+  { J3-41 R23-2 C19-2 }
+Signal "OG-A-3"
+  { J3-49 R22-2 C18-2 }
+Signal "OG-D-4"
+  { J4-29 R29-2 C25-2 }
+Signal "OG-C-4"
+  { J4-37 R28-2 C24-2 }
+Signal "OG-B-4"
+  { J4-41 R27-2 C23-2 }
+Signal "OG-A-4"
+  { J4-49 R26-2 C22-2 }
+Signal "unnamed_net1024"
+  { R45-2 Q3-3 }
+Signal "unnamed_net1023"
+  { R44-2 Q3-1 }
+Signal "unnamed_net1022"
+  { C35-1 R43-1 R42-2 U15-6 }
+Signal "unnamed_net1021"
+  { C35-2 R44-1 U15-7 }
+Signal "unnamed_net1020"
+  { R46-2 C34-1 U15-8 }
+Signal "unnamed_net1019"
+  { R41-2 Q2-3 }
+Signal "unnamed_net1018"
+  { R40-2 Q2-1 }
+Signal "unnamed_net1017"
+  { C33-1 R39-1 R38-2 U15-2 }
+Signal "unnamed_net1016"
+  { C33-2 R40-1 U15-1 }
+Signal "PP/unnamed_net1012"
+  { PP/R3-2 PP/R2-2 PP/Q4-G PP/Q1-3 }
+Signal "PP/vsp"
+  { PP/R1-2 PP/Q4-S PP/Q1-1 }
+Signal "PP/unnamed_net1011"
+  { PP/C9-1 PP/D8-2 PP/D7-1 }
+Signal "PP/unnamed_net1010"
+  { PP/R12-1 PP/C7-2 PP/D7-2 }
+Signal "PP/unnamed_net1009"
+  { PP/C9-2 PP/C8-1 PP/D6-2 PP/D5-1 }
+Signal "PP/vs2"
+  { PP/D8-1 PP/C7-1 PP/C6-2 PP/D5-2 }
+Signal "PP/vs1"
+  { PP/D6-1 PP/C6-1 PP/C5-2 PP/D3-2 }
+Signal "PP/vdm"
+  { PP/C8-2 PP/D3-1 PP/D4-2 PP/C4-1 }
+Signal "PP/unnamed_net1008"
+  { PP/R13-1 PP/D2-1 PP/C3-1 }
+Signal "PP/vac"
+  { PP/C4-2 PP/R10-2 PP/C2-2 }
+Signal "PP/unnamed_net1007"
+  { PP/C2-1 PP/D2-2 PP/D1-1 }
+Signal "PP/unnamed_net1006"
+  { PP/C12-2 PP/R11-2 PP/D1-2 }
+Signal "PP/ve"
+  { PP/R10-1 PP/Q6-2 PP/Q5-2 }
+Signal "PP/b"
+  { PP/R9-2 PP/Q6-1 PP/R8-2 PP/Q5-1 }
+Signal "PP/unnamed_net1004"
+  { PP/C1-2 PP/R7-2 PP/U1-12 }
+Signal "PP/vpp"
+  { PP/Q4-D PP/C10-2 PP/Q5-3 PP/U1-16 PP/U1-11 PP/U1-9 }
+Signal "PP/unnamed_net1002"
+  { PP/U1-6 PP/R9-1 PP/U1-3 }
+Signal "PP/unnamed_net1001"
+  { PP/U1-8 PP/R8-1 PP/U1-1 }
+Signal "PP/vpm"
+  { PP/C5-1 PP/D4-1 PP/C11-2 PP/Q6-3 PP/U1-14 PP/U1-4 PP/U1-5 PP/Q3-D }
+Signal "PP/unnamed_net999"
+  { PP/R6-2 PP/R5-2 PP/Q3-G PP/Q2-3 }
+Signal "PP/vsm"
+  { PP/R4-2 PP/Q3-S PP/Q2-1 }
+Signal "cwclk"
+  { Js-20 PP/U1-15 PP/U1-10 }
+Signal "+2.5"
+  { U12-9 C29-2 U12-8 U15-5 U15-3 U9-6 R10-2 }
+Signal "unnamed_net998"
+  { U1-3 R10-1 R9-1 }
+Signal "unnamed_net997"
+  { U1-7 U1-6 R9-2 }
+Signal "unnamed_net996"
+  { U1-2 R8-1 R7-2 }
+Signal "unnamed_net995"
+  { U1-1 R7-1 R6-2 }
+Signal "RTDCOM"
+  { Js-174 R5-2 }
+Signal "unnamed_net994"
+  { C4-1 R4-2 U8-13 }
+Signal "HK120"
+  { Js-126 U8-2 U7-2 }
+Signal "CuRTD-1"
+  { J1-46 U8-9 U7-9 }
+Signal "CuRTD-2"
+  { J2-46 U8-10 U7-10 }
+Signal "CuRTD-3"
+  { J3-46 U8-11 U7-11 }
+Signal "CuRTD-4"
+  { J4-46 U8-12 U7-12 }
+Signal "PtRTD12"
+  { J5-28 U8-7 U7-7 }
+Signal "PtRTD11"
+  { J5-27 U8-6 U7-6 }
+Signal "PtRTD10"
+  { J5-26 U8-5 U7-5 }
+Signal "PtRTD9"
+  { J5-25 U8-4 U7-4 }
+Signal "unnamed_net993"
+  { C2-1 R2-2 U7-13 }
+Signal "unnamed_net992"
+  { U8-8 R5-1 U6-8 }
+Signal "unnamed_net991"
+  { C3-1 R3-2 U6-13 }
+Signal "HK112"
+  { Js-125 U6-2 U5-2 }
+Signal "PtRTD8"
+  { J5-24 U6-9 U5-9 }
+Signal "PtRTD7"
+  { J5-23 U6-10 U5-10 }
+Signal "PtRTD6"
+  { J5-22 U6-11 U5-11 }
+Signal "PtRTD5"
+  { J5-21 U6-12 U5-12 }
+Signal "PtRTD4"
+  { J5-20 U6-7 U5-7 }
+Signal "PtRTD3"
+  { J5-19 U6-6 U5-6 }
+Signal "PtRTD2"
+  { J5-18 U6-5 U5-5 }
+Signal "PtRTD1"
+  { J5-17 U6-4 U5-4 }
+Signal "unnamed_net990"
+  { U1-5 U7-8 R6-1 U5-8 }
+Signal "unnamed_net989"
+  { U5-13 R1-2 C1-1 }
+Signal "X4/unnamed_net987"
+  { X4/R53-2 X4/C37-1 X4/U10-3 }
+Signal "X4/unnamed_net986"
+  { X4/R52-2 X4/U10-13 X4/C36-1 }
+Signal "X4/unnamed_net984"
+  { X4/C39-2 X4/R51-1 X4/U9-3 }
+Signal "X4/unnamed_net982"
+  { X4/R50-2 X4/C33-1 X4/U8-3 }
+Signal "X4/unnamed_net981"
+  { X4/R49-2 X4/U8-13 X4/C32-1 }
+Signal "X4/unnamed_net979"
+  { X4/C35-2 X4/R48-1 X4/U7-3 }
+Signal "X4/X6/unnamed_net971"
+  { X4/X6/U1-5 X4/X6/R8-2 X4/X6/R9-2 }
+Signal "X4/X6/unnamed_net970"
+  { X4/X6/U1-6 X4/X6/R11-1 X4/X6/R10-2 X4/X6/C4-1 }
+Signal "X4/X6/unnamed_net969"
+  { X4/X6/U1-7 X4/X6/C4-2 X4/X6/R12-1 }
+Signal "X4/X6/unnamed_net966"
+  { X4/X6/U1-8 X4/X6/C3-2 X4/X6/R6-2 }
+Signal "X4/X6/unnamed_net962"
+  { X4/X6/U1-3 X4/X6/R1-2 X4/X6/R2-2 }
+Signal "X4/X6/unnamed_net961"
+  { X4/X6/U1-2 X4/X6/R4-1 X4/X6/R3-2 X4/X6/C1-1 }
+Signal "X4/X6/unnamed_net960"
+  { X4/X6/U1-1 X4/X6/C1-2 X4/X6/R5-1 }
+Signal "X4/HKDR-C"
+  { X4/U10-6 X4/X6/R14-1 X4/X6/R7-2 }
+Signal "X4/DDR-C"
+  { X4/U9-6 X4/X6/R1-1 }
+Signal "X4/HKDR-D"
+  { X4/U10-7 X4/X6/R15-1 X4/X6/R13-2 }
+Signal "X4/DDR-D"
+  { X4/U9-7 X4/X6/R8-1 }
+Signal "X4/X5/unnamed_net953"
+  { X4/X5/U1-5 X4/X5/R8-2 X4/X5/R9-2 }
+Signal "X4/X5/unnamed_net952"
+  { X4/X5/U1-6 X4/X5/R11-1 X4/X5/R10-2 X4/X5/C4-1 }
+Signal "X4/X5/unnamed_net951"
+  { X4/X5/U1-7 X4/X5/C4-2 X4/X5/R12-1 }
+Signal "X4/X5/unnamed_net948"
+  { X4/X5/U1-8 X4/X5/C3-2 X4/X5/R6-2 }
+Signal "X4/X5/unnamed_net944"
+  { X4/X5/U1-3 X4/X5/R1-2 X4/X5/R2-2 }
+Signal "X4/X5/unnamed_net943"
+  { X4/X5/U1-2 X4/X5/R4-1 X4/X5/R3-2 X4/X5/C1-1 }
+Signal "X4/X5/unnamed_net942"
+  { X4/X5/U1-1 X4/X5/C1-2 X4/X5/R5-1 }
+Signal "X4/HKDR-A"
+  { X4/U10-4 X4/X5/R14-1 X4/X5/R7-2 }
+Signal "X4/DDR-A"
+  { X4/U9-4 X4/X5/R1-1 }
+Signal "X4/HKDR-B"
+  { X4/U10-5 X4/X5/R15-1 X4/X5/R13-2 }
+Signal "X4/DDR-B"
+  { X4/U9-5 X4/X5/R8-1 }
+Signal "X4/+24"
+  { X4/X6/R6-1 X4/X5/R6-1 X4/L1-2 X4/C28-1 }
+Signal "X4/HKSUB"
+  { X4/U8-10 X4/R57-1 X4/R47-2 }
+Signal "X4/DSUB"
+  { X4/U7-12 X4/R45-1 }
+Signal "X4/unnamed_net936"
+  { X4/R46-2 X4/U4-5 }
+Signal "X4/unnamed_net935"
+  { X4/R45-2 X4/C26-1 X4/R44-1 X4/U4-6 }
+Signal "X4/unnamed_net934"
+  { X4/R42-1 X4/Q2-2 }
+Signal "X4/unnamed_net933"
+  { X4/R43-2 X4/C25-2 X4/Q2-3 X4/R41-1 }
+Signal "X4/unnamed_net932"
+  { X4/C26-2 X4/U4-7 X4/R40-1 }
+Signal "X4/unnamed_net931"
+  { X4/R40-2 X4/Q1-2 }
+Signal "X4/unnamed_net930"
+  { X4/Q2-1 X4/R41-2 X4/Q1-3 }
+Signal "X4/unnamed_net929"
+  { X4/U4-8 X4/R62-2 X4/C24-1 }
+Signal "X4/DBS"
+  { X4/U7-11 X4/R39-1 }
+Signal "X4/unnamed_net928"
+  { X4/R39-2 X4/U4-3 }
+Signal "X4/HKBS"
+  { X4/U8-11 X4/R38-2 }
+Signal "X4/unnamed_net926"
+  { X4/U4-2 X4/R36-1 X4/R37-2 X4/C23-1 }
+Signal "X4/unnamed_net925"
+  { X4/U4-1 X4/C23-2 X4/R35-1 }
+Signal "X4/unnamed_net924"
+  { X4/R54-1 X4/R36-2 X4/R35-2 X4/C22-2 }
+Signal "X4/+15"
+  { X4/R52-1 X4/R49-1 X4/C30-1 X4/L3-2 X4/U3-8 X4/C20-1 }
+Signal "X4/DRD"
+  { X4/U7-10 X4/R34-1 }
+Signal "X4/unnamed_net923"
+  { X4/U3-5 X4/R34-2 }
+Signal "X4/HKRD"
+  { X4/U8-12 X4/R33-2 }
+Signal "X4/unnamed_net922"
+  { X4/U3-6 X4/R31-1 X4/R32-2 X4/C19-1 }
+Signal "X4/unnamed_net921"
+  { X4/U3-7 X4/C19-2 X4/R30-1 }
+Signal "X4/DSCP"
+  { X4/U7-7 X4/R29-1 }
+Signal "X4/unnamed_net920"
+  { X4/U3-3 X4/R29-2 }
+Signal "X4/HKSCP"
+  { X4/U8-7 X4/R28-2 }
+Signal "X4/unnamed_net919"
+  { X4/U3-2 X4/R26-1 X4/R27-2 X4/C18-1 }
+Signal "X4/unnamed_net918"
+  { X4/U3-1 X4/C18-2 X4/R25-1 }
+Signal "X4/DIG2"
+  { X4/U7-6 X4/R24-1 }
+Signal "X4/unnamed_net916"
+  { X4/U2-5 X4/R24-2 }
+Signal "X4/HKIG2"
+  { X4/U8-6 X4/R22-2 }
+Signal "X4/unnamed_net915"
+  { X4/R23-2 X4/U2-6 X4/R20-1 X4/R21-2 X4/C14-1 }
+Signal "X4/unnamed_net914"
+  { X4/U2-7 X4/C14-2 X4/R19-1 }
+Signal "X4/DIG1"
+  { X4/U7-5 X4/R18-1 }
+Signal "X4/unnamed_net912"
+  { X4/U2-3 X4/R18-2 }
+Signal "X4/HKIG1"
+  { X4/U8-5 X4/R16-2 }
+Signal "X4/unnamed_net911"
+  { X4/R17-2 X4/U2-2 X4/R14-1 X4/R15-2 X4/C12-1 }
+Signal "X4/unnamed_net910"
+  { X4/U2-1 X4/C12-2 X4/R13-1 }
+Signal "X4/unnamed_net908"
+  { X4/U11-8 X4/R60-2 X4/C40-1 }
+Signal "X4/TEMP"
+  { X4/U8-9 X4/R12-1 }
+Signal "X4/unnamed_net907"
+  { X4/U1-1 X4/U1-2 X4/R12-2 }
+Signal "X4/unnamed_net906"
+  { X4/R61-1 X4/U5-8 X4/C10-1 }
+Signal "X4/-12"
+  { X4/R53-1 X4/R50-1 X4/C29-1 X4/L2-2 X4/U2-4 X4/C16-1 X4/U1-4 X4/C9-1 }
+Signal "X4/DOG"
+  { X4/U7-4 X4/R11-1 }
+Signal "X4/unnamed_net905"
+  { X4/U1-5 X4/R11-2 }
+Signal "X4/HKOG"
+  { X4/U8-4 X4/R9-2 }
+Signal "X4/unnamed_net904"
+  { X4/R10-2 X4/U1-6 X4/R7-1 X4/R8-2 X4/C7-1 }
+Signal "X4/unnamed_net903"
+  { X4/U1-7 X4/C7-2 X4/R6-1 }
+Signal "X4/unnamed_net901"
+  { X4/U5-2 X4/R5-1 X4/C3-1 X4/R4-2 }
+Signal "X4/unnamed_net900"
+  { X4/U5-1 X4/C3-2 X4/R3-1 }
+Signal "X4/+3.3DAC"
+  { X4/U9-9 X4/C38-2 X4/U9-8 X4/U7-9 X4/C34-2 X4/U7-8 X4/R23-1 X4/R17-1 X4/R10-1 X4/R5-2 X4/R3-2 X4/C2-2 }
+Signal "X4/unnamed_net899"
+  { X4/C5-2 X4/R2-1 }
+Signal "X4/unnamed_net898"
+  { X4/U1-3 X4/U6-3 }
+Signal "X4/unnamed_net897"
+  { X4/C4-1 X4/R1-2 X4/U6-2 }
+Signal "X4/X4/unnamed_net895"
+  { X4/X4/R27-2 X4/X4/C24-1 X4/X4/R28-1 X4/X4/U10-2 }
+Signal "X4/X4/unnamed_net894"
+  { X4/X4/C24-2 X4/X4/R6-1 X4/X4/U10-1 }
+Signal "X4/X4/unnamed_net893"
+  { X4/X4/U12-5 X4/X4/C25-1 X4/X4/R33-2 }
+Signal "X4/X4/unnamed_net891"
+  { X4/X4/C23-2 X4/X4/R26-2 X4/X4/U10-5 }
+Signal "X4/X4/unnamed_net890"
+  { X4/X4/C29-1 X4/X4/R40-1 X4/X4/R39-2 X4/X4/U10-6 }
+Signal "X4/X4/unnamed_net889"
+  { X4/X4/C29-2 X4/X4/R20-1 X4/X4/U10-7 }
+Signal "X4/X4/unnamed_net887"
+  { X4/X4/U11-5 X4/X4/C7-1 X4/X4/R23-2 }
+Signal "X4/X4/unnamed_net886"
+  { X4/X4/C8-1 X4/X4/R22-2 X4/X4/U7-5 }
+Signal "X4/X4/unnamed_net885"
+  { X4/X4/C9-1 X4/X4/R21-2 X4/X4/U3-5 }
+Signal "X4/X4/unnamed_net884"
+  { X4/X4/R1-2 X4/X4/Q2-1 }
+Signal "X4/X4/unnamed_net883"
+  { X4/X4/R42-2 X4/X4/Q2-2 }
+Signal "X4/X4/Vcc6"
+  { X4/X4/U6-6 X4/X4/C13-1 X4/X4/R17-2 X4/X4/U6-5 }
+Signal "X4/X4/Vcc8"
+  { X4/X4/U8-6 X4/X4/C14-1 X4/X4/R18-2 X4/X4/U8-5 }
+Signal "X4/X4/Vcc5"
+  { X4/X4/U5-6 X4/X4/C11-1 X4/X4/R16-2 X4/X4/U5-5 }
+Signal "X4/X4/Vcc4"
+  { X4/X4/U4-6 X4/X4/C5-1 X4/X4/R5-2 X4/X4/U4-5 }
+Signal "X4/X4/unnamed_net882"
+  { X4/X4/R11-1 X4/X4/U12-2 }
+Signal "X4/X4/unnamed_net878"
+  { X4/X4/R38-1 X4/X4/U11-2 }
+Signal "X4/X4/unnamed_net875"
+  { X4/X4/C22-1 X4/X4/U6-3 X4/X4/R15-2 X4/X4/R4-1 }
+Signal "X4/X4/unnamed_net874"
+  { X4/X4/R24-2 X4/X4/C6-1 X4/X4/U9-2 }
+Signal "X4/X4/ADCref"
+  { X4/X4/C3-2 X4/X4/R28-2 X4/X4/R6-2 X4/X4/C16-2 X4/X4/R15-1 X4/X4/U9-1 }
+Signal "X4/X4/inm"
+  { X4/X4/R13-2 X4/X4/C21-1 X4/X4/U9-4 }
+Signal "X4/X4/inp"
+  { X4/X4/C20-1 X4/X4/R14-2 X4/X4/U9-3 }
+Signal "X4/X4/unnamed_net870"
+  { X4/X4/U9-9 X4/X4/C12-1 X4/X4/R19-2 X4/X4/U9-10 }
+Signal "X4/X4/V0"
+  { X4/X4/U10-3 X4/X4/C30-1 X4/X4/R40-2 X4/X4/C28-2 X4/X4/R20-2 X4/X4/U5-3 X4/X4/C2-2 X4/X4/U8-3 X4/X4/C17-1 X4/X4/U3-1 X4/X4/R7-1 }
+Signal "X4/X4/unnamed_net869"
+  { X4/X4/U6-1 X4/X4/R14-1 X4/X4/C19-2 X4/X4/R10-2 }
+Signal "X4/X4/unnamed_net868"
+  { X4/X4/U6-4 X4/X4/C19-1 X4/X4/R10-1 X4/X4/R12-2 }
+Signal "X4/X4/unnamed_net866"
+  { X4/X4/R13-1 X4/X4/U8-1 X4/X4/C4a-2 X4/X4/R12-1 X4/X4/U7-1 X4/X4/C4-2 }
+Signal "X4/X4/unnamed_net865"
+  { X4/X4/R38-2 X4/X4/C4a-1 X4/X4/U7-2 X4/X4/R11-2 X4/X4/U8-4 X4/X4/C4-1 }
+Signal "X4/X4/u5o"
+  { X4/X4/U5-1 X4/X4/U12-1 X4/X4/R2-2 }
+Signal "X4/X4/unnamed_net864"
+  { X4/X4/U5-4 X4/X4/R2-1 X4/X4/R9-2 }
+Signal "X4/X4/unnamed_net863"
+  { X4/X4/U4-4 X4/X4/R7-2 X4/X4/C18-1 X4/X4/R8-1 }
+Signal "X4/X4/u4o"
+  { X4/X4/U4-1 X4/X4/U11-1 X4/X4/C18-2 X4/X4/R9-1 X4/X4/R8-2 }
+Signal "X4/X4/unnamed_net861"
+  { X4/X4/U3-2 X4/X4/U4-3 X4/X4/C1-1 }
+Signal "X4/VHK4"
+  { X4/U10-9 X4/X4/R41-1 X4/X4/R25-2 }
+Signal "X4/X3/unnamed_net858"
+  { X4/X3/R27-2 X4/X3/C24-1 X4/X3/R28-1 X4/X3/U10-2 }
+Signal "X4/X3/unnamed_net857"
+  { X4/X3/C24-2 X4/X3/R6-1 X4/X3/U10-1 }
+Signal "X4/X3/unnamed_net856"
+  { X4/X3/U12-5 X4/X3/C25-1 X4/X3/R33-2 }
+Signal "X4/X3/unnamed_net854"
+  { X4/X3/C23-2 X4/X3/R26-2 X4/X3/U10-5 }
+Signal "X4/X3/unnamed_net853"
+  { X4/X3/C29-1 X4/X3/R40-1 X4/X3/R39-2 X4/X3/U10-6 }
+Signal "X4/X3/unnamed_net852"
+  { X4/X3/C29-2 X4/X3/R20-1 X4/X3/U10-7 }
+Signal "X4/X3/unnamed_net850"
+  { X4/X3/U11-5 X4/X3/C7-1 X4/X3/R23-2 }
+Signal "X4/X3/unnamed_net849"
+  { X4/X3/C8-1 X4/X3/R22-2 X4/X3/U7-5 }
+Signal "X4/X3/unnamed_net848"
+  { X4/X3/C9-1 X4/X3/R21-2 X4/X3/U3-5 }
+Signal "X4/X3/unnamed_net847"
+  { X4/X3/R1-2 X4/X3/Q2-1 }
+Signal "X4/X3/unnamed_net846"
+  { X4/X3/R42-2 X4/X3/Q2-2 }
+Signal "X4/X3/Vcc6"
+  { X4/X3/U6-6 X4/X3/C13-1 X4/X3/R17-2 X4/X3/U6-5 }
+Signal "X4/X3/Vcc8"
+  { X4/X3/U8-6 X4/X3/C14-1 X4/X3/R18-2 X4/X3/U8-5 }
+Signal "X4/X3/Vcc5"
+  { X4/X3/U5-6 X4/X3/C11-1 X4/X3/R16-2 X4/X3/U5-5 }
+Signal "X4/X3/Vcc4"
+  { X4/X3/U4-6 X4/X3/C5-1 X4/X3/R5-2 X4/X3/U4-5 }
+Signal "X4/X3/unnamed_net845"
+  { X4/X3/R11-1 X4/X3/U12-2 }
+Signal "X4/X3/unnamed_net841"
+  { X4/X3/R38-1 X4/X3/U11-2 }
+Signal "X4/X3/unnamed_net838"
+  { X4/X3/C22-1 X4/X3/U6-3 X4/X3/R15-2 X4/X3/R4-1 }
+Signal "X4/X3/unnamed_net837"
+  { X4/X3/R24-2 X4/X3/C6-1 X4/X3/U9-2 }
+Signal "X4/X3/ADCref"
+  { X4/X3/C3-2 X4/X3/R28-2 X4/X3/R6-2 X4/X3/C16-2 X4/X3/R15-1 X4/X3/U9-1 }
+Signal "X4/X3/inm"
+  { X4/X3/R13-2 X4/X3/C21-1 X4/X3/U9-4 }
+Signal "X4/X3/inp"
+  { X4/X3/C20-1 X4/X3/R14-2 X4/X3/U9-3 }
+Signal "X4/X3/unnamed_net833"
+  { X4/X3/U9-9 X4/X3/C12-1 X4/X3/R19-2 X4/X3/U9-10 }
+Signal "X4/X3/V0"
+  { X4/X3/U10-3 X4/X3/C30-1 X4/X3/R40-2 X4/X3/C28-2 X4/X3/R20-2 X4/X3/U5-3 X4/X3/C2-2 X4/X3/U8-3 X4/X3/C17-1 X4/X3/U3-1 X4/X3/R7-1 }
+Signal "X4/X3/unnamed_net832"
+  { X4/X3/U6-1 X4/X3/R14-1 X4/X3/C19-2 X4/X3/R10-2 }
+Signal "X4/X3/unnamed_net831"
+  { X4/X3/U6-4 X4/X3/C19-1 X4/X3/R10-1 X4/X3/R12-2 }
+Signal "X4/X3/unnamed_net829"
+  { X4/X3/R13-1 X4/X3/U8-1 X4/X3/C4a-2 X4/X3/R12-1 X4/X3/U7-1 X4/X3/C4-2 }
+Signal "X4/X3/unnamed_net828"
+  { X4/X3/R38-2 X4/X3/C4a-1 X4/X3/U7-2 X4/X3/R11-2 X4/X3/U8-4 X4/X3/C4-1 }
+Signal "X4/X3/u5o"
+  { X4/X3/U5-1 X4/X3/U12-1 X4/X3/R2-2 }
+Signal "X4/X3/unnamed_net827"
+  { X4/X3/U5-4 X4/X3/R2-1 X4/X3/R9-2 }
+Signal "X4/X3/unnamed_net826"
+  { X4/X3/U4-4 X4/X3/R7-2 X4/X3/C18-1 X4/X3/R8-1 }
+Signal "X4/X3/u4o"
+  { X4/X3/U4-1 X4/X3/U11-1 X4/X3/C18-2 X4/X3/R9-1 X4/X3/R8-2 }
+Signal "X4/X3/unnamed_net824"
+  { X4/X3/U3-2 X4/X3/U4-3 X4/X3/C1-1 }
+Signal "X4/VDD34"
+  { X4/U11-6 X4/U11-7 X4/X4/R24-1 X4/X3/R24-1 }
+Signal "X4/VHK3"
+  { X4/U10-10 X4/X3/R41-1 X4/X3/R25-2 }
+Signal "X4/X2/unnamed_net821"
+  { X4/X2/R27-2 X4/X2/C24-1 X4/X2/R28-1 X4/X2/U10-2 }
+Signal "X4/X2/unnamed_net820"
+  { X4/X2/C24-2 X4/X2/R6-1 X4/X2/U10-1 }
+Signal "X4/X2/unnamed_net819"
+  { X4/X2/U12-5 X4/X2/C25-1 X4/X2/R33-2 }
+Signal "X4/X2/unnamed_net817"
+  { X4/X2/C23-2 X4/X2/R26-2 X4/X2/U10-5 }
+Signal "X4/X2/unnamed_net816"
+  { X4/X2/C29-1 X4/X2/R40-1 X4/X2/R39-2 X4/X2/U10-6 }
+Signal "X4/X2/unnamed_net815"
+  { X4/X2/C29-2 X4/X2/R20-1 X4/X2/U10-7 }
+Signal "X4/X2/unnamed_net813"
+  { X4/X2/U11-5 X4/X2/C7-1 X4/X2/R23-2 }
+Signal "X4/X2/unnamed_net812"
+  { X4/X2/C8-1 X4/X2/R22-2 X4/X2/U7-5 }
+Signal "X4/X2/unnamed_net811"
+  { X4/X2/C9-1 X4/X2/R21-2 X4/X2/U3-5 }
+Signal "X4/X2/unnamed_net810"
+  { X4/X2/R1-2 X4/X2/Q2-1 }
+Signal "X4/X2/unnamed_net809"
+  { X4/X2/R42-2 X4/X2/Q2-2 }
+Signal "X4/X2/Vcc6"
+  { X4/X2/U6-6 X4/X2/C13-1 X4/X2/R17-2 X4/X2/U6-5 }
+Signal "X4/X2/Vcc8"
+  { X4/X2/U8-6 X4/X2/C14-1 X4/X2/R18-2 X4/X2/U8-5 }
+Signal "X4/X2/Vcc5"
+  { X4/X2/U5-6 X4/X2/C11-1 X4/X2/R16-2 X4/X2/U5-5 }
+Signal "X4/X2/Vcc4"
+  { X4/X2/U4-6 X4/X2/C5-1 X4/X2/R5-2 X4/X2/U4-5 }
+Signal "X4/X2/unnamed_net808"
+  { X4/X2/R11-1 X4/X2/U12-2 }
+Signal "X4/X2/unnamed_net804"
+  { X4/X2/R38-1 X4/X2/U11-2 }
+Signal "X4/X2/unnamed_net801"
+  { X4/X2/C22-1 X4/X2/U6-3 X4/X2/R15-2 X4/X2/R4-1 }
+Signal "X4/X2/unnamed_net800"
+  { X4/X2/R24-2 X4/X2/C6-1 X4/X2/U9-2 }
+Signal "X4/X2/ADCref"
+  { X4/X2/C3-2 X4/X2/R28-2 X4/X2/R6-2 X4/X2/C16-2 X4/X2/R15-1 X4/X2/U9-1 }
+Signal "X4/X2/inm"
+  { X4/X2/R13-2 X4/X2/C21-1 X4/X2/U9-4 }
+Signal "X4/X2/inp"
+  { X4/X2/C20-1 X4/X2/R14-2 X4/X2/U9-3 }
+Signal "X4/X2/unnamed_net796"
+  { X4/X2/U9-9 X4/X2/C12-1 X4/X2/R19-2 X4/X2/U9-10 }
+Signal "X4/X2/V0"
+  { X4/X2/U10-3 X4/X2/C30-1 X4/X2/R40-2 X4/X2/C28-2 X4/X2/R20-2 X4/X2/U5-3 X4/X2/C2-2 X4/X2/U8-3 X4/X2/C17-1 X4/X2/U3-1 X4/X2/R7-1 }
+Signal "X4/X2/unnamed_net795"
+  { X4/X2/U6-1 X4/X2/R14-1 X4/X2/C19-2 X4/X2/R10-2 }
+Signal "X4/X2/unnamed_net794"
+  { X4/X2/U6-4 X4/X2/C19-1 X4/X2/R10-1 X4/X2/R12-2 }
+Signal "X4/X2/unnamed_net792"
+  { X4/X2/R13-1 X4/X2/U8-1 X4/X2/C4a-2 X4/X2/R12-1 X4/X2/U7-1 X4/X2/C4-2 }
+Signal "X4/X2/unnamed_net791"
+  { X4/X2/R38-2 X4/X2/C4a-1 X4/X2/U7-2 X4/X2/R11-2 X4/X2/U8-4 X4/X2/C4-1 }
+Signal "X4/X2/u5o"
+  { X4/X2/U5-1 X4/X2/U12-1 X4/X2/R2-2 }
+Signal "X4/X2/unnamed_net790"
+  { X4/X2/U5-4 X4/X2/R2-1 X4/X2/R9-2 }
+Signal "X4/X2/unnamed_net789"
+  { X4/X2/U4-4 X4/X2/R7-2 X4/X2/C18-1 X4/X2/R8-1 }
+Signal "X4/X2/u4o"
+  { X4/X2/U4-1 X4/X2/U11-1 X4/X2/C18-2 X4/X2/R9-1 X4/X2/R8-2 }
+Signal "X4/X2/unnamed_net787"
+  { X4/X2/U3-2 X4/X2/U4-3 X4/X2/C1-1 }
+Signal "X4/VHK2"
+  { X4/U10-11 X4/X2/R41-1 X4/X2/R25-2 }
+Signal "X4/X1/unnamed_net784"
+  { X4/X1/R27-2 X4/X1/C24-1 X4/X1/R28-1 X4/X1/U10-2 }
+Signal "X4/X1/unnamed_net783"
+  { X4/X1/C24-2 X4/X1/R6-1 X4/X1/U10-1 }
+Signal "X4/X1/unnamed_net782"
+  { X4/X1/U12-5 X4/X1/C25-1 X4/X1/R33-2 }
+Signal "X4/X1/unnamed_net780"
+  { X4/X1/C23-2 X4/X1/R26-2 X4/X1/U10-5 }
+Signal "X4/X1/unnamed_net779"
+  { X4/X1/C29-1 X4/X1/R40-1 X4/X1/R39-2 X4/X1/U10-6 }
+Signal "X4/X1/unnamed_net778"
+  { X4/X1/C29-2 X4/X1/R20-1 X4/X1/U10-7 }
+Signal "X4/X1/unnamed_net776"
+  { X4/X1/U11-5 X4/X1/C7-1 X4/X1/R23-2 }
+Signal "X4/X1/unnamed_net775"
+  { X4/X1/C8-1 X4/X1/R22-2 X4/X1/U7-5 }
+Signal "X4/X1/unnamed_net774"
+  { X4/X1/C9-1 X4/X1/R21-2 X4/X1/U3-5 }
+Signal "X4/X1/unnamed_net773"
+  { X4/X1/R1-2 X4/X1/Q2-1 }
+Signal "X4/X1/unnamed_net772"
+  { X4/X1/R42-2 X4/X1/Q2-2 }
+Signal "X4/X1/Vcc6"
+  { X4/X1/U6-6 X4/X1/C13-1 X4/X1/R17-2 X4/X1/U6-5 }
+Signal "X4/X1/Vcc8"
+  { X4/X1/U8-6 X4/X1/C14-1 X4/X1/R18-2 X4/X1/U8-5 }
+Signal "X4/X1/Vcc5"
+  { X4/X1/U5-6 X4/X1/C11-1 X4/X1/R16-2 X4/X1/U5-5 }
+Signal "X4/X1/Vcc4"
+  { X4/X1/U4-6 X4/X1/C5-1 X4/X1/R5-2 X4/X1/U4-5 }
+Signal "X4/X1/unnamed_net771"
+  { X4/X1/R11-1 X4/X1/U12-2 }
+Signal "X4/X1/unnamed_net767"
+  { X4/X1/R38-1 X4/X1/U11-2 }
+Signal "X4/X1/unnamed_net764"
+  { X4/X1/C22-1 X4/X1/U6-3 X4/X1/R15-2 X4/X1/R4-1 }
+Signal "X4/X1/unnamed_net763"
+  { X4/X1/R24-2 X4/X1/C6-1 X4/X1/U9-2 }
+Signal "X4/X1/ADCref"
+  { X4/X1/C3-2 X4/X1/R28-2 X4/X1/R6-2 X4/X1/C16-2 X4/X1/R15-1 X4/X1/U9-1 }
+Signal "X4/X1/inm"
+  { X4/X1/R13-2 X4/X1/C21-1 X4/X1/U9-4 }
+Signal "X4/X1/inp"
+  { X4/X1/C20-1 X4/X1/R14-2 X4/X1/U9-3 }
+Signal "X4/X1/unnamed_net759"
+  { X4/X1/U9-9 X4/X1/C12-1 X4/X1/R19-2 X4/X1/U9-10 }
+Signal "X4/X1/V0"
+  { X4/X1/U10-3 X4/X1/C30-1 X4/X1/R40-2 X4/X1/C28-2 X4/X1/R20-2 X4/X1/U5-3 X4/X1/C2-2 X4/X1/U8-3 X4/X1/C17-1 X4/X1/U3-1 X4/X1/R7-1 }
+Signal "X4/X1/unnamed_net758"
+  { X4/X1/U6-1 X4/X1/R14-1 X4/X1/C19-2 X4/X1/R10-2 }
+Signal "X4/X1/unnamed_net757"
+  { X4/X1/U6-4 X4/X1/C19-1 X4/X1/R10-1 X4/X1/R12-2 }
+Signal "X4/X1/unnamed_net755"
+  { X4/X1/R13-1 X4/X1/U8-1 X4/X1/C4a-2 X4/X1/R12-1 X4/X1/U7-1 X4/X1/C4-2 }
+Signal "X4/X1/unnamed_net754"
+  { X4/X1/R38-2 X4/X1/C4a-1 X4/X1/U7-2 X4/X1/R11-2 X4/X1/U8-4 X4/X1/C4-1 }
+Signal "X4/X1/u5o"
+  { X4/X1/U5-1 X4/X1/U12-1 X4/X1/R2-2 }
+Signal "X4/X1/unnamed_net753"
+  { X4/X1/U5-4 X4/X1/R2-1 X4/X1/R9-2 }
+Signal "X4/X1/unnamed_net752"
+  { X4/X1/U4-4 X4/X1/R7-2 X4/X1/C18-1 X4/X1/R8-1 }
+Signal "X4/X1/u4o"
+  { X4/X1/U4-1 X4/X1/U11-1 X4/X1/C18-2 X4/X1/R9-1 X4/X1/R8-2 }
+Signal "X4/X1/unnamed_net750"
+  { X4/X1/U3-2 X4/X1/U4-3 X4/X1/C1-1 }
+Signal "X4/VDD12"
+  { X4/U11-2 X4/U11-1 X4/X2/R24-1 X4/X1/R24-1 }
+Signal "X4/VHK1"
+  { X4/U10-12 X4/X1/R41-1 X4/X1/R25-2 }
+Signal "X4/unnamed_net746"
+  { X4/X4/U9-8 X4/X3/U9-8 X4/X2/U9-8 X4/X1/U9-8 X4/R59-2 }
+Signal "X4/VIO"
+  { X4/U5-6 X4/U5-7 X4/X4/R19-1 X4/X3/R19-1 X4/X2/R19-1 X4/X1/R19-1 }
+Signal "X4/+2.5ref"
+  { X4/U11-5 X4/U11-3 X4/U5-5 X4/U5-3 X4/R2-2 X4/U6-6 X4/X4/R26-1 X4/X3/R26-1 X4/X2/R26-1 X4/X1/R26-1 }
+Signal "X4/+5"
+  { X4/R51-2 X4/R48-2 X4/C31-2 X4/L4-2 X4/R62-1 X4/U2-8 X4/C15-1 X4/R60-1 X4/R61-2 X4/U1-8 X4/C8-1 X4/R1-1 X4/X4/C10-1 X4/X4/U10-8 X4/X4/R18-1 X4/X4/R17-1 X4/X4/R16-1 X4/X4/R5-1 X4/X4/R22-1 X4/X4/R23-1 X4/X3/C10-1 X4/X3/U10-8 X4/X3/R18-1 X4/X3/R17-1 X4/X3/R16-1 X4/X3/R5-1 X4/X3/R22-1 X4/X3/R23-1 X4/X2/C10-1 X4/X2/U10-8 X4/X2/R18-1 X4/X2/R17-1 X4/X2/R16-1 X4/X2/R5-1 X4/X2/R22-1 X4/X2/R23-1 X4/X1/C10-1 X4/X1/U10-8 X4/X1/R18-1 X4/X1/R17-1 X4/X1/R16-1 X4/X1/R5-1 X4/X1/R22-1 X4/X1/R23-1 }
+Signal "OUT-D-4"
+  { J4-31 X4/X4/R42-1 X4/X4/R25-1 X4/X4/C1-2 }
+Signal "OUT-C-4"
+  { J4-35 X4/X3/R42-1 X4/X3/R25-1 X4/X3/C1-2 }
+Signal "OUT-B-4"
+  { J4-43 X4/X2/R42-1 X4/X2/R25-1 X4/X2/C1-2 }
+Signal "OUT-A-4"
+  { J4-47 X4/X1/R42-1 X4/X1/R25-1 X4/X1/C1-2 }
+Signal "HK56"
+  { Js-78 X4/U10-2 }
+Signal "HK48"
+  { Js-77 X4/U8-2 }
+Signal "\_DS56\_"
+  { Js-184 X4/U9-2 }
+Signal "\_DS48\_"
+  { Js-182 X4/U7-2 }
+Signal "SDO-D-4"
+  { Js-152 X4/X4/U9-7 }
+Signal "SDO-C-4"
+  { Js-154 X4/X3/U9-7 }
+Signal "SDO-B-4"
+  { Js-156 X4/X2/U9-7 }
+Signal "SDO-A-4"
+  { Js-158 X4/X1/U9-7 }
+Signal "DR-D-4"
+  { J4-30 X4/X6/R13-1 X4/X6/R11-2 X4/X6/R12-2 X4/X6/C5-2 }
+Signal "DR-C-4"
+  { J4-36 X4/X6/R7-1 X4/X6/R4-2 X4/X6/R5-2 X4/X6/C2-2 }
+Signal "DR-B-4"
+  { J4-42 X4/X5/R13-1 X4/X5/R11-2 X4/X5/R12-2 X4/X5/C5-2 }
+Signal "DR-A-4"
+  { J4-48 X4/X5/R7-1 X4/X5/R4-2 X4/X5/R5-2 X4/X5/C2-2 }
+Signal "RD-4"
+  { J4-34 X4/X6/R9-1 X4/X6/R2-1 X4/X5/R9-1 X4/X5/R2-1 X4/C21-2 X4/R33-1 X4/R31-2 X4/R30-2 }
+Signal "Backside-4"
+  { J4-1 X4/R54-2 X4/R38-1 }
+Signal "VSUB-4"
+  { J4-26 X4/C27-2 X4/R47-1 X4/R44-2 X4/R42-2 }
+Signal "SCP-4"
+  { J4-51 J4-39 X4/R28-1 X4/R26-2 X4/R25-2 X4/C17-2 }
+Signal "OG-4"
+  { R27-1 R29-1 R28-1 R26-1 X4/R9-1 X4/R7-2 X4/R6-2 X4/C6-2 }
+Signal "IG2-4"
+  { J4-3 X4/R22-1 X4/R20-2 X4/R19-2 X4/C13-2 }
+Signal "IG1-4"
+  { J4-2 X4/R16-1 X4/R14-2 X4/R13-2 X4/C11-2 }
+Signal "X3/unnamed_net740"
+  { X3/R53-2 X3/C37-1 X3/U10-3 }
+Signal "X3/unnamed_net739"
+  { X3/R52-2 X3/U10-13 X3/C36-1 }
+Signal "X3/unnamed_net737"
+  { X3/C39-2 X3/R51-1 X3/U9-3 }
+Signal "X3/unnamed_net735"
+  { X3/R50-2 X3/C33-1 X3/U8-3 }
+Signal "X3/unnamed_net734"
+  { X3/R49-2 X3/U8-13 X3/C32-1 }
+Signal "X3/unnamed_net732"
+  { X3/C35-2 X3/R48-1 X3/U7-3 }
+Signal "X3/X6/unnamed_net724"
+  { X3/X6/U1-5 X3/X6/R8-2 X3/X6/R9-2 }
+Signal "X3/X6/unnamed_net723"
+  { X3/X6/U1-6 X3/X6/R11-1 X3/X6/R10-2 X3/X6/C4-1 }
+Signal "X3/X6/unnamed_net722"
+  { X3/X6/U1-7 X3/X6/C4-2 X3/X6/R12-1 }
+Signal "X3/X6/unnamed_net719"
+  { X3/X6/U1-8 X3/X6/C3-2 X3/X6/R6-2 }
+Signal "X3/X6/unnamed_net715"
+  { X3/X6/U1-3 X3/X6/R1-2 X3/X6/R2-2 }
+Signal "X3/X6/unnamed_net714"
+  { X3/X6/U1-2 X3/X6/R4-1 X3/X6/R3-2 X3/X6/C1-1 }
+Signal "X3/X6/unnamed_net713"
+  { X3/X6/U1-1 X3/X6/C1-2 X3/X6/R5-1 }
+Signal "X3/HKDR-C"
+  { X3/U10-6 X3/X6/R14-1 X3/X6/R7-2 }
+Signal "X3/DDR-C"
+  { X3/U9-6 X3/X6/R1-1 }
+Signal "X3/HKDR-D"
+  { X3/U10-7 X3/X6/R15-1 X3/X6/R13-2 }
+Signal "X3/DDR-D"
+  { X3/U9-7 X3/X6/R8-1 }
+Signal "X3/X5/unnamed_net706"
+  { X3/X5/U1-5 X3/X5/R8-2 X3/X5/R9-2 }
+Signal "X3/X5/unnamed_net705"
+  { X3/X5/U1-6 X3/X5/R11-1 X3/X5/R10-2 X3/X5/C4-1 }
+Signal "X3/X5/unnamed_net704"
+  { X3/X5/U1-7 X3/X5/C4-2 X3/X5/R12-1 }
+Signal "X3/X5/unnamed_net701"
+  { X3/X5/U1-8 X3/X5/C3-2 X3/X5/R6-2 }
+Signal "X3/X5/unnamed_net697"
+  { X3/X5/U1-3 X3/X5/R1-2 X3/X5/R2-2 }
+Signal "X3/X5/unnamed_net696"
+  { X3/X5/U1-2 X3/X5/R4-1 X3/X5/R3-2 X3/X5/C1-1 }
+Signal "X3/X5/unnamed_net695"
+  { X3/X5/U1-1 X3/X5/C1-2 X3/X5/R5-1 }
+Signal "X3/HKDR-A"
+  { X3/U10-4 X3/X5/R14-1 X3/X5/R7-2 }
+Signal "X3/DDR-A"
+  { X3/U9-4 X3/X5/R1-1 }
+Signal "X3/HKDR-B"
+  { X3/U10-5 X3/X5/R15-1 X3/X5/R13-2 }
+Signal "X3/DDR-B"
+  { X3/U9-5 X3/X5/R8-1 }
+Signal "X3/+24"
+  { X3/X6/R6-1 X3/X5/R6-1 X3/L1-2 X3/C28-1 }
+Signal "X3/HKSUB"
+  { X3/U8-10 X3/R57-1 X3/R47-2 }
+Signal "X3/DSUB"
+  { X3/U7-12 X3/R45-1 }
+Signal "X3/unnamed_net689"
+  { X3/R46-2 X3/U4-5 }
+Signal "X3/unnamed_net688"
+  { X3/R45-2 X3/C26-1 X3/R44-1 X3/U4-6 }
+Signal "X3/unnamed_net687"
+  { X3/R42-1 X3/Q2-2 }
+Signal "X3/unnamed_net686"
+  { X3/R43-2 X3/C25-2 X3/Q2-3 X3/R41-1 }
+Signal "X3/unnamed_net685"
+  { X3/C26-2 X3/U4-7 X3/R40-1 }
+Signal "X3/unnamed_net684"
+  { X3/R40-2 X3/Q1-2 }
+Signal "X3/unnamed_net683"
+  { X3/Q2-1 X3/R41-2 X3/Q1-3 }
+Signal "X3/unnamed_net682"
+  { X3/U4-8 X3/R62-2 X3/C24-1 }
+Signal "X3/DBS"
+  { X3/U7-11 X3/R39-1 }
+Signal "X3/unnamed_net681"
+  { X3/R39-2 X3/U4-3 }
+Signal "X3/HKBS"
+  { X3/U8-11 X3/R38-2 }
+Signal "X3/unnamed_net679"
+  { X3/U4-2 X3/R36-1 X3/R37-2 X3/C23-1 }
+Signal "X3/unnamed_net678"
+  { X3/U4-1 X3/C23-2 X3/R35-1 }
+Signal "X3/unnamed_net677"
+  { X3/R54-1 X3/R36-2 X3/R35-2 X3/C22-2 }
+Signal "X3/+15"
+  { X3/R52-1 X3/R49-1 X3/C30-1 X3/L3-2 X3/U3-8 X3/C20-1 }
+Signal "X3/DRD"
+  { X3/U7-10 X3/R34-1 }
+Signal "X3/unnamed_net676"
+  { X3/U3-5 X3/R34-2 }
+Signal "X3/HKRD"
+  { X3/U8-12 X3/R33-2 }
+Signal "X3/unnamed_net675"
+  { X3/U3-6 X3/R31-1 X3/R32-2 X3/C19-1 }
+Signal "X3/unnamed_net674"
+  { X3/U3-7 X3/C19-2 X3/R30-1 }
+Signal "X3/DSCP"
+  { X3/U7-7 X3/R29-1 }
+Signal "X3/unnamed_net673"
+  { X3/U3-3 X3/R29-2 }
+Signal "X3/HKSCP"
+  { X3/U8-7 X3/R28-2 }
+Signal "X3/unnamed_net672"
+  { X3/U3-2 X3/R26-1 X3/R27-2 X3/C18-1 }
+Signal "X3/unnamed_net671"
+  { X3/U3-1 X3/C18-2 X3/R25-1 }
+Signal "X3/DIG2"
+  { X3/U7-6 X3/R24-1 }
+Signal "X3/unnamed_net669"
+  { X3/U2-5 X3/R24-2 }
+Signal "X3/HKIG2"
+  { X3/U8-6 X3/R22-2 }
+Signal "X3/unnamed_net668"
+  { X3/R23-2 X3/U2-6 X3/R20-1 X3/R21-2 X3/C14-1 }
+Signal "X3/unnamed_net667"
+  { X3/U2-7 X3/C14-2 X3/R19-1 }
+Signal "X3/DIG1"
+  { X3/U7-5 X3/R18-1 }
+Signal "X3/unnamed_net665"
+  { X3/U2-3 X3/R18-2 }
+Signal "X3/HKIG1"
+  { X3/U8-5 X3/R16-2 }
+Signal "X3/unnamed_net664"
+  { X3/R17-2 X3/U2-2 X3/R14-1 X3/R15-2 X3/C12-1 }
+Signal "X3/unnamed_net663"
+  { X3/U2-1 X3/C12-2 X3/R13-1 }
+Signal "X3/unnamed_net661"
+  { X3/U11-8 X3/R60-2 X3/C40-1 }
+Signal "X3/TEMP"
+  { X3/U8-9 X3/R12-1 }
+Signal "X3/unnamed_net660"
+  { X3/U1-1 X3/U1-2 X3/R12-2 }
+Signal "X3/unnamed_net659"
+  { X3/R61-1 X3/U5-8 X3/C10-1 }
+Signal "X3/-12"
+  { X3/R53-1 X3/R50-1 X3/C29-1 X3/L2-2 X3/U2-4 X3/C16-1 X3/U1-4 X3/C9-1 }
+Signal "X3/DOG"
+  { X3/U7-4 X3/R11-1 }
+Signal "X3/unnamed_net658"
+  { X3/U1-5 X3/R11-2 }
+Signal "X3/HKOG"
+  { X3/U8-4 X3/R9-2 }
+Signal "X3/unnamed_net657"
+  { X3/R10-2 X3/U1-6 X3/R7-1 X3/R8-2 X3/C7-1 }
+Signal "X3/unnamed_net656"
+  { X3/U1-7 X3/C7-2 X3/R6-1 }
+Signal "X3/unnamed_net654"
+  { X3/U5-2 X3/R5-1 X3/C3-1 X3/R4-2 }
+Signal "X3/unnamed_net653"
+  { X3/U5-1 X3/C3-2 X3/R3-1 }
+Signal "X3/+3.3DAC"
+  { X3/U9-9 X3/C38-2 X3/U9-8 X3/U7-9 X3/C34-2 X3/U7-8 X3/R23-1 X3/R17-1 X3/R10-1 X3/R5-2 X3/R3-2 X3/C2-2 }
+Signal "X3/unnamed_net652"
+  { X3/C5-2 X3/R2-1 }
+Signal "X3/unnamed_net651"
+  { X3/U1-3 X3/U6-3 }
+Signal "X3/unnamed_net650"
+  { X3/C4-1 X3/R1-2 X3/U6-2 }
+Signal "X3/X4/unnamed_net648"
+  { X3/X4/R27-2 X3/X4/C24-1 X3/X4/R28-1 X3/X4/U10-2 }
+Signal "X3/X4/unnamed_net647"
+  { X3/X4/C24-2 X3/X4/R6-1 X3/X4/U10-1 }
+Signal "X3/X4/unnamed_net646"
+  { X3/X4/U12-5 X3/X4/C25-1 X3/X4/R33-2 }
+Signal "X3/X4/unnamed_net644"
+  { X3/X4/C23-2 X3/X4/R26-2 X3/X4/U10-5 }
+Signal "X3/X4/unnamed_net643"
+  { X3/X4/C29-1 X3/X4/R40-1 X3/X4/R39-2 X3/X4/U10-6 }
+Signal "X3/X4/unnamed_net642"
+  { X3/X4/C29-2 X3/X4/R20-1 X3/X4/U10-7 }
+Signal "X3/X4/unnamed_net640"
+  { X3/X4/U11-5 X3/X4/C7-1 X3/X4/R23-2 }
+Signal "X3/X4/unnamed_net639"
+  { X3/X4/C8-1 X3/X4/R22-2 X3/X4/U7-5 }
+Signal "X3/X4/unnamed_net638"
+  { X3/X4/C9-1 X3/X4/R21-2 X3/X4/U3-5 }
+Signal "X3/X4/unnamed_net637"
+  { X3/X4/R1-2 X3/X4/Q2-1 }
+Signal "X3/X4/unnamed_net636"
+  { X3/X4/R42-2 X3/X4/Q2-2 }
+Signal "X3/X4/Vcc6"
+  { X3/X4/U6-6 X3/X4/C13-1 X3/X4/R17-2 X3/X4/U6-5 }
+Signal "X3/X4/Vcc8"
+  { X3/X4/U8-6 X3/X4/C14-1 X3/X4/R18-2 X3/X4/U8-5 }
+Signal "X3/X4/Vcc5"
+  { X3/X4/U5-6 X3/X4/C11-1 X3/X4/R16-2 X3/X4/U5-5 }
+Signal "X3/X4/Vcc4"
+  { X3/X4/U4-6 X3/X4/C5-1 X3/X4/R5-2 X3/X4/U4-5 }
+Signal "X3/X4/unnamed_net635"
+  { X3/X4/R11-1 X3/X4/U12-2 }
+Signal "X3/X4/unnamed_net631"
+  { X3/X4/R38-1 X3/X4/U11-2 }
+Signal "X3/X4/unnamed_net628"
+  { X3/X4/C22-1 X3/X4/U6-3 X3/X4/R15-2 X3/X4/R4-1 }
+Signal "X3/X4/unnamed_net627"
+  { X3/X4/R24-2 X3/X4/C6-1 X3/X4/U9-2 }
+Signal "X3/X4/ADCref"
+  { X3/X4/C3-2 X3/X4/R28-2 X3/X4/R6-2 X3/X4/C16-2 X3/X4/R15-1 X3/X4/U9-1 }
+Signal "X3/X4/inm"
+  { X3/X4/R13-2 X3/X4/C21-1 X3/X4/U9-4 }
+Signal "X3/X4/inp"
+  { X3/X4/C20-1 X3/X4/R14-2 X3/X4/U9-3 }
+Signal "X3/X4/unnamed_net623"
+  { X3/X4/U9-9 X3/X4/C12-1 X3/X4/R19-2 X3/X4/U9-10 }
+Signal "X3/X4/V0"
+  { X3/X4/U10-3 X3/X4/C30-1 X3/X4/R40-2 X3/X4/C28-2 X3/X4/R20-2 X3/X4/U5-3 X3/X4/C2-2 X3/X4/U8-3 X3/X4/C17-1 X3/X4/U3-1 X3/X4/R7-1 }
+Signal "X3/X4/unnamed_net622"
+  { X3/X4/U6-1 X3/X4/R14-1 X3/X4/C19-2 X3/X4/R10-2 }
+Signal "X3/X4/unnamed_net621"
+  { X3/X4/U6-4 X3/X4/C19-1 X3/X4/R10-1 X3/X4/R12-2 }
+Signal "X3/X4/unnamed_net619"
+  { X3/X4/R13-1 X3/X4/U8-1 X3/X4/C4a-2 X3/X4/R12-1 X3/X4/U7-1 X3/X4/C4-2 }
+Signal "X3/X4/unnamed_net618"
+  { X3/X4/R38-2 X3/X4/C4a-1 X3/X4/U7-2 X3/X4/R11-2 X3/X4/U8-4 X3/X4/C4-1 }
+Signal "X3/X4/u5o"
+  { X3/X4/U5-1 X3/X4/U12-1 X3/X4/R2-2 }
+Signal "X3/X4/unnamed_net617"
+  { X3/X4/U5-4 X3/X4/R2-1 X3/X4/R9-2 }
+Signal "X3/X4/unnamed_net616"
+  { X3/X4/U4-4 X3/X4/R7-2 X3/X4/C18-1 X3/X4/R8-1 }
+Signal "X3/X4/u4o"
+  { X3/X4/U4-1 X3/X4/U11-1 X3/X4/C18-2 X3/X4/R9-1 X3/X4/R8-2 }
+Signal "X3/X4/unnamed_net614"
+  { X3/X4/U3-2 X3/X4/U4-3 X3/X4/C1-1 }
+Signal "X3/VHK4"
+  { X3/U10-9 X3/X4/R41-1 X3/X4/R25-2 }
+Signal "X3/X3/unnamed_net611"
+  { X3/X3/R27-2 X3/X3/C24-1 X3/X3/R28-1 X3/X3/U10-2 }
+Signal "X3/X3/unnamed_net610"
+  { X3/X3/C24-2 X3/X3/R6-1 X3/X3/U10-1 }
+Signal "X3/X3/unnamed_net609"
+  { X3/X3/U12-5 X3/X3/C25-1 X3/X3/R33-2 }
+Signal "X3/X3/unnamed_net607"
+  { X3/X3/C23-2 X3/X3/R26-2 X3/X3/U10-5 }
+Signal "X3/X3/unnamed_net606"
+  { X3/X3/C29-1 X3/X3/R40-1 X3/X3/R39-2 X3/X3/U10-6 }
+Signal "X3/X3/unnamed_net605"
+  { X3/X3/C29-2 X3/X3/R20-1 X3/X3/U10-7 }
+Signal "X3/X3/unnamed_net603"
+  { X3/X3/U11-5 X3/X3/C7-1 X3/X3/R23-2 }
+Signal "X3/X3/unnamed_net602"
+  { X3/X3/C8-1 X3/X3/R22-2 X3/X3/U7-5 }
+Signal "X3/X3/unnamed_net601"
+  { X3/X3/C9-1 X3/X3/R21-2 X3/X3/U3-5 }
+Signal "X3/X3/unnamed_net600"
+  { X3/X3/R1-2 X3/X3/Q2-1 }
+Signal "X3/X3/unnamed_net599"
+  { X3/X3/R42-2 X3/X3/Q2-2 }
+Signal "X3/X3/Vcc6"
+  { X3/X3/U6-6 X3/X3/C13-1 X3/X3/R17-2 X3/X3/U6-5 }
+Signal "X3/X3/Vcc8"
+  { X3/X3/U8-6 X3/X3/C14-1 X3/X3/R18-2 X3/X3/U8-5 }
+Signal "X3/X3/Vcc5"
+  { X3/X3/U5-6 X3/X3/C11-1 X3/X3/R16-2 X3/X3/U5-5 }
+Signal "X3/X3/Vcc4"
+  { X3/X3/U4-6 X3/X3/C5-1 X3/X3/R5-2 X3/X3/U4-5 }
+Signal "X3/X3/unnamed_net598"
+  { X3/X3/R11-1 X3/X3/U12-2 }
+Signal "X3/X3/unnamed_net594"
+  { X3/X3/R38-1 X3/X3/U11-2 }
+Signal "X3/X3/unnamed_net591"
+  { X3/X3/C22-1 X3/X3/U6-3 X3/X3/R15-2 X3/X3/R4-1 }
+Signal "X3/X3/unnamed_net590"
+  { X3/X3/R24-2 X3/X3/C6-1 X3/X3/U9-2 }
+Signal "X3/X3/ADCref"
+  { X3/X3/C3-2 X3/X3/R28-2 X3/X3/R6-2 X3/X3/C16-2 X3/X3/R15-1 X3/X3/U9-1 }
+Signal "X3/X3/inm"
+  { X3/X3/R13-2 X3/X3/C21-1 X3/X3/U9-4 }
+Signal "X3/X3/inp"
+  { X3/X3/C20-1 X3/X3/R14-2 X3/X3/U9-3 }
+Signal "X3/X3/unnamed_net586"
+  { X3/X3/U9-9 X3/X3/C12-1 X3/X3/R19-2 X3/X3/U9-10 }
+Signal "X3/X3/V0"
+  { X3/X3/U10-3 X3/X3/C30-1 X3/X3/R40-2 X3/X3/C28-2 X3/X3/R20-2 X3/X3/U5-3 X3/X3/C2-2 X3/X3/U8-3 X3/X3/C17-1 X3/X3/U3-1 X3/X3/R7-1 }
+Signal "X3/X3/unnamed_net585"
+  { X3/X3/U6-1 X3/X3/R14-1 X3/X3/C19-2 X3/X3/R10-2 }
+Signal "X3/X3/unnamed_net584"
+  { X3/X3/U6-4 X3/X3/C19-1 X3/X3/R10-1 X3/X3/R12-2 }
+Signal "X3/X3/unnamed_net582"
+  { X3/X3/R13-1 X3/X3/U8-1 X3/X3/C4a-2 X3/X3/R12-1 X3/X3/U7-1 X3/X3/C4-2 }
+Signal "X3/X3/unnamed_net581"
+  { X3/X3/R38-2 X3/X3/C4a-1 X3/X3/U7-2 X3/X3/R11-2 X3/X3/U8-4 X3/X3/C4-1 }
+Signal "X3/X3/u5o"
+  { X3/X3/U5-1 X3/X3/U12-1 X3/X3/R2-2 }
+Signal "X3/X3/unnamed_net580"
+  { X3/X3/U5-4 X3/X3/R2-1 X3/X3/R9-2 }
+Signal "X3/X3/unnamed_net579"
+  { X3/X3/U4-4 X3/X3/R7-2 X3/X3/C18-1 X3/X3/R8-1 }
+Signal "X3/X3/u4o"
+  { X3/X3/U4-1 X3/X3/U11-1 X3/X3/C18-2 X3/X3/R9-1 X3/X3/R8-2 }
+Signal "X3/X3/unnamed_net577"
+  { X3/X3/U3-2 X3/X3/U4-3 X3/X3/C1-1 }
+Signal "X3/VDD34"
+  { X3/U11-6 X3/U11-7 X3/X4/R24-1 X3/X3/R24-1 }
+Signal "X3/VHK3"
+  { X3/U10-10 X3/X3/R41-1 X3/X3/R25-2 }
+Signal "X3/X2/unnamed_net574"
+  { X3/X2/R27-2 X3/X2/C24-1 X3/X2/R28-1 X3/X2/U10-2 }
+Signal "X3/X2/unnamed_net573"
+  { X3/X2/C24-2 X3/X2/R6-1 X3/X2/U10-1 }
+Signal "X3/X2/unnamed_net572"
+  { X3/X2/U12-5 X3/X2/C25-1 X3/X2/R33-2 }
+Signal "X3/X2/unnamed_net570"
+  { X3/X2/C23-2 X3/X2/R26-2 X3/X2/U10-5 }
+Signal "X3/X2/unnamed_net569"
+  { X3/X2/C29-1 X3/X2/R40-1 X3/X2/R39-2 X3/X2/U10-6 }
+Signal "X3/X2/unnamed_net568"
+  { X3/X2/C29-2 X3/X2/R20-1 X3/X2/U10-7 }
+Signal "X3/X2/unnamed_net566"
+  { X3/X2/U11-5 X3/X2/C7-1 X3/X2/R23-2 }
+Signal "X3/X2/unnamed_net565"
+  { X3/X2/C8-1 X3/X2/R22-2 X3/X2/U7-5 }
+Signal "X3/X2/unnamed_net564"
+  { X3/X2/C9-1 X3/X2/R21-2 X3/X2/U3-5 }
+Signal "X3/X2/unnamed_net563"
+  { X3/X2/R1-2 X3/X2/Q2-1 }
+Signal "X3/X2/unnamed_net562"
+  { X3/X2/R42-2 X3/X2/Q2-2 }
+Signal "X3/X2/Vcc6"
+  { X3/X2/U6-6 X3/X2/C13-1 X3/X2/R17-2 X3/X2/U6-5 }
+Signal "X3/X2/Vcc8"
+  { X3/X2/U8-6 X3/X2/C14-1 X3/X2/R18-2 X3/X2/U8-5 }
+Signal "X3/X2/Vcc5"
+  { X3/X2/U5-6 X3/X2/C11-1 X3/X2/R16-2 X3/X2/U5-5 }
+Signal "X3/X2/Vcc4"
+  { X3/X2/U4-6 X3/X2/C5-1 X3/X2/R5-2 X3/X2/U4-5 }
+Signal "X3/X2/unnamed_net561"
+  { X3/X2/R11-1 X3/X2/U12-2 }
+Signal "X3/X2/unnamed_net557"
+  { X3/X2/R38-1 X3/X2/U11-2 }
+Signal "X3/X2/unnamed_net554"
+  { X3/X2/C22-1 X3/X2/U6-3 X3/X2/R15-2 X3/X2/R4-1 }
+Signal "X3/X2/unnamed_net553"
+  { X3/X2/R24-2 X3/X2/C6-1 X3/X2/U9-2 }
+Signal "X3/X2/ADCref"
+  { X3/X2/C3-2 X3/X2/R28-2 X3/X2/R6-2 X3/X2/C16-2 X3/X2/R15-1 X3/X2/U9-1 }
+Signal "X3/X2/inm"
+  { X3/X2/R13-2 X3/X2/C21-1 X3/X2/U9-4 }
+Signal "X3/X2/inp"
+  { X3/X2/C20-1 X3/X2/R14-2 X3/X2/U9-3 }
+Signal "X3/X2/unnamed_net549"
+  { X3/X2/U9-9 X3/X2/C12-1 X3/X2/R19-2 X3/X2/U9-10 }
+Signal "X3/X2/V0"
+  { X3/X2/U10-3 X3/X2/C30-1 X3/X2/R40-2 X3/X2/C28-2 X3/X2/R20-2 X3/X2/U5-3 X3/X2/C2-2 X3/X2/U8-3 X3/X2/C17-1 X3/X2/U3-1 X3/X2/R7-1 }
+Signal "X3/X2/unnamed_net548"
+  { X3/X2/U6-1 X3/X2/R14-1 X3/X2/C19-2 X3/X2/R10-2 }
+Signal "X3/X2/unnamed_net547"
+  { X3/X2/U6-4 X3/X2/C19-1 X3/X2/R10-1 X3/X2/R12-2 }
+Signal "X3/X2/unnamed_net545"
+  { X3/X2/R13-1 X3/X2/U8-1 X3/X2/C4a-2 X3/X2/R12-1 X3/X2/U7-1 X3/X2/C4-2 }
+Signal "X3/X2/unnamed_net544"
+  { X3/X2/R38-2 X3/X2/C4a-1 X3/X2/U7-2 X3/X2/R11-2 X3/X2/U8-4 X3/X2/C4-1 }
+Signal "X3/X2/u5o"
+  { X3/X2/U5-1 X3/X2/U12-1 X3/X2/R2-2 }
+Signal "X3/X2/unnamed_net543"
+  { X3/X2/U5-4 X3/X2/R2-1 X3/X2/R9-2 }
+Signal "X3/X2/unnamed_net542"
+  { X3/X2/U4-4 X3/X2/R7-2 X3/X2/C18-1 X3/X2/R8-1 }
+Signal "X3/X2/u4o"
+  { X3/X2/U4-1 X3/X2/U11-1 X3/X2/C18-2 X3/X2/R9-1 X3/X2/R8-2 }
+Signal "X3/X2/unnamed_net540"
+  { X3/X2/U3-2 X3/X2/U4-3 X3/X2/C1-1 }
+Signal "X3/VHK2"
+  { X3/U10-11 X3/X2/R41-1 X3/X2/R25-2 }
+Signal "X3/X1/unnamed_net537"
+  { X3/X1/R27-2 X3/X1/C24-1 X3/X1/R28-1 X3/X1/U10-2 }
+Signal "X3/X1/unnamed_net536"
+  { X3/X1/C24-2 X3/X1/R6-1 X3/X1/U10-1 }
+Signal "X3/X1/unnamed_net535"
+  { X3/X1/U12-5 X3/X1/C25-1 X3/X1/R33-2 }
+Signal "X3/X1/unnamed_net533"
+  { X3/X1/C23-2 X3/X1/R26-2 X3/X1/U10-5 }
+Signal "X3/X1/unnamed_net532"
+  { X3/X1/C29-1 X3/X1/R40-1 X3/X1/R39-2 X3/X1/U10-6 }
+Signal "X3/X1/unnamed_net531"
+  { X3/X1/C29-2 X3/X1/R20-1 X3/X1/U10-7 }
+Signal "X3/X1/unnamed_net529"
+  { X3/X1/U11-5 X3/X1/C7-1 X3/X1/R23-2 }
+Signal "X3/X1/unnamed_net528"
+  { X3/X1/C8-1 X3/X1/R22-2 X3/X1/U7-5 }
+Signal "X3/X1/unnamed_net527"
+  { X3/X1/C9-1 X3/X1/R21-2 X3/X1/U3-5 }
+Signal "X3/X1/unnamed_net526"
+  { X3/X1/R1-2 X3/X1/Q2-1 }
+Signal "X3/X1/unnamed_net525"
+  { X3/X1/R42-2 X3/X1/Q2-2 }
+Signal "X3/X1/Vcc6"
+  { X3/X1/U6-6 X3/X1/C13-1 X3/X1/R17-2 X3/X1/U6-5 }
+Signal "X3/X1/Vcc8"
+  { X3/X1/U8-6 X3/X1/C14-1 X3/X1/R18-2 X3/X1/U8-5 }
+Signal "X3/X1/Vcc5"
+  { X3/X1/U5-6 X3/X1/C11-1 X3/X1/R16-2 X3/X1/U5-5 }
+Signal "X3/X1/Vcc4"
+  { X3/X1/U4-6 X3/X1/C5-1 X3/X1/R5-2 X3/X1/U4-5 }
+Signal "X3/X1/unnamed_net524"
+  { X3/X1/R11-1 X3/X1/U12-2 }
+Signal "X3/X1/unnamed_net520"
+  { X3/X1/R38-1 X3/X1/U11-2 }
+Signal "X3/X1/unnamed_net517"
+  { X3/X1/C22-1 X3/X1/U6-3 X3/X1/R15-2 X3/X1/R4-1 }
+Signal "X3/X1/unnamed_net516"
+  { X3/X1/R24-2 X3/X1/C6-1 X3/X1/U9-2 }
+Signal "X3/X1/ADCref"
+  { X3/X1/C3-2 X3/X1/R28-2 X3/X1/R6-2 X3/X1/C16-2 X3/X1/R15-1 X3/X1/U9-1 }
+Signal "X3/X1/inm"
+  { X3/X1/R13-2 X3/X1/C21-1 X3/X1/U9-4 }
+Signal "X3/X1/inp"
+  { X3/X1/C20-1 X3/X1/R14-2 X3/X1/U9-3 }
+Signal "X3/X1/unnamed_net512"
+  { X3/X1/U9-9 X3/X1/C12-1 X3/X1/R19-2 X3/X1/U9-10 }
+Signal "X3/X1/V0"
+  { X3/X1/U10-3 X3/X1/C30-1 X3/X1/R40-2 X3/X1/C28-2 X3/X1/R20-2 X3/X1/U5-3 X3/X1/C2-2 X3/X1/U8-3 X3/X1/C17-1 X3/X1/U3-1 X3/X1/R7-1 }
+Signal "X3/X1/unnamed_net511"
+  { X3/X1/U6-1 X3/X1/R14-1 X3/X1/C19-2 X3/X1/R10-2 }
+Signal "X3/X1/unnamed_net510"
+  { X3/X1/U6-4 X3/X1/C19-1 X3/X1/R10-1 X3/X1/R12-2 }
+Signal "X3/X1/unnamed_net508"
+  { X3/X1/R13-1 X3/X1/U8-1 X3/X1/C4a-2 X3/X1/R12-1 X3/X1/U7-1 X3/X1/C4-2 }
+Signal "X3/X1/unnamed_net507"
+  { X3/X1/R38-2 X3/X1/C4a-1 X3/X1/U7-2 X3/X1/R11-2 X3/X1/U8-4 X3/X1/C4-1 }
+Signal "X3/X1/u5o"
+  { X3/X1/U5-1 X3/X1/U12-1 X3/X1/R2-2 }
+Signal "X3/X1/unnamed_net506"
+  { X3/X1/U5-4 X3/X1/R2-1 X3/X1/R9-2 }
+Signal "X3/X1/unnamed_net505"
+  { X3/X1/U4-4 X3/X1/R7-2 X3/X1/C18-1 X3/X1/R8-1 }
+Signal "X3/X1/u4o"
+  { X3/X1/U4-1 X3/X1/U11-1 X3/X1/C18-2 X3/X1/R9-1 X3/X1/R8-2 }
+Signal "X3/X1/unnamed_net503"
+  { X3/X1/U3-2 X3/X1/U4-3 X3/X1/C1-1 }
+Signal "X3/VDD12"
+  { X3/U11-2 X3/U11-1 X3/X2/R24-1 X3/X1/R24-1 }
+Signal "X3/VHK1"
+  { X3/U10-12 X3/X1/R41-1 X3/X1/R25-2 }
+Signal "X3/unnamed_net499"
+  { X3/X4/U9-8 X3/X3/U9-8 X3/X2/U9-8 X3/X1/U9-8 X3/R59-2 }
+Signal "X3/VIO"
+  { X3/U5-6 X3/U5-7 X3/X4/R19-1 X3/X3/R19-1 X3/X2/R19-1 X3/X1/R19-1 }
+Signal "X3/+2.5ref"
+  { X3/U11-5 X3/U11-3 X3/U5-5 X3/U5-3 X3/R2-2 X3/U6-6 X3/X4/R26-1 X3/X3/R26-1 X3/X2/R26-1 X3/X1/R26-1 }
+Signal "X3/+5"
+  { X3/R51-2 X3/R48-2 X3/C31-2 X3/L4-2 X3/R62-1 X3/U2-8 X3/C15-1 X3/R60-1 X3/R61-2 X3/U1-8 X3/C8-1 X3/R1-1 X3/X4/C10-1 X3/X4/U10-8 X3/X4/R18-1 X3/X4/R17-1 X3/X4/R16-1 X3/X4/R5-1 X3/X4/R22-1 X3/X4/R23-1 X3/X3/C10-1 X3/X3/U10-8 X3/X3/R18-1 X3/X3/R17-1 X3/X3/R16-1 X3/X3/R5-1 X3/X3/R22-1 X3/X3/R23-1 X3/X2/C10-1 X3/X2/U10-8 X3/X2/R18-1 X3/X2/R17-1 X3/X2/R16-1 X3/X2/R5-1 X3/X2/R22-1 X3/X2/R23-1 X3/X1/C10-1 X3/X1/U10-8 X3/X1/R18-1 X3/X1/R17-1 X3/X1/R16-1 X3/X1/R5-1 X3/X1/R22-1 X3/X1/R23-1 }
+Signal "OUT-D-3"
+  { J3-31 X3/X4/R42-1 X3/X4/R25-1 X3/X4/C1-2 }
+Signal "OUT-C-3"
+  { J3-35 X3/X3/R42-1 X3/X3/R25-1 X3/X3/C1-2 }
+Signal "OUT-B-3"
+  { J3-43 X3/X2/R42-1 X3/X2/R25-1 X3/X2/C1-2 }
+Signal "OUT-A-3"
+  { J3-47 X3/X1/R42-1 X3/X1/R25-1 X3/X1/C1-2 }
+Signal "HK40"
+  { Js-76 X3/U10-2 }
+Signal "HK32"
+  { Js-75 X3/U8-2 }
+Signal "VS34"
+  { Q3-2 R43-2 X4/X4/R33-1 X4/X4/R21-1 X4/X3/R33-1 X4/X3/R21-1 X4/X2/R33-1 X4/X2/R21-1 X4/X1/R33-1 X4/X1/R21-1 X3/X4/R33-1 X3/X4/R21-1 X3/X3/R33-1 X3/X3/R21-1 X3/X2/R33-1 X3/X2/R21-1 X3/X1/R33-1 X3/X1/R21-1 }
+Signal "\_DS40\_"
+  { Js-170 X3/U9-2 }
+Signal "\_DS32\_"
+  { Js-168 X3/U7-2 }
+Signal "SDO-D-3"
+  { Js-194 X3/X4/U9-7 }
+Signal "SDO-C-3"
+  { Js-196 X3/X3/U9-7 }
+Signal "SDO-B-3"
+  { Js-198 X3/X2/U9-7 }
+Signal "SDO-A-3"
+  { Js-200 X3/X1/U9-7 }
+Signal "DR-D-3"
+  { J3-30 X3/X6/R13-1 X3/X6/R11-2 X3/X6/R12-2 X3/X6/C5-2 }
+Signal "DR-C-3"
+  { J3-36 X3/X6/R7-1 X3/X6/R4-2 X3/X6/R5-2 X3/X6/C2-2 }
+Signal "DR-B-3"
+  { J3-42 X3/X5/R13-1 X3/X5/R11-2 X3/X5/R12-2 X3/X5/C5-2 }
+Signal "DR-A-3"
+  { J3-48 X3/X5/R7-1 X3/X5/R4-2 X3/X5/R5-2 X3/X5/C2-2 }
+Signal "RD-3"
+  { J3-34 X3/X6/R9-1 X3/X6/R2-1 X3/X5/R9-1 X3/X5/R2-1 X3/C21-2 X3/R33-1 X3/R31-2 X3/R30-2 }
+Signal "Backside-3"
+  { J3-1 X3/R54-2 X3/R38-1 }
+Signal "VSUB-3"
+  { J3-26 X3/C27-2 X3/R47-1 X3/R44-2 X3/R42-2 }
+Signal "SCP-3"
+  { J3-51 J3-39 X3/R28-1 X3/R26-2 X3/R25-2 X3/C17-2 }
+Signal "OG-3"
+  { R23-1 R25-1 R24-1 R22-1 X3/R9-1 X3/R7-2 X3/R6-2 X3/C6-2 }
+Signal "IG2-3"
+  { J3-3 X3/R22-1 X3/R20-2 X3/R19-2 X3/C13-2 }
+Signal "IG1-3"
+  { J3-2 X3/R16-1 X3/R14-2 X3/R13-2 X3/C11-2 }
+Signal "X2/unnamed_net493"
+  { X2/R53-2 X2/C37-1 X2/U10-3 }
+Signal "X2/unnamed_net492"
+  { X2/R52-2 X2/U10-13 X2/C36-1 }
+Signal "X2/unnamed_net490"
+  { X2/C39-2 X2/R51-1 X2/U9-3 }
+Signal "X2/unnamed_net488"
+  { X2/R50-2 X2/C33-1 X2/U8-3 }
+Signal "X2/unnamed_net487"
+  { X2/R49-2 X2/U8-13 X2/C32-1 }
+Signal "X2/unnamed_net485"
+  { X2/C35-2 X2/R48-1 X2/U7-3 }
+Signal "X2/X6/unnamed_net477"
+  { X2/X6/U1-5 X2/X6/R8-2 X2/X6/R9-2 }
+Signal "X2/X6/unnamed_net476"
+  { X2/X6/U1-6 X2/X6/R11-1 X2/X6/R10-2 X2/X6/C4-1 }
+Signal "X2/X6/unnamed_net475"
+  { X2/X6/U1-7 X2/X6/C4-2 X2/X6/R12-1 }
+Signal "X2/X6/unnamed_net472"
+  { X2/X6/U1-8 X2/X6/C3-2 X2/X6/R6-2 }
+Signal "X2/X6/unnamed_net468"
+  { X2/X6/U1-3 X2/X6/R1-2 X2/X6/R2-2 }
+Signal "X2/X6/unnamed_net467"
+  { X2/X6/U1-2 X2/X6/R4-1 X2/X6/R3-2 X2/X6/C1-1 }
+Signal "X2/X6/unnamed_net466"
+  { X2/X6/U1-1 X2/X6/C1-2 X2/X6/R5-1 }
+Signal "X2/HKDR-C"
+  { X2/U10-6 X2/X6/R14-1 X2/X6/R7-2 }
+Signal "X2/DDR-C"
+  { X2/U9-6 X2/X6/R1-1 }
+Signal "X2/HKDR-D"
+  { X2/U10-7 X2/X6/R15-1 X2/X6/R13-2 }
+Signal "X2/DDR-D"
+  { X2/U9-7 X2/X6/R8-1 }
+Signal "X2/X5/unnamed_net459"
+  { X2/X5/U1-5 X2/X5/R8-2 X2/X5/R9-2 }
+Signal "X2/X5/unnamed_net458"
+  { X2/X5/U1-6 X2/X5/R11-1 X2/X5/R10-2 X2/X5/C4-1 }
+Signal "X2/X5/unnamed_net457"
+  { X2/X5/U1-7 X2/X5/C4-2 X2/X5/R12-1 }
+Signal "X2/X5/unnamed_net454"
+  { X2/X5/U1-8 X2/X5/C3-2 X2/X5/R6-2 }
+Signal "X2/X5/unnamed_net450"
+  { X2/X5/U1-3 X2/X5/R1-2 X2/X5/R2-2 }
+Signal "X2/X5/unnamed_net449"
+  { X2/X5/U1-2 X2/X5/R4-1 X2/X5/R3-2 X2/X5/C1-1 }
+Signal "X2/X5/unnamed_net448"
+  { X2/X5/U1-1 X2/X5/C1-2 X2/X5/R5-1 }
+Signal "X2/HKDR-A"
+  { X2/U10-4 X2/X5/R14-1 X2/X5/R7-2 }
+Signal "X2/DDR-A"
+  { X2/U9-4 X2/X5/R1-1 }
+Signal "X2/HKDR-B"
+  { X2/U10-5 X2/X5/R15-1 X2/X5/R13-2 }
+Signal "X2/DDR-B"
+  { X2/U9-5 X2/X5/R8-1 }
+Signal "X2/+24"
+  { X2/X6/R6-1 X2/X5/R6-1 X2/L1-2 X2/C28-1 }
+Signal "X2/HKSUB"
+  { X2/U8-10 X2/R57-1 X2/R47-2 }
+Signal "X2/DSUB"
+  { X2/U7-12 X2/R45-1 }
+Signal "X2/unnamed_net442"
+  { X2/R46-2 X2/U4-5 }
+Signal "X2/unnamed_net441"
+  { X2/R45-2 X2/C26-1 X2/R44-1 X2/U4-6 }
+Signal "X2/unnamed_net440"
+  { X2/R42-1 X2/Q2-2 }
+Signal "X2/unnamed_net439"
+  { X2/R43-2 X2/C25-2 X2/Q2-3 X2/R41-1 }
+Signal "X2/unnamed_net438"
+  { X2/C26-2 X2/U4-7 X2/R40-1 }
+Signal "X2/unnamed_net437"
+  { X2/R40-2 X2/Q1-2 }
+Signal "X2/unnamed_net436"
+  { X2/Q2-1 X2/R41-2 X2/Q1-3 }
+Signal "X2/unnamed_net435"
+  { X2/U4-8 X2/R62-2 X2/C24-1 }
+Signal "X2/DBS"
+  { X2/U7-11 X2/R39-1 }
+Signal "X2/unnamed_net434"
+  { X2/R39-2 X2/U4-3 }
+Signal "X2/HKBS"
+  { X2/U8-11 X2/R38-2 }
+Signal "X2/unnamed_net432"
+  { X2/U4-2 X2/R36-1 X2/R37-2 X2/C23-1 }
+Signal "X2/unnamed_net431"
+  { X2/U4-1 X2/C23-2 X2/R35-1 }
+Signal "X2/unnamed_net430"
+  { X2/R54-1 X2/R36-2 X2/R35-2 X2/C22-2 }
+Signal "X2/+15"
+  { X2/R52-1 X2/R49-1 X2/C30-1 X2/L3-2 X2/U3-8 X2/C20-1 }
+Signal "X2/DRD"
+  { X2/U7-10 X2/R34-1 }
+Signal "X2/unnamed_net429"
+  { X2/U3-5 X2/R34-2 }
+Signal "X2/HKRD"
+  { X2/U8-12 X2/R33-2 }
+Signal "X2/unnamed_net428"
+  { X2/U3-6 X2/R31-1 X2/R32-2 X2/C19-1 }
+Signal "X2/unnamed_net427"
+  { X2/U3-7 X2/C19-2 X2/R30-1 }
+Signal "X2/DSCP"
+  { X2/U7-7 X2/R29-1 }
+Signal "X2/unnamed_net426"
+  { X2/U3-3 X2/R29-2 }
+Signal "X2/HKSCP"
+  { X2/U8-7 X2/R28-2 }
+Signal "X2/unnamed_net425"
+  { X2/U3-2 X2/R26-1 X2/R27-2 X2/C18-1 }
+Signal "X2/unnamed_net424"
+  { X2/U3-1 X2/C18-2 X2/R25-1 }
+Signal "X2/DIG2"
+  { X2/U7-6 X2/R24-1 }
+Signal "X2/unnamed_net422"
+  { X2/U2-5 X2/R24-2 }
+Signal "X2/HKIG2"
+  { X2/U8-6 X2/R22-2 }
+Signal "X2/unnamed_net421"
+  { X2/R23-2 X2/U2-6 X2/R20-1 X2/R21-2 X2/C14-1 }
+Signal "X2/unnamed_net420"
+  { X2/U2-7 X2/C14-2 X2/R19-1 }
+Signal "X2/DIG1"
+  { X2/U7-5 X2/R18-1 }
+Signal "X2/unnamed_net418"
+  { X2/U2-3 X2/R18-2 }
+Signal "X2/HKIG1"
+  { X2/U8-5 X2/R16-2 }
+Signal "X2/unnamed_net417"
+  { X2/R17-2 X2/U2-2 X2/R14-1 X2/R15-2 X2/C12-1 }
+Signal "X2/unnamed_net416"
+  { X2/U2-1 X2/C12-2 X2/R13-1 }
+Signal "X2/unnamed_net414"
+  { X2/U11-8 X2/R60-2 X2/C40-1 }
+Signal "X2/TEMP"
+  { X2/U8-9 X2/R12-1 }
+Signal "X2/unnamed_net413"
+  { X2/U1-1 X2/U1-2 X2/R12-2 }
+Signal "X2/unnamed_net412"
+  { X2/R61-1 X2/U5-8 X2/C10-1 }
+Signal "X2/-12"
+  { X2/R53-1 X2/R50-1 X2/C29-1 X2/L2-2 X2/U2-4 X2/C16-1 X2/U1-4 X2/C9-1 }
+Signal "X2/DOG"
+  { X2/U7-4 X2/R11-1 }
+Signal "X2/unnamed_net411"
+  { X2/U1-5 X2/R11-2 }
+Signal "X2/HKOG"
+  { X2/U8-4 X2/R9-2 }
+Signal "X2/unnamed_net410"
+  { X2/R10-2 X2/U1-6 X2/R7-1 X2/R8-2 X2/C7-1 }
+Signal "X2/unnamed_net409"
+  { X2/U1-7 X2/C7-2 X2/R6-1 }
+Signal "X2/unnamed_net407"
+  { X2/U5-2 X2/R5-1 X2/C3-1 X2/R4-2 }
+Signal "X2/unnamed_net406"
+  { X2/U5-1 X2/C3-2 X2/R3-1 }
+Signal "X2/+3.3DAC"
+  { X2/U9-9 X2/C38-2 X2/U9-8 X2/U7-9 X2/C34-2 X2/U7-8 X2/R23-1 X2/R17-1 X2/R10-1 X2/R5-2 X2/R3-2 X2/C2-2 }
+Signal "X2/unnamed_net405"
+  { X2/C5-2 X2/R2-1 }
+Signal "X2/unnamed_net404"
+  { X2/U1-3 X2/U6-3 }
+Signal "X2/unnamed_net403"
+  { X2/C4-1 X2/R1-2 X2/U6-2 }
+Signal "X2/X4/unnamed_net401"
+  { X2/X4/R27-2 X2/X4/C24-1 X2/X4/R28-1 X2/X4/U10-2 }
+Signal "X2/X4/unnamed_net400"
+  { X2/X4/C24-2 X2/X4/R6-1 X2/X4/U10-1 }
+Signal "X2/X4/unnamed_net399"
+  { X2/X4/U12-5 X2/X4/C25-1 X2/X4/R33-2 }
+Signal "X2/X4/unnamed_net397"
+  { X2/X4/C23-2 X2/X4/R26-2 X2/X4/U10-5 }
+Signal "X2/X4/unnamed_net396"
+  { X2/X4/C29-1 X2/X4/R40-1 X2/X4/R39-2 X2/X4/U10-6 }
+Signal "X2/X4/unnamed_net395"
+  { X2/X4/C29-2 X2/X4/R20-1 X2/X4/U10-7 }
+Signal "X2/X4/unnamed_net393"
+  { X2/X4/U11-5 X2/X4/C7-1 X2/X4/R23-2 }
+Signal "X2/X4/unnamed_net392"
+  { X2/X4/C8-1 X2/X4/R22-2 X2/X4/U7-5 }
+Signal "X2/X4/unnamed_net391"
+  { X2/X4/C9-1 X2/X4/R21-2 X2/X4/U3-5 }
+Signal "X2/X4/unnamed_net390"
+  { X2/X4/R1-2 X2/X4/Q2-1 }
+Signal "X2/X4/unnamed_net389"
+  { X2/X4/R42-2 X2/X4/Q2-2 }
+Signal "X2/X4/Vcc6"
+  { X2/X4/U6-6 X2/X4/C13-1 X2/X4/R17-2 X2/X4/U6-5 }
+Signal "X2/X4/Vcc8"
+  { X2/X4/U8-6 X2/X4/C14-1 X2/X4/R18-2 X2/X4/U8-5 }
+Signal "X2/X4/Vcc5"
+  { X2/X4/U5-6 X2/X4/C11-1 X2/X4/R16-2 X2/X4/U5-5 }
+Signal "X2/X4/Vcc4"
+  { X2/X4/U4-6 X2/X4/C5-1 X2/X4/R5-2 X2/X4/U4-5 }
+Signal "X2/X4/unnamed_net388"
+  { X2/X4/R11-1 X2/X4/U12-2 }
+Signal "X2/X4/unnamed_net384"
+  { X2/X4/R38-1 X2/X4/U11-2 }
+Signal "X2/X4/unnamed_net381"
+  { X2/X4/C22-1 X2/X4/U6-3 X2/X4/R15-2 X2/X4/R4-1 }
+Signal "X2/X4/unnamed_net380"
+  { X2/X4/R24-2 X2/X4/C6-1 X2/X4/U9-2 }
+Signal "X2/X4/ADCref"
+  { X2/X4/C3-2 X2/X4/R28-2 X2/X4/R6-2 X2/X4/C16-2 X2/X4/R15-1 X2/X4/U9-1 }
+Signal "X2/X4/inm"
+  { X2/X4/R13-2 X2/X4/C21-1 X2/X4/U9-4 }
+Signal "X2/X4/inp"
+  { X2/X4/C20-1 X2/X4/R14-2 X2/X4/U9-3 }
+Signal "X2/X4/unnamed_net376"
+  { X2/X4/U9-9 X2/X4/C12-1 X2/X4/R19-2 X2/X4/U9-10 }
+Signal "X2/X4/V0"
+  { X2/X4/U10-3 X2/X4/C30-1 X2/X4/R40-2 X2/X4/C28-2 X2/X4/R20-2 X2/X4/U5-3 X2/X4/C2-2 X2/X4/U8-3 X2/X4/C17-1 X2/X4/U3-1 X2/X4/R7-1 }
+Signal "X2/X4/unnamed_net375"
+  { X2/X4/U6-1 X2/X4/R14-1 X2/X4/C19-2 X2/X4/R10-2 }
+Signal "X2/X4/unnamed_net374"
+  { X2/X4/U6-4 X2/X4/C19-1 X2/X4/R10-1 X2/X4/R12-2 }
+Signal "X2/X4/unnamed_net372"
+  { X2/X4/R13-1 X2/X4/U8-1 X2/X4/C4a-2 X2/X4/R12-1 X2/X4/U7-1 X2/X4/C4-2 }
+Signal "X2/X4/unnamed_net371"
+  { X2/X4/R38-2 X2/X4/C4a-1 X2/X4/U7-2 X2/X4/R11-2 X2/X4/U8-4 X2/X4/C4-1 }
+Signal "X2/X4/u5o"
+  { X2/X4/U5-1 X2/X4/U12-1 X2/X4/R2-2 }
+Signal "X2/X4/unnamed_net370"
+  { X2/X4/U5-4 X2/X4/R2-1 X2/X4/R9-2 }
+Signal "X2/X4/unnamed_net369"
+  { X2/X4/U4-4 X2/X4/R7-2 X2/X4/C18-1 X2/X4/R8-1 }
+Signal "X2/X4/u4o"
+  { X2/X4/U4-1 X2/X4/U11-1 X2/X4/C18-2 X2/X4/R9-1 X2/X4/R8-2 }
+Signal "X2/X4/unnamed_net367"
+  { X2/X4/U3-2 X2/X4/U4-3 X2/X4/C1-1 }
+Signal "X2/VHK4"
+  { X2/U10-9 X2/X4/R41-1 X2/X4/R25-2 }
+Signal "X2/X3/unnamed_net364"
+  { X2/X3/R27-2 X2/X3/C24-1 X2/X3/R28-1 X2/X3/U10-2 }
+Signal "X2/X3/unnamed_net363"
+  { X2/X3/C24-2 X2/X3/R6-1 X2/X3/U10-1 }
+Signal "X2/X3/unnamed_net362"
+  { X2/X3/U12-5 X2/X3/C25-1 X2/X3/R33-2 }
+Signal "X2/X3/unnamed_net360"
+  { X2/X3/C23-2 X2/X3/R26-2 X2/X3/U10-5 }
+Signal "X2/X3/unnamed_net359"
+  { X2/X3/C29-1 X2/X3/R40-1 X2/X3/R39-2 X2/X3/U10-6 }
+Signal "X2/X3/unnamed_net358"
+  { X2/X3/C29-2 X2/X3/R20-1 X2/X3/U10-7 }
+Signal "X2/X3/unnamed_net356"
+  { X2/X3/U11-5 X2/X3/C7-1 X2/X3/R23-2 }
+Signal "X2/X3/unnamed_net355"
+  { X2/X3/C8-1 X2/X3/R22-2 X2/X3/U7-5 }
+Signal "X2/X3/unnamed_net354"
+  { X2/X3/C9-1 X2/X3/R21-2 X2/X3/U3-5 }
+Signal "X2/X3/unnamed_net353"
+  { X2/X3/R1-2 X2/X3/Q2-1 }
+Signal "X2/X3/unnamed_net352"
+  { X2/X3/R42-2 X2/X3/Q2-2 }
+Signal "X2/X3/Vcc6"
+  { X2/X3/U6-6 X2/X3/C13-1 X2/X3/R17-2 X2/X3/U6-5 }
+Signal "X2/X3/Vcc8"
+  { X2/X3/U8-6 X2/X3/C14-1 X2/X3/R18-2 X2/X3/U8-5 }
+Signal "X2/X3/Vcc5"
+  { X2/X3/U5-6 X2/X3/C11-1 X2/X3/R16-2 X2/X3/U5-5 }
+Signal "X2/X3/Vcc4"
+  { X2/X3/U4-6 X2/X3/C5-1 X2/X3/R5-2 X2/X3/U4-5 }
+Signal "X2/X3/unnamed_net351"
+  { X2/X3/R11-1 X2/X3/U12-2 }
+Signal "X2/X3/unnamed_net347"
+  { X2/X3/R38-1 X2/X3/U11-2 }
+Signal "X2/X3/unnamed_net344"
+  { X2/X3/C22-1 X2/X3/U6-3 X2/X3/R15-2 X2/X3/R4-1 }
+Signal "X2/X3/unnamed_net343"
+  { X2/X3/R24-2 X2/X3/C6-1 X2/X3/U9-2 }
+Signal "X2/X3/ADCref"
+  { X2/X3/C3-2 X2/X3/R28-2 X2/X3/R6-2 X2/X3/C16-2 X2/X3/R15-1 X2/X3/U9-1 }
+Signal "X2/X3/inm"
+  { X2/X3/R13-2 X2/X3/C21-1 X2/X3/U9-4 }
+Signal "X2/X3/inp"
+  { X2/X3/C20-1 X2/X3/R14-2 X2/X3/U9-3 }
+Signal "X2/X3/unnamed_net339"
+  { X2/X3/U9-9 X2/X3/C12-1 X2/X3/R19-2 X2/X3/U9-10 }
+Signal "X2/X3/V0"
+  { X2/X3/U10-3 X2/X3/C30-1 X2/X3/R40-2 X2/X3/C28-2 X2/X3/R20-2 X2/X3/U5-3 X2/X3/C2-2 X2/X3/U8-3 X2/X3/C17-1 X2/X3/U3-1 X2/X3/R7-1 }
+Signal "X2/X3/unnamed_net338"
+  { X2/X3/U6-1 X2/X3/R14-1 X2/X3/C19-2 X2/X3/R10-2 }
+Signal "X2/X3/unnamed_net337"
+  { X2/X3/U6-4 X2/X3/C19-1 X2/X3/R10-1 X2/X3/R12-2 }
+Signal "X2/X3/unnamed_net335"
+  { X2/X3/R13-1 X2/X3/U8-1 X2/X3/C4a-2 X2/X3/R12-1 X2/X3/U7-1 X2/X3/C4-2 }
+Signal "X2/X3/unnamed_net334"
+  { X2/X3/R38-2 X2/X3/C4a-1 X2/X3/U7-2 X2/X3/R11-2 X2/X3/U8-4 X2/X3/C4-1 }
+Signal "X2/X3/u5o"
+  { X2/X3/U5-1 X2/X3/U12-1 X2/X3/R2-2 }
+Signal "X2/X3/unnamed_net333"
+  { X2/X3/U5-4 X2/X3/R2-1 X2/X3/R9-2 }
+Signal "X2/X3/unnamed_net332"
+  { X2/X3/U4-4 X2/X3/R7-2 X2/X3/C18-1 X2/X3/R8-1 }
+Signal "X2/X3/u4o"
+  { X2/X3/U4-1 X2/X3/U11-1 X2/X3/C18-2 X2/X3/R9-1 X2/X3/R8-2 }
+Signal "X2/X3/unnamed_net330"
+  { X2/X3/U3-2 X2/X3/U4-3 X2/X3/C1-1 }
+Signal "X2/VDD34"
+  { X2/U11-6 X2/U11-7 X2/X4/R24-1 X2/X3/R24-1 }
+Signal "X2/VHK3"
+  { X2/U10-10 X2/X3/R41-1 X2/X3/R25-2 }
+Signal "X2/X2/unnamed_net327"
+  { X2/X2/R27-2 X2/X2/C24-1 X2/X2/R28-1 X2/X2/U10-2 }
+Signal "X2/X2/unnamed_net326"
+  { X2/X2/C24-2 X2/X2/R6-1 X2/X2/U10-1 }
+Signal "X2/X2/unnamed_net325"
+  { X2/X2/U12-5 X2/X2/C25-1 X2/X2/R33-2 }
+Signal "X2/X2/unnamed_net323"
+  { X2/X2/C23-2 X2/X2/R26-2 X2/X2/U10-5 }
+Signal "X2/X2/unnamed_net322"
+  { X2/X2/C29-1 X2/X2/R40-1 X2/X2/R39-2 X2/X2/U10-6 }
+Signal "X2/X2/unnamed_net321"
+  { X2/X2/C29-2 X2/X2/R20-1 X2/X2/U10-7 }
+Signal "X2/X2/unnamed_net319"
+  { X2/X2/U11-5 X2/X2/C7-1 X2/X2/R23-2 }
+Signal "X2/X2/unnamed_net318"
+  { X2/X2/C8-1 X2/X2/R22-2 X2/X2/U7-5 }
+Signal "X2/X2/unnamed_net317"
+  { X2/X2/C9-1 X2/X2/R21-2 X2/X2/U3-5 }
+Signal "X2/X2/unnamed_net316"
+  { X2/X2/R1-2 X2/X2/Q2-1 }
+Signal "X2/X2/unnamed_net315"
+  { X2/X2/R42-2 X2/X2/Q2-2 }
+Signal "X2/X2/Vcc6"
+  { X2/X2/U6-6 X2/X2/C13-1 X2/X2/R17-2 X2/X2/U6-5 }
+Signal "X2/X2/Vcc8"
+  { X2/X2/U8-6 X2/X2/C14-1 X2/X2/R18-2 X2/X2/U8-5 }
+Signal "X2/X2/Vcc5"
+  { X2/X2/U5-6 X2/X2/C11-1 X2/X2/R16-2 X2/X2/U5-5 }
+Signal "X2/X2/Vcc4"
+  { X2/X2/U4-6 X2/X2/C5-1 X2/X2/R5-2 X2/X2/U4-5 }
+Signal "X2/X2/unnamed_net314"
+  { X2/X2/R11-1 X2/X2/U12-2 }
+Signal "X2/X2/unnamed_net310"
+  { X2/X2/R38-1 X2/X2/U11-2 }
+Signal "X2/X2/unnamed_net307"
+  { X2/X2/C22-1 X2/X2/U6-3 X2/X2/R15-2 X2/X2/R4-1 }
+Signal "X2/X2/unnamed_net306"
+  { X2/X2/R24-2 X2/X2/C6-1 X2/X2/U9-2 }
+Signal "X2/X2/ADCref"
+  { X2/X2/C3-2 X2/X2/R28-2 X2/X2/R6-2 X2/X2/C16-2 X2/X2/R15-1 X2/X2/U9-1 }
+Signal "X2/X2/inm"
+  { X2/X2/R13-2 X2/X2/C21-1 X2/X2/U9-4 }
+Signal "X2/X2/inp"
+  { X2/X2/C20-1 X2/X2/R14-2 X2/X2/U9-3 }
+Signal "X2/X2/unnamed_net302"
+  { X2/X2/U9-9 X2/X2/C12-1 X2/X2/R19-2 X2/X2/U9-10 }
+Signal "X2/X2/V0"
+  { X2/X2/U10-3 X2/X2/C30-1 X2/X2/R40-2 X2/X2/C28-2 X2/X2/R20-2 X2/X2/U5-3 X2/X2/C2-2 X2/X2/U8-3 X2/X2/C17-1 X2/X2/U3-1 X2/X2/R7-1 }
+Signal "X2/X2/unnamed_net301"
+  { X2/X2/U6-1 X2/X2/R14-1 X2/X2/C19-2 X2/X2/R10-2 }
+Signal "X2/X2/unnamed_net300"
+  { X2/X2/U6-4 X2/X2/C19-1 X2/X2/R10-1 X2/X2/R12-2 }
+Signal "X2/X2/unnamed_net298"
+  { X2/X2/R13-1 X2/X2/U8-1 X2/X2/C4a-2 X2/X2/R12-1 X2/X2/U7-1 X2/X2/C4-2 }
+Signal "X2/X2/unnamed_net297"
+  { X2/X2/R38-2 X2/X2/C4a-1 X2/X2/U7-2 X2/X2/R11-2 X2/X2/U8-4 X2/X2/C4-1 }
+Signal "X2/X2/u5o"
+  { X2/X2/U5-1 X2/X2/U12-1 X2/X2/R2-2 }
+Signal "X2/X2/unnamed_net296"
+  { X2/X2/U5-4 X2/X2/R2-1 X2/X2/R9-2 }
+Signal "X2/X2/unnamed_net295"
+  { X2/X2/U4-4 X2/X2/R7-2 X2/X2/C18-1 X2/X2/R8-1 }
+Signal "X2/X2/u4o"
+  { X2/X2/U4-1 X2/X2/U11-1 X2/X2/C18-2 X2/X2/R9-1 X2/X2/R8-2 }
+Signal "X2/X2/unnamed_net293"
+  { X2/X2/U3-2 X2/X2/U4-3 X2/X2/C1-1 }
+Signal "X2/VHK2"
+  { X2/U10-11 X2/X2/R41-1 X2/X2/R25-2 }
+Signal "X2/X1/unnamed_net290"
+  { X2/X1/R27-2 X2/X1/C24-1 X2/X1/R28-1 X2/X1/U10-2 }
+Signal "X2/X1/unnamed_net289"
+  { X2/X1/C24-2 X2/X1/R6-1 X2/X1/U10-1 }
+Signal "X2/X1/unnamed_net288"
+  { X2/X1/U12-5 X2/X1/C25-1 X2/X1/R33-2 }
+Signal "X2/X1/unnamed_net286"
+  { X2/X1/C23-2 X2/X1/R26-2 X2/X1/U10-5 }
+Signal "X2/X1/unnamed_net285"
+  { X2/X1/C29-1 X2/X1/R40-1 X2/X1/R39-2 X2/X1/U10-6 }
+Signal "X2/X1/unnamed_net284"
+  { X2/X1/C29-2 X2/X1/R20-1 X2/X1/U10-7 }
+Signal "X2/X1/unnamed_net282"
+  { X2/X1/U11-5 X2/X1/C7-1 X2/X1/R23-2 }
+Signal "X2/X1/unnamed_net281"
+  { X2/X1/C8-1 X2/X1/R22-2 X2/X1/U7-5 }
+Signal "X2/X1/unnamed_net280"
+  { X2/X1/C9-1 X2/X1/R21-2 X2/X1/U3-5 }
+Signal "X2/X1/unnamed_net279"
+  { X2/X1/R1-2 X2/X1/Q2-1 }
+Signal "X2/X1/unnamed_net278"
+  { X2/X1/R42-2 X2/X1/Q2-2 }
+Signal "X2/X1/Vcc6"
+  { X2/X1/U6-6 X2/X1/C13-1 X2/X1/R17-2 X2/X1/U6-5 }
+Signal "X2/X1/Vcc8"
+  { X2/X1/U8-6 X2/X1/C14-1 X2/X1/R18-2 X2/X1/U8-5 }
+Signal "X2/X1/Vcc5"
+  { X2/X1/U5-6 X2/X1/C11-1 X2/X1/R16-2 X2/X1/U5-5 }
+Signal "X2/X1/Vcc4"
+  { X2/X1/U4-6 X2/X1/C5-1 X2/X1/R5-2 X2/X1/U4-5 }
+Signal "X2/X1/unnamed_net277"
+  { X2/X1/R11-1 X2/X1/U12-2 }
+Signal "X2/X1/unnamed_net273"
+  { X2/X1/R38-1 X2/X1/U11-2 }
+Signal "X2/X1/unnamed_net270"
+  { X2/X1/C22-1 X2/X1/U6-3 X2/X1/R15-2 X2/X1/R4-1 }
+Signal "X2/X1/unnamed_net269"
+  { X2/X1/R24-2 X2/X1/C6-1 X2/X1/U9-2 }
+Signal "X2/X1/ADCref"
+  { X2/X1/C3-2 X2/X1/R28-2 X2/X1/R6-2 X2/X1/C16-2 X2/X1/R15-1 X2/X1/U9-1 }
+Signal "X2/X1/inm"
+  { X2/X1/R13-2 X2/X1/C21-1 X2/X1/U9-4 }
+Signal "X2/X1/inp"
+  { X2/X1/C20-1 X2/X1/R14-2 X2/X1/U9-3 }
+Signal "X2/X1/unnamed_net265"
+  { X2/X1/U9-9 X2/X1/C12-1 X2/X1/R19-2 X2/X1/U9-10 }
+Signal "X2/X1/V0"
+  { X2/X1/U10-3 X2/X1/C30-1 X2/X1/R40-2 X2/X1/C28-2 X2/X1/R20-2 X2/X1/U5-3 X2/X1/C2-2 X2/X1/U8-3 X2/X1/C17-1 X2/X1/U3-1 X2/X1/R7-1 }
+Signal "X2/X1/unnamed_net264"
+  { X2/X1/U6-1 X2/X1/R14-1 X2/X1/C19-2 X2/X1/R10-2 }
+Signal "X2/X1/unnamed_net263"
+  { X2/X1/U6-4 X2/X1/C19-1 X2/X1/R10-1 X2/X1/R12-2 }
+Signal "X2/X1/unnamed_net261"
+  { X2/X1/R13-1 X2/X1/U8-1 X2/X1/C4a-2 X2/X1/R12-1 X2/X1/U7-1 X2/X1/C4-2 }
+Signal "X2/X1/unnamed_net260"
+  { X2/X1/R38-2 X2/X1/C4a-1 X2/X1/U7-2 X2/X1/R11-2 X2/X1/U8-4 X2/X1/C4-1 }
+Signal "X2/X1/u5o"
+  { X2/X1/U5-1 X2/X1/U12-1 X2/X1/R2-2 }
+Signal "X2/X1/unnamed_net259"
+  { X2/X1/U5-4 X2/X1/R2-1 X2/X1/R9-2 }
+Signal "X2/X1/unnamed_net258"
+  { X2/X1/U4-4 X2/X1/R7-2 X2/X1/C18-1 X2/X1/R8-1 }
+Signal "X2/X1/u4o"
+  { X2/X1/U4-1 X2/X1/U11-1 X2/X1/C18-2 X2/X1/R9-1 X2/X1/R8-2 }
+Signal "X2/X1/unnamed_net256"
+  { X2/X1/U3-2 X2/X1/U4-3 X2/X1/C1-1 }
+Signal "X2/VDD12"
+  { X2/U11-2 X2/U11-1 X2/X2/R24-1 X2/X1/R24-1 }
+Signal "X2/VHK1"
+  { X2/U10-12 X2/X1/R41-1 X2/X1/R25-2 }
+Signal "X2/unnamed_net252"
+  { X2/X4/U9-8 X2/X3/U9-8 X2/X2/U9-8 X2/X1/U9-8 X2/R59-2 }
+Signal "X2/VIO"
+  { X2/U5-6 X2/U5-7 X2/X4/R19-1 X2/X3/R19-1 X2/X2/R19-1 X2/X1/R19-1 }
+Signal "X2/+2.5ref"
+  { X2/U11-5 X2/U11-3 X2/U5-5 X2/U5-3 X2/R2-2 X2/U6-6 X2/X4/R26-1 X2/X3/R26-1 X2/X2/R26-1 X2/X1/R26-1 }
+Signal "X2/+5"
+  { X2/R51-2 X2/R48-2 X2/C31-2 X2/L4-2 X2/R62-1 X2/U2-8 X2/C15-1 X2/R60-1 X2/R61-2 X2/U1-8 X2/C8-1 X2/R1-1 X2/X4/C10-1 X2/X4/U10-8 X2/X4/R18-1 X2/X4/R17-1 X2/X4/R16-1 X2/X4/R5-1 X2/X4/R22-1 X2/X4/R23-1 X2/X3/C10-1 X2/X3/U10-8 X2/X3/R18-1 X2/X3/R17-1 X2/X3/R16-1 X2/X3/R5-1 X2/X3/R22-1 X2/X3/R23-1 X2/X2/C10-1 X2/X2/U10-8 X2/X2/R18-1 X2/X2/R17-1 X2/X2/R16-1 X2/X2/R5-1 X2/X2/R22-1 X2/X2/R23-1 X2/X1/C10-1 X2/X1/U10-8 X2/X1/R18-1 X2/X1/R17-1 X2/X1/R16-1 X2/X1/R5-1 X2/X1/R22-1 X2/X1/R23-1 }
+Signal "OUT-D-2"
+  { J2-31 X2/X4/R42-1 X2/X4/R25-1 X2/X4/C1-2 }
+Signal "OUT-C-2"
+  { J2-35 X2/X3/R42-1 X2/X3/R25-1 X2/X3/C1-2 }
+Signal "OUT-B-2"
+  { J2-43 X2/X2/R42-1 X2/X2/R25-1 X2/X2/C1-2 }
+Signal "OUT-A-2"
+  { J2-47 X2/X1/R42-1 X2/X1/R25-1 X2/X1/C1-2 }
+Signal "HK24"
+  { Js-74 X2/U10-2 }
+Signal "HK16"
+  { Js-73 X2/U8-2 }
+Signal "\_DS24\_"
+  { Js-166 X2/U9-2 }
+Signal "\_DS16\_"
+  { Js-164 X2/U7-2 }
+Signal "SDO-D-2"
+  { Js-50 X2/X4/U9-7 }
+Signal "SDO-C-2"
+  { Js-48 X2/X3/U9-7 }
+Signal "SDO-B-2"
+  { Js-46 X2/X2/U9-7 }
+Signal "SDO-A-2"
+  { Js-44 X2/X1/U9-7 }
+Signal "DR-D-2"
+  { J2-30 X2/X6/R13-1 X2/X6/R11-2 X2/X6/R12-2 X2/X6/C5-2 }
+Signal "DR-C-2"
+  { J2-36 X2/X6/R7-1 X2/X6/R4-2 X2/X6/R5-2 X2/X6/C2-2 }
+Signal "DR-B-2"
+  { J2-42 X2/X5/R13-1 X2/X5/R11-2 X2/X5/R12-2 X2/X5/C5-2 }
+Signal "DR-A-2"
+  { J2-48 X2/X5/R7-1 X2/X5/R4-2 X2/X5/R5-2 X2/X5/C2-2 }
+Signal "RD-2"
+  { J2-34 X2/X6/R9-1 X2/X6/R2-1 X2/X5/R9-1 X2/X5/R2-1 X2/C21-2 X2/R33-1 X2/R31-2 X2/R30-2 }
+Signal "Backside-2"
+  { J2-1 X2/R54-2 X2/R38-1 }
+Signal "VSUB-2"
+  { J2-26 X2/C27-2 X2/R47-1 X2/R44-2 X2/R42-2 }
+Signal "SCP-2"
+  { J2-51 J2-39 X2/R28-1 X2/R26-2 X2/R25-2 X2/C17-2 }
+Signal "OG-2"
+  { R19-1 R21-1 R20-1 R18-1 X2/R9-1 X2/R7-2 X2/R6-2 X2/C6-2 }
+Signal "IG2-2"
+  { J2-3 X2/R22-1 X2/R20-2 X2/R19-2 X2/C13-2 }
+Signal "IG1-2"
+  { J2-2 X2/R16-1 X2/R14-2 X2/R13-2 X2/C11-2 }
+Signal "X1/unnamed_net246"
+  { X1/R53-2 X1/C37-1 X1/U10-3 }
+Signal "X1/unnamed_net245"
+  { X1/R52-2 X1/U10-13 X1/C36-1 }
+Signal "X1/unnamed_net243"
+  { X1/C39-2 X1/R51-1 X1/U9-3 }
+Signal "X1/unnamed_net241"
+  { X1/R50-2 X1/C33-1 X1/U8-3 }
+Signal "X1/unnamed_net240"
+  { X1/R49-2 X1/U8-13 X1/C32-1 }
+Signal "X1/unnamed_net238"
+  { X1/C35-2 X1/R48-1 X1/U7-3 }
+Signal "X1/X6/unnamed_net230"
+  { X1/X6/U1-5 X1/X6/R8-2 X1/X6/R9-2 }
+Signal "X1/X6/unnamed_net229"
+  { X1/X6/U1-6 X1/X6/R11-1 X1/X6/R10-2 X1/X6/C4-1 }
+Signal "X1/X6/unnamed_net228"
+  { X1/X6/U1-7 X1/X6/C4-2 X1/X6/R12-1 }
+Signal "X1/X6/unnamed_net225"
+  { X1/X6/U1-8 X1/X6/C3-2 X1/X6/R6-2 }
+Signal "X1/X6/unnamed_net221"
+  { X1/X6/U1-3 X1/X6/R1-2 X1/X6/R2-2 }
+Signal "X1/X6/unnamed_net220"
+  { X1/X6/U1-2 X1/X6/R4-1 X1/X6/R3-2 X1/X6/C1-1 }
+Signal "X1/X6/unnamed_net219"
+  { X1/X6/U1-1 X1/X6/C1-2 X1/X6/R5-1 }
+Signal "X1/HKDR-C"
+  { X1/U10-6 X1/X6/R14-1 X1/X6/R7-2 }
+Signal "X1/DDR-C"
+  { X1/U9-6 X1/X6/R1-1 }
+Signal "X1/HKDR-D"
+  { X1/U10-7 X1/X6/R15-1 X1/X6/R13-2 }
+Signal "X1/DDR-D"
+  { X1/U9-7 X1/X6/R8-1 }
+Signal "X1/X5/unnamed_net212"
+  { X1/X5/U1-5 X1/X5/R8-2 X1/X5/R9-2 }
+Signal "X1/X5/unnamed_net211"
+  { X1/X5/U1-6 X1/X5/R11-1 X1/X5/R10-2 X1/X5/C4-1 }
+Signal "X1/X5/unnamed_net210"
+  { X1/X5/U1-7 X1/X5/C4-2 X1/X5/R12-1 }
+Signal "X1/X5/unnamed_net207"
+  { X1/X5/U1-8 X1/X5/C3-2 X1/X5/R6-2 }
+Signal "X1/X5/unnamed_net203"
+  { X1/X5/U1-3 X1/X5/R1-2 X1/X5/R2-2 }
+Signal "X1/X5/unnamed_net202"
+  { X1/X5/U1-2 X1/X5/R4-1 X1/X5/R3-2 X1/X5/C1-1 }
+Signal "X1/X5/unnamed_net201"
+  { X1/X5/U1-1 X1/X5/C1-2 X1/X5/R5-1 }
+Signal "X1/HKDR-A"
+  { X1/U10-4 X1/X5/R14-1 X1/X5/R7-2 }
+Signal "X1/DDR-A"
+  { X1/U9-4 X1/X5/R1-1 }
+Signal "X1/HKDR-B"
+  { X1/U10-5 X1/X5/R15-1 X1/X5/R13-2 }
+Signal "X1/DDR-B"
+  { X1/U9-5 X1/X5/R8-1 }
+Signal "X1/+24"
+  { X1/X6/R6-1 X1/X5/R6-1 X1/L1-2 X1/C28-1 }
+Signal "X1/HKSUB"
+  { X1/U8-10 X1/R57-1 X1/R47-2 }
+Signal "X1/DSUB"
+  { X1/U7-12 X1/R45-1 }
+Signal "X1/unnamed_net195"
+  { X1/R46-2 X1/U4-5 }
+Signal "X1/unnamed_net194"
+  { X1/R45-2 X1/C26-1 X1/R44-1 X1/U4-6 }
+Signal "X1/unnamed_net193"
+  { X1/R42-1 X1/Q2-2 }
+Signal "X1/unnamed_net192"
+  { X1/R43-2 X1/C25-2 X1/Q2-3 X1/R41-1 }
+Signal "X1/unnamed_net191"
+  { X1/C26-2 X1/U4-7 X1/R40-1 }
+Signal "X1/unnamed_net190"
+  { X1/R40-2 X1/Q1-2 }
+Signal "X1/unnamed_net189"
+  { X1/Q2-1 X1/R41-2 X1/Q1-3 }
+Signal "X1/unnamed_net188"
+  { X1/U4-8 X1/R62-2 X1/C24-1 }
+Signal "X1/DBS"
+  { X1/U7-11 X1/R39-1 }
+Signal "X1/unnamed_net187"
+  { X1/R39-2 X1/U4-3 }
+Signal "X1/HKBS"
+  { X1/U8-11 X1/R38-2 }
+Signal "X1/unnamed_net185"
+  { X1/U4-2 X1/R36-1 X1/R37-2 X1/C23-1 }
+Signal "X1/unnamed_net184"
+  { X1/U4-1 X1/C23-2 X1/R35-1 }
+Signal "X1/unnamed_net183"
+  { X1/R54-1 X1/R36-2 X1/R35-2 X1/C22-2 }
+Signal "X1/+15"
+  { X1/R52-1 X1/R49-1 X1/C30-1 X1/L3-2 X1/U3-8 X1/C20-1 }
+Signal "X1/DRD"
+  { X1/U7-10 X1/R34-1 }
+Signal "X1/unnamed_net182"
+  { X1/U3-5 X1/R34-2 }
+Signal "X1/HKRD"
+  { X1/U8-12 X1/R33-2 }
+Signal "X1/unnamed_net181"
+  { X1/U3-6 X1/R31-1 X1/R32-2 X1/C19-1 }
+Signal "X1/unnamed_net180"
+  { X1/U3-7 X1/C19-2 X1/R30-1 }
+Signal "X1/DSCP"
+  { X1/U7-7 X1/R29-1 }
+Signal "X1/unnamed_net179"
+  { X1/U3-3 X1/R29-2 }
+Signal "X1/HKSCP"
+  { X1/U8-7 X1/R28-2 }
+Signal "X1/unnamed_net178"
+  { X1/U3-2 X1/R26-1 X1/R27-2 X1/C18-1 }
+Signal "X1/unnamed_net177"
+  { X1/U3-1 X1/C18-2 X1/R25-1 }
+Signal "X1/DIG2"
+  { X1/U7-6 X1/R24-1 }
+Signal "X1/unnamed_net175"
+  { X1/U2-5 X1/R24-2 }
+Signal "X1/HKIG2"
+  { X1/U8-6 X1/R22-2 }
+Signal "X1/unnamed_net174"
+  { X1/R23-2 X1/U2-6 X1/R20-1 X1/R21-2 X1/C14-1 }
+Signal "X1/unnamed_net173"
+  { X1/U2-7 X1/C14-2 X1/R19-1 }
+Signal "X1/DIG1"
+  { X1/U7-5 X1/R18-1 }
+Signal "X1/unnamed_net171"
+  { X1/U2-3 X1/R18-2 }
+Signal "X1/HKIG1"
+  { X1/U8-5 X1/R16-2 }
+Signal "X1/unnamed_net170"
+  { X1/R17-2 X1/U2-2 X1/R14-1 X1/R15-2 X1/C12-1 }
+Signal "X1/unnamed_net169"
+  { X1/U2-1 X1/C12-2 X1/R13-1 }
+Signal "X1/unnamed_net167"
+  { X1/U11-8 X1/R60-2 X1/C40-1 }
+Signal "X1/TEMP"
+  { X1/U8-9 X1/R12-1 }
+Signal "X1/unnamed_net166"
+  { X1/U1-1 X1/U1-2 X1/R12-2 }
+Signal "X1/unnamed_net165"
+  { X1/R61-1 X1/U5-8 X1/C10-1 }
+Signal "X1/-12"
+  { X1/R53-1 X1/R50-1 X1/C29-1 X1/L2-2 X1/U2-4 X1/C16-1 X1/U1-4 X1/C9-1 }
+Signal "X1/DOG"
+  { X1/U7-4 X1/R11-1 }
+Signal "X1/unnamed_net164"
+  { X1/U1-5 X1/R11-2 }
+Signal "X1/HKOG"
+  { X1/U8-4 X1/R9-2 }
+Signal "X1/unnamed_net163"
+  { X1/R10-2 X1/U1-6 X1/R7-1 X1/R8-2 X1/C7-1 }
+Signal "X1/unnamed_net162"
+  { X1/U1-7 X1/C7-2 X1/R6-1 }
+Signal "X1/unnamed_net160"
+  { X1/U5-2 X1/R5-1 X1/C3-1 X1/R4-2 }
+Signal "X1/unnamed_net159"
+  { X1/U5-1 X1/C3-2 X1/R3-1 }
+Signal "X1/+3.3DAC"
+  { X1/U9-9 X1/C38-2 X1/U9-8 X1/U7-9 X1/C34-2 X1/U7-8 X1/R23-1 X1/R17-1 X1/R10-1 X1/R5-2 X1/R3-2 X1/C2-2 }
+Signal "X1/unnamed_net158"
+  { X1/C5-2 X1/R2-1 }
+Signal "X1/unnamed_net157"
+  { X1/U1-3 X1/U6-3 }
+Signal "X1/unnamed_net156"
+  { X1/C4-1 X1/R1-2 X1/U6-2 }
+Signal "X1/X4/unnamed_net154"
+  { X1/X4/R27-2 X1/X4/C24-1 X1/X4/R28-1 X1/X4/U10-2 }
+Signal "X1/X4/unnamed_net153"
+  { X1/X4/C24-2 X1/X4/R6-1 X1/X4/U10-1 }
+Signal "X1/X4/unnamed_net152"
+  { X1/X4/U12-5 X1/X4/C25-1 X1/X4/R33-2 }
+Signal "X1/X4/unnamed_net150"
+  { X1/X4/C23-2 X1/X4/R26-2 X1/X4/U10-5 }
+Signal "X1/X4/unnamed_net149"
+  { X1/X4/C29-1 X1/X4/R40-1 X1/X4/R39-2 X1/X4/U10-6 }
+Signal "X1/X4/unnamed_net148"
+  { X1/X4/C29-2 X1/X4/R20-1 X1/X4/U10-7 }
+Signal "X1/X4/unnamed_net146"
+  { X1/X4/U11-5 X1/X4/C7-1 X1/X4/R23-2 }
+Signal "X1/X4/unnamed_net145"
+  { X1/X4/C8-1 X1/X4/R22-2 X1/X4/U7-5 }
+Signal "X1/X4/unnamed_net144"
+  { X1/X4/C9-1 X1/X4/R21-2 X1/X4/U3-5 }
+Signal "X1/X4/unnamed_net143"
+  { X1/X4/R1-2 X1/X4/Q2-1 }
+Signal "X1/X4/unnamed_net142"
+  { X1/X4/R42-2 X1/X4/Q2-2 }
+Signal "X1/X4/Vcc6"
+  { X1/X4/U6-6 X1/X4/C13-1 X1/X4/R17-2 X1/X4/U6-5 }
+Signal "X1/X4/Vcc8"
+  { X1/X4/U8-6 X1/X4/C14-1 X1/X4/R18-2 X1/X4/U8-5 }
+Signal "X1/X4/Vcc5"
+  { X1/X4/U5-6 X1/X4/C11-1 X1/X4/R16-2 X1/X4/U5-5 }
+Signal "X1/X4/Vcc4"
+  { X1/X4/U4-6 X1/X4/C5-1 X1/X4/R5-2 X1/X4/U4-5 }
+Signal "X1/X4/unnamed_net141"
+  { X1/X4/R11-1 X1/X4/U12-2 }
+Signal "X1/X4/unnamed_net137"
+  { X1/X4/R38-1 X1/X4/U11-2 }
+Signal "X1/X4/unnamed_net134"
+  { X1/X4/C22-1 X1/X4/U6-3 X1/X4/R15-2 X1/X4/R4-1 }
+Signal "X1/X4/unnamed_net133"
+  { X1/X4/R24-2 X1/X4/C6-1 X1/X4/U9-2 }
+Signal "X1/X4/ADCref"
+  { X1/X4/C3-2 X1/X4/R28-2 X1/X4/R6-2 X1/X4/C16-2 X1/X4/R15-1 X1/X4/U9-1 }
+Signal "X1/X4/inm"
+  { X1/X4/R13-2 X1/X4/C21-1 X1/X4/U9-4 }
+Signal "X1/X4/inp"
+  { X1/X4/C20-1 X1/X4/R14-2 X1/X4/U9-3 }
+Signal "X1/X4/unnamed_net129"
+  { X1/X4/U9-9 X1/X4/C12-1 X1/X4/R19-2 X1/X4/U9-10 }
+Signal "X1/X4/V0"
+  { X1/X4/U10-3 X1/X4/C30-1 X1/X4/R40-2 X1/X4/C28-2 X1/X4/R20-2 X1/X4/U5-3 X1/X4/C2-2 X1/X4/U8-3 X1/X4/C17-1 X1/X4/U3-1 X1/X4/R7-1 }
+Signal "X1/X4/unnamed_net128"
+  { X1/X4/U6-1 X1/X4/R14-1 X1/X4/C19-2 X1/X4/R10-2 }
+Signal "X1/X4/unnamed_net127"
+  { X1/X4/U6-4 X1/X4/C19-1 X1/X4/R10-1 X1/X4/R12-2 }
+Signal "X1/X4/unnamed_net125"
+  { X1/X4/R13-1 X1/X4/U8-1 X1/X4/C4a-2 X1/X4/R12-1 X1/X4/U7-1 X1/X4/C4-2 }
+Signal "X1/X4/unnamed_net124"
+  { X1/X4/R38-2 X1/X4/C4a-1 X1/X4/U7-2 X1/X4/R11-2 X1/X4/U8-4 X1/X4/C4-1 }
+Signal "X1/X4/u5o"
+  { X1/X4/U5-1 X1/X4/U12-1 X1/X4/R2-2 }
+Signal "X1/X4/unnamed_net123"
+  { X1/X4/U5-4 X1/X4/R2-1 X1/X4/R9-2 }
+Signal "X1/X4/unnamed_net122"
+  { X1/X4/U4-4 X1/X4/R7-2 X1/X4/C18-1 X1/X4/R8-1 }
+Signal "X1/X4/u4o"
+  { X1/X4/U4-1 X1/X4/U11-1 X1/X4/C18-2 X1/X4/R9-1 X1/X4/R8-2 }
+Signal "X1/X4/unnamed_net120"
+  { X1/X4/U3-2 X1/X4/U4-3 X1/X4/C1-1 }
+Signal "X1/VHK4"
+  { X1/U10-9 X1/X4/R41-1 X1/X4/R25-2 }
+Signal "X1/X3/unnamed_net117"
+  { X1/X3/R27-2 X1/X3/C24-1 X1/X3/R28-1 X1/X3/U10-2 }
+Signal "X1/X3/unnamed_net116"
+  { X1/X3/C24-2 X1/X3/R6-1 X1/X3/U10-1 }
+Signal "X1/X3/unnamed_net115"
+  { X1/X3/U12-5 X1/X3/C25-1 X1/X3/R33-2 }
+Signal "X1/X3/unnamed_net113"
+  { X1/X3/C23-2 X1/X3/R26-2 X1/X3/U10-5 }
+Signal "X1/X3/unnamed_net112"
+  { X1/X3/C29-1 X1/X3/R40-1 X1/X3/R39-2 X1/X3/U10-6 }
+Signal "X1/X3/unnamed_net111"
+  { X1/X3/C29-2 X1/X3/R20-1 X1/X3/U10-7 }
+Signal "X1/X3/unnamed_net109"
+  { X1/X3/U11-5 X1/X3/C7-1 X1/X3/R23-2 }
+Signal "X1/X3/unnamed_net108"
+  { X1/X3/C8-1 X1/X3/R22-2 X1/X3/U7-5 }
+Signal "X1/X3/unnamed_net107"
+  { X1/X3/C9-1 X1/X3/R21-2 X1/X3/U3-5 }
+Signal "X1/X3/unnamed_net106"
+  { X1/X3/R1-2 X1/X3/Q2-1 }
+Signal "X1/X3/unnamed_net105"
+  { X1/X3/R42-2 X1/X3/Q2-2 }
+Signal "X1/X3/Vcc6"
+  { X1/X3/U6-6 X1/X3/C13-1 X1/X3/R17-2 X1/X3/U6-5 }
+Signal "X1/X3/Vcc8"
+  { X1/X3/U8-6 X1/X3/C14-1 X1/X3/R18-2 X1/X3/U8-5 }
+Signal "X1/X3/Vcc5"
+  { X1/X3/U5-6 X1/X3/C11-1 X1/X3/R16-2 X1/X3/U5-5 }
+Signal "X1/X3/Vcc4"
+  { X1/X3/U4-6 X1/X3/C5-1 X1/X3/R5-2 X1/X3/U4-5 }
+Signal "X1/X3/unnamed_net104"
+  { X1/X3/R11-1 X1/X3/U12-2 }
+Signal "X1/X3/unnamed_net100"
+  { X1/X3/R38-1 X1/X3/U11-2 }
+Signal "X1/X3/unnamed_net97"
+  { X1/X3/C22-1 X1/X3/U6-3 X1/X3/R15-2 X1/X3/R4-1 }
+Signal "X1/X3/unnamed_net96"
+  { X1/X3/R24-2 X1/X3/C6-1 X1/X3/U9-2 }
+Signal "X1/X3/ADCref"
+  { X1/X3/C3-2 X1/X3/R28-2 X1/X3/R6-2 X1/X3/C16-2 X1/X3/R15-1 X1/X3/U9-1 }
+Signal "X1/X3/inm"
+  { X1/X3/R13-2 X1/X3/C21-1 X1/X3/U9-4 }
+Signal "X1/X3/inp"
+  { X1/X3/C20-1 X1/X3/R14-2 X1/X3/U9-3 }
+Signal "X1/X3/unnamed_net92"
+  { X1/X3/U9-9 X1/X3/C12-1 X1/X3/R19-2 X1/X3/U9-10 }
+Signal "X1/X3/V0"
+  { X1/X3/U10-3 X1/X3/C30-1 X1/X3/R40-2 X1/X3/C28-2 X1/X3/R20-2 X1/X3/U5-3 X1/X3/C2-2 X1/X3/U8-3 X1/X3/C17-1 X1/X3/U3-1 X1/X3/R7-1 }
+Signal "X1/X3/unnamed_net91"
+  { X1/X3/U6-1 X1/X3/R14-1 X1/X3/C19-2 X1/X3/R10-2 }
+Signal "X1/X3/unnamed_net90"
+  { X1/X3/U6-4 X1/X3/C19-1 X1/X3/R10-1 X1/X3/R12-2 }
+Signal "X1/X3/unnamed_net88"
+  { X1/X3/R13-1 X1/X3/U8-1 X1/X3/C4a-2 X1/X3/R12-1 X1/X3/U7-1 X1/X3/C4-2 }
+Signal "X1/X3/unnamed_net87"
+  { X1/X3/R38-2 X1/X3/C4a-1 X1/X3/U7-2 X1/X3/R11-2 X1/X3/U8-4 X1/X3/C4-1 }
+Signal "X1/X3/u5o"
+  { X1/X3/U5-1 X1/X3/U12-1 X1/X3/R2-2 }
+Signal "X1/X3/unnamed_net86"
+  { X1/X3/U5-4 X1/X3/R2-1 X1/X3/R9-2 }
+Signal "X1/X3/unnamed_net85"
+  { X1/X3/U4-4 X1/X3/R7-2 X1/X3/C18-1 X1/X3/R8-1 }
+Signal "X1/X3/u4o"
+  { X1/X3/U4-1 X1/X3/U11-1 X1/X3/C18-2 X1/X3/R9-1 X1/X3/R8-2 }
+Signal "X1/X3/unnamed_net83"
+  { X1/X3/U3-2 X1/X3/U4-3 X1/X3/C1-1 }
+Signal "X1/VDD34"
+  { X1/U11-6 X1/U11-7 X1/X4/R24-1 X1/X3/R24-1 }
+Signal "X1/VHK3"
+  { X1/U10-10 X1/X3/R41-1 X1/X3/R25-2 }
+Signal "X1/X2/unnamed_net80"
+  { X1/X2/R27-2 X1/X2/C24-1 X1/X2/R28-1 X1/X2/U10-2 }
+Signal "X1/X2/unnamed_net79"
+  { X1/X2/C24-2 X1/X2/R6-1 X1/X2/U10-1 }
+Signal "X1/X2/unnamed_net78"
+  { X1/X2/U12-5 X1/X2/C25-1 X1/X2/R33-2 }
+Signal "X1/X2/unnamed_net76"
+  { X1/X2/C23-2 X1/X2/R26-2 X1/X2/U10-5 }
+Signal "X1/X2/unnamed_net75"
+  { X1/X2/C29-1 X1/X2/R40-1 X1/X2/R39-2 X1/X2/U10-6 }
+Signal "X1/X2/unnamed_net74"
+  { X1/X2/C29-2 X1/X2/R20-1 X1/X2/U10-7 }
+Signal "X1/X2/unnamed_net72"
+  { X1/X2/U11-5 X1/X2/C7-1 X1/X2/R23-2 }
+Signal "X1/X2/unnamed_net71"
+  { X1/X2/C8-1 X1/X2/R22-2 X1/X2/U7-5 }
+Signal "X1/X2/unnamed_net70"
+  { X1/X2/C9-1 X1/X2/R21-2 X1/X2/U3-5 }
+Signal "X1/X2/unnamed_net69"
+  { X1/X2/R1-2 X1/X2/Q2-1 }
+Signal "X1/X2/unnamed_net68"
+  { X1/X2/R42-2 X1/X2/Q2-2 }
+Signal "X1/X2/Vcc6"
+  { X1/X2/U6-6 X1/X2/C13-1 X1/X2/R17-2 X1/X2/U6-5 }
+Signal "X1/X2/Vcc8"
+  { X1/X2/U8-6 X1/X2/C14-1 X1/X2/R18-2 X1/X2/U8-5 }
+Signal "X1/X2/Vcc5"
+  { X1/X2/U5-6 X1/X2/C11-1 X1/X2/R16-2 X1/X2/U5-5 }
+Signal "X1/X2/Vcc4"
+  { X1/X2/U4-6 X1/X2/C5-1 X1/X2/R5-2 X1/X2/U4-5 }
+Signal "X1/X2/unnamed_net67"
+  { X1/X2/R11-1 X1/X2/U12-2 }
+Signal "X1/X2/unnamed_net63"
+  { X1/X2/R38-1 X1/X2/U11-2 }
+Signal "X1/X2/unnamed_net60"
+  { X1/X2/C22-1 X1/X2/U6-3 X1/X2/R15-2 X1/X2/R4-1 }
+Signal "X1/X2/unnamed_net59"
+  { X1/X2/R24-2 X1/X2/C6-1 X1/X2/U9-2 }
+Signal "X1/X2/ADCref"
+  { X1/X2/C3-2 X1/X2/R28-2 X1/X2/R6-2 X1/X2/C16-2 X1/X2/R15-1 X1/X2/U9-1 }
+Signal "X1/X2/inm"
+  { X1/X2/R13-2 X1/X2/C21-1 X1/X2/U9-4 }
+Signal "X1/X2/inp"
+  { X1/X2/C20-1 X1/X2/R14-2 X1/X2/U9-3 }
+Signal "X1/X2/unnamed_net55"
+  { X1/X2/U9-9 X1/X2/C12-1 X1/X2/R19-2 X1/X2/U9-10 }
+Signal "X1/X2/V0"
+  { X1/X2/U10-3 X1/X2/C30-1 X1/X2/R40-2 X1/X2/C28-2 X1/X2/R20-2 X1/X2/U5-3 X1/X2/C2-2 X1/X2/U8-3 X1/X2/C17-1 X1/X2/U3-1 X1/X2/R7-1 }
+Signal "X1/X2/unnamed_net54"
+  { X1/X2/U6-1 X1/X2/R14-1 X1/X2/C19-2 X1/X2/R10-2 }
+Signal "X1/X2/unnamed_net53"
+  { X1/X2/U6-4 X1/X2/C19-1 X1/X2/R10-1 X1/X2/R12-2 }
+Signal "X1/X2/unnamed_net51"
+  { X1/X2/R13-1 X1/X2/U8-1 X1/X2/C4a-2 X1/X2/R12-1 X1/X2/U7-1 X1/X2/C4-2 }
+Signal "X1/X2/unnamed_net50"
+  { X1/X2/R38-2 X1/X2/C4a-1 X1/X2/U7-2 X1/X2/R11-2 X1/X2/U8-4 X1/X2/C4-1 }
+Signal "X1/X2/u5o"
+  { X1/X2/U5-1 X1/X2/U12-1 X1/X2/R2-2 }
+Signal "X1/X2/unnamed_net49"
+  { X1/X2/U5-4 X1/X2/R2-1 X1/X2/R9-2 }
+Signal "X1/X2/unnamed_net48"
+  { X1/X2/U4-4 X1/X2/R7-2 X1/X2/C18-1 X1/X2/R8-1 }
+Signal "X1/X2/u4o"
+  { X1/X2/U4-1 X1/X2/U11-1 X1/X2/C18-2 X1/X2/R9-1 X1/X2/R8-2 }
+Signal "X1/X2/unnamed_net46"
+  { X1/X2/U3-2 X1/X2/U4-3 X1/X2/C1-1 }
+Signal "X1/VHK2"
+  { X1/U10-11 X1/X2/R41-1 X1/X2/R25-2 }
+Signal "X1/X1/unnamed_net43"
+  { X1/X1/R27-2 X1/X1/C24-1 X1/X1/R28-1 X1/X1/U10-2 }
+Signal "X1/X1/unnamed_net42"
+  { X1/X1/C24-2 X1/X1/R6-1 X1/X1/U10-1 }
+Signal "X1/X1/unnamed_net41"
+  { X1/X1/U12-5 X1/X1/C25-1 X1/X1/R33-2 }
+Signal "X1/X1/unnamed_net39"
+  { X1/X1/C23-2 X1/X1/R26-2 X1/X1/U10-5 }
+Signal "X1/X1/unnamed_net38"
+  { X1/X1/C29-1 X1/X1/R40-1 X1/X1/R39-2 X1/X1/U10-6 }
+Signal "X1/X1/unnamed_net37"
+  { X1/X1/C29-2 X1/X1/R20-1 X1/X1/U10-7 }
+Signal "X1/X1/unnamed_net35"
+  { X1/X1/U11-5 X1/X1/C7-1 X1/X1/R23-2 }
+Signal "X1/X1/unnamed_net34"
+  { X1/X1/C8-1 X1/X1/R22-2 X1/X1/U7-5 }
+Signal "X1/X1/unnamed_net33"
+  { X1/X1/C9-1 X1/X1/R21-2 X1/X1/U3-5 }
+Signal "X1/X1/unnamed_net32"
+  { X1/X1/R1-2 X1/X1/Q2-1 }
+Signal "X1/X1/unnamed_net31"
+  { X1/X1/R42-2 X1/X1/Q2-2 }
+Signal "X1/X1/Vcc6"
+  { X1/X1/U6-6 X1/X1/C13-1 X1/X1/R17-2 X1/X1/U6-5 }
+Signal "X1/X1/Vcc8"
+  { X1/X1/U8-6 X1/X1/C14-1 X1/X1/R18-2 X1/X1/U8-5 }
+Signal "X1/X1/Vcc5"
+  { X1/X1/U5-6 X1/X1/C11-1 X1/X1/R16-2 X1/X1/U5-5 }
+Signal "X1/X1/Vcc4"
+  { X1/X1/U4-6 X1/X1/C5-1 X1/X1/R5-2 X1/X1/U4-5 }
+Signal "X1/X1/unnamed_net30"
+  { X1/X1/R11-1 X1/X1/U12-2 }
+Signal "X1/X1/unnamed_net26"
+  { X1/X1/R38-1 X1/X1/U11-2 }
+Signal "X1/X1/unnamed_net23"
+  { X1/X1/C22-1 X1/X1/U6-3 X1/X1/R15-2 X1/X1/R4-1 }
+Signal "X1/X1/unnamed_net22"
+  { X1/X1/R24-2 X1/X1/C6-1 X1/X1/U9-2 }
+Signal "X1/X1/ADCref"
+  { X1/X1/C3-2 X1/X1/R28-2 X1/X1/R6-2 X1/X1/C16-2 X1/X1/R15-1 X1/X1/U9-1 }
+Signal "X1/X1/inm"
+  { X1/X1/R13-2 X1/X1/C21-1 X1/X1/U9-4 }
+Signal "X1/X1/inp"
+  { X1/X1/C20-1 X1/X1/R14-2 X1/X1/U9-3 }
+Signal "X1/X1/unnamed_net18"
+  { X1/X1/U9-9 X1/X1/C12-1 X1/X1/R19-2 X1/X1/U9-10 }
+Signal "X1/X1/V0"
+  { X1/X1/U10-3 X1/X1/C30-1 X1/X1/R40-2 X1/X1/C28-2 X1/X1/R20-2 X1/X1/U5-3 X1/X1/C2-2 X1/X1/U8-3 X1/X1/C17-1 X1/X1/U3-1 X1/X1/R7-1 }
+Signal "X1/X1/unnamed_net17"
+  { X1/X1/U6-1 X1/X1/R14-1 X1/X1/C19-2 X1/X1/R10-2 }
+Signal "X1/X1/unnamed_net16"
+  { X1/X1/U6-4 X1/X1/C19-1 X1/X1/R10-1 X1/X1/R12-2 }
+Signal "X1/X1/unnamed_net14"
+  { X1/X1/R13-1 X1/X1/U8-1 X1/X1/C4a-2 X1/X1/R12-1 X1/X1/U7-1 X1/X1/C4-2 }
+Signal "X1/X1/unnamed_net13"
+  { X1/X1/R38-2 X1/X1/C4a-1 X1/X1/U7-2 X1/X1/R11-2 X1/X1/U8-4 X1/X1/C4-1 }
+Signal "X1/X1/u5o"
+  { X1/X1/U5-1 X1/X1/U12-1 X1/X1/R2-2 }
+Signal "X1/X1/unnamed_net12"
+  { X1/X1/U5-4 X1/X1/R2-1 X1/X1/R9-2 }
+Signal "X1/X1/unnamed_net11"
+  { X1/X1/U4-4 X1/X1/R7-2 X1/X1/C18-1 X1/X1/R8-1 }
+Signal "X1/X1/u4o"
+  { X1/X1/U4-1 X1/X1/U11-1 X1/X1/C18-2 X1/X1/R9-1 X1/X1/R8-2 }
+Signal "X1/X1/unnamed_net9"
+  { X1/X1/U3-2 X1/X1/U4-3 X1/X1/C1-1 }
+Signal "X1/VDD12"
+  { X1/U11-2 X1/U11-1 X1/X2/R24-1 X1/X1/R24-1 }
+Signal "X1/VHK1"
+  { X1/U10-12 X1/X1/R41-1 X1/X1/R25-2 }
+Signal "X1/unnamed_net5"
+  { X1/X4/U9-8 X1/X3/U9-8 X1/X2/U9-8 X1/X1/U9-8 X1/R59-2 }
+Signal "X1/VIO"
+  { X1/U5-6 X1/U5-7 X1/X4/R19-1 X1/X3/R19-1 X1/X2/R19-1 X1/X1/R19-1 }
+Signal "X1/+2.5ref"
+  { X1/U11-5 X1/U11-3 X1/U5-5 X1/U5-3 X1/R2-2 X1/U6-6 X1/X4/R26-1 X1/X3/R26-1 X1/X2/R26-1 X1/X1/R26-1 }
+Signal "X1/+5"
+  { X1/R51-2 X1/R48-2 X1/C31-2 X1/L4-2 X1/R62-1 X1/U2-8 X1/C15-1 X1/R60-1 X1/R61-2 X1/U1-8 X1/C8-1 X1/R1-1 X1/X4/C10-1 X1/X4/U10-8 X1/X4/R18-1 X1/X4/R17-1 X1/X4/R16-1 X1/X4/R5-1 X1/X4/R22-1 X1/X4/R23-1 X1/X3/C10-1 X1/X3/U10-8 X1/X3/R18-1 X1/X3/R17-1 X1/X3/R16-1 X1/X3/R5-1 X1/X3/R22-1 X1/X3/R23-1 X1/X2/C10-1 X1/X2/U10-8 X1/X2/R18-1 X1/X2/R17-1 X1/X2/R16-1 X1/X2/R5-1 X1/X2/R22-1 X1/X2/R23-1 X1/X1/C10-1 X1/X1/U10-8 X1/X1/R18-1 X1/X1/R17-1 X1/X1/R16-1 X1/X1/R5-1 X1/X1/R22-1 X1/X1/R23-1 }
+Signal "GND"
+  { J5-12 J5-11 J5-10 J5-9 J5-8 J5-7 J5-6 J5-5 J5-4 J5-3 J5-2 J5-1 J4-50 J4-40 J4-38 J4-32 J4-28 J4-19 J3-50 J3-40 J3-38 J3-32 J3-28 J3-19 J2-50 J2-40 J2-38 J2-32 J2-28 J2-19 Js-199 Js-49 Js-197 Js-47 Js-195 Js-45 Js-193 Js-43 Js-191 Js-41 Js-189 Js-39 Js-187 Js-37 Js-185 Js-35 Js-183 Js-33 Js-181 Js-31 Js-179 Js-29 Js-177 Js-27 Js-175 Js-25 Js-173 Js-23 Js-171 Js-21 Js-169 Js-19 Js-167 Js-17 Js-165 Js-15 Js-163 Js-13 Js-161 Js-11 Js-159 Js-9 Js-157 Js-7 Js-155 Js-5 Js-153 Js-3 Js-151 Js-1 J1-50 J1-40 J1-38 J1-32 J1-28 J1-19 R55-1 U16-5 U13-4 C30-1 R53-1 R52-1 R49-1 R48-1 U16-4 C36-1 R33-1 R31-1 C28-1 C31-2 U14-3 U14-14 C29-1 U12-14 U12-1 C13-1 C12-1 C11-1 C10-1 C17-1 C16-1 C15-1 C14-1 C21-1 C20-1 C19-1 C18-1 C25-1 C24-1 C23-1 C22-1 R42-1 C34-2 U15-4 R38-1 PP/C14-1 PP/C13-1 PP/C12-1 PP/R2-1 PP/C11-1 PP/C10-1 PP/C3-2 PP/C1-1 PP/U1-13 PP/R5-1 U1-4 C6-2 C5-2 U9-4 R8-2 C4-2 U8-3 U8-14 C2-2 U7-3 U7-14 C3-2 U6-3 U6-14 U5-14 U5-3 C1-2 X4/C39-1 X4/C38-1 X4/C37-2 X4/C36-2 X4/U10-14 X4/U9-14 X4/U9-1 X4/C35-1 X4/C34-1 X4/C33-2 X4/C32-2 X4/U8-14 X4/U7-14 X4/U7-1 X4/C31-1 X4/C30-2 X4/C29-2 X4/C28-2 X4/X6/R14-2 X4/X6/R15-2 X4/X6/R10-1 X4/X6/C5-1 X4/X6/U1-4 X4/X6/C3-1 X4/X6/R3-1 X4/X6/C2-1 X4/X5/R14-2 X4/X5/R15-2 X4/X5/R10-1 X4/X5/C5-1 X4/X5/U1-4 X4/X5/C3-1 X4/X5/R3-1 X4/X5/C2-1 X4/R57-2 X4/R46-1 X4/C25-1 X4/C27-1 X4/Q1-1 X4/C24-2 X4/U4-4 X4/R37-1 X4/C22-1 X4/C21-1 X4/C20-2 X4/U3-4 X4/R32-1 X4/R27-1 X4/C17-1 X4/C16-2 X4/C15-2 X4/R21-1 X4/C13-1 X4/R15-1 X4/C11-1 X4/U11-4 X4/C40-2 X4/U5-4 X4/C10-2 X4/C9-2 X4/C8-2 X4/R8-1 X4/C6-1 X4/R4-1 X4/C2-1 X4/C5-1 X4/C4-2 X4/U6-4 X4/X4/R27-1 X4/X4/C3-1 X4/X4/C30-2 X4/X4/R39-1 X4/X4/C28-1 X4/X4/U12-3 X4/X4/C25-2 X4/X4/C23-1 X4/X4/C10-2 X4/X4/U10-4 X4/X4/U4-2 X4/X4/U5-2 X4/X4/U6-2 X4/X4/U8-2 X4/X4/C14-2 X4/X4/C13-2 X4/X4/C11-2 X4/X4/C5-2 X4/X4/C9-2 X4/X4/C8-2 X4/X4/U11-3 X4/X4/C7-2 X4/X4/U7-3 X4/X4/U3-3 X4/X4/R1-1 X4/X4/Q2-3 X4/X4/C22-2 X4/X4/R41-2 X4/X4/C2-1 X4/X4/C17-2 X4/X4/C6-2 X4/X4/C12-2 X4/X4/C16-1 X4/X4/R4-2 X4/X4/C20-2 X4/X4/C21-2 X4/X4/U9-5 X4/X3/R27-1 X4/X3/C3-1 X4/X3/C30-2 X4/X3/R39-1 X4/X3/C28-1 X4/X3/U12-3 X4/X3/C25-2 X4/X3/C23-1 X4/X3/C10-2 X4/X3/U10-4 X4/X3/U4-2 X4/X3/U5-2 X4/X3/U6-2 X4/X3/U8-2 X4/X3/C14-2 X4/X3/C13-2 X4/X3/C11-2 X4/X3/C5-2 X4/X3/C9-2 X4/X3/C8-2 X4/X3/U11-3 X4/X3/C7-2 X4/X3/U7-3 X4/X3/U3-3 X4/X3/R1-1 X4/X3/Q2-3 X4/X3/C22-2 X4/X3/R41-2 X4/X3/C2-1 X4/X3/C17-2 X4/X3/C6-2 X4/X3/C12-2 X4/X3/C16-1 X4/X3/R4-2 X4/X3/C20-2 X4/X3/C21-2 X4/X3/U9-5 X4/X2/R27-1 X4/X2/C3-1 X4/X2/C30-2 X4/X2/R39-1 X4/X2/C28-1 X4/X2/U12-3 X4/X2/C25-2 X4/X2/C23-1 X4/X2/C10-2 X4/X2/U10-4 X4/X2/U4-2 X4/X2/U5-2 X4/X2/U6-2 X4/X2/U8-2 X4/X2/C14-2 X4/X2/C13-2 X4/X2/C11-2 X4/X2/C5-2 X4/X2/C9-2 X4/X2/C8-2 X4/X2/U11-3 X4/X2/C7-2 X4/X2/U7-3 X4/X2/U3-3 X4/X2/R1-1 X4/X2/Q2-3 X4/X2/C22-2 X4/X2/R41-2 X4/X2/C2-1 X4/X2/C17-2 X4/X2/C6-2 X4/X2/C12-2 X4/X2/C16-1 X4/X2/R4-2 X4/X2/C20-2 X4/X2/C21-2 X4/X2/U9-5 X4/X1/R27-1 X4/X1/C3-1 X4/X1/C30-2 X4/X1/R39-1 X4/X1/C28-1 X4/X1/U12-3 X4/X1/C25-2 X4/X1/C23-1 X4/X1/C10-2 X4/X1/U10-4 X4/X1/U4-2 X4/X1/U5-2 X4/X1/U6-2 X4/X1/U8-2 X4/X1/C14-2 X4/X1/C13-2 X4/X1/C11-2 X4/X1/C5-2 X4/X1/C9-2 X4/X1/C8-2 X4/X1/U11-3 X4/X1/C7-2 X4/X1/U7-3 X4/X1/U3-3 X4/X1/R1-1 X4/X1/Q2-3 X4/X1/C22-2 X4/X1/R41-2 X4/X1/C2-1 X4/X1/C17-2 X4/X1/C6-2 X4/X1/C12-2 X4/X1/C16-1 X4/X1/R4-2 X4/X1/C20-2 X4/X1/C21-2 X4/X1/U9-5 X3/C39-1 X3/C38-1 X3/C37-2 X3/C36-2 X3/U10-14 X3/U9-14 X3/U9-1 X3/C35-1 X3/C34-1 X3/C33-2 X3/C32-2 X3/U8-14 X3/U7-14 X3/U7-1 X3/C31-1 X3/C30-2 X3/C29-2 X3/C28-2 X3/X6/R14-2 X3/X6/R15-2 X3/X6/R10-1 X3/X6/C5-1 X3/X6/U1-4 X3/X6/C3-1 X3/X6/R3-1 X3/X6/C2-1 X3/X5/R14-2 X3/X5/R15-2 X3/X5/R10-1 X3/X5/C5-1 X3/X5/U1-4 X3/X5/C3-1 X3/X5/R3-1 X3/X5/C2-1 X3/R57-2 X3/R46-1 X3/C25-1 X3/C27-1 X3/Q1-1 X3/C24-2 X3/U4-4 X3/R37-1 X3/C22-1 X3/C21-1 X3/C20-2 X3/U3-4 X3/R32-1 X3/R27-1 X3/C17-1 X3/C16-2 X3/C15-2 X3/R21-1 X3/C13-1 X3/R15-1 X3/C11-1 X3/U11-4 X3/C40-2 X3/U5-4 X3/C10-2 X3/C9-2 X3/C8-2 X3/R8-1 X3/C6-1 X3/R4-1 X3/C2-1 X3/C5-1 X3/C4-2 X3/U6-4 X3/X4/R27-1 X3/X4/C3-1 X3/X4/C30-2 X3/X4/R39-1 X3/X4/C28-1 X3/X4/U12-3 X3/X4/C25-2 X3/X4/C23-1 X3/X4/C10-2 X3/X4/U10-4 X3/X4/U4-2 X3/X4/U5-2 X3/X4/U6-2 X3/X4/U8-2 X3/X4/C14-2 X3/X4/C13-2 X3/X4/C11-2 X3/X4/C5-2 X3/X4/C9-2 X3/X4/C8-2 X3/X4/U11-3 X3/X4/C7-2 X3/X4/U7-3 X3/X4/U3-3 X3/X4/R1-1 X3/X4/Q2-3 X3/X4/C22-2 X3/X4/R41-2 X3/X4/C2-1 X3/X4/C17-2 X3/X4/C6-2 X3/X4/C12-2 X3/X4/C16-1 X3/X4/R4-2 X3/X4/C20-2 X3/X4/C21-2 X3/X4/U9-5 X3/X3/R27-1 X3/X3/C3-1 X3/X3/C30-2 X3/X3/R39-1 X3/X3/C28-1 X3/X3/U12-3 X3/X3/C25-2 X3/X3/C23-1 X3/X3/C10-2 X3/X3/U10-4 X3/X3/U4-2 X3/X3/U5-2 X3/X3/U6-2 X3/X3/U8-2 X3/X3/C14-2 X3/X3/C13-2 X3/X3/C11-2 X3/X3/C5-2 X3/X3/C9-2 X3/X3/C8-2 X3/X3/U11-3 X3/X3/C7-2 X3/X3/U7-3 X3/X3/U3-3 X3/X3/R1-1 X3/X3/Q2-3 X3/X3/C22-2 X3/X3/R41-2 X3/X3/C2-1 X3/X3/C17-2 X3/X3/C6-2 X3/X3/C12-2 X3/X3/C16-1 X3/X3/R4-2 X3/X3/C20-2 X3/X3/C21-2 X3/X3/U9-5 X3/X2/R27-1 X3/X2/C3-1 X3/X2/C30-2 X3/X2/R39-1 X3/X2/C28-1 X3/X2/U12-3 X3/X2/C25-2 X3/X2/C23-1 X3/X2/C10-2 X3/X2/U10-4 X3/X2/U4-2 X3/X2/U5-2 X3/X2/U6-2 X3/X2/U8-2 X3/X2/C14-2 X3/X2/C13-2 X3/X2/C11-2 X3/X2/C5-2 X3/X2/C9-2 X3/X2/C8-2 X3/X2/U11-3 X3/X2/C7-2 X3/X2/U7-3 X3/X2/U3-3 X3/X2/R1-1 X3/X2/Q2-3 X3/X2/C22-2 X3/X2/R41-2 X3/X2/C2-1 X3/X2/C17-2 X3/X2/C6-2 X3/X2/C12-2 X3/X2/C16-1 X3/X2/R4-2 X3/X2/C20-2 X3/X2/C21-2 X3/X2/U9-5 X3/X1/R27-1 X3/X1/C3-1 X3/X1/C30-2 X3/X1/R39-1 X3/X1/C28-1 X3/X1/U12-3 X3/X1/C25-2 X3/X1/C23-1 X3/X1/C10-2 X3/X1/U10-4 X3/X1/U4-2 X3/X1/U5-2 X3/X1/U6-2 X3/X1/U8-2 X3/X1/C14-2 X3/X1/C13-2 X3/X1/C11-2 X3/X1/C5-2 X3/X1/C9-2 X3/X1/C8-2 X3/X1/U11-3 X3/X1/C7-2 X3/X1/U7-3 X3/X1/U3-3 X3/X1/R1-1 X3/X1/Q2-3 X3/X1/C22-2 X3/X1/R41-2 X3/X1/C2-1 X3/X1/C17-2 X3/X1/C6-2 X3/X1/C12-2 X3/X1/C16-1 X3/X1/R4-2 X3/X1/C20-2 X3/X1/C21-2 X3/X1/U9-5 X2/C39-1 X2/C38-1 X2/C37-2 X2/C36-2 X2/U10-14 X2/U9-14 X2/U9-1 X2/C35-1 X2/C34-1 X2/C33-2 X2/C32-2 X2/U8-14 X2/U7-14 X2/U7-1 X2/C31-1 X2/C30-2 X2/C29-2 X2/C28-2 X2/X6/R14-2 X2/X6/R15-2 X2/X6/R10-1 X2/X6/C5-1 X2/X6/U1-4 X2/X6/C3-1 X2/X6/R3-1 X2/X6/C2-1 X2/X5/R14-2 X2/X5/R15-2 X2/X5/R10-1 X2/X5/C5-1 X2/X5/U1-4 X2/X5/C3-1 X2/X5/R3-1 X2/X5/C2-1 X2/R57-2 X2/R46-1 X2/C25-1 X2/C27-1 X2/Q1-1 X2/C24-2 X2/U4-4 X2/R37-1 X2/C22-1 X2/C21-1 X2/C20-2 X2/U3-4 X2/R32-1 X2/R27-1 X2/C17-1 X2/C16-2 X2/C15-2 X2/R21-1 X2/C13-1 X2/R15-1 X2/C11-1 X2/U11-4 X2/C40-2 X2/U5-4 X2/C10-2 X2/C9-2 X2/C8-2 X2/R8-1 X2/C6-1 X2/R4-1 X2/C2-1 X2/C5-1 X2/C4-2 X2/U6-4 X2/X4/R27-1 X2/X4/C3-1 X2/X4/C30-2 X2/X4/R39-1 X2/X4/C28-1 X2/X4/U12-3 X2/X4/C25-2 X2/X4/C23-1 X2/X4/C10-2 X2/X4/U10-4 X2/X4/U4-2 X2/X4/U5-2 X2/X4/U6-2 X2/X4/U8-2 X2/X4/C14-2 X2/X4/C13-2 X2/X4/C11-2 X2/X4/C5-2 X2/X4/C9-2 X2/X4/C8-2 X2/X4/U11-3 X2/X4/C7-2 X2/X4/U7-3 X2/X4/U3-3 X2/X4/R1-1 X2/X4/Q2-3 X2/X4/C22-2 X2/X4/R41-2 X2/X4/C2-1 X2/X4/C17-2 X2/X4/C6-2 X2/X4/C12-2 X2/X4/C16-1 X2/X4/R4-2 X2/X4/C20-2 X2/X4/C21-2 X2/X4/U9-5 X2/X3/R27-1 X2/X3/C3-1 X2/X3/C30-2 X2/X3/R39-1 X2/X3/C28-1 X2/X3/U12-3 X2/X3/C25-2 X2/X3/C23-1 X2/X3/C10-2 X2/X3/U10-4 X2/X3/U4-2 X2/X3/U5-2 X2/X3/U6-2 X2/X3/U8-2 X2/X3/C14-2 X2/X3/C13-2 X2/X3/C11-2 X2/X3/C5-2 X2/X3/C9-2 X2/X3/C8-2 X2/X3/U11-3 X2/X3/C7-2 X2/X3/U7-3 X2/X3/U3-3 X2/X3/R1-1 X2/X3/Q2-3 X2/X3/C22-2 X2/X3/R41-2 X2/X3/C2-1 X2/X3/C17-2 X2/X3/C6-2 X2/X3/C12-2 X2/X3/C16-1 X2/X3/R4-2 X2/X3/C20-2 X2/X3/C21-2 X2/X3/U9-5 X2/X2/R27-1 X2/X2/C3-1 X2/X2/C30-2 X2/X2/R39-1 X2/X2/C28-1 X2/X2/U12-3 X2/X2/C25-2 X2/X2/C23-1 X2/X2/C10-2 X2/X2/U10-4 X2/X2/U4-2 X2/X2/U5-2 X2/X2/U6-2 X2/X2/U8-2 X2/X2/C14-2 X2/X2/C13-2 X2/X2/C11-2 X2/X2/C5-2 X2/X2/C9-2 X2/X2/C8-2 X2/X2/U11-3 X2/X2/C7-2 X2/X2/U7-3 X2/X2/U3-3 X2/X2/R1-1 X2/X2/Q2-3 X2/X2/C22-2 X2/X2/R41-2 X2/X2/C2-1 X2/X2/C17-2 X2/X2/C6-2 X2/X2/C12-2 X2/X2/C16-1 X2/X2/R4-2 X2/X2/C20-2 X2/X2/C21-2 X2/X2/U9-5 X2/X1/R27-1 X2/X1/C3-1 X2/X1/C30-2 X2/X1/R39-1 X2/X1/C28-1 X2/X1/U12-3 X2/X1/C25-2 X2/X1/C23-1 X2/X1/C10-2 X2/X1/U10-4 X2/X1/U4-2 X2/X1/U5-2 X2/X1/U6-2 X2/X1/U8-2 X2/X1/C14-2 X2/X1/C13-2 X2/X1/C11-2 X2/X1/C5-2 X2/X1/C9-2 X2/X1/C8-2 X2/X1/U11-3 X2/X1/C7-2 X2/X1/U7-3 X2/X1/U3-3 X2/X1/R1-1 X2/X1/Q2-3 X2/X1/C22-2 X2/X1/R41-2 X2/X1/C2-1 X2/X1/C17-2 X2/X1/C6-2 X2/X1/C12-2 X2/X1/C16-1 X2/X1/R4-2 X2/X1/C20-2 X2/X1/C21-2 X2/X1/U9-5 X1/C39-1 X1/C38-1 X1/C37-2 X1/C36-2 X1/U10-14 X1/U9-14 X1/U9-1 X1/C35-1 X1/C34-1 X1/C33-2 X1/C32-2 X1/U8-14 X1/U7-14 X1/U7-1 X1/C31-1 X1/C30-2 X1/C29-2 X1/C28-2 X1/X6/R14-2 X1/X6/R15-2 X1/X6/R10-1 X1/X6/C5-1 X1/X6/U1-4 X1/X6/C3-1 X1/X6/R3-1 X1/X6/C2-1 X1/X5/R14-2 X1/X5/R15-2 X1/X5/R10-1 X1/X5/C5-1 X1/X5/U1-4 X1/X5/C3-1 X1/X5/R3-1 X1/X5/C2-1 X1/R57-2 X1/R46-1 X1/C25-1 X1/C27-1 X1/Q1-1 X1/C24-2 X1/U4-4 X1/R37-1 X1/C22-1 X1/C21-1 X1/C20-2 X1/U3-4 X1/R32-1 X1/R27-1 X1/C17-1 X1/C16-2 X1/C15-2 X1/R21-1 X1/C13-1 X1/R15-1 X1/C11-1 X1/U11-4 X1/C40-2 X1/U5-4 X1/C10-2 X1/C9-2 X1/C8-2 X1/R8-1 X1/C6-1 X1/R4-1 X1/C2-1 X1/C5-1 X1/C4-2 X1/U6-4 X1/X4/R27-1 X1/X4/C3-1 X1/X4/C30-2 X1/X4/R39-1 X1/X4/C28-1 X1/X4/U12-3 X1/X4/C25-2 X1/X4/C23-1 X1/X4/C10-2 X1/X4/U10-4 X1/X4/U4-2 X1/X4/U5-2 X1/X4/U6-2 X1/X4/U8-2 X1/X4/C14-2 X1/X4/C13-2 X1/X4/C11-2 X1/X4/C5-2 X1/X4/C9-2 X1/X4/C8-2 X1/X4/U11-3 X1/X4/C7-2 X1/X4/U7-3 X1/X4/U3-3 X1/X4/R1-1 X1/X4/Q2-3 X1/X4/C22-2 X1/X4/R41-2 X1/X4/C2-1 X1/X4/C17-2 X1/X4/C6-2 X1/X4/C12-2 X1/X4/C16-1 X1/X4/R4-2 X1/X4/C20-2 X1/X4/C21-2 X1/X4/U9-5 X1/X3/R27-1 X1/X3/C3-1 X1/X3/C30-2 X1/X3/R39-1 X1/X3/C28-1 X1/X3/U12-3 X1/X3/C25-2 X1/X3/C23-1 X1/X3/C10-2 X1/X3/U10-4 X1/X3/U4-2 X1/X3/U5-2 X1/X3/U6-2 X1/X3/U8-2 X1/X3/C14-2 X1/X3/C13-2 X1/X3/C11-2 X1/X3/C5-2 X1/X3/C9-2 X1/X3/C8-2 X1/X3/U11-3 X1/X3/C7-2 X1/X3/U7-3 X1/X3/U3-3 X1/X3/R1-1 X1/X3/Q2-3 X1/X3/C22-2 X1/X3/R41-2 X1/X3/C2-1 X1/X3/C17-2 X1/X3/C6-2 X1/X3/C12-2 X1/X3/C16-1 X1/X3/R4-2 X1/X3/C20-2 X1/X3/C21-2 X1/X3/U9-5 X1/X2/R27-1 X1/X2/C3-1 X1/X2/C30-2 X1/X2/R39-1 X1/X2/C28-1 X1/X2/U12-3 X1/X2/C25-2 X1/X2/C23-1 X1/X2/C10-2 X1/X2/U10-4 X1/X2/U4-2 X1/X2/U5-2 X1/X2/U6-2 X1/X2/U8-2 X1/X2/C14-2 X1/X2/C13-2 X1/X2/C11-2 X1/X2/C5-2 X1/X2/C9-2 X1/X2/C8-2 X1/X2/U11-3 X1/X2/C7-2 X1/X2/U7-3 X1/X2/U3-3 X1/X2/R1-1 X1/X2/Q2-3 X1/X2/C22-2 X1/X2/R41-2 X1/X2/C2-1 X1/X2/C17-2 X1/X2/C6-2 X1/X2/C12-2 X1/X2/C16-1 X1/X2/R4-2 X1/X2/C20-2 X1/X2/C21-2 X1/X2/U9-5 X1/X1/R27-1 X1/X1/C3-1 X1/X1/C30-2 X1/X1/R39-1 X1/X1/C28-1 X1/X1/U12-3 X1/X1/C25-2 X1/X1/C23-1 X1/X1/C10-2 X1/X1/U10-4 X1/X1/U4-2 X1/X1/U5-2 X1/X1/U6-2 X1/X1/U8-2 X1/X1/C14-2 X1/X1/C13-2 X1/X1/C11-2 X1/X1/C5-2 X1/X1/C9-2 X1/X1/C8-2 X1/X1/U11-3 X1/X1/C7-2 X1/X1/U7-3 X1/X1/U3-3 X1/X1/R1-1 X1/X1/Q2-3 X1/X1/C22-2 X1/X1/R41-2 X1/X1/C2-1 X1/X1/C17-2 X1/X1/C6-2 X1/X1/C12-2 X1/X1/C16-1 X1/X1/R4-2 X1/X1/C20-2 X1/X1/C21-2 X1/X1/U9-5 }
+Signal "DeInt"
+  { Js-16 X4/X4/U11-4 X4/X3/U11-4 X4/X2/U11-4 X4/X1/U11-4 X3/X4/U11-4 X3/X3/U11-4 X3/X2/U11-4 X3/X1/U11-4 X2/X4/U11-4 X2/X3/U11-4 X2/X2/U11-4 X2/X1/U11-4 X1/X4/U11-4 X1/X3/U11-4 X1/X2/U11-4 X1/X1/U11-4 }
+Signal "OUT-D-1"
+  { J1-31 X1/X4/R42-1 X1/X4/R25-1 X1/X4/C1-2 }
+Signal "OUT-C-1"
+  { J1-35 X1/X3/R42-1 X1/X3/R25-1 X1/X3/C1-2 }
+Signal "OUT-B-1"
+  { J1-43 X1/X2/R42-1 X1/X2/R25-1 X1/X2/C1-2 }
+Signal "OUT-A-1"
+  { J1-47 X1/X1/R42-1 X1/X1/R25-1 X1/X1/C1-2 }
+Signal "HKCOM"
+  { Js-130 U14-8 X4/U10-8 X4/U8-8 X3/U10-8 X3/U8-8 X2/U10-8 X2/U8-8 X1/U10-8 X1/U8-8 }
+Signal "HKA2"
+  { Js-129 U14-15 U8-15 U7-15 U6-15 U5-15 X4/U10-15 X4/U8-15 X3/U10-15 X3/U8-15 X2/U10-15 X2/U8-15 X1/U10-15 X1/U8-15 }
+Signal "HKA1"
+  { Js-128 U14-16 U8-16 U7-16 U6-16 U5-16 X4/U10-16 X4/U8-16 X3/U10-16 X3/U8-16 X2/U10-16 X2/U8-16 X1/U10-16 X1/U8-16 }
+Signal "HKA0"
+  { Js-127 U14-1 U8-1 U7-1 U6-1 U5-1 X4/U10-1 X4/U8-1 X3/U10-1 X3/U8-1 X2/U10-1 X2/U8-1 X1/U10-1 X1/U8-1 }
+Signal "HK8"
+  { Js-72 X1/U10-2 }
+Signal "HK0"
+  { Js-71 X1/U8-2 }
+Signal "+24"
+  { PP/C14-2 PP/R13-2 X4/L1-1 X3/L1-1 X2/L1-1 X1/L1-1 }
+Signal "+15"
+  { J5-16 J5-15 J5-14 Js-176 R46-1 R45-1 R41-1 PP/R3-1 PP/R1-1 PP/Q1-2 X4/L3-1 X3/L3-1 X2/L3-1 X1/L3-1 }
+Signal "+5"
+  { Js-180 U13-8 C30-2 U16-8 C36-2 R30-1 R34-1 PP/R11-1 PP/R7-1 U1-8 C6-1 C5-1 U9-2 R4-1 R3-1 R2-1 R1-1 X4/L4-1 X3/L4-1 X2/L4-1 X1/L4-1 }
+Signal "-12"
+  { Js-178 PP/R6-1 PP/R4-1 PP/Q2-2 X4/L2-1 X3/L2-1 X2/L2-1 X1/L2-1 }
+Signal "-50"
+  { PP/C13-2 PP/R12-2 X4/R43-1 X3/R43-1 X2/R43-1 X1/R43-1 }
+Signal "VS12"
+  { Q2-2 R39-2 X2/X4/R33-1 X2/X4/R21-1 X2/X3/R33-1 X2/X3/R21-1 X2/X2/R33-1 X2/X2/R21-1 X2/X1/R33-1 X2/X1/R21-1 X1/X4/R33-1 X1/X4/R21-1 X1/X3/R33-1 X1/X3/R21-1 X1/X2/R33-1 X1/X2/R21-1 X1/X1/R33-1 X1/X1/R21-1 }
+Signal "DDCK"
+  { R37-1 U12-16 X4/U9-16 X4/U7-16 X3/U9-16 X3/U7-16 X2/U9-16 X2/U7-16 X1/U9-16 X1/U7-16 }
+Signal "DD"
+  { Js-22 U12-15 X4/U9-15 X4/U7-15 X3/U9-15 X3/U7-15 X2/U9-15 X2/U7-15 X1/U9-15 X1/U7-15 }
+Signal "\_DS8\_"
+  { Js-162 X1/U9-2 }
+Signal "\_DS0\_"
+  { Js-160 X1/U7-2 }
+Signal "Clamp"
+  { Js-18 X4/X4/U3-4 X4/X4/U7-4 X4/X3/U3-4 X4/X3/U7-4 X4/X2/U3-4 X4/X2/U7-4 X4/X1/U3-4 X4/X1/U7-4 X3/X4/U3-4 X3/X4/U7-4 X3/X3/U3-4 X3/X3/U7-4 X3/X2/U3-4 X3/X2/U7-4 X3/X1/U3-4 X3/X1/U7-4 X2/X4/U3-4 X2/X4/U7-4 X2/X3/U3-4 X2/X3/U7-4 X2/X2/U3-4 X2/X2/U7-4 X2/X1/U3-4 X2/X1/U7-4 X1/X4/U3-4 X1/X4/U7-4 X1/X3/U3-4 X1/X3/U7-4 X1/X2/U3-4 X1/X2/U7-4 X1/X1/U3-4 X1/X1/U7-4 }
+Signal "Int"
+  { Js-14 X4/X4/U12-4 X4/X3/U12-4 X4/X2/U12-4 X4/X1/U12-4 X3/X4/U12-4 X3/X3/U12-4 X3/X2/U12-4 X3/X1/U12-4 X2/X4/U12-4 X2/X3/U12-4 X2/X2/U12-4 X2/X1/U12-4 X1/X4/U12-4 X1/X3/U12-4 X1/X2/U12-4 X1/X1/U12-4 }
+Signal "CNV"
+  { Js-12 X4/X4/U9-6 X4/X3/U9-6 X4/X2/U9-6 X4/X1/U9-6 X3/X4/U9-6 X3/X3/U9-6 X3/X2/U9-6 X3/X1/U9-6 X2/X4/U9-6 X2/X3/U9-6 X2/X2/U9-6 X2/X1/U9-6 X1/X4/U9-6 X1/X3/U9-6 X1/X2/U9-6 X1/X1/U9-6 }
+Signal "SCK"
+  { Js-10 X4/R59-1 X3/R59-1 X2/R59-1 X1/R59-1 }
+Signal "SDO-D-1"
+  { Js-8 X1/X4/U9-7 }
+Signal "SDO-C-1"
+  { Js-6 X1/X3/U9-7 }
+Signal "SDO-B-1"
+  { Js-4 X1/X2/U9-7 }
+Signal "SDO-A-1"
+  { Js-2 X1/X1/U9-7 }
+Signal "DR-D-1"
+  { J1-30 X1/X6/R13-1 X1/X6/R11-2 X1/X6/R12-2 X1/X6/C5-2 }
+Signal "DR-C-1"
+  { J1-36 X1/X6/R7-1 X1/X6/R4-2 X1/X6/R5-2 X1/X6/C2-2 }
+Signal "DR-B-1"
+  { J1-42 X1/X5/R13-1 X1/X5/R11-2 X1/X5/R12-2 X1/X5/C5-2 }
+Signal "DR-A-1"
+  { J1-48 X1/X5/R7-1 X1/X5/R4-2 X1/X5/R5-2 X1/X5/C2-2 }
+Signal "RD-1"
+  { J1-34 X1/X6/R9-1 X1/X6/R2-1 X1/X5/R9-1 X1/X5/R2-1 X1/C21-2 X1/R33-1 X1/R31-2 X1/R30-2 }
+Signal "Backside-1"
+  { J1-1 X1/R54-2 X1/R38-1 }
+Signal "VSUB-1"
+  { J1-26 X1/C27-2 X1/R47-1 X1/R44-2 X1/R42-2 }
+Signal "SCP-1"
+  { J1-51 J1-39 X1/R28-1 X1/R26-2 X1/R25-2 X1/C17-2 }
+Signal "OG-1"
+  { R15-1 R17-1 R16-1 R14-1 X1/R9-1 X1/R7-2 X1/R6-2 X1/C6-2 }
+Signal "IG2-1"
+  { J1-3 X1/R22-1 X1/R20-2 X1/R19-2 X1/C13-2 }
+Signal "IG1-1"
+  { J1-2 X1/R16-1 X1/R14-2 X1/R13-2 X1/C11-2 }
