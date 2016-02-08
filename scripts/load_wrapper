@@ -44,7 +44,7 @@ if __name__ == "__main__":
          if check_hk(1, args.debug):
              print u"{} Housekeeping reports sane values for reference voltages, *NOT* loading wrapper".format(colored(u"✓", 'green'))
          else:
-             with FPE(1, debug=args.debug) as fpe:
+             with FPE(1, debug=args.debug, sanity_checks=False) as fpe:
                  fpe.load_wrapper(args.wrapper_version)
                  if check_house_keeping_voltages(fpe):
                       print u"{0} Wrapper version {1} has successfully been loaded".format(colored(u"✓", 'green'), args.wrapper_version)

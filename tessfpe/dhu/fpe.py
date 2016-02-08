@@ -61,8 +61,9 @@ class FPE(object):
 
     def load_wrapper(self, wrapper_version):
         import os.path
+        from unit_tests import check_house_keeping_voltages
         fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
-                                       "FPE_Wrapper-{version}.bin".format(version=FPE_Wrapper_version))
+                                       "FPE_Wrapper-{version}.bin".format(version=wrapper_version))
         assert os.path.isfile(fpe_wrapper_bin), "Wrapper does not exist for version {}".format(wrapper_version)
         try:
             check_house_keeping_voltages(self)
@@ -135,7 +136,7 @@ class FPE(object):
         # Is it just me, or shouldn't this be "Reset" not "Rest"?
         return self.connection.send_command(
             "camrst",
-            reply_pattern='FPE Rest complete')
+            reply_pattern='FPE Reset complete')
 
 
     def cmd_status(self):
@@ -183,7 +184,7 @@ class FPE(object):
         return self.connection.send_command(
             "cam_stop_frames",
             reply_pattern="Frames Stopped..."
-        )
+        ) #and self.cmd_camrst()
 
 
     def cmd_hsk(self):
