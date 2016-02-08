@@ -5,6 +5,10 @@ if __name__ == "__main__":
     from tessfpe.dhu.fpe import FPE
     from tessfpe.dhu.unit_tests import check_house_keeping_voltages
     import sys
+    import argparse
+    parser = argparse.ArgumentParser(description='Start running frames')
+    parser.add_argument('--FPE-number', metavar='N', type=int, nargs='?', default=1, help='which FPE to use')
+    args = parser.parse_args()
     
     # TODO: Handle exceptions?
     with FPE(1, sanity_checks=False) as fpe:

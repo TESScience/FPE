@@ -21,6 +21,6 @@ if __name__ == "__main__":
     with FPE(args.FPE_number, debug=args.debug) as fpe:
          if fpe.compile_and_load_fpe_program(args.program):
              print "Loaded program from {0}".format(args.program.name)
-             sys.exit(1)
+             sys.exit(0)
 
     sys.exit(1)
