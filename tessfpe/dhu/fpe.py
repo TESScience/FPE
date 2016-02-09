@@ -184,7 +184,7 @@ class FPE(object):
         return self.connection.send_command(
             "cam_stop_frames",
             reply_pattern="Frames Stopped..."
-        ) #and self.cmd_camrst()
+        )
 
 
     def cmd_hsk(self):
@@ -231,9 +231,10 @@ class FPE(object):
         # Create a dictionary of the analogue outputs
         analogue = house_keeping.hsk_to_analogue_dictionary(hsk)
         # Create array of digital outs
-        digital = [k for i in range(0, 128, 32)
+        digital = house_keeping.hsk_to_digital_dictionary(
+                  [k for i in range(0, 128, 32)
                    for j in hsk[17 + i:24 + i]
-                   for k in house_keeping.unpack_pair(j)]
+                   for k in house_keeping.unpack_pair(j)])
         return {"analogue": analogue,
                 "digital": digital}
 
