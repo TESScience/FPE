@@ -42,11 +42,11 @@ function login {
 }
 
 function turn_switch_on {
-  login && curl -s --cookie ${CURL_COOKIE} 192.168.0.100/outlet?${1}=ON > /dev/null
+  curl -s --cookie ${CURL_COOKIE} 192.168.0.100/outlet?${1}=ON > /dev/null
 }
 
 function turn_switch_off {
-  login && curl -s --cookie ${CURL_COOKIE} 192.168.0.100/outlet?${1}=OFF > /dev/null
+  curl -s --cookie ${CURL_COOKIE} 192.168.0.100/outlet?${1}=OFF > /dev/null
 }
 
 function turn_all_switches_on {
@@ -63,18 +63,13 @@ function turn_all_switches_off {
   outlet_status
 }
 
-if [[ $# -eq 0 ]] ; then
-   login
-   outlet_status
-   exit 0
-fi
-
 if [[ $@ =~ "--help" ]] || [[ $@ =~ "-h" ]]; then
        cat <<EOF
 usage: $0 [-h] [--off] [--on] [--reset]
 
 Control the hardware power switch attached to the Observatory Simulator.
-If no argument is given, returns the status of the hardware reset switch
+
+If no argument is given, prints the status of the switch.
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -83,6 +78,13 @@ optional arguments:
   --reset               turn all of the hardware switches off and then on
 EOF
        exit 0
+fi
+
+login
+
+if [[ $# -eq 0 ]] ; then
+   outlet_status
+   exit 0
 fi
 
 for key in "$@" ; do
