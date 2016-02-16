@@ -1,6 +1,6 @@
-0	Heater 1 Current	273	-273	0	227			mA	
-1	Heater 2 Current	273	-273	0	227			mA	
-2	Heater 3 Current	273	-273	0	227			mA	
+0	Heater 1 Current	273	-273	0	227	0	135	mA	
+1	Heater 2 Current	273	-273	0	227	0	135	mA	
+2	Heater 3 Current	273	-273	0	227	0	135	mA	
 3	Video GND	16.5	-16.5					V	
 4	Driver GND	16.5	-16.5					V	
 5	HK Bias	-27.27	27.27					uA	
