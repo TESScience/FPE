@@ -43,15 +43,15 @@ if __name__ == "__main__":
     try:
          assert args.wrapper_version in FPE_Wrapper_versions, "FPE Wrapper version must be one of {0} (was set to '{1}')".format(FPE_Wrapper_versions, args.wrapper_version)
          if check_hk(args.FPE_number, args.debug):
-             print u"Housekeeping reports sane values for reference voltages, *NOT* loading wrapper {}".format(colored(u"✓", 'green'))
+             print u"Housekeeping reports sane values for reference voltages, *NOT* loading wrapper {}".format(colored("ok", 'green'))
          else:
              with FPE(args.FPE_number, debug=args.debug, sanity_checks=False) as fpe:
                  fpe.load_wrapper(args.wrapper_version)
                  if check_house_keeping_voltages(fpe):
-                      print u"Wrapper version {1} has successfully been loaded {0}".format(colored(u"✓", 'green'), args.wrapper_version)
+                      print u"Wrapper version {1} has successfully been loaded {0}".format(colored("ok", 'green'), args.wrapper_version)
          sys.exit(0)
     except Exception as e:
         if args.debug:
            raise
-        print >>sys.stderr, colored(u"{} {}: {}".format(u"✘" ,type(e).__name__, e), 'red', attrs=['bold'])
+        print >>sys.stderr, colored(u"{1}: {2} {0}".format("X", type(e).__name__, e), 'red', attrs=['bold'])
         sys.exit(1)
