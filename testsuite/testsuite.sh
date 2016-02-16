@@ -24,4 +24,18 @@ ${PYTHON} ${DIR}/venv/bin/digital_house_keeping
 ${PYTHON} ${DIR}/venv/bin/start_frames
 sleep 5
 ${PYTHON} ${DIR}/venv/bin/stop_frames
+sleep 5
+${PYTHON} ${DIR}/venv/bin/frames_running_status
 ${PYTHON} ${DIR}/venv/bin/digital_house_keeping
+${PYTHON} ${DIR}/venv/bin/operating_parameters
+${PYTHON} ${DIR}/venv/bin/operating_parameters --set-defaults
+${PYTHON} ${DIR}/venv/bin/start_frames
+${PYTHON} ${DIR}/venv/bin/operating_parameters
+${PYTHON} ${DIR}/venv/bin/operating_parameters --set-defaults
+${PYTHON} ${DIR}/venv/bin/operating_parameters < ${DIR}/low_params.json
+${PYTHON} ${DIR}/venv/bin/operating_parameters --set-defaults
+${PYTHON} ${DIR}/venv/bin/operating_parameters ${DIR}/low_params.json
+${PYTHON} ${DIR}/venv/bin/operating_parameters --set-defaults
+${PYTHON} ${DIR}/venv/bin/operating_parameters --set ccd4_substrate=0.0 ccd4_output_gate=-8
+${PYTHON} ${DIR}/venv/bin/frames_running_status
+${PYTHON} ${DIR}/venv/bin/stop_frames

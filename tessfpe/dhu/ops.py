@@ -39,6 +39,8 @@ Traceback (most recent call last):
 ...
 Exception: Attempting to set value out of bounds.
 value: 9
+name: ccd4_parallel_low
+address: 89
 low: 0.0
 high: -13.2
 
@@ -245,12 +247,13 @@ def values_to_5328(values):
         raise Exception("Should have 128 values, had: {}".format(len(values)))
     return map(lambda x, y: x + y, list(values), 16 * range(0, 8 * 4096, 4096))
 
-class OperatingParameters(object):
-    def __init__(self, fpe=None):
+class OperatingParameters(dict):
+    def __init__(self, fpe=None, *args, **kwargs):
         import re
         from ..data.operating_parameters import default_operating_parameters
         import os
         import json
+        super(OperatingParameters, self).__init__(*args, **kwargs)
         # The underscore here is used as sloppy "private" memory
         self._fpe = fpe
         self.address = 128 * [None]
@@ -281,6 +284,7 @@ class OperatingParameters(object):
                     self._derived_operating_parameters[derived_parameter_name] = \
                         DerivedOperatingParameter(self[base_name],
                                                   self[offset_name])
+
                 super(OperatingParameters, self).__setattr__(
                     derived_parameter_name,
                     self._derived_operating_parameters[derived_parameter_name])
