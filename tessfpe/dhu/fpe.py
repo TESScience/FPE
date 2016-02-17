@@ -61,8 +61,9 @@ class FPE(object):
 
     def load_wrapper(self, wrapper_version):
         import os.path
+        from unit_tests import check_house_keeping_voltages
         fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
-                                       "FPE_Wrapper-{version}.bin".format(version=FPE_Wrapper_version))
+                                       "FPE_Wrapper-{version}.bin".format(version=wrapper_version))
         assert os.path.isfile(fpe_wrapper_bin), "Wrapper does not exist for version {}".format(wrapper_version)
         try:
             check_house_keeping_voltages(self)
@@ -135,7 +136,7 @@ class FPE(object):
         # Is it just me, or shouldn't this be "Reset" not "Rest"?
         return self.connection.send_command(
             "camrst",
-            reply_pattern='FPE Rest complete')
+            reply_pattern='FPE Reset complete')
 
 
     def cmd_status(self):
@@ -230,9 +231,10 @@ class FPE(object):
         # Create a dictionary of the analogue outputs
         analogue = house_keeping.hsk_to_analogue_dictionary(hsk)
         # Create array of digital outs
-        digital = [k for i in range(0, 128, 32)
+        digital = house_keeping.hsk_to_digital_dictionary(
+                  [k for i in range(0, 128, 32)
                    for j in hsk[17 + i:24 + i]
-                   for k in house_keeping.unpack_pair(j)]
+                   for k in house_keeping.unpack_pair(j)])
         return {"analogue": analogue,
                 "digital": digital}
 

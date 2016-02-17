@@ -37,17 +37,18 @@ if __name__ == "__main__":
     parser.add_argument('wrapper_version', type=str,
                         help="The version of the wrapper to load.  Must be one of either {0}, or {1}".format(
                              ", ".join(FPE_Wrapper_versions[:-1]), FPE_Wrapper_versions[-1]))
+    parser.add_argument('--FPE-number', metavar='N', type=int, nargs='?', default=1, help='which FPE to use')
     parser.add_argument('--debug', action='store_true', help='Enable debugging output')
     args = parser.parse_args()
     try:
          assert args.wrapper_version in FPE_Wrapper_versions, "FPE Wrapper version must be one of {0} (was set to '{1}')".format(FPE_Wrapper_versions, args.wrapper_version)
-         if check_hk(1, args.debug):
-             print u"{} Housekeeping reports sane values for reference voltages, *NOT* loading wrapper".format(colored(u"✓", 'green'))
+         if check_hk(args.FPE_number, args.debug):
+             print u"Housekeeping reports sane values for reference voltages, *NOT* loading wrapper {}".format(colored(u"✓", 'green'))
          else:
-             with FPE(1, debug=args.debug) as fpe:
+             with FPE(args.FPE_number, debug=args.debug, sanity_checks=False) as fpe:
                  fpe.load_wrapper(args.wrapper_version)
                  if check_house_keeping_voltages(fpe):
-                      print u"{0} Wrapper version {1} has successfully been loaded".format(colored(u"✓", 'green'), args.wrapper_version)
+                      print u"Wrapper version {1} has successfully been loaded {0}".format(colored(u"✓", 'green'), args.wrapper_version)
          sys.exit(0)
     except Exception as e:
         if args.debug:

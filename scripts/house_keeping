@@ -14,11 +14,14 @@ def unique(ls):
             visited.add(l)
     return output
 
-def match_channels(patterns, channels):
+def match_channels(patterns, channels, sort=False):
     """Given a list of patterns and channels, return those channels that match those patterns"""
-    return unique(c for p in patterns
-                    for c in channels
-                    if p in c) # TODO: handle wildcards
+    import fnmatch
+    import re
+    out = unique(c for p in map(lambda x: re.compile(fnmatch.translate(x)), patterns)
+                   for c in channels
+                   if p.match(c)) # TODO: handle wildcards
+    return sorted(out) if sort else out
 
 if __name__ == "__main__":
     from tessfpe.dhu.fpe import FPE
@@ -29,16 +32,18 @@ if __name__ == "__main__":
     import sys
 
     # Parse the command line arguments
-    parser = argparse.ArgumentParser(description='Get the housekeeping data for specified parameters')
+    parser = argparse.ArgumentParser(description='Get the analogue housekeeping data for specified parameters')
     parser.add_argument('--FPE-number', metavar='N', type=int, nargs='?', default=1, help='which FPE to use')
     parser.add_argument('--samples', metavar='N', type=int, nargs='?', default=1, help='number of samples to take')
     parser.add_argument('--precision', metavar='N', type=int, nargs='?', default=4, help='number of digits of precision to use when outputting')
-    parser.add_argument('--channels', nargs='+', help='channels to report (defaults to all channels)')
+    parser.add_argument('--channels', nargs='+', help='channels to report ; can accept UNIX-style wild cards (defaults to *)')
+    parser.add_argument('--debug', action='store_true', help='Enable debugging output')
+    parser.add_argument('--sort', action='store_true', help='Sort the housekeeping channels')
     args = parser.parse_args()
     
-    with FPE(args.FPE_number) as fpe:
+    with FPE(args.FPE_number, debug=args.debug) as fpe:
         if args.channels:
-           channels = match_channels(args.channels, housekeeping_channels.keys())
+           channels = match_channels(args.channels, housekeeping_channels.keys(), sort=args.sort)
         else:
            channels = housekeeping_channels.keys()
            channels.sort()

@@ -29,6 +29,10 @@ install_testsuite: setup.py testsuite/venv tessfpe/sequencer_dsl/SequencerDSLPar
 	@[ -d testsuite/venv/lib/python2.7/site-packages/tessfpe-*.egg ] \
         || testsuite/venv/bin/python setup.py install
 
+reinstall_testsuite:
+	rm -rf testsuite/venv
+	make install_testsuite
+
 testsuite/venv:
 	make -C testsuite venv
 
