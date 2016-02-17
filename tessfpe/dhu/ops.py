@@ -39,6 +39,8 @@ Traceback (most recent call last):
 ...
 Exception: Attempting to set value out of bounds.
 value: 9
+name: ccd4_parallel_low
+address: 89
 low: 0.0
 high: -13.2
 
@@ -163,6 +165,8 @@ class OperatingParameter(object):
         if not (actual_low <= x <= actual_high):
             raise Exception("Attempting to set value out of bounds.\n"
                             + "value: {}\n".format(x)
+                            + "name: {}\n".format(self.name)
+                            + "address: {}\n".format(self.address)
                             + "low: {}\n".format(self.low)
                             + "high: {}".format(self.high))
         self._value = x
@@ -178,11 +182,22 @@ class OperatingParameter(object):
         if not (type(x) is int and 0 <= x < 2 ** 12):
             raise Exception(
                 "Attempting to set 12 bit unsigned integer value that is either not an integer or out of bounds.\n"
-                + "value: {}\n".format(x)
+                + "twelve bit value: {}\n".format(x)
+                + "name: {}\n".format(self.name)
+                + "address: {}\n".format(self.address)
                 + "low: {}\n".format(self.low)
                 + "high: {}".format(self.high))
         self._twelve_bit_value = x
         self._value = (self.high - self.low) / float(2 ** 12) * x + self.low
+
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return self.twelve_bit_value == other.twelve_bit_value
+        else:
+            return False
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
 
 
 class DerivedOperatingParameter(object):
@@ -191,6 +206,17 @@ class DerivedOperatingParameter(object):
     def __init__(self, base, offset):
         self._base = base
         self._offset = offset
+
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            # Strict equality, could pretend other paramterizations are the same but let's not
+            return self._base == other._base and self._offset == other._offset
+        else:
+            return False
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
 
     @property
     def default(self):
@@ -221,14 +247,13 @@ def values_to_5328(values):
         raise Exception("Should have 128 values, had: {}".format(len(values)))
     return map(lambda x, y: x + y, list(values), 16 * range(0, 8 * 4096, 4096))
 
-fpe_operating_parameter_settings_file = '/tmp/operating_parameter_settings.json'
-
-class OperatingParameters(object):
-    def __init__(self, fpe=None):
+class OperatingParameters(dict):
+    def __init__(self, fpe=None, *args, **kwargs):
         import re
         from ..data.operating_parameters import default_operating_parameters
         import os
         import json
+        super(OperatingParameters, self).__init__(*args, **kwargs)
         # The underscore here is used as sloppy "private" memory
         self._fpe = fpe
         self.address = 128 * [None]
@@ -259,17 +284,29 @@ class OperatingParameters(object):
                     self._derived_operating_parameters[derived_parameter_name] = \
                         DerivedOperatingParameter(self[base_name],
                                                   self[offset_name])
+
                 super(OperatingParameters, self).__setattr__(
                     derived_parameter_name,
                     self._derived_operating_parameters[derived_parameter_name])
 
-        # If we have already previously loaded our parameter settings to the fpe, load those values from file
-        if os.path.isfile(fpe_operating_parameter_settings_file):
-            with open(fpe_operating_parameter_settings_file) as data_file:
-                for k,v in json.load(data_file).iteritems():
-                    # Avoid derived parameters since they will be derived from ordinary operating parameters
-                    if k in self._operating_parameters:
-                       self[k].value = v
+        if fpe:
+            self.set_values_from_fpe()
+
+    def __eq__(self, other):
+        if isinstance(other, self.__class__):
+            return all(a == b for a,b in zip(self.address, other.address))
+        else:
+            return False
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def set_values_from_fpe(self):
+        """Get the operating parameters from the FPE and set them"""
+        for idx, val in enumerate(self._fpe.cmd_clv()):
+            if self.address[idx]:
+                self.address[idx].twelve_bit_value = val
+        return self
 
     def keys(self):
         return self._operating_parameters.keys() + self._derived_operating_parameters.keys()
@@ -311,8 +348,6 @@ class OperatingParameters(object):
     def send(self):
         """Send the current DAC values to the hardware."""
         import json
-        with open(fpe_operating_parameter_settings_file, 'w') as outfile:
-            json.dump(self.values, outfile, sort_keys=True, indent=4)
 
         # Get the frames status, restore it after we are done uploading the operating parameters
         frames_status = self._fpe.frames_running_status
@@ -322,16 +357,27 @@ class OperatingParameters(object):
                    binary_files.write_clvmem(values_to_5328(self.raw_values)))
         finally:
             self._fpe.frames_running_status = frames_status
+            new_parameters = OperatingParameters(self._fpe)
+            if self != new_parameters:
+               raise Exception("Could not set operating parameters")
+            else:
+               self.set_values_from_fpe()
 
-    def upload_operating_parameter_memory(self):
-        """Synonym for send"""
+    def reset_to_defaults(self):
+        """Reset the operating parameters to the defaults"""
+        for a in self.address:
+            if a is None:
+                continue
+            a.value = a.default
         return self.send()
 
-    def dacreset(self):
-        """Reset the DACs to the power-up state."""
-        return self._fpe.upload_operating_parameter_memory(
-            binary_files.write_clvmem(128 * [0xffff]))
-
+    def reset_to_low(self):
+        """Reset the operating parameters to the low values"""
+        for a in self.address:
+            if a is None:
+                continue
+            a.value = a.low
+        return self.send()
 
 if __name__ == "__main__":
     import doctest

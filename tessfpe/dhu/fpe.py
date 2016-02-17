@@ -13,7 +13,9 @@ def ping():
     return ('1 packets transmitted, 1 packets received' in str(out) or #MacOSX
             '1 packets transmitted, 1 received' in str(out)) #Centos
 
-
+def reverse_bytes32(n):
+    """Reverses the bytes of a 32 bit integer"""
+    return reduce(lambda x, i: x + (((n >> 8 * i) & 0xFF) << (8 * (3 - i))), range(4), 0)
 
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
@@ -50,14 +52,13 @@ class FPE(object):
            
 
         self._dir = os.path.dirname(os.path.realpath(__file__))
-        self.ops = OperatingParameters(self)
 
         time.sleep(.01) # Need to wait for 1/100th of a sec for the box to catch up with us
 
         # Run sanity checks on the FPE to make sure basic functions are working (if specified)
         if sanity_checks:
-            self.frames_running_status = original_frames_running_status
             check_house_keeping_voltages(self)
+            self.frames_running_status = original_frames_running_status
 
     def load_wrapper(self, wrapper_version):
         import os.path
@@ -80,7 +81,7 @@ class FPE(object):
             house_keeping_memory = binary_files.write_hskmem(house_keeping.identity_map)
             assert self.upload_housekeeping_memory(house_keeping_memory), "Could not load house keeping memory: {}".format(house_keeping_memory)
             # Set the operating parameters to their defaults
-            assert self.ops.send(), "Could not send operating parameters"
+            assert self.ops.reset_to_defaults(), "Could not send operating parameters"
         check_house_keeping_voltages(self)
         return False
 
@@ -192,14 +193,37 @@ class FPE(object):
         import re
         channels = 128
         # TODO: switch on whether frames have been started and use obsim
-        self.frames_running_status = False
-        out = self.connection.send_command(
-            "cam_hsk",
-            reply_pattern="Hsk\[[0-9]+\] = 0x[0-9a-f]+",
-            matches=channels
-        )
-        return [int(n, 16) for n in re.findall('0x[0-9a-f]+', out)]
+        status = self.frames_running_status
+        try:
+            self.frames_running_status = False
+            out = self.connection.send_command(
+                "cam_hsk",
+                reply_pattern="Hsk\[[0-9]+\] = 0x[0-9a-f]+",
+                matches=channels
+            )
+            return [int(n, 16) for n in re.findall('0x[0-9a-f]+', out)]
+        finally:
+            self.frames_running_status = status
 
+
+    def cmd_clv(self):
+        """Get the clock voltage memory, returns the twelve bit values"""
+        import re
+        entries = 64
+        status = self.frames_running_status
+        try:
+            self.frames_running_status = False
+            out = self.connection.send_command(
+                "cam_clv",
+                reply_pattern="FpeClv\[[0-9]+\] = 0x[0-9a-f]+",
+                matches=entries
+            )
+            return [(reverse_bytes32(int(n,16)) >> shift) & mask
+                    for n in re.findall('0x[0-9a-f]+', out)
+                    for (mask, shift) in [(0x0FFF, 16), (0x00000FFF, 0)]]
+        finally:
+            self.frames_running_status = status
+        
 
     def compile_and_load_fpe_program(self, program):
         """Loads the program code using tftp"""
@@ -278,6 +302,12 @@ class FPE(object):
         for v in temperature_sensor_calibration_values:
             expected_values[v] = temperature_sensor_calibration_values[v]
         return expected_values
+
+    @property
+    def ops(self):
+         if not hasattr(self, "_ops"):
+            self._ops = OperatingParameters(self)
+         return self._ops
 
 
     @property
