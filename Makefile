@@ -35,7 +35,7 @@ install_testsuite: setup.py testsuite/venv tessfpe/sequencer_dsl/SequencerDSLPar
 testsuite_reinstall: reinstall_testsuite
 
 reinstall_testsuite:
-	rm -rf testsuite/venv
+	rm -rf testsuite/venv setup.py
 	make install_testsuite
 
 testsuite/venv:
