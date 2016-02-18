@@ -74,7 +74,7 @@ class FPE(object):
         except:
             # Upload the wrapper
             assert self.upload_fpe_wrapper_bin(fpe_wrapper_bin), "Could not load wrapper: {}".format(fpe_wrapper_bin)
-            # Upload the regist memory
+            # Upload the register memory
             register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
             assert self.upload_register_memory(register_memory), "Could not load register memory: {}".format(register_memory)
             # Set the housekeeping memory to the identity map
@@ -134,7 +134,6 @@ class FPE(object):
 
     def cmd_camrst(self):
         """Reset the camera after running frames"""
-        # Is it just me, or shouldn't this be "Reset" not "Rest"?
         return self.connection.send_command(
             "camrst",
             reply_pattern='FPE Reset complete')
