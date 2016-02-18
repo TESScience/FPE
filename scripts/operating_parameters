@@ -3,8 +3,6 @@
 
 if __name__ == "__main__":
     from tessfpe.dhu.fpe import FPE
-    from tessfpe.dhu.unit_tests import check_house_keeping_voltages
-    from tessfpe.dhu.ops import values_to_5328
     import sys
     import argparse
     import json
