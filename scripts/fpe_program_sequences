@@ -1,0 +1,14 @@
+#!/usr/bin/env python2.7
+"""This extracts the sequence names from an FPE program"""
+
+if __name__ == "__main__":
+    from tessfpe.sequencer_dsl.sequence import compile_sequences
+    from tessfpe.sequencer_dsl.parse import parse_file
+    from tessfpe.sequencer_dsl.spice.timing import timing_sequence
+    import argparse
+    import sys
+    parser = argparse.ArgumentParser(description='Extract the sequence names from an FPE program')
+    parser.add_argument('program', nargs='?', type=argparse.FileType('r'), default=sys.stdin, help='An file (or if not specified, stdin) containing the FPE program')
+    args = parser.parse_args()
+    ast = parse_file(args.program)
+    print " ".join([s for s in ast["sequences"]])

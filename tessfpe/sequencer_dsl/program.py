@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2.7
 
 data_type_codes = {
     "no_data": 0b10,
@@ -79,14 +79,19 @@ def compile_programs(ast):
     "Compile a list of programs in an ast into a list of numbers"
     sequences = ast["sequences"]
     number_programs(ast["programs"])
-    return [y for x in ast["programs"]
+    out = [y for x in ast["programs"]
 	      for y in compile_program(x, sequences)] + \
 	   hold_program(ast["hold"], sequences)
+    if len(out) > 512:
+        raise Exception("Program contains too many instructions, has {} instructions".format(len(out)))
+    return out + (512-len(out))*[0]
+
+def compile_programs_from_file(file_name):
+    from parse import parse_file
+    return compile_programs(parse_file(file_name))
 
 if __name__ == "__main__":
-    from parse import parse_file
     from sys import argv
     from pprint import pprint
-    ast = parse_file(argv[1])
-    out = compile_programs(ast)
+    out = compile_programs_from_file(argv[1])
     pprint(out)
