@@ -5,24 +5,27 @@ import os
 import house_keeping
 import binary_files
 
+
 def ping():
     """Ping the Observation Simulator to make sure it is alive"""
     from sh import ping
     out = ping('-c', '1', '-t', '1', '192.168.100.1')
-    
-    return ('1 packets transmitted, 1 packets received' in str(out) or #MacOSX
-            '1 packets transmitted, 1 received' in str(out)) #Centos
+
+    return ('1 packets transmitted, 1 packets received' in str(out) or  # MacOSX
+            '1 packets transmitted, 1 received' in str(out))  # Centos
+
 
 def reverse_bytes32(n):
     """Reverses the bytes of a 32 bit integer"""
     return reduce(lambda x, i: x + (((n >> 8 * i) & 0xFF) << (8 * (3 - i))), range(4), 0)
 
+
 class FPE(object):
     """An object for interacting with an FPE in an Observatory Simulator"""
 
-    def __init__(self, 
-                 number, 
-                 debug=False, 
+    def __init__(self,
+                 number,
+                 debug=False,
                  sanity_checks=True):
         from fpesocketconnection import FPESocketConnection
         from unit_tests import check_house_keeping_voltages
@@ -35,30 +38,36 @@ class FPE(object):
         self.fpe_number = number
         self.connection = FPESocketConnection(5554 + number, self._debug)
 
+        # self.ops implemented with lazy getter
+        self._ops = None
+
         # Second sanity check: check if frames are running, get the observatory simulator version
+        original_frames_running_status = None
         if sanity_checks:
             try:
-               original_frames_running_status = self.frames_running_status
+                original_frames_running_status = self.frames_running_status
             except Exception as e:
-               raise type(e)("Could not read if frames are running on the Observatory Simulator... {0}\n".format(str(e)) + 
-                             "Are you sure the firmware for the Observatory Simulator is properly installed?")
+                raise type(e)(
+                    "Could not read if frames are running on the Observatory Simulator... {0}\n".format(str(e)) +
+                    "Are you sure the firmware for the Observatory Simulator is properly installed?")
             try:
-               version = self.version
-               if self._debug:
-                  print version
+                version = self.version
+                if self._debug:
+                    print version
             except Exception as e:
-               raise type(e)("Could not read Observatory Simulator version... {0}\n".format(str(e)) + 
-                             "Are you sure you firmware for the Observatory Simulator is properly installed?")
-           
+                raise type(e)("Could not read Observatory Simulator version... {0}\n".format(str(e)) +
+                              "Are you sure you firmware for the Observatory Simulator is properly installed?")
 
         self._dir = os.path.dirname(os.path.realpath(__file__))
 
-        time.sleep(.01) # Need to wait for 1/100th of a sec for the box to catch up with us
+        # TODO: fpesocket object should do retries after time intervals to avoid this cluge
+        time.sleep(.01)  # Need to wait for 1/100th of a sec for the box to catch up with us
 
         # Run sanity checks on the FPE to make sure basic functions are working (if specified)
         if sanity_checks:
             check_house_keeping_voltages(self)
-            self.frames_running_status = original_frames_running_status
+            if original_frames_running_status is not None:
+                self.frames_running_status = original_frames_running_status
 
     def load_wrapper(self, wrapper_version):
         import os.path
@@ -71,15 +80,18 @@ class FPE(object):
             if self._debug:
                 print "House keeping reports sane values for reference voltages, *NOT* loading wrapper"
             return True
+        # TODO: have check_house_keeping_voltages throw custom exception if it fails
         except:
             # Upload the wrapper
             assert self.upload_fpe_wrapper_bin(fpe_wrapper_bin), "Could not load wrapper: {}".format(fpe_wrapper_bin)
             # Upload the register memory
             register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
-            assert self.upload_register_memory(register_memory), "Could not load register memory: {}".format(register_memory)
+            assert self.upload_register_memory(register_memory), "Could not load register memory: {}".format(
+                register_memory)
             # Set the housekeeping memory to the identity map
             house_keeping_memory = binary_files.write_hskmem(house_keeping.identity_map)
-            assert self.upload_housekeeping_memory(house_keeping_memory), "Could not load house keeping memory: {}".format(house_keeping_memory)
+            assert self.upload_housekeeping_memory(
+                house_keeping_memory), "Could not load house keeping memory: {}".format(house_keeping_memory)
             # Set the operating parameters to their defaults
             assert self.ops.reset_to_defaults(), "Could not send operating parameters"
         check_house_keeping_voltages(self)
@@ -93,7 +105,7 @@ class FPE(object):
         """Enter the python object, used for context management.  See: https://www.python.org/dev/peps/pep-0343/"""
         return self
 
-    def __exit__(self, exception_type, exception_value, traceback):
+    def __exit__(self, *_):
         """Exit the python object, used for context management.  See: https://www.python.org/dev/peps/pep-0343/"""
         return self.close()
 
@@ -111,12 +123,12 @@ class FPE(object):
         status = self.frames_running_status
         try:
             if self._debug:
-               print "Running:\ntftp <<EOF\n", \
-               tftp_command, "\n", \
-                 "EOF"
+                print "Running:\ntftp <<EOF\n", \
+                    tftp_command, "\n", \
+                    "EOF"
             self.frames_running_status = False
             try:
-                 tftp(_in=tftp_command)
+                tftp(_in=tftp_command)
             except ErrorReturnCode_1 as e:
                 # tftp *always* fails on OS X because it's awesome
                 # so just check that it reports in stdout it sent the thing
@@ -130,14 +142,12 @@ class FPE(object):
             return True
         finally:
             self.frames_running_status = status
-        return False
 
     def cmd_camrst(self):
         """Reset the camera after running frames"""
         return self.connection.send_command(
             "camrst",
             reply_pattern='FPE Reset complete')
-
 
     def cmd_status(self):
         """Get the camera status"""
@@ -147,7 +157,6 @@ class FPE(object):
         val = int(response, 16)
         return val
 
-
     def cmd_control(self):
         """Get the camera control status"""
         response = self.connection.send_command(
@@ -155,7 +164,6 @@ class FPE(object):
             reply_pattern="cam_control = 0x[0-9a-f]+")[14:]
         val = int(response, 16)
         return val
-
 
     def cmd_version(self):
         """Get the version of the Observatory Simulator DHU software"""
@@ -172,20 +180,17 @@ class FPE(object):
         finally:
             self.frames_running_status = status
 
-
     def cmd_start_frames(self):
         return self.connection.send_command(
             "cam_start_frames",
             reply_pattern="(Starting frames...|Frames already enabled)"
         )
 
-
     def cmd_stop_frames(self):
         return self.connection.send_command(
             "cam_stop_frames",
             reply_pattern="Frames Stopped..."
         )
-
 
     def cmd_hsk(self):
         """Get the camera housekeeping data, outputs an array of the housekeeping data"""
@@ -204,7 +209,6 @@ class FPE(object):
         finally:
             self.frames_running_status = status
 
-
     def cmd_clv(self):
         """Get the clock voltage memory, returns the twelve bit values"""
         import re
@@ -217,12 +221,11 @@ class FPE(object):
                 reply_pattern="FpeClv\[[0-9]+\] = 0x[0-9a-f]+",
                 matches=entries
             )
-            return [(reverse_bytes32(int(n,16)) >> shift) & mask
+            return [(reverse_bytes32(int(n, 16)) >> shift) & mask
                     for n in re.findall('0x[0-9a-f]+', out)
                     for (mask, shift) in [(0x0FFF, 16), (0x00000FFF, 0)]]
         finally:
             self.frames_running_status = status
-        
 
     def compile_and_load_fpe_program(self, program):
         """Loads the program code using tftp"""
@@ -232,9 +235,7 @@ class FPE(object):
         ast = parse_file(program)
         sequencer_byte_code = binary_files.write_seqmem(compile_sequences(ast))
         program_byte_code = binary_files.write_prgmem(compile_programs(ast))
-        return self.upload_sequencer_memory(sequencer_byte_code) and \
-               self.upload_program_memory(program_byte_code)
-
+        return self.upload_sequencer_memory(sequencer_byte_code) and self.upload_program_memory(program_byte_code)
 
     def capture_frames(self, n):
         """Capture frames"""
@@ -247,7 +248,6 @@ class FPE(object):
         proc.communicate()
         self.cmd_stop_frames()
 
-
     @property
     def house_keeping(self):
         hsk = self.cmd_hsk()
@@ -255,43 +255,38 @@ class FPE(object):
         analogue = house_keeping.hsk_to_analogue_dictionary(hsk)
         # Create array of digital outs
         digital = house_keeping.hsk_to_digital_dictionary(
-                  [k for i in range(0, 128, 32)
-                   for j in hsk[17 + i:24 + i]
-                   for k in house_keeping.unpack_pair(j)])
+            [k for i in range(0, 128, 32)
+             for j in hsk[17 + i:24 + i]
+             for k in house_keeping.unpack_pair(j)])
         return {"analogue": analogue,
                 "digital": digital}
-
 
     @property
     def analogue_house_keeping_with_units(self):
         hsk = self.cmd_hsk()
         return house_keeping.hsk_to_analogue_dictionary_with_units(hsk)
 
-
     @property
     def version(self):
         """Version property for the Observatory Simulator DHU software"""
         return self.cmd_version()
-
 
     @property
     def status(self):
         """Get the camera status for the Observatory Simulator for a particular FPE"""
         return self.cmd_status()
 
-
     @property
     def control_status(self):
         """Get the camera control status for the Observatory Simulator for a particular FPE"""
         return self.cmd_control()
 
-
     @property
     def expected_housekeeping(self):
         """Report the expected values for the housekeeping"""
         from copy import deepcopy
-        from tessfpe.data.housekeeping_channels import housekeeping_channels
-        from tessfpe.dhu.unit_tests import voltage_reference_values, temperature_sensor_calibration_values
+        from ..data.housekeeping_channels import housekeeping_channels
+        from ..dhu.unit_tests import voltage_reference_values, temperature_sensor_calibration_values
         expected_values = deepcopy(self.ops.values)
         for k in housekeeping_channels:
             if 'bias' in k:
@@ -304,27 +299,24 @@ class FPE(object):
 
     @property
     def ops(self):
-         if not hasattr(self, "_ops"):
+        if self._ops is None:
             self._ops = OperatingParameters(self)
-         return self._ops
-
+        return self._ops
 
     @property
     def frames_running_status(self):
         """Check if frames are being run or not"""
         return (0b10 & self.control_status) == 0b10
 
-
     @frames_running_status.setter
     def frames_running_status(self, value):
         """Set if frames are running or not"""
-        if value == True:
-           self.cmd_start_frames()
-        elif value == False:
-           self.cmd_stop_frames()
+        if value is True:
+            self.cmd_start_frames()
+        elif value is False:
+            self.cmd_stop_frames()
         else:
-           raise Exception("Trying to set frames_running_status to value that is not boolean: {0}".format(value))
-
+            raise Exception("Trying to set frames_running_status to value that is not boolean: {0}".format(value))
 
     def upload_fpe_wrapper_bin(self, fpe_wrapper_bin):
         """Upload the FPE Wrapper binary file to the FPE"""
@@ -332,13 +324,11 @@ class FPE(object):
             fpe_wrapper_bin,
             "bitmem" + str(self.fpe_number))
 
-
     def upload_sequencer_memory(self, sequencer_memory):
         """Upload the Sequencer Memory to the FPE"""
         return self.tftp_put(
-                 sequencer_memory,
-                 "seqmem" + str(self.fpe_number))
-
+            sequencer_memory,
+            "seqmem" + str(self.fpe_number))
 
     def upload_register_memory(self, register_memory):
         """Upload the Register Memory to the FPE"""
@@ -346,20 +336,17 @@ class FPE(object):
             register_memory,
             "regmem" + str(self.fpe_number))
 
-
     def upload_program_memory(self, program_memory):
         """Upload the Program Memory to the FPE"""
         return self.tftp_put(
             program_memory,
             "prgmem" + str(self.fpe_number))
 
-
     def upload_operating_parameter_memory(self, operating_parameter_memory):
         """Upload the Operating Parameter Memory to the FPE"""
         return self.tftp_put(
             operating_parameter_memory,
             "clvmem" + str(self.fpe_number))
-
 
     def upload_housekeeping_memory(self, hsk_memory):
         """Upload the Operating Parameter Memory to the FPE"""

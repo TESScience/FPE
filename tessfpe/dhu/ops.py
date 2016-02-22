@@ -325,14 +325,10 @@ class OperatingParameters(dict):
         else:
             return super(OperatingParameters, self).__getitem__(item)
 
-    # TODO: getattr?
-
     def __setattr__(self, name, value):
-        if "_operating_parameters" in self.__dict__ and \
-                        name in self._operating_parameters:
+        if "_operating_parameters" in self.__dict__ and name in self._operating_parameters:
             self._operating_parameters[name].value = value
-        elif "_derived_operating_parameters" in self.__dict__ and \
-                        name in self._derived_operating_parameters:
+        elif "_derived_operating_parameters" in self.__dict__ and name in self._derived_operating_parameters:
             self._derived_operating_parameters[name].value = value
         else:
             super(OperatingParameters, self).__setattr__(name, value)
