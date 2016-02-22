@@ -193,7 +193,7 @@ symversion=20131108
 T 47300 44500 5 10 1 1 0 0 1
 value=680pF
 T 47600 43200 5 10 0 1 180 0 1
-spec=50WVDC X7R
+spec=50WVDC NP0
 }
 C 42000 42600 1 0 0 in-1.sym
 {
@@ -501,17 +501,3 @@ slot=2
 C 47700 40700 1 0 0 gnd-1.sym
 N 52400 45400 52400 41600 4
 N 53600 43800 53600 41600 4
-C 48500 46000 1 0 0 resistor.sym
-{
-T 48700 45600 5 10 1 1 0 0 1
-refdes=R25
-T 48700 45800 5 10 1 1 0 0 1
-value=DNP
-}
-N 49400 46100 49400 46500 4
-C 48400 45800 1 0 0 gnd-1.sym
-T 44600 50000 9 10 1 0 0 0 4
-To hard-wire the parallel clock high level to ground:
-Remove R21
-Replace C5 with 0 ohms
-Populate R25 with 0 ohms

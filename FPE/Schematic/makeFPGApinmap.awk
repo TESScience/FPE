@@ -20,7 +20,7 @@ NF==24 {	# Anything not already matched should be a full Vivado csv line, but ch
 	else if( $24) signal = $24	# use board voltage
 	else if( $4 ~ /_0$/ ) signal = $4		# use "Site Type" for the _0 signals
 	else if( $4 ~ /^VCC/ ) signal = $4		# and for unassigned power
-	else if( $4 ~ /MGT.*/ ) signal = $4
+	else if( $4 ~ /MGT.*_216/ ) signal = $4
 	
 	if( !signal ) next			# no connection
 	

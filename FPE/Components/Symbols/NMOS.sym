@@ -51,7 +51,7 @@ L 200 600 200 200 3 0 0 0 -1 -1
 L 250 400 400 400 3 0 0 0 -1 -1
 L 400 400 400 200 3 0 0 0 -1 -1
 T 200 1600 5 10 0 0 0 0 1
-footprint=TO252AA_18LCC
+footprint=TO252AA
 T 200 1400 5 10 0 0 0 0 1
 spice-prototype=X? %pinseq model-name@
 T 200 1200 5 10 0 0 0 0 1
