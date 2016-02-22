@@ -1,61 +1,7 @@
-#!/usr/bin/env python2.7
-# -*- coding: utf-8 -*-
-"""This script performs measurements of reference voltages to verify functionality."""
+#!/bin/bash
 
-def unique(ls):
-    """Takes an iterable and returns a unique list of elements"""
-    visited = set()
-    output = []
-    for l in ls:
-        if l in visited:
-            continue
-        else:
-            output.append(l)
-            visited.add(l)
-    return output
+set -euo pipefail
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PYTHON=${DIR}/python
 
-def match_channels(patterns, channels, sort=False):
-    """Given a list of patterns and channels, return those channels that match those patterns"""
-    import fnmatch
-    import re
-    out = unique(c for p in map(lambda x: re.compile(fnmatch.translate(x)), patterns)
-                   for c in channels
-                   if p.match(c)) # TODO: handle wildcards
-    return sorted(out) if sort else out
-
-if __name__ == "__main__":
-    from tessfpe.dhu.fpe import FPE
-    from tessfpe.data.housekeeping_channels import housekeeping_channels, report_table
-    from tessfpe.dhu.unit_tests import voltage_reference_values
-    from copy import deepcopy
-    import argparse
-    import sys
-
-    # Parse the command line arguments
-    parser = argparse.ArgumentParser(description='Get the analogue housekeeping data for specified parameters')
-    parser.add_argument('--FPE-number', metavar='N', type=int, nargs='?', default=1, help='which FPE to use')
-    parser.add_argument('--samples', metavar='N', type=int, nargs='?', default=1, help='number of samples to take')
-    parser.add_argument('--precision', metavar='N', type=int, nargs='?', default=4, help='number of digits of precision to use when outputting')
-    parser.add_argument('--channels', nargs='+', help='channels to report ; can accept UNIX-style wild cards (defaults to *)')
-    parser.add_argument('--debug', action='store_true', help='Enable debugging output')
-    parser.add_argument('--sort', action='store_true', help='Sort the housekeeping channels')
-    args = parser.parse_args()
-    
-    with FPE(args.FPE_number, debug=args.debug) as fpe:
-        if args.channels:
-           channels = match_channels(args.channels, housekeeping_channels.keys(), sort=args.sort)
-        else:
-           channels = housekeeping_channels.keys()
-           channels.sort()
-
-        reported_values = {k:[] for k in channels}
-        for _ in range(args.samples):
-            hk = deepcopy(fpe.house_keeping)
-            for k in channels:
-                reported_values[k].append(hk["analogue"][k])
-
-        print report_table(reported_values, 
-                           expected_values = fpe.expected_housekeeping,
-                           keys = channels,
-                           precision = args.precision)
-        sys.exit(0)  # 0 is SUCCESS for shell commands
+${PYTHON} ${DIR}/house_keeping.py $@ | column -t

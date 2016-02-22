@@ -2,6 +2,5 @@
 
 set -euo pipefail
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PYTHON=${DIR}/python
 
-${PYTHON} ${DIR}/house_keeping --channels *bias* --sort --samples 20 $@
+${DIR}/house_keeping --channels *bias* --sort --samples 20 $@
