@@ -18,7 +18,7 @@ def include_files(text, search_path="."):
             out.append(l)
         else:
             file_name = m.groups()[0].strip('"')
-            with open(os.path.join(search_path,file_name)) as f:
+            with open(os.path.join(search_path, file_name)) as f:
                 out.append(f.read())
     return "\n".join(out)
 
@@ -145,22 +145,24 @@ def parse(text):
     ast["sequences"] = semantics.sequences
     return ast
 
+
 def preprocess(file_name):
     """Preprocesses a file and returns the code; leaves comments"""
     import os.path
 
     if isinstance(file_name, basestring):
-       f = open(file_name)
+        f = open(file_name)
     elif hasattr(file_name, 'read'):
-       f = file_name
+        f = file_name
     else:
-       raise Exception("Cannot read FPE program from object with type {0}".format(type(file_name)))
-       
+        raise Exception("Cannot read FPE program from object with type {0}".format(type(file_name)))
+
     try:
-       return include_files(f.read(), search_path=os.path.dirname(f.name))
+        return include_files(f.read(), search_path=os.path.dirname(f.name))
     finally:
-       if hasattr(f, 'close'):
-          f.close()
+        if hasattr(f, 'close'):
+            f.close()
+
 
 def parse_file(file_name):
     """Parses a file containing SequencerDSL text into an AST"""

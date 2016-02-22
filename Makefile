@@ -1,4 +1,4 @@
-.PHONY: all manual install_testsuite clean test
+.PHONY: all manual install_testsuite clean test version
 MANUAL_DIR=FPE/Documentation
 SCHEMATIC_DIR=FPE/Schematic
 VERSION=$(shell git describe --abbrev=0 --tags)
@@ -10,6 +10,9 @@ GITHUB_REMOTE=$(shell for i in $(shell git remote) ; do \
 done) 
 
 all: manual tessfpe/sequencer_dsl/SequencerDSLParser.py docs/_build/html
+
+version:
+	@echo $(VERSION)
 
 docs/_build/html:
 	make -C docs html
@@ -29,24 +32,12 @@ install_testsuite: setup.py testsuite/venv tessfpe/sequencer_dsl/SequencerDSLPar
 	@[ -d testsuite/venv/lib/python2.7/site-packages/tessfpe-*.egg ] \
         || testsuite/venv/bin/python setup.py install
 
+reinstall_testsuite:
+	rm -rf testsuite/venv
+	make install_testsuite
+
 testsuite/venv:
 	make -C testsuite venv
-
-release: setup.py manual tessfpe/sequencer_dsl/SequencerDSLParser.py
-	# Commit the tagged release to github if necessary
-	if ! curl -s --head https://codeload.github.com/TESScience/FPE/legacy.tar.gz/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
-		if [[ $(GITHUB_REMOTE) == *[!\ ]* ]] ; then \
-			echo "Making release $(VERSION)" ; \
-			git push $(GITHUB_REMOTE) $(VERSION) ; \
-		else \
-			echo "Could not find a remote that goes with git@github.com:TESScience/FPE.git to push tag $(VERSION) to" > /dev/stderr ; \
-		fi \
-	fi
-	# Upload the release to pypi if necessary
-	if ! curl -s --head https://pypi.python.org/pypi/tessfpe/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
-		rm -rf dist/ tessfpe.egg-info/ ; \
-		python setup.py sdist upload -r pypi ; \
-	fi
 
 test:
 	make -C tessfpe test
