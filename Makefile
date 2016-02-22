@@ -1,4 +1,4 @@
-.PHONY: all manual install_testsuite clean test
+.PHONY: all manual install_testsuite clean test version
 MANUAL_DIR=FPE/Documentation
 SCHEMATIC_DIR=FPE/Schematic
 VERSION=$(shell git describe --abbrev=0 --tags)
@@ -10,6 +10,9 @@ GITHUB_REMOTE=$(shell for i in $(shell git remote) ; do \
 done) 
 
 all: manual tessfpe/sequencer_dsl/SequencerDSLParser.py docs/_build/html
+
+version:
+	@echo $(VERSION)
 
 docs/_build/html:
 	make -C docs html
