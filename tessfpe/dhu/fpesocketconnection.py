@@ -19,7 +19,7 @@ class TimeOut:
         signal.signal(signal.SIGALRM, self.handle_timeout)
         signal.setitimer(signal.ITIMER_REAL, self.seconds)
 
-    def __exit__(self, type, value, traceback):
+    def __exit__(self, *_):
         signal.setitimer(signal.ITIMER_REAL, 0)
 
 
@@ -42,7 +42,7 @@ class FPESocketConnection(object):
         """Return the context guard (in this case, just `self`)"""
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
+    def __exit__(self, *_):
         """Cleanup for object in `with` context"""
         return self.close()
 
@@ -56,7 +56,7 @@ class FPESocketConnection(object):
         for trial in range(retries):
             try:
                 with TimeOut(seconds=timeout,
-                             error_message="Timeout on trial {}".format(trial+1)):
+                             error_message="Timeout on trial {}".format(trial + 1)):
                     self.socket.sendall((command + b'\n').encode())
                     data = self.wait_for_pattern(
                         reply_pattern,

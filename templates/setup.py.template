@@ -24,7 +24,7 @@ setup (
       'grako>=3.6.3',
       'pandas>=0.17.1',
       'sh>=1.11',
-      'matplotlib>=1.5.0',
+      #'matplotlib>=1.5.0',
       'termcolor>=1.1.0'
   ],
 )
