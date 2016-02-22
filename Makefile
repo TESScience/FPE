@@ -1,4 +1,4 @@
-.PHONY: all manual install_testsuite reinstall_testsuite clean test testsuite_install testsuite_reinstall
+.PHONY: all manual install_testsuite clean test version
 MANUAL_DIR=FPE/Documentation
 SCHEMATIC_DIR=FPE/Schematic
 VERSION=$(shell git describe --abbrev=0 --tags)
@@ -10,6 +10,9 @@ GITHUB_REMOTE=$(shell for i in $(shell git remote) ; do \
 done) 
 
 all: manual tessfpe/sequencer_dsl/SequencerDSLParser.py docs/_build/html
+
+version:
+	@echo $(VERSION)
 
 docs/_build/html:
 	make -C docs html
@@ -25,17 +28,12 @@ setup.py: templates/setup.py.template
 tessfpe/sequencer_dsl/SequencerDSLParser.py: 
 	make -C $(dir $@) $(notdir $@)
 
-testsuite_install: install_testsuite
-
 install_testsuite: setup.py testsuite/venv tessfpe/sequencer_dsl/SequencerDSLParser.py
 	@[ -d testsuite/venv/lib/python2.7/site-packages/tessfpe-*.egg ] \
         || testsuite/venv/bin/python setup.py install
 
-
-testsuite_reinstall: reinstall_testsuite
-
 reinstall_testsuite:
-	rm -rf testsuite/venv setup.py
+	rm -rf testsuite/venv
 	make install_testsuite
 
 testsuite/venv:
