@@ -39,22 +39,6 @@ reinstall_testsuite:
 testsuite/venv:
 	make -C testsuite venv
 
-release: setup.py manual tessfpe/sequencer_dsl/SequencerDSLParser.py
-	# Commit the tagged release to github if necessary
-	if ! curl -s --head https://codeload.github.com/TESScience/FPE/legacy.tar.gz/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
-		if [[ $(GITHUB_REMOTE) == *[!\ ]* ]] ; then \
-			echo "Making release $(VERSION)" ; \
-			git push $(GITHUB_REMOTE) $(VERSION) ; \
-		else \
-			echo "Could not find a remote that goes with git@github.com:TESScience/FPE.git to push tag $(VERSION) to" > /dev/stderr ; \
-		fi \
-	fi
-	# Upload the release to pypi if necessary
-	if ! curl -s --head https://pypi.python.org/pypi/tessfpe/$(VERSION) | head -n 1 | grep "HTTP/1.[01] [23].." > /dev/null ; then \
-		rm -rf dist/ tessfpe.egg-info/ ; \
-		python setup.py sdist upload -r pypi ; \
-	fi
-
 test:
 	make -C tessfpe test
 
