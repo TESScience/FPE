@@ -13,12 +13,12 @@ setup (
                   'sequencer_dsl/tikz/Makefile.template',  # Add Makefile template used for compiling TikZ timing diagrams
                  ],
   },
-  version = '<TAG>',
+  version = '6.1.12.dev9',
   description = 'Software to accompany the Focal Plane Electronics (FPE) for the Transiting Exoplanet Survey Satellite (TESS)',
   author = 'John Doty',
   author_email = 'jpd@noqsi.com',
   url = 'https://github.com/TESScience/FPE', # use the URL to the github repo
-  download_url = 'https://github.com/TESScience/FPE/tarball/<TAG>',
+  download_url = 'https://github.com/TESScience/FPE/tarball/6.1.12.dev9',
   scripts = glob.glob('scripts/*'),
   install_requires=[
       'grako>=3.6.3',

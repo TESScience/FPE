@@ -1,7 +1,7 @@
 numpy==1.10.4
 pandas==0.17.1
 virtualenv-clone==0.2.6
-matplotlib==1.5.1
+#matplotlib==1.5.1
 sh==1.11
 six==1.10.0
 pytz==2015.7
