@@ -60,6 +60,7 @@ def hsk_to_analogue_dictionary_with_units(hsk):
         add_hsk_units
     return add_hsk_units(hsk_to_analogue_dictionary(hsk))
 
+
 digital_dictionary_keywords = ["hsk_time_conv",
                                "hsk_time_btn_samples",
                                "hsk_total_samples",
@@ -75,9 +76,12 @@ digital_dictionary_keywords = ["hsk_time_conv",
                                "leds_off",
                                "version"]
 
+
 def hsk_to_digital_dictionary(hsk):
-    return dict(zip(digital_dictionary_keywords,hsk))
+    return dict(zip(digital_dictionary_keywords, hsk))
+
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()

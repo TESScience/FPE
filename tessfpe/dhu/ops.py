@@ -110,6 +110,7 @@ OperatingParameterInfo = \
     collections.namedtuple('OperatingParameterInfo',
                            ['name', 'address', 'high', 'low', 'unit', 'default'])
 
+
 class OperatingParameter(object):
     """An operating parameter object for the FPE Data Handling Unit (DHU) object"""
 
@@ -217,7 +218,6 @@ class DerivedOperatingParameter(object):
     def __ne__(self, other):
         return not self.__eq__(other)
 
-
     @property
     def default(self):
         return self._base.default + self._offset.default
@@ -229,7 +229,6 @@ class DerivedOperatingParameter(object):
     @value.setter
     def value(self, x):
         self._offset.value = x - self._base.value
-
 
 
 def values_to_5328(values):
@@ -247,12 +246,11 @@ def values_to_5328(values):
         raise Exception("Should have 128 values, had: {}".format(len(values)))
     return map(lambda x, y: x + y, list(values), 16 * range(0, 8 * 4096, 4096))
 
+
 class OperatingParameters(dict):
     def __init__(self, fpe=None, *args, **kwargs):
         import re
         from ..data.operating_parameters import default_operating_parameters
-        import os
-        import json
         super(OperatingParameters, self).__init__(*args, **kwargs)
         # The underscore here is used as sloppy "private" memory
         self._fpe = fpe
@@ -294,7 +292,7 @@ class OperatingParameters(dict):
 
     def __eq__(self, other):
         if isinstance(other, self.__class__):
-            return all(a == b for a,b in zip(self.address, other.address))
+            return all(a == b for a, b in zip(self.address, other.address))
         else:
             return False
 
@@ -327,14 +325,10 @@ class OperatingParameters(dict):
         else:
             return super(OperatingParameters, self).__getitem__(item)
 
-    # TODO: getattr?
-
     def __setattr__(self, name, value):
-        if "_operating_parameters" in self.__dict__ and \
-           name in self._operating_parameters:
+        if "_operating_parameters" in self.__dict__ and name in self._operating_parameters:
             self._operating_parameters[name].value = value
-        elif "_derived_operating_parameters" in self.__dict__ and \
-                        name in self._derived_operating_parameters:
+        elif "_derived_operating_parameters" in self.__dict__ and name in self._derived_operating_parameters:
             self._derived_operating_parameters[name].value = value
         else:
             super(OperatingParameters, self).__setattr__(name, value)
@@ -347,21 +341,19 @@ class OperatingParameters(dict):
 
     def send(self):
         """Send the current DAC values to the hardware."""
-        import json
-
         # Get the frames status, restore it after we are done uploading the operating parameters
         frames_status = self._fpe.frames_running_status
         self._fpe.cmd_stop_frames()
         try:
             return self._fpe.upload_operating_parameter_memory(
-                   binary_files.write_clvmem(values_to_5328(self.raw_values)))
+                binary_files.write_clvmem(values_to_5328(self.raw_values)))
         finally:
             self._fpe.frames_running_status = frames_status
             new_parameters = OperatingParameters(self._fpe)
             if self != new_parameters:
-               raise Exception("Could not set operating parameters")
+                raise Exception("Could not set operating parameters")
             else:
-               self.set_values_from_fpe()
+                self.set_values_from_fpe()
 
     def reset_to_defaults(self):
         """Reset the operating parameters to the defaults"""
@@ -378,6 +370,7 @@ class OperatingParameters(dict):
                 continue
             a.value = a.low
         return self.send()
+
 
 if __name__ == "__main__":
     import doctest
