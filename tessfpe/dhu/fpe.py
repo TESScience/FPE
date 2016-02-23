@@ -71,6 +71,7 @@ class FPE(object):
 
     def load_wrapper(self, wrapper_version):
         import os.path
+        import time
         from unit_tests import check_house_keeping_voltages
         fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
                                        "FPE_Wrapper-{version}.bin".format(version=wrapper_version))
@@ -83,19 +84,23 @@ class FPE(object):
         # TODO: have check_house_keeping_voltages throw custom exception if it fails
         except:
             # Upload the wrapper
+            time.sleep(5)
             assert self.upload_fpe_wrapper_bin(fpe_wrapper_bin), "Could not load wrapper: {}".format(fpe_wrapper_bin)
             # Upload the register memory
             register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
+            time.sleep(5)
             assert self.upload_register_memory(register_memory), "Could not load register memory: {}".format(
                 register_memory)
             # Set the housekeeping memory to the identity map
             house_keeping_memory = binary_files.write_hskmem(house_keeping.identity_map)
+            time.sleep(5)
             assert self.upload_housekeeping_memory(
                 house_keeping_memory), "Could not load house keeping memory: {}".format(house_keeping_memory)
             # Set the operating parameters to their defaults
-            assert self.ops.reset_to_defaults(), "Could not send operating parameters"
+            time.sleep(5)
+            #assert self.ops.reset_to_defaults(), "Could not send operating parameters"
         check_house_keeping_voltages(self)
-        return False
+        return True
 
     def close(self):
         """Close the fpe object (namely its socket connection)"""
