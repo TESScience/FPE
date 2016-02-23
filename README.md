@@ -8,20 +8,16 @@ Focal Plane Electronics for TESS
 This project contains the design specification for the focal plane electronics for the [Transiting Exoplanet Survey Satellite (TESS)](http://space.mit.edu/TESS/TESS/TESS_Overview.html).
 
 
-Manual
+Documentation
 ----------
 
-You can read the latest version of the manual here:
+You can read the latest documentation on our GitHub wiki:
 
-[https://github.com/TESScience/FPE/raw/master/FPE/Documentation/FPE.pdf](https://github.com/TESScience/FPE/raw/master/FPE/Documentation/FPE.pdf)
+[https://github.com/TESScience/FPE/wiki](https://github.com/TESScience/FPE/wiki)
 
-To build the TESS FPE manual, type:
+This includes software tutorials and engineering manuals.
 
-```bash
-make FPE/Documentation/AE.pdf
-```
-
-or
+Provided that you have LaTeX, gschem and spice installed, you can reproduce the engineer manual by typing:
 
 ```bash
 make manual
@@ -53,4 +49,3 @@ Where:
   **Hardware developers can safely ignore *D***
 
   Releases must conform to the above specification, which is a subset of [PEP 440](https://www.python.org/dev/peps/pep-0440/), in order to be accepted by [pypi](https://pypi.python.org/pypi).  In the event that a tag *does not* conform to the above spec, it will not be possible to create a software release on pypi. 
-
