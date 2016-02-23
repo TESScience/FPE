@@ -54,6 +54,7 @@ def timing_for_bit(sequence, sequence_name, sequencer_bit, default_value="vlow")
             '+0 {{{}}}\n'.format(default_value) +
             "\n".join(
                 ('+{{{idx}*tclock+trise}}{{{value}}}\n' +
-                 '+{{{idx}*tclock+trise}}{{{value}}}').format(
-                    idx=idx, value=value) for (idx, value) in enumerate(values)) +
+                 '+{{{next_idx}*tclock}}{{{value}}}').format(
+                    idx=idx, value=value, next_idx=idx+1)
+                for (idx, value) in enumerate(values)) +
             '\n')
