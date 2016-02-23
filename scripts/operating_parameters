@@ -1,0 +1,48 @@
+#!/usr/bin/env python2.7
+"""This script handles the operating parameters for the DHU"""
+
+if __name__ == "__main__":
+    from tessfpe.dhu.fpe import FPE
+    import sys
+    import argparse
+    import json
+    import select
+    parser = argparse.ArgumentParser(description='Manage the operating parameters for the DHU.\n\nIf no argument is given, prints the current status of the operating parameters.\n\nExit status indicates if operating parameters are in acceptable range.')
+    parser.add_argument('json', nargs='?', type=argparse.FileType('r'), default=sys.stdin, help='An (optional) JSON file containing the operating parameter settings')
+    parser.add_argument('--FPE-number', metavar='N', type=int, nargs='?', default=1, help='which FPE to use')
+    parser.add_argument('--set', nargs='+', help="Set operating parameters by specifying pairs of values, e.g. 'ccd4_reset_low=15.0'")
+    parser.add_argument('--set-defaults', action='store_true', help='Set the operating parameters to their default values')
+    parser.add_argument('--debug', action='store_true', help='Enable debugging output')
+    args = parser.parse_args()
+ 
+    with FPE(args.FPE_number,debug=args.debug) as fpe:
+        status = fpe.frames_running_status
+        try:
+             if select.select([args.json,],[],[],0.0)[0]:
+                user_settings = json.load(args.json)
+                for k,v in user_settings.iteritems():
+                    if k not in fpe.ops.keys():
+                         raise Exception("Unknown parameter: {}".format(k))
+                    if (k + "_offset") not in user_settings:
+                        fpe.ops[k].value = v
+                fpe.ops.send()
+             elif args.set_defaults:
+                fpe.ops.reset_to_defaults()
+             if args.set:
+                raw_set_parameters = [y for x in args.set
+                                        for y in x.split('=')]
+                if not (len(raw_set_parameters) % 2 == 0):
+                   raise Exception("Could not parse --set arguments into parameter-value pairs: {}".format(args.set))
+                set_parameters = {p: float(v) 
+                                  for (p,v) in  map(lambda i: raw_set_parameters[i:i+2],
+                                                    xrange(0, len(raw_set_parameters), 2))}
+                                         
+                for k,v in set_parameters.iteritems():
+                    if k not in fpe.ops.keys():
+                         raise Exception("Unknown parameter: {}".format(k))
+                    if (k + '_offset') not in set_parameters:
+                        fpe.ops[k].value = v
+             print json.dumps(fpe.ops.values, sort_keys=True, indent=4, separators=(',', ': '))
+             sys.exit(0)  # 0 is SUCCESS for shell commands
+        finally:
+             fpe.frames_running_status = status

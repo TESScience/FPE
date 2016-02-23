@@ -19,5 +19,8 @@ venv: .venv-clean
 install:
 	make -C .. install_testsuite
 
+reinstall:
+	make -C .. reinstall_testsuite
+
 clean:
 	rm -rf .venv-clean/ venv/
