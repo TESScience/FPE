@@ -5,9 +5,9 @@ python:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y geda-{gschem,gnetlist} a2ps texlive-latex-{base,extra,recommended} python-{pip,sphinx}
+  - sudo apt-get install -y geda-{gschem,gnetlist} a2ps texlive-latex-{base,extra,recommended} python-{pip,sphinx,pandas,matplotlib,numpy}
 
-install: "pip install -r requirements.txt"
+install: "pip install -r testsuite/requirements.txt"
 
 script: 
   - make test

@@ -1,19 +1,34 @@
 VIDEOPRODUCTS = Video.allegro Video.devfiles Video.bom.txt \
-	Video.bom2.txt Video.counts.txt Video-Cirrexx.tsv Video.pads Video.osmond \
+	Video.bom2.txt Video.counts.txt  \
 	Video.stats.txt
+
+# Video-Cirrexx.tsv Video.pads Video.osmond
+
+VIDEOCHECKS = Video.check-duplicates Video.check-pincount
 
 INTERFACEPRODUCTS = Interface.allegro Interface.devfiles \
 	Interface.bom.txt Interface.bom2.txt Interface.counts.txt \
-	Interface-Cirrexx.tsv Interface.pads Interface.osmond Interface.stats.txt
+	 Interface.stats.txt
+
+#Interface-Cirrexx.tsv Interface.pads Interface.osmond
+
+INTERFACECHECKS = Interface.check-duplicates Interface.check-pincount
 
 DRIVERPRODUCTS = Driver.allegro Driver.devfiles Driver.bom.txt \
-	Driver.bom2.txt Driver.counts.txt Driver-Cirrexx.tsv Driver.pads \
-	Driver.osmond Driver.stats.txt
+	Driver.bom2.txt Driver.counts.txt Driver.stats.txt
+
+#  Driver-Cirrexx.tsv Driver.pads Driver.osmond 
+
+DRIVERCHECKS = Driver.check-duplicates Driver.check-pincount
 
 PRODUCTS = $(VIDEOPRODUCTS) $(INTERFACEPRODUCTS) $(DRIVERPRODUCTS) \
-	../Documentation/AE.pdf
+	../Documentation/FPE.pdf counts.txt
+
+CHECKS = $(VIDEOCHECKS) $(INTERFACECHECKS) $(DRIVERCHECKS)
 
 all : $(PRODUCTS)
+
+checks : $(DRIVERCHECKS) $(INTERFACECHECKS) $(VIDEOCHECKS)
 
 release : $(PRODUCTS)
 	mkdir -p ../../Releases/$(REV)
@@ -21,9 +36,12 @@ release : $(PRODUCTS)
 	cp Source_of_release_README ../../Releases/$(REV)/README
 	zip -r ../../Releases/$(REV).zip ../../Releases/$(REV)
 
-../Documentation/AE.pdf : ../Documentation/AE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
+../Documentation/FPE.pdf : ../Documentation/FPE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
 	$(DRIVERDOCS)
-	make -C ../Documentation AE.pdf
+	make -C ../Documentation FPE.pdf
+
+counts.txt : Video.bom.txt Driver.bom.txt Interface.bom.txt
+	awk -f countem.awk $^ | sort -nr >$@
 
 # "Standard Boilerplate"
 # Definitions to generate the drawings
@@ -174,6 +192,12 @@ Video-Cirrexx.tsv : Video.bom2.txt CirrexxBOM.awk partnumbers.tsv
 Video.drc.txt: $(VIDEOSCH) $(VIDEOMERGE)
 	$(GNET) -g drc2 -o $@ $(VIDEOTOP) $(VIDEOMERGE)
 
+Video.check-duplicates: $(VIDEOSCH) $(VIDEOMERGE)
+	$(GNET) -L . -g check-duplicates $(VIDEOTOP) $(VIDEOMERGE)
+
+Video.check-pincount: $(VIDEOSCH) $(VIDEOMERGE)
+	$(GNET) -L . -g check-pincount -m FPE-footprint-pins.scm $(VIDEOTOP) $(VIDEOMERGE)
+
 # Screaming Circuits BOM as a tsv
 
 Video.bom.tsv : Video.bom.txt $(PARTDB) video-omit.tsv
@@ -201,6 +225,7 @@ INTERFACEDOCS= \
 	DriverSet.4.ps \
 	DriverSet.5.ps \
 	ArtixPower.ps \
+	Reset.ps \
 	Interface.1.ps \
 	Interface.2.ps \
 	Interface.3.ps \
@@ -233,7 +258,8 @@ INTERFACESUB= \
 	DriverSet.3.sch \
 	DriverSet.4.sch \
 	DriverSet.5.sch \
-	ArtixPower.sch
+	ArtixPower.sch \
+	Reset.sch
 
 INTERFACEMERGE= \
 	Interface.J8.psch \
@@ -277,6 +303,12 @@ Interface-Cirrexx.tsv : Interface.bom2.txt CirrexxBOM.awk partnumbers.tsv
 Interface.drc.txt: $(INTERFACESCH) $(INTERFACEMERGE)
 	$(GNET) -g drc2 -o $@ $(INTERFACETOP) $(INTERFACEMERGE)
 
+Interface.check-duplicates: $(INTERFACESCH) $(INTERFACEMERGE)
+	$(GNET) -L . -g check-duplicates $(INTERFACETOP) $(INTERFACEMERGE)
+
+Interface.check-pincount: $(INTERFACESCH) $(INTERFACEMERGE)
+	$(GNET) -L . -g check-pincount -m FPE-footprint-pins.scm $(INTERFACETOP) $(INTERFACEMERGE)
+
 Interface.ps: $(INTERFACEDOCS)
 	$(A2PS)
 
@@ -287,8 +319,8 @@ Interface.bom.tsv : Interface.bom.txt $(PARTDB) Interface-omit.tsv
 	&& (awk -f screamBOM.awk $(PARTDB) bom=1 Interface.bom.txt >Interface.bom.tsv)
 
 clean : 
-	rm -rf *.ps *.pdf *.bom.txt *.bom.tsv *.drc.txt *.net.txt \
-        *.xls *.psch *.log *devfiles *.counts.txt \
+	rm -rf *.ps *.pdf *.bom*.txt *.bom.tsv *.drc.txt *.net.txt \
+        *.xls *.psch *.log *devfiles *counts.txt CCD-connectors.txt Stack.txt \
         *.stats.txt tmp.sch *.U*.txt *~ \#* 
 
 ##########################
@@ -344,6 +376,12 @@ Driver.ps : $(DRIVERDOCS)
 
 Driver.drc.txt: $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
 	$(GNET) -g drc2 -o $@ $(DRIVERTOP) $(DRIVERMERGE)
+
+Driver.check-duplicates: $(DRIVERSCH) $(DRIVERMERGE)
+	$(GNET) -L . -g check-duplicates $(DRIVERTOP) $(DRIVERMERGE)
+
+Driver.check-pincount: $(DRIVERSCH) $(DRIVERMERGE)
+	$(GNET) -L . -g check-pincount -m FPE-footprint-pins.scm $(DRIVERTOP) $(DRIVERMERGE)
 
 Driver.stats.txt : $(DRIVERTOP) $(DRIVERSUB) $(DRIVERMERGE)
 	$(GNET) -L . -g stats -o $@ $(DRIVERTOP) $(VIDEOMERGE)

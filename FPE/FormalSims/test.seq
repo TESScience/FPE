@@ -1,0 +1,128 @@
+defaults {
+    P1-IA-1 low P2-IA-1 high P3-IA-1 low
+    P1-IA-2 low P2-IA-2 high P3-IA-2 low
+    P1-IA-3 low P2-IA-3 high P3-IA-3 low
+    P1-IA-4 low P2-IA-4 high P3-IA-4 low
+    P1-FS-1 low P2-FS-1 high P3-FS-1 low
+    P1-FS-2 low P2-FS-2 high P3-FS-2 low
+    P1-FS-3 low P2-FS-3 high P3-FS-3 low
+    P1-FS-4 low P2-FS-4 high P3-FS-4 low
+    P1-OR low P2-OR high P3-OR low
+    P1-U low P2-U low P3-U low
+    RG high ID high
+    Int low DeInt low Clamp low CNV low
+    }
+
+sequence pixcycle {
+    ID low step
+    P3-OR high P1-U high step
+    step
+    step
+    step
+    P2-OR low P2-U low RG low step
+    step
+    step
+    step
+    P1-OR high P1-U high step
+    step
+    step
+    ID high step
+    P3-OR low P3-U low step
+    step
+    step
+    step
+    P2-OR high P2-U low step
+    step
+    step
+    step
+    P1-OR low P1-U high step
+    step
+    RG high step
+    }
+
+sequence frametransfer1 {
+    P3-FS-1 high P3-IA-1 high
+    step(24)
+    P2-FS-1 low P2-IA-1 low
+    step(24)
+    P1-FS-1 high P1-IA-1 high
+    step(24)
+    P3-FS-1 low P3-IA-1 low
+    step(24)
+    P2-FS-1 high P2-IA-1 high
+    step(24)
+    P1-FS-1 low P1-IA-1 low
+    step(24)
+} 
+
+sequence frametransfer2 {
+    P3-FS-2 high P3-IA-2 high
+    step(24)
+    P2-FS-2 low P2-IA-2 low
+    step(24)
+    P1-FS-2 high P1-IA-2 high
+    step(24)
+    P3-FS-2 low P3-IA-2 low
+    step(24)
+    P2-FS-2 high P2-IA-2 high
+    step(24)
+    P1-FS-2 low P1-IA-2 low
+    step(24)
+} 
+
+sequence frametransfer3 {
+    P3-FS-3 high P3-IA-3 high
+    step(24)
+    P2-FS-3 low P2-IA-3 low
+    step(24)
+    P1-FS-3 high P1-IA-3 high
+    step(24)
+    P3-FS-3 low P3-IA-3 low
+    step(24)
+    P2-FS-3 high P2-IA-3 high
+    step(24)
+    P1-FS-3 low P1-IA-3 low
+    step(24)
+} 
+
+sequence frametransfer4 {
+    P3-FS-4 high P3-IA-4 high
+    step(24)
+    P2-FS-4 low P2-IA-4 low
+    step(24)
+    P1-FS-4 high P1-IA-4 high
+    step(24)
+    P3-FS-4 low P3-IA-4 low
+    step(24)
+    P2-FS-4 high P2-IA-4 high
+    step(24)
+    P1-FS-4 low P1-IA-4 low
+    step(24)
+} 
+
+/*
+Compute parameters to make a 1 ms test loop.
+*/
+
+parameter cycles = 625;			/* number of 1.6 us cycles in 1 ms */
+parameter framecycles = 4 * 6; 		/* number of 1.6 us cycles for parallels */
+parameter pixcycles = cycles - framecycles;	/* 1 ms */
+parameter loops = 2000;			/* 2 s */
+
+/*
+The sequencer program.
+*/
+
+do( loops ) {
+	no_data ( 1 ) frametransfer1;
+	no_data ( 1 ) frametransfer2;
+	no_data ( 1 ) frametransfer3;
+	no_data ( 1 ) frametransfer4;
+	no_data ( pixcycles ) pixcycle;
+}
+
+/*
+If we get this far, just keep doing pixcycles until a new frame.
+*/
+
+hold pixcycle;

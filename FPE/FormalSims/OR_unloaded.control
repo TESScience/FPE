@@ -1,0 +1,10 @@
+.control
+tran 10n 2u
+set hcopypscolor=1
+* red, green, blue traces
+set color2=rgb:f/0/0
+set color3=rgb:0/8/0
+set color4=rgb:0/0/f
+hardcopy or_unloaded.ps P1OR+20 P2OR+10 P3OR
+quit
+.endc

@@ -26,7 +26,13 @@ singlelinecheck=false % The magic that stops caption centering
 \usepackage{graphicx}
 \usepackage{grffile}
 \usepackage[hmargin=2cm,vmargin=2.5cm]{geometry}
-\pagestyle{headings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%\pagestyle{headings}
+\fancyfoot{}
+\fancyfoot[LO,LE]{20102 \input{stamp.tex}}
+\fancyfoot[RO,RE]{\thepage}
 
 % Clickable references
 \usepackage{hyperref}
@@ -73,10 +79,10 @@ John P. Doty \and Matthew P. Wampler-Doty
 \begin{titlepage}
 \maketitle
 \begin{center}
-Very Preliminary Edition
+Flight Model Edition
 
 \input{stamp.tex}
-\input{tag.tex}
+% \input{tag.tex}
 \end{center}
 \end{titlepage} 
 
@@ -111,7 +117,7 @@ We measure the height of the step with a three-stage process. First, we couple t
 \subsubsection{The Video Measurement Chain}
 \schempage{Chain.1}
 Figure \ref{Chain.1} shows the signal path through the measurement chain.
-Q2 is the active current load for the CCD output. R1 controls the current. As shown, it sinks $\approx0.5\ $mA.
+Q2 is the active current load for the CCD output. R1 controls the current. As shown, it sinks $\approx0.8\ $mA.
 
 U3 is the clamp. U4 buffers the clamped video. R7, R8, and C18 control the buffer gain: for maximum dynamic range we will use unity gain. U8 is the integrator that performs the signal averaging. U11 and U12 switch its inputs to control the sign of the the input signal for the deintegrate and integrate phases. 
 
@@ -139,7 +145,7 @@ To protect the CCD charge sense MOSFET from overvoltage, the output drain voltag
 \schempage{PerChip.6}
 \schempage{PerChip.7}
 \schempage{PerChip.8}
-Most of the Video board is consists of four blocks devoted to per-chip video processing and operating bias generation. In each block, there is a video measurement chain for each segment (Figure \ref{PerChip.1}).
+Most of the Video board consists of four blocks devoted to per-chip video processing and operating bias generation. In each block, there is a video measurement chain for each segment (Figure \ref{PerChip.1}).
 Figure \ref{PerChip.2} shows local fixed voltage regulation and the variable output gate regulator. Figures \ref{PerChip.3}--\ref{PerChip.6} show regulators for other variable CCD biases. Figures \ref{PerChip.7} and \ref{PerChip.8} show the DACs and housekeeping multiplexors that support these functions, as tabulated in
 Table \ref{biastab} in Section \ref{param}.
 \subsubsection{Charge Pumps}
@@ -162,7 +168,7 @@ Figure \ref{Video.6} shows more local voltage generation and regulation. VS12 an
 
 Figure \ref{Video.7} shows filters on the output gates. Since the output gates are next to the charge sense node, they may be a source of noise or crosstalk.
 
-Figure \ref{Video.8} shows the control circuit for the trim heater. Q1 is an LM195: an IC that behaves like a transistor except that it shuts down if it becomes too hot.
+Figure \ref{Video.8} shows the control circuit for the trim heaters. Q1, Q4, and Q6 are  LM195 devices: an IC that behaves like a transistor except that it shuts down if it becomes too hot.
 
 \subsection{Video Board Connectors}
 
@@ -220,6 +226,10 @@ Connector & Pin & Net & Comment \\
 \schempage{ArtixPower}
 
 Figure \ref{ArtixPower} shows the power regulators for the Artix FPGA. An RC filter on the reference insures that the 1.8V AUX power rises more slowly than the 1V core power. The 2.5V and 3.3V IO power follow the 1.8V AUX power with additional delays. This insures proper initialization. Q5 pulls down the 3.3V IO power if the 1.8V level is low, insuring that the rated maximum 2.625V difference cannot be exceeded for more than the allowed time (see Xilinx data sheet DS181). The resistors on the collectors of the pass transistors limit the surge current, and are rated to handle the fault current if the FPGA should latch up. 
+\subsubsection{FPGA Reset}
+\schempage{Reset}
+
+Figure \ref{Reset} shows the circuit that resets the FPGA to allow it to accept a program upload. The FPGA is normally in this state after power is turned on. Once programmed, the uplink is control data, not programming data. By driving the uplink clock high for $>$50ms, the controlling computer restores the FPGA to the unprogrammed state. Normally, the controlling computer should either hold the uplink clock low, or cycle it to clock uplink data.
 \subsection{Interface Board Top Level}
 \schempage{Interface.1}
 Figure \ref{Interface.1} shows the Artix FPGA (U4). Its pin connections are too complex to draw: Table \ref{Artix} shows them. J9 is the JTAG header for FPGA debugging. J6 is the data connector to the DHU. J8 is test signals and configuration jumpers for the FPGA. Table \ref{IJ8} shows its pinout. For the pinouts of Js, the stacking connector, see Table \ref{Stack}.
@@ -293,10 +303,13 @@ See the previous section for the DriverSet building blocks.
 % get back to normal
 \normalsize
 
-\section{Operating Parameters and Housekeeping Channels}
+\section{Operating Parameters and Housekeeping}
 \label{param}
 
-While the implementation details differ, the housekeeping channels and the DAC-controlled parameters share a common addressing scheme. An address is seven bits. All seven are provided to the multiplexors and their selection logic as HKA[6:0]. The most significant four bits DCS[3:0] drive the DAC selection logic: the least significant three bits are part of the serial command that sets a DAC. 
+While the implementation details differ, the housekeeping channels and the operating  parameters share a common addressing scheme. An address is seven bits. 
+For the housekeeping, the most significant four bits drive the multiplexor selection logic via the decoded signals HK0, HK8, ..., HK120. The three least significant bits, HKA[2:0], are common among all of the multiplexors, controlling the individual channel selection. 
+
+For the operating parameters, the most significant four bits of the address drive the DAC selection logic via the decoded signals $\overline{\textup{DS0}}$, $\overline{\textup{DS8}}$, ..., $\overline{\textup{DS96}}$. The least significant three bits are part of the serial command that sets a DAC. 
 
 \begin{table}[ht!]
 \caption{Address Map}
@@ -403,7 +416,26 @@ Offset &  & Low & High & Low & High & Low & High &  & To  \\
 
 The Thermal Group (Table \ref{ttab}) sensors are external temperature-sensitive resistors. The nominal range for the circuitry is $500\Omega$ to $1500\Omega$, which translates into the given temperature ranges. It may be useful to calibrate the board using external fixed resistors near the limits of the range.
 
-% \begin{appendices}
+\FloatBarrier
+\begin{appendices}
+\section{Acronyms and other abbreviations}
+\begin{longtable}{l p{5in}}
+ADC & Analog to digital converter. \\
+AUX & FPGA auxiliary power. \\
+CCD & Charge-coupled device. \\
+DAC & Digital to analog converter. \\
+FPGA & Field Programmable Gate Array. \\
+HKCOM & Common output for the housekeeping multiplexors. \\
+IO & Input output. \\
+JTAG & Joint Test Action Group. \\
+kTC & The variance of the thermal charge on a capacitor. \\
+MOSFET & Metal oxide semiconductor field-effect transistor. \\
+RC & Resistor-capacitor. \\
+RTDCOM & Common output for the resistance temperature device multiplexors. \\
+
+
+\end{longtable}
+
 % \section{Default FPE Program}
 %
 % The following is the default \emph{Sequencer DSL} FPE program associated with the observatory simulator.
@@ -411,6 +443,6 @@ The Thermal Group (Table \ref{ttab}) sensors are external temperature-sensitive 
 % \lstset{language=C} % Use C because it is vaguely similar
 % \lstinputlisting{../Data/default_program.fpe}
 %
-% \end{appendices}
+\end{appendices}
 
 \end{document}

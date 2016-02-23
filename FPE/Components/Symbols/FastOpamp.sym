@@ -53,7 +53,7 @@ class=IC
 P 500 800 500 600 1 0 0
 {
 T 500 800 5 10 0 0 0 0 1
-pintype=unknown
+pintype=pas
 T 455 500 5 10 1 1 180 6 1
 pinlabel=\_S\_
 T 405 750 5 10 1 1 180 4 1

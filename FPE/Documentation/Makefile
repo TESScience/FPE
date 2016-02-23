@@ -8,7 +8,7 @@ PINTEX= CCD-51pin.tex TempConn.tex Interface.U4.tex \
 TSVTEX=BiasGroup.tex ClockDriverGroup.tex HKmap.tex \
 	HeaterGroup.tex ThermalGroup.tex InterfaceGroup.tex
 
-PDFS=Figs/ArtixPower.pdf Figs/Booster.pdf Figs/Chain.1.pdf \
+PDFS=Figs/ArtixPower.pdf Figs/Reset.pdf Figs/Booster.pdf Figs/Chain.1.pdf \
      Figs/Chain.2.pdf Figs/DrainRegulator.pdf Figs/Driver.1.pdf \
      Figs/Driver.2.pdf Figs/Driver.3.pdf Figs/DriverSet.1.pdf \
      Figs/DriverSet.2.pdf Figs/DriverSet.3.pdf Figs/DriverSet.4.pdf Figs/DriverSet.5.pdf \
@@ -30,7 +30,7 @@ pdfs: $(PDFS)
 Figs/%.pdf :
 	make -C $(dir $@) $(notdir $@)
 
-FPE.pdf : FPE.tex $(PINTEX) stamp.tex date.txt tag.tex $(wildcard Figs/*.pdf) StackMap.tex $(TSVTEX) $(PDFS)
+FPE.pdf : FPE.tex $(PINTEX) stamp.tex date.txt $(wildcard Figs/*.pdf) StackMap.tex $(TSVTEX) $(PDFS)
 	$(PDFLATEX) FPE.tex
 	$(PDFLATEX) FPE.tex
 	$(PDFLATEX) FPE.tex
@@ -58,11 +58,11 @@ date.txt :
 stamp.tex :
 	echo "Version  $(shell git describe --tags) \\\\\\\\" > $@
 
-tag.tex :
-	if [ "$(shell git describe --tags $(shell git log -1 --format="%h"))" = \
-             "$(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h"))" ] ; then \
-           echo "Tag $(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h")) \\\\\\\\" ; \
-        fi > $@
+# tag.tex :
+#	if [ "$(shell git describe --tags $(shell git log -1 --format="%h"))" = \
+#             "$(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h"))" ] ; then \
+#           echo "Tag $(shell git describe --tags --abbrev=0 $(shell git log -1 --format="%h")) \\\\\\\\" ; \
+#        fi > $@
 
 clean :
 	make -C Figs clean

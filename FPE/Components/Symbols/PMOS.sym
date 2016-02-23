@@ -9,39 +9,6 @@ L 250 600 500 600 3 0 0 0 -1 -1
 L 250 200 500 200 3 0 0 0 -1 -1
 L 300 350 400 400 3 0 0 0 -1 -1
 L 300 450 400 400 3 0 0 0 -1 -1
-P 0 200 200 200 1 0 0
-{
-T 0 300 5 10 0 1 0 0 1
-pinnumber=G
-T 0 300 9 10 0 1 0 0 1
-pinlabel=G
-T 0 300 5 10 0 0 0 0 1
-pinseq=2
-T 0 300 5 10 0 0 0 0 1
-pintype=pas
-}
-P 500 600 500 800 1 0 1
-{
-T 300 700 5 10 0 1 0 0 1
-pinnumber=D
-T 300 700 9 10 0 1 0 0 1
-pinlabel=D
-T 300 700 5 10 0 0 0 0 1
-pinseq=1
-T 300 700 5 10 0 0 0 0 1
-pintype=pas
-}
-P 500 200 500 0 1 0 1
-{
-T 300 0 5 10 0 1 0 0 1
-pinnumber=S
-T 300 0 9 10 0 1 0 0 1
-pinlabel=S
-T 300 0 5 10 0 0 0 0 1
-pinseq=3
-T 300 0 5 10 0 0 0 0 1
-pintype=pas
-}
 T 700 600 8 10 1 1 0 0 1
 refdes=Q?
 L 250 675 250 525 3 0 0 0 -1 -1
@@ -50,14 +17,191 @@ L 250 275 250 125 3 0 0 0 -1 -1
 L 200 600 200 200 3 0 0 0 -1 -1
 L 250 400 400 400 3 0 0 0 -1 -1
 L 400 400 400 200 3 0 0 0 -1 -1
-T 500 1500 5 10 0 0 0 0 1
-footprint=TO252AA
-T 500 1300 5 10 0 0 0 0 1
-spice-prototype=X? %pinseq model-name@
 T 500 1100 5 10 0 0 0 0 1
 model-name=irfr9120n
 T 500 900 5 10 0 0 0 0 1
-value=IRFR9120N
-T 500 1900 5 10 0 0 0 0 2
-allegro-options=PINORDER MOSFET G D S
-FUNCTION PMOS MOSFET G D S
+value=IRFE9120
+P 0 200 200 200 1 0 0
+{
+T 0 300 5 10 0 1 0 0 1
+pinnumber=4
+T 0 300 9 10 0 1 0 0 1
+pinlabel=G
+T 0 300 5 10 0 0 0 0 1
+pinseq=4
+T 0 300 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 600 500 800 1 0 1
+{
+T 300 700 5 10 0 1 0 0 1
+pinnumber=15
+T 300 700 9 10 0 1 0 0 1
+pinlabel=D
+T 300 700 5 10 0 0 0 0 1
+pinseq=15
+T 300 700 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 200 500 0 1 0 1
+{
+T 300 0 5 10 0 1 0 0 1
+pinnumber=6
+T 300 0 9 10 0 1 0 0 1
+pinlabel=S
+T 300 0 5 10 0 0 0 0 1
+pinseq=6
+T 300 0 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 200 500 0 1 0 1
+{
+T 300 0 5 10 0 1 0 0 1
+pinnumber=7
+T 300 0 9 10 0 1 0 0 1
+pinlabel=S
+T 300 0 5 10 0 0 0 0 1
+pinseq=7
+T 300 0 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 200 500 0 1 0 1
+{
+T 300 0 5 10 0 1 0 0 1
+pinnumber=8
+T 300 0 9 10 0 1 0 0 1
+pinlabel=S
+T 300 0 5 10 0 0 0 0 1
+pinseq=8
+T 300 0 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 200 500 0 1 0 1
+{
+T 300 0 5 10 0 1 0 0 1
+pinnumber=9
+T 300 0 9 10 0 1 0 0 1
+pinlabel=S
+T 300 0 5 10 0 0 0 0 1
+pinseq=9
+T 300 0 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 200 500 0 1 0 1
+{
+T 300 0 5 10 0 1 0 0 1
+pinnumber=10
+T 300 0 9 10 0 1 0 0 1
+pinlabel=S
+T 300 0 5 10 0 0 0 0 1
+pinseq=10
+T 300 0 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 200 500 0 1 0 1
+{
+T 300 0 5 10 0 1 0 0 1
+pinnumber=11
+T 300 0 9 10 0 1 0 0 1
+pinlabel=S
+T 300 0 5 10 0 0 0 0 1
+pinseq=11
+T 300 0 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 200 500 0 1 0 1
+{
+T 300 0 5 10 0 1 0 0 1
+pinnumber=12
+T 300 0 9 10 0 1 0 0 1
+pinlabel=S
+T 300 0 5 10 0 0 0 0 1
+pinseq=12
+T 300 0 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 200 500 0 1 0 1
+{
+T 300 0 5 10 0 1 0 0 1
+pinnumber=13
+T 300 0 9 10 0 1 0 0 1
+pinlabel=S
+T 300 0 5 10 0 0 0 0 1
+pinseq=13
+T 300 0 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 600 500 800 1 0 1
+{
+T 300 700 5 10 0 1 0 0 1
+pinnumber=16
+T 300 700 9 10 0 1 0 0 1
+pinlabel=D
+T 300 700 5 10 0 0 0 0 1
+pinseq=16
+T 300 700 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 600 500 800 1 0 1
+{
+T 300 700 5 10 0 1 0 0 1
+pinnumber=17
+T 300 700 9 10 0 1 0 0 1
+pinlabel=D
+T 300 700 5 10 0 0 0 0 1
+pinseq=17
+T 300 700 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 600 500 800 1 0 1
+{
+T 300 700 5 10 0 1 0 0 1
+pinnumber=18
+T 300 700 9 10 0 1 0 0 1
+pinlabel=D
+T 300 700 5 10 0 0 0 0 1
+pinseq=18
+T 300 700 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 600 500 800 1 0 1
+{
+T 300 700 5 10 0 1 0 0 1
+pinnumber=1
+T 300 700 9 10 0 1 0 0 1
+pinlabel=D
+T 300 700 5 10 0 0 0 0 1
+pinseq=1
+T 300 700 5 10 0 0 0 0 1
+pintype=pas
+}
+P 500 600 500 800 1 0 1
+{
+T 300 700 5 10 0 1 0 0 1
+pinnumber=2
+T 300 700 9 10 0 1 0 0 1
+pinlabel=D
+T 300 700 5 10 0 0 0 0 1
+pinseq=2
+T 300 700 5 10 0 0 0 0 1
+pintype=pas
+}
+P 0 200 200 200 1 0 0
+{
+T 0 300 5 10 0 1 0 0 1
+pinnumber=5
+T 0 300 9 10 0 1 0 0 1
+pinlabel=G
+T 0 300 5 10 0 0 0 0 1
+pinseq=5
+T 0 300 5 10 0 0 0 0 1
+pintype=pas
+}
+T 500 1500 5 10 0 0 0 0 1
+footprint=18LCC
+T 500 1300 5 10 0 0 0 0 1
+spice-prototype=X? #1 #4 #6 model-name@
+T 500 1900 8 10 0 0 0 0 1
+pins=18
+T 500 1700 8 10 0 0 0 0 1
+pins-used=16

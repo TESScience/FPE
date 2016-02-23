@@ -1,0 +1,20 @@
+v 20130925 2
+T 100 200 9 10 1 0 0 0 1
+Header
+B 0 0 1000 500 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+T 800 600 8 10 1 1 0 0 1
+refdes=J?
+T 0 800 8 10 0 0 0 0 1
+footprint=Header50
+T 0 1000 8 10 0 0 0 0 1
+device=Header
+T 0 1200 8 10 0 0 0 0 1
+numslots=0
+T 0 1400 8 10 0 1 0 0 1
+symversion=20160112
+T 1100 1200 8 10 0 0 0 0 1
+description=50 pin header
+T 100 1700 8 10 0 0 0 0 1
+pins=50
+T 100 1900 8 10 0 0 0 0 1
+class=IO
