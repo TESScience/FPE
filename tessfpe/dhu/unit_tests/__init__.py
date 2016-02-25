@@ -26,6 +26,8 @@ temperature_sensor_calibration_values = {
         "pt1000_sensor_12": 23.92
 }
 
+class UnexpectedHousekeeping(Exception):
+    pass
 
 def check_house_keeping_voltages(fpe, tolerance=0.05):
     """Check the housekpeeing voltages, up to a 5% tolerance"""
@@ -38,7 +40,7 @@ def check_house_keeping_voltages(fpe, tolerance=0.05):
         hsk = fpe.house_keeping
         for key, expected in voltage_reference_values.iteritems():
             if abs(hsk["analogue"][key] / expected - 1) > tolerance:
-                raise Exception(
+                raise UnexpectedHousekeeping(
                     "Housekeeping value for {key} should be {expected}, was {actual}".format(
                         key=key,
                         expected=expected,
