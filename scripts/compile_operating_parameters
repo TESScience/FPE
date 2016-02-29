@@ -1,0 +1,27 @@
+#!/usr/bin/env python2.7
+"""This script compiles a JSON containing operating parameters to a file"""
+
+if __name__ == "__main__":
+    from tessfpe.dhu.ops import OperatingParameters
+    import sys
+    import argparse
+    import json
+
+    parser = argparse.ArgumentParser(
+        description='Compile the operating parameters for the DHU to a binary file.')
+    parser.add_argument('json', nargs='?', type=argparse.FileType('r'), default=sys.stdin,
+                        help='''A JSON file containing the operating parameter settings;
+                        if no file is specified then /dev/stdin is read.''')
+    parser.add_argument('output_file_name', nargs='?', type=str, default=None,
+                        help='''A file name for where to write the binary encoding the operating parameters;
+                        if no file is specified then a random temporary file will be generated.''')
+    args = parser.parse_args()
+
+    ops = OperatingParameters()
+    user_settings = json.load(args.json)
+    for k, v in user_settings.iteritems():
+        if k not in ops.keys():
+            raise Exception("Unknown parameter: {}".format(k))
+        if (k + "_offset") not in user_settings:
+            ops[k].value = v
+    print "Wrote {}".format(ops.write_clvmem(args.output_file_name))
