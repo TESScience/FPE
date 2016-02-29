@@ -33,7 +33,7 @@ ${PYTHON} ${DIR}/venv/bin/observatory_simulator_version
 # TODO: Load specified file?
 ${PYTHON} ${DIR}/venv/bin/load_wrapper --help
 ${PYTHON} ${DIR}/venv/bin/load_wrapper 6.1t.4
-${PYTHON} ${DIR}/venv/bin/load_wrapper 6.1t.4
+#${PYTHON} ${DIR}/venv/bin/load_wrapper 6.1t.4
 # TODO: Run without preloading the wrapper?
 ${PYTHON} ${DIR}/venv/bin/house_keeping --help
 ${PYTHON} ${DIR}/venv/bin/house_keeping
