@@ -50,9 +50,11 @@ class FPESocketConnection(object):
         """Send a string to the FPE DHU controller"""
         self.socket.sendall((b'\n' + command + b'\n').encode())
 
-    def send_command(self, command, reply_pattern, chars=1024, matches=1, timeout=0.1, retries=10):
+    def send_command(self, command, reply_pattern, chars=1024, matches=1, timeout=0.1, retries=8):
         """Send a command to the FPE"""
+        from time import sleep
         t = None
+        sleep_time = 0.03125
         for trial in range(retries):
             try:
                 with TimeOut(seconds=timeout,
@@ -64,6 +66,7 @@ class FPESocketConnection(object):
                         chars=chars)
                     return data.rstrip('\n\r')
             except TimeOutError as e:
+                sleep(sleep_time * 2**trial)
                 t = e
         raise t
 
