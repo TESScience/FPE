@@ -4,11 +4,11 @@ set -euo pipefail
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 PYTHON=${DIR}/venv/bin/python
 
-make -C ${DIR} install
+make -C ${DIR} reinstall
 
 ${PYTHON} ${DIR}/venv/bin/observatory_simulator_version
-${PYTHON} ${DIR}/venv/bin/load_wrapper 6.1.5
-${PYTHON} ${DIR}/venv/bin/load_wrapper 6.1.5
+${PYTHON} ${DIR}/venv/bin/load_wrapper 6.1t.4 --debug
+#${PYTHON} ${DIR}/venv/bin/load_wrapper 6.1t.4 --debug
 ${PYTHON} ${DIR}/venv/bin/house_keeping
 ${PYTHON} ${DIR}/venv/bin/house_keeping --samples 20 --channels pt1000_sensor_*
 ${DIR}/venv/bin/voltage_test --samples 20
