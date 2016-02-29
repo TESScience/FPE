@@ -1,0 +1,6 @@
+#!/usr/bin/env python2.7
+"""This script checks the version number from the Observatory Simulator firmware and is effectively a sanity check that the firmware is properly installed"""
+
+if __name__ == "__main__":
+    import pkg_resources
+    print pkg_resources.get_distribution('tessfpe').version
