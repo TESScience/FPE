@@ -23,6 +23,8 @@ def check_hk(n, debug=False):
             return True
         except tessfpe.dhu.unit_tests.UnexpectedHousekeeping as e:
             return False
+        except tessfpe.dhu.fpesocketconnection.TimeOutError as e:
+            return False
 
 FPE_Wrapper_versions = ['6.1.1', '6.0.5772', '6.1t.1', '6.1.4', '6.1t.4', '6.1.5', '6.1t.5', '6.2.2']
 
@@ -42,7 +44,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     try:
          assert args.wrapper_version in FPE_Wrapper_versions, "FPE Wrapper version must be one of {0} (was set to '{1}')".format(FPE_Wrapper_versions, args.wrapper_version)
-         if check_hk(args.FPE_number, args.debug):
+         if False: #check_hk(args.FPE_number, args.debug):
              print u"Housekeeping reports sane values for reference voltages, *NOT* loading wrapper {}".format(colored("ok", 'green'))
          else:
              with FPE(args.FPE_number, debug=args.debug, sanity_checks=False) as fpe:
