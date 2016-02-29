@@ -77,28 +77,23 @@ class FPE(object):
                                        "FPE_Wrapper-{version}.bin".format(version=wrapper_version))
         assert os.path.isfile(fpe_wrapper_bin), "Wrapper does not exist for version {}".format(wrapper_version)
         try:
-            check_house_keeping_voltages(self)
+            #check_house_keeping_voltages(self)
+            raise Exception("I died")
             if self._debug:
                 print "House keeping reports sane values for reference voltages, *NOT* loading wrapper"
             return True
-        # TODO: have check_house_keeping_voltages throw custom exception if it fails
         except:
             # Upload the wrapper
-            time.sleep(5)
             assert self.upload_fpe_wrapper_bin(fpe_wrapper_bin), "Could not load wrapper: {}".format(fpe_wrapper_bin)
             # Upload the register memory
             register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
-            time.sleep(5)
-            assert self.upload_register_memory(register_memory), "Could not load register memory: {}".format(
-                register_memory)
+            assert self.upload_register_memory(register_memory), "Could not load register memory: {}".format(register_memory)
             # Set the housekeeping memory to the identity map
             house_keeping_memory = binary_files.write_hskmem(house_keeping.identity_map)
-            time.sleep(5)
             assert self.upload_housekeeping_memory(
                 house_keeping_memory), "Could not load house keeping memory: {}".format(house_keeping_memory)
             # Set the operating parameters to their defaults
-            time.sleep(5)
-            #assert self.ops.reset_to_defaults(), "Could not send operating parameters"
+            assert self.ops.reset_to_defaults(), "Could not send operating parameters"
         check_house_keeping_voltages(self)
         return True
 
@@ -131,7 +126,7 @@ class FPE(object):
                 print "Running:\ntftp <<EOF\n", \
                     tftp_command, "\n", \
                     "EOF"
-            self.frames_running_status = False
+            #self.frames_running_status = False
             try:
                 tftp(_in=tftp_command)
             except ErrorReturnCode_1 as e:
@@ -194,8 +189,7 @@ class FPE(object):
     def cmd_stop_frames(self):
         return self.connection.send_command(
             "cam_stop_frames",
-            reply_pattern="Frames Stopped..."
-        )
+            reply_pattern="Frames Stopped...")
 
     def cmd_hsk(self):
         """Get the camera housekeeping data, outputs an array of the housekeeping data"""
