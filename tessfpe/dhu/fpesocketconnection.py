@@ -48,6 +48,8 @@ class FPESocketConnection(object):
 
     def send(self, command):
         """Send a string to the FPE DHU controller"""
+        if self._debug:
+            print command
         self.socket.sendall((b'\n' + command + b'\n').encode())
 
     def send_command(self, command, reply_pattern, chars=1024, matches=1, timeout=0.1, retries=8):
