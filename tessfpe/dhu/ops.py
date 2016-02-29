@@ -339,6 +339,11 @@ class OperatingParameters(dict):
         return [0 if x is None else x.twelve_bit_value
                 for x in self.address]
 
+    def write_clvmem(self, file_name=None):
+        """Write the clock level voltage memory; contains values for programming FPE clock level voltages
+           (also known as *operating parameters*) via DACs."""
+        return binary_files.write_clvmem(values_to_5328(self.raw_values), file_name)
+
     def send(self):
         """Send the current DAC values to the hardware."""
         # Get the frames status, restore it after we are done uploading the operating parameters
@@ -346,7 +351,7 @@ class OperatingParameters(dict):
         self._fpe.cmd_stop_frames()
         try:
             return self._fpe.upload_operating_parameter_memory(
-                binary_files.write_clvmem(values_to_5328(self.raw_values)))
+                self.write_clvmem())
         finally:
             self._fpe.frames_running_status = frames_status
             new_parameters = OperatingParameters(self._fpe)

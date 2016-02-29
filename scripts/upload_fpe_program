@@ -4,10 +4,6 @@
 
 if __name__ == "__main__":
     from tessfpe.dhu.fpe import FPE
-    from tessfpe.sequencer_dsl.parse import parse_file
-    from tessfpe.sequencer_dsl.sequence import compile_sequences
-    from tessfpe.sequencer_dsl.program import compile_programs
-    from pprint import pprint
     import argparse
     import sys
 
