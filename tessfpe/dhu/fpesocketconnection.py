@@ -59,6 +59,8 @@ class FPESocketConnection(object):
         sleep_time = 0.03125
         for trial in range(retries):
             try:
+                if self._debug:
+                    print command
                 with TimeOut(seconds=timeout,
                              error_message="Timeout on trial {}".format(trial + 1)):
                     self.socket.sendall((command + b'\n').encode())
