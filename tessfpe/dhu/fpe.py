@@ -199,7 +199,8 @@ class FPE(object):
         assert self.cmd_rst(upload=False, sanity_checks=False), "Could not reset camera"
         return self.connection.send_command(
             "cam_fpga_rst",
-            reply_pattern="Cam FPGA done."
+            reply_pattern="Cam FPGA done.",
+            timeout=1
         )
 
     def cmd_start_frames(self):
