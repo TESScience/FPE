@@ -75,14 +75,14 @@ class FPE(object):
         assert os.path.isfile(fpe_wrapper_bin), "Wrapper does not exist for version {}".format(wrapper_version)
         status = self.frames_running_status
         try:
+            self.frames_running_status = False
             self.cmd_hsk(retries=1)
             check_house_keeping_voltages(self)
-            if self._debug:
-                print "House keeping reports sane values for reference voltages, *NOT* loading wrapper"
-            return True
+            return "House keeping reports sane values for reference voltages," \
+                   " *NOT* loading wrapper (tried to load version {})".format(wrapper_version)
         except (UnexpectedHousekeeping, TimeOutError):
             self.cmd_rst(upload=False, sanity_checks=False)
-            #assert "Cam FPGA done." in self.cmd_fpga_rst(), "Could not reset the FPGA"
+            # assert "Cam FPGA done." in self.cmd_fpga_rst(), "Could not reset the FPGA"
             assert "Resetting Cam FPGA" in self.cmd_fpga_rst(), "Could not reset the FPGA"
             assert self.upload_fpe_wrapper_bin(fpe_wrapper_bin), "Could not load wrapper: {}".format(fpe_wrapper_bin)
             assert self.cmd_rst(upload=True, sanity_checks=False), "Could not reset camera"
@@ -93,7 +93,7 @@ class FPE(object):
             # Set the operating parameters to their defaults
             assert self.ops.reset_to_defaults(), "Could not send operating parameters"
             check_house_keeping_voltages(self)
-            return True
+            return "Wrapper version {} loaded successfully".format(wrapper_version)
         finally:
             self.frames_running_status = status
 

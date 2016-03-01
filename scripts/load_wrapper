@@ -31,10 +31,8 @@ if __name__ == "__main__":
             if check_hk(fpe):
                 print u"Housekeeping reports sane values for reference voltages, *NOT* loading wrapper {}".format(
                     colored("ok", 'green'))
-            fpe.load_wrapper(args.wrapper_version)
-            check_house_keeping_voltages(fpe)
-            print u"Wrapper version {1} has successfully been loaded {0}".format(colored("ok", 'green'),
-                                                                                 args.wrapper_version)
+            print u"{1} {0}".format(colored("ok", 'green'),
+                                    fpe.load_wrapper(args.wrapper_version))
             sys.exit(0)
     except Exception as e:
         if args.debug:
