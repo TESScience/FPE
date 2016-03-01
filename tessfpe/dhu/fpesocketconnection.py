@@ -50,9 +50,11 @@ class FPESocketConnection(object):
         """Send a string to the FPE DHU controller"""
         self.socket.sendall((b'\n' + command + b'\n').encode())
 
-    def send_command(self, command, reply_pattern, chars=1024, matches=1, timeout=0.1, retries=8):
+    def send_command(self, command, reply_pattern, chars=1024, matches=1, timeout=0.1, retries=None):
         """Send a command to the FPE"""
         from time import sleep
+        if retries is None:
+            retries = 8
         t = None
         sleep_time = 0.03125
         for trial in range(retries):
