@@ -148,7 +148,7 @@ class FPE(object):
         if self._reset_in_progress:
             return False
         self._reset_in_progress = True
-        self.cmd_stop_frames(reset=False)
+        self.cmd_stop_frames()
         assert 'FPE Reset complete' in self.connection.send_command(
             'camrst',
             reply_pattern='FPE Reset complete'), "Could not successfully issue camera reset command"
@@ -319,7 +319,7 @@ class FPE(object):
     @control_status.setter
     def control_status(self, val):
         "Set the camera control status for the Observatority Simulator for a particular FPE"
-        return self.cmd_control(val)
+        self.cmd_control(val)
 
     @property
     def expected_housekeeping(self):
