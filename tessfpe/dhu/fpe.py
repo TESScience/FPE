@@ -34,6 +34,7 @@ class FPE(object):
         if not ping():
             raise Exception("Cannot ping 192.168.100.1")
         self._debug = debug
+        self._dir = os.path.dirname(os.path.realpath(__file__))
         self._reset_in_progress = False
         self.fpe_number = number
         self.connection = FPESocketConnection(5554 + number, self._debug)
@@ -58,8 +59,6 @@ class FPE(object):
                 raise type(e)("Could not read Observatory Simulator version... {0}\n".format(str(e)) +
                               "Are you sure you firmware for the Observatory Simulator is properly installed?")
 
-        self._dir = os.path.dirname(os.path.realpath(__file__))
-
         # Run sanity checks on the FPE to make sure basic functions are working (if specified)
         if sanity_checks:
             check_house_keeping_voltages(self)
@@ -76,7 +75,7 @@ class FPE(object):
         assert os.path.isfile(fpe_wrapper_bin), "Wrapper does not exist for version {}".format(wrapper_version)
         status = self.frames_running_status
         try:
-            self.cmd_hsk(1)
+            self.cmd_hsk(retries=1)
             check_house_keeping_voltages(self)
             if self._debug:
                 print "House keeping reports sane values for reference voltages, *NOT* loading wrapper"
