@@ -200,7 +200,7 @@ class FPE(object):
         return self.connection.send_command(
             "cam_fpga_rst",
             reply_pattern="Cam FPGA done.",
-            timeout=1
+            timeout=3
         )
 
     def cmd_start_frames(self):
