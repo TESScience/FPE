@@ -83,7 +83,8 @@ class FPE(object):
             return True
         except (UnexpectedHousekeeping, TimeOutError):
             self.cmd_rst(upload=False, sanity_checks=False)
-            assert "Cam FPGA done." in self.cmd_fpga_rst(), "Could not reset the FPGA"
+            #assert "Cam FPGA done." in self.cmd_fpga_rst(), "Could not reset the FPGA"
+            assert "Resetting Cam FPGA" in self.cmd_fpga_rst(), "Could not reset the FPGA"
             assert self.upload_fpe_wrapper_bin(fpe_wrapper_bin), "Could not load wrapper: {}".format(fpe_wrapper_bin)
             assert self.cmd_rst(upload=True, sanity_checks=False), "Could not reset camera"
             # Set the housekeeping memory to the identity map
