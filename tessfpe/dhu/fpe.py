@@ -216,14 +216,12 @@ class FPE(object):
 
     def cmd_stop_frames(self):
         """Stop running frames"""
-        from time import sleep
         if self.frames_running_status is False:
             return "Control status indicates frames are already stopped;" \
                    " however the FPE may not be safely in debug mode"
         assert "Frames Stopped..." in self.connection.send_command(
             "cam_stop_frames",
             reply_pattern="Frames Stopped...")
-        sleep(2)
         self.cmd_rst()
         assert self._reset_in_progress is False, "Reset should no longer be in progress"
         return "Frames have been stopped and the FPE has been placed in debug mode"
