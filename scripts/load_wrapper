@@ -8,50 +8,31 @@ It also performs basic housekeeping voltage measurements to verify functionality
 Before running this script, the Observatory Simulator should be power-cycled. When you are running this script and the ObsSim has not been power cycled, you should set preload=False.
 """
 
-def check_hk(n, debug=False):
-    """Performs a sanity check of the housekeeping for the FPE, consisting of checking the reference voltages.
-       If the housekeeping reports a sane value and doesn't throw a TimeOut exception, 
-       we may assume the wrapper has already been loaded."""
-    from tessfpe.dhu.fpe import FPE
-    from tessfpe.dhu.unit_tests import check_house_keeping_voltages
-    from contextlib import closing
-    import tessfpe.dhu.fpesocketconnection
-
-    with FPE(n, debug=debug, sanity_checks=False) as fpe:
-        try:
-            check_house_keeping_voltages(fpe)
-            return True
-        except tessfpe.dhu.fpesocketconnection.TimeOutError as e:
-            return False
-
 FPE_Wrapper_versions = ['6.1.1', '6.0.5772', '6.1t.1', '6.1.4', '6.1t.4', '6.1.5', '6.1t.5']
 
 if __name__ == "__main__":
     from tessfpe.dhu.fpe import FPE
-    from tessfpe.dhu.unit_tests import check_house_keeping_voltages
+    from tessfpe.dhu.unit_tests import check_house_keeping_voltages, check_hk
     from termcolor import colored
     import argparse
     import sys
-    
+
     parser = argparse.ArgumentParser(description='Load the FPE wrapper')
     parser.add_argument('wrapper_version', type=str,
                         help="The version of the wrapper to load.  Must be one of either {0}, or {1}".format(
-                             ", ".join(FPE_Wrapper_versions[:-1]), FPE_Wrapper_versions[-1]))
+                            ", ".join(FPE_Wrapper_versions[:-1]), FPE_Wrapper_versions[-1]))
     parser.add_argument('--FPE-number', metavar='N', type=int, nargs='?', default=1, help='which FPE to use')
     parser.add_argument('--debug', action='store_true', help='Enable debugging output')
     args = parser.parse_args()
     try:
-         assert args.wrapper_version in FPE_Wrapper_versions, "FPE Wrapper version must be one of {0} (was set to '{1}')".format(FPE_Wrapper_versions, args.wrapper_version)
-         if check_hk(args.FPE_number, args.debug):
-             print u"Housekeeping reports sane values for reference voltages, *NOT* loading wrapper {}".format(colored("ok", 'green'))
-         else:
-             with FPE(args.FPE_number, debug=args.debug, sanity_checks=False) as fpe:
-                 fpe.load_wrapper(args.wrapper_version)
-                 if check_house_keeping_voltages(fpe):
-                      print u"Wrapper version {1} has successfully been loaded {0}".format(colored("ok", 'green'), args.wrapper_version)
-         sys.exit(0)
+        assert args.wrapper_version in FPE_Wrapper_versions, "FPE Wrapper version must be one of {0} (was set to '{1}')".format(
+            FPE_Wrapper_versions, args.wrapper_version)
+        with FPE(args.FPE_number, debug=args.debug, sanity_checks=False) as fpe:
+            print u"{1} {0}".format(colored("ok", 'green'),
+                                    fpe.load_wrapper(args.wrapper_version))
+            sys.exit(0)
     except Exception as e:
         if args.debug:
-           raise
-        print >>sys.stderr, colored(u"{1}: {2} {0}".format("X", type(e).__name__, e), 'red', attrs=['bold'])
+            raise
+        print >> sys.stderr, colored(u"{1}: {2} {0}".format("X", type(e).__name__, e), 'red', attrs=['bold'])
         sys.exit(1)

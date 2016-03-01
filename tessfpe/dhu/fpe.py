@@ -29,12 +29,13 @@ class FPE(object):
                  sanity_checks=True):
         from fpesocketconnection import FPESocketConnection
         from unit_tests import check_house_keeping_voltages
-        import time
 
         # First sanity check: ping the observatory simulator
         if not ping():
             raise Exception("Cannot ping 192.168.100.1")
         self._debug = debug
+        self._dir = os.path.dirname(os.path.realpath(__file__))
+        self._reset_in_progress = False
         self.fpe_number = number
         self.connection = FPESocketConnection(5554 + number, self._debug)
 
@@ -58,44 +59,43 @@ class FPE(object):
                 raise type(e)("Could not read Observatory Simulator version... {0}\n".format(str(e)) +
                               "Are you sure you firmware for the Observatory Simulator is properly installed?")
 
-        self._dir = os.path.dirname(os.path.realpath(__file__))
-
-        # TODO: fpesocket object should do retries after time intervals to avoid this cluge
-        time.sleep(.01)  # Need to wait for 1/100th of a sec for the box to catch up with us
-
         # Run sanity checks on the FPE to make sure basic functions are working (if specified)
         if sanity_checks:
             check_house_keeping_voltages(self)
             if original_frames_running_status is not None:
                 self.frames_running_status = original_frames_running_status
 
-    def load_wrapper(self, wrapper_version):
+    def load_wrapper(self, wrapper_version='6.1t.4'):
         import os.path
-        from unit_tests import check_house_keeping_voltages
+        from unit_tests import check_house_keeping_voltages, UnexpectedHousekeeping
+        from fpesocketconnection import TimeOutError
         fpe_wrapper_bin = os.path.join(self._dir, "MemFiles",
                                        "FPE_Wrapper-{version}.bin".format(version=wrapper_version))
+
         assert os.path.isfile(fpe_wrapper_bin), "Wrapper does not exist for version {}".format(wrapper_version)
+        status = self.frames_running_status
         try:
+            self.frames_running_status = False
+            self.cmd_hsk(retries=1)
             check_house_keeping_voltages(self)
-            if self._debug:
-                print "House keeping reports sane values for reference voltages, *NOT* loading wrapper"
-            return True
-        # TODO: have check_house_keeping_voltages throw custom exception if it fails
-        except:
-            # Upload the wrapper
+            return "House keeping reports sane values for reference voltages," \
+                   " *NOT* loading wrapper (tried to load version {})".format(wrapper_version)
+        except (UnexpectedHousekeeping, TimeOutError):
+            self.cmd_rst(upload=False, sanity_checks=False)
+            # assert "Cam FPGA done." in self.cmd_fpga_rst(), "Could not reset the FPGA"
+            assert "Resetting Cam FPGA" in self.cmd_fpga_rst(), "Could not reset the FPGA"
             assert self.upload_fpe_wrapper_bin(fpe_wrapper_bin), "Could not load wrapper: {}".format(fpe_wrapper_bin)
-            # Upload the register memory
-            register_memory = os.path.join(self._dir, "MemFiles", "Reg.bin")
-            assert self.upload_register_memory(register_memory), "Could not load register memory: {}".format(
-                register_memory)
+            assert self.cmd_rst(upload=True, sanity_checks=False), "Could not reset camera"
             # Set the housekeeping memory to the identity map
-            house_keeping_memory = binary_files.write_hskmem(house_keeping.identity_map)
             assert self.upload_housekeeping_memory(
-                house_keeping_memory), "Could not load house keeping memory: {}".format(house_keeping_memory)
+                binary_files.write_hskmem(
+                    house_keeping.identity_map)), "Could not load house keeping memory: {}".format(house_keeping_memory)
             # Set the operating parameters to their defaults
             assert self.ops.reset_to_defaults(), "Could not send operating parameters"
-        check_house_keeping_voltages(self)
-        return False
+            check_house_keeping_voltages(self)
+            return "Wrapper version {} loaded successfully".format(wrapper_version)
+        finally:
+            self.frames_running_status = status
 
     def close(self):
         """Close the fpe object (namely its socket connection)"""
@@ -143,27 +143,42 @@ class FPE(object):
         finally:
             self.frames_running_status = status
 
-    def cmd_camrst(self):
+    def cmd_rst(self, upload=True, sanity_checks=True):
         """Reset the camera after running frames"""
-        return self.connection.send_command(
-            "camrst",
-            reply_pattern='FPE Reset complete')
+        from unit_tests import check_house_keeping_voltages
+        if self._reset_in_progress:
+            return False
+        self._reset_in_progress = True
+        self.cmd_stop_frames()
+        assert 'FPE Reset complete' in self.connection.send_command(
+            'camrst',
+            reply_pattern='FPE Reset complete'), "Could not successfully issue camera reset command"
+        # Clear cam_control
+        self.control_status = 1
+        status = self.control_status
+        assert status is 0, "camera control status memory could not zeroed, was {}".format(hex(status))
+        if sanity_checks or upload:
+            register_memory = os.path.join(self._dir, 'MemFiles', 'Reg.bin')
+            assert self.upload_register_memory(register_memory), \
+                'Could not load register memory: {}'.format(register_memory)
+        if sanity_checks:
+            check_house_keeping_voltages(self)
+        self._reset_in_progress = False
+        return True
 
     def cmd_status(self):
         """Get the camera status"""
         response = self.connection.send_command(
             "cam_status",
             reply_pattern="cam_status = 0x[0-9a-f]+")[13:]
-        val = int(response, 16)
-        return val
+        return int(response, 16)
 
-    def cmd_control(self):
+    def cmd_control(self, val=None):
         """Get the camera control status"""
         response = self.connection.send_command(
-            "cam_control",
+            "cam_control" if val is None else "cam_control = {}".format(val),
             reply_pattern="cam_control = 0x[0-9a-f]+")[14:]
-        val = int(response, 16)
-        return val
+        return int(response, 16)
 
     def cmd_version(self):
         """Get the version of the Observatory Simulator DHU software"""
@@ -180,19 +195,38 @@ class FPE(object):
         finally:
             self.frames_running_status = status
 
+    def cmd_fpga_rst(self):
+        """Reset the FPGA so that another wrapper can be uploaded"""
+        assert self.cmd_rst(upload=False, sanity_checks=False), "Could not reset camera"
+        return self.connection.send_command(
+            "cam_fpga_rst",
+            # TODO: switch on "Cam FPGA done."
+            reply_pattern="Resetting Cam FPGA",
+            timeout=3
+        )
+
     def cmd_start_frames(self):
+        """Start running frames"""
+        if self.frames_running_status is True:
+            return "Control status indicates frames are already running"
         return self.connection.send_command(
             "cam_start_frames",
             reply_pattern="(Starting frames...|Frames already enabled)"
         )
 
     def cmd_stop_frames(self):
-        return self.connection.send_command(
+        """Stop running frames"""
+        if self.frames_running_status is False:
+            return "Control status indicates frames are already stopped;" \
+                   " however the FPE may not be safely in debug mode"
+        assert "Frames Stopped..." in self.connection.send_command(
             "cam_stop_frames",
-            reply_pattern="Frames Stopped..."
-        )
+            reply_pattern="Frames Stopped...")
+        self.cmd_rst()
+        assert self._reset_in_progress is False, "Reset should no longer be in progress"
+        return "Frames have been stopped and the FPE has been placed in debug mode"
 
-    def cmd_hsk(self):
+    def cmd_hsk(self, retries=None):
         """Get the camera housekeeping data, outputs an array of the housekeeping data"""
         import re
         channels = 128
@@ -203,7 +237,8 @@ class FPE(object):
             out = self.connection.send_command(
                 "cam_hsk",
                 reply_pattern="Hsk\[[0-9]+\] = 0x[0-9a-f]+",
-                matches=channels
+                matches=channels,
+                retries=retries
             )
             return [int(n, 16) for n in re.findall('0x[0-9a-f]+', out)]
         finally:
@@ -250,6 +285,7 @@ class FPE(object):
 
     @property
     def house_keeping(self):
+        """Return the house keeping as a map"""
         hsk = self.cmd_hsk()
         # Create a dictionary of the analogue outputs
         analogue = house_keeping.hsk_to_analogue_dictionary(hsk)
@@ -281,6 +317,11 @@ class FPE(object):
         """Get the camera control status for the Observatory Simulator for a particular FPE"""
         return self.cmd_control()
 
+    @control_status.setter
+    def control_status(self, val):
+        "Set the camera control status for the Observatority Simulator for a particular FPE"
+        self.cmd_control(val)
+
     @property
     def expected_housekeeping(self):
         """Report the expected values for the housekeeping"""
@@ -311,9 +352,11 @@ class FPE(object):
     @frames_running_status.setter
     def frames_running_status(self, value):
         """Set if frames are running or not"""
-        if value is True:
+        if value is self.frames_running_status:
+            pass
+        elif value is True and self.frames_running_status is not True:
             self.cmd_start_frames()
-        elif value is False:
+        elif value is False and self.frames_running_status is not False:
             self.cmd_stop_frames()
         else:
             raise Exception("Trying to set frames_running_status to value that is not boolean: {0}".format(value))
