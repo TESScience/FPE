@@ -304,6 +304,8 @@ T 40300 42300 5 10 0 0 0 0 1
 class=IO
 T 40500 45500 5 10 1 1 0 0 1
 refdes=J7
+T 40600 42100 5 10 1 1 0 0 1
+value=DNP
 }
 C 41600 42300 1 0 1 gnd-1.sym
 N 41500 45000 41900 45000 4
@@ -487,6 +489,10 @@ T 40300 41100 5 10 0 0 0 0 1
 footprint=CHASSIS
 T 40300 41100 5 10 0 0 0 0 1
 pins=1
+T 40300 41100 5 10 0 0 0 0 1
+value=DNP
+T 40300 41100 5 10 0 0 0 0 1
+description=Chassis ground
 }
 C 41800 41300 1 0 1 resistor.sym
 {
