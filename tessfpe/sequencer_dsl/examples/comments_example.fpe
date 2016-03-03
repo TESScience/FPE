@@ -1,4 +1,0 @@
-// test1
-defaults {} ; /* test2 */
-sequence pixcycle { step };
-hold pixcycle;  // test3
