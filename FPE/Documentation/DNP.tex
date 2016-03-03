@@ -1,0 +1,189 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\textwidth = 6.5 in
+\textheight = 9 in
+\oddsidemargin = 0.0 in
+\evensidemargin = 0.0 in
+\topmargin = 0.0 in
+\headheight = 0.0 in
+\headsep = 0.0 in
+\parskip = 0.2in
+\parindent = 0.0in
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}
+
+\author{
+John P. Doty
+}
+\title{Focal Plane Electronics Components with Special Handling}
+\date{\input{date.txt}}
+\begin{document}
+\maketitle
+\begin{center}
+\input{stamp.tex}
+\end{center}
+
+
+\section{Components to be added at Lincoln Laboratory}
+\subsection{Clock oscillator}
+\begin{verbatim}
+Interface.bom.txt:U88	OSC	2104D60M0000YAX	DNP	FP14	Surface Mount Oscillator	
+\end{verbatim}
+
+\subsection{ID bits}
+
+Encode board serial number
+by populating selected R80-R84
+with zero $\Omega$ resistors for
+each binary zero.
+
+\begin{verbatim}
+Interface.bom.txt:R84	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:R83	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:R82	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:R81	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:R80	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+\end{verbatim}
+
+\subsection{Heater regulators with thermal expoxy}
+\begin{verbatim}
+Video.bom.txt:Q5	LM195H	DNP	unknown	TO39	unknown	
+Video.bom.txt:Q4	LM195H	DNP	unknown	TO39	unknown	
+Video.bom.txt:Q1	LM195H	DNP	unknown	TO39	unknown	
+\end{verbatim}
+
+
+\section{Components we intend to leave out for flight}
+
+\subsection{Populate R13 with zero $\Omega$, remove R15 to allow serial clock high above 4.5V}
+\begin{verbatim}
+Interface.bom.txt:X1/R13	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:X2/R13	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Driver.bom.txt:X3/R13	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Driver.bom.txt:X4/R13	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+\end{verbatim}
+
+\subsection{Populate R14 with zero $\Omega$, remove R16 to allow reset gate high above 4.5V}
+\begin{verbatim}
+Interface.bom.txt:X1/R14	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:X2/R14	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Driver.bom.txt:X3/R14	RESISTOR		DNP	1% 1/10W	0603	Resistor	
+Driver.bom.txt:X4/R14	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+\end{verbatim}
+\subsection{Populate R25 with zero $\Omega$, remove R21 to hard wire parallel high to zero volts}
+\begin{verbatim}
+Interface.bom.txt:X1/X1/R25	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:X2/X1/R25	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Driver.bom.txt:X3/X1/R25	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Driver.bom.txt:X4/X1/R25	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+\end{verbatim}
+
+\subsection{Light emitting diodes and associated limiting resistors, only for test boards}
+\begin{verbatim}
+Interface.bom.txt:R51	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:LED6	LED	DNP	unknown	0603	LED	
+Interface.bom.txt:R50	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:LED5	LED	DNP	unknown	0603	LED	
+Interface.bom.txt:R49	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:LED4	LED	DNP	unknown	0603	LED	
+Interface.bom.txt:R48	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:LED3	LED	DNP	unknown	0603	LED	
+Interface.bom.txt:R47	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:LED2	LED	DNP	unknown	0603	LED	
+Interface.bom.txt:R46	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Interface.bom.txt:LED1	LED	DNP	unknown	0603	LED	
+\end{verbatim}
+
+\subsection{Alternate clock oscillator/bypass capacitor pairs}
+\begin{verbatim}
+Interface.bom.txt:U8	OSC	KC3225A60.0000C3GE00	DNP	KYOCERA-KC3225A-CSurface Mount Oscillator
+Interface.bom.txt:C8	CAPACITOR	0.1uF DNP	16WVDC X7R	0603	Ceramic capacitor	
+
+Interface.bom.txt:U80	1116R60M00000BF	DNP	unknown	Vectron-1116	Surface Mount Oscillator	
+Interface.bom.txt:C80	CAPACITOR	0.1uF DNP	16WVDC X7R	0603	Ceramic capacitor	
+\end{verbatim}
+
+\subsection{Capacitors for suppressing ringing on DAC serial lines, if necessary}
+\begin{verbatim}
+Interface.bom.txt:C103	CAPACITOR	DNP	25WVDC NP0	0603	Ceramic capacitor	
+Interface.bom.txt:C102	CAPACITOR	DNP	25WVDC NP0	0603	Ceramic capacitor	
+\end{verbatim}
+
+\subsection{Test headers}
+\begin{verbatim}
+Interface.bom.txt:J8	Header	DNP	unknown	HEADER16	unknown	
+Interface.bom.txt:J9	HEADER14	DNP	unknown	HEADER14SMT2MM	unknown	
+\end{verbatim}
+
+\subsection{Populate C9 to boost -50V to -75V}
+\begin{verbatim}
+Video.bom.txt:PP/C9	CAPACITOR	DNP	50WVDC X7R	0603	Ceramic capacitor	
+\end{verbatim}
+
+\subsection{Backside bias for frontside (not flight) CCD chips}
+For a focal plane with frontside illuminated chips and 
+common backside connections, populate R54 with zero
+ohms only for the channel you want to have
+control the backside bias. For a backside illuminated
+chip, do not populate.
+\begin{verbatim}
+Video.bom.txt:X1/R54	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X2/R54	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X3/R54	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X4/R54	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+\end{verbatim}
+
+\subsection{Front end gain adjustment}
+
+To increase the front end gain on a CCD measurement chain, replace R8 (suitable value 3k$\Omega$), populate C18 (2pF), and populate R7 with a value chosen for the desired gain.
+
+\begin{verbatim}
+Video.bom.txt:X4/X4/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X4/X4/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X4/X3/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X4/X3/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X4/X2/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X4/X2/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X4/X1/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X4/X1/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X3/X4/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X3/X4/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X3/X3/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X3/X3/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X3/X2/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X3/X2/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X3/X1/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X3/X1/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X2/X4/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X2/X4/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X2/X3/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X2/X3/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X2/X2/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X2/X2/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X2/X1/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X2/X1/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X1/X4/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X1/X4/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X1/X3/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X1/X3/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X1/X2/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X1/X2/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+Video.bom.txt:X1/X1/R7	RESISTOR	DNP	1% 1/10W	0603	Resistor	
+Video.bom.txt:X1/X1/C18	CAPACITOR	DNP	25WVDC X7R	0603	Ceramic capacitor	
+\end{verbatim}
+
+\section{Not an actual component, footprint only}
+
+\begin{verbatim}
+Interface.bom.txt:GP1	CHASSIS	DNP	unknown	CHASSIS	Chassis ground	
+\end{verbatim}
+
+
+
+ \end{document}
