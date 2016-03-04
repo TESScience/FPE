@@ -1,6 +1,7 @@
 GNET=gnetlist -g spice-noqsi -m ../Schematic/censor-fix.scm
 # NGSPICE=/usr/local/ngspice-24/bin/ngspice
 NGSPICE=ngspice
+SEQ2SPICE=../../../tessfpe/testsuite/venv/bin/fpe2spicetiming
 
 %.cir : %.sch
 	$(GNET) $< -o $@
@@ -38,7 +39,7 @@ fs_loaded.ps ia_loaded.ps: ParallelTest.cir IA_FS_loaded.control $(PARFILES)
 fs_unloaded.ps ia_unloaded.ps: ParallelUnloaded.cir IA_FS_unloaded.control $(PARFILES)
 	$(NGSPICE) $^
 
-or_loaded.ps : SerialTest.cir OR_loaded.control  $(SERFILES)
+or_loaded.ps : SerialTest.cir SerialTest.stim OR_loaded.control  $(SERFILES)
 	$(NGSPICE) $^ 
 
 or_unloaded.ps : SerialUnloaded.cir OR_unloaded.control  $(SERFILES)
@@ -61,6 +62,9 @@ Booster.sch : ../Schematic/Booster.sch
 
 DG403.cir : DG403.1.sch DG403.2.sch
 	$(GNET) DG403.1.sch DG403.2.sch -o DG403.cir
+
+SerialTest.stim: test.fpe
+	$(SEQ2SPICE) --sequence pixcycle $< >$@
 
 clean :
 	rm -rf *.cir *.ps *.pdf \#* *~ Pump.sch Booster.sch Chain.1.sch Chain.2.sch \
