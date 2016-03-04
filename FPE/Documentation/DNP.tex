@@ -21,7 +21,7 @@
 \author{
 John P. Doty
 }
-\title{Focal Plane Electronics Components with Special Handling}
+\title{Focal Plane Electronics Components Not Handled by I3}
 \date{\input{date.txt}}
 \begin{document}
 \maketitle
@@ -59,7 +59,7 @@ Video.bom.txt:Q1	LM195H	DNP	unknown	TO39	unknown
 \end{verbatim}
 
 
-\section{Components we intend to leave out for flight}
+\section{Options we don't intend to implement}
 
 \subsection{Populate R13 with zero $\Omega$, remove R15 to allow serial clock high above 4.5V}
 \begin{verbatim}
@@ -76,7 +76,13 @@ Interface.bom.txt:X2/R14	RESISTOR	DNP	1% 1/10W	0603	Resistor
 Driver.bom.txt:X3/R14	RESISTOR		DNP	1% 1/10W	0603	Resistor	
 Driver.bom.txt:X4/R14	RESISTOR	DNP	1% 1/10W	0603	Resistor	
 \end{verbatim}
-\subsection{Populate R25 with zero $\Omega$, remove R21 to hard wire parallel high to zero volts}
+\subsection{Option to hard wire parallel high to zero volts}
+
+To hard-wire the parallel clock high level to ground, in the parallel regulators
+remove R21,
+replace C5 with zero $\Omega$, and
+populate R25 with zero $\Omega$.
+
 \begin{verbatim}
 Interface.bom.txt:X1/X1/R25	RESISTOR	DNP	1% 1/10W	0603	Resistor	
 Interface.bom.txt:X2/X1/R25	RESISTOR	DNP	1% 1/10W	0603	Resistor	
