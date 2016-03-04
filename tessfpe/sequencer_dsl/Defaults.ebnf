@@ -1,6 +1,0 @@
-(* Semantics for defaults: records the state resulting from
-   applying <state_changes> to the all "off" state. This
-   defines the initial state for the subsequent sequences.
-   No output. *)
-
-defaults = "defaults" "{" defaults:state_changes "}" ;

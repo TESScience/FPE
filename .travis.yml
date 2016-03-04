@@ -5,13 +5,10 @@ python:
 
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y geda-{gschem,gnetlist} a2ps texlive-latex-{base,extra,recommended} python-{pip,sphinx,pandas,matplotlib,numpy}
-
-install: "pip install -r testsuite/requirements.txt"
+  - sudo apt-get install -y geda-{gschem,gnetlist} a2ps texlive-latex-{base,extra,recommended}
 
 script: 
-  - make test
-  - make clean manual
+  - make manual
 
 notifications:
   slack: tessfpe:2IRXkGdeeDMrkQAGhWRaCJww
