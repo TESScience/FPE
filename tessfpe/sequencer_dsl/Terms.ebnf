@@ -1,8 +1,0 @@
-(* Set the value of a symbol in the parameter namespace. *)
-symbol = /[a-zA-Z][a-zA-Z0-9_]*/ ;
-parameter = "parameter" name:symbol "=" value:expression ;
-expression = term {("+" | "-") term}*;
-term =  value {("*" | "/") value}*;
-predefined_symbol = symbol ;
-value = value:predefined_symbol | value:constant | "(" value:expression ")" ;
-constant = /[0-9]+/ ;

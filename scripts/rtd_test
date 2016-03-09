@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -euo pipefail
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PYTHON=${DIR}/python
-
-${PYTHON} ${DIR}/house_keeping --channels pt1000_sensor_* --sort --samples 20 $@
