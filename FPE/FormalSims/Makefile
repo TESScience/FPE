@@ -1,7 +1,8 @@
 GNET=gnetlist -g spice-noqsi -m ../Schematic/censor-fix.scm
 # NGSPICE=/usr/local/ngspice-24/bin/ngspice
 NGSPICE=ngspice
-SEQ2SPICE=../../testsuite/venv/bin/fpe2spicetiming
+TESTSUITE=../../../tessfpe/testsuite
+SEQ2SPICE=make -C ${TESTSUITE} reinstall ; ${TESTSUITE}/venv/bin/fpe2spicetiming
 
 %.cir : %.sch
 	$(GNET) $< -o $@
