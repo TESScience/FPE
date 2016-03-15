@@ -24,7 +24,7 @@ PDFS=Figs/ArtixPower.pdf Figs/Reset.pdf Figs/Booster.pdf Figs/Chain.1.pdf \
 
 .PHONY: pdfs all clean
 
-all: FPE.pdf
+all: FPE.pdf DNP.pdf
 pdfs: $(PDFS)
 
 Figs/%.pdf :
@@ -34,6 +34,11 @@ FPE.pdf : FPE.tex $(PINTEX) stamp.tex date.txt $(wildcard Figs/*.pdf) StackMap.t
 	$(PDFLATEX) FPE.tex
 	$(PDFLATEX) FPE.tex
 	$(PDFLATEX) FPE.tex
+
+DNP.pdf : DNP.tex stamp.tex date.txt
+	$(PDFLATEX) DNP.tex
+	$(PDFLATEX) DNP.tex
+	$(PDFLATEX) DNP.tex
 
 $(SCH)/%.txt:
 	make -C $(SCH) $(notdir $@)

@@ -1,6 +1,6 @@
 VIDEOPRODUCTS = Video.allegro Video.devfiles Video.bom.txt \
 	Video.bom2.txt Video.counts.txt  \
-	Video.stats.txt
+	Video.stats.txt Video.i3bom.tsv
 
 # Video-Cirrexx.tsv Video.pads Video.osmond
 
@@ -8,21 +8,21 @@ VIDEOCHECKS = Video.check-duplicates Video.check-pincount
 
 INTERFACEPRODUCTS = Interface.allegro Interface.devfiles \
 	Interface.bom.txt Interface.bom2.txt Interface.counts.txt \
-	 Interface.stats.txt
+	 Interface.stats.txt Interface.i3bom.tsv
 
 #Interface-Cirrexx.tsv Interface.pads Interface.osmond
 
 INTERFACECHECKS = Interface.check-duplicates Interface.check-pincount
 
 DRIVERPRODUCTS = Driver.allegro Driver.devfiles Driver.bom.txt \
-	Driver.bom2.txt Driver.counts.txt Driver.stats.txt
+	Driver.bom2.txt Driver.counts.txt Driver.stats.txt Driver.i3bom.tsv
 
 #  Driver-Cirrexx.tsv Driver.pads Driver.osmond 
 
 DRIVERCHECKS = Driver.check-duplicates Driver.check-pincount
 
 PRODUCTS = $(VIDEOPRODUCTS) $(INTERFACEPRODUCTS) $(DRIVERPRODUCTS) \
-	../Documentation/FPE.pdf counts.txt
+	../Documentation/FPE.pdf ../Documentation/DNP.pdf counts.txt
 
 CHECKS = $(VIDEOCHECKS) $(INTERFACECHECKS) $(DRIVERCHECKS)
 
@@ -30,7 +30,7 @@ all : $(PRODUCTS)
 
 checks : $(DRIVERCHECKS) $(INTERFACECHECKS) $(VIDEOCHECKS)
 
-release : $(PRODUCTS)
+release : checks $(PRODUCTS)
 	mkdir -p ../../Releases/$(REV)
 	mv $(PRODUCTS) ../../Releases/$(REV)
 	cp Source_of_release_README ../../Releases/$(REV)/README
@@ -39,6 +39,9 @@ release : $(PRODUCTS)
 ../Documentation/FPE.pdf : ../Documentation/FPE.tex $(VIDEODOCS) $(INTERFACEDOCS) \
 	$(DRIVERDOCS)
 	make -C ../Documentation FPE.pdf
+
+../Documentation/DNP.pdf : 
+	make -C ../Documentation DNP.pdf
 
 counts.txt : Video.bom.txt Driver.bom.txt Interface.bom.txt
 	awk -f countem.awk $^ | sort -nr >$@
@@ -77,7 +80,10 @@ PS2PDF=ps2pdf -sPAPERSIZE=letter
 
 # Files making up the part # database
 
-PARTDB=digikey.tsv maxim.tsv
+PARTDB=flightparts.tsv
+
+%.i3bom.tsv : %.bom2.txt
+	awk -f i3bom.awk $(PARTDB) $^ >$@
 
 TESTDOCS=\
 	Video.chaintest.1.ps Video.chaintest.6.ps\
