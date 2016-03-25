@@ -426,9 +426,11 @@ source=Par3.sch
 C 44000 42200 1 0 1 gnd-1.sym
 C 48100 46800 1 0 1 gnd-1.sym
 C 49800 42900 1 0 1 gnd-1.sym
-T 42500 49600 8 10 1 0 0 0 5
+T 42900 49400 8 10 1 0 0 0 7
 spice-prolog=
 .param pix=9.6us
 .options abstol=1nA
+.control
 * Set DNP resistor to large value
 alter r.x1.r25 1G
+.endc

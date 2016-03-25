@@ -309,12 +309,14 @@ value=pulse
 + {pix/2} {pix}
 }
 C 40300 44400 1 0 0 gnd-1.sym
-T 42500 49800 8 10 1 0 0 0 5
+T 42700 49500 8 10 1 0 0 0 7
 spice-prolog=
 .param pix=9.6us
 .options abstol=1nA
+.control
 * Set DNP resistor to large value
 alter r.x1.r25 1G
+.endc
 N 40400 41600 40400 42000 4
 N 40400 42000 41700 42000 4
 {
