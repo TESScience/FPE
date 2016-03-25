@@ -155,7 +155,7 @@ netname=+5
 }
 C 52900 45400 1 270 0 busripper-1.sym
 N 50400 45000 50400 45400 4
-T 45550 50500 9 20 1 0 0 0 1
+T 45250 50400 9 20 1 0 0 0 1
 Parallel Clock Drivers
 C 54900 41600 1 0 0 gnd-1.sym
 C 54900 43600 1 0 0 gnd-1.sym
@@ -242,7 +242,6 @@ T 47800 48900 5 10 1 1 0 0 1
 netname=SP1
 }
 C 47700 49100 1 0 0 busripper-1.sym
-N 48000 47100 47300 47100 4
 N 47300 47100 47300 49100 4
 {
 T 46900 48900 5 10 1 1 0 0 1
@@ -255,7 +254,7 @@ T 48800 43800 5 10 1 1 0 0 1
 netname=SP2
 }
 C 48100 43700 1 180 0 busripper-1.sym
-N 49700 43200 48100 43200 4
+N 49200 43200 48100 43200 4
 {
 T 48800 43300 5 10 1 1 0 0 1
 netname=SP2
@@ -267,7 +266,7 @@ T 42700 43100 5 10 1 1 0 0 1
 netname=SP3
 }
 C 42100 43000 1 90 0 busripper-1.sym
-N 43900 42500 42100 42500 4
+N 43500 42500 42100 42500 4
 {
 T 42800 42600 5 10 1 1 0 0 1
 netname=SP3
@@ -282,7 +281,7 @@ value=pulse
 + 3.3 0
 + 0
 + 10n 10n
-+ {pix/2} {pix}
++ {pix/2}
 }
 C 40300 40100 1 0 0 gnd-1.sym
 C 40100 42500 1 0 0 vpulse-1.sym
@@ -294,7 +293,7 @@ value=pulse
 + 3.3 0
 + {pix/3}
 + 10n 10n
-+ {pix/2} {pix}
++ {pix/2}
 }
 C 40300 42200 1 0 0 gnd-1.sym
 C 40100 44700 1 0 0 vpulse-1.sym
@@ -306,15 +305,9 @@ value=pulse
 + 0 3.3
 + {pix/6}
 + 10n 10n
-+ {pix/2} {pix}
++ {pix/2}
 }
 C 40300 44400 1 0 0 gnd-1.sym
-T 42500 49800 8 10 1 0 0 0 5
-spice-prolog=
-.param pix=9.6us
-.options abstol=1nA
-* Set DNP resistor to large value
-alter r.x1.r25 1G
 N 40400 41600 40400 42000 4
 N 40400 42000 41700 42000 4
 {
@@ -430,3 +423,12 @@ model-name=Par3
 T 54200 43700 5 10 0 0 0 0 1
 source=Par3.sch
 }
+C 44000 42200 1 0 1 gnd-1.sym
+C 48100 46800 1 0 1 gnd-1.sym
+C 49800 42900 1 0 1 gnd-1.sym
+T 42500 49600 8 10 1 0 0 0 5
+spice-prolog=
+.param pix=9.6us
+.options abstol=1nA
+* Set DNP resistor to large value
+alter r.x1.r25 1G

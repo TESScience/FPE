@@ -49,6 +49,9 @@ parallelstress.txt : ParallelStress.cir $(PARFILES) ParallelStressControl.spice
 ParallelTest : ParallelTest.cir $(PARFILES)
 	$(NGSPICE) $^
 
+ParallelRecovery : ParallelRecovery.cir $(PARFILES)
+	$(NGSPICE) $^
+
 ParallelPair.sch : ../Schematic/ParallelPair.sch
 	cp $< $@
 
