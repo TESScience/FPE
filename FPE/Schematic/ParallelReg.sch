@@ -133,17 +133,6 @@ symversion=1.0nicer
 T 46500 47700 5 10 0 0 0 0 1
 slot=1
 }
-C 47500 47400 1 180 0 smallbypass.sym
-{
-T 46700 47400 5 10 1 1 0 0 1
-refdes=C5
-T 47500 46500 5 10 0 0 180 0 1
-symversion=20131108
-T 47200 46900 5 10 1 1 0 0 1
-value=680pF
-T 47500 46000 5 10 0 1 180 0 1
-spec=50WVDC X7R
-}
 C 46600 46400 1 0 0 resistor.sym
 {
 T 46800 46700 5 10 1 1 0 0 1
@@ -515,3 +504,14 @@ To hard-wire the parallel clock high level to ground:
 Remove R21
 Replace C5 with 0 ohms
 Populate R25 with 0 ohms
+C 47500 47400 1 180 0 smallbypass.sym
+{
+T 46700 47300 5 10 1 1 0 0 1
+refdes=C5
+T 47500 46500 5 10 0 0 180 0 1
+symversion=20131108
+T 47200 46900 5 10 1 1 0 0 1
+value=22nF
+T 47500 46000 5 10 0 1 180 0 1
+spec=50WVDC X7R
+}
