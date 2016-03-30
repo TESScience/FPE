@@ -1,0 +1,17 @@
+This  directory contains  a  TESS Focal  Plane  Electronics (FPE)  schematic
+design  release.  There  are  three   boards  in  an  FPE  assembly:  Video,
+Interface, and Driver. For each board we have the following files:
+
+.allegro	Allegro netlist.
+.devfiles	Directory holding associated device files for Allegro.
+.bom.txt	Voluminous Bill of Materials (BOM) by spec, one line per component.
+.bom2.txt	Condensed BOM, one line per spec.
+.counts.txt	Component counts by spec.
+.stats.txt	Board stats: components, nets, area.
+.i3bom.tsv	BOM by manufacturer's part number, I3 format.
+
+For the overall FPE we have:
+
+FPE.pdf		Design document.
+DNP.pdf		List and descriptions of component positions not to populate.
+counts.txt	Combined component counts for the FPE.
