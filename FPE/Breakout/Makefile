@@ -40,8 +40,11 @@ Breakout.allegro: Breakout.sch J1.psch J2.psch J3.psch J4.psch Stack.psch
 	$(GNET) -L ../Schematic -l ../Schematic/backward-compat.scm -g allegro -o $@ Breakout.sch J1.psch J2.psch J3.psch J4.psch Stack.psch
 	mv devfiles Breakout.devfiles
 
-Breakout-doc.ps : Breakout.ps J1.txt J2.txt J3.txt J4.txt
+Breakout-doc.ps : Breakout.ps J1.txt J2.txt J3.txt J4.txt Breakout.bom.txt
 	$(A2PS)
+	
+Breakout.bom.tsv : Breakout.sch attribs
+	$(GNET) -g bom -o $@ Breakout.sch
 
 Stack.psch : ../Schematic/Stack.txt
 	awk -f ../Schematic/pins2gsch.awk $^ >$@
@@ -50,4 +53,4 @@ Stack.psch : ../Schematic/Stack.txt
 	make -C ../Schematic Stack.txt
 
 clean : 
-	rm -rf *.allegro *devfiles *.psch *.ps *.pdf *~ \#*
+	rm -rf *.allegro *devfiles *.psch *.ps *.pdf *.bom.* *~ \#*
