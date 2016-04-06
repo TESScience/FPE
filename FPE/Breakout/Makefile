@@ -40,3 +40,6 @@ Breakout.allegro Breakout.devfiles: Breakout.sch J1.psch J2.psch J3.psch J4.psch
 
 Stack.psch : ../Schematic/Stack.txt
 	awk -f ../Schematic/pins2gsch.awk $^ >$@
+
+clean : 
+	rm -rf *.allegro *devfiles *.psch *.ps *.pdf *~ \#*
