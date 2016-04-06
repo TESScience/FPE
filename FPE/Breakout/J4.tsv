@@ -1,0 +1,50 @@
+J4	1	GND	GND
+J4	2	GND	GND
+J4	3	GND	GND
+J4	4	GND	GND
+J4	5	GND	GND
+J4	6	ID-4	ID-4 (Driver)
+J4	7	P3-U-4	P3-U-4 (Driver)
+J4	8	P2-U-4	P2-U-4 (Driver)
+J4	9	P1-U-4	P1-U-4 (Driver)
+J4	10	P3-IA-4	P3-IA-4 (Driver)
+J4	11	P2-IA-4	P2-IA-4 (Driver)
+J4	12	P1-IA-4	P1-IA-4 (Driver)
+J4	13	RG-4	RG-4 (Driver)
+J4	14	P1-OR-4	P1-OR-4 (Driver)
+J4	15	P2-OR-4	P2-OR-4 (Driver)
+J4	16	P3-OR-4	P3-OR-4 (Driver)
+J4	17	P3-FS-4	P3-FS-4 (Driver)
+J4	18	P2-FS-4	P2-FS-4 (Driver)
+J4	19	P1-FS-4	P1-FS-4 (Driver)
+J4	20	SP3-FS-4	SP3-FS-4 (Driver)
+J4	21	SP2-FS-4	SP2-FS-4 (Driver)
+J4	22	SP1-FS-4	SP1-FS-4 (Driver)
+J4	23	SP3-IA-4	SP3-IA-4 (Driver)
+J4	24	SP2-IA-4	SP2-IA-4 (Driver)
+J4	25	SP1-IA-4	SP1-IA-4 (Driver)
+J4	26	SP3-FS-3	SP3-FS-3 (Driver)
+J4	27	SP2-FS-3	SP2-FS-3 (Driver)
+J4	28	SP1-FS-3	SP1-FS-3 (Driver)
+J4	29	SP3-IA-3	SP3-IA-3 (Driver)
+J4	30	SP2-IA-3	SP2-IA-3 (Driver)
+J4	31	SP1-IA-3	SP1-IA-3 (Driver)
+J4	32	ID-3	ID-3 (Driver)
+J4	33	P3-U-3	P3-U-3 (Driver)
+J4	34	P2-U-3	P2-U-3 (Driver)
+J4	35	P1-U-3	P1-U-3 (Driver)
+J4	36	P3-IA-3	P3-IA-3 (Driver)
+J4	37	P2-IA-3	P2-IA-3 (Driver)
+J4	38	P1-IA-3	P1-IA-3 (Driver)
+J4	39	RG-3	RG-3 (Driver)
+J4	40	P1-OR-3	P1-OR-3 (Driver)
+J4	41	P2-OR-3	P2-OR-3 (Driver)
+J4	42	P3-OR-3	P3-OR-3 (Driver)
+J4	43	P3-FS-3	P3-FS-3 (Driver)
+J4	44	P2-FS-3	P2-FS-3 (Driver)
+J4	45	P1-FS-3	P1-FS-3 (Driver)
+J4	46	GND	GND
+J4	47	GND	GND
+J4	48	GND	GND
+J4	49	GND	GND
+J4	50	GND	GND
