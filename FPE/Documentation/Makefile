@@ -71,4 +71,4 @@ stamp.tex :
 
 clean :
 	make -C Figs clean
-	rm -f $(PINTEX) $(TSVTEX) *.out *.aux *.log stamp.tex date.txt StackMap.tex tag.tex FPE.pdf *.toc *.lof *.lot *.synctex.gz
+	rm -f $(PINTEX) $(TSVTEX) *.out *.aux *.log stamp.tex date.txt StackMap.tex tag.tex FPE.pdf DNP.pdf *.toc *.lof *.lot *.synctex.gz
