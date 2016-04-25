@@ -61,6 +61,15 @@ Video.bom.txt:Q1	LM195H	DNP	unknown	TO39	unknown
 
 \section{Options we don't intend to implement}
 
+\subsection{Isolating GND from chassis}
+
+R72 and R92 are ``zero ohm" resistors connecting GND on the Interface board to mounting posts. These may be replaced with high resistance bleeders if DC isolation is desired. In that case, C72 and C92 may be populated with 4.7$\mu$F capacitors to provide an AC ground.
+
+\begin{verbatim}
+Interface.bom.txt:C92	CAPACITOR	DNP	10WVDC X7R	1812	Ceramic capacitor	
+Interface.bom.txt:C72	CAPACITOR	DNP	10WVDC X7R	1812	Ceramic capacitor	
+ \end{verbatim}
+
 \subsection{Populate R13 with zero $\Omega$, remove R15 to allow serial clock high above 4.5V}
 \begin{verbatim}
 Interface.bom.txt:X1/R13	RESISTOR	DNP	1% 1/10W	0603	Resistor	
